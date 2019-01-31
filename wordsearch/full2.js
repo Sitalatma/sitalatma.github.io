@@ -503,7 +503,6 @@ function ta() {
             o.fillStyle = w[d].d ? "#777" : "#000";
             //o.fillText(w[d].i, c, b);
             o.fillText(wth[d].i, c, b); 
-            window.alert(wth[d].i)
             w[d].d && (o.globalAlpha = 0.8,
             o.strokeStyle = ua(d),
             o.beginPath(),

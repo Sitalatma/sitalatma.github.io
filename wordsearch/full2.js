@@ -511,7 +511,8 @@ function ta() {//this seems to be the place to draw clues
             //o.fillText(w[d].i, c, b);//if clues are different from words use
            //next line
             //o.fillText(wth[d].i, c, b);  original line
-            o.fillText(wth[d].i, 8, b+634);  
+            //o.fillText(wth[d].i, 8, b+634); to show clues
+            o.fillText(w[d].i, 8, b+634);  
             w[d].d && (o.globalAlpha = 0.8,
             o.strokeStyle = ua(d),
             o.beginPath(),

@@ -285,7 +285,7 @@ function aa(a) {
     u.c[0].e[0].title = a.title;
     u.c[0].e[0].j = a.words
     u.c[0].e[0].jth = a.clues
-    //window.alert(u.c[0].e[0].jth);
+    //window.alert('u');
 }
 
 function m(a, c) {
@@ -304,14 +304,9 @@ function m(a, c) {
     O = (z + A) * G + C + C;
     da = N + J;
     r = O + K;
-   //here we are setting canvas height to 1000 - should be enough for ten
-   //clues
-    //document.getElementById(a).setAttribute("style", "position:relative;height:" + r + "px");
-    document.getElementById(a).setAttribute("style", "position:relative;height:1000px");
-   //window.alert(a);
+    document.getElementById(a).setAttribute("style", "position:relative;height:" + r + "px");
     //n = oa("wsGrid", da, r, a);
-    //n = oa("wsGrid", 1000, r, a);//change width here
-    n = oa("wsGrid", r, 1000, a);
+    n = oa("wsGrid", 1000, r, a);
     n.setAttribute("style", "position:absolute;top:0px;left:0px;");
     o = n.getContext("2d");
     p = oa("wsGridOverlay", N, O, a);
@@ -470,7 +465,6 @@ function S() {
     return (new Date).getTime() / 1E3
 }
 function oa(a, c, b, j) {
-   //window.alert(a+' '+c+' '+b+' '+j);
     var d = document.createElement("canvas");
     d.setAttribute("width", c);
     d.setAttribute("height", b);
@@ -478,7 +472,7 @@ function oa(a, c, b, j) {
     document.getElementById(j).appendChild(d);
     return d
 }
-function ta() {//this seems to be the place to draw clues
+function ta() {
     if (!(1 > J && 1 > K)) {
         var a = l;
         0 < K && (a = i);
@@ -486,17 +480,11 @@ function ta() {//this seems to be the place to draw clues
             var c = 8
               , b = O + 12;
             o.clearRect(c - 8, b - 12, N, K);
-           //window.alert(c+' '+b+' '+N+' '+K);
             var j = 8
         } else
             c = N + 10,
             b = 0,
-            //o.clearRect(c, b, J, O);
-            //o.fillStyle = "red";
-            //o.fillRect(0, 630, 300, 150);
-            //window.alert(c+' '+b+' '+J+' '+O);
-            o.clearRect(b, c, J, O);
-           //window.alert(b+' '+c+' '+J+' '+O);
+            o.clearRect(c, b, J, O);
         o.globalAlpha = 1;
         o.font = ga;
         L = [];
@@ -508,10 +496,8 @@ function ta() {//this seems to be the place to draw clues
             j = j + e + 10) : b += 30;
             o.textBaseline = "middle";
             o.fillStyle = w[d].d ? "#777" : "#000";
-            //o.fillText(w[d].i, c, b);//if clues are different from words use
-           //next line
-            //o.fillText(wth[d].i, c, b);  original line
-            o.fillText(wth[d].i, 8, b+634);  
+            //o.fillText(w[d].i, c, b);
+            o.fillText(wth[d].i, c, b);  
             w[d].d && (o.globalAlpha = 0.8,
             o.strokeStyle = ua(d),
             o.beginPath(),
@@ -745,9 +731,7 @@ function Aa() {
         var a = $("#gameGrid").offset()
           , c = '<p style="font-size:28px;font-weight:bold">Game finished in <br>' + parseInt(Q, 10) + " Seconds</p>"
           , c = '<div style="width:400px;height:130px;background:#DDDBD5;padding:16px;margin:230px auto;text-align:center;border-radius:10px;">' + (c + '') + "</div>";
-       //result announcement
-        //$("body").append('<div id="wsGridResult" style="width:840px;height:' + r + "px;left:" + a.left + "px;top:" + a.top + 'px;position:absolute;z-index:99;background:#ccc; background: rgba(0, 0, 0, .6);">' + c + "</div>");
-        $("body").append('<div id="wsGridResult" style="width:' + r + 'px;height:' + r + "px;left:" + a.left + "px;top:" + a.top + 'px;position:absolute;z-index:99;background:#ccc; background: rgba(0, 0, 0, .6);">' + c + "</div>");
+        $("body").append('<div id="wsGridResult" style="width:840px;height:' + r + "px;left:" + a.left + "px;top:" + a.top + 'px;position:absolute;z-index:99;background:#ccc; background: rgba(0, 0, 0, .6);">' + c + "</div>");
         addShares();
         addFollows();
         Da();
@@ -778,10 +762,9 @@ btnRescramble = function() {
 }
 ;
 function ca() {
-   // here we can switch dragSelect from drag for computers to tap for mobiles
-   // and mess with settings in general
+
     var a = localStorage.getItem("settings");
-    var mya ='{"audio":true,"showGrid":true,"dragSelect":false,"kidMode":false,"allowHints":true,"allowReverseWords":false,"allowDiagonalWords":true}'
+    var mya ='{"audio":true,"showGrid":true,"dragSelect":true,"kidMode":false,"allowHints":true,"allowReverseWords":true,"allowDiagonalWords":true}'
     
     a = mya    
     return a === k ? (a = {

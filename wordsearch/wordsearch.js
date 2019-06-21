@@ -183,10 +183,7 @@ var i = !0
   , k = null
   , l = !1;
 
-//window.loadGameDataWeb = aa;
-
 window.loadMyData = aaTh;
-//console.log(text[0][0]);
 
 window.init = m;
 window.unHighlightCells = ba;
@@ -194,22 +191,17 @@ window.loadSettings = ca;
 
 var myW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var myH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-//window.alert('w=' + myW + ' h=' + myH);
-//myW = document.documentElement.clientWidth;
-//myH = document.documentElement.clientHeight;
 
 var orient, cellNumber, cellSize, letterSize;
 
 if(myW <= myH){
-   //window.alert("portrait");
    orient = 'portrait';
       cellNumber = 10;
       cellSize = 32;
       letterSize = 12;
 }else{
-   //window.alert("landscape");
    orient = 'landscape';
-   if(myW > 960){
+   if(myW > 800){
       if(myH > 640){
          cellNumber = 14;
          cellSize = 44;
@@ -220,46 +212,24 @@ if(myW <= myH){
          letterSize = 12;
       }
    }else{
-      window.alert("Your display size is reported as not big enough to play this game.\nWeird...");
+      window.alert("Your display size is reported as not big enough to play this game.\nWeird...\nMaybe try to hold it in Portrait mode and reload?");
+      throw "Too weird";
    }
 }
-//window.alert('w=' + myW + ' h=' + myH + " " + orient);
-
-//quiz settings here
-//var n = k, o = k, p = k, q = k, da, r, s = k, u = k, v = 0.1, ea = k, w = [], y = k, z = 44, A = 0, C = 4, fa = "bold 16pt Calibri, Trebuchet MS, Arial", ga = "bold 12pt  Arial, Calibri, Trebuchet MS", D = "#ad00cc,#006633,#CC3300,#1c3fd3,#1dcb16,#9B4E00,#336666,#337c0c,#3c0879,#97001E".split(","), F = 14, G = 14, J = 176, K = 0, ha = F * G, L = [], M = [], ia = l, N = k, O = k, P = k, Q = 0, ja, ka, la, ma, na, R = ca();
 var n = k, o = k, p = k, q = k, da, r, s = k, u = k, v = 0.1, ea = k, w = [], y = k, z = cellSize, A = 0, C = 4, fa = "bold "+letterSize+"pt Calibri, Trebuchet MS, Arial", ga = "bold 12pt  Arial, Calibri, Trebuchet MS", D = "#ad00cc,#006633,#CC3300,#1c3fd3,#1dcb16,#9B4E00,#336666,#337c0c,#3c0879,#97001E".split(","), F = cellNumber, G = cellNumber, J = 176, K = 0, ha = F * G, L = [], M = [], ia = l, N = k, O = k, P = k, Q = 0, ja, ka, la, ma, na, R = ca();
 
 var maxE=0;
 
 var uth, vth, wth = []
-//function aa(a) {
-//   v = 0;
-//   u = {
-//      c: []
-//   };
-//   u.c[0] = {};
-//   u.c[0].e = [];
-//   a = JSON.parse(a);
-//   u.c[0].e[0] = {};
-//   u.c[0].e[0].id = a.id;
-//   u.c[0].e[0].title = a.title;
-//   u.c[0].e[0].j = a.words
-//   //console.log("u: " + u.c[0].e[0].j);
-//   u.c[0].e[0].jth = a.clues
-//   //console.log('loaded ' + u.c[0].e[0].j.length + ' words');
-//   //window.alert(u.c[0].e[0].jth);
-//}
+
 function aaTh() {
-   //console.log("orientation: " + orient);
    var textW = []; 
    var textC = []; 
    lines = document.getElementById('clues').innerHTML.split("\n");
    wordcounter = 0;
    for(myi=0;myi < lines.length;myi++){
-      //console.log("i="+i+"line:"+lines[i]);
       if(lines[myi].trim().length != 0){
          words = lines[myi].split(" ");
-         //text[i] = [];
          textW[wordcounter] = words.shift();
 
          if(words.length > 0){
@@ -268,14 +238,12 @@ function aaTh() {
             textC[wordcounter] = textW[wordcounter].toUpperCase();
          }
 
-         //console.log("added word: '"+textW[wordcounter]+"' with index="+wordcounter);
          if(orient == 'portrait' && textW[wordcounter].length > 10){
             continue;
          }
          if(orient == 'landscape' && textW[wordcounter].length > 14){
             continue;
          }
-         //console.log(wordcounter + " " + text[i][0]);
          wordcounter++;
       }
    }
@@ -286,11 +254,9 @@ function aaTh() {
    u.c[0] = {};
    u.c[0].e = [];
    u.c[0].e[0] = {};
-   //u.c[0].e[0].id = '108';
    u.c[0].e[0].title = 'Krishna Wordsearch';
    u.c[0].e[0].j = textW;
    u.c[0].e[0].jth = textC;
-   //console.log(textW);
 }
 
 function m(a, c) {
@@ -307,16 +273,14 @@ function m(a, c) {
    }
    N = (z + A) * F + C + C;
    O = (z + A) * G + C + C;
-   da = N;// this is where we set main canvas width for portait
-   r = O + K;//this is where is set canvas height for portrait
+   da = N;
+   r = O + K;
    var wthO = [];
       -1 == v ? (b = [],
       b[0] = Math.floor(Math.random() * u.c.length),
       b[1] = Math.floor(Math.random() * u.c[b[0]].e.length)) : (b = v.toString().split("."),
       b[1] || (b[1] = 0));
-      ea = '108';//u.c[b[0]].e[b[1]].id;
 
-   //console.log(u.c[b[0]].e[b[1]].j);
    for (h = 0; h < u.c[b[0]].e[b[1]].j.length; h++) {
       var fth = {};
       fth.i = u.c[b[0]].e[b[1]].jth[h];
@@ -328,7 +292,6 @@ function m(a, c) {
    }
    if(orient == 'landscape'){
 
-      //here we calculate witdh of the clues for landscape mode
       canvasW = document.createElement('canvas');
       ctx = canvasW.getContext("2d");
       ctx.font = ga;
@@ -338,26 +301,17 @@ function m(a, c) {
             maxE = e;
          }
       }
-      //window.alert(canvasW);
       delete canvasW;
       delete ctx;
-      //window.alert(ctx);
-      //window.alert(maxE);
-      da = N + maxE + 20;// this is where we set main canvas width
+      da = N + maxE + 20;
       r = O + K;
       }else{
-         da = N;// this is where we set main canvas width for portait
-         r = O + 30*wth.length + 10;//this is where is set canvas height for portrait
+         da = N;
+         r = O + 30*wth.length + 10;
       }
 
-//here we are setting canvas height to 1000 - should be enough for ten
-//clues
-   //document.getElementById(a).setAttribute("style", "position:relative;height:" + r + "px");
    document.getElementById(a).setAttribute("style", "position:relative;height:"+r+"px");
-//window.alert(a);
    n = oa("wsGrid", da, r, a);
-   //n = oa("wsGrid", 1000, r, a);//change width here
-   //n = oa("wsGrid", r, 1000, a);
    n.setAttribute("style", "position:absolute;top:0px;left:0px;");
    o = n.getContext("2d");
    p = oa("wsGridOverlay", N, O, a);
@@ -395,7 +349,6 @@ function m(a, c) {
                   w[e].d = i;
                   w[e].f = b;
                   w[e].h = h;
-                  //console.log('words to ta here: ' + w.length + ' clues: ' + wth.length);
                   ta()
                }
       }
@@ -417,9 +370,7 @@ function m(a, c) {
          f.h = k;
          w[h] = f
       }
-      //console.log('words: ' + w.length);
       wlen = w.length;
-
 
       for (b = 0; b < w.length; b++) {
          var B, h = w[b].g.length, f = "tb,tb,tb,lr,lr,lr".split(",");
@@ -497,14 +448,10 @@ function m(a, c) {
                   f = i) : f = l
                }
          }
-         if(wlen != w.length){
-            //console.log('words here: ' + w.length + ' b: ' + b + w[b].g);
-         }
          f || (w.splice(b, 1), wth.splice(b,1),
          b--)
       }
       d = "";
-      //console.log('words to ta: ' + w.length + ' clues: ' + wth.length);
       for (e = 0; e < w.length; e++)
          d += w[e].g;
       for (e = 0; e < ha; e++)
@@ -513,15 +460,12 @@ function m(a, c) {
    }
    for (d = 0; d < ha; d++)
       U(d, o);
-   //console.log('words to ta: ' + w.length + ' clues: ' + wth.length);
    ta()
-      //console.log('words here: ' + w.length);
 }
 function S() {
     return (new Date).getTime() / 1E3
 }
 function oa(a, c, b, j) {
-   //window.alert(a+' '+c+' '+b+' '+j);
     var d = document.createElement("canvas");
     d.setAttribute("width", c);
     d.setAttribute("height", b);
@@ -529,7 +473,7 @@ function oa(a, c, b, j) {
     document.getElementById(j).appendChild(d);
     return d
 }
-function ta() {//this seems to be the place to draw clues
+function ta() {
    if (!(1 > J && 1 > K)) {
       var a = l;
       0 < K && (a = i);
@@ -601,13 +545,8 @@ function ta() {//this seems to be the place to draw clues
             o.lineTo(10 + e, clueHeight),
             o.stroke(),
             o.globalAlpha = 1);
-            if (w[d].d == l) {//Construct L object for portrait here
+            if (w[d].d == l) {
                   var h = {};
-                  //h.x = c;
-                  //h.y = b - 15;
-                  //h.l = h.x + e;
-                  //h.m = h.y + 30;
-                  //h.k = d;
                   h.x = 10;
                   h.y = c - 9 + b - 15;
                   h.l = h.x + e;
@@ -618,7 +557,6 @@ function ta() {//this seems to be the place to draw clues
          }
       }
    }
-      //console.log('words: ' + w.length + ' clues: ' + wth.length);
 }
 function T(a, c) {
     for (var b = 0; b < a.length; b++)
@@ -667,7 +605,6 @@ function qa(a) {
     wa(a);
 }
 function ra(a) {
-   //console.log('x='+L[0].x + ' l=' + L[0].l + ' y=' + L[0].y + ' m' + L[0].m + ' k=' + L[0].k)
     if (R.allowHints)
         for (var a = V(a), c = 0; c < L.length; c++)
             a.x >= L[c].x && a.x <= L[c].l && a.y >= L[c].y && a.y <= L[c].m && (X(),
@@ -849,14 +786,11 @@ function za(a) {
     "finished" == a && la.play())
 }
 function ca() {
-   // here we can switch dragSelect from drag for computers to tap for mobiles
-   // and mess with settings in general
-   var mya ='{"audio":true,"showGrid":true,"dragSelect":true,"kidMode":false,"allowHints":true,"allowReverseWords":false,"allowDiagonalWords":true}'
+   mySettings = mySettings.substring(mySettings.indexOf('{'));
    if (/Mobi/.test(navigator.userAgent)) {
-      mya ='{"audio":true,"showGrid":true,"dragSelect":false,"kidMode":false,"allowHints":true,"allowReverseWords":false,"allowDiagonalWords":true}'
-      //window.alert('mobile');
+      mySettings = mySettings.replace('"dragSelect":true','"dragSelect":false');
    }
-   a = mya    
+   a = mySettings;
    return a === k ? (a = {
        audio: i,
        showGrid: i,
@@ -866,6 +800,5 @@ function ca() {
        allowReverseWords: i,
        allowDiagonalWords: i
    },
-   //localStorage.setItem("settings", JSON.stringify(a)),
    a) : JSON.parse(a)
 }

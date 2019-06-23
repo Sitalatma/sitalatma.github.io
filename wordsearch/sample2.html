@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krishna Word Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="About Krishna Consciousness">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+   var mySettings;
+
+// I hope it's possible to put the following lines into a template module so that
+// Sateesh can change default game settings if he wants to.
+// Things like showGrid, hints, diagonal, and reverse words can make the game
+// easy or difficult
+   mySettings = mySettings + '{';
+   mySettings = mySettings + '"audio":true,';
+   mySettings = mySettings + '"showGrid":true,';
+   mySettings = mySettings + '"dragSelect":true,';
+   mySettings = mySettings + '"kidMode":false,';
+   mySettings = mySettings + '"allowHints":true,';
+   mySettings = mySettings + '"allowReverseWords":false,';
+   mySettings = mySettings + '"allowDiagonalWords":true';
+   mySettings = mySettings + '}';
+// end of editable template here
+// It's important not to mess with single and double quotation marks above.
+// Just change true to false and nothing else
+// If there's an easire way to make settings editable go ahead and use it
+// As it is, they are used by javascript before the rest of the page is loaded
+
+</script> 
+
+<!--  
+      Next is the external script which creates and plays the game
+      This is where we can change canvas size, layout, colors, and css for the 
+      result announcement. 
+      The script was originally obfuscated so all function and variable names
+      are meaningless, but it's not difficult to locate the important parts.
+     
+      Line 186 is where it all starts. Variables in that section
+      are self-explanatory and code is easy to read.
+      Line 218 is settings for fonts and colors
+      Line 770 is where result announcement is created
+
+      There could be some legacy functions there left
+      but I think I've deleted anything that is not used.
+-->      
+<script src="wordsearch.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="puzzle">
+       
+    <div id="gameGrid"></div>
+
+</div>
+
+<!--    This should be the module for adding words and clues to be used 
+         in the game. Clue questions are optional. If no clue is given the game will
+         use the word itself as a clue.
+-->
+<div id="clues" style="display:none">
+
+krishna
+radha
+caitanya
+karma
+bhakti
+yoga
+mantra
+balarama
+vrindavan
+goloka
+bhagavadgita
+
+</div>
+<!-- end of clue section -->
+
+<script>
+$(function() {
+
+   loadMyData();
+   init("gameGrid");
+
+});   
+
+</script> 
+</body>
+</html>
+

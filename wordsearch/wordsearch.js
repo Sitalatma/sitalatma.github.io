@@ -791,14 +791,5 @@ function ca() {
       mySettings = mySettings.replace('"dragSelect":true','"dragSelect":false');
    }
    a = mySettings;
-   return a === k ? (a = {
-       audio: i,
-       showGrid: i,
-       dragSelect: i,
-       kidMode: l,
-       allowHints: i,
-       allowReverseWords: i,
-       allowDiagonalWords: i
-   },
-   a) : JSON.parse(a)
+   return JSON.parse(a);
 }

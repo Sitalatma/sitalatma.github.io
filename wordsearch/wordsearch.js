@@ -226,16 +226,16 @@ function aaTh() {
    var textW = []; 
    var textC = []; 
    lines = document.getElementById('clues').innerHTML.split("\n");
-   wordcounter = 0;
+   var wordcounter = 0;
    for(myi=0;myi < lines.length;myi++){
       if(lines[myi].trim().length != 0){
          words = lines[myi].split(" ");
          textW[wordcounter] = words.shift();
 
-         if(words.length > 0){
-            textC[wordcounter] = words.join(' ');
-         }else{
+         if(words.length == 1 && words[0] === ''){
             textC[wordcounter] = textW[wordcounter].toUpperCase();
+         }else{
+            textC[wordcounter] = words.join(' ');
          }
 
          if(orient == 'portrait' && textW[wordcounter].length > 10){

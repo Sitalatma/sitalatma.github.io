@@ -231,8 +231,7 @@ function aaTh() {
       if(lines[myi].trim().length != 0){
          words = lines[myi].split(" ");
          textW[wordcounter] = words.shift();
-
-         if(words.length == 1 && words[0] === ''){
+         if(words.length == 0 || (words.length == 1 && words[0] === '')){
             textC[wordcounter] = textW[wordcounter].toUpperCase();
          }else{
             textC[wordcounter] = words.join(' ');

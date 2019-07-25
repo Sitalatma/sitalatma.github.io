@@ -793,6 +793,7 @@ function za(a) {
 function ca() {
    mySettings = mySettings.substring(mySettings.indexOf('{'));
    if (/Mobi/.test(navigator.userAgent)) {
+      mySettings = mySettings.replace(/\s/g, '');
       mySettings = mySettings.replace('"dragSelect":true','"dragSelect":false');
    }
    a = mySettings;

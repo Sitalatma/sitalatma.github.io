@@ -43,8 +43,30 @@ function scroll() {
     if(curw <  fullw){
         newW = curw + incr;
         pbar.style.width = newW + "px";
+
+        //document.getElementById("backgr").setAttribute("style", "opacity: 0");
         //console.log('set progress to: ' + newW + ' new width: ' + document.getElementById("progress").clientWidth);
+        if(newW > fullw - incr + 15){
+            console.log("star messing with opacity");
+            setTimeout(function(){ 
+                document.getElementById("backgr").setAttribute("style", "opacity: 0.5"); 
+                console.log("opacity to 0.3");
+                
+            },
+            700);
+
+            setTimeout(function(){ 
+                bkgr = document.getElementById("backgr");
+                bkgr.setAttribute("style", "transition: opacity 1s;");
+                //bkgr.setAttribute("style", "transition-timing-function: ease-out");
+                //console.log('transition set to : ' + bkgr.style.transition);
+                bkgr.setAttribute("style", "opacity: 0"); 
+                //console.log("opacity to 0");
+            },
+            1000);
+        }
     }
+
 }
 
 function getColW() {

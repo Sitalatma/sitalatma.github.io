@@ -1,0 +1,516 @@
+// Copyright Shreevatsa R, 2010. Licenced under the GPL, version 2 or later.
+/*
+Not yet complete.
+
+The base code for transliteration of Indian languages in general.
+
+In principle something like this could work for any set of alphabets, but I'm not seeking such generality.
+*/
+
+
+
+
+
+if(!this.INtranslit) {
+    //To avoid creating global variables put everything in a "closure", returning only things that need to be "global"
+    this.INtranslit = function () {
+    	
+        //For non-Firebug users, console.log should do nothing (not give an error)
+        //if(typeof(console) === "undefined" || typeof(console.log) === "undefined") var console = { log: function() { } };
+
+			//console.log('Intranslit called')
+			
+        Array.prototype.contains = function(obj) {
+          var i = this.length;
+          while (i--) {
+            if (this[i] === obj) {
+              return true;
+            }
+          }
+          return false;
+        }
+        
+
+        // Make trie, given a table like {'a':'अ', 'A':'आ', 'ai':'ऐ', 'au':'औ' }
+        function maketrie(table) {
+        		var str = JSON.stringify(table);
+				//var str = JSON.stringify(table, null, 4); // (Optional) beautiful indented output.
+				//console.log('Maketrie from table str:'+ str); // Logs output to dev tools console.
+            var root = {};
+            for(var s in table) {
+                //Go down the tree, following the letters of s
+                var where = root;
+                for(var i=0; i<s.length; ++i) {
+                    if(where[s[i]] === undefined) where[s[i]] = {};
+                    where = where[s[i]];
+                }
+                where.label = table[s];
+            }
+            return root;
+        }
+
+        //Convert a string using a labelled trie
+        function convert(s, trie) {
+        		//console.log('convert receives s:'+s)
+        		//console.log('convert receives s:',s,' and trie:',trie)
+        		if(trie["अ"] && Object.values(trie["अ"]).indexOf('อ') > -1){
+        			var convert2Pali='ok';
+        			//console.log('Got Pali')
+        		}
+        		//var strie = JSON.stringify(trie);
+				//var strie = JSON.stringify(u, null, 4); // (Optional) beautiful indented output.
+				//console.log('Trie:'+strie); // Logs output to dev tools console. 
+				//if(trie["अ"]["label"]){       		
+					//console.log('trying to get what trie it is. trie["अ"].label, gives:',trie["अ"])
+					//if (trie["अ"] && Object.values(trie["अ"]).indexOf('อ') > -1) {
+   				//	console.log('has อ');
+					//	}
+					//var strie = JSON.stringify(trie["अ"]);
+					//console.log('Trie trie["अ"]:'+strie); // Logs output to dev tools console.
+				//	}           
+            var out = '';
+            //d = depth, a = parsed part, b = length of unparsed part
+            var where = trie, d = 0, a = '', b = 0;
+            var i = 0;
+            while(i < s.length) {
+                var c = s[i]; ++i;
+                //if(c === '्') console.log('In convert c:'+c)
+                ++d;
+                ++b;
+                //If there is a child in the trie, just follow it
+                if(where[c] !== undefined) { 
+                    where = where[c];
+                    //console.log('where is:',where)
+                    //if(c === '्') console.log('In convert c found here:'+c)
+                    if(where.label !== undefined) {
+                        a = where.label; b = 0;
+                        if(convert2Pali === 'ok' && c === '्') {
+                        	//console.log('virama detected and a assigned a:'+a)
+                        	a += viramaTh
+                        }
+								
+                    }
+                    else{
+								if(convert2Pali === 'ok' && c === '्') console.log('virama skipped')                    
+                    }
+                }
+                // else, go back to the root
+                else { 
+                		//console.log('undefined c:'+c)                 
+                    //If nothing has been parsed, declare the first character as parsed 
+                    if(b==d) {
+                        a = s[i-b];
+                        --b;
+                    }
+                    out += a;
+                    //Go back to unparsed, and start over. (TODO: here a KMP table would help)
+                    i -= b;
+                    where = trie; d = 0; a = ''; b = 0;
+                }
+            }
+            out += a+s.substr(i-b);
+            //console.log('convert takes s:'+s+' and returns:'+out)
+            convert2Pali = '';
+            return out;
+        }
+
+        //////////////////////////////////////////////////////////////////////
+        //Make object like {'a':'अ', 'A':'आ', 'ai':'ऐ', 'au':'औ', 'k':'क्'}
+        function to_sk(alphabet) {
+        		//console.log('Called to_sk with alphabet:'+alphabet);
+            var ret = {};
+            for(var i in alphabet) {
+                var rhs = alphabets['sk'][i] + (i>=noncons ? virama : '');
+                if(typeof(alphabet[i])=='string') ret[alphabet[i]] = rhs;
+                else {
+                    for(var c in alphabet[i]) ret[alphabet[i][c]] = rhs;
+                }
+            }
+            return ret;
+        }
+        function to_th(alphabet) {
+        		//console.log('Called to_th with alphabet:'+alphabet);
+            var ret = {};
+            for(var i in alphabet) {
+                var rhs = alphabets['Pali'][i] + (i>=noncons ? viramaTh : '');
+                if(typeof(alphabet[i])=='string') ret[alphabet[i]] = rhs;
+                else {
+                    for(var c in alphabet[i]) ret[alphabet[i][c]] = rhs;
+                }
+            }
+            //console.log('to_th returns ret:',ret)
+            return ret;
+        }        
+
+        //Make object like {'अ':'a', 'आ':'A', 'ऐ':'ai', 'औ':'au' }
+        function from_sk(alphabet) {
+        		//console.log('Called from_sk with alphabet:'+alphabet[0]);        	
+            var ret = {};
+            var report='';
+            for(var i in alphabet) {
+            	if(alphabet[0] === 'อ'){
+            		var lhs = alphabets['sk'][i] + (i>=noncons ? virama : '');
+            		report += lhs+' ';
+                	if(typeof(alphabet[i])=='string') ret[lhs] = alphabet[i];
+                	else ret[lhs] = alphabet[i][0];
+            	}else{
+                	var lhs = alphabets['sk'][i] + (i>=noncons ? virama : '');
+                	if(typeof(alphabet[i])=='string') ret[lhs] = alphabet[i];
+                	else ret[lhs] = alphabet[i][0];
+             	}
+            }
+            //report !='' ? console.log('report:'+report) : report='';
+            return ret;
+        };
+        function fixThaiVowels(s){
+        	
+        		var str=s;
+        		var strArray = Array.from(str);
+        		//console.log('received s:'+str)
+        		//for (var i = 0; i < s.length; i++) {
+    			//		console.log('i='+i+' - '+s.charAt(i));
+				//	}
+				var leftVs = 'โไเ';
+				var gotV = '';
+				var fromPos = '';
+				var toPos = '';
+				
+        		var i = str.length-1;//console.log('last character: " '+str[i]+' "')
+				while(i >= 0) {
+            	var c = str[i];
+               //console.log('i='+i+' c= " '+c+ ' "')
+
+               if( leftVs.includes(c) && consonantsTh.indexOf(str[i-1]) > -1){
+                	gotV = c;
+                	fromPos = i;
+                	//console.log('got '+gotV + ' at pos '+i);
+                	while(toPos === ''){
+                		--i;
+                		//if(consonantsTh.indexOf(str[i]) == -1){
+                		if(str[i-1] === viramaTh){//this one needs rethinking
+                			--i
+                			}else{
+                			toPos = i;
+                			//console.log('Going to move '+gotV+' from '+fromPos+' to '+toPos)
+                			strArray = move(strArray, fromPos, toPos);
+                			str = strArray.join('')
+                		
+                		
+                		}
+                	}
+                	toPos = ''
+                }
+ 						--i;
+             }
+        		//'โ' # sara o
+			   //'ไ' # sara ai
+         	//'เ' # sara e
+        		return str;
+        }
+        function move(arr, old_index, new_index) {
+    			while (old_index < 0) {
+        			old_index += arr.length;
+    			}
+    			while (new_index < 0) {
+        			new_index += arr.length;
+    			}
+    			if (new_index >= arr.length) {
+        			var k = new_index - arr.length;
+        			while ((k--) + 1) {
+            		arr.push(undefined);
+        			}
+    		}
+     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);  
+   return arr;
+}
+
+
+        //////////////////////////////////////////////////////////////////////
+
+        var matras = { };
+          for(var lang in barematras) {
+            if(matras[lang] === undefined) matras[lang] = {};
+            for(var i=0; i<barematras[lang].length; ++i) {
+              matras[lang][alphabets[lang][i]] = barematras[lang][i];
+            }
+          }
+
+        var unmatras = { };
+        for(var lang in matras) {
+            if(unmatras[lang] === undefined) unmatras[lang]={};
+            for(var v in matras[lang]) {
+                var m = matras[lang][v];
+                if(m!=='') {
+                    unmatras[lang][m] = v;
+                }
+            }
+        }
+
+        function fixmatras(s, lang) { //Replace क्इ            with                 कि
+				//console.log('fixmatras takes:'+s)            
+            var matra = matras[lang];
+            for(var i in matra) {
+                s = s.replace(RegExp(virama+i, "g"), matra[i]);
+            }
+            //console.log('fixmatras returns:'+s)
+            return s;
+        }
+
+        //////////////////////////////////////////////////////////////////////
+
+        //Ok, explanation: "u" is my canonical Unicode form, in which "ka" and "ki" are both stored as KA+VIRAMA+VOWEL.
+        //This is convenient as "k" is always KA+VIRAMA, etc.
+        //fixmatras() shows Devanagari, by replacing each VIRAMA+VOWEL with the matra for that vowel.
+        //unfixmatras() converts Devanagari to u, by replacing each MATRA with VIRAMA+VOWEL.
+        
+        var matrasTh = { };
+          for(var lang in barematrasTh) {
+            if(matrasTh[lang] === undefined) matrasTh[lang] = {};
+            for(var i=0; i<barematrasTh[lang].length; ++i) {
+              matrasTh[lang][alphabets[lang][i]] = barematrasTh[lang][i];
+            }
+          }
+
+        var unmatrasTh = { };
+        for(var lang in matrasTh) {
+            if(unmatrasTh[lang] === undefined) unmatrasTh[lang]={};
+            for(var v in matrasTh[lang]) {
+                var m = matrasTh[lang][v];
+                if(m!=='') {
+                    unmatrasTh[lang][m] = v;
+                }
+            }
+        }
+
+        function fixmatrasTh(s, lang) { //Replace क्इ            with                 कि
+        		//console.log('FixmatrasTh is called with s:'+s.trim()+' and lang:'+lang)
+            var matraTh = matrasTh[lang];
+            //console.log(matraTh)
+            for(var i in matraTh) {
+                s = s.replace(RegExp(viramaTh+i, "g"), matraTh[i]);
+            }
+            return s;
+        }
+
+        //////////////////////////////////////////////////////////////////////        
+
+        //TODO: Make this exhaustive without hundreds of lines of code
+        function insertbraces(s) {
+        		//console.log('insertbraces takes:'+s)
+          //Insert braces in ai, au, aii, kh, gh, etc.
+          s = s.replace(RegExp('अइ', "g"), 'अ{}इ');
+          s = s.replace(RegExp('अउ', "g"), 'अ{}उ');
+        		//console.log('insertbraces returns:'+s)          
+          return s;
+        }
+        
+        function insertbracesTh(s) {
+          //Insert braces in ai, au, aii, kh, gh, etc.
+          s = s.replace(RegExp('अइ', "g"), 'अ{}इ');
+          s = s.replace(RegExp('अउ', "g"), 'अ{}उ');
+          return s;
+        }        
+
+        function removebraces(s) {
+				var str = s.replace(RegExp("{}", "g"), "")  ;
+				//console.log("removebraces returns:"+str)      	
+          return s.replace(RegExp("{}", "g"), "");
+        }
+
+        function removebracesTh(s) {
+        		var removed = s.replace(RegExp("{}", "g"), "");
+        		//console.log('In remove braces received s:'+s.trim()+' and returning:'+removed)
+          return s.replace(RegExp("{}", "g"), "");
+        }        
+
+        var vowel = { };
+        for(var i=1; i<barematras['sk'].length; ++i) {
+          vowel[barematras['sk'][i]] = vowels[i];
+        }
+        
+        var vowelTh = { };
+        for(var i=1; i<barematrasTh['Pali'].length; ++i) {
+          vowelTh[barematrasTh['Pali'][i]] = vowelsTh[i];
+        }        
+        
+        function unfixmatras(s) { //Replace कि            with                 क्इ
+          //First, replace explicit matras with VIRAMA+VOWEL
+          for(var i in vowel) {
+            s = s.replace(RegExp(i, "g"), virama+vowel[i]);
+          }
+          //Next, replace implicit 'a' with VIRAMA+A
+          var t = '';
+          for(var i=0; i<s.length; ++i) {
+            t += s[i];
+            if(consonants.contains(s[i]) && s[i+1]!==virama) { //Even if it is undefined!
+              t += virama + implicita;
+            }
+          }
+          return t;
+        }
+        
+        function unfixmatrasTh(s) { //Replace कि            with                 क्इ
+          //First, replace explicit matras with VIRAMA+VOWEL
+				//console.log(s)          
+          for(var i in vowelTh) {
+            s = s.replace(RegExp(i, "g"), viramaTh+vowelTh[i]);
+          }
+          //Next, replace implicit 'a' with VIRAMA+A
+          var t = '';
+          for(var i=0; i<s.length; ++i) {
+            t += s[i];
+            if(consonantsTh.contains(s[i]) && s[i+1]!==viramaTh) { //Even if it is undefined!
+              t += viramaTh + implicitaTh;
+            }
+          }
+          	//console.log(t)
+          return t;
+        }        
+
+        var ret = {
+            devanagari2u: function(s)  {
+                return insertbraces(unfixmatras(s, 'sk'));
+            },
+            u2devanagari: function(s) {
+            	//console.log('u2devanagari called with s:'+s)
+            	var str = removebraces(fixmatras(s, 'sk'));;
+            	//console.log("u2devanagari returns:"+str)
+                return str;
+            },
+            u2Pali: function(s) {
+            	var str = removebracesTh(fixmatrasTh(s, 'Pali'));;
+            	//console.log("function u2Pali returns:"+str)
+                return str;
+            },            
+            u2html: function(s) {
+            	//console.log('responding to call inside u2html with s:'+s)
+                s = this.u2devanagari(s);
+                var t='';
+                for(var i=0;i<s.length;++i) {
+                    if(s.charCodeAt(i)>=128) t+='&#' + s.charCodeAt(i) + ';';
+                    else t+=s[i];
+                }
+                return t;
+            },
+            html2u: function(s) {
+					//console.log('call inside html2u with s;'+s)
+                var t = '';
+                for(var i=0;i<s.length;++i) {
+                    if(s[i]=='&' && s[i+1]=='#') {
+                        for(var j=i;s.charAt(j)!=';';++j)
+                            ;
+                        var n = s.substring(i+2,j) * 1;
+                        t += String.fromCharCode(n);
+                        i = j;
+                    } else {
+                        t += s[i];
+                    }
+                }
+                return this.devanagari2u(t);
+            }
+        };
+        
+        var retTh = {
+            devanagari2uTh: function(s)  {
+                return insertbracesTh(unfixmatrasTh(s, 'sk'));
+            },
+            u2devanagariTh: function(s) {
+            	//console.log('u2devanagariTh is called with s:'+s.trim())
+            	//console.log('About to call removebraces with result of fixmatras')
+            	var fix = fixmatrasTh(s, 'Pali');
+            	//console.log('fixmatrasTh was called with s:'+s.trim()+' and "Pali" and returned fix:'+fix)
+            	var removed = removebracesTh(fix)
+            	//console.log('removebracesTh was called with s:'+s.trim()+' and returned:'+removed)
+                return removed;
+            },
+            u2htmlTh: function(s) {
+                s = this.u2devanagariTh(s);
+                var t='';
+                for(var i=0;i<s.length;++i) {
+                    if(s.charCodeAt(i)>=128) t+='&#' + s.charCodeAt(i) + ';';
+                    else t+=s[i];
+                }
+                return t;
+            },
+            html2uTh: function(s) {
+                var t = '';
+                for(var i=0;i<s.length;++i) {
+                    if(s[i]=='&' && s[i+1]=='#') {
+                        for(var j=i;s.charAt(j)!=';';++j)
+                            ;
+                        var n = s.substring(i+2,j) * 1;
+                        t += String.fromCharCode(n);
+                        i = j;
+                    } else {
+                        t += s[i];
+                    }
+                }
+                return this.devanagari2uTh(t);
+            }
+        };       
+
+        //for(var f in {itrans:'', harvardkyoto:'', velthuis:'', IAST:'', iast:'', BALARAM:'', balaram:'', ipa:'', slp:''}) {
+        for(var f in {IAST:'', iast:'', BALARAM:'', balaram:'', Pali:''}) {
+        		//console.log("Processing f:"+f)
+        	
+          var g = function () { //Need to do it inside a function, because of the broken "closure" model
+            var t = maketrie(to_sk(alphabets[f]));
+            //console.log(t)
+            var u = maketrie(from_sk(alphabets[f]));
+            //console.log('js did make a trie with f:'+f)
+        		//var strie = JSON.stringify(u);
+				//var strie = JSON.stringify(u, null, 4); // (Optional) beautiful indented output.
+				//console.log(strie); // Logs output to dev tools console.
+            ret[f+"2u"] = function(s) {
+					//console.log("called ret f2u with f:"+f+' and s:'+s)  
+/*					console.log("called ret f2u with f:"+f+' s:'+s+' and t:',t)
+					var retConv = convert(s, t); 
+					console.log('ret converts to '+ retConv)           	
+            	return retConv;*/					           	
+            	return convert(s, t);
+            	}
+            ret["u2"+f] = function(s) {
+            	//console.log("called ret u2"+f+', s:'+s+' and u=from_sk with:'+alphabets[f])
+            	//console.log("Trying to identify Pali:"+alphabets[f][0])  
+           	
+            	var str = convert(s, u)
+					if (u["अ"] && Object.values(u["अ"]).indexOf('อ') > -1) {
+   					//console.log('In ret function u has อ');
+
+            		var tTh = maketrie(to_th(alphabets[f]));
+            		//console.log('tTh:',tTh)   					
+   					
+   					var PaliStr = retTh['u2devanagariTh'](str);
+						//console.log('Devangari originalStr:', s) 
+						//console.log('Pali originalStr:', str)   					
+   					//console.log('PaliStr:',PaliStr)
+   					PaliStr = fixThaiVowels(PaliStr);
+				      //'โ' # sara o
+			         //'ไ' # sara ai
+         			//'เ' # sara e
+   					return PaliStr;
+						}             	
+            	//console.log('Function ret[u2'+f+'] returns:'+str+' for s:'+s+' and u:'+u)
+            	//var strie = JSON.stringify(u);
+					//var strie = JSON.stringify(u, null, 4); // (Optional) beautiful indented output.
+					//console.log(strie); // Logs output to dev tools console.
+            	return str;
+            	}
+            retTh[f+"2uTh"] = function(s) {
+            	//console.log("called retTh f2uTh with f:"+f+' and s:'+s) 
+            	return convert(s, t); }
+            retTh["u2"+f] = function(s) { return convert(s, u); }            
+            
+          }();
+        }
+
+        
+
+/*        console.log('matras -- ');
+        console.log(matras['sk']);
+        console.log('unmatras-- ');
+        console.log(unmatras['sk']);*/
+        //console.log('Returning ret:'+ret)
+        return ret;
+    }();
+}

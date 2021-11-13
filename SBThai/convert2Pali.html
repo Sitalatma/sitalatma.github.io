@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="" />
+
+   <title>IAST to Sanskrit-Pali converter</title>
+
+    	<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
+    	<link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
+    <style>
+     i {font-family: 'Taviraj', serif;font-size:1.1em;}
+    </style>
+</head>
+<body class="has-floating-menu template-chapter-advanced use-serif justify-text">
+
+    <div class="container first-container">
+        
+        
+    <div class="row" id="content">
+        <div class="col-12">
+            <div id="bb" class="">
+                <h1>Convert from <a href="https://vedabase.io/en/library/" target="_blank">Vedabase.io</a> to Thai Pali-Sanskrit</h1>
+            </div>
+  
+
+<div class="entryareaNew">
+
+	<div class="col-12"  title="devanagari"><p style="margin-top:2em;font-style: italic; font-size: 1.2em">Copy-paste from Vedabase</p>
+	<textarea class="form-control" style="font-family: Noto Serif, serif; font-size:1.1em; font-style: italic;" spellcheck="false" id="iast" rows="5" cols="80"></textarea>
+	</div>
+	
+	
+	<div class="col-12" title="iast" style="display:none"><p style="margin-top:2em;font-style: italic; font-size: 1.2em;">Devanagari</p>
+	<textarea class="form-control" style="font-family: Taviraj, serif; font-size:1.2em; font-style: italic;" spellcheck="false" id="devanagari" rows="5" cols="80"></textarea>
+	</div>
+	
+	
+	<div class="col-12"  title="balaram"><p style="margin-top:2em;font-style: italic; font-size: 1.2em">Copy paste from Folio (Balaram fonts)</p>
+	<textarea class="form-control" style="font-size:1.2em;" spellcheck="false" id="balaram" rows="5" cols="80"></textarea>
+	</div>
+
+	
+	<div class="col-12"  title="Pali"><p style="margin-top:2em;font-style: italic; font-size: 1.2em">Pali-Sanskrit:</p>
+<!--		<p style="font-family: Taviraj, serif;font-style: italic; font-size: 1.2em">โอํ นโม ภควเต วาสุเทวาย<br>
+</p> -->
+	<textarea class="form-control" style="font-family: Taviraj, serif; font-size:1.2em; font-style: italic;" spellcheck="false" id="Pali" rows="5" cols="80"></textarea>
+	</div>
+
+</div>
+ 
+ 
+
+<script type="text/javascript" charset=UTF-8 src="js/json2.js"></script>
+<script type="text/javascript" charset=UTF-8 src="js/convert-data-sa.js"></script>
+<script type="text/javascript" charset=UTF-8 src="js/convert-in.js"></script>
+<script>
+var ta = [];
+var taNew = [];
+
+var strD;
+
+function makeentryarea() {
+
+  var tapossNew = document.getElementsByClassName("entryareaNew")[0].getElementsByTagName("div");
+
+  for(var i=0; i<tapossNew.length; ++i) {
+
+    taNew.push(tapossNew[i]);
+
+  }
+
+
+}
+makeentryarea();
+
+function fixall(tarea) {
+		//console.log('tarea.id:'+tarea.id)
+    var u = INtranslit[tarea.id+"2u"](tarea.value);// This one converts from input area, ie from iast, to "unicode Devanagari" 
+    //document.writeln(tarea.value + "becomes " + u);
+    //console.log('tarea.id:'+tarea.id+' u:'+u)
+    for(var i=0; i<taNew.length; ++i) {
+      var t = taNew[i].getAttribute("title");
+      //console.log('t:'+t)
+      if(t != tarea.id) {
+			//console.log("u2"+t+' u:'+u)
+			//console.log('tarea.id:'+tarea.id+' intrans:'+INtranslit["u2"+t])			
+			//console.log(INtranslit["u2"+t](sk))
+			//console.log(INtranslit["u2"+t](u))
+        	//var str = JSON.stringify(table);
+			//var str = JSON.stringify(INtranslit["u2"+t](u), null, 4); // (Optional) beautiful indented output.
+			//console.log(str); // Logs output to dev tools console.			
+
+			if( t === 'devanagari'){			
+				//console.log("Calling intranslit with [u2"+t+"]("+u.trim()+")")
+				}
+			//if( t === 'Pali'){			
+				//console.log("Main calling intranslit with [u2"+t+"]("+u.trim()+")")
+				//}				
+			strD = INtranslit["u2"+t](u);
+
+			if( t === 'devanagari'){
+				//console.log('Got devanagari str:'+str)
+				}
+			//console.log('Writing out into id="'+t+'" for u='+u+' : '+str);
+        	document.getElementById(t).value = strD;
+        
+      }
+    }
+  }
+
+function prepareTareas() {
+
+    var areas = document.getElementsByTagName('textarea');
+
+    for(var i=0; i<areas.length; ++i) {
+    		//console.log(areas[i]);
+        if(areas[i].id !== 'Pali') areas[i].onkeyup=function() { return fixall(this); }
+    }
+}
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+
+addLoadEvent(prepareTareas);
+</script>
+
+    </div>
+
+
+    </div>
+
+    </div>
+</body>
+</html>

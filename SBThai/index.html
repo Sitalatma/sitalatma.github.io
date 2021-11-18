@@ -12,14 +12,47 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
-     i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .pali {color:#990012;font-family: 'Taviraj', serif;font-size:1.1em;}
+    .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
+     #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
+     </style>
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
 <div class="container first-container">
 
 
+
+<script>
+function toggleVisibility(cl){
+    console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>
+
+            <div id="toggler">
+
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
+            <label for="paliBox"> Pali</label><br>
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
+            <label for="thaiBox"> Thai</label><br>
+
+            </div>
         <div class="row" id="content" tabindex="-1">
             <div class="col-12">
                 <div id="bb8915" class="mb-3 bb r r-title r-book">

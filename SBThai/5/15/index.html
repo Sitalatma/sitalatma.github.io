@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -144,7 +185,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb37982" class="r r-lang-en r-paragraph" ><p>Those who are Āryans strictly follow the Vedic principles, but in this Age of Kali a community has sprung up known as the Arya Samaj, who members are ignorant of the import of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> in the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system. They decry all bona fide <i>ācāryas - <span class="pali" style="color:#990012">อาจารฺยสฺ</span><span class="thai" style="color:#004d00"> - อาจารยัส</span></i> and pose themselves as the real followers of the Vedic principles, but in fact such non-Āryans do not follow the Vedic principles. Another group of non-Āryans are the Jains, who are referred to in the present verse. Not only do they not follow the Vedic principles, but they have no relationship with Lord Buddha, though they claim to. Imitating the behavior of Sumati, they also claim to be descendants of Ṛṣabhadeva. Those who are Vaiṣṇavas carefully avoid their company because they are ignorant of the path of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span>. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i> In <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (15.15) Kṛṣṇa says, <i>vedaiś ca sarvair aham eva vedyaḥ: - <span class="pali" style="color:#990012">เวไทศฺ จ สไรฺวรฺ อหมฺ เอว เวทฺยห์:</span><span class="thai" style="color:#004d00"> - เวไทศ จะ สัรไวร อะหัม เอวะ เวทยะห์:</span></i> “The real purpose of the <i>Vedas</i> is to understand Me.” This is the injunction of all Vedic literatures. One who does not know the greatness of Lord Kṛṣṇa cannot be accepted as an Āryan. Lord Buddha, an incarnation of Lord Kṛṣṇa, adopted a particular means to propagate the philosophy of <i>bhāgavata-dharma. - <span class="pali" style="color:#990012">ภาควต-ธรฺมฯ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-ธัรมะฯ</span></i> He preached almost exclusively among atheists. Atheists do not want any God, and Lord Buddha therefore said that there is no God, but he adopted the means to instruct his followers for their benefit. Therefore he preached in a duplicitous way, saying that there is no God. Nonetheless, he himself was an incarnation of God.</p></div>
+        <div id="bb37982" class="r r-lang-en r-paragraph" ><p>Those who are Āryans strictly follow the Vedic principles, but in this Age of Kali a community has sprung up known as the Arya Samaj, who members are ignorant of the import of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> in the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system. They decry all bona fide <i>ācāryas - <span class="pali" style="color:#990012">อาจารฺยสฺ</span><span class="thai" style="color:#004d00"> - อาจารยัส</span></i> and pose themselves as the real followers of the Vedic principles, but in fact such non-Āryans do not follow the Vedic principles. Another group of non-Āryans are the Jains, who are referred to in the present verse. Not only do they not follow the Vedic principles, but they have no relationship with Lord Buddha, though they claim to. Imitating the behavior of Sumati, they also claim to be descendants of Ṛṣabhadeva. Those who are Vaiṣṇavas carefully avoid their company because they are ignorant of the path of the <i>Vedas. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i> In <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (15.15) Kṛṣṇa says, <i>vedaiś ca sarvair aham eva vedyaḥ: - <span class="pali" style="color:#990012">เวไทศฺ จ สไรฺวรฺ อหมฺ เอว เวทฺยห์:</span><span class="thai" style="color:#004d00"> - เวไทศ จะ สัรไวร อะหัม เอวะ เวทยะห์:</span></i> “The real purpose of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> is to understand Me.” This is the injunction of all Vedic literatures. One who does not know the greatness of Lord Kṛṣṇa cannot be accepted as an Āryan. Lord Buddha, an incarnation of Lord Kṛṣṇa, adopted a particular means to propagate the philosophy of <i>bhāgavata-dharma. - <span class="pali" style="color:#990012">ภาควต-ธรฺมฯ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-ธัรมะฯ</span></i> He preached almost exclusively among atheists. Atheists do not want any God, and Lord Buddha therefore said that there is no God, but he adopted the means to instruct his followers for their benefit. Therefore he preached in a duplicitous way, saying that there is no God. Nonetheless, he himself was an incarnation of God.</p></div>
     
 </div>
 
@@ -744,7 +785,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb38028" class="r r-lang-en r-paragraph" ><p>As a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> or emperor, Mahārāja Gaya sometimes had to fight with subordinate kings to maintain his government, but the subordinate kings were not dissatisfied with him because they knew that he fought for religious principles. Consequently they accepted their subordination and offered all kinds of gifts to him. Similarly, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> who performed Vedic rituals were so satisfied with the King that they very readily agreed to part with a sixth of their pious activities for his benefit in the next life. Thus the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> and <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span>s - <span class="pali" style="color:#990012">กฺษตฺริยสฺ</span><span class="thai" style="color:#004d00"> - กษัตริยัส</span></i> were all satisfied with Mahārāja Gaya because of his proper administration. In other words, Mahārāja Gaya satisfied the <i>kṣatriya</i> kings by his fighting and satisfied the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> by his charities. The <i>vaiśyas - <span class="pali" style="color:#990012">ไวศฺยสฺ</span><span class="thai" style="color:#004d00"> - ไวศยัส</span></i> were also encouraged by kind words and affectionate dealings, and due to Mahārāja Gaya’s constant sacrifices, the <i>śūdras - <span class="pali" style="color:#990012">ศูทฺรสฺ</span><span class="thai" style="color:#004d00"> - ศูทรัส</span></i> were satisfied by sumptuous food and charity. In this way Mahārāja Gaya kept all the citizens very satisfied. When <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> and saintly persons are honored, they part with their pious activities, giving them to those who honor them and render them service. Therefore, as stated in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (4.34), <i>tad viddhi praṇipātena paripraśnena sevayā: - <span class="pali" style="color:#990012">ตทฺ วิทฺธิ ปฺรณิปาเตน ปริปฺรศฺเนน เสวยา:</span><span class="thai" style="color:#004d00"> - ตัท วิทธิ ประณิปาเตนะ ปะริปรัศเนนะ เสวะยา:</span></i> one should try to approach a spiritual master submissively and render service unto him.</p></div>
+        <div id="bb38028" class="r r-lang-en r-paragraph" ><p>As a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> or emperor, Mahārāja Gaya sometimes had to fight with subordinate kings to maintain his government, but the subordinate kings were not dissatisfied with him because they knew that he fought for religious principles. Consequently they accepted their subordination and offered all kinds of gifts to him. Similarly, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> who performed Vedic rituals were so satisfied with the King that they very readily agreed to part with a sixth of their pious activities for his benefit in the next life. Thus the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> and <i>kṣatriyas - <span class="pali" style="color:#990012">กฺษตฺริยสฺ</span><span class="thai" style="color:#004d00"> - กษัตริยัส</span></i> were all satisfied with Mahārāja Gaya because of his proper administration. In other words, Mahārāja Gaya satisfied the <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> kings by his fighting and satisfied the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> by his charities. The <i>vaiśyas - <span class="pali" style="color:#990012">ไวศฺยสฺ</span><span class="thai" style="color:#004d00"> - ไวศยัส</span></i> were also encouraged by kind words and affectionate dealings, and due to Mahārāja Gaya’s constant sacrifices, the <i>śūdras - <span class="pali" style="color:#990012">ศูทฺรสฺ</span><span class="thai" style="color:#004d00"> - ศูทรัส</span></i> were satisfied by sumptuous food and charity. In this way Mahārāja Gaya kept all the citizens very satisfied. When <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> and saintly persons are honored, they part with their pious activities, giving them to those who honor them and render them service. Therefore, as stated in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (4.34), <i>tad viddhi praṇipātena paripraśnena sevayā: - <span class="pali" style="color:#990012">ตทฺ วิทฺธิ ปฺรณิปาเตน ปริปฺรศฺเนน เสวยา:</span><span class="thai" style="color:#004d00"> - ตัท วิทธิ ประณิปาเตนะ ปะริปรัศเนนะ เสวะยา:</span></i> one should try to approach a spiritual master submissively and render service unto him.</p></div>
     
 </div>
 

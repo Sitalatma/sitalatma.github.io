@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -2387,7 +2428,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb49666" class="r r-lang-en r-paragraph" ><p>This is the characteristic of a Vaiṣṇava. <i>Para-duḥkha-duḥkhī: - <span class="pali" style="color:#990012">ปร-ทุห์ข-ทุห์ขี:</span><span class="thai" style="color:#004d00"> - ปะระ-ทุห์ขะ-ทุห์ขี:</span></i> a Vaiṣṇava is always unhappy to see the conditioned souls unhappy. Otherwise, he would have no business teaching them how to become happy. In materialistic life, people must certainly engage in activities of animosity. Materialistic life is therefore compared to <i>saṁsāra-dāvānala, - <span class="pali" style="color:#990012">สํสาร-ทาวานล,</span><span class="thai" style="color:#004d00"> - สังสาระ-ทาวานะละ,</span></i> a blazing forest fire that automatically takes place. Lord Śiva and his followers in the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system try to save people from this dangerous condition of materialistic life. This is the duty of devotees following the principles of Lord Śiva and belonging to the Rudra <i>sampradāya - <span class="pali" style="color:#990012">สมฺปฺรทาย</span><span class="thai" style="color:#004d00"> - สัมประทายะ</span>. - <span class="pali" style="color:#990012">สมฺปฺรทายฯ</span><span class="thai" style="color:#004d00"> - สัมประทายะฯ</span></i> There are four Vaiṣṇava <i>sampradāyas, - <span class="pali" style="color:#990012">สมฺปฺรทายสฺ,</span><span class="thai" style="color:#004d00"> - สัมประทายัส,</span></i> and the Rudra <i>sampradāya</i> is one of them because Lord Śiva (Rudra) is the best of the Vaiṣṇavas (<i>vaiṣṇavānāṁ yathā śambhuḥ - <span class="pali" style="color:#990012">ไวษฺณวานำ ยถา ศมฺภุห์</span><span class="thai" style="color:#004d00"> - ไวษณะวานาง ยะถา ศัมภุห์</span></i>). Indeed, as we shall see, Lord Śiva drank all the poison for the benefit of humanity.</p></div>
+        <div id="bb49666" class="r r-lang-en r-paragraph" ><p>This is the characteristic of a Vaiṣṇava. <i>Para-duḥkha-duḥkhī: - <span class="pali" style="color:#990012">ปร-ทุห์ข-ทุห์ขี:</span><span class="thai" style="color:#004d00"> - ปะระ-ทุห์ขะ-ทุห์ขี:</span></i> a Vaiṣṇava is always unhappy to see the conditioned souls unhappy. Otherwise, he would have no business teaching them how to become happy. In materialistic life, people must certainly engage in activities of animosity. Materialistic life is therefore compared to <i>saṁsāra-dāvānala, - <span class="pali" style="color:#990012">สํสาร-ทาวานล,</span><span class="thai" style="color:#004d00"> - สังสาระ-ทาวานะละ,</span></i> a blazing forest fire that automatically takes place. Lord Śiva and his followers in the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system try to save people from this dangerous condition of materialistic life. This is the duty of devotees following the principles of Lord Śiva and belonging to the Rudra <i>sampradāya. - <span class="pali" style="color:#990012">สมฺปฺรทายฯ</span><span class="thai" style="color:#004d00"> - สัมประทายะฯ</span></i> There are four Vaiṣṇava <i>sampradāyas, - <span class="pali" style="color:#990012">สมฺปฺรทายสฺ,</span><span class="thai" style="color:#004d00"> - สัมประทายัส,</span></i> and the Rudra <i>sampradāya - <span class="pali" style="color:#990012">สมฺปฺรทาย</span><span class="thai" style="color:#004d00"> - สัมประทายะ</span></i> is one of them because Lord Śiva (Rudra) is the best of the Vaiṣṇavas (<i>vaiṣṇavānāṁ yathā śambhuḥ - <span class="pali" style="color:#990012">ไวษฺณวานำ ยถา ศมฺภุห์</span><span class="thai" style="color:#004d00"> - ไวษณะวานาง ยะถา ศัมภุห์</span></i>). Indeed, as we shall see, Lord Śiva drank all the poison for the benefit of humanity.</p></div>
     
 </div>
 
@@ -2677,7 +2718,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb49688" class="r r-lang-en r-paragraph" ><p>Here is an explanation of how those engaged in activities for the welfare of others are very quickly recognized by the Supreme Personality of Godhead. The Lord says in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.68-69), <i>ya idaṁ paramaṁ guhyaṁ mad-bhakteṣv abhidhāsyati … na ca tasmān manuṣyeṣu kaścin me priya-kṛttamaḥ: - <span class="pali" style="color:#990012">ย อิทํ ปรมํ คุหฺยํ มทฺ-ภกฺเตษฺวฺ อภิธาสฺยติ … น จ ตสฺมานฺ มนุเษฺยษุ กศฺจินฺ เม ปฺริย-กฺฤตฺตมห์:</span><span class="thai" style="color:#004d00"> - ยะ อิทัง ปะระมัง คุหยัง มัท-ภักเตษว อะภิธาสยะติ … นะ จะ ตัสมาน มะนุษเยษุ กัศจิน เม ปริยะ-กฤตตะมะห์:</span></i> “One who preaches the message of <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> to My devotees is most dear to Me. No one can excel him in satisfying Me by worship.” There are different kinds of welfare activities in this material world, but the supreme welfare activity is the spreading of Kṛṣṇa consciousness. Other welfare activities cannot be effective, for the laws of nature and the results of <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i> cannot be checked. It is by destiny, or the laws of <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span>, - <span class="pali" style="color:#990012">กรฺม,</span><span class="thai" style="color:#004d00"> - กัรมะ,</span></i> that one must suffer or enjoy. For instance, if one is given a court order, he must accept it, whether it brings suffering or profit. Similarly, everyone is under obligations to <i>karma</i> and it reactions. No one can change this. Therefore the <i>śāstra - <span class="pali" style="color:#990012">ศาสฺตฺร</span><span class="thai" style="color:#004d00"> - ศาสตระ</span></i> says:</p></div>
+        <div id="bb49688" class="r r-lang-en r-paragraph" ><p>Here is an explanation of how those engaged in activities for the welfare of others are very quickly recognized by the Supreme Personality of Godhead. The Lord says in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.68-69), <i>ya idaṁ paramaṁ guhyaṁ mad-bhakteṣv abhidhāsyati … na ca tasmān manuṣyeṣu kaścin me priya-kṛttamaḥ: - <span class="pali" style="color:#990012">ย อิทํ ปรมํ คุหฺยํ มทฺ-ภกฺเตษฺวฺ อภิธาสฺยติ … น จ ตสฺมานฺ มนุเษฺยษุ กศฺจินฺ เม ปฺริย-กฺฤตฺตมห์:</span><span class="thai" style="color:#004d00"> - ยะ อิทัง ปะระมัง คุหยัง มัท-ภักเตษว อะภิธาสยะติ … นะ จะ ตัสมาน มะนุษเยษุ กัศจิน เม ปริยะ-กฤตตะมะห์:</span></i> “One who preaches the message of <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> to My devotees is most dear to Me. No one can excel him in satisfying Me by worship.” There are different kinds of welfare activities in this material world, but the supreme welfare activity is the spreading of Kṛṣṇa consciousness. Other welfare activities cannot be effective, for the laws of nature and the results of <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i> cannot be checked. It is by destiny, or the laws of <i>karma, - <span class="pali" style="color:#990012">กรฺม,</span><span class="thai" style="color:#004d00"> - กัรมะ,</span></i> that one must suffer or enjoy. For instance, if one is given a court order, he must accept it, whether it brings suffering or profit. Similarly, everyone is under obligations to <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i> and it reactions. No one can change this. Therefore the <i>śāstra - <span class="pali" style="color:#990012">ศาสฺตฺร</span><span class="thai" style="color:#004d00"> - ศาสตระ</span></i> says:</p></div>
     
         <div id="bb49689" class="r r-lang-en r-verse-text" ><em><i>tasyaiva hetoḥ prayateta kovido<br />na labhyate yad bhramatām upary adhaḥ</i></em></div>
 <div class="r r-lang-en r-verse-text" >

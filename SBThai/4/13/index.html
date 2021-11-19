@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -264,7 +305,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30475" class="r r-lang-en r-paragraph" ><p>There are two different ways of approaching the Supreme Lord. One is called <i>bhāgavata-mārga, - <span class="pali" style="color:#990012">ภาควต-มารฺค,</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-มารคะ,</span></i> or the way of <i>Śrīmad-Bhāgavatam, - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม,</span></i> and the other is called <i>pāñcarātrika - <span class="pali" style="color:#990012">ปาญฺจราตฺริก</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ</span>-vidhi. - <span class="pali" style="color:#990012">ปาญฺจราตฺริก-วิธิฯ</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ-วิธิฯ</span></i> <i>Pāñcarātrika-vidhi - <span class="pali" style="color:#990012">ปาญฺจราตฺริก-วิธิ</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ-วิธิ</span></i> is the method of temple worship, and <i>bhāgavata-vidhi - <span class="pali" style="color:#990012">ภาควต-วิธิ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-วิธิ</span></i> is the system of nine processes which begin with hearing and chanting. The Kṛṣṇa conscious movement accepts both processes simultaneously and thus enables one to make steady progress on the path of realization of the Supreme Personality of Godhead. This <i>pāñcarātrika</i> procedure was first introduced by the great sage Nārada, as referred to here by Vidura.</p></div>
+        <div id="bb30475" class="r r-lang-en r-paragraph" ><p>There are two different ways of approaching the Supreme Lord. One is called <i>bhāgavata-mārga, - <span class="pali" style="color:#990012">ภาควต-มารฺค,</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-มารคะ,</span></i> or the way of <i>Śrīmad-Bhāgavatam, - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม,</span></i> and the other is called <i>pāñcarātrika-vidhi. - <span class="pali" style="color:#990012">ปาญฺจราตฺริก-วิธิฯ</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ-วิธิฯ</span></i> <i>Pāñcarātrika-vidhi - <span class="pali" style="color:#990012">ปาญฺจราตฺริก-วิธิ</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ-วิธิ</span></i> is the method of temple worship, and <i>bhāgavata-vidhi - <span class="pali" style="color:#990012">ภาควต-วิธิ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-วิธิ</span></i> is the system of nine processes which begin with hearing and chanting. The Kṛṣṇa conscious movement accepts both processes simultaneously and thus enables one to make steady progress on the path of realization of the Supreme Personality of Godhead. This <i>pāñcarātrika - <span class="pali" style="color:#990012">ปาญฺจราตฺริก</span><span class="thai" style="color:#004d00"> - ปาญจะราตริกะ</span></i> procedure was first introduced by the great sage Nārada, as referred to here by Vidura.</p></div>
     
 </div>
 
@@ -328,7 +369,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30480" class="r r-lang-en r-paragraph" ><p>Nārada Muni is always glorifying the pastimes of the Lord. In this verse we see that not only does he glorify the Lord, but he also likes to glorify the devotees of the Lord. The great sage Nārada’s mission is to broadcast the devotional service of the Lord. For this purpose he has compiled the <i>Nārada-pañcarātra - <span class="pali" style="color:#990012">นารท-ปญฺจราตฺร</span><span class="thai" style="color:#004d00"> - นาระทะ-ปัญจะราตระ</span>, - <span class="pali" style="color:#990012">นารท-ปญฺจราตฺร,</span><span class="thai" style="color:#004d00"> - นาระทะ-ปัญจะราตระ,</span></i> a directory of devotional service, so that devotees can always take information about how to execute devotional service and thus engage twenty-four hours a day in performing sacrifices for the pleasure of the Supreme Personality of Godhead. As stated in the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span>, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> the Lord has created four orders of social life, namely <i>brāhmaṇa, kṣatriya, vaiśya - <span class="pali" style="color:#990012">พฺราหฺมณ, กฺษตฺริย, ไวศฺย</span><span class="thai" style="color:#004d00"> - พราหมะณะ, กษัตริยะ, ไวศยะ</span></i> and <i>śūdra. - <span class="pali" style="color:#990012">ศูทฺรฯ</span><span class="thai" style="color:#004d00"> - ศูทระฯ</span></i> In the <i>Nārada-pañcarātra</i> it is very clearly described how each of the social orders can please the Supreme Lord. In the <i>Bhagavad-gītā</i> (18.45) it is stated, <i>sve sve karmaṇy abhirataḥ saṁsiddhiṁ labhate naraḥ: - <span class="pali" style="color:#990012">เสฺว เสฺว กรฺมณฺยฺ อภิรตห์ สํสิทฺธึ ลภเต นรห์:</span><span class="thai" style="color:#004d00"> - สเว สเว กัรมัณย อะภิระตะห์ สังสิทธิง ละภะเต นะระห์:</span></i> by executing one’s prescribed duties one can please the Supreme Lord. In the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> (1.2.13) also it is stated, <i>svanuṣṭhitasya dharmasya saṁsiddhir hari-toṣaṇam: - <span class="pali" style="color:#990012">สฺวนุษฺฐิตสฺย ธรฺมสฺย สํสิทฺธิรฺ หริ-โตษณมฺ:</span><span class="thai" style="color:#004d00"> - สวะนุษฐิตัสยะ ธัรมัสยะ สังสิทธิร หะริ-โตษะณัม:</span></i> the perfection of duty is to see that by discharging one’s specific duties one satisfies the Supreme Personality of Godhead. When the Pracetās were performing sacrifices according to this direction, Nārada Muni was satisfied to see these activities, and he also wanted to glorify Dhruva Mahārāja in that sacrificial arena.</p></div>
+        <div id="bb30480" class="r r-lang-en r-paragraph" ><p>Nārada Muni is always glorifying the pastimes of the Lord. In this verse we see that not only does he glorify the Lord, but he also likes to glorify the devotees of the Lord. The great sage Nārada’s mission is to broadcast the devotional service of the Lord. For this purpose he has compiled the <i>Nārada-pañcarātra, - <span class="pali" style="color:#990012">นารท-ปญฺจราตฺร,</span><span class="thai" style="color:#004d00"> - นาระทะ-ปัญจะราตระ,</span></i> a directory of devotional service, so that devotees can always take information about how to execute devotional service and thus engage twenty-four hours a day in performing sacrifices for the pleasure of the Supreme Personality of Godhead. As stated in the <i>Bhagavad-gītā, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> the Lord has created four orders of social life, namely <i>brāhmaṇa, kṣatriya, vaiśya - <span class="pali" style="color:#990012">พฺราหฺมณ, กฺษตฺริย, ไวศฺย</span><span class="thai" style="color:#004d00"> - พราหมะณะ, กษัตริยะ, ไวศยะ</span></i> and <i>śūdra. - <span class="pali" style="color:#990012">ศูทฺรฯ</span><span class="thai" style="color:#004d00"> - ศูทระฯ</span></i> In the <i>Nārada-pañcarātra - <span class="pali" style="color:#990012">นารท-ปญฺจราตฺร</span><span class="thai" style="color:#004d00"> - นาระทะ-ปัญจะราตระ</span></i> it is very clearly described how each of the social orders can please the Supreme Lord. In the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.45) it is stated, <i>sve sve karmaṇy abhirataḥ saṁsiddhiṁ labhate naraḥ: - <span class="pali" style="color:#990012">เสฺว เสฺว กรฺมณฺยฺ อภิรตห์ สํสิทฺธึ ลภเต นรห์:</span><span class="thai" style="color:#004d00"> - สเว สเว กัรมัณย อะภิระตะห์ สังสิทธิง ละภะเต นะระห์:</span></i> by executing one’s prescribed duties one can please the Supreme Lord. In the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> (1.2.13) also it is stated, <i>svanuṣṭhitasya dharmasya saṁsiddhir hari-toṣaṇam: - <span class="pali" style="color:#990012">สฺวนุษฺฐิตสฺย ธรฺมสฺย สํสิทฺธิรฺ หริ-โตษณมฺ:</span><span class="thai" style="color:#004d00"> - สวะนุษฐิตัสยะ ธัรมัสยะ สังสิทธิร หะริ-โตษะณัม:</span></i> the perfection of duty is to see that by discharging one’s specific duties one satisfies the Supreme Personality of Godhead. When the Pracetās were performing sacrifices according to this direction, Nārada Muni was satisfied to see these activities, and he also wanted to glorify Dhruva Mahārāja in that sacrificial arena.</p></div>
     
 </div>
 
@@ -510,7 +551,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30494" class="r r-lang-en r-paragraph" ><p>The symptoms and characteristics of Utkala, the son of Mahārāja Dhruva, are those of a <i>mahā-bhāgavata - <span class="pali" style="color:#990012">มหา-ภาควต</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะ</span>. - <span class="pali" style="color:#990012">มหา-ภาควตฯ</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะฯ</span></i> As stated in the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (6.30), <i>yo māṁ paśyati sarvatra sarvaṁ ca mayi paśyati: - <span class="pali" style="color:#990012">โย มำ ปศฺยติ สรฺวตฺร สรฺวํ จ มยิ ปศฺยติ:</span><span class="thai" style="color:#004d00"> - โย มาง ปัศยะติ สัรวัตระ สัรวัง จะ มะยิ ปัศยะติ:</span></i> a highly advanced devotee sees the Supreme Personality of Godhead everywhere, and he also sees everything resting in the Supreme. It is also confirmed in the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (9.4), <i>mayā tatam idaṁ sarvaṁ jagad avyakta-mūrtinā: - <span class="pali" style="color:#990012">มยา ตตมฺ อิทํ สรฺวํ ชคทฺ อวฺยกฺต-มูรฺตินา:</span><span class="thai" style="color:#004d00"> - มะยา ตะตัม อิทัง สัรวัง ชะคัท อัวยักตะ-มูรตินา:</span></i> Lord Kṛṣṇa is spread all over the universe in His impersonal feature. Everything is resting on Him, but that does not mean that everything is He Himself. A highly advanced <i>mahā-bhāgavata</i> devotee sees in this spirit: he sees the same Supersoul, Paramātmā, existing within everyone’s heart, regardless of discrimination based on the different material forms of the living entities. He sees everyone as part and parcel of the Supreme Personality of Godhead. The <i>mahā-bhāgavata, - <span class="pali" style="color:#990012">มหา-ภาควต,</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะ,</span></i> who experiences the Supreme Godhead’s presence everywhere, is never missing from the sight of the Supreme Lord, nor is the Supreme Lord ever lost from his sight. This is possible only when one is advanced in love of Godhead.</p></div>
+        <div id="bb30494" class="r r-lang-en r-paragraph" ><p>The symptoms and characteristics of Utkala, the son of Mahārāja Dhruva, are those of a <i>mahā-bhāgavata. - <span class="pali" style="color:#990012">มหา-ภาควตฯ</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะฯ</span></i> As stated in the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (6.30), <i>yo māṁ paśyati sarvatra sarvaṁ ca mayi paśyati: - <span class="pali" style="color:#990012">โย มำ ปศฺยติ สรฺวตฺร สรฺวํ จ มยิ ปศฺยติ:</span><span class="thai" style="color:#004d00"> - โย มาง ปัศยะติ สัรวัตระ สัรวัง จะ มะยิ ปัศยะติ:</span></i> a highly advanced devotee sees the Supreme Personality of Godhead everywhere, and he also sees everything resting in the Supreme. It is also confirmed in the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (9.4), <i>mayā tatam idaṁ sarvaṁ jagad avyakta-mūrtinā: - <span class="pali" style="color:#990012">มยา ตตมฺ อิทํ สรฺวํ ชคทฺ อวฺยกฺต-มูรฺตินา:</span><span class="thai" style="color:#004d00"> - มะยา ตะตัม อิทัง สัรวัง ชะคัท อัวยักตะ-มูรตินา:</span></i> Lord Kṛṣṇa is spread all over the universe in His impersonal feature. Everything is resting on Him, but that does not mean that everything is He Himself. A highly advanced <i>mahā-bhāgavata - <span class="pali" style="color:#990012">มหา-ภาควต</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะ</span></i> devotee sees in this spirit: he sees the same Supersoul, Paramātmā, existing within everyone’s heart, regardless of discrimination based on the different material forms of the living entities. He sees everyone as part and parcel of the Supreme Personality of Godhead. The <i>mahā-bhāgavata, - <span class="pali" style="color:#990012">มหา-ภาควต,</span><span class="thai" style="color:#004d00"> - มะหา-ภาคะวะตะ,</span></i> who experiences the Supreme Godhead’s presence everywhere, is never missing from the sight of the Supreme Lord, nor is the Supreme Lord ever lost from his sight. This is possible only when one is advanced in love of Godhead.</p></div>
     
 </div>
 
@@ -1257,7 +1298,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30557" class="r r-lang-en r-paragraph" ><p>It is understood that the king is able to give punishment to everyone, but in this case it appears that the great sages punished him. The king must have done something very serious; otherwise how could the great sages, who were supposed to be the greatest and most tolerant, still punish him in spite of their elevated religious consciousness? It appears also that the king was not independent of the brahminical culture. Above the king was the control of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> and if needed the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> would dethrone the king or kill him, not with any weapon, but with the <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> of a <i>brahma-śāpa. - <span class="pali" style="color:#990012">พฺรหฺม-ศาปฯ</span><span class="thai" style="color:#004d00"> - พรัหมะ-ศาปะฯ</span></i> The <i>brāhmaṇas</i> were so powerful that simply by their cursing one would immediately die.</p></div>
+        <div id="bb30557" class="r r-lang-en r-paragraph" ><p>It is understood that the king is able to give punishment to everyone, but in this case it appears that the great sages punished him. The king must have done something very serious; otherwise how could the great sages, who were supposed to be the greatest and most tolerant, still punish him in spite of their elevated religious consciousness? It appears also that the king was not independent of the brahminical culture. Above the king was the control of the <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> and if needed the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> would dethrone the king or kill him, not with any weapon, but with the <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> of a <i>brahma-śāpa. - <span class="pali" style="color:#990012">พฺรหฺม-ศาปฯ</span><span class="thai" style="color:#004d00"> - พรัหมะ-ศาปะฯ</span></i> The <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> were so powerful that simply by their cursing one would immediately die.</p></div>
     
 </div>
 
@@ -1449,7 +1490,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30572" class="r r-lang-en r-paragraph" ><p>A Vedic sacrifice is not an ordinary performance. The demigods used to participate in such sacrifices, and the animals sacrificed in such performances were reincarnated with new life. In this Age of Kali there are no powerful <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> who can invite the demigods or give renewed life to animals. Formerly, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> well conversant in Vedic <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span>s - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> could show the potency of the <i>mantras, - <span class="pali" style="color:#990012">มนฺตฺรสฺ,</span><span class="thai" style="color:#004d00"> - มันตรัส,</span></i> but in this age, because there are no such <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> all such sacrifices are forbidden. The sacrifice in which horses were offered was called <i>aśvamedha. - <span class="pali" style="color:#990012">อศฺวเมธฯ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะฯ</span></i> Sometimes cows were sacrificed (<i>gavālambha - <span class="pali" style="color:#990012">ควาลมฺภ</span><span class="thai" style="color:#004d00"> - คะวาลัมภะ</span></i>), not for eating purposes, but to give them new life in order to show the potency of the <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> In this age, therefore, the only practical <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> is <i>saṅkīrtana-yajña, - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญ,</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะ,</span></i> or chanting of the Hare Kṛṣṇa <i>mantra</i> twenty-four hours a day.</p></div>
+        <div id="bb30572" class="r r-lang-en r-paragraph" ><p>A Vedic sacrifice is not an ordinary performance. The demigods used to participate in such sacrifices, and the animals sacrificed in such performances were reincarnated with new life. In this Age of Kali there are no powerful <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> who can invite the demigods or give renewed life to animals. Formerly, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> well conversant in Vedic <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> could show the potency of the <i>mantras, - <span class="pali" style="color:#990012">มนฺตฺรสฺ,</span><span class="thai" style="color:#004d00"> - มันตรัส,</span></i> but in this age, because there are no such <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> all such sacrifices are forbidden. The sacrifice in which horses were offered was called <i>aśvamedha. - <span class="pali" style="color:#990012">อศฺวเมธฯ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะฯ</span></i> Sometimes cows were sacrificed (<i>gavālambha - <span class="pali" style="color:#990012">ควาลมฺภ</span><span class="thai" style="color:#004d00"> - คะวาลัมภะ</span></i>), not for eating purposes, but to give them new life in order to show the potency of the <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> In this age, therefore, the only practical <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> is <i>saṅkīrtana-yajña, - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญ,</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะ,</span></i> or chanting of the Hare Kṛṣṇa <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> twenty-four hours a day.</p></div>
     
 </div>
 

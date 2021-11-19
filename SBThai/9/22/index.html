@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -1087,7 +1128,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb56426" class="r r-lang-en r-paragraph" ><p>Vicitravīrya died of tuberculosis, and his wives, Ambikā and Ambālikā, had no issue. Therefore, after Vicitravīrya’s death, his mother, Satyavatī, who was also the mother of Vyāsadeva, asked Vyāsadeva to beget children through the wives of Vicitravīrya. In those days, the brother of the husband could beget children through the womb of his sister-in-law. This was known as <i>devareṇa sutotpatti - <span class="pali" style="color:#990012">เทวเรณ สุโตตฺปตฺติ</span><span class="thai" style="color:#004d00"> - เทวะเรณะ สุโตตปัตติ</span>. - <span class="pali" style="color:#990012">เทวเรณ สุโตตฺปตฺติฯ</span><span class="thai" style="color:#004d00"> - เทวะเรณะ สุโตตปัตติฯ</span></i> If the husband was somehow unable to beget children, his brother could do so through the womb of his sister-in-law. This <i>devareṇa sutotpatti</i> and the sacrifices of <i>aśvamedha - <span class="pali" style="color:#990012">อศฺวเมธ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะ</span></i> and <i>gomedha - <span class="pali" style="color:#990012">โคเมธ</span><span class="thai" style="color:#004d00"> - โคเมธะ</span></i> are forbidden in the Age of Kali.</p></div>
+        <div id="bb56426" class="r r-lang-en r-paragraph" ><p>Vicitravīrya died of tuberculosis, and his wives, Ambikā and Ambālikā, had no issue. Therefore, after Vicitravīrya’s death, his mother, Satyavatī, who was also the mother of Vyāsadeva, asked Vyāsadeva to beget children through the wives of Vicitravīrya. In those days, the brother of the husband could beget children through the womb of his sister-in-law. This was known as <i>devareṇa sutotpatti. - <span class="pali" style="color:#990012">เทวเรณ สุโตตฺปตฺติฯ</span><span class="thai" style="color:#004d00"> - เทวะเรณะ สุโตตปัตติฯ</span></i> If the husband was somehow unable to beget children, his brother could do so through the womb of his sister-in-law. This <i>devareṇa sutotpatti - <span class="pali" style="color:#990012">เทวเรณ สุโตตฺปตฺติ</span><span class="thai" style="color:#004d00"> - เทวะเรณะ สุโตตปัตติ</span></i> and the sacrifices of <i>aśvamedha - <span class="pali" style="color:#990012">อศฺวเมธ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะ</span></i> and <i>gomedha - <span class="pali" style="color:#990012">โคเมธ</span><span class="thai" style="color:#004d00"> - โคเมธะ</span></i> are forbidden in the Age of Kali.</p></div>
     
         <div id="bb56427" class="r r-lang-en r-verse-text" ><em><i>aśvamedhaṁ gavālambhaṁ<br />sannyāsaṁ pala-paitṛkam<br />devareṇa sutotpattiṁ<br />kalau pañca vivarjayet</i></em></div>
 <div class="r r-lang-en r-verse-text" >

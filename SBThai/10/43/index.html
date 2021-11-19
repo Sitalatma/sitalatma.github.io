@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -1087,7 +1128,7 @@ function toggleVisibility(cl){
         <div id="bb65756" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī points out that people like the wrestlers, Kaṁsa and the impious rulers perceive Kṛṣṇa as dangerous, angry or threatening because they fail to understand the actual position of the Personality of Godhead. Actually, Lord Kṛṣṇa is everyone’s friend and well-wisher, but because we rebel against Him, He chastises us, and thus we may perceive Him as threatening. Kṛṣṇa, or God, is actually merciful, and when He punishes us, that is also His mercy.</p></div>
     
 
-        <div id="bb65757" class="r r-lang-en r-paragraph" ><p>Śrīla Bhaktisiddhānta Sarasvatī Ṭhākura quotes the following Vedic statement: <i>raso vai saḥ rasa - <span class="pali" style="color:#990012">รส</span><span class="thai" style="color:#004d00"> - ระสะ</span>ṁ hy evāyaṁ labdhvānandī bhavati. - <span class="pali" style="color:#990012">รโส ไว สห์ รสํ หฺยฺ เอวายํ ลพฺธฺวานนฺที ภวติฯ</span><span class="thai" style="color:#004d00"> - ระโส ไว สะห์ ระสัง หย เอวายัง ลัพธวานันที ภะวะติฯ</span></i> “He Himself is <i>rasa, - <span class="pali" style="color:#990012">รส,</span><span class="thai" style="color:#004d00"> - ระสะ,</span></i> the taste or mellow of a particular relationship. And certainly one who achieves this <i>rasa</i> becomes <i>ānandī, - <span class="pali" style="color:#990012">อานนฺที,</span><span class="thai" style="color:#004d00"> - อานันที,</span></i> filled with bliss.” (<i>Taittirīya Upaniṣad - <span class="pali" style="color:#990012">ไตตฺติรีย อุปนิษทฺ</span><span class="thai" style="color:#004d00"> - ไตตติรียะ อุปะนิษัท</span></i> 2.7.1)</p></div>
+        <div id="bb65757" class="r r-lang-en r-paragraph" ><p>Śrīla Bhaktisiddhānta Sarasvatī Ṭhākura quotes the following Vedic statement: <i>raso vai saḥ rasaṁ hy evāyaṁ labdhvānandī bhavati. - <span class="pali" style="color:#990012">รโส ไว สห์ รสํ หฺยฺ เอวายํ ลพฺธฺวานนฺที ภวติฯ</span><span class="thai" style="color:#004d00"> - ระโส ไว สะห์ ระสัง หย เอวายัง ลัพธวานันที ภะวะติฯ</span></i> “He Himself is <i>rasa, - <span class="pali" style="color:#990012">รส,</span><span class="thai" style="color:#004d00"> - ระสะ,</span></i> the taste or mellow of a particular relationship. And certainly one who achieves this <i>rasa - <span class="pali" style="color:#990012">รส</span><span class="thai" style="color:#004d00"> - ระสะ</span></i> becomes <i>ānandī, - <span class="pali" style="color:#990012">อานนฺที,</span><span class="thai" style="color:#004d00"> - อานันที,</span></i> filled with bliss.” (<i>Taittirīya Upaniṣad - <span class="pali" style="color:#990012">ไตตฺติรีย อุปนิษทฺ</span><span class="thai" style="color:#004d00"> - ไตตติรียะ อุปะนิษัท</span></i> 2.7.1)</p></div>
     
 
         <div id="bb65758" class="r r-lang-en r-paragraph" ><p>Śrīla Bhaktisiddhānta Sarasvatī quotes a further verse to explain the word <i>rasa: - <span class="pali" style="color:#990012">รส:</span><span class="thai" style="color:#004d00"> - ระสะ:</span></i></p></div>

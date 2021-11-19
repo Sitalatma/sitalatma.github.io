@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -436,7 +477,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb30935" class="r r-lang-en r-paragraph" ><p>In <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> the Lord says that whenever one sees an extraordinary power, he should conclude that a specific partial representation of the Supreme Personality of Godhead is present. There are innumerable such personalities, but not all of them are direct <i>viṣṇu-tattva - <span class="pali" style="color:#990012">วิษฺณุ-ตตฺตฺว</span><span class="thai" style="color:#004d00"> - วิษณุ-ตัตตวะ</span></i> plenary expansions of the Lord. Many living entities are classified among the <i>śakti-tattvas. - <span class="pali" style="color:#990012">ศกฺติ-ตตฺตฺวสฺฯ</span><span class="thai" style="color:#004d00"> - ศักติ-ตัตตวัสฯ</span></i> Such incarnations, empowered for specific purposes, are known as <i>śaktyāveśa-avatāra - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตาร</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตาระ</span>s. - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตารสฺฯ</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตารัสฯ</span></i> King Pṛthu was such a <i>śaktyāveśa-avatāra - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตาร</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตาระ</span></i> of the Lord. Similarly, Arci, King Pṛthu’s wife, was a <i>śaktyāveśa-avatāra</i> of the goddess of fortune.</p></div>
+        <div id="bb30935" class="r r-lang-en r-paragraph" ><p>In <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> the Lord says that whenever one sees an extraordinary power, he should conclude that a specific partial representation of the Supreme Personality of Godhead is present. There are innumerable such personalities, but not all of them are direct <i>viṣṇu-tattva - <span class="pali" style="color:#990012">วิษฺณุ-ตตฺตฺว</span><span class="thai" style="color:#004d00"> - วิษณุ-ตัตตวะ</span></i> plenary expansions of the Lord. Many living entities are classified among the <i>śakti-tattvas. - <span class="pali" style="color:#990012">ศกฺติ-ตตฺตฺวสฺฯ</span><span class="thai" style="color:#004d00"> - ศักติ-ตัตตวัสฯ</span></i> Such incarnations, empowered for specific purposes, are known as <i>śaktyāveśa-avatāras. - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตารสฺฯ</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตารัสฯ</span></i> King Pṛthu was such a <i>śaktyāveśa-avatāra - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตาร</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตาระ</span></i> of the Lord. Similarly, Arci, King Pṛthu’s wife, was a <i>śaktyāveśa-avatāra - <span class="pali" style="color:#990012">ศกฺตฺยาเวศ-อวตาร</span><span class="thai" style="color:#004d00"> - ศักตยาเวศะ-อะวะตาระ</span></i> of the goddess of fortune.</p></div>
     
 </div>
 

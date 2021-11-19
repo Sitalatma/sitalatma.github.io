@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -416,7 +457,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb81341" class="r r-lang-en r-paragraph" ><p>In the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (15.15) Lord Kṛṣṇa states, <i>vedaiś ca sarvair aham eva vedyaḥ: - <span class="pali" style="color:#990012">เวไทศฺ จ สไรฺวรฺ อหมฺ เอว เวทฺยห์:</span><span class="thai" style="color:#004d00"> - เวไทศ จะ สัรไวร อะหัม เอวะ เวทยะห์:</span></i> “By all the <i>Veda - <span class="pali" style="color:#990012">เวท</span><span class="thai" style="color:#004d00"> - เวทะ</span>s - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> I am to be known. Indeed, I am the compiler of <i>Vedānta, - <span class="pali" style="color:#990012">เวทานฺต,</span><span class="thai" style="color:#004d00"> - เวทานตะ,</span></i> and I know the <i>Veda</i> as it is.” Vedic knowledge emanates from the breathing of the Personality of Godhead; therefore, whatever Lord Kṛṣṇa speaks is <i>Veda, - <span class="pali" style="color:#990012">เวท,</span><span class="thai" style="color:#004d00"> - เวทะ,</span></i> or perfect knowledge. The Vedic literatures are full of descriptions of piety and sin, but Lord Kṛṣṇa’s statement that one should transcend piety and sin is also to be understood as Vedic knowledge. Śrī Uddhava has understood this point and therefore requests Lord Kṛṣṇa to clear up an apparent contradiction. Ultimately, the material world gives the living entities a chance to satisfy their perverted desires and at the same time gradually achieve the liberation of going back home, back to Godhead. Thus material piety must be considered a means and never an absolute end, since the material world itself is not absolute, being temporary and limited. The Personality of Godhead is Himself the reservoir of all virtue and goodness. Those persons and activities that please the Lord are to be considered virtuous, and those that displease Him are to be considered sinful. There cannot be any other permanent definition of these terms. If one becomes a mundane moralist, forgetting the Supreme Lord, one’s position is certainly imperfect, and one will not achieve the ultimate goal of piety, going back home, back to Godhead. On the other hand, there is great fear among moralists that if the distinction between piety and sin is minimized, people will commit many atrocities in the name of God. In the modern world there is no clear understanding of spiritual authority, and moral men consider any appeal to transcend morality to be an invitation to fanaticism, anarchy, violence and corruption. Thus they regard material moral principles as more important than directly trying to please God. Because this point is controversial, Uddhava is anxiously requesting the Lord to give a clear explanation.</p></div>
+        <div id="bb81341" class="r r-lang-en r-paragraph" ><p>In the <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (15.15) Lord Kṛṣṇa states, <i>vedaiś ca sarvair aham eva vedyaḥ: - <span class="pali" style="color:#990012">เวไทศฺ จ สไรฺวรฺ อหมฺ เอว เวทฺยห์:</span><span class="thai" style="color:#004d00"> - เวไทศ จะ สัรไวร อะหัม เอวะ เวทยะห์:</span></i> “By all the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> I am to be known. Indeed, I am the compiler of <i>Vedānta, - <span class="pali" style="color:#990012">เวทานฺต,</span><span class="thai" style="color:#004d00"> - เวทานตะ,</span></i> and I know the <i>Veda - <span class="pali" style="color:#990012">เวท</span><span class="thai" style="color:#004d00"> - เวทะ</span></i> as it is.” Vedic knowledge emanates from the breathing of the Personality of Godhead; therefore, whatever Lord Kṛṣṇa speaks is <i>Veda, - <span class="pali" style="color:#990012">เวท,</span><span class="thai" style="color:#004d00"> - เวทะ,</span></i> or perfect knowledge. The Vedic literatures are full of descriptions of piety and sin, but Lord Kṛṣṇa’s statement that one should transcend piety and sin is also to be understood as Vedic knowledge. Śrī Uddhava has understood this point and therefore requests Lord Kṛṣṇa to clear up an apparent contradiction. Ultimately, the material world gives the living entities a chance to satisfy their perverted desires and at the same time gradually achieve the liberation of going back home, back to Godhead. Thus material piety must be considered a means and never an absolute end, since the material world itself is not absolute, being temporary and limited. The Personality of Godhead is Himself the reservoir of all virtue and goodness. Those persons and activities that please the Lord are to be considered virtuous, and those that displease Him are to be considered sinful. There cannot be any other permanent definition of these terms. If one becomes a mundane moralist, forgetting the Supreme Lord, one’s position is certainly imperfect, and one will not achieve the ultimate goal of piety, going back home, back to Godhead. On the other hand, there is great fear among moralists that if the distinction between piety and sin is minimized, people will commit many atrocities in the name of God. In the modern world there is no clear understanding of spiritual authority, and moral men consider any appeal to transcend morality to be an invitation to fanaticism, anarchy, violence and corruption. Thus they regard material moral principles as more important than directly trying to please God. Because this point is controversial, Uddhava is anxiously requesting the Lord to give a clear explanation.</p></div>
     
 </div>
 

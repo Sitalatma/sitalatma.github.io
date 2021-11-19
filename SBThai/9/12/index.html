@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -368,7 +409,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb54830" class="r r-lang-en r-paragraph" ><p>At least five thousand years ago, Śrīla Śukadeva Gosvāmī ascertained the existence of Maru in Kalāpa-grāma and said that Maru, having achieved a <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span></i> body, would continue to exist until the end of Kali-yuga, which is calculated to continue for 432,000 years. Such is the perfection of mystic power. By controlling the breath, the perfect <i>yogī - <span class="pali" style="color:#990012">โยคี</span><span class="thai" style="color:#004d00"> - โยคี</span></i> can continue his life for as long as he likes. Sometimes we hear from the Vedic literature that some personalities from the Vedic age, such as Vyāsadeva and Aśvatthāmā, are still living. Here we understand that Maru is also still living. We are sometimes surprised that a mortal body can live for such a long time. The explanation of this longevity is given here by the word <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span>. - <span class="pali" style="color:#990012">โยค-สิทฺธฯ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะฯ</span></i> If one becomes perfect in the practice of <i>yoga, - <span class="pali" style="color:#990012">โยค,</span><span class="thai" style="color:#004d00"> - โยคะ,</span></i> he can live as long as he likes. The demonstration of some trifling <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span></i> does not constitute perfection. Here is a factual example of perfection: a <i>yoga-siddha</i> can live as long as he likes.</p></div>
+        <div id="bb54830" class="r r-lang-en r-paragraph" ><p>At least five thousand years ago, Śrīla Śukadeva Gosvāmī ascertained the existence of Maru in Kalāpa-grāma and said that Maru, having achieved a <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span></i> body, would continue to exist until the end of Kali-yuga, which is calculated to continue for 432,000 years. Such is the perfection of mystic power. By controlling the breath, the perfect <i>yogī - <span class="pali" style="color:#990012">โยคี</span><span class="thai" style="color:#004d00"> - โยคี</span></i> can continue his life for as long as he likes. Sometimes we hear from the Vedic literature that some personalities from the Vedic age, such as Vyāsadeva and Aśvatthāmā, are still living. Here we understand that Maru is also still living. We are sometimes surprised that a mortal body can live for such a long time. The explanation of this longevity is given here by the word <i>yoga-siddha. - <span class="pali" style="color:#990012">โยค-สิทฺธฯ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะฯ</span></i> If one becomes perfect in the practice of <i>yoga, - <span class="pali" style="color:#990012">โยค,</span><span class="thai" style="color:#004d00"> - โยคะ,</span></i> he can live as long as he likes. The demonstration of some trifling <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span></i> does not constitute perfection. Here is a factual example of perfection: a <i>yoga-siddha - <span class="pali" style="color:#990012">โยค-สิทฺธ</span><span class="thai" style="color:#004d00"> - โยคะ-สิทธะ</span></i> can live as long as he likes.</p></div>
     
 </div>
 

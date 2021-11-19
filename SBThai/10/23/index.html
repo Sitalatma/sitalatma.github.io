@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -521,7 +562,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb62219" class="r r-lang-en r-paragraph" ><p>The cowherd boys doubted the generosity of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> and thus they used the word <i>bubhukṣitau, - <span class="pali" style="color:#990012">พุภุกฺษิเตา,</span><span class="thai" style="color:#004d00"> - พุภุกษิเตา,</span></i> meaning that Kṛṣṇa and Balarāma were hungry. The boys expected the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> to know the Vedic injunction <i>annasya kṣuditaṁ pātram - <span class="pali" style="color:#990012">อนฺนสฺย กฺษุทิตํ ปาตฺรมฺ</span><span class="thai" style="color:#004d00"> - อันนัสยะ กษุทิตัง ปาตรัม</span></i>: “Anyone who is hungry is a fit candidate for receiving food in charity.” But if the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> would not recognize the authority of Kṛṣṇa and Balarāma, their title <i>dvi - <span class="pali" style="color:#990012">ทฺวิ</span><span class="thai" style="color:#004d00"> - ทวิ</span>ja - <span class="pali" style="color:#990012">ทฺวิช</span><span class="thai" style="color:#004d00"> - ทวิชะ</span></i> would be taken to mean merely “born from two parents” (<i>dvi</i> — from two, <i>ja - <span class="pali" style="color:#990012">ช</span><span class="thai" style="color:#004d00"> - ชะ</span></i> — born) rather than “twice-born.” When the <i>brāhmaṇas</i> did not respond to the cowherd boys’ initial request, the boys addressed the <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> with a slight trace of sarcasm, as <i>dharma-vit-tamāḥ, - <span class="pali" style="color:#990012">ธรฺม-วิตฺ-ตมาห์,</span><span class="thai" style="color:#004d00"> - ธัรมะ-วิต-ตะมาห์,</span></i> “O best of the knowers of religion.”</p></div>
+        <div id="bb62219" class="r r-lang-en r-paragraph" ><p>The cowherd boys doubted the generosity of the <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> and thus they used the word <i>bubhukṣitau, - <span class="pali" style="color:#990012">พุภุกฺษิเตา,</span><span class="thai" style="color:#004d00"> - พุภุกษิเตา,</span></i> meaning that Kṛṣṇa and Balarāma were hungry. The boys expected the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> to know the Vedic injunction <i>annasya kṣuditaṁ pātram - <span class="pali" style="color:#990012">อนฺนสฺย กฺษุทิตํ ปาตฺรมฺ</span><span class="thai" style="color:#004d00"> - อันนัสยะ กษุทิตัง ปาตรัม</span></i>: “Anyone who is hungry is a fit candidate for receiving food in charity.” But if the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> would not recognize the authority of Kṛṣṇa and Balarāma, their title <i>dvija - <span class="pali" style="color:#990012">ทฺวิช</span><span class="thai" style="color:#004d00"> - ทวิชะ</span></i> would be taken to mean merely “born from two parents” (<i>dvi - <span class="pali" style="color:#990012">ทฺวิ</span><span class="thai" style="color:#004d00"> - ทวิ</span></i> — from two, <i>ja - <span class="pali" style="color:#990012">ช</span><span class="thai" style="color:#004d00"> - ชะ</span></i> — born) rather than “twice-born.” When the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> did not respond to the cowherd boys’ initial request, the boys addressed the <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> with a slight trace of sarcasm, as <i>dharma-vit-tamāḥ, - <span class="pali" style="color:#990012">ธรฺม-วิตฺ-ตมาห์,</span><span class="thai" style="color:#004d00"> - ธัรมะ-วิต-ตะมาห์,</span></i> “O best of the knowers of religion.”</p></div>
     
 </div>
 
@@ -1715,7 +1756,7 @@ function toggleVisibility(cl){
         <div id="bb62312" class="r r-lang-en r-paragraph" ><p><i>Nigama - <span class="pali" style="color:#990012">นิคม</span><span class="thai" style="color:#004d00"> - นิคะมะ</span></i> refers to the Vedic literature, which states that one who surrenders at the lotus feet of the Lord does not return to this material world. Thus the <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives appealed to the Lord that since they had surrendered to Him, it was unfair for Him to order them to return to their materialistic husbands.</p></div>
     
 
-        <div id="bb62313" class="r r-lang-en r-paragraph" ><p>According to Śrīla Viśvanātha Cakravartī Ṭhākura, Lord Kṛṣṇa might have pointed out to the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>s’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives, “You young ladies are members of the aristocratic <i>brāhmaṇa</i> community, so how can you surrender at the feet of a mere cowherd boy?”</p></div>
+        <div id="bb62313" class="r r-lang-en r-paragraph" ><p>According to Śrīla Viśvanātha Cakravartī Ṭhākura, Lord Kṛṣṇa might have pointed out to the <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives, “You young ladies are members of the aristocratic <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> community, so how can you surrender at the feet of a mere cowherd boy?”</p></div>
     
 
         <div id="bb62314" class="r r-lang-en r-paragraph" ><p>To this the ladies might have replied, “Since we have already surrendered at Your lotus feet, and since we desire to become Your servants, we are obviously not maintaining a false identification as members of the so-called <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> community. You can easily ascertain this from our words.”</p></div>
@@ -1794,7 +1835,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb62323" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura comments as follows: “From their - <span class="pali" style="color:#990012">เถอิรฺ</span><span class="thai" style="color:#004d00"> - เถอิร</span> very youth the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives had heard about Lord Kṛṣṇa’s beauty, qualities and sweetness from the womenfolk of Vṛndāvana village, and also from the flower ladies, the betel-nut sellers and others. Consequently they always felt ecstatic love for Kṛṣṇa and were indifferent to their household duties. Their husbands, seeing them as deviant, doubted them and avoided dealing with them as far as possible. Now the wives of the <i>brāhmaṇas</i> were ready to formally reject their so-called families and neighbors, and out of great agitation they were crying and placing their heads upon Lord Kṛṣṇa’s lotus feet, offering obeisances. In this way, with choking voices, they spoke the above verse. They begged that Lord Kṛṣṇa bestow upon them the benediction that He be their only destination, that He, the chastiser of enemies, subdue all <i>their</i> enemies — those difficulties obstructing them from attaining the Lord.”</p></div>
+        <div id="bb62323" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura comments as follows: “From their very youth the <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives had heard about Lord Kṛṣṇa’s beauty, qualities and sweetness from the womenfolk of Vṛndāvana village, and also from the flower ladies, the betel-nut sellers and others. Consequently they always felt ecstatic love for Kṛṣṇa and were indifferent to their household duties. Their husbands, seeing them as deviant, doubted them and avoided dealing with them as far as possible. Now the wives of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> were ready to formally reject their so-called families and neighbors, and out of great agitation they were crying and placing their heads upon Lord Kṛṣṇa’s lotus feet, offering obeisances. In this way, with choking voices, they spoke the above verse. They begged that Lord Kṛṣṇa bestow upon them the benediction that He be their only destination, that He, the chastiser of enemies, subdue all <i>their - <span class="pali" style="color:#990012">เถอิรฺ</span><span class="thai" style="color:#004d00"> - เถอิร</span></i> enemies — those difficulties obstructing them from attaining the Lord.”</p></div>
     
 
         <div id="bb62324" class="r r-lang-en r-paragraph" ><p>The wives of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> simply wanted to serve Lord Kṛṣṇa, and this is pure Kṛṣṇa consciousness in ecstatic love of Godhead.</p></div>
@@ -2033,7 +2074,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb62342" class="r r-lang-en r-paragraph" ><p>The wives of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> obeyed Lord Kṛṣṇa’s order and returned to the sacrificial arena of their husbands, whereas the <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span>, - <span class="pali" style="color:#990012">โคปีสฺ,</span><span class="thai" style="color:#004d00"> - โคปีส,</span></i> although ordered by Kṛṣṇa to go home, remained in the forest to dance with Him through the full-moon night. Both the <i>gopīs</i> and the <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives achieved pure love of Godhead.</p></div>
+        <div id="bb62342" class="r r-lang-en r-paragraph" ><p>The wives of the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> obeyed Lord Kṛṣṇa’s order and returned to the sacrificial arena of their husbands, whereas the <i>gopīs, - <span class="pali" style="color:#990012">โคปีสฺ,</span><span class="thai" style="color:#004d00"> - โคปีส,</span></i> although ordered by Kṛṣṇa to go home, remained in the forest to dance with Him through the full-moon night. Both the <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span></i> and the <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives achieved pure love of Godhead.</p></div>
     
 </div>
 
@@ -2269,7 +2310,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb62360" class="r r-lang-en r-paragraph" ><p>Lord Kṛṣṇa and Lord Balarāma did not try to deceive the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>: - <span class="pali" style="color:#990012">พฺราหฺมณสฺ:</span><span class="thai" style="color:#004d00"> - พราหมะณัส:</span></i> They straightforwardly requested food from them. Rather, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> deceived themselves, as indicated by the Sanskrit word <i>nṛ-viḍambayoḥ, - <span class="pali" style="color:#990012">นฺฤ-วิฑมฺพโยห์,</span><span class="thai" style="color:#004d00"> - นฤ-วิฑัมพะโยห์,</span></i> which means that Kṛṣṇa and Balarāma are bewildering for an ordinary human being who considers Them also to be human. Still, because the wives of the brāhmaṇas were great devotees of the Lord, the foolish <i>brāhmaṇas</i> received spiritual benefit and finally came to their senses.</p></div>
+        <div id="bb62360" class="r r-lang-en r-paragraph" ><p>Lord Kṛṣṇa and Lord Balarāma did not try to deceive the <i>brāhmaṇas: - <span class="pali" style="color:#990012">พฺราหฺมณสฺ:</span><span class="thai" style="color:#004d00"> - พราหมะณัส:</span></i> They straightforwardly requested food from them. Rather, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> deceived themselves, as indicated by the Sanskrit word <i>nṛ-viḍambayoḥ, - <span class="pali" style="color:#990012">นฺฤ-วิฑมฺพโยห์,</span><span class="thai" style="color:#004d00"> - นฤ-วิฑัมพะโยห์,</span></i> which means that Kṛṣṇa and Balarāma are bewildering for an ordinary human being who considers Them also to be human. Still, because the wives of the brāhmaṇas were great devotees of the Lord, the foolish <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> received spiritual benefit and finally came to their senses.</p></div>
     
 </div>
 
@@ -2991,7 +3032,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb62418" class="r r-lang-en r-paragraph" ><p>Realizing their offense against Lord Kṛṣṇa, and finally appreciating His almighty position, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> naturally wanted to rush to Vraja and surrender at the lotus feet of the Lord. But they were afraid that Kaṁsa would certainly kill them when his spies reported that they had gone to Kṛṣṇa. The <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives were absorbed in ecstatic Kṛṣṇa consciousness and thus went to Kṛṣṇa anyway, just as the <i>gopīs, - <span class="pali" style="color:#990012">โคปีสฺ,</span><span class="thai" style="color:#004d00"> - โคปีส,</span></i> simply to dance with the Lord, traveled in the dead of night through a forest inhabited by wild animals. But the <i>brāhmaṇas</i> were not on such an advanced platform of Kṛṣṇa consciousness and thus, overcome by fear of Kaṁsa, could not see the Lord face to face.</p></div>
+        <div id="bb62418" class="r r-lang-en r-paragraph" ><p>Realizing their offense against Lord Kṛṣṇa, and finally appreciating His almighty position, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> naturally wanted to rush to Vraja and surrender at the lotus feet of the Lord. But they were afraid that Kaṁsa would certainly kill them when his spies reported that they had gone to Kṛṣṇa. The <i>brāhmaṇas’ - <span class="pali" style="color:#990012">พฺราหฺมณสฺ’</span><span class="thai" style="color:#004d00"> - พราหมะณัส’</span></i> wives were absorbed in ecstatic Kṛṣṇa consciousness and thus went to Kṛṣṇa anyway, just as the <i>gopīs, - <span class="pali" style="color:#990012">โคปีสฺ,</span><span class="thai" style="color:#004d00"> - โคปีส,</span></i> simply to dance with the Lord, traveled in the dead of night through a forest inhabited by wild animals. But the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> were not on such an advanced platform of Kṛṣṇa consciousness and thus, overcome by fear of Kaṁsa, could not see the Lord face to face.</p></div>
     
 
         <div id="bb62419" class="r r-lang-en r-paragraph-thus-ends" ><p><i>Thus end the purports of the humble servants of His Divine Grace A.C. Bhaktivedanta Swami Prabhupāda to the Tenth Canto, Twenty-third Chapter, of the - <span class="pali" style="color:#990012">ถุสฺ เอนฺทฺ เถ ปุรฺโปรฺตฺสฺ โอฟฺ เถ หุมฺเพฺล เสรฺวนฺตฺสฺ โอฟฺ หิสฺ ทิวิเน คฺรเจ อฯจฺฯ ภกฺติเวทนฺต สฺwอมิ ปฺรภุปาท โต เถ เตนฺถฺ จนฺโต, ตฺwเอนฺตฺยฺ-ถิรฺทฺ ฉปฺเตรฺ, โอฟฺ เถ</span><span class="thai" style="color:#004d00"> - ถุส เอนท เถ ปุรโปรตส โอฟ เถ หุมพเล เสรวันตส โอฟ หิส ทิวิเน คระเจ อะฯจฯ ภักติเวทันตะ สwอะมิ ประภุปาทะ โต เถ เตนถ จันโต, ตwเอนตย-ถิรท ฉัปเตร, โอฟ เถ</span></i> Śrīmad-Bhāgavatam, <i>entitled “The Brāhmaṇas’ Wives Blessed.” - <span class="pali" style="color:#990012">เอนฺติเตฺลทฺ “เถ พฺราหฺมณสฺ’ wอิเวสฺ เพฺลเสฺสทฺฯ”</span><span class="thai" style="color:#004d00"> - เอนติตเลท “เถ พราหมะณัส’ wอิเวส พเลสเสทฯ”</span></i></p></div>

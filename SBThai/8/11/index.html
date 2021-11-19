@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -482,7 +523,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb50263" class="r r-lang-en r-paragraph" ><p>If one is victorious on the battlefield, he becomes famous; and if one is not victorious but is defeated, he may die. Both victory and defeat are possible, whether on such a battlefield as this or on the battlefield of the struggle for existence. Everything takes place according to the laws of nature (<i>prakṛteḥ kriyamāṇāni guṇaiḥ karmāṇi sarvaśaḥ - <span class="pali" style="color:#990012">ปฺรกฺฤเตห์ กฺริยมาณานิ คุไณห์ กรฺมาณิ สรฺวศห์</span><span class="thai" style="color:#004d00"> - ปรักฤเตห์ กริยะมาณานิ คุไณห์ กัรมาณิ สัรวะศะห์</span></i>). Since everyone, without exception, is subject to the modes of material nature, whether one is victorious or defeated he is not independent, but is under the control of material nature. Bali Mahārāja, therefore, was very sensible. He knew that the fighting was arranged by eternal time and that under time’s influence one must accept the results of one’s own activities. Therefore even though Indra threatened that he would now kill Bali Mahārāja by releasing the thunderbolt, Bali Mahārāja was not at all afraid. This is the spirit of a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span>: - <span class="pali" style="color:#990012">กฺษตฺริย:</span><span class="thai" style="color:#004d00"> - กษัตริยะ:</span></i> <i>yuddhe cāpy apalāyanam - <span class="pali" style="color:#990012">ยุทฺเธ จาปฺยฺ อปลายนมฺ</span><span class="thai" style="color:#004d00"> - ยุทเธ จาปย อะปะลายะนัม</span></i> (Bg. 18.43). A <i>kṣatriya</i> must be tolerant in all circumstances, especially on the battlefield. Thus Bali Mahārāja asserted that he was not at all afraid of death, although he was threatened by such a great personality as the King of heaven.</p></div>
+        <div id="bb50263" class="r r-lang-en r-paragraph" ><p>If one is victorious on the battlefield, he becomes famous; and if one is not victorious but is defeated, he may die. Both victory and defeat are possible, whether on such a battlefield as this or on the battlefield of the struggle for existence. Everything takes place according to the laws of nature (<i>prakṛteḥ kriyamāṇāni guṇaiḥ karmāṇi sarvaśaḥ - <span class="pali" style="color:#990012">ปฺรกฺฤเตห์ กฺริยมาณานิ คุไณห์ กรฺมาณิ สรฺวศห์</span><span class="thai" style="color:#004d00"> - ปรักฤเตห์ กริยะมาณานิ คุไณห์ กัรมาณิ สัรวะศะห์</span></i>). Since everyone, without exception, is subject to the modes of material nature, whether one is victorious or defeated he is not independent, but is under the control of material nature. Bali Mahārāja, therefore, was very sensible. He knew that the fighting was arranged by eternal time and that under time’s influence one must accept the results of one’s own activities. Therefore even though Indra threatened that he would now kill Bali Mahārāja by releasing the thunderbolt, Bali Mahārāja was not at all afraid. This is the spirit of a <i>kṣatriya: - <span class="pali" style="color:#990012">กฺษตฺริย:</span><span class="thai" style="color:#004d00"> - กษัตริยะ:</span></i> <i>yuddhe cāpy apalāyanam - <span class="pali" style="color:#990012">ยุทฺเธ จาปฺยฺ อปลายนมฺ</span><span class="thai" style="color:#004d00"> - ยุทเธ จาปย อะปะลายะนัม</span></i> (Bg. 18.43). A <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> must be tolerant in all circumstances, especially on the battlefield. Thus Bali Mahārāja asserted that he was not at all afraid of death, although he was threatened by such a great personality as the King of heaven.</p></div>
     
 </div>
 

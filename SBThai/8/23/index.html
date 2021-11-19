@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -428,7 +469,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb52357" class="r r-lang-en r-paragraph" ><p>The word <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span>-pāla - <span class="pali" style="color:#990012">ทุรฺค-ปาล</span><span class="thai" style="color:#004d00"> - ทุรคะ-ปาละ</span></i> is significant. The word <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span></i> means “that which does not go very easily.” Generally <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span></i> refers to a fort, which one cannot very easily enter. Another meaning of <i>durga</i> is “difficulty.” Because the Supreme Personality of Godhead promised to protect Bali Mahārāja and his associates from all dangers, He is addressed here as <i>durga-pāla, - <span class="pali" style="color:#990012">ทุรฺค-ปาล,</span><span class="thai" style="color:#004d00"> - ทุรคะ-ปาละ,</span></i> the Lord who gives protection from all miserable conditions.</p></div>
+        <div id="bb52357" class="r r-lang-en r-paragraph" ><p>The word <i>durga-pāla - <span class="pali" style="color:#990012">ทุรฺค-ปาล</span><span class="thai" style="color:#004d00"> - ทุรคะ-ปาละ</span></i> is significant. The word <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span></i> means “that which does not go very easily.” Generally <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span></i> refers to a fort, which one cannot very easily enter. Another meaning of <i>durga - <span class="pali" style="color:#990012">ทุรฺค</span><span class="thai" style="color:#004d00"> - ทุรคะ</span></i> is “difficulty.” Because the Supreme Personality of Godhead promised to protect Bali Mahārāja and his associates from all dangers, He is addressed here as <i>durga-pāla, - <span class="pali" style="color:#990012">ทุรฺค-ปาล,</span><span class="thai" style="color:#004d00"> - ทุรคะ-ปาละ,</span></i> the Lord who gives protection from all miserable conditions.</p></div>
     
 </div>
 
@@ -996,7 +1037,7 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        หเรรฺ นาม หเรรฺ นาม</span></i><br /><span class="thai" style="color:#004d00"><i>        หะเรร นามะ หะเรร นามะ</i><br /></span><i><span class="pali" style="color:#990012">หเรรฺ นาไมว เกวลมฺ</span></i><br /><span class="thai" style="color:#004d00"><i>หะเรร นาไมวะ เกวะลัม</i><br /></span><i><span class="pali" style="color:#990012">กเลา นาสฺตฺยฺ เอว นาสฺตฺยฺ เอว</span></i><br /><span class="thai" style="color:#004d00"><i>กะเลา นาสตย เอวะ นาสตย เอวะ</i><br /></span><i><span class="pali" style="color:#990012">นาสฺตฺยฺ เอว คติรฺ อนฺยถา</span></i><br /><span class="thai" style="color:#004d00"><i>นาสตย เอวะ คะติร อันยะถา</i><br /></span>
 </div>    
 
-        <div id="bb52407" class="r r-lang-en r-paragraph" ><p>“In this age of quarrel and hypocrisy the only means of deliverance is chanting the holy name of the Lord. There is no other way. There is no other way. There is no other way.” (<i>Bṛhan-nāradīya Purāṇa - <span class="pali" style="color:#990012">พฺฤหนฺ-นารทีย ปุราณ</span><span class="thai" style="color:#004d00"> - พฤหัน-นาระทียะ ปุราณะ</span></i> 38.126) In this Age of Kali, it is extremely difficult to perform Vedic ritualistic ceremonies or sacrifices perfectly. Hardly anyone can chant the Vedic <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span>s - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> with perfect pronunciation or accumulate the paraphernalia for Vedic performances. Therefore the sacrifice recommended in this age is <i>saṅkīrtana, - <span class="pali" style="color:#990012">สงฺกีรฺตน,</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ,</span></i> constant chanting of the holy name of the Lord. <i>Yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 11.5.29). Instead of wasting time performing Vedic sacrifices, those who are intelligent, those who possess good brain substance, should take to the chanting of the Lord’s holy name and thus perform sacrifice perfectly. I have seen that many religious leaders are addicted to performing <i>yajñas - <span class="pali" style="color:#990012">ยชฺญสฺ</span><span class="thai" style="color:#004d00"> - ยัชญัส</span></i> and spending hundreds and thousands of rupees for imperfect sacrificial performances. This is a lesson for those who unnecessarily execute such imperfect sacrifices. We should take the advice of Śrī Caitanya Mahāprabhu (<i>yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์</span></i>). Although Śukrācārya was a strict <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> addicted to ritualistic activities, he also admitted, <i>niśchidram anusaṅkīrtanaṁ tava: - <span class="pali" style="color:#990012">นิศฺฉิทฺรมฺ อนุสงฺกีรฺตนํ ตว:</span><span class="thai" style="color:#004d00"> - นิศฉิทรัม อะนุสังกีรตะนัง ตะวะ:</span></i> “My Lord, constant chanting of the holy name of Your Lordship makes everything perfect.” In Kali-yuga the Vedic ritualistic ceremonies cannot be performed as perfectly as before. Therefore Śrīla Jīva Gosvāmī has recommended that although one should take care to follow all the principles in every kind of spiritual activity, especially in worship of the Deity, there is still a chance of discrepancies, and one should compensate for this by chanting the holy name of the Supreme Personality of Godhead. In our Kṛṣṇa consciousness movement we therefore give special stress to the chanting of the Hare Kṛṣṇa <i>mantra</i> in all activities.</p></div>
+        <div id="bb52407" class="r r-lang-en r-paragraph" ><p>“In this age of quarrel and hypocrisy the only means of deliverance is chanting the holy name of the Lord. There is no other way. There is no other way. There is no other way.” (<i>Bṛhan-nāradīya Purāṇa - <span class="pali" style="color:#990012">พฺฤหนฺ-นารทีย ปุราณ</span><span class="thai" style="color:#004d00"> - พฤหัน-นาระทียะ ปุราณะ</span></i> 38.126) In this Age of Kali, it is extremely difficult to perform Vedic ritualistic ceremonies or sacrifices perfectly. Hardly anyone can chant the Vedic <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> with perfect pronunciation or accumulate the paraphernalia for Vedic performances. Therefore the sacrifice recommended in this age is <i>saṅkīrtana, - <span class="pali" style="color:#990012">สงฺกีรฺตน,</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ,</span></i> constant chanting of the holy name of the Lord. <i>Yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 11.5.29). Instead of wasting time performing Vedic sacrifices, those who are intelligent, those who possess good brain substance, should take to the chanting of the Lord’s holy name and thus perform sacrifice perfectly. I have seen that many religious leaders are addicted to performing <i>yajñas - <span class="pali" style="color:#990012">ยชฺญสฺ</span><span class="thai" style="color:#004d00"> - ยัชญัส</span></i> and spending hundreds and thousands of rupees for imperfect sacrificial performances. This is a lesson for those who unnecessarily execute such imperfect sacrifices. We should take the advice of Śrī Caitanya Mahāprabhu (<i>yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์</span></i>). Although Śukrācārya was a strict <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> addicted to ritualistic activities, he also admitted, <i>niśchidram anusaṅkīrtanaṁ tava: - <span class="pali" style="color:#990012">นิศฺฉิทฺรมฺ อนุสงฺกีรฺตนํ ตว:</span><span class="thai" style="color:#004d00"> - นิศฉิทรัม อะนุสังกีรตะนัง ตะวะ:</span></i> “My Lord, constant chanting of the holy name of Your Lordship makes everything perfect.” In Kali-yuga the Vedic ritualistic ceremonies cannot be performed as perfectly as before. Therefore Śrīla Jīva Gosvāmī has recommended that although one should take care to follow all the principles in every kind of spiritual activity, especially in worship of the Deity, there is still a chance of discrepancies, and one should compensate for this by chanting the holy name of the Supreme Personality of Godhead. In our Kṛṣṇa consciousness movement we therefore give special stress to the chanting of the Hare Kṛṣṇa <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> in all activities.</p></div>
     
 </div>
 

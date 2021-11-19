@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -155,7 +196,7 @@ function toggleVisibility(cl){
         <div id="bb83835" class="r r-lang-en r-paragraph" ><p>The vicious political intrigue described here is symptomatic of the Age of Kali. In the Ninth Canto of this work, Śukadeva Gosvāmī describes how the great rulers of men descended from two royal dynasties, that of the sun and that of the moon. The Ninth Canto’s description of Lord Rāmacandra, a most famous incarnation of God, occurs in this genealogical narration, and at the end of the Ninth Canto Śukadeva describes the forefathers of Lord Kṛṣṇa and Lord Balarāma. Finally, the appearance of Lord Kṛṣṇa and that of Lord Balarāma are mentioned within the context of the narration of the moon dynasty.</p></div>
     
 
-        <div id="bb83836" class="r r-lang-en r-paragraph" ><p>The Tenth Canto is devoted exclusively to a description of Lord Kṛṣṇa’s childhood pastimes in Vṛndāvana, His teenage activities in Mathurā and His adult activities in Dvārakā. The famous epic <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> also describes the events of this period, focusing upon the five Pāṇḍava brothers and their activities in relation with Lord Kṛṣṇa and other leading historical figures, such as Bhīṣma, Dhṛtarāṣṭra, Droṇācārya and Vidura. Within the <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> is <i>Bhagavad-gītā, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> in which Lord Kṛṣṇa is declared to be the Absolute Truth, the Supreme Personality of Godhead. <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span>, - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม,</span></i> of which we are presently translating the twelfth and final canto, is considered a more advanced literature than the <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> because throughout the entire work Lord Śrī Kṛṣṇa, the Absolute Truth and supreme source of all existence, is directly, centrally and irrefutably revealed. In fact, the First Canto of the <i>Bhāgavatam</i> describes how Śrī Vyāsadeva composed this great work because he was dissatisfied with his rather sporadic glorification of Lord Kṛṣṇa in the <i>Mahābhārata. - <span class="pali" style="color:#990012">มหาภารตฯ</span><span class="thai" style="color:#004d00"> - มะหาภาระตะฯ</span></i></p></div>
+        <div id="bb83836" class="r r-lang-en r-paragraph" ><p>The Tenth Canto is devoted exclusively to a description of Lord Kṛṣṇa’s childhood pastimes in Vṛndāvana, His teenage activities in Mathurā and His adult activities in Dvārakā. The famous epic <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> also describes the events of this period, focusing upon the five Pāṇḍava brothers and their activities in relation with Lord Kṛṣṇa and other leading historical figures, such as Bhīṣma, Dhṛtarāṣṭra, Droṇācārya and Vidura. Within the <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> is <i>Bhagavad-gītā, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> in which Lord Kṛṣṇa is declared to be the Absolute Truth, the Supreme Personality of Godhead. <i>Śrīmad-Bhāgavatam, - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม,</span></i> of which we are presently translating the twelfth and final canto, is considered a more advanced literature than the <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> because throughout the entire work Lord Śrī Kṛṣṇa, the Absolute Truth and supreme source of all existence, is directly, centrally and irrefutably revealed. In fact, the First Canto of the <i>Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span></i> describes how Śrī Vyāsadeva composed this great work because he was dissatisfied with his rather sporadic glorification of Lord Kṛṣṇa in the <i>Mahābhārata. - <span class="pali" style="color:#990012">มหาภารตฯ</span><span class="thai" style="color:#004d00"> - มะหาภาระตะฯ</span></i></p></div>
     
 
         <div id="bb83837" class="r r-lang-en r-paragraph" ><p>Although <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> narrates the histories of many royal dynasties and the lives of innumerable kings, not until the description of the present age, the Age of Kali, do we find a minister assassinating his own king and installing his son on the throne. This incident resembles Dhṛtarāṣṭra’s attempt to assassinate the Pāṇḍavas and crown his son Duryodhana king. As the <i>Mahābhārata - <span class="pali" style="color:#990012">มหาภารต</span><span class="thai" style="color:#004d00"> - มะหาภาระตะ</span></i> describes, Lord Kṛṣṇa thwarted this attempt, but with the departure of the Lord for the spiritual sky, the Age of Kali became fully manifested, ushering in political assassination within one’s own house as a standard technique.</p></div>

@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -950,7 +991,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb82414" class="r r-lang-en r-paragraph" ><p>Śrīla Jīva Gosvāmī explains that the word <i>tapasaḥ - <span class="pali" style="color:#990012">ตปสห์</span><span class="thai" style="color:#004d00"> - ตะปะสะห์</span></i> in this verse refers to austerities performed by <i>brahmacārī - <span class="pali" style="color:#990012">พฺรหฺมจารี</span><span class="thai" style="color:#004d00"> - พรัหมะจารี</span>s - <span class="pali" style="color:#990012">พฺรหฺมจารีสฺ</span><span class="thai" style="color:#004d00"> - พรัหมะจารีส</span></i> and <i>vānaprastha - <span class="pali" style="color:#990012">วานปฺรสฺถ</span><span class="thai" style="color:#004d00"> - วานัปรัสถะ</span>s. - <span class="pali" style="color:#990012">วานปฺรสฺถสฺฯ</span><span class="thai" style="color:#004d00"> - วานัปรัสถัสฯ</span></i> A <i>brahmacārī</i> who practices celibacy perfectly in some particular stage of his life achieves Maharloka, and one who perfectly practices lifelong celibacy achieves Janoloka. By perfect execution of <i>vānaprastha</i> one may achieve Tapoloka, and one in the renounced order of life goes to Satyaloka. These different destinations certainly depend on one’s seriousness in the <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> system. In the Third Canto of the <i>Bhāgavatam, - <span class="pali" style="color:#990012">ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม,</span></i> Lord Brahmā explains to the demigods, “The inhabitants of Vaikuṇṭha travel in their airplanes made of lapis lazuli, emeralds and gold. Although crowded by their consorts, who have large hips and beautiful smiling faces, they cannot be stimulated to passion by their mirth and beautiful charms.” (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 3.15.20) Thus in the spiritual world, the kingdom of God, the inhabitants have absolutely no desire for personal satisfaction, since they are completely satisfied in love of Godhead. Because they only think of the Lord’s pleasure, there is no possibility of cheating, anxiety, lust, disappointment, and so on. As described in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.62):</p></div>
+        <div id="bb82414" class="r r-lang-en r-paragraph" ><p>Śrīla Jīva Gosvāmī explains that the word <i>tapasaḥ - <span class="pali" style="color:#990012">ตปสห์</span><span class="thai" style="color:#004d00"> - ตะปะสะห์</span></i> in this verse refers to austerities performed by <i>brahmacārīs - <span class="pali" style="color:#990012">พฺรหฺมจารีสฺ</span><span class="thai" style="color:#004d00"> - พรัหมะจารีส</span></i> and <i>vānaprasthas. - <span class="pali" style="color:#990012">วานปฺรสฺถสฺฯ</span><span class="thai" style="color:#004d00"> - วานัปรัสถัสฯ</span></i> A <i>brahmacārī - <span class="pali" style="color:#990012">พฺรหฺมจารี</span><span class="thai" style="color:#004d00"> - พรัหมะจารี</span></i> who practices celibacy perfectly in some particular stage of his life achieves Maharloka, and one who perfectly practices lifelong celibacy achieves Janoloka. By perfect execution of <i>vānaprastha - <span class="pali" style="color:#990012">วานปฺรสฺถ</span><span class="thai" style="color:#004d00"> - วานัปรัสถะ</span></i> one may achieve Tapoloka, and one in the renounced order of life goes to Satyaloka. These different destinations certainly depend on one’s seriousness in the <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> system. In the Third Canto of the <i>Bhāgavatam, - <span class="pali" style="color:#990012">ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม,</span></i> Lord Brahmā explains to the demigods, “The inhabitants of Vaikuṇṭha travel in their airplanes made of lapis lazuli, emeralds and gold. Although crowded by their consorts, who have large hips and beautiful smiling faces, they cannot be stimulated to passion by their mirth and beautiful charms.” (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 3.15.20) Thus in the spiritual world, the kingdom of God, the inhabitants have absolutely no desire for personal satisfaction, since they are completely satisfied in love of Godhead. Because they only think of the Lord’s pleasure, there is no possibility of cheating, anxiety, lust, disappointment, and so on. As described in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.62):</p></div>
     
         <div id="bb82415" class="r r-lang-en r-verse-text" ><em><i>tam eva śaraṇaṁ gaccha<br />sarva-bhāvena bhārata<br />tat-prasādāt parāṁ śāntiṁ<br />sthānaṁ prāpsyasi śāśvatam</i></em></div>
 <div class="r r-lang-en r-verse-text" >
@@ -1203,7 +1244,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb82435" class="r r-lang-en r-paragraph" ><p>One may understand the purport of this verse through the simple analogy of a clay pot. A clay pot is formed from a lump of clay, which is itself prepared from the earth. In this case earth is the original ingredient forming the clay lump, and the clay lump is in a sense the original cause of the pot. When the pot is destroyed, it will again assume the designation clay and ultimately merge back into the earth, its original cause. In relation to the clay pot, clay is the beginning and final state; thus the pot is called real, for it possesses the essential characteristics of clay, which exists before and after the existence of the functioning instrument known as the pot. Similarly, earth exists before and after the clay, and thus clay may be considered real because it possesses the essential characteristics of earth, which exists before and after the existence of the clay. Similarly, earth and other elements are created from the <i>mahat-tattva - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺว</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะ</span>, - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺว,</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะ,</span></i> which exists before and after the existence of the elements, which may be considered real because they possess the essential characteristics of the <i>mahat-tattva. - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺวฯ</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะฯ</span></i> The <i>mahat-tattva</i> is ultimately the creation of the Supreme Personality of Godhead, the cause of all causes, who exists after all is annihilated. The Absolute Truth is the Supreme Lord Himself, who step by step gives meaning and character to all that exists.</p></div>
+        <div id="bb82435" class="r r-lang-en r-paragraph" ><p>One may understand the purport of this verse through the simple analogy of a clay pot. A clay pot is formed from a lump of clay, which is itself prepared from the earth. In this case earth is the original ingredient forming the clay lump, and the clay lump is in a sense the original cause of the pot. When the pot is destroyed, it will again assume the designation clay and ultimately merge back into the earth, its original cause. In relation to the clay pot, clay is the beginning and final state; thus the pot is called real, for it possesses the essential characteristics of clay, which exists before and after the existence of the functioning instrument known as the pot. Similarly, earth exists before and after the clay, and thus clay may be considered real because it possesses the essential characteristics of earth, which exists before and after the existence of the clay. Similarly, earth and other elements are created from the <i>mahat-tattva, - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺว,</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะ,</span></i> which exists before and after the existence of the elements, which may be considered real because they possess the essential characteristics of the <i>mahat-tattva. - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺวฯ</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะฯ</span></i> The <i>mahat-tattva - <span class="pali" style="color:#990012">มหตฺ-ตตฺตฺว</span><span class="thai" style="color:#004d00"> - มะหัต-ตัตตวะ</span></i> is ultimately the creation of the Supreme Personality of Godhead, the cause of all causes, who exists after all is annihilated. The Absolute Truth is the Supreme Lord Himself, who step by step gives meaning and character to all that exists.</p></div>
     
 </div>
 

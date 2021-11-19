@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -418,7 +459,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb21955" class="r r-lang-en r-paragraph" ><p>For the pure devotee of the Lord there is nothing beyond the lotu - <span class="pali" style="color:#990012">ตุ</span><span class="thai" style="color:#004d00"> - ตุ</span>s feet of the Lord, and the Lord knows that such devotees do not wish anything more than that. The word <i>tu</i> specifically establishes this fact. The Lord also does not wish to be separated from the lotus hearts of those pure devotees. That is the transcendental relationship between the pure devotees and the Personality of Godhead. Because the Lord does not wish to separate Himself from the hearts of such pure devotees, it is understood that they are specifically dearer than the impersonalists. The relationship of the pure devotees with the Lord develops because of devotional service to the Lord on the authentic basis of Vedic authority. Such pure devotees are not mundane sentimentalists, but are factually realists because their activities are supported by the Vedic authorities who have given aural reception to the facts mentioned in the Vedic literatures.</p></div>
+        <div id="bb21955" class="r r-lang-en r-paragraph" ><p>For the pure devotee of the Lord there is nothing beyond the lotus feet of the Lord, and the Lord knows that such devotees do not wish anything more than that. The word <i>tu - <span class="pali" style="color:#990012">ตุ</span><span class="thai" style="color:#004d00"> - ตุ</span></i> specifically establishes this fact. The Lord also does not wish to be separated from the lotus hearts of those pure devotees. That is the transcendental relationship between the pure devotees and the Personality of Godhead. Because the Lord does not wish to separate Himself from the hearts of such pure devotees, it is understood that they are specifically dearer than the impersonalists. The relationship of the pure devotees with the Lord develops because of devotional service to the Lord on the authentic basis of Vedic authority. Such pure devotees are not mundane sentimentalists, but are factually realists because their activities are supported by the Vedic authorities who have given aural reception to the facts mentioned in the Vedic literatures.</p></div>
     
 
         <div id="bb21956" class="r r-lang-en r-paragraph" ><p>The word <i>parayā - <span class="pali" style="color:#990012">ปรยา</span><span class="thai" style="color:#004d00"> - ปะระยา</span></i> is very significant. <i>Parā bhakti, - <span class="pali" style="color:#990012">ปรา ภกฺติ,</span><span class="thai" style="color:#004d00"> - ปะรา ภักติ,</span></i> or spontaneous love of God, is the basis of an intimate relationship with the Lord. This highest stage of relationship with the Lord can be attained simply by hearing about Him (His name, form, quality, etc.) from authentic sources like <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> and <i>Śrīmad-Bhāgavatam, - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ,</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม,</span></i> recited by pure, unalloyed devotees of the Lord.</p></div>
@@ -851,7 +892,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb22000" class="r r-lang-en r-paragraph" ><p>The statement here that the Lord manifests Himself before the devotee in the form in which the devotee likes to worship Him indicates that the Lord becomes subordinate to the desire of the devotee — so much so that He manifests His particular form as the devotee demands. This demand of the devotee is satisfied by the Lord because He is pliable in terms of the transcendental loving service of the devotee. This is also confirmed in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (4.11): <i>ye yathā māṁ prapadyante tāṁs tathaiva bhajāmy aham. - <span class="pali" style="color:#990012">เย ยถา มำ ปฺรปทฺยนฺเต ตำสฺ ตไถว ภชามฺยฺ อหมฺฯ</span><span class="thai" style="color:#004d00"> - เย ยะถา มาง ประปัทยันเต ตางส ตะไถวะ ภะชามย อะหัมฯ</span></i> We should note, however, that the Lord is never the order supplier of the devotee. Here in this verse it is particularly mentioned: <i>tvaṁ bhakti-yoga-paribhāvita. - <span class="pali" style="color:#990012">ตฺวํ ภกฺติ-โยค-ปริภาวิตฯ</span><span class="thai" style="color:#004d00"> - ตวัง ภักติ-โยคะ-ปะริภาวิตะฯ</span></i> This indicates the efficiency achieved through execution of matured devotional service, or <i>prema - <span class="pali" style="color:#990012">เปฺรม</span><span class="thai" style="color:#004d00"> - ปเรมะ</span>, - <span class="pali" style="color:#990012">เปฺรม,</span><span class="thai" style="color:#004d00"> - ปเรมะ,</span></i> love of Godhead. This state of <i>prema</i> is achieved by the gradual process of development from faith to love. On faith one associates with bona fide devotees, and by such association one can become engaged in bona fide devotional service, which includes proper initiation and the execution of the primary devotional duties prescribed in the revealed scriptures. This is clearly indicated herein by the word <i>śrutekṣita - <span class="pali" style="color:#990012">ศฺรุเตกฺษิต</span><span class="thai" style="color:#004d00"> - ศรุเตกษิตะ</span>. - <span class="pali" style="color:#990012">ศฺรุเตกฺษิตฯ</span><span class="thai" style="color:#004d00"> - ศรุเตกษิตะฯ</span></i> The <i>śrutekṣita</i> path is to hear from bona fide devotees who are conversant with Vedic wisdom, free from mundane sentiment. By this bona fide hearing process, the neophyte devotee becomes cleansed of all material rubbish, and thus he becomes attached to one of the many transcendental forms of the Lord, as described in the <i>Vedas. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i></p></div>
+        <div id="bb22000" class="r r-lang-en r-paragraph" ><p>The statement here that the Lord manifests Himself before the devotee in the form in which the devotee likes to worship Him indicates that the Lord becomes subordinate to the desire of the devotee — so much so that He manifests His particular form as the devotee demands. This demand of the devotee is satisfied by the Lord because He is pliable in terms of the transcendental loving service of the devotee. This is also confirmed in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (4.11): <i>ye yathā māṁ prapadyante tāṁs tathaiva bhajāmy aham. - <span class="pali" style="color:#990012">เย ยถา มำ ปฺรปทฺยนฺเต ตำสฺ ตไถว ภชามฺยฺ อหมฺฯ</span><span class="thai" style="color:#004d00"> - เย ยะถา มาง ประปัทยันเต ตางส ตะไถวะ ภะชามย อะหัมฯ</span></i> We should note, however, that the Lord is never the order supplier of the devotee. Here in this verse it is particularly mentioned: <i>tvaṁ bhakti-yoga-paribhāvita. - <span class="pali" style="color:#990012">ตฺวํ ภกฺติ-โยค-ปริภาวิตฯ</span><span class="thai" style="color:#004d00"> - ตวัง ภักติ-โยคะ-ปะริภาวิตะฯ</span></i> This indicates the efficiency achieved through execution of matured devotional service, or <i>prema, - <span class="pali" style="color:#990012">เปฺรม,</span><span class="thai" style="color:#004d00"> - ปเรมะ,</span></i> love of Godhead. This state of <i>prema - <span class="pali" style="color:#990012">เปฺรม</span><span class="thai" style="color:#004d00"> - ปเรมะ</span></i> is achieved by the gradual process of development from faith to love. On faith one associates with bona fide devotees, and by such association one can become engaged in bona fide devotional service, which includes proper initiation and the execution of the primary devotional duties prescribed in the revealed scriptures. This is clearly indicated herein by the word <i>śrutekṣita. - <span class="pali" style="color:#990012">ศฺรุเตกฺษิตฯ</span><span class="thai" style="color:#004d00"> - ศรุเตกษิตะฯ</span></i> The <i>śrutekṣita - <span class="pali" style="color:#990012">ศฺรุเตกฺษิต</span><span class="thai" style="color:#004d00"> - ศรุเตกษิตะ</span></i> path is to hear from bona fide devotees who are conversant with Vedic wisdom, free from mundane sentiment. By this bona fide hearing process, the neophyte devotee becomes cleansed of all material rubbish, and thus he becomes attached to one of the many transcendental forms of the Lord, as described in the <i>Vedas. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i></p></div>
     
 
         <div id="bb22001" class="r r-lang-en r-paragraph" ><p>This attachment of the devotee to a particular form of the Lord is due to natural inclination. Each and every living entity is originally attached to a particular type of transcendental service because he is eternally the servitor of the Lord. Lord Caitanya says that the living entity is eternally a servitor of the Supreme Personality of Godhead, Śrī Kṛṣṇa. Therefore, every living entity has a particular type of service relationship with the Lord, eternally. This particular attachment is invoked by practice of regulative devotional service to the Lord, and thus the devotee becomes attached to the eternal form of the Lord, exactly like one who is already eternally attached. This attachment for a particular form of the Lord is called <i>svarūpa-siddhi. - <span class="pali" style="color:#990012">สฺวรูป-สิทฺธิฯ</span><span class="thai" style="color:#004d00"> - สวะรูปะ-สิทธิฯ</span></i> The Lord sits on the lotus heart of the devotee in the eternal form the pure devotee desires, and thus the Lord does not part from the devotee, as confirmed in the previous verse. The Lord, however, does not disclose Himself to a casual or unauthentic worshiper to be exploited. This is confirmed in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (7.25): <i>nāhaṁ prakāśaḥ sarvasya yoga-māyā-samāvṛtaḥ. - <span class="pali" style="color:#990012">นาหํ ปฺรกาศห์ สรฺวสฺย โยค-มายา-สมาวฺฤตห์ฯ</span><span class="thai" style="color:#004d00"> - นาหัง ประกาศะห์ สัรวัสยะ โยคะ-มายา-สะมาวฤตะห์ฯ</span></i> Rather, by <i>yoga-māyā, - <span class="pali" style="color:#990012">โยค-มายา,</span><span class="thai" style="color:#004d00"> - โยคะ-มายา,</span></i> the Lord remains concealed to the nondevotees or casual devotees who are serving their sense gratification. The Lord is never visible to the pseudodevotees who worship the demigods in charge of universal affairs. The conclusion is that the Lord cannot become the order supplier of a pseudodevotee, but He is always prepared to respond to the desires of a pure, unconditional devotee, who is free from all tinges of material infection.</p></div>
@@ -1792,7 +1833,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb22084" class="r r-lang-en r-paragraph" ><p>The Lord is ever increasingly merciful upon the fallen souls of this material world. The whole cosmic manifestation is a chance for all to improve themselves in devotional service to the Lord, and everyone is meant for that purpose. The Lord expands Himself into many personalities who are either self-expansions or separated expansions. The personalities of the individual souls are His separated expansions, whereas the self-expansions are the Lord Himself. The self-expansions are predominators, and the separated expansions are predominated for reciprocation of transcendental bliss with the supreme form of bliss and knowledge. The liberated souls can join in this blissful reciprocation of predominator and predominated without materially concocted ideas. The typical example of such a transcendental exchange between the predominator and the predominated is the Lord’s <i>rāsa-līlā - <span class="pali" style="color:#990012">ราส-ลีลา</span><span class="thai" style="color:#004d00"> - ราสะ-ลีลา</span></i> with the <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span>. - <span class="pali" style="color:#990012">โคปีสฺฯ</span><span class="thai" style="color:#004d00"> - โคปีสฯ</span></i> The <i>gopīs</i> are predominated expansions of the internal potency, and therefore the Lord’s participation in the <i>rāsa-līlā - <span class="pali" style="color:#990012">ราส-ลีลา</span><span class="thai" style="color:#004d00"> - ราสะ-ลีลา</span></i> dance is never to be considered like the mundane relationship of man and woman. It is, rather, the highest perfectional stage of the exchange of feelings between the Lord and the living entities. The Lord gives the fallen souls the chance for this highest perfection of life. Lord Brahmā is entrusted with the management of the complete cosmic show, and therefore he prays that the Lord bestow His blessings upon him so that he may execute its purpose.</p></div>
+        <div id="bb22084" class="r r-lang-en r-paragraph" ><p>The Lord is ever increasingly merciful upon the fallen souls of this material world. The whole cosmic manifestation is a chance for all to improve themselves in devotional service to the Lord, and everyone is meant for that purpose. The Lord expands Himself into many personalities who are either self-expansions or separated expansions. The personalities of the individual souls are His separated expansions, whereas the self-expansions are the Lord Himself. The self-expansions are predominators, and the separated expansions are predominated for reciprocation of transcendental bliss with the supreme form of bliss and knowledge. The liberated souls can join in this blissful reciprocation of predominator and predominated without materially concocted ideas. The typical example of such a transcendental exchange between the predominator and the predominated is the Lord’s <i>rāsa-līlā - <span class="pali" style="color:#990012">ราส-ลีลา</span><span class="thai" style="color:#004d00"> - ราสะ-ลีลา</span></i> with the <i>gopīs. - <span class="pali" style="color:#990012">โคปีสฺฯ</span><span class="thai" style="color:#004d00"> - โคปีสฯ</span></i> The <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span></i> are predominated expansions of the internal potency, and therefore the Lord’s participation in the <i>rāsa-līlā - <span class="pali" style="color:#990012">ราส-ลีลา</span><span class="thai" style="color:#004d00"> - ราสะ-ลีลา</span></i> dance is never to be considered like the mundane relationship of man and woman. It is, rather, the highest perfectional stage of the exchange of feelings between the Lord and the living entities. The Lord gives the fallen souls the chance for this highest perfection of life. Lord Brahmā is entrusted with the management of the complete cosmic show, and therefore he prays that the Lord bestow His blessings upon him so that he may execute its purpose.</p></div>
     
 </div>
 

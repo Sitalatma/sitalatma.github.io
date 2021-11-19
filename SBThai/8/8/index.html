@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -631,7 +672,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb49751" class="r r-lang-en r-paragraph" ><p>Who in this world does not want to possess wealth, beauty and the social respectability that come from these opulences? People generally desire material enjoyment, material opulence and the association of aristocratic family members (<i>bhogaiśvarya-prasaktānām - <span class="pali" style="color:#990012">โภไคศฺวรฺย-ปฺรสกฺตานามฺ</span><span class="thai" style="color:#004d00"> - โภไคศวัรยะ-ประสักตานาม</span></i>). Material enjoyment entails money, beauty and the reputation they bring, which can all be achieved by the mercy of the goddess of fortune. The goddess of fortune, however, never remains alone. As indicated in the previous verse by the word <i>bhagavat-parā - <span class="pali" style="color:#990012">ภควตฺ-ปรา</span><span class="thai" style="color:#004d00"> - ภะคะวัต-ปะรา</span>, - <span class="pali" style="color:#990012">ภควตฺ-ปรา,</span><span class="thai" style="color:#004d00"> - ภะคะวัต-ปะรา,</span></i> she is the property of the Supreme Personality of Godhead and is enjoyable only by Him. If one wants the favor of the goddess of fortune, mother Lakṣmī, because she is by nature <i>bhagavat-parā</i> one must keep her with Nārāyaṇa. The devotees who always engage in the service of Nārāyaṇa (<i>nārāyaṇa-parāyaṇa - <span class="pali" style="color:#990012">นารายณ-ปรายณ</span><span class="thai" style="color:#004d00"> - นารายะณะ-ปะรายะณะ</span></i>) can easily achieve the favor of the goddess of fortune without a doubt, but materialists who try to get the favor of the goddess of fortune only to possess her for personal enjoyment are frustrated. Theirs is not a good policy. The celebrated demon Rāvaṇa, for example, wanted to deprive Rāmacandra of Lakṣmī, Sītā, and thus be victorious, but the result was just the opposite. Sītā, of course, was taken by force by Lord Rāmacandra, and Rāvaṇa and his entire material empire were vanquished. The goddess of fortune is desirable for everyone, including human beings, but one should understand that the goddess of fortune is the exclusive property of the Supreme Personality of Godhead. One cannot achieve the mercy of the goddess of fortune unless one prays both to her and to the supreme enjoyer, the Personality of Godhead.</p></div>
+        <div id="bb49751" class="r r-lang-en r-paragraph" ><p>Who in this world does not want to possess wealth, beauty and the social respectability that come from these opulences? People generally desire material enjoyment, material opulence and the association of aristocratic family members (<i>bhogaiśvarya-prasaktānām - <span class="pali" style="color:#990012">โภไคศฺวรฺย-ปฺรสกฺตานามฺ</span><span class="thai" style="color:#004d00"> - โภไคศวัรยะ-ประสักตานาม</span></i>). Material enjoyment entails money, beauty and the reputation they bring, which can all be achieved by the mercy of the goddess of fortune. The goddess of fortune, however, never remains alone. As indicated in the previous verse by the word <i>bhagavat-parā, - <span class="pali" style="color:#990012">ภควตฺ-ปรา,</span><span class="thai" style="color:#004d00"> - ภะคะวัต-ปะรา,</span></i> she is the property of the Supreme Personality of Godhead and is enjoyable only by Him. If one wants the favor of the goddess of fortune, mother Lakṣmī, because she is by nature <i>bhagavat-parā - <span class="pali" style="color:#990012">ภควตฺ-ปรา</span><span class="thai" style="color:#004d00"> - ภะคะวัต-ปะรา</span></i> one must keep her with Nārāyaṇa. The devotees who always engage in the service of Nārāyaṇa (<i>nārāyaṇa-parāyaṇa - <span class="pali" style="color:#990012">นารายณ-ปรายณ</span><span class="thai" style="color:#004d00"> - นารายะณะ-ปะรายะณะ</span></i>) can easily achieve the favor of the goddess of fortune without a doubt, but materialists who try to get the favor of the goddess of fortune only to possess her for personal enjoyment are frustrated. Theirs is not a good policy. The celebrated demon Rāvaṇa, for example, wanted to deprive Rāmacandra of Lakṣmī, Sītā, and thus be victorious, but the result was just the opposite. Sītā, of course, was taken by force by Lord Rāmacandra, and Rāvaṇa and his entire material empire were vanquished. The goddess of fortune is desirable for everyone, including human beings, but one should understand that the goddess of fortune is the exclusive property of the Supreme Personality of Godhead. One cannot achieve the mercy of the goddess of fortune unless one prays both to her and to the supreme enjoyer, the Personality of Godhead.</p></div>
     
 </div>
 

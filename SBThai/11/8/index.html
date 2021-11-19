@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -365,7 +406,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb78784" class="r r-lang-en r-paragraph" ><p>The word <i>vīta - <span class="pali" style="color:#990012">วีต</span><span class="thai" style="color:#004d00"> - วีตะ</span>-nidraḥ - <span class="pali" style="color:#990012">วีต-นิทฺรห์</span><span class="thai" style="color:#004d00"> - วีตะ-นิทระห์</span></i> in this verse is very significant. <i>Nidrā - <span class="pali" style="color:#990012">นิทฺรา</span><span class="thai" style="color:#004d00"> - นิทรา</span></i> means “sleep” or “ignorance,” and <i>vīta</i> means “freed from.” In other words, a transcendentalist should always be awake to his eternal relationship with the Supreme Personality of Godhead and should carefully cultivate Kṛṣṇa consciousness. Being confident of his relationship with the Lord, he should not endeavor for his personal maintenance, knowing that the Lord is protecting him in all respects. Śrīla Viśvanātha Cakravartī Ṭhākura states that the example of the python is given so that one will not uselessly waste his time in bodily maintenance.</p></div>
+        <div id="bb78784" class="r r-lang-en r-paragraph" ><p>The word <i>vīta-nidraḥ - <span class="pali" style="color:#990012">วีต-นิทฺรห์</span><span class="thai" style="color:#004d00"> - วีตะ-นิทระห์</span></i> in this verse is very significant. <i>Nidrā - <span class="pali" style="color:#990012">นิทฺรา</span><span class="thai" style="color:#004d00"> - นิทรา</span></i> means “sleep” or “ignorance,” and <i>vīta - <span class="pali" style="color:#990012">วีต</span><span class="thai" style="color:#004d00"> - วีตะ</span></i> means “freed from.” In other words, a transcendentalist should always be awake to his eternal relationship with the Supreme Personality of Godhead and should carefully cultivate Kṛṣṇa consciousness. Being confident of his relationship with the Lord, he should not endeavor for his personal maintenance, knowing that the Lord is protecting him in all respects. Śrīla Viśvanātha Cakravartī Ṭhākura states that the example of the python is given so that one will not uselessly waste his time in bodily maintenance.</p></div>
     
 
         <div id="bb78785" class="r r-lang-en r-paragraph" ><p>One should not think, however, that the purpose of life is to lie on the ground like a python or to make a show of starving the body. The example of the python should not encourage one to become completely inactive. One should rather become active in spiritual advancement and inactive in material sense gratification. If one becomes completely inactive, that is certainly <i>nidrā, - <span class="pali" style="color:#990012">นิทฺรา,</span><span class="thai" style="color:#004d00"> - นิทรา,</span></i> or the darkness of ignorance, in which one remains asleep to his identity as an eternal servant of the Personality of Godhead.</p></div>
@@ -1488,7 +1529,7 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        กฺฤษฺณ พฑ ทยามยฺ, กริพาเร ชิหฺวา ชยฺ,</span></i><br /><span class="thai" style="color:#004d00"><i>        กฤษณะ พะฑะ ทะยามัย, กะริพาเร ชิหวา ชัย,</i><br /></span><i><span class="pali" style="color:#990012">สฺว-ปฺรสาทานฺน ทิล ภาอิ</span></i><br /><span class="thai" style="color:#004d00"><i>สวะ-ประสาทานนะ ทิละ ภาอิ</i><br /></span><i><span class="pali" style="color:#990012">เสอิ อนฺนามฺฤต ปาโอ, ราธา-กฺฤษฺณ-คุณ คาโอ,</span></i><br /><span class="thai" style="color:#004d00"><i>เสอิ อันนามฤตะ ปาโอ, ราธา-กฤษณะ-คุณะ คาโอ,</i><br /></span><i><span class="pali" style="color:#990012">เปฺรเม ฑาโก ไจตนฺย-นิตาอิ</span></i><br /><span class="thai" style="color:#004d00"><i>ปเรเม ฑาโก ไจตันยะ-นิตาอิ</i><br /></span>
 </div>    
 
-        <div id="bb78880" class="r r-lang-en r-paragraph" ><p>“O Lord, this material body is a lump of ignorance, and the senses are a network of paths to death. Somehow, we have fallen into this ocean of material sense enjoyment, and of all the senses the tongue is most voracious and uncontrollable; it is very difficult to conquer the tongue in this world. But You, dear Kṛṣṇa, are very kind to us and have given us such nice <i>prasādam - <span class="pali" style="color:#990012">ปฺรสาทมฺ</span><span class="thai" style="color:#004d00"> - ประสาทัม</span>, - <span class="pali" style="color:#990012">ปฺรสาทมฺ,</span><span class="thai" style="color:#004d00"> - ประสาทัม,</span></i> just to control the tongue. Now we take this <i>prasādam</i> to our full satisfaction and glorify Their Lordships Śrī Śrī Rādhā-Kṛṣṇa, and in love call for the help of Lord Caitanya and Lord Nityānanda.”</p></div>
+        <div id="bb78880" class="r r-lang-en r-paragraph" ><p>“O Lord, this material body is a lump of ignorance, and the senses are a network of paths to death. Somehow, we have fallen into this ocean of material sense enjoyment, and of all the senses the tongue is most voracious and uncontrollable; it is very difficult to conquer the tongue in this world. But You, dear Kṛṣṇa, are very kind to us and have given us such nice <i>prasādam, - <span class="pali" style="color:#990012">ปฺรสาทมฺ,</span><span class="thai" style="color:#004d00"> - ประสาทัม,</span></i> just to control the tongue. Now we take this <i>prasādam - <span class="pali" style="color:#990012">ปฺรสาทมฺ</span><span class="thai" style="color:#004d00"> - ประสาทัม</span></i> to our full satisfaction and glorify Their Lordships Śrī Śrī Rādhā-Kṛṣṇa, and in love call for the help of Lord Caitanya and Lord Nityānanda.”</p></div>
     
 </div>
 

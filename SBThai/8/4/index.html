@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -761,10 +802,10 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        ตตฺ เต ’นุกมฺปำ สุสมีกฺษมาโณ</span></i><br /><span class="thai" style="color:#004d00"><i>        ตัต เต ’นุกัมปาง สุสะมีกษะมาโณ</i><br /></span><i><span class="pali" style="color:#990012">ภุญฺชาน เอวาตฺม-กฺฤตํ วิปากมฺ</span></i><br /><span class="thai" style="color:#004d00"><i>ภุญชานะ เอวาตมะ-กฤตัง วิปากัม</i><br /></span><i><span class="pali" style="color:#990012">หฺฤทฺ-วาคฺ-วปุรฺภิรฺ วิทธนฺ นมสฺ เต</span></i><br /><span class="thai" style="color:#004d00"><i>หฤท-วาค-วะปุรภิร วิทะธัน นะมัส เต</i><br /></span><i><span class="pali" style="color:#990012">ชีเวต โย มุกฺติ-ปเท ส ทาย-ภากฺ</span></i><br /><span class="thai" style="color:#004d00"><i>ชีเวตะ โย มุกติ-ปะเท สะ ทายะ-ภาก</i><br /></span>
 </div>    
 
-        <div id="bb48979" class="r r-lang-en r-paragraph" ><p>“One who seeks Your compassion and thus tolerates all kinds of adverse conditions due to the <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i> of his past deeds, who engages always in Your devotional service with his mind, words and body, and who always offers obeisances unto You, is certainly a bona fide candidate for liberation.” A devotee who tolerates everything in this material world and patiently executes his devotional service can become <i>mukti-pade sa dāya-bhāk - <span class="pali" style="color:#990012">ทาย-ภากฺ</span><span class="thai" style="color:#004d00"> - ทายะ-ภาก</span>, - <span class="pali" style="color:#990012">มุกฺติ-ปเท ส ทาย-ภากฺ,</span><span class="thai" style="color:#004d00"> - มุกติ-ปะเท สะ ทายะ-ภาก,</span></i> a bona fide candidate for liberation. The word <i>dāya-bhāk</i> refers to a hereditary right to the Lord’s mercy. A devotee must simply engage in devotional service, not caring about material situations. Then he automatically becomes a rightful candidate for promotion to Vaikuṇṭhaloka. The devotee who renders unalloyed service to the Lord gets the right to be promoted to Vaikuṇṭhaloka, just as a son inherits the property of his father.</p></div>
+        <div id="bb48979" class="r r-lang-en r-paragraph" ><p>“One who seeks Your compassion and thus tolerates all kinds of adverse conditions due to the <i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i> of his past deeds, who engages always in Your devotional service with his mind, words and body, and who always offers obeisances unto You, is certainly a bona fide candidate for liberation.” A devotee who tolerates everything in this material world and patiently executes his devotional service can become <i>mukti-pade sa dāya-bhāk, - <span class="pali" style="color:#990012">มุกฺติ-ปเท ส ทาย-ภากฺ,</span><span class="thai" style="color:#004d00"> - มุกติ-ปะเท สะ ทายะ-ภาก,</span></i> a bona fide candidate for liberation. The word <i>dāya-bhāk - <span class="pali" style="color:#990012">ทาย-ภากฺ</span><span class="thai" style="color:#004d00"> - ทายะ-ภาก</span></i> refers to a hereditary right to the Lord’s mercy. A devotee must simply engage in devotional service, not caring about material situations. Then he automatically becomes a rightful candidate for promotion to Vaikuṇṭhaloka. The devotee who renders unalloyed service to the Lord gets the right to be promoted to Vaikuṇṭhaloka, just as a son inherits the property of his father.</p></div>
     
 
-        <div id="bb48980" class="r r-lang-en r-paragraph" ><p>When a devotee gets liberation, he becomes free from material contamination and engages as a servant of the Lord. This is explained in <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> (2.10.6): <i>mukti - <span class="pali" style="color:#990012">มุกฺติ</span><span class="thai" style="color:#004d00"> - มุกติ</span>r hitvānyathā rūpaṁ svarūpena vyavasthitiḥ. - <span class="pali" style="color:#990012">มุกฺติรฺ หิตฺวานฺยถา รูปํ สฺวรูเปน วฺยวสฺถิติห์ฯ</span><span class="thai" style="color:#004d00"> - มุกติร หิตวานยะถา รูปัง สวะรูเปนะ วยะวัสถิติห์ฯ</span></i> The word <i>svarūpa - <span class="pali" style="color:#990012">สฺวรูป</span><span class="thai" style="color:#004d00"> - สวะรูปะ</span></i> refers to <i>sārūpya-mukti - <span class="pali" style="color:#990012">สารูปฺย-มุกฺติ</span><span class="thai" style="color:#004d00"> - สารูปยะ-มุกติ</span></i> — going back home, back to Godhead, and remaining the Lord’s eternal associate, having regained a spiritual body exactly resembling that of the Lord, with four hands, holding the <i>śaṅkha, cakra, gadā - <span class="pali" style="color:#990012">ศงฺข, จกฺร, คทา</span><span class="thai" style="color:#004d00"> - ศังขะ, จักระ, คะทา</span></i> and <i>padma. - <span class="pali" style="color:#990012">ปทฺมฯ</span><span class="thai" style="color:#004d00"> - ปัทมะฯ</span></i> The difference between the <i>mukti</i> of the impersonalist and that of the devotee is that the devotee is immediately appointed an eternal servant of the Lord, whereas the impersonalist, although merging in the effulgence of the <i>brahmajyoti, - <span class="pali" style="color:#990012">พฺรหฺมโชฺยติ,</span><span class="thai" style="color:#004d00"> - พรัหมัชโยติ,</span></i> is still insecure and therefore generally falls again to this material world. <i>Āruhya kṛcchreṇa paraṁ padaṁ tataḥ patanty adho ’nādṛta-yuṣmad-aṅghrayaḥ - <span class="pali" style="color:#990012">อารุหฺย กฺฤจฺเฉฺรณ ปรํ ปทํ ตตห์ ปตนฺตฺยฺ อโธ ’นาทฺฤต-ยุษฺมทฺ-องฺฆฺรยห์</span><span class="thai" style="color:#004d00"> - อารุหยะ กฤจฉเรณะ ปะรัง ปะทัง ตะตะห์ ปะตันตย อะโธ ’นาทฤตะ-ยุษมัท-อังฆระยะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 10.2.32). Although the impersonalist rises to the Brahman effulgence and enters into that effulgence, he has no engagement in the service of the Lord, and therefore he is again attracted to materialistic philanthropic activities. Thus he comes down to open hospitals and educational institutions, feed poor men and perform similar materialistic activities, which the impersonalist thinks are more precious than serving the Supreme Personality of Godhead. <i>Anādṛta-yuṣmad-aṅghrayaḥ - <span class="pali" style="color:#990012">อนาทฺฤต-ยุษฺมทฺ-องฺฆฺรยห์</span><span class="thai" style="color:#004d00"> - อะนาทฤตะ-ยุษมัท-อังฆระยะห์</span></i>. The impersonalists do not think that the service of the Lord is more valuable than serving the poor man or starting a school or hospital. Although they say <i>brahma satyaṁ jagan mithyā - <span class="pali" style="color:#990012">พฺรหฺม สตฺยํ ชคนฺ มิถฺยา</span><span class="thai" style="color:#004d00"> - พรัหมะ สัตยัง ชะคัน มิถยา</span></i> — “Brahman is real, and the material world is false” — they are nonetheless very eager to serve the false material world and neglect the service of the lotus feet of the Supreme Personality of Godhead.</p></div>
+        <div id="bb48980" class="r r-lang-en r-paragraph" ><p>When a devotee gets liberation, he becomes free from material contamination and engages as a servant of the Lord. This is explained in <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> (2.10.6): <i>muktir hitvānyathā rūpaṁ svarūpena vyavasthitiḥ. - <span class="pali" style="color:#990012">มุกฺติรฺ หิตฺวานฺยถา รูปํ สฺวรูเปน วฺยวสฺถิติห์ฯ</span><span class="thai" style="color:#004d00"> - มุกติร หิตวานยะถา รูปัง สวะรูเปนะ วยะวัสถิติห์ฯ</span></i> The word <i>svarūpa - <span class="pali" style="color:#990012">สฺวรูป</span><span class="thai" style="color:#004d00"> - สวะรูปะ</span></i> refers to <i>sārūpya-mukti - <span class="pali" style="color:#990012">สารูปฺย-มุกฺติ</span><span class="thai" style="color:#004d00"> - สารูปยะ-มุกติ</span></i> — going back home, back to Godhead, and remaining the Lord’s eternal associate, having regained a spiritual body exactly resembling that of the Lord, with four hands, holding the <i>śaṅkha, cakra, gadā - <span class="pali" style="color:#990012">ศงฺข, จกฺร, คทา</span><span class="thai" style="color:#004d00"> - ศังขะ, จักระ, คะทา</span></i> and <i>padma. - <span class="pali" style="color:#990012">ปทฺมฯ</span><span class="thai" style="color:#004d00"> - ปัทมะฯ</span></i> The difference between the <i>mukti - <span class="pali" style="color:#990012">มุกฺติ</span><span class="thai" style="color:#004d00"> - มุกติ</span></i> of the impersonalist and that of the devotee is that the devotee is immediately appointed an eternal servant of the Lord, whereas the impersonalist, although merging in the effulgence of the <i>brahmajyoti, - <span class="pali" style="color:#990012">พฺรหฺมโชฺยติ,</span><span class="thai" style="color:#004d00"> - พรัหมัชโยติ,</span></i> is still insecure and therefore generally falls again to this material world. <i>Āruhya kṛcchreṇa paraṁ padaṁ tataḥ patanty adho ’nādṛta-yuṣmad-aṅghrayaḥ - <span class="pali" style="color:#990012">อารุหฺย กฺฤจฺเฉฺรณ ปรํ ปทํ ตตห์ ปตนฺตฺยฺ อโธ ’นาทฺฤต-ยุษฺมทฺ-องฺฆฺรยห์</span><span class="thai" style="color:#004d00"> - อารุหยะ กฤจฉเรณะ ปะรัง ปะทัง ตะตะห์ ปะตันตย อะโธ ’นาทฤตะ-ยุษมัท-อังฆระยะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 10.2.32). Although the impersonalist rises to the Brahman effulgence and enters into that effulgence, he has no engagement in the service of the Lord, and therefore he is again attracted to materialistic philanthropic activities. Thus he comes down to open hospitals and educational institutions, feed poor men and perform similar materialistic activities, which the impersonalist thinks are more precious than serving the Supreme Personality of Godhead. <i>Anādṛta-yuṣmad-aṅghrayaḥ - <span class="pali" style="color:#990012">อนาทฺฤต-ยุษฺมทฺ-องฺฆฺรยห์</span><span class="thai" style="color:#004d00"> - อะนาทฤตะ-ยุษมัท-อังฆระยะห์</span></i>. The impersonalists do not think that the service of the Lord is more valuable than serving the poor man or starting a school or hospital. Although they say <i>brahma satyaṁ jagan mithyā - <span class="pali" style="color:#990012">พฺรหฺม สตฺยํ ชคนฺ มิถฺยา</span><span class="thai" style="color:#004d00"> - พรัหมะ สัตยัง ชะคัน มิถยา</span></i> — “Brahman is real, and the material world is false” — they are nonetheless very eager to serve the false material world and neglect the service of the lotus feet of the Supreme Personality of Godhead.</p></div>
     
 </div>
 
@@ -882,7 +923,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb48989" class="r r-lang-en r-paragraph" ><p>Every verse in the Vedic literature, especially in the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> and <i>Bhagavad-gītā, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> is a Vedic <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span>. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> Here the words <i>yathānukīrtayanti - <span class="pali" style="color:#990012">ยถานุกีรฺตยนฺติ</span><span class="thai" style="color:#004d00"> - ยะถานุกีรตะยันติ</span></i> are used to recommend that this literature be presented as it is. Unscrupulous persons, however, deviate from the actual narration and interpret the text in their own way with grammatical jugglery. Such deviations are to be avoided. This is a Vedic injunction supported by Śukadeva Gosvāmī, one of the <i>mahājanas, - <span class="pali" style="color:#990012">มหาชนสฺ,</span><span class="thai" style="color:#004d00"> - มะหาชะนัส,</span></i> or authorities. He says, <i>yathānukīrtayanti: - <span class="pali" style="color:#990012">ยถานุกีรฺตยนฺติ:</span><span class="thai" style="color:#004d00"> - ยะถานุกีรตะยันติ:</span></i> one should recite the <i>mantra</i> as it is, without deviation, for then one will be eligible to rise to the platform of all good fortune. Śukadeva Gosvāmī especially recommends that those who are <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> (<i>śucayaḥ - <span class="pali" style="color:#990012">ศุจยห์</span><span class="thai" style="color:#004d00"> - ศุจะยะห์</span></i>) recite all these <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> after rising from bed in the morning.</p></div>
+        <div id="bb48989" class="r r-lang-en r-paragraph" ><p>Every verse in the Vedic literature, especially in the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> and <i>Bhagavad-gītā, - <span class="pali" style="color:#990012">ภควทฺ-คีตา,</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา,</span></i> is a Vedic <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> Here the words <i>yathānukīrtayanti - <span class="pali" style="color:#990012">ยถานุกีรฺตยนฺติ</span><span class="thai" style="color:#004d00"> - ยะถานุกีรตะยันติ</span></i> are used to recommend that this literature be presented as it is. Unscrupulous persons, however, deviate from the actual narration and interpret the text in their own way with grammatical jugglery. Such deviations are to be avoided. This is a Vedic injunction supported by Śukadeva Gosvāmī, one of the <i>mahājanas, - <span class="pali" style="color:#990012">มหาชนสฺ,</span><span class="thai" style="color:#004d00"> - มะหาชะนัส,</span></i> or authorities. He says, <i>yathānukīrtayanti: - <span class="pali" style="color:#990012">ยถานุกีรฺตยนฺติ:</span><span class="thai" style="color:#004d00"> - ยะถานุกีรตะยันติ:</span></i> one should recite the <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> as it is, without deviation, for then one will be eligible to rise to the platform of all good fortune. Śukadeva Gosvāmī especially recommends that those who are <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> (<i>śucayaḥ - <span class="pali" style="color:#990012">ศุจยห์</span><span class="thai" style="color:#004d00"> - ศุจะยะห์</span></i>) recite all these <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> after rising from bed in the morning.</p></div>
     
 
         <div id="bb48990" class="r r-lang-en r-paragraph" ><p>Because of sinful activities, at night we have bad dreams, which are very troublesome. Indeed, Mahārāja Yudhiṣṭhira was obliged to see hell because of a slight deviation from devotional service to the Lord. Therefore, <i>duḥsvapna - <span class="pali" style="color:#990012">ทุห์สฺวปฺน</span><span class="thai" style="color:#004d00"> - ทุห์สวัปนะ</span></i> — bad dreams — occur because of sinful activities. A devotee sometimes accepts a sinful person as his disciple, and to counteract the sinful reactions he accepts from the disciple, he has to see a bad dream. Nonetheless, the spiritual master is so kind that in spite of having bad dreams due to the sinful disciple, he accepts this troublesome business for the deliverance of the victims of Kali-yuga. After initiation, therefore, a disciple should be extremely careful not to commit again any sinful act that might cause difficulties for himself and the spiritual master. Before the Deity, before the fire, before the spiritual master and before the Vaiṣṇavas, the honest disciple promises to refrain from all sinful activity. Therefore he must not again commit sinful acts and thus create a troublesome situation.</p></div>

@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -1470,7 +1511,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb70222" class="r r-lang-en r-paragraph" ><p>The word <i>bīja - <span class="pali" style="color:#990012">พีช</span><span class="thai" style="color:#004d00"> - พีชะ</span>-roha - <span class="pali" style="color:#990012">โรห</span><span class="thai" style="color:#004d00"> - โรหะ</span>-pravāha - <span class="pali" style="color:#990012">พีช-โรห-ปฺรวาห</span><span class="thai" style="color:#004d00"> - พีชะ-โรหะ-ประวาหะ</span></i> is explained as follows: The conditioned soul accepts a material body, with which he attempts to enjoy the material world. That body is the seed (<i>bīja</i>) of future material existence because when a person acts with that body he creates further reactions (<i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i>), which grow (<i>roha</i>) into the obligation to accept another material body. In other words, material life is a chain of actions and reactions. The simple decision to surrender to the Supreme Lord releases the conditioned soul from this futile repetition of material growth and reaction.</p></div>
+        <div id="bb70222" class="r r-lang-en r-paragraph" ><p>The word <i>bīja-roha-pravāha - <span class="pali" style="color:#990012">พีช-โรห-ปฺรวาห</span><span class="thai" style="color:#004d00"> - พีชะ-โรหะ-ประวาหะ</span></i> is explained as follows: The conditioned soul accepts a material body, with which he attempts to enjoy the material world. That body is the seed (<i>bīja - <span class="pali" style="color:#990012">พีช</span><span class="thai" style="color:#004d00"> - พีชะ</span></i>) of future material existence because when a person acts with that body he creates further reactions (<i>karma - <span class="pali" style="color:#990012">กรฺม</span><span class="thai" style="color:#004d00"> - กัรมะ</span></i>), which grow (<i>roha - <span class="pali" style="color:#990012">โรห</span><span class="thai" style="color:#004d00"> - โรหะ</span></i>) into the obligation to accept another material body. In other words, material life is a chain of actions and reactions. The simple decision to surrender to the Supreme Lord releases the conditioned soul from this futile repetition of material growth and reaction.</p></div>
     
 
         <div id="bb70223" class="r r-lang-en r-paragraph" ><p>According to Śrīla Śrīdhara Svāmī, the words <i>tan-niṣedhaṁ prapadye - <span class="pali" style="color:#990012">ตนฺ-นิเษธํ ปฺรปเทฺย</span><span class="thai" style="color:#004d00"> - ตัน-นิเษธัง ประปัทเย</span></i> indicate that the Supreme Personality of Godhead, Lord Kṛṣṇa, is <i>niṣedhāvadhi-bhūtam, - <span class="pali" style="color:#990012">นิเษธาวธิ-ภูตมฺ,</span><span class="thai" style="color:#004d00"> - นิเษธาวะธิ-ภูตัม,</span></i> “the limit of negation.” In other words, after all illusion is negated, the Absolute Truth remains.</p></div>
@@ -2176,7 +2217,7 @@ function toggleVisibility(cl){
         <div id="bb70285" class="r r-lang-en r-paragraph" ><p>The <i>ācāryas - <span class="pali" style="color:#990012">อาจารฺยสฺ</span><span class="thai" style="color:#004d00"> - อาจารยัส</span></i> comment as follows on this verse: Śrīla Śrīdhara Svāmī explains that the term <i>ādyaḥ puruṣaḥ, - <span class="pali" style="color:#990012">อาทฺยห์ ปุรุษห์,</span><span class="thai" style="color:#004d00"> - อาทยะห์ ปุรุษะห์,</span></i> “the original <i>puruṣa, - <span class="pali" style="color:#990012">ปุรุษ,</span><span class="thai" style="color:#004d00"> - ปุรุษะ,</span></i>” indicates that Lord Kṛṣṇa expands Himself as Mahā-Viṣṇu, the first of the three <i>puruṣas - <span class="pali" style="color:#990012">ปุรุษสฺ</span><span class="thai" style="color:#004d00"> - ปุรุษัส</span></i> who take charge of cosmic manifestation. The Lord is <i>eka advitīyaḥ, - <span class="pali" style="color:#990012">เอก อทฺวิตียห์,</span><span class="thai" style="color:#004d00"> - เอกะ อัทวิตียะห์,</span></i> “one without a second,” because there is no one equal to the Lord or different from Him. No one is completely equal to the Supreme Godhead, and yet because all the living beings are expansions of the potency of the Godhead, no one is qualitatively different from Him. Śrī Caitanya Mahāprabhu nicely explains this inconceivable situation by stating that the Absolute Truth and the living beings are qualitatively one but quantitatively different. The Absolute possesses infinite spiritual consciousness, whereas the living beings possess infinitesimal consciousness, which is subject to being covered by illusion.</p></div>
     
 
-        <div id="bb70286" class="r r-lang-en r-paragraph" ><p>Śrīla Jīva Gosvāmī, commenting on the term <i>ādyaḥ puruṣa - <span class="pali" style="color:#990012">ปุรุษ</span><span class="thai" style="color:#004d00"> - ปุรุษะ</span>ḥ, - <span class="pali" style="color:#990012">อาทฺยห์ ปุรุษห์,</span><span class="thai" style="color:#004d00"> - อาทยะห์ ปุรุษะห์,</span></i> quotes from the <i>Sātvata-tantra: - <span class="pali" style="color:#990012">สาตฺวต-ตนฺตฺร:</span><span class="thai" style="color:#004d00"> - สาตวะตะ-ตันตระ:</span></i> <i>viṣṇos tu trīṇi rūpāṇi. - <span class="pali" style="color:#990012">วิษฺโณสฺ ตุ ตฺรีณิ รูปาณิฯ</span><span class="thai" style="color:#004d00"> - วิษโณส ตุ ตรีณิ รูปาณิฯ</span></i> “There are three forms of Viṣṇu [for cosmic manifestation, etc.].” Śrīla Jīva Gosvāmī also quotes a statement of the Lord’s from <i>śruti: - <span class="pali" style="color:#990012">ศฺรุติ:</span><span class="thai" style="color:#004d00"> - ศรุติ:</span></i> <i>pūrvam evāham ihāsam. - <span class="pali" style="color:#990012">ปูรฺวมฺ เอวาหมฺ อิหาสมฺฯ</span><span class="thai" style="color:#004d00"> - ปูรวัม เอวาหัม อิหาสัมฯ</span></i> “In the beginning I alone existed in this world.” This statement describes the form of the Lord called the <i>puruṣa-avatāra, - <span class="pali" style="color:#990012">ปุรุษ-อวตาร,</span><span class="thai" style="color:#004d00"> - ปุรุษะ-อะวะตาระ,</span></i> who exists before the cosmic manifestation. Śrīla Jīva Gosvāmī also quotes the following <i>śruti-mantra: - <span class="pali" style="color:#990012">ศฺรุติ-มนฺตฺร:</span><span class="thai" style="color:#004d00"> - ศรุติ-มันตระ:</span></i> <i>tat-puruṣasya puruṣatvam, - <span class="pali" style="color:#990012">ตตฺ-ปุรุษสฺย ปุรุษตฺวมฺ,</span><span class="thai" style="color:#004d00"> - ตัต-ปุรุษัสยะ ปุรุษัตวัม,</span></i> which means “Such constitutes the Lord’s status as <i>puruṣa. - <span class="pali" style="color:#990012">ปุรุษฯ</span><span class="thai" style="color:#004d00"> - ปุรุษะฯ</span></i>” Actually, Lord Kṛṣṇa is the essence of the <i>puruṣa</i> incarnation because He is <i>turīya - <span class="pali" style="color:#990012">ตุรีย</span><span class="thai" style="color:#004d00"> - ตุรียะ</span>, - <span class="pali" style="color:#990012">ตุรีย,</span><span class="thai" style="color:#004d00"> - ตุรียะ,</span></i> as described in the present verse. Jīva Gosvāmī explains the term <i>turīya</i> (literally “the fourth”) by quoting Śrīdhara Svāmī’s commentary to the <i>Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span></i> verse 11.15.16:</p></div>
+        <div id="bb70286" class="r r-lang-en r-paragraph" ><p>Śrīla Jīva Gosvāmī, commenting on the term <i>ādyaḥ puruṣaḥ, - <span class="pali" style="color:#990012">อาทฺยห์ ปุรุษห์,</span><span class="thai" style="color:#004d00"> - อาทยะห์ ปุรุษะห์,</span></i> quotes from the <i>Sātvata-tantra: - <span class="pali" style="color:#990012">สาตฺวต-ตนฺตฺร:</span><span class="thai" style="color:#004d00"> - สาตวะตะ-ตันตระ:</span></i> <i>viṣṇos tu trīṇi rūpāṇi. - <span class="pali" style="color:#990012">วิษฺโณสฺ ตุ ตฺรีณิ รูปาณิฯ</span><span class="thai" style="color:#004d00"> - วิษโณส ตุ ตรีณิ รูปาณิฯ</span></i> “There are three forms of Viṣṇu [for cosmic manifestation, etc.].” Śrīla Jīva Gosvāmī also quotes a statement of the Lord’s from <i>śruti: - <span class="pali" style="color:#990012">ศฺรุติ:</span><span class="thai" style="color:#004d00"> - ศรุติ:</span></i> <i>pūrvam evāham ihāsam. - <span class="pali" style="color:#990012">ปูรฺวมฺ เอวาหมฺ อิหาสมฺฯ</span><span class="thai" style="color:#004d00"> - ปูรวัม เอวาหัม อิหาสัมฯ</span></i> “In the beginning I alone existed in this world.” This statement describes the form of the Lord called the <i>puruṣa-avatāra, - <span class="pali" style="color:#990012">ปุรุษ-อวตาร,</span><span class="thai" style="color:#004d00"> - ปุรุษะ-อะวะตาระ,</span></i> who exists before the cosmic manifestation. Śrīla Jīva Gosvāmī also quotes the following <i>śruti-mantra: - <span class="pali" style="color:#990012">ศฺรุติ-มนฺตฺร:</span><span class="thai" style="color:#004d00"> - ศรุติ-มันตระ:</span></i> <i>tat-puruṣasya puruṣatvam, - <span class="pali" style="color:#990012">ตตฺ-ปุรุษสฺย ปุรุษตฺวมฺ,</span><span class="thai" style="color:#004d00"> - ตัต-ปุรุษัสยะ ปุรุษัตวัม,</span></i> which means “Such constitutes the Lord’s status as <i>puruṣa. - <span class="pali" style="color:#990012">ปุรุษฯ</span><span class="thai" style="color:#004d00"> - ปุรุษะฯ</span></i>” Actually, Lord Kṛṣṇa is the essence of the <i>puruṣa - <span class="pali" style="color:#990012">ปุรุษ</span><span class="thai" style="color:#004d00"> - ปุรุษะ</span></i> incarnation because He is <i>turīya, - <span class="pali" style="color:#990012">ตุรีย,</span><span class="thai" style="color:#004d00"> - ตุรียะ,</span></i> as described in the present verse. Jīva Gosvāmī explains the term <i>turīya - <span class="pali" style="color:#990012">ตุรีย</span><span class="thai" style="color:#004d00"> - ตุรียะ</span></i> (literally “the fourth”) by quoting Śrīdhara Svāmī’s commentary to the <i>Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span></i> verse 11.15.16:</p></div>
     
         <div id="bb70287" class="r r-lang-en r-verse-text" ><em><i>virāṭ hiraṇyagarbhaś ca<br />kāraṇaṁ cety upādhayaḥ<br />īśasya yat tribhir hīnaṁ<br />turīyaṁ tad vidur budhāḥ</i></em></div>
 <div class="r r-lang-en r-verse-text" >

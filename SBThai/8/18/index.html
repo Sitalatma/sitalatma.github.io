@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -374,7 +415,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb51507" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura, an expert astrologer, explains the word <i>nakṣatra - <span class="pali" style="color:#990012">นกฺษตฺร</span><span class="thai" style="color:#004d00"> - นักษัตระ</span>-tārādyāḥ - <span class="pali" style="color:#990012">อาทฺยาห์</span><span class="thai" style="color:#004d00"> - อาทยาห์</span>. - <span class="pali" style="color:#990012">นกฺษตฺร-ตาราทฺยาห์ฯ</span><span class="thai" style="color:#004d00"> - นักษัตระ-ตาราทยาห์ฯ</span></i> The word <i>nakṣatra</i> means “the stars,” the word <i>tāra - <span class="pali" style="color:#990012">ตาร</span><span class="thai" style="color:#004d00"> - ตาระ</span></i> in this context refers to the planets, and <i>ādyāḥ</i> means “the first one specifically mentioned.” Among the planets, the first is Sūrya, the sun, not the moon. Therefore, according to the Vedic version, the modern astronomer’s proposition that the moon is nearest to the earth should not be accepted. The chronological order in which people all over the world refer to the days of the week — Sunday, Monday, Tuesday, Wednesday, Thursday, Friday and Saturday — corresponds to the Vedic order of the planets and thus circumstantiates the Vedic version. Apart from this, when the Lord appeared the planets and stars became situated very auspiciously, according to astrological calculations, to celebrate the birth of the Lord.</p></div>
+        <div id="bb51507" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura, an expert astrologer, explains the word <i>nakṣatra-tārādyāḥ. - <span class="pali" style="color:#990012">นกฺษตฺร-ตาราทฺยาห์ฯ</span><span class="thai" style="color:#004d00"> - นักษัตระ-ตาราทยาห์ฯ</span></i> The word <i>nakṣatra - <span class="pali" style="color:#990012">นกฺษตฺร</span><span class="thai" style="color:#004d00"> - นักษัตระ</span></i> means “the stars,” the word <i>tāra - <span class="pali" style="color:#990012">ตาร</span><span class="thai" style="color:#004d00"> - ตาระ</span></i> in this context refers to the planets, and <i>ādyāḥ - <span class="pali" style="color:#990012">อาทฺยาห์</span><span class="thai" style="color:#004d00"> - อาทยาห์</span></i> means “the first one specifically mentioned.” Among the planets, the first is Sūrya, the sun, not the moon. Therefore, according to the Vedic version, the modern astronomer’s proposition that the moon is nearest to the earth should not be accepted. The chronological order in which people all over the world refer to the days of the week — Sunday, Monday, Tuesday, Wednesday, Thursday, Friday and Saturday — corresponds to the Vedic order of the planets and thus circumstantiates the Vedic version. Apart from this, when the Lord appeared the planets and stars became situated very auspiciously, according to astrological calculations, to celebrate the birth of the Lord.</p></div>
     
 </div>
 
@@ -1556,7 +1597,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb51597" class="r r-lang-en r-paragraph" ><p>Lord Śiva is known as Gaṅgā-dhara, or one who carries the water of the Ganges on his head. On Lord Śiva’s forehead is the emblem of the half-moon, yet to give supreme respect to the Supreme Personality of Godhead, Lord Śiva placed the water of the Ganges above this emblem. This example should be followed by everyone, or at least by every devotee, because Lord Śiva is one of the <i>mahājana - <span class="pali" style="color:#990012">มหาชน</span><span class="thai" style="color:#004d00"> - มะหาชะนะ</span>s. - <span class="pali" style="color:#990012">มหาชนสฺฯ</span><span class="thai" style="color:#004d00"> - มะหาชะนัสฯ</span></i> Similarly, Mahārāja Bali also later became a <i>mahājana - <span class="pali" style="color:#990012">มหาชน</span><span class="thai" style="color:#004d00"> - มะหาชะนะ</span>. - <span class="pali" style="color:#990012">มหาชนฯ</span><span class="thai" style="color:#004d00"> - มะหาชะนะฯ</span></i> One <i>mahājana</i> follows another <i>mahājana, - <span class="pali" style="color:#990012">มหาชน,</span><span class="thai" style="color:#004d00"> - มะหาชะนะ,</span></i> and by following the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system of <i>mahājana</i> activities one can become advanced in spiritual consciousness. The water of the Ganges is sanctified because it emanates from the toe of Lord Viṣṇu. Bali Mahārāja washed the lotus feet of Vāmanadeva, and the water with which he did so became equal to the Ganges. Bali Mahārāja, who perfectly knew all religious principles, therefore took that water on his head, following in the footsteps of Lord Śiva.</p></div>
+        <div id="bb51597" class="r r-lang-en r-paragraph" ><p>Lord Śiva is known as Gaṅgā-dhara, or one who carries the water of the Ganges on his head. On Lord Śiva’s forehead is the emblem of the half-moon, yet to give supreme respect to the Supreme Personality of Godhead, Lord Śiva placed the water of the Ganges above this emblem. This example should be followed by everyone, or at least by every devotee, because Lord Śiva is one of the <i>mahājanas. - <span class="pali" style="color:#990012">มหาชนสฺฯ</span><span class="thai" style="color:#004d00"> - มะหาชะนัสฯ</span></i> Similarly, Mahārāja Bali also later became a <i>mahājana. - <span class="pali" style="color:#990012">มหาชนฯ</span><span class="thai" style="color:#004d00"> - มะหาชะนะฯ</span></i> One <i>mahājana - <span class="pali" style="color:#990012">มหาชน</span><span class="thai" style="color:#004d00"> - มะหาชะนะ</span></i> follows another <i>mahājana, - <span class="pali" style="color:#990012">มหาชน,</span><span class="thai" style="color:#004d00"> - มะหาชะนะ,</span></i> and by following the <i>paramparā - <span class="pali" style="color:#990012">ปรมฺปรา</span><span class="thai" style="color:#004d00"> - ปะรัมปะรา</span></i> system of <i>mahājana - <span class="pali" style="color:#990012">มหาชน</span><span class="thai" style="color:#004d00"> - มะหาชะนะ</span></i> activities one can become advanced in spiritual consciousness. The water of the Ganges is sanctified because it emanates from the toe of Lord Viṣṇu. Bali Mahārāja washed the lotus feet of Vāmanadeva, and the water with which he did so became equal to the Ganges. Bali Mahārāja, who perfectly knew all religious principles, therefore took that water on his head, following in the footsteps of Lord Śiva.</p></div>
     
 </div>
 

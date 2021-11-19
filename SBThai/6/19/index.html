@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -80,7 +121,7 @@ function toggleVisibility(cl){
                         
                             
 
-                            <div id="bb44058" class="r r-lang-en r-paragraph" ><p>This chapter explains how Diti, Kaśyapa Muni’s wife, executed Kaśyapa Muni’s instructions on devotional service. During the first day of the bright fortnight of the moon in the month of Agrahāyaṇa (November-December), every woman, following in the footsteps of Diti and following the instructions of her own husband, should begin this <i>puṁsavana-vrata. - <span class="pali" style="color:#990012">ปุํสวน-วฺรตฯ</span><span class="thai" style="color:#004d00"> - ปุงสะวะนะ-วระตะฯ</span></i> In the morning, after washing her teeth, bathing and thus becoming purified, she should hear about the birth mystery of the Maruts. Then, covering her body with a white dress and being properly ornamented, before breakfast she should worship Lord Viṣṇu and mother Lakṣmī, the goddess of fortune, Lord Viṣṇu’s wife, by glorifying Lord Viṣṇu for His mercy, patience, prowess, ability, greatness and other glories and for how He can bestow all mystic benedictions. While offering the Lord all paraphernalia for worship, such as ornaments, a sacred thread, scents, nice flowers, incense and water for bathing and washing His feet, hands and mouth, one should invite the Lord with this <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span>: - <span class="pali" style="color:#990012">มนฺตฺร:</span><span class="thai" style="color:#004d00"> - มันตระ:</span></i> <i>oṁ namo bhagavate mahā-puruṣāya mahānubhāvāya mahāvibhūtipataye saha mahā-vibhūtibhir balim upaharāmi. - <span class="pali" style="color:#990012">โอํ นโม ภควเต มหา-ปุรุษาย มหานุภาวาย มหาวิภูติปตเย สห มหา-วิภูติภิรฺ พลิมฺ อุปหรามิฯ</span><span class="thai" style="color:#004d00"> - โอง นะโม ภะคะวะเต มะหา-ปุรุษายะ มะหานุภาวายะ มะหาวิภูติปะตะเย สะหะ มะหา-วิภูติภิร พะลิม อุปะหะรามิฯ</span></i> Then one should offer twelve oblations in the fire while chanting this <i>mantra: - <span class="pali" style="color:#990012">มนฺตฺร:</span><span class="thai" style="color:#004d00"> - มันตระ:</span></i> <i>oṁ namo bhagavate mahā-puruṣāya mahāvibhūti-pataye svāhā. - <span class="pali" style="color:#990012">โอํ นโม ภควเต มหา-ปุรุษาย มหาวิภูติ-ปตเย สฺวาหาฯ</span><span class="thai" style="color:#004d00"> - โอง นะโม ภะคะวะเต มะหา-ปุรุษายะ มะหาวิภูติ-ปะตะเย สวาหาฯ</span></i> One should offer obeisances while chanting this <i>mantra</i> ten times. Then one should chant the Lakṣmī-Nārāyaṇa <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i></p></div>
+                            <div id="bb44058" class="r r-lang-en r-paragraph" ><p>This chapter explains how Diti, Kaśyapa Muni’s wife, executed Kaśyapa Muni’s instructions on devotional service. During the first day of the bright fortnight of the moon in the month of Agrahāyaṇa (November-December), every woman, following in the footsteps of Diti and following the instructions of her own husband, should begin this <i>puṁsavana-vrata. - <span class="pali" style="color:#990012">ปุํสวน-วฺรตฯ</span><span class="thai" style="color:#004d00"> - ปุงสะวะนะ-วระตะฯ</span></i> In the morning, after washing her teeth, bathing and thus becoming purified, she should hear about the birth mystery of the Maruts. Then, covering her body with a white dress and being properly ornamented, before breakfast she should worship Lord Viṣṇu and mother Lakṣmī, the goddess of fortune, Lord Viṣṇu’s wife, by glorifying Lord Viṣṇu for His mercy, patience, prowess, ability, greatness and other glories and for how He can bestow all mystic benedictions. While offering the Lord all paraphernalia for worship, such as ornaments, a sacred thread, scents, nice flowers, incense and water for bathing and washing His feet, hands and mouth, one should invite the Lord with this <i>mantra: - <span class="pali" style="color:#990012">มนฺตฺร:</span><span class="thai" style="color:#004d00"> - มันตระ:</span></i> <i>oṁ namo bhagavate mahā-puruṣāya mahānubhāvāya mahāvibhūtipataye saha mahā-vibhūtibhir balim upaharāmi. - <span class="pali" style="color:#990012">โอํ นโม ภควเต มหา-ปุรุษาย มหานุภาวาย มหาวิภูติปตเย สห มหา-วิภูติภิรฺ พลิมฺ อุปหรามิฯ</span><span class="thai" style="color:#004d00"> - โอง นะโม ภะคะวะเต มะหา-ปุรุษายะ มะหานุภาวายะ มะหาวิภูติปะตะเย สะหะ มะหา-วิภูติภิร พะลิม อุปะหะรามิฯ</span></i> Then one should offer twelve oblations in the fire while chanting this <i>mantra: - <span class="pali" style="color:#990012">มนฺตฺร:</span><span class="thai" style="color:#004d00"> - มันตระ:</span></i> <i>oṁ namo bhagavate mahā-puruṣāya mahāvibhūti-pataye svāhā. - <span class="pali" style="color:#990012">โอํ นโม ภควเต มหา-ปุรุษาย มหาวิภูติ-ปตเย สฺวาหาฯ</span><span class="thai" style="color:#004d00"> - โอง นะโม ภะคะวะเต มะหา-ปุรุษายะ มะหาวิภูติ-ปะตะเย สวาหาฯ</span></i> One should offer obeisances while chanting this <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> ten times. Then one should chant the Lakṣmī-Nārāyaṇa <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i></p></div>
                         
                             
 
@@ -803,10 +844,10 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb44116" class="r r-lang-en r-paragraph" ><p>Madhvācārya - <span class="pali" style="color:#990012">อาจารฺย</span><span class="thai" style="color:#004d00"> - อาจารยะ</span>, the <i>ācārya</i> of the Tattvavādīs, has described this verse in the following way: “Viṣṇu is described as <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> personified, and mother Lakṣmī is described as spiritual activities and the original form of worship. In fact, they represent spiritual activities and the Supersoul of all <i>yajña. - <span class="pali" style="color:#990012">ยชฺญฯ</span><span class="thai" style="color:#004d00"> - ยัชญะฯ</span></i> Lord Viṣṇu is the Supersoul even of Lakṣmīdevī, but no one can be the Supersoul of Lord Viṣṇu, for Lord Viṣṇu Himself is the spiritual Supersoul of everyone.”</p></div>
+        <div id="bb44116" class="r r-lang-en r-paragraph" ><p>Madhvācārya, the <i>ācārya - <span class="pali" style="color:#990012">อาจารฺย</span><span class="thai" style="color:#004d00"> - อาจารยะ</span></i> of the Tattvavādīs, has described this verse in the following way: “Viṣṇu is described as <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> personified, and mother Lakṣmī is described as spiritual activities and the original form of worship. In fact, they represent spiritual activities and the Supersoul of all <i>yajña. - <span class="pali" style="color:#990012">ยชฺญฯ</span><span class="thai" style="color:#004d00"> - ยัชญะฯ</span></i> Lord Viṣṇu is the Supersoul even of Lakṣmīdevī, but no one can be the Supersoul of Lord Viṣṇu, for Lord Viṣṇu Himself is the spiritual Supersoul of everyone.”</p></div>
     
 
-        <div id="bb44117" class="r r-lang-en r-paragraph" ><p>According to Madhvācārya, there are two <i>tattva - <span class="pali" style="color:#990012">ตตฺตฺว</span><span class="thai" style="color:#004d00"> - ตัตตวะ</span>s, - <span class="pali" style="color:#990012">ตตฺตฺวสฺ,</span><span class="thai" style="color:#004d00"> - ตัตตวัส,</span></i> or factors. One is independent, and the other is dependent. The first <i>tattva</i> is the Supreme Lord, Viṣṇu, and the second is the <i>jīva-tattva. - <span class="pali" style="color:#990012">ชีว-ตตฺตฺวฯ</span><span class="thai" style="color:#004d00"> - ชีวะ-ตัตตวะฯ</span></i> Lakṣmīdevī, being dependent on Lord Viṣṇu, is sometimes counted among the <i>jīvas. - <span class="pali" style="color:#990012">ชีวสฺฯ</span><span class="thai" style="color:#004d00"> - ชีวัสฯ</span></i> The Gauḍīya Vaiṣṇavas, however, describe Lakṣmīdevī in accordance with the following two verses from the <i>Prameya-ratnāvalī - <span class="pali" style="color:#990012">ปฺรเมย-รตฺนาวลี</span><span class="thai" style="color:#004d00"> - ประเมยะ-รัตนาวะลี</span></i> of Baladeva Vidyābhūṣaṇa. The first verse is a quotation from the <i>Viṣṇu Purāṇa. - <span class="pali" style="color:#990012">วิษฺณุ ปุราณฯ</span><span class="thai" style="color:#004d00"> - วิษณุ ปุราณะฯ</span></i></p></div>
+        <div id="bb44117" class="r r-lang-en r-paragraph" ><p>According to Madhvācārya, there are two <i>tattvas, - <span class="pali" style="color:#990012">ตตฺตฺวสฺ,</span><span class="thai" style="color:#004d00"> - ตัตตวัส,</span></i> or factors. One is independent, and the other is dependent. The first <i>tattva - <span class="pali" style="color:#990012">ตตฺตฺว</span><span class="thai" style="color:#004d00"> - ตัตตวะ</span></i> is the Supreme Lord, Viṣṇu, and the second is the <i>jīva-tattva. - <span class="pali" style="color:#990012">ชีว-ตตฺตฺวฯ</span><span class="thai" style="color:#004d00"> - ชีวะ-ตัตตวะฯ</span></i> Lakṣmīdevī, being dependent on Lord Viṣṇu, is sometimes counted among the <i>jīvas. - <span class="pali" style="color:#990012">ชีวสฺฯ</span><span class="thai" style="color:#004d00"> - ชีวัสฯ</span></i> The Gauḍīya Vaiṣṇavas, however, describe Lakṣmīdevī in accordance with the following two verses from the <i>Prameya-ratnāvalī - <span class="pali" style="color:#990012">ปฺรเมย-รตฺนาวลี</span><span class="thai" style="color:#004d00"> - ประเมยะ-รัตนาวะลี</span></i> of Baladeva Vidyābhūṣaṇa. The first verse is a quotation from the <i>Viṣṇu Purāṇa. - <span class="pali" style="color:#990012">วิษฺณุ ปุราณฯ</span><span class="thai" style="color:#004d00"> - วิษณุ ปุราณะฯ</span></i></p></div>
     
         <div id="bb44118" class="r r-lang-en r-verse-text" ><em><i>nityaiva sā jagan-mātā<br />viṣṇoḥ śrīr anapāyinī<br />yathā sarva-gato viṣṇus<br />tathaiveyaṁ dvijottama</i></em></div>
 <div class="r r-lang-en r-verse-text" >

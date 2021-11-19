@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -84,7 +125,7 @@ function toggleVisibility(cl){
                         
                             
 
-                            <div id="bb56015" class="r r-lang-en r-paragraph" ><p>While hunting in the forest, Duṣmanta once approached the <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span></i> of Mahāṛṣi Kaṇva, where he saw an extremely beautiful woman and became attracted to her. That woman was the daughter of Viśvāmitra, and her name was Śakuntalā. Her mother was Menakā, who had left her in the forest, where Kaṇva Muni found her. Kaṇva Muni brought her to his <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span>, - <span class="pali" style="color:#990012">อาศฺรม,</span><span class="thai" style="color:#004d00"> - อาศระมะ,</span></i> where he raised and maintained her. When Śakuntalā accepted Mahārāja Duṣmanta as her husband, he married her according to the <i>gāndharva-vidhi. - <span class="pali" style="color:#990012">คานฺธรฺว-วิธิฯ</span><span class="thai" style="color:#004d00"> - คานธัรวะ-วิธิฯ</span></i> Śakuntalā later became pregnant by her husband, who left her in the <i>āśrama</i> of Kaṇva Muni and returned to his kingdom.</p></div>
+                            <div id="bb56015" class="r r-lang-en r-paragraph" ><p>While hunting in the forest, Duṣmanta once approached the <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span></i> of Mahāṛṣi Kaṇva, where he saw an extremely beautiful woman and became attracted to her. That woman was the daughter of Viśvāmitra, and her name was Śakuntalā. Her mother was Menakā, who had left her in the forest, where Kaṇva Muni found her. Kaṇva Muni brought her to his <i>āśrama, - <span class="pali" style="color:#990012">อาศฺรม,</span><span class="thai" style="color:#004d00"> - อาศระมะ,</span></i> where he raised and maintained her. When Śakuntalā accepted Mahārāja Duṣmanta as her husband, he married her according to the <i>gāndharva-vidhi. - <span class="pali" style="color:#990012">คานฺธรฺว-วิธิฯ</span><span class="thai" style="color:#004d00"> - คานธัรวะ-วิธิฯ</span></i> Śakuntalā later became pregnant by her husband, who left her in the <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span></i> of Kaṇva Muni and returned to his kingdom.</p></div>
                         
                             
 
@@ -1413,14 +1454,14 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        อศฺวเมธํ ควาลมฺภํ</span></i><br /><span class="thai" style="color:#004d00"><i>        อัศวะเมธัง คะวาลัมภัง</i><br /></span><i><span class="pali" style="color:#990012">สนฺนฺยาสํ ปล-ไปตฺฤกมฺ</span></i><br /><span class="thai" style="color:#004d00"><i>สันนยาสัง ปะละ-ไปตฤกัม</i><br /></span><i><span class="pali" style="color:#990012">เทวเรณ สุโตตฺปตฺตึ</span></i><br /><span class="thai" style="color:#004d00"><i>เทวะเรณะ สุโตตปัตติง</i><br /></span><i><span class="pali" style="color:#990012">กเลา ปญฺจ วิวรฺชเยตฺ</span></i><br /><span class="thai" style="color:#004d00"><i>กะเลา ปัญจะ วิวัรชะเยต</i><br /></span>
 </div>    
 
-        <div id="bb56124" class="r r-lang-en r-paragraph" ><p>“In this Age of Kali, five acts are forbidden: offering a horse in sacrifice, offering a cow in sacrifice, accepting the order of <i>sannyāsa, - <span class="pali" style="color:#990012">สนฺนฺยาส,</span><span class="thai" style="color:#004d00"> - สันนยาสะ,</span></i> offering oblations of flesh to the forefathers, and begetting children in the wife of one’s brother.” In this age, such <i>yajñas - <span class="pali" style="color:#990012">ยชฺญสฺ</span><span class="thai" style="color:#004d00"> - ยัชญัส</span></i> as the <i>aśvamedha-yajña - <span class="pali" style="color:#990012">อศฺวเมธ-ยชฺญ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะ-ยัชญะ</span></i> and <i>gomedha-yajña - <span class="pali" style="color:#990012">โคเมธ-ยชฺญ</span><span class="thai" style="color:#004d00"> - โคเมธะ-ยัชญะ</span></i> are impossible to perform because there are neither sufficient riches nor qualified <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> This verse says, <i>māmateyaṁ purodhāya: - <span class="pali" style="color:#990012">มามเตยํ ปุโรธาย:</span><span class="thai" style="color:#004d00"> - มามะเตยัง ปุโรธายะ:</span></i> Mahārāja Bharata engaged the son of Mamatā, Bhṛgu Muni, to take charge of performing this <i>yajña. - <span class="pali" style="color:#990012">ยชฺญฯ</span><span class="thai" style="color:#004d00"> - ยัชญะฯ</span></i> Now, however, such <i>brāhmaṇas</i> are impossible to find. Therefore the <i>śāstras - <span class="pali" style="color:#990012">ศาสฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - ศาสตรัส</span></i> recommend, <i>yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ: - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์:</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์:</span></i> those who are intelligent should perform the <i>saṅkīrtana-yajña - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญ</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะ</span></i> inaugurated by Lord Śrī Caitanya Mahāprabhu.</p></div>
+        <div id="bb56124" class="r r-lang-en r-paragraph" ><p>“In this Age of Kali, five acts are forbidden: offering a horse in sacrifice, offering a cow in sacrifice, accepting the order of <i>sannyāsa, - <span class="pali" style="color:#990012">สนฺนฺยาส,</span><span class="thai" style="color:#004d00"> - สันนยาสะ,</span></i> offering oblations of flesh to the forefathers, and begetting children in the wife of one’s brother.” In this age, such <i>yajñas - <span class="pali" style="color:#990012">ยชฺญสฺ</span><span class="thai" style="color:#004d00"> - ยัชญัส</span></i> as the <i>aśvamedha-yajña - <span class="pali" style="color:#990012">อศฺวเมธ-ยชฺญ</span><span class="thai" style="color:#004d00"> - อัศวะเมธะ-ยัชญะ</span></i> and <i>gomedha-yajña - <span class="pali" style="color:#990012">โคเมธ-ยชฺญ</span><span class="thai" style="color:#004d00"> - โคเมธะ-ยัชญะ</span></i> are impossible to perform because there are neither sufficient riches nor qualified <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> This verse says, <i>māmateyaṁ purodhāya: - <span class="pali" style="color:#990012">มามเตยํ ปุโรธาย:</span><span class="thai" style="color:#004d00"> - มามะเตยัง ปุโรธายะ:</span></i> Mahārāja Bharata engaged the son of Mamatā, Bhṛgu Muni, to take charge of performing this <i>yajña. - <span class="pali" style="color:#990012">ยชฺญฯ</span><span class="thai" style="color:#004d00"> - ยัชญะฯ</span></i> Now, however, such <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> are impossible to find. Therefore the <i>śāstras - <span class="pali" style="color:#990012">ศาสฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - ศาสตรัส</span></i> recommend, <i>yajñaiḥ saṅkīrtana-prāyair yajanti hi sumedhasaḥ: - <span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ ยชนฺติ หิ สุเมธสห์:</span><span class="thai" style="color:#004d00"> - ยัชไญห์ สังกีรตะนะ-ปราไยร ยะชันติ หิ สุเมธะสะห์:</span></i> those who are intelligent should perform the <i>saṅkīrtana-yajña - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญ</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะ</span></i> inaugurated by Lord Śrī Caitanya Mahāprabhu.</p></div>
     
         <div id="bb56125" class="r r-lang-en r-verse-text" ><em><i>kṛṣṇa-varṇaṁ tviṣākṛṣṇaṁ<br />saṅgopāṅgāstra-pārṣadam<br />yajñaiḥ saṅkīrtana-prāyair<br />yajanti hi sumedhasaḥ</i></em></div>
 <div class="r r-lang-en r-verse-text" >
 <i><span class="pali" style="color:#990012">        กฺฤษฺณ-วรฺณํ ตฺวิษากฺฤษฺณํ</span></i><br /><span class="thai" style="color:#004d00"><i>        กฤษณะ-วัรณัง ตวิษากฤษณัง</i><br /></span><i><span class="pali" style="color:#990012">สงฺโคปางฺคาสฺตฺร-ปารฺษทมฺ</span></i><br /><span class="thai" style="color:#004d00"><i>สังโคปางคาสตระ-ปารษะทัม</i><br /></span><i><span class="pali" style="color:#990012">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ</span></i><br /><span class="thai" style="color:#004d00"><i>ยัชไญห์ สังกีรตะนะ-ปราไยร</i><br /></span><i><span class="pali" style="color:#990012">ยชนฺติ หิ สุเมธสห์</span></i><br /><span class="thai" style="color:#004d00"><i>ยะชันติ หิ สุเมธะสะห์</i><br /></span>
 </div>    
 
-        <div id="bb56126" class="r r-lang-en r-paragraph" ><p>“In this Age of Kali, people endowed with sufficient intelligence will worship the Lord, who is accompanied by His associates, by performance of <i>saṅkīrtana-yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span>. - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญฯ</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะฯ</span></i>” (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 11.5.32) <i>Yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> must be performed, for otherwise people will be entangled in sinful activities and will suffer immensely. Therefore the Kṛṣṇa consciousness movement has taken charge of introducing the chanting of Hare Kṛṣṇa all over the world. This Hare Kṛṣṇa movement is also <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span>, - <span class="pali" style="color:#990012">ยชฺญ,</span><span class="thai" style="color:#004d00"> - ยัชญะ,</span></i> but without the difficulties involved in securing paraphernalia and qualified <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> This congregational chanting can be performed anywhere and everywhere. If people somehow or other assemble together and are induced to chant Hare Kṛṣṇa, Hare Kṛṣṇa, Kṛṣṇa Kṛṣṇa, Hare Hare/ Hare Rāma, Hare Rāma, Rāma Rāma, Hare Hare, all the purposes of <i>yajña</i> will be fulfilled. The first purpose is that there must be sufficient rain, for without rain there cannot be any produce (<i>annād bhavanti bhūtāni parjanyād anna-sambhavaḥ - <span class="pali" style="color:#990012">อนฺนาทฺ ภวนฺติ ภูตานิ ปรฺชนฺยาทฺ อนฺน-สมฺภวห์</span><span class="thai" style="color:#004d00"> - อันนาท ภะวันติ ภูตานิ ปัรชันยาท อันนะ-สัมภะวะห์</span></i>). All our necessities can be produced simply by rainfall (<i>kāmaṁ vavarṣa parjanyaḥ - <span class="pali" style="color:#990012">กามํ ววรฺษ ปรฺชนฺยห์</span><span class="thai" style="color:#004d00"> - กามัง วะวัรษะ ปัรชันยะห์</span></i>), and the earth is the original source of all necessities (<i>sarva-kāma-dughā mahī - <span class="pali" style="color:#990012">สรฺว-กาม-ทุฆา มหี</span><span class="thai" style="color:#004d00"> - สัรวะ-กามะ-ทุฆา มะหี</span></i>). In conclusion, therefore, in this Age of Kali people all over the world should refrain from the four principles of sinful life — illicit sex, meat-eating, intoxication and gambling — and in a pure state of existence should perform the simple <i>yajña</i> of chanting the Hare Kṛṣṇa <i>mahā-mantra. - <span class="pali" style="color:#990012">มหา-มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มะหา-มันตระฯ</span></i> Then the earth will certainly produce all the necessities for life, and people will be happy economically, politically, socially, religiously and culturally. Everything will be in proper order.</p></div>
+        <div id="bb56126" class="r r-lang-en r-paragraph" ><p>“In this Age of Kali, people endowed with sufficient intelligence will worship the Lord, who is accompanied by His associates, by performance of <i>saṅkīrtana-yajña. - <span class="pali" style="color:#990012">สงฺกีรฺตน-ยชฺญฯ</span><span class="thai" style="color:#004d00"> - สังกีรตะนะ-ยัชญะฯ</span></i>” (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 11.5.32) <i>Yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> must be performed, for otherwise people will be entangled in sinful activities and will suffer immensely. Therefore the Kṛṣṇa consciousness movement has taken charge of introducing the chanting of Hare Kṛṣṇa all over the world. This Hare Kṛṣṇa movement is also <i>yajña, - <span class="pali" style="color:#990012">ยชฺญ,</span><span class="thai" style="color:#004d00"> - ยัชญะ,</span></i> but without the difficulties involved in securing paraphernalia and qualified <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> This congregational chanting can be performed anywhere and everywhere. If people somehow or other assemble together and are induced to chant Hare Kṛṣṇa, Hare Kṛṣṇa, Kṛṣṇa Kṛṣṇa, Hare Hare/ Hare Rāma, Hare Rāma, Rāma Rāma, Hare Hare, all the purposes of <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> will be fulfilled. The first purpose is that there must be sufficient rain, for without rain there cannot be any produce (<i>annād bhavanti bhūtāni parjanyād anna-sambhavaḥ - <span class="pali" style="color:#990012">อนฺนาทฺ ภวนฺติ ภูตานิ ปรฺชนฺยาทฺ อนฺน-สมฺภวห์</span><span class="thai" style="color:#004d00"> - อันนาท ภะวันติ ภูตานิ ปัรชันยาท อันนะ-สัมภะวะห์</span></i>). All our necessities can be produced simply by rainfall (<i>kāmaṁ vavarṣa parjanyaḥ - <span class="pali" style="color:#990012">กามํ ววรฺษ ปรฺชนฺยห์</span><span class="thai" style="color:#004d00"> - กามัง วะวัรษะ ปัรชันยะห์</span></i>), and the earth is the original source of all necessities (<i>sarva-kāma-dughā mahī - <span class="pali" style="color:#990012">สรฺว-กาม-ทุฆา มหี</span><span class="thai" style="color:#004d00"> - สัรวะ-กามะ-ทุฆา มะหี</span></i>). In conclusion, therefore, in this Age of Kali people all over the world should refrain from the four principles of sinful life — illicit sex, meat-eating, intoxication and gambling — and in a pure state of existence should perform the simple <i>yajña - <span class="pali" style="color:#990012">ยชฺญ</span><span class="thai" style="color:#004d00"> - ยัชญะ</span></i> of chanting the Hare Kṛṣṇa <i>mahā-mantra. - <span class="pali" style="color:#990012">มหา-มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มะหา-มันตระฯ</span></i> Then the earth will certainly produce all the necessities for life, and people will be happy economically, politically, socially, religiously and culturally. Everything will be in proper order.</p></div>
     
 </div>
 

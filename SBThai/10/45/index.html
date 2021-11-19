@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -179,7 +220,7 @@ function toggleVisibility(cl){
         <div id="bb66094" class="r r-lang-en r-paragraph" ><p>If Vasudeva and Devakī would have seen Kṛṣṇa as almighty God, their intense love for Him as their son would have been spoiled. Lord Kṛṣṇa did not want this. Rather, the Lord wanted to enjoy with them the ecstatic love of <i>vātsalya-rasa, - <span class="pali" style="color:#990012">วาตฺสลฺย-รส,</span><span class="thai" style="color:#004d00"> - วาตสัลยะ-ระสะ,</span></i> the relationship between parents and children. As Śrīla Prabhupāda often pointed out, although we normally think of God as the supreme father, in Kṛṣṇa consciousness we can enter into the Lord’s pastimes and play the part of His parents, thus intensifying our love for Him.</p></div>
     
 
-        <div id="bb66095" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura points out that the word <i>jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span></i> may be translated here as “devotees,” as in the verse <i>dīyamānaṁ na gṛhṇanti vinā mat-sevanaṁ jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span>ḥ - <span class="pali" style="color:#990012">ทียมานํ น คฺฤหฺณนฺติ วินา มตฺ-เสวนํ ชนห์</span><span class="thai" style="color:#004d00"> - ทียะมานัง นะ คฤหณันติ วินา มัต-เสวะนัง ชะนะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 3.29.13). He further explains that <i>jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span></i> may also be translated as “parents,” since <i>jana</i> is derived from the verb <i>jan, - <span class="pali" style="color:#990012">ชนฺ,</span><span class="thai" style="color:#004d00"> - ชัน,</span></i> which in the causative form (<i>janayate - <span class="pali" style="color:#990012">ชนยเต</span><span class="thai" style="color:#004d00"> - ชะนะยะเต</span></i>) means “to generate or to give birth to.” In this sense of the word (as in <i>jananī - <span class="pali" style="color:#990012">ชนนี</span><span class="thai" style="color:#004d00"> - ชะนะนี</span></i> or <i>janakau - <span class="pali" style="color:#990012">ชนเกา</span><span class="thai" style="color:#004d00"> - ชะนะเกา</span></i>), the term <i>jana-mohinī - <span class="pali" style="color:#990012">ชน-โมหินี</span><span class="thai" style="color:#004d00"> - ชะนะ-โมหินี</span></i> indicates that the Lord was about to expand His internal illusory potency so that Vasudeva and Devakī would again love Him as their dear child.</p></div>
+        <div id="bb66095" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī Ṭhākura points out that the word <i>jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span></i> may be translated here as “devotees,” as in the verse <i>dīyamānaṁ na gṛhṇanti vinā mat-sevanaṁ janaḥ - <span class="pali" style="color:#990012">ทียมานํ น คฺฤหฺณนฺติ วินา มตฺ-เสวนํ ชนห์</span><span class="thai" style="color:#004d00"> - ทียะมานัง นะ คฤหณันติ วินา มัต-เสวะนัง ชะนะห์</span></i> (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 3.29.13). He further explains that <i>jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span></i> may also be translated as “parents,” since <i>jana - <span class="pali" style="color:#990012">ชน</span><span class="thai" style="color:#004d00"> - ชะนะ</span></i> is derived from the verb <i>jan, - <span class="pali" style="color:#990012">ชนฺ,</span><span class="thai" style="color:#004d00"> - ชัน,</span></i> which in the causative form (<i>janayate - <span class="pali" style="color:#990012">ชนยเต</span><span class="thai" style="color:#004d00"> - ชะนะยะเต</span></i>) means “to generate or to give birth to.” In this sense of the word (as in <i>jananī - <span class="pali" style="color:#990012">ชนนี</span><span class="thai" style="color:#004d00"> - ชะนะนี</span></i> or <i>janakau - <span class="pali" style="color:#990012">ชนเกา</span><span class="thai" style="color:#004d00"> - ชะนะเกา</span></i>), the term <i>jana-mohinī - <span class="pali" style="color:#990012">ชน-โมหินี</span><span class="thai" style="color:#004d00"> - ชะนะ-โมหินี</span></i> indicates that the Lord was about to expand His internal illusory potency so that Vasudeva and Devakī would again love Him as their dear child.</p></div>
     
 </div>
 
@@ -297,7 +338,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb66104" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī discusses this verse as follows: “One may object that at this point Lord Kṛṣṇa had not actually passed the <i>kaiśora - <span class="pali" style="color:#990012">ไกโศร</span><span class="thai" style="color:#004d00"> - ไกโศระ</span></i> stage [age ten to fifteen], since the women of Mathurā had stated, <i>kva cāti-sukumārāṅgau kiśora - <span class="pali" style="color:#990012">กิโศร</span><span class="thai" style="color:#004d00"> - กิโศระ</span>u nāpta-yauvanau: - <span class="pali" style="color:#990012">กฺว จาติ-สุกุมารางฺเคา กิโศเรา นาปฺต-เยาวเนา:</span><span class="thai" style="color:#004d00"> - กวะ จาติ-สุกุมารางเคา กิโศเรา นาปตะ-เยาวะเนา:</span></i> ‘Kṛṣṇa and Balarāma have very tender limbs, being still at the <i>kiśora</i> stage, not having reached adolescence.’ (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 10.44.8) The definition of the different stages of growing up is given as follows:</p></div>
+        <div id="bb66104" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī discusses this verse as follows: “One may object that at this point Lord Kṛṣṇa had not actually passed the <i>kaiśora - <span class="pali" style="color:#990012">ไกโศร</span><span class="thai" style="color:#004d00"> - ไกโศระ</span></i> stage [age ten to fifteen], since the women of Mathurā had stated, <i>kva cāti-sukumārāṅgau kiśorau nāpta-yauvanau: - <span class="pali" style="color:#990012">กฺว จาติ-สุกุมารางฺเคา กิโศเรา นาปฺต-เยาวเนา:</span><span class="thai" style="color:#004d00"> - กวะ จาติ-สุกุมารางเคา กิโศเรา นาปตะ-เยาวะเนา:</span></i> ‘Kṛṣṇa and Balarāma have very tender limbs, being still at the <i>kiśora - <span class="pali" style="color:#990012">กิโศร</span><span class="thai" style="color:#004d00"> - กิโศระ</span></i> stage, not having reached adolescence.’ (<i>Bhāg. - <span class="pali" style="color:#990012">ภาคฺฯ</span><span class="thai" style="color:#004d00"> - ภาคฯ</span></i> 10.44.8) The definition of the different stages of growing up is given as follows:</p></div>
     
         <div id="bb66105" class="r r-lang-en r-verse-text" ><em><i>kaumāraṁ pañcamābdāntaṁ<br />paugaṇḍaṁ daśamāvadhi<br />kaiśoram ā-pañcadaśād<br />yauvanaṁ tu tataḥ param</i></em></div>
 <div class="r r-lang-en r-verse-text" >

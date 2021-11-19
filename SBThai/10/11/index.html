@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -1215,7 +1256,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb59583" class="r r-lang-en r-paragraph" ><p>It is a custom of Vedic culture that whenever there is any auspicious ceremony, one should give valuable cows in charity to the <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> Therefore mother Yaśodā requested Kṛṣṇa, “Instead of being enthusiastic in playing, now please come and be enthusiastic in charity.” <i>Yajña-dāna-tapaḥ - <span class="pali" style="color:#990012">ตปห์</span><span class="thai" style="color:#004d00"> - ตะปะห์</span>-karma na tyājyaṁ kāryam eva tat. - <span class="pali" style="color:#990012">ยชฺญ-ทาน-ตปห์-กรฺม น ตฺยาชฺยํ การฺยมฺ เอว ตตฺฯ</span><span class="thai" style="color:#004d00"> - ยัชญะ-ทานะ-ตะปะห์-กัรมะ นะ ตยาชยัง การยัม เอวะ ตัตฯ</span></i> As advised in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.5), sacrifice, charity and austerity should never be given up. <i>Yajño dānaṁ tapaś caiva pāvanāni manīṣiṇām: - <span class="pali" style="color:#990012">ยชฺโญ ทานํ ตปศฺ ไจว ปาวนานิ มนีษิณามฺ:</span><span class="thai" style="color:#004d00"> - ยัชโญ ทานัง ตะปัศ ไจวะ ปาวะนานิ มะนีษิณาม:</span></i> even if one is very much advanced in spiritual life, one should not give up these three duties. To observe one’s birthday ceremony, one should do something in terms of one of these three items (<i>yajña, dāna - <span class="pali" style="color:#990012">ยชฺญ, ทาน</span><span class="thai" style="color:#004d00"> - ยัชญะ, ทานะ</span></i> or <i>tapaḥ</i>), or all of them together.</p></div>
+        <div id="bb59583" class="r r-lang-en r-paragraph" ><p>It is a custom of Vedic culture that whenever there is any auspicious ceremony, one should give valuable cows in charity to the <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> Therefore mother Yaśodā requested Kṛṣṇa, “Instead of being enthusiastic in playing, now please come and be enthusiastic in charity.” <i>Yajña-dāna-tapaḥ-karma na tyājyaṁ kāryam eva tat. - <span class="pali" style="color:#990012">ยชฺญ-ทาน-ตปห์-กรฺม น ตฺยาชฺยํ การฺยมฺ เอว ตตฺฯ</span><span class="thai" style="color:#004d00"> - ยัชญะ-ทานะ-ตะปะห์-กัรมะ นะ ตยาชยัง การยัม เอวะ ตัตฯ</span></i> As advised in <i>Bhagavad-gītā - <span class="pali" style="color:#990012">ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ภะคะวัท-คีตา</span></i> (18.5), sacrifice, charity and austerity should never be given up. <i>Yajño dānaṁ tapaś caiva pāvanāni manīṣiṇām: - <span class="pali" style="color:#990012">ยชฺโญ ทานํ ตปศฺ ไจว ปาวนานิ มนีษิณามฺ:</span><span class="thai" style="color:#004d00"> - ยัชโญ ทานัง ตะปัศ ไจวะ ปาวะนานิ มะนีษิณาม:</span></i> even if one is very much advanced in spiritual life, one should not give up these three duties. To observe one’s birthday ceremony, one should do something in terms of one of these three items (<i>yajña, dāna - <span class="pali" style="color:#990012">ยชฺญ, ทาน</span><span class="thai" style="color:#004d00"> - ยัชญะ, ทานะ</span></i> or <i>tapaḥ - <span class="pali" style="color:#990012">ตปห์</span><span class="thai" style="color:#004d00"> - ตะปะห์</span></i>), or all of them together.</p></div>
     
 </div>
 
@@ -3498,7 +3539,7 @@ function toggleVisibility(cl){
         <div id="bb59763" class="r r-lang-en r-reference" ><p>(<i>Bhāg.</i> 1.7.6)</p></div>
     
 
-        <div id="bb59764" class="r r-lang-en r-paragraph" ><p>Vyāsadeva has given this literature so that everyone may understand one’s transcendental position simply by discussing <i>bhāgavata-kathā. - <span class="pali" style="color:#990012">ภาควต-กถาฯ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-กะถาฯ</span></i> Even at the present moment, everyone everywhere can be happy and free from material tribulations by following <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span>. - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺฯ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัมฯ</span></i> There is no need of austerities and penances, which in this age are very difficult to perform. Śrī Caitanya Mahāprabhu has therefore declared, <i>sarvātma-snapanaṁ paraṁ vijayate śrī-kṛṣṇa-saṅkīrtanam. - <span class="pali" style="color:#990012">สรฺวาตฺม-สฺนปนํ ปรํ วิชยเต ศฺรี-กฺฤษฺณ-สงฺกีรฺตนมฺฯ</span><span class="thai" style="color:#004d00"> - สัรวาตมะ-สนะปะนัง ปะรัง วิชะยะเต ศรี-กฤษณะ-สังกีรตะนัมฯ</span></i> By our Kṛṣṇa consciousness movement, we are trying to distribute <i>Śrīmad-Bhāgavatam</i> so that anyone in any part of the world can be absorbed in the Kṛṣṇa consciousness movement by chanting and hearing about the activities of Kṛṣṇa and be free from all material tribulations.</p></div>
+        <div id="bb59764" class="r r-lang-en r-paragraph" ><p>Vyāsadeva has given this literature so that everyone may understand one’s transcendental position simply by discussing <i>bhāgavata-kathā. - <span class="pali" style="color:#990012">ภาควต-กถาฯ</span><span class="thai" style="color:#004d00"> - ภาคะวะตะ-กะถาฯ</span></i> Even at the present moment, everyone everywhere can be happy and free from material tribulations by following <i>Śrīmad-Bhāgavatam. - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺฯ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัมฯ</span></i> There is no need of austerities and penances, which in this age are very difficult to perform. Śrī Caitanya Mahāprabhu has therefore declared, <i>sarvātma-snapanaṁ paraṁ vijayate śrī-kṛṣṇa-saṅkīrtanam. - <span class="pali" style="color:#990012">สรฺวาตฺม-สฺนปนํ ปรํ วิชยเต ศฺรี-กฺฤษฺณ-สงฺกีรฺตนมฺฯ</span><span class="thai" style="color:#004d00"> - สัรวาตมะ-สนะปะนัง ปะรัง วิชะยะเต ศรี-กฤษณะ-สังกีรตะนัมฯ</span></i> By our Kṛṣṇa consciousness movement, we are trying to distribute <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> so that anyone in any part of the world can be absorbed in the Kṛṣṇa consciousness movement by chanting and hearing about the activities of Kṛṣṇa and be free from all material tribulations.</p></div>
     
 </div>
 

@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -1081,7 +1122,7 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        ยถา กาญฺจนตำ ยาติ</span></i><br /><span class="thai" style="color:#004d00"><i>        ยะถา กาญจะนะตาง ยาติ</i><br /></span><i><span class="pali" style="color:#990012">กำสฺยํ รส-วิธานตห์</span></i><br /><span class="thai" style="color:#004d00"><i>กางสยัง ระสะ-วิธานะตะห์</i><br /></span><i><span class="pali" style="color:#990012">ตถา ทีกฺษา-วิธาเนน</span></i><br /><span class="thai" style="color:#004d00"><i>ตะถา ทีกษา-วิธาเนนะ</i><br /></span><i><span class="pali" style="color:#990012">ทฺวิชตฺวํ ชายเต นฺฤณามฺ</span></i><br /><span class="thai" style="color:#004d00"><i>ทวิชัตวัง ชายะเต นฤณาม</i><br /></span>
 </div>    
 
-        <div id="bb39360" class="r r-lang-en r-paragraph" ><p>“As one can transform <i>kaṁsa, - <span class="pali" style="color:#990012">กํส,</span><span class="thai" style="color:#004d00"> - กังสะ,</span></i> or bell metal, into gold by treating it with mercury, one can also turn a lowborn man into a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> by initiating him properly into Vaiṣṇava activities.” The International Society for Krishna Consciousness is trying to turn <i>mlecchas - <span class="pali" style="color:#990012">เมฺลจฺฉสฺ</span><span class="thai" style="color:#004d00"> - มเลจฉัส</span></i> and <i>yavanas - <span class="pali" style="color:#990012">ยวนสฺ</span><span class="thai" style="color:#004d00"> - ยะวะนัส</span></i> into real <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>s - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> by properly initiating them and stopping them from engaging in meat-eating, intoxication, illicit sex and gambling. One who stops these four principles of sinful activity and chants the Hare Kṛṣṇa <i>mahā-mantra - <span class="pali" style="color:#990012">มหา-มนฺตฺร</span><span class="thai" style="color:#004d00"> - มะหา-มันตระ</span></i> can certainly become a pure <i>brāhmaṇa</i> through the process of bona fide initiation, as suggested by Śrīla Sanātana Gosvāmī.</p></div>
+        <div id="bb39360" class="r r-lang-en r-paragraph" ><p>“As one can transform <i>kaṁsa, - <span class="pali" style="color:#990012">กํส,</span><span class="thai" style="color:#004d00"> - กังสะ,</span></i> or bell metal, into gold by treating it with mercury, one can also turn a lowborn man into a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> by initiating him properly into Vaiṣṇava activities.” The International Society for Krishna Consciousness is trying to turn <i>mlecchas - <span class="pali" style="color:#990012">เมฺลจฺฉสฺ</span><span class="thai" style="color:#004d00"> - มเลจฉัส</span></i> and <i>yavanas - <span class="pali" style="color:#990012">ยวนสฺ</span><span class="thai" style="color:#004d00"> - ยะวะนัส</span></i> into real <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> by properly initiating them and stopping them from engaging in meat-eating, intoxication, illicit sex and gambling. One who stops these four principles of sinful activity and chants the Hare Kṛṣṇa <i>mahā-mantra - <span class="pali" style="color:#990012">มหา-มนฺตฺร</span><span class="thai" style="color:#004d00"> - มะหา-มันตระ</span></i> can certainly become a pure <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> through the process of bona fide initiation, as suggested by Śrīla Sanātana Gosvāmī.</p></div>
     
 
         <div id="bb39361" class="r r-lang-en r-paragraph" ><p>Apart from this, if one takes a hint from this verse and learns how to mix mercury with bell metal by properly heating and melting them, one can get gold very cheaply. The alchemists of the medieval age tried to manufacture gold, but they were unsuccessful, perhaps because they did not follow the right instructions.</p></div>
@@ -1266,7 +1307,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb39375" class="r r-lang-en r-paragraph" ><p>It is not a fact that one has to offer his material possessions to the Supreme Personality of Godhead and be liberated before he can engage in devotional service. A devotee automatically attains liberation without separate endeavors. Bali Mahārāja did not get back all his material possessions merely because of his charity to the Lord. One who becomes a devotee, free from material desires and motives, regards all opportunities, both material and spiritual, as benedictions from the Lord, and in this way his service to the Lord is never hampered. <i>Bhukti, - <span class="pali" style="color:#990012">ภุกฺติ,</span><span class="thai" style="color:#004d00"> - ภุกติ,</span></i> material enjoyment, and <i>mukti - <span class="pali" style="color:#990012">มุกฺติ</span><span class="thai" style="color:#004d00"> - มุกติ</span>, - <span class="pali" style="color:#990012">มุกฺติ,</span><span class="thai" style="color:#004d00"> - มุกติ,</span></i> liberation, are only by-products of devotional service. A devotee need not work separately to attain <i>mukti. - <span class="pali" style="color:#990012">มุกฺติฯ</span><span class="thai" style="color:#004d00"> - มุกติฯ</span></i> Śrīla Bilvamaṅgala Ṭhākura said, <i>muktiḥ svayaṁ mukulitāñjaliḥ sevate ’smān: - <span class="pali" style="color:#990012">มุกฺติห์ สฺวยํ มุกุลิตาญฺชลิห์ เสวเต ’สฺมานฺ:</span><span class="thai" style="color:#004d00"> - มุกติห์ สวะยัง มุกุลิตาญชะลิห์ เสวะเต ’สมาน:</span></i> a pure devotee of the Lord does not have to endeavor separately for <i>mukti, - <span class="pali" style="color:#990012">มุกฺติ,</span><span class="thai" style="color:#004d00"> - มุกติ,</span></i> because <i>mukti</i> is always ready to serve him.</p></div>
+        <div id="bb39375" class="r r-lang-en r-paragraph" ><p>It is not a fact that one has to offer his material possessions to the Supreme Personality of Godhead and be liberated before he can engage in devotional service. A devotee automatically attains liberation without separate endeavors. Bali Mahārāja did not get back all his material possessions merely because of his charity to the Lord. One who becomes a devotee, free from material desires and motives, regards all opportunities, both material and spiritual, as benedictions from the Lord, and in this way his service to the Lord is never hampered. <i>Bhukti, - <span class="pali" style="color:#990012">ภุกฺติ,</span><span class="thai" style="color:#004d00"> - ภุกติ,</span></i> material enjoyment, and <i>mukti, - <span class="pali" style="color:#990012">มุกฺติ,</span><span class="thai" style="color:#004d00"> - มุกติ,</span></i> liberation, are only by-products of devotional service. A devotee need not work separately to attain <i>mukti. - <span class="pali" style="color:#990012">มุกฺติฯ</span><span class="thai" style="color:#004d00"> - มุกติฯ</span></i> Śrīla Bilvamaṅgala Ṭhākura said, <i>muktiḥ svayaṁ mukulitāñjaliḥ sevate ’smān: - <span class="pali" style="color:#990012">มุกฺติห์ สฺวยํ มุกุลิตาญฺชลิห์ เสวเต ’สฺมานฺ:</span><span class="thai" style="color:#004d00"> - มุกติห์ สวะยัง มุกุลิตาญชะลิห์ เสวะเต ’สมาน:</span></i> a pure devotee of the Lord does not have to endeavor separately for <i>mukti, - <span class="pali" style="color:#990012">มุกฺติ,</span><span class="thai" style="color:#004d00"> - มุกติ,</span></i> because <i>mukti - <span class="pali" style="color:#990012">มุกฺติ</span><span class="thai" style="color:#004d00"> - มุกติ</span></i> is always ready to serve him.</p></div>
     
 
         <div id="bb39376" class="r r-lang-en r-paragraph" ><p>In this regard, <i>Caitanya-caritāmṛta - <span class="pali" style="color:#990012">ไจตนฺย-จริตามฺฤต</span><span class="thai" style="color:#004d00"> - ไจตันยะ-จะริตามฤตะ</span></i> (<i>Antya - <span class="pali" style="color:#990012">อนฺตฺย</span><span class="thai" style="color:#004d00"> - อันตยะ</span></i> 3.177-188) describes Haridāsa Ṭhākura’s confirmation of the effect of chanting the holy name of the Lord.</p></div>
@@ -1574,7 +1615,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb39412" class="r r-lang-en r-paragraph" ><p>Bali Mahārāja was so powerful that he fought with Indra and took possession of the three worlds. Indra was certainly very advanced in knowledge, but instead of asking Vāmanadeva for engagement in His service, he used the Lord to beg for material possessions that would be finished at the end of one age of Manu. An age of Manu, which is the duration of Manu’s life, is calculated to last seventy-two <i>yuga - <span class="pali" style="color:#990012">ยุค</span><span class="thai" style="color:#004d00"> - ยุคะ</span>s. - <span class="pali" style="color:#990012">ยุคสฺฯ</span><span class="thai" style="color:#004d00"> - ยุคัสฯ</span></i> One <i>yuga</i> consists of 4,300,000 years, and therefore the duration of Manu’s life is 309,600,000 years. The demigods possess their material opulence only until the end of the life of Manu. Time is insurmountable. The time one is allotted, even if it be millions of years, is quickly gone. The demigods own their material possessions only within the limits of time. Therefore Bali Mahārāja lamented that although Indra was very learned, he did not know how to use his intelligence properly, for instead of asking Vāmanadeva to allow him to engage in His service, Indra used Him to beg Bali Mahārāja for material wealth. Although Indra was learned and his prime minister, Bṛhaspati, was also learned, neither of them begged to be able to render loving service to Lord Vāmanadeva. Therefore Bali Mahārāja lamented for Indra.</p></div>
+        <div id="bb39412" class="r r-lang-en r-paragraph" ><p>Bali Mahārāja was so powerful that he fought with Indra and took possession of the three worlds. Indra was certainly very advanced in knowledge, but instead of asking Vāmanadeva for engagement in His service, he used the Lord to beg for material possessions that would be finished at the end of one age of Manu. An age of Manu, which is the duration of Manu’s life, is calculated to last seventy-two <i>yugas. - <span class="pali" style="color:#990012">ยุคสฺฯ</span><span class="thai" style="color:#004d00"> - ยุคัสฯ</span></i> One <i>yuga - <span class="pali" style="color:#990012">ยุค</span><span class="thai" style="color:#004d00"> - ยุคะ</span></i> consists of 4,300,000 years, and therefore the duration of Manu’s life is 309,600,000 years. The demigods possess their material opulence only until the end of the life of Manu. Time is insurmountable. The time one is allotted, even if it be millions of years, is quickly gone. The demigods own their material possessions only within the limits of time. Therefore Bali Mahārāja lamented that although Indra was very learned, he did not know how to use his intelligence properly, for instead of asking Vāmanadeva to allow him to engage in His service, Indra used Him to beg Bali Mahārāja for material wealth. Although Indra was learned and his prime minister, Bṛhaspati, was also learned, neither of them begged to be able to render loving service to Lord Vāmanadeva. Therefore Bali Mahārāja lamented for Indra.</p></div>
     
 </div>
 

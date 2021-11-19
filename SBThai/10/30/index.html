@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -675,7 +716,7 @@ function toggleVisibility(cl){
         <div id="bb63556" class="r r-lang-en r-paragraph" ><p>According to Śrīla Jīva Gosvāmī, the <i>cūta - <span class="pali" style="color:#990012">จูต</span><span class="thai" style="color:#004d00"> - จูตะ</span></i> is a mango creeper, whereas the <i>āmra - <span class="pali" style="color:#990012">อามฺร</span><span class="thai" style="color:#004d00"> - อามระ</span></i> is a mango tree. He goes on to explain that the <i>nīpa, - <span class="pali" style="color:#990012">นีป,</span><span class="thai" style="color:#004d00"> - นีปะ,</span></i> though not a very prominent tree, bears large flowers, and that the <i>gopīs’ - <span class="pali" style="color:#990012">โคปีสฺ’</span><span class="thai" style="color:#004d00"> - โคปีส’</span></i> desperation to find Kṛṣṇa is clearly shown by the fact that they approached the insignificant <i>arka - <span class="pali" style="color:#990012">อรฺก</span><span class="thai" style="color:#004d00"> - อัรกะ</span></i> plant.</p></div>
     
 
-        <div id="bb63557" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī gives the following information about Vṛndāvana’s trees: “The <i>nīpa - <span class="pali" style="color:#990012">นีป</span><span class="thai" style="color:#004d00"> - นีปะ</span></i> is ‘the dust <i>kadamba - <span class="pali" style="color:#990012">กทมฺพ</span><span class="thai" style="color:#004d00"> - กะทัมพะ</span>, - <span class="pali" style="color:#990012">กทมฺพ,</span><span class="thai" style="color:#004d00"> - กะทัมพะ,</span></i>’ and it has large flowers. The <i>kadamba</i> proper has smaller flowers and a very pleasant fragrance. The <i>kovidāra - <span class="pali" style="color:#990012">โกวิทาร</span><span class="thai" style="color:#004d00"> - โกวิทาระ</span></i> is a particular kind of <i>kañcanāra - <span class="pali" style="color:#990012">กญฺจนาร</span><span class="thai" style="color:#004d00"> - กัญจะนาระ</span></i> [mountain ebony tree]. Even though the <i>arka - <span class="pali" style="color:#990012">อรฺก</span><span class="thai" style="color:#004d00"> - อัรกะ</span></i> plant is very insignificant, it always grows near Lord Gopīśvara [the Śiva deity in Vṛndāvana forest] because it is dear to him.”</p></div>
+        <div id="bb63557" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī gives the following information about Vṛndāvana’s trees: “The <i>nīpa - <span class="pali" style="color:#990012">นีป</span><span class="thai" style="color:#004d00"> - นีปะ</span></i> is ‘the dust <i>kadamba, - <span class="pali" style="color:#990012">กทมฺพ,</span><span class="thai" style="color:#004d00"> - กะทัมพะ,</span></i>’ and it has large flowers. The <i>kadamba - <span class="pali" style="color:#990012">กทมฺพ</span><span class="thai" style="color:#004d00"> - กะทัมพะ</span></i> proper has smaller flowers and a very pleasant fragrance. The <i>kovidāra - <span class="pali" style="color:#990012">โกวิทาร</span><span class="thai" style="color:#004d00"> - โกวิทาระ</span></i> is a particular kind of <i>kañcanāra - <span class="pali" style="color:#990012">กญฺจนาร</span><span class="thai" style="color:#004d00"> - กัญจะนาระ</span></i> [mountain ebony tree]. Even though the <i>arka - <span class="pali" style="color:#990012">อรฺก</span><span class="thai" style="color:#004d00"> - อัรกะ</span></i> plant is very insignificant, it always grows near Lord Gopīśvara [the Śiva deity in Vṛndāvana forest] because it is dear to him.”</p></div>
     
 </div>
 
@@ -1681,7 +1722,7 @@ function toggleVisibility(cl){
         <div id="bb63647" class="r r-lang-en r-paragraph" ><p>“The <i>ācāryas - <span class="pali" style="color:#990012">อาจารฺยสฺ</span><span class="thai" style="color:#004d00"> - อาจารยัส</span></i> of the Vaiṣṇava <i>sampradāya - <span class="pali" style="color:#990012">สมฺปฺรทาย</span><span class="thai" style="color:#004d00"> - สัมประทายะ</span></i> explain that since the particular feet under discussion are Lord Kṛṣṇa’s, we should know that the thunderbolt is at the base of His small toe and the elephant goad below the thunderbolt. An elephant goad on the heel belongs rather to Lord Nārāyaṇa and other <i>viṣṇu-tattva - <span class="pali" style="color:#990012">วิษฺณุ-ตตฺตฺว</span><span class="thai" style="color:#004d00"> - วิษณุ-ตัตตวะ</span></i> expansions.</p></div>
     
 
-        <div id="bb63648" class="r r-lang-en r-paragraph" ><p>“Thus the <i>Skanda Purāṇa - <span class="pali" style="color:#990012">สฺกนฺท ปุราณ</span><span class="thai" style="color:#004d00"> - สกันทะ ปุราณะ</span></i> describes six marks on Kṛṣṇa’s right foot — the disc, flag, lotus, thunderbolt, elephant goad and barleycorn. And the <i>Vaiṣṇava-toṣaṇī - <span class="pali" style="color:#990012">ไวษฺณว-โตษณี</span><span class="thai" style="color:#004d00"> - ไวษณะวะ-โตษะณี</span></i> mentions even more marks — a vertical line beginning at the middle of His foot and continuing as far as the juncture between His big toe and second toe; an umbrella below the disc; at the base of the middle of His foot, a group of four <i>svastika - <span class="pali" style="color:#990012">สฺวสฺติก</span><span class="thai" style="color:#004d00"> - สวัสติกะ</span>s - <span class="pali" style="color:#990012">สฺวสฺติกสฺ</span><span class="thai" style="color:#004d00"> - สวัสติกัส</span></i> in the four cardinal directions; at the four points where each <i>svastika</i> meets the next, four rose apples; and in the middle of the <i>svastikas, - <span class="pali" style="color:#990012">สฺวสฺติกสฺ,</span><span class="thai" style="color:#004d00"> - สวัสติกัส,</span></i> an octagon. This makes eleven marks on Kṛṣṇa’s right foot.”</p></div>
+        <div id="bb63648" class="r r-lang-en r-paragraph" ><p>“Thus the <i>Skanda Purāṇa - <span class="pali" style="color:#990012">สฺกนฺท ปุราณ</span><span class="thai" style="color:#004d00"> - สกันทะ ปุราณะ</span></i> describes six marks on Kṛṣṇa’s right foot — the disc, flag, lotus, thunderbolt, elephant goad and barleycorn. And the <i>Vaiṣṇava-toṣaṇī - <span class="pali" style="color:#990012">ไวษฺณว-โตษณี</span><span class="thai" style="color:#004d00"> - ไวษณะวะ-โตษะณี</span></i> mentions even more marks — a vertical line beginning at the middle of His foot and continuing as far as the juncture between His big toe and second toe; an umbrella below the disc; at the base of the middle of His foot, a group of four <i>svastikas - <span class="pali" style="color:#990012">สฺวสฺติกสฺ</span><span class="thai" style="color:#004d00"> - สวัสติกัส</span></i> in the four cardinal directions; at the four points where each <i>svastika - <span class="pali" style="color:#990012">สฺวสฺติก</span><span class="thai" style="color:#004d00"> - สวัสติกะ</span></i> meets the next, four rose apples; and in the middle of the <i>svastikas, - <span class="pali" style="color:#990012">สฺวสฺติกสฺ,</span><span class="thai" style="color:#004d00"> - สวัสติกัส,</span></i> an octagon. This makes eleven marks on Kṛṣṇa’s right foot.”</p></div>
     
 
         <div id="bb63649" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī describes the marks on Kṛṣṇa’s left foot as follows: “At the base of the large toe is a conchshell with its mouth facing the toe. At the base of the middle toe are two concentric circles, representing the inner and outer sky. Below this mark is Cupid’s unstrung bow, at the base of the bow is a triangle, and surrounding the triangle is a group of four waterpots. At the base of the triangle is a half-moon with two more triangles touching its points, and below the half-moon is a fish.</p></div>

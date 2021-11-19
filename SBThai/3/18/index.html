@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -264,7 +305,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb23949" class="r r-lang-en r-paragraph" ><p>Śrīdhara Svāmī, commenting on this verse, states that although the demon wanted to deride the Personality of Godhead in the form of a boar, actually he worshiped Him in several words. For example, he addressed Him as <i>vana-gocaraḥ - <span class="pali" style="color:#990012">วน-โคจรห์</span><span class="thai" style="color:#004d00"> - วะนะ-โคจะระห์</span>, - <span class="pali" style="color:#990012">วน-โคจรห์,</span><span class="thai" style="color:#004d00"> - วะนะ-โคจะระห์,</span></i> which means “one who is a resident of the forest,” but another meaning of <i>vana-gocaraḥ</i> is “one who lies on the water.” Viṣṇu lies on the water, so the Supreme Personality of Godhead can be properly addressed in this way. The demon also addressed Him as <i>mṛgaḥ, - <span class="pali" style="color:#990012">มฺฤคห์,</span><span class="thai" style="color:#004d00"> - มฤคะห์,</span></i> indicating, unintentionally, that the Supreme Personality is sought after by great sages, saintly persons and transcendentalists. He also addressed Him as <i>ajña - <span class="pali" style="color:#990012">ชฺญ</span><span class="thai" style="color:#004d00"> - ชญะ</span>. - <span class="pali" style="color:#990012">อชฺญฯ</span><span class="thai" style="color:#004d00"> - อัชญะฯ</span></i> Śrīdhara Svāmī says that <i>jña</i> means “knowledge,” and there is no knowledge which is unknown to the Supreme Personality of Godhead. Indirectly, therefore, the demon said that Viṣṇu knows everything. The demon addressed Him as <i>surādhama. - <span class="pali" style="color:#990012">สุราธมฯ</span><span class="thai" style="color:#004d00"> - สุราธะมะฯ</span></i> <i>Sura - <span class="pali" style="color:#990012">สุร</span><span class="thai" style="color:#004d00"> - สุระ</span></i> means “the demigods,” and <i>adhama - <span class="pali" style="color:#990012">อธม</span><span class="thai" style="color:#004d00"> - อะธะมะ</span></i> means “Lord of all there is.” He is Lord of all the demigods; therefore He is the best of all demigods, or God. When the demon used the phrase “in my presence,” the implied meaning was, “In spite of my presence, You are completely able to take away the earth.” <i>Na svasti yāsyasi: - <span class="pali" style="color:#990012">น สฺวสฺติ ยาสฺยสิ:</span><span class="thai" style="color:#004d00"> - นะ สวัสติ ยาสยะสิ:</span></i> “Unless You kindly take this earth from our custody, there can be no good fortune for us.”</p></div>
+        <div id="bb23949" class="r r-lang-en r-paragraph" ><p>Śrīdhara Svāmī, commenting on this verse, states that although the demon wanted to deride the Personality of Godhead in the form of a boar, actually he worshiped Him in several words. For example, he addressed Him as <i>vana-gocaraḥ, - <span class="pali" style="color:#990012">วน-โคจรห์,</span><span class="thai" style="color:#004d00"> - วะนะ-โคจะระห์,</span></i> which means “one who is a resident of the forest,” but another meaning of <i>vana-gocaraḥ - <span class="pali" style="color:#990012">วน-โคจรห์</span><span class="thai" style="color:#004d00"> - วะนะ-โคจะระห์</span></i> is “one who lies on the water.” Viṣṇu lies on the water, so the Supreme Personality of Godhead can be properly addressed in this way. The demon also addressed Him as <i>mṛgaḥ, - <span class="pali" style="color:#990012">มฺฤคห์,</span><span class="thai" style="color:#004d00"> - มฤคะห์,</span></i> indicating, unintentionally, that the Supreme Personality is sought after by great sages, saintly persons and transcendentalists. He also addressed Him as <i>ajña. - <span class="pali" style="color:#990012">อชฺญฯ</span><span class="thai" style="color:#004d00"> - อัชญะฯ</span></i> Śrīdhara Svāmī says that <i>jña - <span class="pali" style="color:#990012">ชฺญ</span><span class="thai" style="color:#004d00"> - ชญะ</span></i> means “knowledge,” and there is no knowledge which is unknown to the Supreme Personality of Godhead. Indirectly, therefore, the demon said that Viṣṇu knows everything. The demon addressed Him as <i>surādhama. - <span class="pali" style="color:#990012">สุราธมฯ</span><span class="thai" style="color:#004d00"> - สุราธะมะฯ</span></i> <i>Sura - <span class="pali" style="color:#990012">สุร</span><span class="thai" style="color:#004d00"> - สุระ</span></i> means “the demigods,” and <i>adhama - <span class="pali" style="color:#990012">อธม</span><span class="thai" style="color:#004d00"> - อะธะมะ</span></i> means “Lord of all there is.” He is Lord of all the demigods; therefore He is the best of all demigods, or God. When the demon used the phrase “in my presence,” the implied meaning was, “In spite of my presence, You are completely able to take away the earth.” <i>Na svasti yāsyasi: - <span class="pali" style="color:#990012">น สฺวสฺติ ยาสฺยสิ:</span><span class="thai" style="color:#004d00"> - นะ สวัสติ ยาสยะสิ:</span></i> “Unless You kindly take this earth from our custody, there can be no good fortune for us.”</p></div>
     
 </div>
 
@@ -1450,7 +1491,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb24043" class="r r-lang-en r-paragraph" ><p>There are two classes of living entities: one is called <i>sura, - <span class="pali" style="color:#990012">สุร,</span><span class="thai" style="color:#004d00"> - สุระ,</span></i> or the demigods, and the other is called <i>asura, - <span class="pali" style="color:#990012">อสุร,</span><span class="thai" style="color:#004d00"> - อะสุระ,</span></i> or the demons. Demons are generally fond of worshiping the demigods, and there are evidences that by such worship they get extensive power for their sense gratification. This later proves to be a cause of trouble to the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span>, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> demigods and other innocent living entities. Demons habitually find fault with the demigods, <i>brāhmaṇas</i> and innocent, to whom they are a constant source of fear. The way of the demon is to take power from the demigods and then tease the demigods themselves. There is an instance of a great devotee of Lord Śiva who obtained a boon from Lord Śiva that the head of whomever he touched with his hand would come off its trunk. As soon as the boon was offered to him, the demon wanted to touch the very head of Lord Śiva. That is their way. The devotees of the Supreme Personality of Godhead do not, however, ask any favor for sense gratification. Even if they are offered liberation, they refuse it. They are happy simply engaging in the transcendental loving service of the Lord.</p></div>
+        <div id="bb24043" class="r r-lang-en r-paragraph" ><p>There are two classes of living entities: one is called <i>sura, - <span class="pali" style="color:#990012">สุร,</span><span class="thai" style="color:#004d00"> - สุระ,</span></i> or the demigods, and the other is called <i>asura, - <span class="pali" style="color:#990012">อสุร,</span><span class="thai" style="color:#004d00"> - อะสุระ,</span></i> or the demons. Demons are generally fond of worshiping the demigods, and there are evidences that by such worship they get extensive power for their sense gratification. This later proves to be a cause of trouble to the <i>brāhmaṇas, - <span class="pali" style="color:#990012">พฺราหฺมณสฺ,</span><span class="thai" style="color:#004d00"> - พราหมะณัส,</span></i> demigods and other innocent living entities. Demons habitually find fault with the demigods, <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> and innocent, to whom they are a constant source of fear. The way of the demon is to take power from the demigods and then tease the demigods themselves. There is an instance of a great devotee of Lord Śiva who obtained a boon from Lord Śiva that the head of whomever he touched with his hand would come off its trunk. As soon as the boon was offered to him, the demon wanted to touch the very head of Lord Śiva. That is their way. The devotees of the Supreme Personality of Godhead do not, however, ask any favor for sense gratification. Even if they are offered liberation, they refuse it. They are happy simply engaging in the transcendental loving service of the Lord.</p></div>
     
 </div>
 

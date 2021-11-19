@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -631,7 +672,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb73303" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī explains in his commentary how the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>’s - <span class="pali" style="color:#990012">พฺราหฺมณ’สฺ</span><span class="thai" style="color:#004d00"> - พราหมะณะ’ส</span></i> wife anticipated every possible objection her husband might make to her request that he go to Lord Kṛṣṇa to beg charity. If the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> might say, “How could the husband of the goddess of fortune befriend a fallen soul like myself?” she replies by saying that Lord Kṛṣṇa is <i>brahmaṇya, - <span class="pali" style="color:#990012">พฺรหฺมณฺย,</span><span class="thai" style="color:#004d00"> - พรัหมัณยะ,</span></i> very favorably disposed toward the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>s. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> If Sudāmā might claim to have no real devotion for the Lord, she replies by saying that he is a great and wise personality who would surely obtain the shelter and mercy of the Lord. If the <i>brāhmaṇa</i> might object that Lord Kṛṣṇa is equally disposed to all the countless unhappy conditioned souls suffering the fruits of their own <i>karma, - <span class="pali" style="color:#990012">กรฺม,</span><span class="thai" style="color:#004d00"> - กัรมะ,</span></i> she replies that Lord Kṛṣṇa is especially the Lord of the devotees, and thus even if He Himself did not grant Sudāmā His mercy, certainly the devotees engaged in serving the Lord would mercifully give him some charity. Since the Lord protects the Sātvatas, the members of the Yadu dynasty, what difficulty would there be for Him to protect a humble <i>brāhmaṇa</i> like Sudāmā, and what fault would there be in His doing so?</p></div>
+        <div id="bb73303" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī explains in his commentary how the <i>brāhmaṇa’s - <span class="pali" style="color:#990012">พฺราหฺมณ’สฺ</span><span class="thai" style="color:#004d00"> - พราหมะณะ’ส</span></i> wife anticipated every possible objection her husband might make to her request that he go to Lord Kṛṣṇa to beg charity. If the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> might say, “How could the husband of the goddess of fortune befriend a fallen soul like myself?” she replies by saying that Lord Kṛṣṇa is <i>brahmaṇya, - <span class="pali" style="color:#990012">พฺรหฺมณฺย,</span><span class="thai" style="color:#004d00"> - พรัหมัณยะ,</span></i> very favorably disposed toward the <i>brāhmaṇas. - <span class="pali" style="color:#990012">พฺราหฺมณสฺฯ</span><span class="thai" style="color:#004d00"> - พราหมะณัสฯ</span></i> If Sudāmā might claim to have no real devotion for the Lord, she replies by saying that he is a great and wise personality who would surely obtain the shelter and mercy of the Lord. If the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> might object that Lord Kṛṣṇa is equally disposed to all the countless unhappy conditioned souls suffering the fruits of their own <i>karma, - <span class="pali" style="color:#990012">กรฺม,</span><span class="thai" style="color:#004d00"> - กัรมะ,</span></i> she replies that Lord Kṛṣṇa is especially the Lord of the devotees, and thus even if He Himself did not grant Sudāmā His mercy, certainly the devotees engaged in serving the Lord would mercifully give him some charity. Since the Lord protects the Sātvatas, the members of the Yadu dynasty, what difficulty would there be for Him to protect a humble <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> like Sudāmā, and what fault would there be in His doing so?</p></div>
     
 </div>
 
@@ -1463,7 +1504,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb73371" class="r r-lang-en r-paragraph" ><p>Among civilized human beings, the question of <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span>, - <span class="pali" style="color:#990012">อาศฺรม,</span><span class="thai" style="color:#004d00"> - อาศระมะ,</span></i> or spiritual order, is significant. In other words, every human being must execute prescribed duties as a celibate student, a married man or woman, a retired person or a renunciant. Since Lord Kṛṣṇa could see that the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> was poorly dressed, He inquired if His friend had been properly married and was executing the duties of household life. Since he was not dressed as a renunciant, he would be without a suitable <i>āśrama</i> unless he were properly married.</p></div>
+        <div id="bb73371" class="r r-lang-en r-paragraph" ><p>Among civilized human beings, the question of <i>āśrama, - <span class="pali" style="color:#990012">อาศฺรม,</span><span class="thai" style="color:#004d00"> - อาศระมะ,</span></i> or spiritual order, is significant. In other words, every human being must execute prescribed duties as a celibate student, a married man or woman, a retired person or a renunciant. Since Lord Kṛṣṇa could see that the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> was poorly dressed, He inquired if His friend had been properly married and was executing the duties of household life. Since he was not dressed as a renunciant, he would be without a suitable <i>āśrama - <span class="pali" style="color:#990012">อาศฺรม</span><span class="thai" style="color:#004d00"> - อาศระมะ</span></i> unless he were properly married.</p></div>
     
 </div>
 
@@ -2003,7 +2044,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb73413" class="r r-lang-en r-paragraph" ><p>Śrīla Śrīdhara Svāmī points out that the verb <i>pari - <span class="pali" style="color:#990012">ปริ</span><span class="thai" style="color:#004d00"> - ปะริ</span>babhrima - <span class="pali" style="color:#990012">ปริพภฺริม</span><span class="thai" style="color:#004d00"> - ปะริพัภริมะ</span></i> may be understood to be the prefix <i>pari</i> with either the verb <i>bhṛ - <span class="pali" style="color:#990012">ภฺฤ</span><span class="thai" style="color:#004d00"> - ภฤ</span></i> or <i>bhram. - <span class="pali" style="color:#990012">ภฺรมฺฯ</span><span class="thai" style="color:#004d00"> - ภรัมฯ</span></i> In the case of <i>bhram, - <span class="pali" style="color:#990012">ภฺรมฺ,</span><span class="thai" style="color:#004d00"> - ภรัม,</span></i> it indicates that Kṛṣṇa and Sudāmā wandered all about, and in the case of <i>bhṛ, - <span class="pali" style="color:#990012">ภฺฤ,</span><span class="thai" style="color:#004d00"> - ภฤ,</span></i> which means “to carry,” it indicates that as the two young boys wandered about, they continued to carry the firewood they had secured for their spiritual master.</p></div>
+        <div id="bb73413" class="r r-lang-en r-paragraph" ><p>Śrīla Śrīdhara Svāmī points out that the verb <i>paribabhrima - <span class="pali" style="color:#990012">ปริพภฺริม</span><span class="thai" style="color:#004d00"> - ปะริพัภริมะ</span></i> may be understood to be the prefix <i>pari - <span class="pali" style="color:#990012">ปริ</span><span class="thai" style="color:#004d00"> - ปะริ</span></i> with either the verb <i>bhṛ - <span class="pali" style="color:#990012">ภฺฤ</span><span class="thai" style="color:#004d00"> - ภฤ</span></i> or <i>bhram. - <span class="pali" style="color:#990012">ภฺรมฺฯ</span><span class="thai" style="color:#004d00"> - ภรัมฯ</span></i> In the case of <i>bhram, - <span class="pali" style="color:#990012">ภฺรมฺ,</span><span class="thai" style="color:#004d00"> - ภรัม,</span></i> it indicates that Kṛṣṇa and Sudāmā wandered all about, and in the case of <i>bhṛ, - <span class="pali" style="color:#990012">ภฺฤ,</span><span class="thai" style="color:#004d00"> - ภฤ,</span></i> which means “to carry,” it indicates that as the two young boys wandered about, they continued to carry the firewood they had secured for their spiritual master.</p></div>
     
 </div>
 

@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -276,7 +317,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb38834" class="r r-lang-en r-paragraph" ><p>According to general understanding, there are originally three deities — Lord Brahmā, Lord Viṣṇu and Lord Śiva — and people with a poor fund of knowledge consider Lord Viṣṇu no better than Lord Brahmā or Lord Śiva. This conclusion, however, is invalid. As stated in the <i>Vedas, iṣṭāpūrta - <span class="pali" style="color:#990012">อิษฺฏาปูรฺต</span><span class="thai" style="color:#004d00"> - อิษฏาปูรตะ</span>ṁ bahudhā jāyamānaṁ viśvaṁ bibharti bhuvanasya nābhiḥ tad evāgnis tad vāyus tat sūryas tad u candramāḥ agniḥ sarvadaivataḥ. - <span class="pali" style="color:#990012">เวทสฺ, อิษฺฏาปูรฺตํ พหุธา ชายมานํ วิศฺวํ พิภรฺติ ภุวนสฺย นาภิห์ ตทฺ เอวาคฺนิสฺ ตทฺ วายุสฺ ตตฺ สูรฺยสฺ ตทฺ อุ จนฺทฺรมาห์ อคฺนิห์ สรฺวไทวตห์ฯ</span><span class="thai" style="color:#004d00"> - เวทัส, อิษฏาปูรตัง พะหุธา ชายะมานัง วิศวัง พิภัรติ ภุวะนัสยะ นาภิห์ ตัท เอวาคนิส ตัท วายุส ตัต สูรยัส ตัท อุ จันทระมาห์ อัคนิห์ สัรวะไทวะตะห์ฯ</span></i> This means that the Supreme Lord, who accepts and enjoys the results of Vedic ritualistic ceremonies (technically called <i>iṣṭāpūrta</i>), who maintains the entire creation, who supplies the necessities of all living entities (<i>eko bahūnāṁ yo vidadhāti kāmān - <span class="pali" style="color:#990012">เอโก พหูนำ โย วิทธาติ กามานฺ</span><span class="thai" style="color:#004d00"> - เอโก พะหูนาง โย วิทะธาติ กามาน</span></i>) and who is the central point of all creation, is Lord Viṣṇu. Lord Viṣṇu expands as the demigods known as Agni, Vāyu, Sūrya and Candra, who are simply parts and parcels of His body. Lord Kṛṣṇa says in <i>Śrīmad Bhagavad-gītā - <span class="pali" style="color:#990012">ศฺรีมทฺ ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ศรีมัท ภะคะวัท-คีตา</span></i> (9.23):</p></div>
+        <div id="bb38834" class="r r-lang-en r-paragraph" ><p>According to general understanding, there are originally three deities — Lord Brahmā, Lord Viṣṇu and Lord Śiva — and people with a poor fund of knowledge consider Lord Viṣṇu no better than Lord Brahmā or Lord Śiva. This conclusion, however, is invalid. As stated in the <i>Vedas, iṣṭāpūrtaṁ bahudhā jāyamānaṁ viśvaṁ bibharti bhuvanasya nābhiḥ tad evāgnis tad vāyus tat sūryas tad u candramāḥ agniḥ sarvadaivataḥ. - <span class="pali" style="color:#990012">เวทสฺ, อิษฺฏาปูรฺตํ พหุธา ชายมานํ วิศฺวํ พิภรฺติ ภุวนสฺย นาภิห์ ตทฺ เอวาคฺนิสฺ ตทฺ วายุสฺ ตตฺ สูรฺยสฺ ตทฺ อุ จนฺทฺรมาห์ อคฺนิห์ สรฺวไทวตห์ฯ</span><span class="thai" style="color:#004d00"> - เวทัส, อิษฏาปูรตัง พะหุธา ชายะมานัง วิศวัง พิภัรติ ภุวะนัสยะ นาภิห์ ตัท เอวาคนิส ตัท วายุส ตัต สูรยัส ตัท อุ จันทระมาห์ อัคนิห์ สัรวะไทวะตะห์ฯ</span></i> This means that the Supreme Lord, who accepts and enjoys the results of Vedic ritualistic ceremonies (technically called <i>iṣṭāpūrta - <span class="pali" style="color:#990012">อิษฺฏาปูรฺต</span><span class="thai" style="color:#004d00"> - อิษฏาปูรตะ</span></i>), who maintains the entire creation, who supplies the necessities of all living entities (<i>eko bahūnāṁ yo vidadhāti kāmān - <span class="pali" style="color:#990012">เอโก พหูนำ โย วิทธาติ กามานฺ</span><span class="thai" style="color:#004d00"> - เอโก พะหูนาง โย วิทะธาติ กามาน</span></i>) and who is the central point of all creation, is Lord Viṣṇu. Lord Viṣṇu expands as the demigods known as Agni, Vāyu, Sūrya and Candra, who are simply parts and parcels of His body. Lord Kṛṣṇa says in <i>Śrīmad Bhagavad-gītā - <span class="pali" style="color:#990012">ศฺรีมทฺ ภควทฺ-คีตา</span><span class="thai" style="color:#004d00"> - ศรีมัท ภะคะวัท-คีตา</span></i> (9.23):</p></div>
     
         <div id="bb38835" class="r r-lang-en r-verse-text" ><em><i>ye ’py anya-devatā-bhaktā<br />yajante śraddhayānvitāḥ<br />te ’pi mām eva kaunteya<br />yajanty avidhi-pūrvakam</i></em></div>
 <div class="r r-lang-en r-verse-text" >

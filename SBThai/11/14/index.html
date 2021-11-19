@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -280,7 +321,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb80027" class="r r-lang-en r-paragraph" ><p>Lord Kṛṣṇa explains to Uddhava that although many processes and concepts of spiritual realization are described in the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span>, - <span class="pali" style="color:#990012">เวทสฺ,</span><span class="thai" style="color:#004d00"> - เวทัส,</span></i> the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> ultimately recommend devotional service to the Supreme Lord. Lord Kṛṣṇa is the reservoir of all pleasure, and His devotees directly enter into the Lord’s <i>hlādinī, - <span class="pali" style="color:#990012">หฺลาทินี,</span><span class="thai" style="color:#004d00"> - หลาทินี,</span></i> or pleasure-giving, potency. Somehow or other one must fix one’s mind in Lord Kṛṣṇa, and that is not possible without devotional service. One who has not developed his attraction to Lord Kṛṣṇa cannot restrain the senses from inferior engagements. Since other Vedic processes do not actually award Lord Kṛṣṇa to the practitioner, they cannot offer the highest benefit in life. The transcendental sound of the <i>Vedas</i> is itself the highest evidence, but one whose senses and mind are entangled in sense gratification and mental speculation, and whose heart is therefore covered by material dust, cannot directly receive the transcendental Vedic message. Thus one cannot appreciate the exalted position of devotional service to the Lord.</p></div>
+        <div id="bb80027" class="r r-lang-en r-paragraph" ><p>Lord Kṛṣṇa explains to Uddhava that although many processes and concepts of spiritual realization are described in the <i>Vedas, - <span class="pali" style="color:#990012">เวทสฺ,</span><span class="thai" style="color:#004d00"> - เวทัส,</span></i> the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> ultimately recommend devotional service to the Supreme Lord. Lord Kṛṣṇa is the reservoir of all pleasure, and His devotees directly enter into the Lord’s <i>hlādinī, - <span class="pali" style="color:#990012">หฺลาทินี,</span><span class="thai" style="color:#004d00"> - หลาทินี,</span></i> or pleasure-giving, potency. Somehow or other one must fix one’s mind in Lord Kṛṣṇa, and that is not possible without devotional service. One who has not developed his attraction to Lord Kṛṣṇa cannot restrain the senses from inferior engagements. Since other Vedic processes do not actually award Lord Kṛṣṇa to the practitioner, they cannot offer the highest benefit in life. The transcendental sound of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> is itself the highest evidence, but one whose senses and mind are entangled in sense gratification and mental speculation, and whose heart is therefore covered by material dust, cannot directly receive the transcendental Vedic message. Thus one cannot appreciate the exalted position of devotional service to the Lord.</p></div>
     
 </div>
 
@@ -1460,7 +1501,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb80125" class="r r-lang-en r-paragraph" ><p>Loving service to the Lord is the only process that can completely purify one’s consciousness; such service produces waves of ecstatic love that completely cleanse the soul. As mentioned earlier by Lord Kṛṣṇa to Śrī Uddhava, other processes such as self-control, pious activities, mystic <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span>, - <span class="pali" style="color:#990012">โยค,</span><span class="thai" style="color:#004d00"> - โยคะ,</span></i> penances, etc., certainly purify the mind, as stated in many authorized literatures. Such processes, however, do not completely remove the desire to perform forbidden activities. But pure devotional service rendered in love of Godhead is so powerful that it burns to ashes any obstacle encountered on the path of progress. The Lord has stated in this chapter that loving service to Him is a blazing fire that burns to ashes all impediments. In contrast, the small fires of mental speculation or mystic <i>yoga</i> can be extinguished by sinful desires at any moment. Thus, by hearing <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> one should ignite the blazing fire of loving service to the Lord and burn to ashes the network of material illusion.</p></div>
+        <div id="bb80125" class="r r-lang-en r-paragraph" ><p>Loving service to the Lord is the only process that can completely purify one’s consciousness; such service produces waves of ecstatic love that completely cleanse the soul. As mentioned earlier by Lord Kṛṣṇa to Śrī Uddhava, other processes such as self-control, pious activities, mystic <i>yoga, - <span class="pali" style="color:#990012">โยค,</span><span class="thai" style="color:#004d00"> - โยคะ,</span></i> penances, etc., certainly purify the mind, as stated in many authorized literatures. Such processes, however, do not completely remove the desire to perform forbidden activities. But pure devotional service rendered in love of Godhead is so powerful that it burns to ashes any obstacle encountered on the path of progress. The Lord has stated in this chapter that loving service to Him is a blazing fire that burns to ashes all impediments. In contrast, the small fires of mental speculation or mystic <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> can be extinguished by sinful desires at any moment. Thus, by hearing <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> one should ignite the blazing fire of loving service to the Lord and burn to ashes the network of material illusion.</p></div>
     
 </div>
 
@@ -1719,7 +1760,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb80146" class="r r-lang-en r-paragraph" ><p>One should not think that one can attain complete transcendental knowledge of Kṛṣṇa by mechanically engaging in worship of the Lord. Lord Kṛṣṇa states here that one must endeavor constantly to keep the Lord within one’s mind. <i>Anusmarataḥ, - <span class="pali" style="color:#990012">อนุสฺมรตห์,</span><span class="thai" style="color:#004d00"> - อะนุสมะระตะห์,</span></i> or constant remembrance, is possible for one who always chants and hears the glories of Lord Kṛṣṇa. It is therefore stated, <i>śravaṇam - <span class="pali" style="color:#990012">ศฺรวณมฺ</span><span class="thai" style="color:#004d00"> - ศระวะณัม</span>, kīrtanam - <span class="pali" style="color:#990012">กีรฺตนมฺ</span><span class="thai" style="color:#004d00"> - กีรตะนัม</span>, smaraṇam - <span class="pali" style="color:#990012">สฺมรณมฺ</span><span class="thai" style="color:#004d00"> - สมะระณัม</span>: - <span class="pali" style="color:#990012">ศฺรวณมฺ, กีรฺตนมฺ, สฺมรณมฺ:</span><span class="thai" style="color:#004d00"> - ศระวะณัม, กีรตะนัม, สมะระณัม:</span></i> the process of devotional service begins with hearing (<i>śravaṇam</i>) and chanting (<i>kīrtanam</i>), from which remembrance (<i>smaraṇam</i>) develops. One who constantly thinks of the objects of material gratification becomes attached to them; similarly, one who constantly keeps Lord Kṛṣṇa within his mind becomes absorbed in the Lord’s transcendental nature and thus becomes qualified to render personal service to the Lord in His own abode.</p></div>
+        <div id="bb80146" class="r r-lang-en r-paragraph" ><p>One should not think that one can attain complete transcendental knowledge of Kṛṣṇa by mechanically engaging in worship of the Lord. Lord Kṛṣṇa states here that one must endeavor constantly to keep the Lord within one’s mind. <i>Anusmarataḥ, - <span class="pali" style="color:#990012">อนุสฺมรตห์,</span><span class="thai" style="color:#004d00"> - อะนุสมะระตะห์,</span></i> or constant remembrance, is possible for one who always chants and hears the glories of Lord Kṛṣṇa. It is therefore stated, <i>śravaṇam, kīrtanam, smaraṇam: - <span class="pali" style="color:#990012">ศฺรวณมฺ, กีรฺตนมฺ, สฺมรณมฺ:</span><span class="thai" style="color:#004d00"> - ศระวะณัม, กีรตะนัม, สมะระณัม:</span></i> the process of devotional service begins with hearing (<i>śravaṇam - <span class="pali" style="color:#990012">ศฺรวณมฺ</span><span class="thai" style="color:#004d00"> - ศระวะณัม</span></i>) and chanting (<i>kīrtanam - <span class="pali" style="color:#990012">กีรฺตนมฺ</span><span class="thai" style="color:#004d00"> - กีรตะนัม</span></i>), from which remembrance (<i>smaraṇam - <span class="pali" style="color:#990012">สฺมรณมฺ</span><span class="thai" style="color:#004d00"> - สมะระณัม</span></i>) develops. One who constantly thinks of the objects of material gratification becomes attached to them; similarly, one who constantly keeps Lord Kṛṣṇa within his mind becomes absorbed in the Lord’s transcendental nature and thus becomes qualified to render personal service to the Lord in His own abode.</p></div>
     
 </div>
 
@@ -2501,7 +2542,7 @@ function toggleVisibility(cl){
         <div id="bb80212" class="r r-lang-en r-paragraph" ><p>Because of false material identification, we accept our own body and mind, the bodies and minds of others, and supernatural material control to be ultimate realities. Supernatural control refers to the bodies and minds of the demigods, who ultimately are humble servitors of the Supreme Personality of Godhead. Even the mighty sun, which displays immense potencies, obediently treads its universal path by the order of Lord Kṛṣṇa.</p></div>
     
 
-        <div id="bb80213" class="r r-lang-en r-paragraph" ><p>It is clearly seen in this chapter that <i>haṭha-yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span>, karma-yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span>, rāja-yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span>, - <span class="pali" style="color:#990012">หฐ-โยค, กรฺม-โยค, ราช-โยค,</span><span class="thai" style="color:#004d00"> - หะฐะ-โยคะ, กัรมะ-โยคะ, ราชะ-โยคะ,</span></i> etc., are part and parcel of <i>bhakti-yoga - <span class="pali" style="color:#990012">ภกฺติ-โยค</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ</span></i> and do not actually exist separately. The goal of life is Lord Kṛṣṇa, and one must eventually come to the stage of pure devotion if one desires to perfect one’s meditation or <i>yoga</i> practice. In the mature stage of devotion, as described in this chapter, one becomes free from the artificial duality of meditator and object of meditation, and one spontaneously engages in hearing about and glorifying the Supreme Absolute Truth. Such activities of <i>bhakti-yoga - <span class="pali" style="color:#990012">ภกฺติ-โยค</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ</span></i> are natural because they spring from spontaneous love. When one revives one’s original nature as the loving servitor of Lord Kṛṣṇa, other <i>yoga</i> processes cease to be interesting. Uddhava was a pure devotee even before the Lord began His instruction; therefore it was not expected that Uddhava would give up the supreme platform of being a personal associate of the Lord to take up the mechanical exercises of the <i>yoga</i> system. <i>Bhakti-yoga, - <span class="pali" style="color:#990012">ภกฺติ-โยค,</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ,</span></i> or devotional service, is so elevated that even in the beginning stages of practice one is considered liberated, because all of one’s activities are executed under proper guidance for the pleasure of the Lord. In the <i>haṭha-yoga - <span class="pali" style="color:#990012">หฐ-โยค</span><span class="thai" style="color:#004d00"> - หะฐะ-โยคะ</span></i> system one is concerned with bodily control, and in <i>jñāna-yoga - <span class="pali" style="color:#990012">ชฺญาน-โยค</span><span class="thai" style="color:#004d00"> - ชญานะ-โยคะ</span></i> one is concerned with speculative knowledge. In both systems one endeavors selfishly, desiring to become a great <i>yogī - <span class="pali" style="color:#990012">โยคี</span><span class="thai" style="color:#004d00"> - โยคี</span></i> or a philosopher. Such egoistic activity is described in this verse as <i>kriyā - <span class="pali" style="color:#990012">กฺริยา</span><span class="thai" style="color:#004d00"> - กริยา</span>. - <span class="pali" style="color:#990012">กฺริยาฯ</span><span class="thai" style="color:#004d00"> - กริยาฯ</span></i> One must give up the illusory designations of <i>dravya, jñāna - <span class="pali" style="color:#990012">ทฺรวฺย, ชฺญาน</span><span class="thai" style="color:#004d00"> - ทรัวยะ, ชญานะ</span></i> and <i>kriyā</i> and come to the prideless stage of loving service to the Lord.</p></div>
+        <div id="bb80213" class="r r-lang-en r-paragraph" ><p>It is clearly seen in this chapter that <i>haṭha-yoga, karma-yoga, rāja-yoga, - <span class="pali" style="color:#990012">หฐ-โยค, กรฺม-โยค, ราช-โยค,</span><span class="thai" style="color:#004d00"> - หะฐะ-โยคะ, กัรมะ-โยคะ, ราชะ-โยคะ,</span></i> etc., are part and parcel of <i>bhakti-yoga - <span class="pali" style="color:#990012">ภกฺติ-โยค</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ</span></i> and do not actually exist separately. The goal of life is Lord Kṛṣṇa, and one must eventually come to the stage of pure devotion if one desires to perfect one’s meditation or <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> practice. In the mature stage of devotion, as described in this chapter, one becomes free from the artificial duality of meditator and object of meditation, and one spontaneously engages in hearing about and glorifying the Supreme Absolute Truth. Such activities of <i>bhakti-yoga - <span class="pali" style="color:#990012">ภกฺติ-โยค</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ</span></i> are natural because they spring from spontaneous love. When one revives one’s original nature as the loving servitor of Lord Kṛṣṇa, other <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> processes cease to be interesting. Uddhava was a pure devotee even before the Lord began His instruction; therefore it was not expected that Uddhava would give up the supreme platform of being a personal associate of the Lord to take up the mechanical exercises of the <i>yoga - <span class="pali" style="color:#990012">โยค</span><span class="thai" style="color:#004d00"> - โยคะ</span></i> system. <i>Bhakti-yoga, - <span class="pali" style="color:#990012">ภกฺติ-โยค,</span><span class="thai" style="color:#004d00"> - ภักติ-โยคะ,</span></i> or devotional service, is so elevated that even in the beginning stages of practice one is considered liberated, because all of one’s activities are executed under proper guidance for the pleasure of the Lord. In the <i>haṭha-yoga - <span class="pali" style="color:#990012">หฐ-โยค</span><span class="thai" style="color:#004d00"> - หะฐะ-โยคะ</span></i> system one is concerned with bodily control, and in <i>jñāna-yoga - <span class="pali" style="color:#990012">ชฺญาน-โยค</span><span class="thai" style="color:#004d00"> - ชญานะ-โยคะ</span></i> one is concerned with speculative knowledge. In both systems one endeavors selfishly, desiring to become a great <i>yogī - <span class="pali" style="color:#990012">โยคี</span><span class="thai" style="color:#004d00"> - โยคี</span></i> or a philosopher. Such egoistic activity is described in this verse as <i>kriyā. - <span class="pali" style="color:#990012">กฺริยาฯ</span><span class="thai" style="color:#004d00"> - กริยาฯ</span></i> One must give up the illusory designations of <i>dravya, jñāna - <span class="pali" style="color:#990012">ทฺรวฺย, ชฺญาน</span><span class="thai" style="color:#004d00"> - ทรัวยะ, ชญานะ</span></i> and <i>kriyā - <span class="pali" style="color:#990012">กฺริยา</span><span class="thai" style="color:#004d00"> - กริยา</span></i> and come to the prideless stage of loving service to the Lord.</p></div>
     
 
         <div id="bb80214" class="r r-lang-en r-paragraph-thus-ends" ><p><i>Thus end the purports of the humble servants of His Divine Grace A.C. Bhaktivedanta Swami Prabhupāda to the Eleventh Canto, Fourteenth Chapter, of the - <span class="pali" style="color:#990012">ถุสฺ เอนฺทฺ เถ ปุรฺโปรฺตฺสฺ โอฟฺ เถ หุมฺเพฺล เสรฺวนฺตฺสฺ โอฟฺ หิสฺ ทิวิเน คฺรเจ อฯจฺฯ ภกฺติเวทนฺต สฺwอมิ ปฺรภุปาท โต เถ เอเลเวนฺถฺ จนฺโต, โฟอุรฺเตเอนฺถฺ ฉปฺเตรฺ, โอฟฺ เถ</span><span class="thai" style="color:#004d00"> - ถุส เอนท เถ ปุรโปรตส โอฟ เถ หุมพเล เสรวันตส โอฟ หิส ทิวิเน คระเจ อะฯจฯ ภักติเวทันตะ สwอะมิ ประภุปาทะ โต เถ เอเลเวนถ จันโต, โฟอุรเตเอนถ ฉัปเตร, โอฟ เถ</span></i> Śrīmad-Bhāgavatam, <i>entitled “Lord Kṛṣṇa Explains the Yoga System to Śrī Uddhava.” - <span class="pali" style="color:#990012">เอนฺติเตฺลทฺ “โลรฺทฺ กฺฤษฺณ เอxไปฺลนฺสฺ เถ โยค สฺยฺเสฺตมฺ โต ศฺรี อุทฺธวฯ”</span><span class="thai" style="color:#004d00"> - เอนติตเลท “โลรท กฤษณะ เอxปไลนส เถ โยคะ สยสเตม โต ศรี อุทธะวะฯ”</span></i></p></div>

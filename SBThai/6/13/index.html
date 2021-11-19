@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -282,7 +323,7 @@ function toggleVisibility(cl){
         <div id="bb42564" class="r r-lang-en r-paragraph" ><p>Herein it is clearly indicated that a person who is not at all demoniac, such as Prahlāda Mahārāja and Bali Mahārāja, may outwardly be a demon or be born in a family of demons. Therefore in terms of real culture one should not be considered a demigod or demon simply according to birth. In his dealings while fighting with Indra, Vṛtrāsura proved himself a great devotee of the Supreme Personality of Godhead. Furthermore, as soon as he finished fighting with Indra and was apparently killed, Vṛtrāsura was transferred to Vaikuṇṭhaloka to become an associate of Saṅkarṣaṇa. Indra knew this, and therefore he was morose at having killed such a demon, who was actually a Vaiṣṇava or <i>brāhmaṇa. - <span class="pali" style="color:#990012">พฺราหฺมณฯ</span><span class="thai" style="color:#004d00"> - พราหมะณะฯ</span></i></p></div>
     
 
-        <div id="bb42565" class="r r-lang-en r-paragraph" ><p>A Vaiṣṇava is already a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>, - <span class="pali" style="color:#990012">พฺราหฺมณ,</span><span class="thai" style="color:#004d00"> - พราหมะณะ,</span></i> although a <i>brāhmaṇa</i> may not be a Vaiṣṇava. The <i>Padma Purāṇa - <span class="pali" style="color:#990012">ปทฺม ปุราณ</span><span class="thai" style="color:#004d00"> - ปัทมะ ปุราณะ</span></i> says:</p></div>
+        <div id="bb42565" class="r r-lang-en r-paragraph" ><p>A Vaiṣṇava is already a <i>brāhmaṇa, - <span class="pali" style="color:#990012">พฺราหฺมณ,</span><span class="thai" style="color:#004d00"> - พราหมะณะ,</span></i> although a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> may not be a Vaiṣṇava. The <i>Padma Purāṇa - <span class="pali" style="color:#990012">ปทฺม ปุราณ</span><span class="thai" style="color:#004d00"> - ปัทมะ ปุราณะ</span></i> says:</p></div>
     
         <div id="bb42566" class="r r-lang-en r-verse-text" ><em><i>ṣaṭ-karma-nipuṇo vipro<br />mantra-tantra-viśāradaḥ<br />avaiṣṇavo gurur na syād<br />vaiṣṇavaḥ śva-paco guruḥ</i></em></div>
 <div class="r r-lang-en r-verse-text" >
@@ -590,7 +631,7 @@ function toggleVisibility(cl){
         <div id="bb42593" class="r r-lang-en r-paragraph" ><p>This means that by once chanting the holy name of the Lord, one can be freed from the reactions of more sins that he can even imagine performing. The holy name is so spiritually potent that simply by chanting the holy name one can be freed from the reactions to all sinful activities. What, then, is to be said of those who chant the holy name regularly or worship the Deity regularly? For such purified devotees, freedom from sinful reaction is certainly assured. This does not mean, however, that one should intentionally commit sinful acts and think himself free from the reactions because he is chanting the holy name. Such a mentality is a most abominable offense at the lotus feet of the holy name. <i>Nāmno balād yasya hi pāpa-buddhiḥ: - <span class="pali" style="color:#990012">นามฺโน พลาทฺ ยสฺย หิ ปาป-พุทฺธิห์:</span><span class="thai" style="color:#004d00"> - นามโน พะลาท ยัสยะ หิ ปาปะ-พุทธิห์:</span></i> the Lord’s holy name certainly has the potency to neutralize all sinful activities, but if one repeatedly and intentionally commits sins while chanting the holy name, he is most condemned.</p></div>
     
 
-        <div id="bb42594" class="r r-lang-en r-paragraph" ><p>These verses name the performers of various sinful deeds. In the <i>Manu-saṁhitā - <span class="pali" style="color:#990012">มนุ-สํหิตา</span><span class="thai" style="color:#004d00"> - มะนุ-สังหิตา</span></i> the following names are given. A son begotten by a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> and born from the womb of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> mother is called a <i>pāraśava - <span class="pali" style="color:#990012">ปารศว</span><span class="thai" style="color:#004d00"> - ปาระศะวะ</span></i> or <i>niṣāda - <span class="pali" style="color:#990012">นิษาท</span><span class="thai" style="color:#004d00"> - นิษาทะ</span>, - <span class="pali" style="color:#990012">นิษาท,</span><span class="thai" style="color:#004d00"> - นิษาทะ,</span></i> a hunter accustomed to stealing. A son begotten by a <i>niṣāda</i> in the womb of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> woman is called a <i>pukkasa. - <span class="pali" style="color:#990012">ปุกฺกสฯ</span><span class="thai" style="color:#004d00"> - ปุกกะสะฯ</span></i> A child begotten by a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> in the womb of the daughter of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> is called an <i>ugra. - <span class="pali" style="color:#990012">อุคฺรฯ</span><span class="thai" style="color:#004d00"> - อุคระฯ</span></i> A child begotten by a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> in the womb of the daughter of a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> is called a <i>kṣattā. - <span class="pali" style="color:#990012">กฺษตฺตาฯ</span><span class="thai" style="color:#004d00"> - กษัตตาฯ</span></i> A child begotten by a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> in the womb of a lower-class woman is called a <i>śvāda, - <span class="pali" style="color:#990012">ศฺวาท,</span><span class="thai" style="color:#004d00"> - ศวาทะ,</span></i> or dog-eater. All such offspring are considered extremely sinful, but the holy name of the Supreme Personality of Godhead is so strong that all of them can be purified simply by chanting the Hare Kṛṣṇa <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i></p></div>
+        <div id="bb42594" class="r r-lang-en r-paragraph" ><p>These verses name the performers of various sinful deeds. In the <i>Manu-saṁhitā - <span class="pali" style="color:#990012">มนุ-สํหิตา</span><span class="thai" style="color:#004d00"> - มะนุ-สังหิตา</span></i> the following names are given. A son begotten by a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> and born from the womb of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> mother is called a <i>pāraśava - <span class="pali" style="color:#990012">ปารศว</span><span class="thai" style="color:#004d00"> - ปาระศะวะ</span></i> or <i>niṣāda, - <span class="pali" style="color:#990012">นิษาท,</span><span class="thai" style="color:#004d00"> - นิษาทะ,</span></i> a hunter accustomed to stealing. A son begotten by a <i>niṣāda - <span class="pali" style="color:#990012">นิษาท</span><span class="thai" style="color:#004d00"> - นิษาทะ</span></i> in the womb of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> woman is called a <i>pukkasa. - <span class="pali" style="color:#990012">ปุกฺกสฯ</span><span class="thai" style="color:#004d00"> - ปุกกะสะฯ</span></i> A child begotten by a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> in the womb of the daughter of a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> is called an <i>ugra. - <span class="pali" style="color:#990012">อุคฺรฯ</span><span class="thai" style="color:#004d00"> - อุคระฯ</span></i> A child begotten by a <i>śūdra - <span class="pali" style="color:#990012">ศูทฺร</span><span class="thai" style="color:#004d00"> - ศูทระ</span></i> in the womb of the daughter of a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> is called a <i>kṣattā. - <span class="pali" style="color:#990012">กฺษตฺตาฯ</span><span class="thai" style="color:#004d00"> - กษัตตาฯ</span></i> A child begotten by a <i>kṣatriya - <span class="pali" style="color:#990012">กฺษตฺริย</span><span class="thai" style="color:#004d00"> - กษัตริยะ</span></i> in the womb of a lower-class woman is called a <i>śvāda, - <span class="pali" style="color:#990012">ศฺวาท,</span><span class="thai" style="color:#004d00"> - ศวาทะ,</span></i> or dog-eater. All such offspring are considered extremely sinful, but the holy name of the Supreme Personality of Godhead is so strong that all of them can be purified simply by chanting the Hare Kṛṣṇa <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i></p></div>
     
 
         <div id="bb42595" class="r r-lang-en r-paragraph" ><p>The Hare Kṛṣṇa movement offers everyone a chance to be purified, regardless of birth or family. As confirmed in <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> (2.4.18):</p></div>
@@ -667,7 +708,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb42603" class="r r-lang-en r-paragraph" ><p>After killing Vṛtrāsura, Indra could not surpass the <i>brahma-hatyā, - <span class="pali" style="color:#990012">พฺรหฺม-หตฺยา,</span><span class="thai" style="color:#004d00"> - พรัหมะ-หัตยา,</span></i> the sinful reactions for killing a <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span>. - <span class="pali" style="color:#990012">พฺราหฺมณฯ</span><span class="thai" style="color:#004d00"> - พราหมะณะฯ</span></i> Formerly he had killed one <i>brāhmaṇa, - <span class="pali" style="color:#990012">พฺราหฺมณ,</span><span class="thai" style="color:#004d00"> - พราหมะณะ,</span></i> Viśvarūpa, out of circumstantial anger, but this time, following the advice of the sages, he killed another <i>brāhmaṇa</i> purposely. Therefore the sinful reaction was greater than before. Indra could not be relieved from the reaction simply by performing sacrifices for atonement. He had to undergo a severe series of sinful reactions, and when he was freed by such suffering, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> allowed him to perform the horse sacrifice. The planned execution of sinful deeds on the strength of chanting the holy name of the Lord or undergoing <i>prāyaścitta, - <span class="pali" style="color:#990012">ปฺรายศฺจิตฺต,</span><span class="thai" style="color:#004d00"> - ปรายัศจิตตะ,</span></i> atonement, cannot give relief to anyone, even to Indra or Nahuṣa. Nahuṣa was officiating for Indra while Indra, absent from heaven, was going here and there to gain release from his sinful reactions.</p></div>
+        <div id="bb42603" class="r r-lang-en r-paragraph" ><p>After killing Vṛtrāsura, Indra could not surpass the <i>brahma-hatyā, - <span class="pali" style="color:#990012">พฺรหฺม-หตฺยา,</span><span class="thai" style="color:#004d00"> - พรัหมะ-หัตยา,</span></i> the sinful reactions for killing a <i>brāhmaṇa. - <span class="pali" style="color:#990012">พฺราหฺมณฯ</span><span class="thai" style="color:#004d00"> - พราหมะณะฯ</span></i> Formerly he had killed one <i>brāhmaṇa, - <span class="pali" style="color:#990012">พฺราหฺมณ,</span><span class="thai" style="color:#004d00"> - พราหมะณะ,</span></i> Viśvarūpa, out of circumstantial anger, but this time, following the advice of the sages, he killed another <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> purposely. Therefore the sinful reaction was greater than before. Indra could not be relieved from the reaction simply by performing sacrifices for atonement. He had to undergo a severe series of sinful reactions, and when he was freed by such suffering, the <i>brāhmaṇas - <span class="pali" style="color:#990012">พฺราหฺมณสฺ</span><span class="thai" style="color:#004d00"> - พราหมะณัส</span></i> allowed him to perform the horse sacrifice. The planned execution of sinful deeds on the strength of chanting the holy name of the Lord or undergoing <i>prāyaścitta, - <span class="pali" style="color:#990012">ปฺรายศฺจิตฺต,</span><span class="thai" style="color:#004d00"> - ปรายัศจิตตะ,</span></i> atonement, cannot give relief to anyone, even to Indra or Nahuṣa. Nahuṣa was officiating for Indra while Indra, absent from heaven, was going here and there to gain release from his sinful reactions.</p></div>
     
 </div>
 

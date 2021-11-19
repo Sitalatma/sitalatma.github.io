@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -151,7 +192,7 @@ function toggleVisibility(cl){
 <i><span class="pali" style="color:#990012">        สรฺวสฺย จาหํ หฺฤทิ สนฺนิวิษฺโฏ</span></i><br /><span class="thai" style="color:#004d00"><i>        สัรวัสยะ จาหัง หฤทิ สันนิวิษโฏ</i><br /></span><i><span class="pali" style="color:#990012">มตฺตห์ สฺมฺฤติรฺ ชฺญานมฺ อโปหนํ จ</span></i><br /><span class="thai" style="color:#004d00"><i>มัตตะห์ สมฤติร ชญานัม อะโปหะนัง จะ</i><br /></span>
 </div>    
 
-        <div id="bb39454" class="r r-lang-en r-paragraph" ><p>“I am seated in everyone’s heart, and from Me come remembrance, knowledge and forgetfulness.” The Lord is situated in everyone’s heart as Saṅkarṣaṇa, and when a demon thinks himself one with the Supreme Lord, the Lord keeps him in that darkness. Although such a demoniac living entity is only an insignificant part of the Supreme Lord, he forgets his true position and thinks he is the Supreme Lord. Because this forgetfulness is created by Saṅkarṣaṇa, He is sometimes called <i>tāmasī - <span class="pali" style="color:#990012">ตามสี</span><span class="thai" style="color:#004d00"> - ตามะสี</span>. - <span class="pali" style="color:#990012">ตามสีฯ</span><span class="thai" style="color:#004d00"> - ตามะสีฯ</span></i> The name <i>tāmasī</i> does not indicate that He has a material body. He is always transcendental, but because He is the Supersoul of Lord Śiva, who must perform tamasic activities, Saṅkarṣaṇa is sometimes called <i>tāmasī. - <span class="pali" style="color:#990012">ตามสีฯ</span><span class="thai" style="color:#004d00"> - ตามะสีฯ</span></i></p></div>
+        <div id="bb39454" class="r r-lang-en r-paragraph" ><p>“I am seated in everyone’s heart, and from Me come remembrance, knowledge and forgetfulness.” The Lord is situated in everyone’s heart as Saṅkarṣaṇa, and when a demon thinks himself one with the Supreme Lord, the Lord keeps him in that darkness. Although such a demoniac living entity is only an insignificant part of the Supreme Lord, he forgets his true position and thinks he is the Supreme Lord. Because this forgetfulness is created by Saṅkarṣaṇa, He is sometimes called <i>tāmasī. - <span class="pali" style="color:#990012">ตามสีฯ</span><span class="thai" style="color:#004d00"> - ตามะสีฯ</span></i> The name <i>tāmasī - <span class="pali" style="color:#990012">ตามสี</span><span class="thai" style="color:#004d00"> - ตามะสี</span></i> does not indicate that He has a material body. He is always transcendental, but because He is the Supersoul of Lord Śiva, who must perform tamasic activities, Saṅkarṣaṇa is sometimes called <i>tāmasī. - <span class="pali" style="color:#990012">ตามสีฯ</span><span class="thai" style="color:#004d00"> - ตามะสีฯ</span></i></p></div>
     
 </div>
 
@@ -387,7 +428,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb39472" class="r r-lang-en r-paragraph" ><p>When males and females touch each other’s bodies, their lusty desires naturally awaken. It appears from this verse that there are similar sensations in spiritual bodies. Both Lord Ananta and the women giving Him pleasure had spiritual bodies. Thus all sensations originally exist in the spiritual body. This is confirmed in the <i>Vedānta-sūtra: - <span class="pali" style="color:#990012">เวทานฺต-สูตฺร:</span><span class="thai" style="color:#004d00"> - เวทานตะ-สูตระ:</span></i> <i>janmādy asya yataḥ. - <span class="pali" style="color:#990012">ชนฺมาทฺยฺ อสฺย ยตห์ฯ</span><span class="thai" style="color:#004d00"> - ชันมาทย อัสยะ ยะตะห์ฯ</span></i> Śrīla Viśvanātha Cakravartī Ṭhākura has commented in this connection that the word <i>ādi - <span class="pali" style="color:#990012">อาทิ</span><span class="thai" style="color:#004d00"> - อาทิ</span></i> means <i>ādi-rasa, - <span class="pali" style="color:#990012">อาทิ-รส,</span><span class="thai" style="color:#004d00"> - อาทิ-ระสะ,</span></i> the original lusty feeling, which is born from the Supreme. However, spiritual lust and material lust are as completely different as gold and iron. Only one who is very highly elevated in spiritual realization can understand the lusty feelings exchanged between Rādhā and Kṛṣṇa, or between Kṛṣṇa and the damsels of Vraja. Therefore, unless one is very experienced and advanced in spiritual realization, he is forbidden to discuss the lusty feelings of Kṛṣṇa and the <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span>. - <span class="pali" style="color:#990012">โคปีสฺฯ</span><span class="thai" style="color:#004d00"> - โคปีสฯ</span></i> However, if one is a sincere and pure devotee, the material lust in his heart is completely vanquished as he discusses the lusty feelings between the <i>gopīs</i> and Kṛṣṇa, and he makes quick progress in spiritual life.</p></div>
+        <div id="bb39472" class="r r-lang-en r-paragraph" ><p>When males and females touch each other’s bodies, their lusty desires naturally awaken. It appears from this verse that there are similar sensations in spiritual bodies. Both Lord Ananta and the women giving Him pleasure had spiritual bodies. Thus all sensations originally exist in the spiritual body. This is confirmed in the <i>Vedānta-sūtra: - <span class="pali" style="color:#990012">เวทานฺต-สูตฺร:</span><span class="thai" style="color:#004d00"> - เวทานตะ-สูตระ:</span></i> <i>janmādy asya yataḥ. - <span class="pali" style="color:#990012">ชนฺมาทฺยฺ อสฺย ยตห์ฯ</span><span class="thai" style="color:#004d00"> - ชันมาทย อัสยะ ยะตะห์ฯ</span></i> Śrīla Viśvanātha Cakravartī Ṭhākura has commented in this connection that the word <i>ādi - <span class="pali" style="color:#990012">อาทิ</span><span class="thai" style="color:#004d00"> - อาทิ</span></i> means <i>ādi-rasa, - <span class="pali" style="color:#990012">อาทิ-รส,</span><span class="thai" style="color:#004d00"> - อาทิ-ระสะ,</span></i> the original lusty feeling, which is born from the Supreme. However, spiritual lust and material lust are as completely different as gold and iron. Only one who is very highly elevated in spiritual realization can understand the lusty feelings exchanged between Rādhā and Kṛṣṇa, or between Kṛṣṇa and the damsels of Vraja. Therefore, unless one is very experienced and advanced in spiritual realization, he is forbidden to discuss the lusty feelings of Kṛṣṇa and the <i>gopīs. - <span class="pali" style="color:#990012">โคปีสฺฯ</span><span class="thai" style="color:#004d00"> - โคปีสฯ</span></i> However, if one is a sincere and pure devotee, the material lust in his heart is completely vanquished as he discusses the lusty feelings between the <i>gopīs - <span class="pali" style="color:#990012">โคปีสฺ</span><span class="thai" style="color:#004d00"> - โคปีส</span></i> and Kṛṣṇa, and he makes quick progress in spiritual life.</p></div>
     
 </div>
 
@@ -572,7 +613,7 @@ function toggleVisibility(cl){
         <div id="bb39486" class="r r-lang-en r-paragraph" ><p>None of these descriptions of Lord Anantadeva are imaginary. They are all transcendentally blissful and full of actual knowledge. However, unless one hears them directly from a bona fide spiritual master in the line of disciplic succession, one cannot understand them. This knowledge is delivered to Nārada by Lord Brahmā, and the great saint Nārada, along with his companion, Tumburu, distributes it all over the universe. Sometimes the Supreme Personality of Godhead is described as Uttamaśloka, one who is praised by beautiful poetry. Nārada composes various poems to glorify Lord Ananta, and therefore the word <i>saṁślokayām āsa - <span class="pali" style="color:#990012">สํโศฺลกยามฺ อาส</span><span class="thai" style="color:#004d00"> - สังศโลกะยาม อาสะ</span></i> (praised by selected poetry) is used in this verse.</p></div>
     
 
-        <div id="bb39487" class="r r-lang-en r-paragraph" ><p>The Vaiṣṇavas in the Gauḍīya-sampradāya - <span class="pali" style="color:#990012">สมฺปฺรทาย</span><span class="thai" style="color:#004d00"> - สัมประทายะ</span> belong to the disciplic succession stemming from Lord Brahmā. Lord Brahmā is the spiritual master of Nārada, Nārada is the spiritual master of Vyāsadeva, and Vyāsadeva wrote the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> as a commentary on the <i>Vedānta-sūtra. - <span class="pali" style="color:#990012">เวทานฺต-สูตฺรฯ</span><span class="thai" style="color:#004d00"> - เวทานตะ-สูตระฯ</span></i> Therefore all devotees in the Gauḍīya<i>sampradāya</i> accept the activities of Lord Ananta related in the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> as authentic, and they are thus benefited by going back home, back to Godhead. The contamination in the heart of a conditioned soul is like a huge accumulation of garbage created by the three modes of material nature, especially the modes of <i>rajas - <span class="pali" style="color:#990012">รชสฺ</span><span class="thai" style="color:#004d00"> - ระชัส</span></i> (passion) and <i>tamas - <span class="pali" style="color:#990012">ตมสฺ</span><span class="thai" style="color:#004d00"> - ตะมัส</span></i> (ignorance). This contamination becomes manifest in the form of lusty desires and greed for material possessions. As confirmed herein, unless one receives transcendental knowledge in disciplic succession, there is no question of his becoming purified of this contamination.</p></div>
+        <div id="bb39487" class="r r-lang-en r-paragraph" ><p>The Vaiṣṇavas in the Gauḍīya-sampradāya belong to the disciplic succession stemming from Lord Brahmā. Lord Brahmā is the spiritual master of Nārada, Nārada is the spiritual master of Vyāsadeva, and Vyāsadeva wrote the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> as a commentary on the <i>Vedānta-sūtra. - <span class="pali" style="color:#990012">เวทานฺต-สูตฺรฯ</span><span class="thai" style="color:#004d00"> - เวทานตะ-สูตระฯ</span></i> Therefore all devotees in the Gauḍīya<i>sampradāya - <span class="pali" style="color:#990012">สมฺปฺรทาย</span><span class="thai" style="color:#004d00"> - สัมประทายะ</span></i> accept the activities of Lord Ananta related in the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัม</span></i> as authentic, and they are thus benefited by going back home, back to Godhead. The contamination in the heart of a conditioned soul is like a huge accumulation of garbage created by the three modes of material nature, especially the modes of <i>rajas - <span class="pali" style="color:#990012">รชสฺ</span><span class="thai" style="color:#004d00"> - ระชัส</span></i> (passion) and <i>tamas - <span class="pali" style="color:#990012">ตมสฺ</span><span class="thai" style="color:#004d00"> - ตะมัส</span></i> (ignorance). This contamination becomes manifest in the form of lusty desires and greed for material possessions. As confirmed herein, unless one receives transcendental knowledge in disciplic succession, there is no question of his becoming purified of this contamination.</p></div>
     
 </div>
 

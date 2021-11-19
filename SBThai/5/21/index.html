@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -601,7 +642,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb39091" class="r r-lang-en r-paragraph" ><p>The distance indicated by the word <i>sādhikāni - <span class="pali" style="color:#990012">สาธิกานิ</span><span class="thai" style="color:#004d00"> - สาธิกานิ</span></i> is <i>pañca-viṁśati-sahasrādhikāni, - <span class="pali" style="color:#990012">ปญฺจ-วึศติ-สหสฺราธิกานิ,</span><span class="thai" style="color:#004d00"> - ปัญจะ-วิงศะติ-สะหัสราธิกานิ,</span></i> or 25,000 <i>yojanas - <span class="pali" style="color:#990012">โยชนสฺ</span><span class="thai" style="color:#004d00"> - โยชะนัส</span>. - <span class="pali" style="color:#990012">โยชนสฺฯ</span><span class="thai" style="color:#004d00"> - โยชะนัสฯ</span></i> That plus two and a half crores and twelve and a half <i>lakṣa - <span class="pali" style="color:#990012">ลกฺษ</span><span class="thai" style="color:#004d00"> - ลักษะ</span></i> of <i>yojanas - <span class="pali" style="color:#990012">โยชนสฺ</span><span class="thai" style="color:#004d00"> - โยชะนัส</span></i> is the distance the sun travels between each two cities. This comes to 23,775,000 <i>yojanas, - <span class="pali" style="color:#990012">โยชนสฺ,</span><span class="thai" style="color:#004d00"> - โยชะนัส,</span></i> or 190,200,000 miles. The total orbit of the sun is four times that distance, or 95,100,000 <i>yojanas</i> (760,800,000 miles).</p></div>
+        <div id="bb39091" class="r r-lang-en r-paragraph" ><p>The distance indicated by the word <i>sādhikāni - <span class="pali" style="color:#990012">สาธิกานิ</span><span class="thai" style="color:#004d00"> - สาธิกานิ</span></i> is <i>pañca-viṁśati-sahasrādhikāni, - <span class="pali" style="color:#990012">ปญฺจ-วึศติ-สหสฺราธิกานิ,</span><span class="thai" style="color:#004d00"> - ปัญจะ-วิงศะติ-สะหัสราธิกานิ,</span></i> or 25,000 <i>yojanas. - <span class="pali" style="color:#990012">โยชนสฺฯ</span><span class="thai" style="color:#004d00"> - โยชะนัสฯ</span></i> That plus two and a half crores and twelve and a half <i>lakṣa - <span class="pali" style="color:#990012">ลกฺษ</span><span class="thai" style="color:#004d00"> - ลักษะ</span></i> of <i>yojanas - <span class="pali" style="color:#990012">โยชนสฺ</span><span class="thai" style="color:#004d00"> - โยชะนัส</span></i> is the distance the sun travels between each two cities. This comes to 23,775,000 <i>yojanas, - <span class="pali" style="color:#990012">โยชนสฺ,</span><span class="thai" style="color:#004d00"> - โยชะนัส,</span></i> or 190,200,000 miles. The total orbit of the sun is four times that distance, or 95,100,000 <i>yojanas - <span class="pali" style="color:#990012">โยชนสฺ</span><span class="thai" style="color:#004d00"> - โยชะนัส</span></i> (760,800,000 miles).</p></div>
     
 </div>
 

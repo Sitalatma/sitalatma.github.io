@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -942,7 +983,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb68890" class="r r-lang-en r-paragraph" ><p>The use of the singular <i>yaḥ, - <span class="pali" style="color:#990012">ยห์,</span><span class="thai" style="color:#004d00"> - ยะห์,</span></i> “He who,” indicates that the frequent references to “the two Lords, Kṛṣṇa and Rāma,” do not compromise the firm principle of monotheism expressed in the <i>Śrīmad-Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span>. - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺฯ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัมฯ</span></i> As explained in many Vedic literatures, the one Supreme Lord expands Himself into innumerable forms, yet He remains the one and almighty God. For example, we have this statement in the <i>Brahma-saṁhitā - <span class="pali" style="color:#990012">พฺรหฺม-สํหิตา</span><span class="thai" style="color:#004d00"> - พรัหมะ-สังหิตา</span></i> (5.33): <i>advaitam acyutam anādir ananta-rūpam. - <span class="pali" style="color:#990012">อไทฺวตมฺ อจฺยุตมฺ อนาทิรฺ อนนฺต-รูปมฺฯ</span><span class="thai" style="color:#004d00"> - อัทไวตัม อัจยุตัม อะนาทิร อะนันตะ-รูปัมฯ</span></i> “The one Supreme Lord is infallible and beginningless, and He expands Himself into innumerable manifest forms.” Out of regard for the spirit of the Lord’s pastimes, in which He expands Himself and appears as His own older brother, Balarāma, the <i>Bhāgavatam</i> here refers to “the two Lords.” But the “bottom line” is that there is one Supreme Godhead, one Absolute Truth, who appears in His original form as Kṛṣṇa.</p></div>
+        <div id="bb68890" class="r r-lang-en r-paragraph" ><p>The use of the singular <i>yaḥ, - <span class="pali" style="color:#990012">ยห์,</span><span class="thai" style="color:#004d00"> - ยะห์,</span></i> “He who,” indicates that the frequent references to “the two Lords, Kṛṣṇa and Rāma,” do not compromise the firm principle of monotheism expressed in the <i>Śrīmad-Bhāgavatam. - <span class="pali" style="color:#990012">ศฺรีมทฺ-ภาควตมฺฯ</span><span class="thai" style="color:#004d00"> - ศรีมัท-ภาคะวะตัมฯ</span></i> As explained in many Vedic literatures, the one Supreme Lord expands Himself into innumerable forms, yet He remains the one and almighty God. For example, we have this statement in the <i>Brahma-saṁhitā - <span class="pali" style="color:#990012">พฺรหฺม-สํหิตา</span><span class="thai" style="color:#004d00"> - พรัหมะ-สังหิตา</span></i> (5.33): <i>advaitam acyutam anādir ananta-rūpam. - <span class="pali" style="color:#990012">อไทฺวตมฺ อจฺยุตมฺ อนาทิรฺ อนนฺต-รูปมฺฯ</span><span class="thai" style="color:#004d00"> - อัทไวตัม อัจยุตัม อะนาทิร อะนันตะ-รูปัมฯ</span></i> “The one Supreme Lord is infallible and beginningless, and He expands Himself into innumerable manifest forms.” Out of regard for the spirit of the Lord’s pastimes, in which He expands Himself and appears as His own older brother, Balarāma, the <i>Bhāgavatam - <span class="pali" style="color:#990012">ภาควตมฺ</span><span class="thai" style="color:#004d00"> - ภาคะวะตัม</span></i> here refers to “the two Lords.” But the “bottom line” is that there is one Supreme Godhead, one Absolute Truth, who appears in His original form as Kṛṣṇa.</p></div>
     
 </div>
 
@@ -2176,7 +2217,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb68986" class="r r-lang-en r-paragraph" ><p>Śrīla Śrīdhara Svāmī quotes the following <i>smṛti - <span class="pali" style="color:#990012">สฺมฺฤติ</span><span class="thai" style="color:#004d00"> - สมฤติ</span></i> injunction regarding inheritance: <i>patnī duhitaraś caiva pitaro bhrātaras tathā - <span class="pali" style="color:#990012">ปตฺนี ทุหิตรศฺ ไจว ปิตโร ภฺราตรสฺ ตถา</span><span class="thai" style="color:#004d00"> - ปัตนี ทุหิตะรัศ ไจวะ ปิตะโร ภราตะรัส ตะถา</span></i>/<i>tat-sutā gotra - <span class="pali" style="color:#990012">โคตฺร</span><span class="thai" style="color:#004d00"> - โคตระ</span>-jā bandhuḥ śiṣyāḥ sa-brahmacāriṇaḥ. - <span class="pali" style="color:#990012">ตตฺ-สุตา โคตฺร-ชา พนฺธุห์ ศิษฺยาห์ ส-พฺรหฺมจาริณห์ฯ</span><span class="thai" style="color:#004d00"> - ตัต-สุตา โคตระ-ชา พันธุห์ ศิษยาห์ สะ-พรัหมะจาริณะห์ฯ</span></i> “The inheritance goes first to the wife, then [if the wife has passed away] to the daughters, then to the parents, then to the brothers, then to the brothers’ sons, then to family members of the same <i>gotra</i> as the deceased, and then to his disciples, including <i>brahmacārīs.” - <span class="pali" style="color:#990012">พฺรหฺมจารีสฺฯ”</span><span class="thai" style="color:#004d00"> - พรัหมะจารีสฯ”</span></i></p></div>
+        <div id="bb68986" class="r r-lang-en r-paragraph" ><p>Śrīla Śrīdhara Svāmī quotes the following <i>smṛti - <span class="pali" style="color:#990012">สฺมฺฤติ</span><span class="thai" style="color:#004d00"> - สมฤติ</span></i> injunction regarding inheritance: <i>patnī duhitaraś caiva pitaro bhrātaras tathā - <span class="pali" style="color:#990012">ปตฺนี ทุหิตรศฺ ไจว ปิตโร ภฺราตรสฺ ตถา</span><span class="thai" style="color:#004d00"> - ปัตนี ทุหิตะรัศ ไจวะ ปิตะโร ภราตะรัส ตะถา</span></i>/<i>tat-sutā gotra-jā bandhuḥ śiṣyāḥ sa-brahmacāriṇaḥ. - <span class="pali" style="color:#990012">ตตฺ-สุตา โคตฺร-ชา พนฺธุห์ ศิษฺยาห์ ส-พฺรหฺมจาริณห์ฯ</span><span class="thai" style="color:#004d00"> - ตัต-สุตา โคตระ-ชา พันธุห์ ศิษยาห์ สะ-พรัหมะจาริณะห์ฯ</span></i> “The inheritance goes first to the wife, then [if the wife has passed away] to the daughters, then to the parents, then to the brothers, then to the brothers’ sons, then to family members of the same <i>gotra - <span class="pali" style="color:#990012">โคตฺร</span><span class="thai" style="color:#004d00"> - โคตระ</span></i> as the deceased, and then to his disciples, including <i>brahmacārīs.” - <span class="pali" style="color:#990012">พฺรหฺมจารีสฺฯ”</span><span class="thai" style="color:#004d00"> - พรัหมะจารีสฯ”</span></i></p></div>
     
 
         <div id="bb68987" class="r r-lang-en r-paragraph" ><p>Śrīla Viśvanātha Cakravartī adds that since Satrājit had no sons, since his wives were killed together with him, and since his daughter Satyabhāmā was not interested in the Syamantaka jewel, which constituted the inheritance, it rightfully belonged to her sons.</p></div>

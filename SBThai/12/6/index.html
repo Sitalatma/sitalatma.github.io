@@ -16,9 +16,57 @@
     .thai {color:#004d00;display:none;font-family: 'Taviraj', serif;font-size:1.1em;}
      #toggler {position: fixed; top: 20px;left: 20px; width: 150px;}
      </style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+
+
+<script>
+function toggleVisibility(cl){
+    //console.log('Got click on '+cl)
+   var els = document.getElementsByClassName(cl);
+   if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'inline';
+      }
+      s.display = s.display === 'none' ? 'inline' : 'none';
+   }else{
+   //console.log('Checked property of '+cl + ' is false')
+   for (var i = 0; i < els.length; i++){
+      var s = els[i].style;
+      s.display = 'none';
+      }
+   }
+}
+</script>  
 
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> Pali</div>
+            
+            <div class="checks">
+            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');"> Thai</div>
+            
+            </div> 
+
 
 <div class="container first-container">
 
@@ -45,14 +93,7 @@ function toggleVisibility(cl){
 }
 </script>
 
-            <div id="toggler">
 
-            <input type="checkbox" id="paliBox" name="paliBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');">
-            <label for="paliBox"> Pali</label><br>
-            <input type="checkbox" id="thaiBox" name="thaiBox" onClick = "JavaScript:toggleVisibility('thai');">
-            <label for="thaiBox"> Thai</label><br>
-
-            </div>
         <div class="row" id="content" tabindex="-1">
 <div class="col-12">
     <div class="mb-3 bb r r-title r-book">
@@ -92,7 +133,7 @@ function toggleVisibility(cl){
                         
                             
 
-                            <div id="bb84661" class="r r-lang-en r-paragraph" ><p>Thereafter Sūta Gosvāmī, in response to questions from Śrī Śaunaka, described the divisions of the <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span>. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i> From the heart of the topmost demigod, Brahmā, came the subtle transcendental vibration, and from this subtle sound vibration arose the syllable <i>om, - <span class="pali" style="color:#990012">โอมฺ,</span><span class="thai" style="color:#004d00"> - โอม,</span></i> greatly potent and self-luminous. Using this <i>oṁkāra, - <span class="pali" style="color:#990012">โอํการ,</span><span class="thai" style="color:#004d00"> - โองการะ,</span></i> Lord Brahmā created the original <i>Vedas</i> and taught them to his sons, Marīci and others, who were all saintly leaders of the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> community. This body of Vedic knowledge was handed down through the disciplic succession of spiritual masters until the end of Dvāpara-yuga, when Lord Vyāsadeva divided it into four parts and instructed various schools of sages in these four <i>saṁhitās. - <span class="pali" style="color:#990012">สํหิตาสฺฯ</span><span class="thai" style="color:#004d00"> - สังหิตาสฯ</span></i> When the sage Yājñavalkya was rejected by his spiritual master, he had to give up all the Vedic <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> he had received from him. To obtain new <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> of the <i>Yajur Veda, - <span class="pali" style="color:#990012">ยชุรฺ เวท,</span><span class="thai" style="color:#004d00"> - ยะชุร เวทะ,</span></i> Yājñavalkya worshiped the Supreme Lord in the form of the sun-god. Śrī Sūryadeva subsequently fulfilled his prayer.</p></div>
+                            <div id="bb84661" class="r r-lang-en r-paragraph" ><p>Thereafter Sūta Gosvāmī, in response to questions from Śrī Śaunaka, described the divisions of the <i>Vedas. - <span class="pali" style="color:#990012">เวทสฺฯ</span><span class="thai" style="color:#004d00"> - เวทัสฯ</span></i> From the heart of the topmost demigod, Brahmā, came the subtle transcendental vibration, and from this subtle sound vibration arose the syllable <i>om, - <span class="pali" style="color:#990012">โอมฺ,</span><span class="thai" style="color:#004d00"> - โอม,</span></i> greatly potent and self-luminous. Using this <i>oṁkāra, - <span class="pali" style="color:#990012">โอํการ,</span><span class="thai" style="color:#004d00"> - โองการะ,</span></i> Lord Brahmā created the original <i>Vedas - <span class="pali" style="color:#990012">เวทสฺ</span><span class="thai" style="color:#004d00"> - เวทัส</span></i> and taught them to his sons, Marīci and others, who were all saintly leaders of the <i>brāhmaṇa - <span class="pali" style="color:#990012">พฺราหฺมณ</span><span class="thai" style="color:#004d00"> - พราหมะณะ</span></i> community. This body of Vedic knowledge was handed down through the disciplic succession of spiritual masters until the end of Dvāpara-yuga, when Lord Vyāsadeva divided it into four parts and instructed various schools of sages in these four <i>saṁhitās. - <span class="pali" style="color:#990012">สํหิตาสฺฯ</span><span class="thai" style="color:#004d00"> - สังหิตาสฯ</span></i> When the sage Yājñavalkya was rejected by his spiritual master, he had to give up all the Vedic <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> he had received from him. To obtain new <i>mantras - <span class="pali" style="color:#990012">มนฺตฺรสฺ</span><span class="thai" style="color:#004d00"> - มันตรัส</span></i> of the <i>Yajur Veda, - <span class="pali" style="color:#990012">ยชุรฺ เวท,</span><span class="thai" style="color:#004d00"> - ยะชุร เวทะ,</span></i> Yājñavalkya worshiped the Supreme Lord in the form of the sun-god. Śrī Sūryadeva subsequently fulfilled his prayer.</p></div>
                         
                     </div>
                 
@@ -3672,7 +3713,7 @@ function toggleVisibility(cl){
     </h2>
     
 
-        <div id="bb84939" class="r r-lang-en r-paragraph" ><p>According to Vedic culture, the three higher classes of society (the intellectual, political and mercantile sections) are formally connected with the spiritual master by initiation and receive the Gāyatrī <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span>. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> This purifying <i>mantra</i> is chanted three times daily — at sunrise, noon and sunset. Auspicious moments for the performance of spiritual duties are calculated according to the sun’s path in the sky, and this systematic scheduling of spiritual duties is here attributed to the sun as the representative of God.</p></div>
+        <div id="bb84939" class="r r-lang-en r-paragraph" ><p>According to Vedic culture, the three higher classes of society (the intellectual, political and mercantile sections) are formally connected with the spiritual master by initiation and receive the Gāyatrī <i>mantra. - <span class="pali" style="color:#990012">มนฺตฺรฯ</span><span class="thai" style="color:#004d00"> - มันตระฯ</span></i> This purifying <i>mantra - <span class="pali" style="color:#990012">มนฺตฺร</span><span class="thai" style="color:#004d00"> - มันตระ</span></i> is chanted three times daily — at sunrise, noon and sunset. Auspicious moments for the performance of spiritual duties are calculated according to the sun’s path in the sky, and this systematic scheduling of spiritual duties is here attributed to the sun as the representative of God.</p></div>
     
 </div>
 

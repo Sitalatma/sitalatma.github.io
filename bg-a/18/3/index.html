@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.3</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตฺยาชฺยํ โทษ-วทฺ อิตฺยฺ เอเก</i><br /><i>กรฺม ปฺราหุรฺ มนีษิณฮ</i><br /><i>ยชฺญ-ทาน-ตปฮ-กรฺม</i><br /><i>น ตฺยาชฺยมฺ อิติ จาปเร</i>
+<span class="slant iast">tyājyaṁ doṣa-vad ity eke<br /></span>
+<span class="slant pali">ตฺยาชฺยํ โทษ-วทฺ อิตฺยฺ เอเก<br /></span>
+<span class="slant thai">ตยาชยัง โทษะ-วัท อิตย เอเก<br /></span>
+<span class="slant ram">ทยาจยัม โดชะ-วัด อิทิ เอเค<br /></span>
+<span class="slant iast">karma prāhur manīṣiṇaḥ<br /></span>
+<span class="slant pali">กรฺม ปฺราหุรฺ มนีษิณห์<br /></span>
+<span class="slant thai">กัรมะ ปราหุร มะนีษิณะห์<br /></span>
+<span class="slant ram">คารมะ พราฮุร มะนีชิณะฮ<br /></span>
+<span class="slant iast">yajña-dāna-tapaḥ-karma<br /></span>
+<span class="slant pali">ยชฺญ-ทาน-ตปห์-กรฺม<br /></span>
+<span class="slant thai">ยัชญะ-ทานะ-ตะปะห์-กัรมะ<br /></span>
+<span class="slant ram">ยะกยะ-ดานะ-ทะพะฮ-คารมะ<br /></span>
+<span class="slant iast">na tyājyam iti cāpare<br /></span>
+<span class="slant pali">น ตฺยาชฺยมฺ อิติ จาปเร<br /></span>
+<span class="slant thai">นะ ตยาชยัม อิติ จาปะเร<br /></span>
+<span class="slant ram">นะ ทยาจยัม อิทิ ชาพะเรฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตฺยาชฺยมฺ</i> — ต้องยกเลิก, <i>โทษ-วตฺ</i> — ว่าเป็นสิ่งชั่วร้าย, <i>อิติ</i> — ดังนั้น, <i>เอเก</i> — กลุ่มหนึ่ง, <i>กรฺม</i> — งาน, <i>ปฺราหุฮ</i> — พวกเขากล่าวว่า, <i>มนีษิณฮ</i> — นักคิดผู้ยิ่งใหญ่, <i>ยชฺญ</i> — ของการ บูชา, <i>ทาน</i> — การให้ทาน, <i>ตปฮ</i> — และการบำเพ็ญเพียร, <i>กรฺม</i> — งาน, <i>น</i> — ไม่เคย, <i>ตฺยาชฺยมฺ</i> — ยกเลิก, <i>อิติ</i> — ดังนั้น, <i>จ</i> — และ, <i>อปเร</i> — ผู้อื่น
+  <span class="slant iast">tyājyam</span><span class="slant pali">ตฺยาชฺยมฺ</span><span class="slant thai">ตยาชยัม</span><span class="slant ram">ทยาจยัม</span> — ต้องยกเลิก, <span class="slant iast">doṣa-vat</span><span class="slant pali">โทษ-วตฺ</span><span class="slant thai">โทษะ-วัต</span><span class="slant ram">โดชะ-วัท</span> — ว่าเป็นสิ่งชั่วร้าย, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">eke</span><span class="slant pali">เอเก</span><span class="slant thai">เอเก</span><span class="slant ram">เอเค</span> — กลุ่มหนึ่ง, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">prāhuḥ</span><span class="slant pali">ปฺราหุห์</span><span class="slant thai">ปราหุห์</span><span class="slant ram">พราฮุฮ</span> — พวกเขากล่าวว่า, <span class="slant iast">manīṣiṇaḥ</span><span class="slant pali">มนีษิณห์</span><span class="slant thai">มะนีษิณะห์</span><span class="slant ram">มะนีชิณะฮ</span> — นักคิดผู้ยิ่งใหญ่, <span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span> — ของการ บูชา, <span class="slant iast">dāna</span><span class="slant pali">ทาน</span><span class="slant thai">ทานะ</span><span class="slant ram">ดานะ</span> — การให้ทาน, <span class="slant iast">tapaḥ</span><span class="slant pali">ตปห์</span><span class="slant thai">ตะปะห์</span><span class="slant ram">ทะพะฮ</span> — และการบำเพ็ญเพียร, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">tyājyam</span><span class="slant pali">ตฺยาชฺยมฺ</span><span class="slant thai">ตยาชยัม</span><span class="slant ram">ทยาจยัม</span> — ยกเลิก, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">apare</span><span class="slant pali">อปเร</span><span class="slant thai">อะปะเร</span><span class="slant ram">อพะเร</span> — ผู้อื่น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีกิจกรรมมากมายในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ซึ่งเป็นเรื่องราวต้องถกเถียงกันตัวอย่างเช่น&nbsp;&nbsp;ได้กล่าวไว้ว่าสัตว์ถูกฆ่าได้ในพิธีบูชา&nbsp;&nbsp;แต่บางคนยืนยันว่าการฆ่าสัตว์เป็นสิ่ง<wbr>ที่น่ารังเกียจที่สุด&nbsp;&nbsp;ถึงแม้ว่าการฆ่าสัตว์ในพิธีบูชาได้แนะนำไว้ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;แต่<wbr>ไม่พิจารณาว่าสัตว์ถูกฆ่าเพราะพิธีบูชาจะให้ชีวิตใหม่แก่สัตว์&nbsp;&nbsp;บางครั้งสัตว์ได้รับชีวิต<wbr>ในร่างสัตว์ตัวใหม่หลังจากถูกฆ่าในพิธีบูชา&nbsp;&nbsp;และบางครั้งได้รับการส่งเสริมให้ไปมีร่าง<wbr>ชีวิตมนุษย์ทันที&nbsp;&nbsp;แต่มีความคิดเห็นที่แตกต่างกันในหมู่นักปราชญ์&nbsp;&nbsp;บ้างกล่าวว่าการฆ่า<wbr>สัตว์ควรหลีกเลี่ยงเสมอ&nbsp;&nbsp;และบ้างก็กล่าวว่าเป็นสิ่งดีหากทำไปเพื่อพิธีบูชา&nbsp;&nbsp;ความคิด<wbr>เห็นที่แตกต่างกันเกี่ยวกับกิจกรรมพิธีบูชาทั้งหมดนี้&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เองจะทรงทำให้<wbr>กระจ่างขึ้น
+  มีกิจกรรมมากมายในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ซึ่งเป็นเรื่องราวต้องถกเถียงกันตัวอย่างเช่น&nbsp;&nbsp;ได้กล่าวไว้ว่าสัตว์ถูกฆ่าได้ในพิธีบูชา&nbsp;&nbsp;แต่บางคนยืนยันว่าการฆ่าสัตว์เป็นสิ่ง<wbr>ที่น่ารังเกียจที่สุด&nbsp;&nbsp;ถึงแม้ว่าการฆ่าสัตว์ในพิธีบูชาได้แนะนำไว้ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;แต่<wbr>ไม่พิจารณาว่าสัตว์ถูกฆ่าเพราะพิธีบูชาจะให้ชีวิตใหม่แก่สัตว์&nbsp;&nbsp;บางครั้งสัตว์ได้รับชีวิต<wbr>ในร่างสัตว์ตัวใหม่หลังจากถูกฆ่าในพิธีบูชา&nbsp;&nbsp;และบางครั้งได้รับการส่งเสริมให้ไปมีร่าง<wbr>ชีวิตมนุษย์ทันที&nbsp;&nbsp;แต่มีความคิดเห็นที่แตกต่างกันในหมู่นักปราชญ์&nbsp;&nbsp;บ้างกล่าวว่าการฆ่า<wbr>สัตว์ควรหลีกเลี่ยงเสมอ&nbsp;&nbsp;และบ้างก็กล่าวว่าเป็นสิ่งดีหากทำไปเพื่อพิธีบูชา&nbsp;&nbsp;ความคิด<wbr>เห็นที่แตกต่างกันเกี่ยวกับกิจกรรมพิธีบูชาทั้งหมดนี้&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เองจะทรงทำให้<wbr>กระจ่างขึ้น
   </p>
 </div>
 

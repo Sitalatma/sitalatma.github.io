@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.36</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อวาจฺย-วาทาํศฺ จ พหูนฺ</i><br /><i>วทิษฺยนฺติ ตวาหิตาฮ</i><br /><i>นินฺทนฺตสฺ ตว สามรฺตฺหฺยํ</i><br /><i>ตโต ทุฮข-ตรํ นุ กิมฺ</i>
+<span class="slant iast">avācya-vādāṁś ca bahūn<br /></span>
+<span class="slant pali">อวาจฺย-วาทำศฺ จ พหูนฺ<br /></span>
+<span class="slant thai">อะวาจยะ-วาทางศ จะ พะหูน<br /></span>
+<span class="slant ram">อวาชยะ-วาดามช ชะ บะฮูน<br /></span>
+<span class="slant iast">vadiṣyanti tavāhitāḥ<br /></span>
+<span class="slant pali">วทิษฺยนฺติ ตวาหิตาห์<br /></span>
+<span class="slant thai">วะทิษยันติ ตะวาหิตาห์<br /></span>
+<span class="slant ram">วะดิชยันทิ ทะวาฮิทาฮ<br /></span>
+<span class="slant iast">nindantas tava sāmarthyaṁ<br /></span>
+<span class="slant pali">นินฺทนฺตสฺ ตว สามรฺถฺยํ<br /></span>
+<span class="slant thai">นินทันตัส ตะวะ สามัรถยัง<br /></span>
+<span class="slant ram">นินดันทัส ทะวะ สามารทฺยัม<br /></span>
+<span class="slant iast">tato duḥkha-taraṁ nu kim<br /></span>
+<span class="slant pali">ตโต ทุห์ข-ตรํ นุ กิมฺ<br /></span>
+<span class="slant thai">ตะโต ทุห์ขะ-ตะรัง นุ กิม<br /></span>
+<span class="slant ram">ทะโท ดุฮคฺะทะรัม นุ คิม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อวาจฺย</i> — ไม่มีความกรุณา, <i>วาทานฺ</i> — คำพูดที่แต่งขึ้น, <i>จ</i> — เช่นกัน, <i>พหูนฺ</i> — มาก, <i>วทิษฺยนฺติ</i> — จะกล่าวว่า, <i>ตว</i> — ของเธอ, <i>อหิตาฮ</i> — ศัตรู,<i>นินฺทนฺตฮ</i> — ขณะที่หมิ่นประมาท, <i>ตว</i> — ของเธอ, <i>สามรฺตฺหฺยมฺ</i> — ความสามารถ, <i>ตตฮ</i> — กว่านั้น,<i>ทุฮข-ตรมฺ</i> — เจ็บปวด มากกว่า, <i>นุ</i> — แน่นอน, <i>กิมฺ</i> — อะไรที่นั่น
+  <span class="slant iast">avācya</span><span class="slant pali">อวาจฺย</span><span class="slant thai">อะวาจยะ</span><span class="slant ram">อวาชยะ</span> — ไม่มีความกรุณา, <span class="slant iast">vādān</span><span class="slant pali">วาทานฺ</span><span class="slant thai">วาทาน</span><span class="slant ram">วาดาน</span> — คำพูดที่แต่งขึ้น, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">bahūn</span><span class="slant pali">พหูนฺ</span><span class="slant thai">พะหูน</span><span class="slant ram">บะฮูน</span> — มาก, <span class="slant iast">vadiṣyanti</span><span class="slant pali">วทิษฺยนฺติ</span><span class="slant thai">วะทิษยันติ</span><span class="slant ram">วะดิ- ชยันทิ</span> — จะกล่าวว่า, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของเธอ, <span class="slant iast">ahitāḥ</span><span class="slant pali">อหิตาห์</span><span class="slant thai">อะหิตาห์</span><span class="slant ram">อฮิทาฮ</span> — ศัตรู,<span class="slant iast">nindantaḥ</span><span class="slant pali">นินฺทนฺตห์</span><span class="slant thai">นินทันตะห์</span><span class="slant ram"> นินดันทะฮ</span> — ขณะที่หมิ่นประมาท, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของเธอ, <span class="slant iast">sāmarthyam</span><span class="slant pali">สามรฺถฺยมฺ</span><span class="slant thai">สามัรถยัม</span><span class="slant ram">สามารทฺยัม</span> — ความสามารถ, <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — กว่านั้น,<span class="slant iast">duḥkha-taram</span><span class="slant pali">ทุห์ข-ตรมฺ</span><span class="slant thai">ทุห์ขะ-ตะรัม</span><span class="slant ram"> ดุฮคะฮ-ทะรัม</span> — เจ็บปวด มากกว่า, <span class="slant iast">nu</span><span class="slant pali">นุ</span><span class="slant thai">นุ</span><span class="slant ram">นุ</span> — แน่นอน, <span class="slant iast">kim</span><span class="slant pali">กิมฺ</span><span class="slant thai">กิม</span><span class="slant ram">คิม</span> — อะไรที่นั่น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในตอนแรก&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงพิศวงที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมีความเมตตาสงสารที่<wbr>ไม่จำเป็นเป็นข้ออ้าง&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงอธิบายความเมตตาสงสารนี้ว่าเหมาะสำหรับ<wbr>อนารยชน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงพิสูจน์คำดำรัสของพระองค์ต่อสิ่งที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเรียกว่า<wbr>ความเมตตาสงสาร
+  ในตอนแรก&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงพิศวงที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมีความเมตตาสงสารที่<wbr>ไม่จำเป็นเป็นข้ออ้าง&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงอธิบายความเมตตาสงสารนี้ว่าเหมาะสำหรับ<wbr>อนารยชน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงพิสูจน์คำดำรัสของพระองค์ต่อสิ่งที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเรียกว่า<wbr>ความเมตตาสงสาร
   </p>
 </div>
 

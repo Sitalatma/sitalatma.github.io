@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.31</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยยา ธรฺมมฺ อธรฺมํ จ</i><br /><i>การฺยํ จาการฺยมฺ เอว จ</i><br /><i>อยตฺหาวตฺ ปฺรชานาติ</i><br /><i>พุทฺธิฮ สา ปารฺตฺห ราชสี</i>
+<span class="slant iast">yayā dharmam adharmaṁ ca<br /></span>
+<span class="slant pali">ยยา ธรฺมมฺ อธรฺมํ จ<br /></span>
+<span class="slant thai">ยะยา ธัรมัม อะธัรมัง จะ<br /></span>
+<span class="slant ram">ยะยา ดฺารมัม อดฺารมัม ชะ<br /></span>
+<span class="slant iast">kāryaṁ cākāryam eva ca<br /></span>
+<span class="slant pali">การฺยํ จาการฺยมฺ เอว จ<br /></span>
+<span class="slant thai">การยัง จาการยัม เอวะ จะ<br /></span>
+<span class="slant ram">คารยัม ชาคารยัม เอวะ ชะ<br /></span>
+<span class="slant iast">ayathāvat prajānāti<br /></span>
+<span class="slant pali">อยถาวตฺ ปฺรชานาติ<br /></span>
+<span class="slant thai">อะยะถาวัต ประชานาติ<br /></span>
+<span class="slant ram">อยะทฺาวัท พระจานาทิ<br /></span>
+<span class="slant iast">buddhiḥ sā pārtha rājasī<br /></span>
+<span class="slant pali">พุทฺธิห์ สา ปารฺถ ราชสี<br /></span>
+<span class="slant thai">พุทธิห์ สา ปารถะ ราชะสี<br /></span>
+<span class="slant ram">บุดดิฺฮ สา พารทฺะ ราจะสีฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยยา</i> — ซึ่ง, <i>ธรฺมมฺ</i> — หลักธรรมแห่งศาสนา, <i>อธรฺมมฺ</i> — ไร้ศาสนา, <i>จ</i> — และ, <i>การฺยมฺ</i> — อะไรควรทำ, <i>จ</i> — เช่นกัน, <i>อการฺยมฺ</i> — อะไรไม่ควรทำ, <i>เอว</i> — แน่นอน, <i>จ</i> — เช่นกัน, <i>อยตฺหา-วตฺ</i> — ไม่สมบูรณ์, <i>ปฺรชานาติ</i> — รู้, <i>พุทฺธิฮ</i> — ปัญญา, <i>สา</i> — และ, <i>ปารฺตฺห</i> — โอ้โอรส พระนาง <i>ปฺฤตฺหา</i>, <i>ราชสี</i> — ในระดับตัณหา
+  <span class="slant iast">yayā</span><span class="slant pali">ยยา</span><span class="slant thai">ยะยา</span><span class="slant ram">ยะยา</span> — ซึ่ง, <span class="slant iast">dharmam</span><span class="slant pali">ธรฺมมฺ</span><span class="slant thai">ธัรมัม</span><span class="slant ram">ดฺารมัม</span> — หลักธรรมแห่งศาสนา, <span class="slant iast">adharmam</span><span class="slant pali">อธรฺมมฺ</span><span class="slant thai">อะธัรมัม</span><span class="slant ram">อดฺารมัม</span> — ไร้ศาสนา, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">kāryam</span><span class="slant pali">การฺยมฺ</span><span class="slant thai">การยัม</span><span class="slant ram">คารยัม</span> — อะไรควรทำ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">akāryam</span><span class="slant pali">อการฺยมฺ</span><span class="slant thai">อะการยัม</span><span class="slant ram">อคารยัม</span> — อะไรไม่ควรทำ, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">ayathā-vat</span><span class="slant pali">อยถา-วตฺ</span><span class="slant thai">อะยะถา-วัต</span><span class="slant ram">อยะทฺา-วัท</span> — ไม่สมบูรณ์, <span class="slant iast">prajānāti</span><span class="slant pali">ปฺรชานาติ</span><span class="slant thai">ประชานาติ</span><span class="slant ram">พระจานาทิ</span> — รู้, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">sā</span><span class="slant pali">สา</span><span class="slant thai">สา</span><span class="slant ram">สา</span> — และ, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้โอรส พระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">rājasī</span><span class="slant pali">ราชสี</span><span class="slant thai">ราชะสี</span><span class="slant ram">ราจะสี</span> — ในระดับตัณหา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>ปฺฤตฺหา</i>&nbsp;&nbsp;ความเข้าใจที่ไม่สามารถแยกแยะระหว่างศาสนา&nbsp;&nbsp;และที่ไม่ใช่ศาสนา&nbsp;&nbsp;ระหว่างสิ่งที่ควรทำและสิ่งที่ไม่ควรทำ&nbsp;&nbsp;อยู่ในระดับตัณหา
+  โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>&nbsp;&nbsp;ความเข้าใจที่ไม่สามารถแยกแยะระหว่างศาสนา&nbsp;&nbsp;และที่ไม่ใช่ศาสนา&nbsp;&nbsp;ระหว่างสิ่งที่ควรทำและสิ่งที่ไม่ควรทำ&nbsp;&nbsp;อยู่ในระดับตัณหา
   </p>
 </div>
 

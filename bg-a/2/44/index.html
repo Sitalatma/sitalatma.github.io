@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.44</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โภไคศฺวรฺย-ปฺรสกฺตานาํ</i><br /><i>ตยาปหฺฤต-เจตสามฺ</i><br /><i>วฺยวสายาตฺมิกา พุทฺธิฮ</i><br /><i>สมาธะอุ น วิธียเต</i>
+<span class="slant iast">bhogaiśvarya-prasaktānāṁ<br /></span>
+<span class="slant pali">โภไคศฺวรฺย-ปฺรสกฺตานำ<br /></span>
+<span class="slant thai">โภไคศวัรยะ-ประสักตานาง<br /></span>
+<span class="slant ram">โบฺไกชวารยะ-พระสัคทานาม<br /></span>
+<span class="slant iast">tayāpahṛta-cetasām<br /></span>
+<span class="slant pali">ตยาปหฺฤต-เจตสามฺ<br /></span>
+<span class="slant thai">ตะยาปัหฤตะ-เจตะสาม<br /></span>
+<span class="slant ram">ทะยาพะฮริทะ-เชทะสาม<br /></span>
+<span class="slant iast">vyavasāyātmikā buddhiḥ<br /></span>
+<span class="slant pali">วฺยวสายาตฺมิกา พุทฺธิห์<br /></span>
+<span class="slant thai">วยะวะสายาตมิกา พุทธิห์<br /></span>
+<span class="slant ram">วิยะวะสายาทมิคา บุดดิฺฮ<br /></span>
+<span class="slant iast">samādhau na vidhīyate<br /></span>
+<span class="slant pali">สมาเธา น วิธียเต<br /></span>
+<span class="slant thai">สะมาเธา นะ วิธียะเต<br /></span>
+<span class="slant ram">สะมาโดฺ นะ วิดีฺยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>โภค</i> — ความสุขทางวัตถุ, <i>ไอศฺวรฺย</i> — และความมั่งคั่ง, <i>ปฺรสกฺตานามฺ</i> — สำหรับผู้ที่ยึด ติด, <i>ตยา</i> — ด้วยสิ่งเหล่านี้, <i>อปหฺฤต-เจตสามฺ</i> — สับสนในใจ, <i>วฺยวสาย-อาตฺมิกา</i> — ความมั่นใจอันแน่วแน่, <i>พุทฺธิฮ</i> — การอุทิศตนเสียสละรับใช้องค์ภควาน, <i>สมาธะอุ</i> — ในการ ควบคุมจิตใจ, <i>น</i> — ไม่เคย, <i>วิธียเต</i> — เกิดขึ้น
+  <span class="slant iast">bhoga</span><span class="slant pali">โภค</span><span class="slant thai">โภคะ</span><span class="slant ram">โบฺกะ</span> — ความสุขทางวัตถุ, <span class="slant iast">aiśvarya</span><span class="slant pali">ไอศฺวรฺย</span><span class="slant thai">ไอศวัรยะ</span><span class="slant ram">ไอชวารยะ</span> — และความมั่งคั่ง, <span class="slant iast">prasaktānām</span><span class="slant pali">ปฺรสกฺตานามฺ</span><span class="slant thai">ประสักตานาม</span><span class="slant ram">พระสัคทานาม</span> — สำหรับผู้ที่ยึด ติด, <span class="slant iast">tayā</span><span class="slant pali">ตยา</span><span class="slant thai">ตะยา</span><span class="slant ram">ทะยา</span> — ด้วยสิ่งเหล่านี้, <span class="slant iast">apahṛta-cetasām</span><span class="slant pali">อปหฺฤต-เจตสามฺ</span><span class="slant thai">อะปัหฤตะ-เจตะสาม</span><span class="slant ram">อพะฮริทะ-เชทะสาม</span> — สับสนในใจ, <span class="slant iast">vyavasāya-ātmikā</span><span class="slant pali">วฺยวสาย-อาตฺมิกา</span><span class="slant thai">วยะวะสายะ-อาตมิกา</span><span class="slant ram">วิยะวะสายะ-อาทมิคา</span> — ความมั่นใจอันแน่วแน่, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — การอุทิศตนเสียสละรับใช้องค์ภควาน, <span class="slant iast">samādhau</span><span class="slant pali">สมาเธา</span><span class="slant thai">สะมาเธา</span><span class="slant ram">สะมาโดฺ</span> — ในการ ควบคุมจิตใจ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">vidhīyate</span><span class="slant pali">วิธียเต</span><span class="slant thai">วิธียะเต</span><span class="slant ram">วิดียะเท</span> — เกิดขึ้น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>สมาธิ</i>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;“จิตที่ตั้งมั่น”&nbsp;&nbsp;พจนานุกรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>นิรุกฺติ</i>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>สมฺยคฺ&nbsp;&nbsp;อาธียเต&nbsp;&nbsp;′สฺมินฺนฺ&nbsp;&nbsp;อาตฺม-ตตฺตฺว-ยาตฺหาตฺมฺยมฺ</i>&nbsp;&nbsp;'&nbsp;&nbsp;“เมื่อจิตตั้งมั่นเพื่อให้เข้าใจ<wbr>ตนเองเรียกว่าจิตอยู่ใน&nbsp;&nbsp;<i>สมาธิ“สมาธิ</i>&nbsp;&nbsp;จะไม่เกิดขึ้นกับบุคคลผู้ฝักใฝ่ในความสุขทาง<wbr>ประสาทสัมผัสวัตถุ&nbsp;&nbsp;หรือผู้ที่สับสนอยู่ในสิ่งอันไม่ถาวรเหล่านี้&nbsp;&nbsp;พวกเขาถูกลงโทษด้วย<wbr>ขบวนการแห่งพลังงานวัตถุ
+  <span class="slant iast">samādhi</span><span class="slant pali">สมาธิ</span><span class="slant thai">สะมาธิ</span><span class="slant ram">สะมาดิฺ</span>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;“จิตที่ตั้งมั่น”&nbsp;&nbsp;พจนานุกรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">nirukti</span><span class="slant pali">นิรุกฺติ</span><span class="slant thai">นิรุกติ</span><span class="slant ram"></span>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">samyag&nbsp;&nbsp;ādhīyate&nbsp;&nbsp;’sminn&nbsp;&nbsp;ātma-tattva-yāthātmyam</span><span class="slant pali">สมฺยคฺอาธียเตสฺมินฺนฺอาตฺม-ตตฺตฺว-ยาถาตฺมฺยมฺ</span><span class="slant thai">สัมยัคอาธียะเตสมินนอาตมะ-ตัตตวะ-ยาถาตมยัม</span><span class="slant ram">zzzzzzอาทมะ-ทัทท- วะ,ทัททวะ-zzz</span>&nbsp;&nbsp;'&nbsp;&nbsp;“เมื่อจิตตั้งมั่นเพื่อให้เข้าใจ<wbr>ตนเองเรียกว่าจิตอยู่ใน&nbsp;&nbsp;<span class="slant iast">samādhi“&nbsp;&nbsp;samādhi</span><span class="slant pali">สมาธิสมาธิ</span><span class="slant thai">สะมาธิสะมาธิ</span><span class="slant ram">สะมาดิฺสะมาดิฺ</span>&nbsp;&nbsp;จะไม่เกิดขึ้นกับบุคคลผู้ฝักใฝ่ในความสุขทาง<wbr>ประสาทสัมผัสวัตถุ&nbsp;&nbsp;หรือผู้ที่สับสนอยู่ในสิ่งอันไม่ถาวรเหล่านี้&nbsp;&nbsp;พวกเขาถูกลงโทษด้วย<wbr>ขบวนการแห่งพลังงานวัตถุ
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.73</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>นโษฺฏ โมหฮ สฺมฺฤติรฺ ลพฺธา</i><br /><i>ตฺวตฺ-ปฺรสาทานฺ มยาจฺยุต</i><br /><i>สฺตฺหิโต ′สฺมิ คต-สเนฺทหฮ</i><br /><i>กริเษฺย วจนํ ตว</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">naṣṭo mohaḥ smṛtir labdhā<br /></span>
+<span class="slant pali">นษฺโฏ โมหห์ สฺมฺฤติรฺ ลพฺธา<br /></span>
+<span class="slant thai">นัษโฏ โมหะห์ สมฤติร ลัพธา<br /></span>
+<span class="slant ram">นัชโท โมฮะฮ สมริทิร ลับดา<br /></span>
+<span class="slant iast">tvat-prasādān mayācyuta<br /></span>
+<span class="slant pali">ตฺวตฺ-ปฺรสาทานฺ มยาจฺยุต<br /></span>
+<span class="slant thai">ตวัต-ประสาทาน มะยาจยุตะ<br /></span>
+<span class="slant ram">ทวัท-พระสาดาน มะยาชยุทะ<br /></span>
+<span class="slant iast">sthito ’smi gata-sandehaḥ<br /></span>
+<span class="slant pali">สฺถิโต ’สฺมิ คต-สนฺเทหห์<br /></span>
+<span class="slant thai">สถิโต ’สมิ คะตะ-สันเทหะห์<br /></span>
+<span class="slant ram">สทิฺโท ่สมิ กะทะ-สันเดฮะฮ<br /></span>
+<span class="slant iast">kariṣye vacanaṁ tava<br /></span>
+<span class="slant pali">กริเษฺย วจนํ ตว<br /></span>
+<span class="slant thai">กะริษเย วะจะนัง ตะวะ<br /></span>
+<span class="slant ram">คะริชเย วะชะนัม ทะวะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัส, <i>นษฺฏฮ</i> — ปัดเป่า, <i>โมหฮ</i> — ความหลง, <i>สฺมฺฤติฮ</i> — ความ จำ, <i>ลพฺธา</i> — กลับคืนมา, <i>ตฺวตฺ-ปฺรสาทาตฺ</i> — ด้วยพระเมตตาของพระองค์, <i>มยา</i> — โดยข้า, <i>อจฺยุต</i> — โอ้ <i>กฺฤษฺณ</i> ผู้ไม่ผิดพลาด, <i>สฺตฺหิตฮ</i> — สถิต, <i>อสฺมิ</i> — ข้าเป็น, <i>คต</i> — ออกไป, <i>สเนฺทหฮ</i> — ความสงสัยทั้งหมด, <i>กริเษฺย</i> — ข้าจะปฏิบัติ, <i>วจนมฺ</i> — คำสั่ง, <i>ตว</i> — ของพระองค์
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัส, <span class="slant iast">naṣṭaḥ</span><span class="slant pali">นษฺฏห์</span><span class="slant thai">นัษฏะห์</span><span class="slant ram">นัชทะฮ</span> — ปัดเป่า, <span class="slant iast">mohaḥ</span><span class="slant pali">โมหห์</span><span class="slant thai">โมหะห์</span><span class="slant ram">โมฮะฮ</span> — ความหลง, <span class="slant iast">smṛtiḥ</span><span class="slant pali">สฺมฺฤติห์</span><span class="slant thai">สมฤติห์</span><span class="slant ram">สมริทิฮ</span> — ความ จำ, <span class="slant iast">labdhā</span><span class="slant pali">ลพฺธา</span><span class="slant thai">ลัพธา</span><span class="slant ram">ลับดฺา</span> — กลับคืนมา, <span class="slant iast">tvat-prasādāt</span><span class="slant pali">ตฺวตฺ-ปฺรสาทาตฺ</span><span class="slant thai">ตวัต-ประสาทาต</span><span class="slant ram">ทวัทฺ-พระสาดาท</span> — ด้วยพระเมตตาของพระองค์, <span class="slant iast">mayā</span><span class="slant pali">มยา</span><span class="slant thai">มะยา</span><span class="slant ram">มะยา</span> — โดยข้า, <span class="slant iast">acyuta</span><span class="slant pali">อจฺยุต</span><span class="slant thai">อัจยุตะ</span><span class="slant ram">อัชยุทะ</span> — โอ้ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> ผู้ไม่ผิดพลาด, <span class="slant iast">sthitaḥ</span><span class="slant pali">สฺถิตห์</span><span class="slant thai">สถิตะห์</span><span class="slant ram">สทิฺทะฮ</span> — สถิต, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">gata</span><span class="slant pali">คต</span><span class="slant thai">คะตะ</span><span class="slant ram">กะทะ</span> — ออกไป, <span class="slant iast">sandehaḥ</span><span class="slant pali">สนฺเทหห์</span><span class="slant thai">สันเทหะห์</span><span class="slant ram">สันเด ฮะฮ</span> — ความสงสัยทั้งหมด, <span class="slant iast">kariṣye</span><span class="slant pali">กริเษฺย</span><span class="slant thai">กะริษเย</span><span class="slant ram">คะริชเย</span> — ข้าจะปฏิบัติ, <span class="slant iast">vacanam</span><span class="slant pali">วจนมฺ</span><span class="slant thai">วะจะนัม</span><span class="slant ram">วะชะนัม</span> — คำสั่ง, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของพระองค์
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้ไร้ความผิดพลาด&nbsp;&nbsp;บัดนี้ความหลงของข้าพเจ้ามลายไปสิ้น&nbsp;&nbsp;ข้าได้รับความจำกลับคืนมาด้วยพระเมตตาของพระองค์บัดนี้ข้ามีความมั่นคง&nbsp;&nbsp;หมดความสงสัย&nbsp;&nbsp;และเตรียมพร้อมที่จะปฏิบัติตามคำสั่งสอนของพระองค์
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้ไร้ความผิดพลาด&nbsp;&nbsp;บัดนี้ความหลงของข้าพเจ้ามลายไปสิ้น&nbsp;&nbsp;ข้าได้รับความจำกลับคืนมาด้วยพระเมตตาของพระองค์บัดนี้ข้ามีความมั่นคง&nbsp;&nbsp;หมดความสงสัย&nbsp;&nbsp;และเตรียมพร้อมที่จะปฏิบัติตามคำสั่งสอนของพระองค์
   </p>
 </div>
 
@@ -73,19 +178,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สถานภาพพื้นฐานเดิมแท้ของสิ่งมีชีวิตซึ่ง&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นตัวแทนคือ&nbsp;&nbsp;ต้อง<wbr>ปฏิบัติตามคำสั่งขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตัวท่านทรงหมายไว้เพื่อฝึกฝนความมีระเบียบวินัย<wbr>กับตนเอง&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;<i>มหาปฺรภุ</i>&nbsp;&nbsp;ตรัสว่าสถานภาพอันแท้จริงของสิ่งมีชีวิตคือ&nbsp;&nbsp;เป็น<wbr>ผู้รับใช้นิรันดรขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จากการลืมหลักธรรมนี้จึงเป็นพันธกรณีของสิ่งมีชีวิต<wbr>กับธรรมชาติวัตถุ&nbsp;&nbsp;แต่จากการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าเป็นผู้รับใช้ที่หลุดพ้นของ<wbr>พระองค์&nbsp;&nbsp;สถานภาพพื้นฐานเดิมแท้ของสิ่งมีชีวิตคือต้องเป็นผู้รับใช้&nbsp;&nbsp;ต้องรับใช้ไม่ว่าต่อ<wbr>ความหลงแห่ง&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;หรือต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หากรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เราจะอยู่ในสภาวะปกติแต่หากชอบรับใช้ความหลงหรือพลังงานเบื้องต่ำ&nbsp;&nbsp;แน่นอนว่าเราจะถูกพันธนาการอยู่ใน<wbr>ความหลง&nbsp;&nbsp;สิ่งมีชีวิตรับใช้อยู่ในโลกวัตถุนี้ถูกพันธนาการด้วยราคะ&nbsp;&nbsp;และความต้องการถึงกระนั้น&nbsp;&nbsp;ยังคิดว่าตัวเองเป็นเจ้าโลก&nbsp;&nbsp;เช่นนี้เรียกว่าความหลง&nbsp;&nbsp;เมื่อบุคคลหลุดพ้นแล้ว<wbr>และความหลงจบสิ้นลง&nbsp;&nbsp;จะอาสามาศิโรราบต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และปฏิบัติตามพระประสงค์<wbr>ของพระองค์&nbsp;&nbsp;หลุมพรางสุดท้ายของ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;ที่กักขังสิ่งมีชีวิตไว้คือการอ้างว่าตนเองเป็น<wbr>พระเจ้า&nbsp;&nbsp;สิ่งมีชีวิตคิดว่าตัวเขาไม่ใช่พันธวิญญาณแต่เป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ขาดสติปัญญา<wbr>มากจนไม่คิดว่าถ้าหากตนเองเป็นพระเจ้าแล้วจะอยู่ในความสงสัยได้อย่างไร?&nbsp;&nbsp;เช่นนี้<wbr>เขามิได้พิจารณา&nbsp;&nbsp;นั่นคือหลุมพรางสุดท้ายแห่งความหลง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;การเป็นอิสระจาก<wbr>พลังงานแห่งความหลงคือการเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และตกลง<wbr>ปลงใจปฏิบัติตามคำสั่งของพระองค์
+  สถานภาพพื้นฐานเดิมแท้ของสิ่งมีชีวิตซึ่ง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นตัวแทนคือ&nbsp;&nbsp;ต้อง<wbr>ปฏิบัติตามคำสั่งขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตัวท่านทรงหมายไว้เพื่อฝึกฝนความมีระเบียบวินัย<wbr>กับตนเอง&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;<span class="slant iast">mahāprabhu</span><span class="slant pali">มหาปฺรภุ</span><span class="slant thai">มะหาประภุ</span><span class="slant ram">มะฮาพระบํุ </span>&nbsp;&nbsp;ตรัสว่าสถานภาพอันแท้จริงของสิ่งมีชีวิตคือ&nbsp;&nbsp;เป็น<wbr>ผู้รับใช้นิรันดรขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จากการลืมหลักธรรมนี้จึงเป็นพันธกรณีของสิ่งมีชีวิต<wbr>กับธรรมชาติวัตถุ&nbsp;&nbsp;แต่จากการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าเป็นผู้รับใช้ที่หลุดพ้นของ<wbr>พระองค์&nbsp;&nbsp;สถานภาพพื้นฐานเดิมแท้ของสิ่งมีชีวิตคือต้องเป็นผู้รับใช้&nbsp;&nbsp;ต้องรับใช้ไม่ว่าต่อ<wbr>ความหลงแห่ง&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;หรือต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หากรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เราจะอยู่ในสภาวะปกติแต่หากชอบรับใช้ความหลงหรือพลังงานเบื้องต่ำ&nbsp;&nbsp;แน่นอนว่าเราจะถูกพันธนาการอยู่ใน<wbr>ความหลง&nbsp;&nbsp;สิ่งมีชีวิตรับใช้อยู่ในโลกวัตถุนี้ถูกพันธนาการด้วยราคะ&nbsp;&nbsp;และความต้องการถึงกระนั้น&nbsp;&nbsp;ยังคิดว่าตัวเองเป็นเจ้าโลก&nbsp;&nbsp;เช่นนี้เรียกว่าความหลง&nbsp;&nbsp;เมื่อบุคคลหลุดพ้นแล้ว<wbr>และความหลงจบสิ้นลง&nbsp;&nbsp;จะอาสามาศิโรราบต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และปฏิบัติตามพระประสงค์<wbr>ของพระองค์&nbsp;&nbsp;หลุมพรางสุดท้ายของ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;ที่กักขังสิ่งมีชีวิตไว้คือการอ้างว่าตนเองเป็น<wbr>พระเจ้า&nbsp;&nbsp;สิ่งมีชีวิตคิดว่าตัวเขาไม่ใช่พันธวิญญาณแต่เป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ขาดสติปัญญา<wbr>มากจนไม่คิดว่าถ้าหากตนเองเป็นพระเจ้าแล้วจะอยู่ในความสงสัยได้อย่างไร?&nbsp;&nbsp;เช่นนี้<wbr>เขามิได้พิจารณา&nbsp;&nbsp;นั่นคือหลุมพรางสุดท้ายแห่งความหลง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;การเป็นอิสระจาก<wbr>พลังงานแห่งความหลงคือการเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และตกลง<wbr>ปลงใจปฏิบัติตามคำสั่งของพระองค์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า<i>โมห</i>&nbsp;&nbsp;มีความสำคัญมากในโศลกนี้&nbsp;&nbsp;<i>โมห</i>&nbsp;&nbsp;หมายถึงสิ่งตรงกันข้ามกับ<wbr>ความรู้&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;ความรู้ที่แท้จริงคือการเข้าใจว่าทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเป็นผู้รับใช้นิรันดรขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่แทนที่จะคิดว่าตนเองอยู่ในต่ำแหน่งนั้น&nbsp;&nbsp;สิ่งมีชีวิตกลับคิดว่าตนเองไม่ใช่ผู้รับ<wbr>ใช้แต่เป็นเจ้าของโลกวัตถุนี้&nbsp;&nbsp;เพราะต้องการเป็นเจ้าเหนือธรรมชาติวัตถุ&nbsp;&nbsp;นั่นคือความ<wbr>หลง&nbsp;&nbsp;ความหลงนี้ข้ามพ้นได้ด้วยพระเมตตาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือด้วยพระเมตตาของ<wbr>สาวกผู้บริสุทธิ์ของพระองค์&nbsp;&nbsp;เมื่อความหลงจบสิ้นลงเขาจึงตกลงปลงใจมาปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก
+  คำว่า<span class="slant iast">moha</span><span class="slant pali">โมห</span><span class="slant thai">โมหะ</span><span class="slant ram">โมฮะ</span>&nbsp;&nbsp;มีความสำคัญมากในโศลกนี้&nbsp;&nbsp;<span class="slant iast">moha</span><span class="slant pali">โมห</span><span class="slant thai">โมหะ</span><span class="slant ram">โมฮะ</span>&nbsp;&nbsp;หมายถึงสิ่งตรงกันข้ามกับ<wbr>ความรู้&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;ความรู้ที่แท้จริงคือการเข้าใจว่าทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเป็นผู้รับใช้นิรันดรขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่แทนที่จะคิดว่าตนเองอยู่ในต่ำแหน่งนั้น&nbsp;&nbsp;สิ่งมีชีวิตกลับคิดว่าตนเองไม่ใช่ผู้รับ<wbr>ใช้แต่เป็นเจ้าของโลกวัตถุนี้&nbsp;&nbsp;เพราะต้องการเป็นเจ้าเหนือธรรมชาติวัตถุ&nbsp;&nbsp;นั่นคือความ<wbr>หลง&nbsp;&nbsp;ความหลงนี้ข้ามพ้นได้ด้วยพระเมตตาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือด้วยพระเมตตาของ<wbr>สาวกผู้บริสุทธิ์ของพระองค์&nbsp;&nbsp;เมื่อความหลงจบสิ้นลงเขาจึงตกลงปลงใจมาปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกคือการปฏิบัติตามคำสั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พันธวิญญาณอยู่ใน<wbr>ความหลงด้วยพลังงานเบื้องต่ำแห่งวัตถุ&nbsp;&nbsp;ไม่รู้ว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นเจ้านายผู้ทรง<wbr>เปี่ยมไปด้วยความรู้&nbsp;&nbsp;และทรงเป็นเจ้าของทุกสิ่งทุกอย่าง&nbsp;&nbsp;อะไรที่พระองค์ปรารถนาทรง<wbr>สามารถให้แก่สาวกได้&nbsp;&nbsp;พระองค์ทรงเป็นสหายของทุกคนและทรงเอนเอียงต่อสาวก<wbr>โดยเฉพาะ&nbsp;&nbsp;พระองค์ทรงเป็นผู้ควบคุมธรรมชาติวัตถุและมวลชีวิต&nbsp;&nbsp;พระองค์ยังทรงเป็น<wbr>ผู้ควบคุมกาลเวลาที่ไม่รู้จักจบสิ้น&nbsp;&nbsp;และทรงเปี่ยมไปด้วยความมั่งคั่งและพลังอำนาจ<wbr>ทั้งหลายทั้งปวง&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงสามารถแม้แต่ให้ตัวพระองค์เองแก่สาวก&nbsp;&nbsp;ผู้ไม่รู้จัก<wbr>พระองค์จะอยู่ภายใต้มนต์สะกดแห่งความหลง&nbsp;&nbsp;ไม่มาเป็นสาวก&nbsp;&nbsp;แต่จะเป็นผู้รับใช้&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;หลังจากสดับฟัง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จากบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>อรฺชุน</i>ทรงเป็นอิสระจากความหลงทั้งปวง&nbsp;&nbsp;และสามารถเข้าใจว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ทรงเป็นเพียงสหาย<wbr>เท่านั้น&nbsp;&nbsp;แต่ยังทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตามความ<wbr>เป็นจริง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การศึกษา&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ก็เพื่อให้เข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตามความเป็นจริง&nbsp;&nbsp;เมื่อ<wbr>บุคคลเปี่ยมไปด้วยความรู้&nbsp;&nbsp;เขาจะศิโรราบต่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรง<wbr>เข้าใจว่าเป็นแผนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ที่จะลดจำนวนประชากรซึ่งมีเพิ่มมากขึ้นโดยไม่จำเป็น&nbsp;&nbsp;จึง<wbr>ทรงตกลงใจต่อสู้ตามพระประสงค์ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จึงทรงหยิบอาวุธคันธนูและลูก<wbr>ศรขึ้นมาอีกครั้งหนึ่ง&nbsp;&nbsp;เพื่อต่อสู้ภายใต้คำสั่งขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกคือการปฏิบัติตามคำสั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พันธวิญญาณอยู่ใน<wbr>ความหลงด้วยพลังงานเบื้องต่ำแห่งวัตถุ&nbsp;&nbsp;ไม่รู้ว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นเจ้านายผู้ทรง<wbr>เปี่ยมไปด้วยความรู้&nbsp;&nbsp;และทรงเป็นเจ้าของทุกสิ่งทุกอย่าง&nbsp;&nbsp;อะไรที่พระองค์ปรารถนาทรง<wbr>สามารถให้แก่สาวกได้&nbsp;&nbsp;พระองค์ทรงเป็นสหายของทุกคนและทรงเอนเอียงต่อสาวก<wbr>โดยเฉพาะ&nbsp;&nbsp;พระองค์ทรงเป็นผู้ควบคุมธรรมชาติวัตถุและมวลชีวิต&nbsp;&nbsp;พระองค์ยังทรงเป็น<wbr>ผู้ควบคุมกาลเวลาที่ไม่รู้จักจบสิ้น&nbsp;&nbsp;และทรงเปี่ยมไปด้วยความมั่งคั่งและพลังอำนาจ<wbr>ทั้งหลายทั้งปวง&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงสามารถแม้แต่ให้ตัวพระองค์เองแก่สาวก&nbsp;&nbsp;ผู้ไม่รู้จัก<wbr>พระองค์จะอยู่ภายใต้มนต์สะกดแห่งความหลง&nbsp;&nbsp;ไม่มาเป็นสาวก&nbsp;&nbsp;แต่จะเป็นผู้รับใช้&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;หลังจากสดับฟัง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จากบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>ทรงเป็นอิสระจากความหลงทั้งปวง&nbsp;&nbsp;และสามารถเข้าใจว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ทรงเป็นเพียงสหาย<wbr>เท่านั้น&nbsp;&nbsp;แต่ยังทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตามความ<wbr>เป็นจริง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การศึกษา&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ก็เพื่อให้เข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตามความเป็นจริง&nbsp;&nbsp;เมื่อ<wbr>บุคคลเปี่ยมไปด้วยความรู้&nbsp;&nbsp;เขาจะศิโรราบต่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรง<wbr>เข้าใจว่าเป็นแผนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ที่จะลดจำนวนประชากรซึ่งมีเพิ่มมากขึ้นโดยไม่จำเป็น&nbsp;&nbsp;จึง<wbr>ทรงตกลงใจต่อสู้ตามพระประสงค์ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จึงทรงหยิบอาวุธคันธนูและลูก<wbr>ศรขึ้นมาอีกครั้งหนึ่ง&nbsp;&nbsp;เพื่อต่อสู้ภายใต้คำสั่งขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

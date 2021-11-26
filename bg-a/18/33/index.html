@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.33</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ธฺฤตฺยา ยยา ธารยเต</i><br /><i>มนฮ-ปฺราเณนฺทฺริย-กฺริยาฮ</i><br /><i>โยเคนาวฺยภิจาริณฺยา</i><br /><i>ธฺฤติฮ สา ปารฺตฺห สาตฺตฺวิกี</i>
+<span class="slant iast">dhṛtyā yayā dhārayate<br /></span>
+<span class="slant pali">ธฺฤตฺยา ยยา ธารยเต<br /></span>
+<span class="slant thai">ธฤตยา ยะยา ธาระยะเต<br /></span>
+<span class="slant ram">ดฺริทยา ยะยา ดฺาระยะเท<br /></span>
+<span class="slant iast">manaḥ-prāṇendriya-kriyāḥ<br /></span>
+<span class="slant pali">มนห์-ปฺราเณนฺทฺริย-กฺริยาห์<br /></span>
+<span class="slant thai">มะนะห์-ปราเณนทริยะ-กริยาห์<br /></span>
+<span class="slant ram">มะนะฮ-พราเณนดริยะ-คริยาฮ<br /></span>
+<span class="slant iast">yogenāvyabhicāriṇyā<br /></span>
+<span class="slant pali">โยเคนาวฺยภิจาริณฺยา<br /></span>
+<span class="slant thai">โยเคนาวยะภิจาริณยา<br /></span>
+<span class="slant ram"><br /></span>
+<span class="slant iast">dhṛtiḥ sā pārtha sāttvikī<br /></span>
+<span class="slant pali">ธฺฤติห์ สา ปารฺถ สาตฺตฺวิกี<br /></span>
+<span class="slant thai">ธฤติห์ สา ปารถะ สาตตวิกี<br /></span>
+<span class="slant ram">ดฺริทิฮ สา พารทฺะ สาททวิคีฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ธฺฤตฺยา</i> — ความมุ่งมั่น, <i>ยยา</i> — ซึ่ง, <i>ธารยเต</i> — ค้ำจุน, <i>มนฮ</i> — ของจิตใจ, <i>ปฺราณ</i> — ชีวิต, <i>อินฺทฺริย</i> — และประสาทสัมผัส, <i>กฺริยาฮ</i> — กิจกรรม, <i>โยเคน</i> — ด้วยการปฏิบัติ <i>โยค</i>, <i>อวฺยภิจาริณฺยา</i> — โดยไม่ขาดตอน, <i>ธฺฤติฮ</i> — ความมุ่งมั่น, <i>สา</i> — นั้น, <i>ปารฺตฺห</i> — โอ้ โอรสพระนาง <i>ปฺฤตฺหา</i>, <i>สาตฺตฺวิกี</i> — ในระดับความดี
+  <span class="slant iast">dhṛtyā</span><span class="slant pali">ธฺฤตฺยา</span><span class="slant thai">ธฤตยา</span><span class="slant ram">ดฺริทยา</span> — ความมุ่งมั่น, <span class="slant iast">yayā</span><span class="slant pali">ยยา</span><span class="slant thai">ยะยา</span><span class="slant ram">ยะยา</span> — ซึ่ง, <span class="slant iast">dhārayate</span><span class="slant pali">ธารยเต</span><span class="slant thai">ธาระยะเต</span><span class="slant ram">ดฺาระยะเท</span> — ค้ำจุน, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — ของจิตใจ, <span class="slant iast">prāṇa</span><span class="slant pali">ปฺราณ</span><span class="slant thai">ปราณะ</span><span class="slant ram">พราณะ</span> — ชีวิต, <span class="slant iast">indriya</span><span class="slant pali">อินฺทฺริย</span><span class="slant thai">อินทริยะ</span><span class="slant ram">อินดริยะ</span> — และประสาทสัมผัส, <span class="slant iast">kriyāḥ</span><span class="slant pali">กฺริยาห์</span><span class="slant thai">กริยาห์</span><span class="slant ram">คริยาฮ</span> — กิจกรรม, <span class="slant iast">yogena</span><span class="slant pali">โยเคน</span><span class="slant thai">โยเคนะ</span><span class="slant ram">โยเกนะ</span> — ด้วยการปฏิบัติ <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>, <span class="slant iast">avyabhicāriṇyā</span><span class="slant pali">อวฺยภิจาริณฺยา</span><span class="slant thai">อัวยะภิจาริณยา</span><span class="slant ram">อัพยะ บิฺชาริณยา</span> — โดยไม่ขาดตอน, <span class="slant iast">dhṛtiḥ</span><span class="slant pali">ธฺฤติห์</span><span class="slant thai">ธฤติห์</span><span class="slant ram">ดฺริทิฮ</span> — ความมุ่งมั่น, <span class="slant iast">sā</span><span class="slant pali">สา</span><span class="slant thai">สา</span><span class="slant ram">สา</span> — นั้น, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้ โอรสพระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">sāttvikī</span><span class="slant pali">สาตฺตฺวิกี</span><span class="slant thai">สาตตวิกี</span><span class="slant ram">สาททวิคี</span> — ในระดับความดี
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>ปฺฤตฺหา</i>&nbsp;&nbsp;ความมุ่งมั่นที่ไม่ขาดตอน&nbsp;&nbsp;สนับสนุนด้วยความมั่นคงจากการปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทำให้ควบคุมกิจกรรมของจิตใจ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;และประสาทสัมผัสได้เป็นความมุ่งมั่นในระดับความดี
+  โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>&nbsp;&nbsp;ความมุ่งมั่นที่ไม่ขาดตอน&nbsp;&nbsp;สนับสนุนด้วยความมั่นคงจากการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทำให้ควบคุมกิจกรรมของจิตใจ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;และประสาทสัมผัสได้เป็นความมุ่งมั่นในระดับความดี
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>โยค</i>&nbsp;&nbsp;หมายไว้เพื่อให้เข้าใจดวงวิญญาณสูงสุด&nbsp;&nbsp;ผู้ที่ตั้งมั่นอย่างแน่วแน่ในดวง<wbr>วิญญาณสูงสุดด้วยความมุ่งมั่น&nbsp;&nbsp;ตั้งสมาธิจิต&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;และกิจกรรมทางประสาทสัมผัสของ<wbr>ตนอยู่ที่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ความมุ่งมั่นเช่นนี้อยู่ในระดับความดี&nbsp;&nbsp;คำ<wbr>ว่า&nbsp;&nbsp;<i>อวฺยภิจาริณฺยา</i>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;เพราะแสดงว่าบุคคลปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจะไม่<wbr>ถูกเบี่ยงเบนด้วยกิจกรรมอื่น&nbsp;&nbsp;ๆ
+  <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หมายไว้เพื่อให้เข้าใจดวงวิญญาณสูงสุด&nbsp;&nbsp;ผู้ที่ตั้งมั่นอย่างแน่วแน่ในดวง<wbr>วิญญาณสูงสุดด้วยความมุ่งมั่น&nbsp;&nbsp;ตั้งสมาธิจิต&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;และกิจกรรมทางประสาทสัมผัสของ<wbr>ตนอยู่ที่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ความมุ่งมั่นเช่นนี้อยู่ในระดับความดี&nbsp;&nbsp;คำ<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">avyabhicāriṇyā</span><span class="slant pali">อวฺยภิจาริณฺยา</span><span class="slant thai">อัวยะภิจาริณยา</span><span class="slant ram">อัพยะ บิฺชาริณยา</span>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;เพราะแสดงว่าบุคคลปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจะไม่<wbr>ถูกเบี่ยงเบนด้วยกิจกรรมอื่น&nbsp;&nbsp;ๆ
   </p>
 </div>
 

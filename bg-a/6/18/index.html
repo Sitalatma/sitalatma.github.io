@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.18</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทา วินิยตํ จิตฺตมฺ</i><br /><i>อาตฺมนฺยฺ เอวาวติษฺฐเต</i><br /><i>นิสฺปฺฤหฮ สรฺว-กาเมโภฺย</i><br /><i>ยุกฺต อิตฺยฺ อุจฺยเต ตทา</i>
+<span class="slant iast">yadā viniyataṁ cittam<br /></span>
+<span class="slant pali">ยทา วินิยตํ จิตฺตมฺ<br /></span>
+<span class="slant thai">ยะทา วินิยะตัง จิตตัม<br /></span>
+<span class="slant ram">ยะดา วินิยะทัม ชิททัม<br /></span>
+<span class="slant iast">ātmany evāvatiṣṭhate<br /></span>
+<span class="slant pali">อาตฺมนฺยฺ เอวาวติษฺฐเต<br /></span>
+<span class="slant thai">อาตมันย เอวาวะติษฐะเต<br /></span>
+<span class="slant ram">อาทมะนิ เอวาวะทิชทฺะเท<br /></span>
+<span class="slant iast">nispṛhaḥ sarva-kāmebhyo<br /></span>
+<span class="slant pali">นิสฺปฺฤหห์ สรฺว-กาเมโภฺย<br /></span>
+<span class="slant thai">นิสปฤหะห์ สัรวะ-กาเมภโย<br /></span>
+<span class="slant ram">นิสพริฮะฮ สารวะ-คาเมบฺโย<br /></span>
+<span class="slant iast">yukta ity ucyate tadā<br /></span>
+<span class="slant pali">ยุกฺต อิตฺยฺ อุจฺยเต ตทา<br /></span>
+<span class="slant thai">ยุกตะ อิตย อุจยะเต ตะทา<br /></span>
+<span class="slant ram">ยุคทะ อิทิ อุชยะเท ทะดา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยทา</i> — เมื่อ, <i>วินิยตมฺ</i> — มีระเบียบวินัย, <i>จิตฺตมฺ</i> — จิตใจและกิจกรรมของจิต, <i>อาตฺมนิ</i> — ในความเป็นทิพย์, <i>เอว</i> — แน่นอน, <i>อวติษฺฐเต</i> — สถิต, <i>นิสฺปฺฤหฮ</i> — ปราศจากความ ต้องการ, <i>สรฺว</i> — สำหรับทุกสิ่งทุกอย่าง, <i>กาเมภฺยฮ</i> — การสนองประสาทสัมผัสวัตถุ, <i>ยุกฺตฮ</i> — สถิตอย่างดีใน <i>โยค</i>, <i>อิติ</i> — ดังนั้น, <i>อุจฺยเต</i> — กล่าวว่า, <i>ตทา</i> — ในขณะนั้น
+  <span class="slant iast">yadā</span><span class="slant pali">ยทา</span><span class="slant thai">ยะทา</span><span class="slant ram">ยะดา</span> — เมื่อ, <span class="slant iast">viniyatam</span><span class="slant pali">วินิยตมฺ</span><span class="slant thai">วินิยะตัม</span><span class="slant ram">วินิยะทัม</span> — มีระเบียบวินัย, <span class="slant iast">cittam</span><span class="slant pali">จิตฺตมฺ</span><span class="slant thai">จิตตัม</span><span class="slant ram">ชิททัม</span> — จิตใจและกิจกรรมของจิต, <span class="slant iast">ātmani</span><span class="slant pali">อาตฺมนิ</span><span class="slant thai">อาตมะนิ</span><span class="slant ram">อาทมะนิ</span> — ในความเป็นทิพย์, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">avatiṣṭhate</span><span class="slant pali">อวติษฺฐเต</span><span class="slant thai">อะวะติษฐะเต</span><span class="slant ram">อวะทิชทฺะเท</span> — สถิต, <span class="slant iast">nispṛhaḥ</span><span class="slant pali">นิสฺปฺฤหห์</span><span class="slant thai">นิสปฤหะห์</span><span class="slant ram">นิสพริฮะฮ</span> — ปราศจากความ ต้องการ, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — สำหรับทุกสิ่งทุกอย่าง, <span class="slant iast">kāmebhyaḥ</span><span class="slant pali">กาเมภฺยห์</span><span class="slant thai">กาเมภยะห์</span><span class="slant ram">คาเมบฺยะฮ</span> — การสนองประสาทสัมผัสวัตถุ, <span class="slant iast">yuktaḥ</span><span class="slant pali">ยุกฺตห์</span><span class="slant thai">ยุกตะห์</span><span class="slant ram">ยุคทะฮ</span> — สถิตอย่างดีใน <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">ucyate</span><span class="slant pali">อุจฺยเต</span><span class="slant thai">อุจยะเต</span><span class="slant ram">อุชยะเท</span> — กล่าวว่า, <span class="slant iast">tadā</span><span class="slant pali">ตทา</span><span class="slant thai">ตะทา</span><span class="slant ram">ทะดา</span> — ในขณะนั้น
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เมื่อ&nbsp;&nbsp;<i>โยคี</i>&nbsp;&nbsp;ฝึกปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทำให้กิจกรรมของจิตมีระเบียบวินัย&nbsp;&nbsp;และสถิตในความเป็นทิพย์ปราศจากความต้องการทางวัตถุทั้งปวง&nbsp;&nbsp;กล่าวว่าเขาสถิตอย่างดีใน&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;
+  เมื่อ&nbsp;&nbsp;<span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทำให้กิจกรรมของจิตมีระเบียบวินัย&nbsp;&nbsp;และสถิตในความเป็นทิพย์ปราศจากความต้องการทางวัตถุทั้งปวง&nbsp;&nbsp;กล่าวว่าเขาสถิตอย่างดีใน&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,37 +174,82 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  กิจกรรมของ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แตกต่างจากบุคคลธรรมดาทั่วไปด้วยลักษณะที่หยุดจาก<wbr>ความต้องการทางวัตถุทั้งปวงซึ่งมีเพศสัมพันธ์เป็นตัวนำ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ผู้สมบูรณ์มีระเบียบวินัย<wbr>อย่างดีในกิจกรรมของจิตใจที่ทำให้ตัวเขาไม่ถูกรบกวนจากความต้องการทางวัตถุใด&nbsp;&nbsp;ๆทั้งสิ้น&nbsp;&nbsp;ระดับอันสมบูรณ์เช่นนี้บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกบรรลุได้โดยปริยาย&nbsp;&nbsp;ดังที่ได้<wbr>กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(9.4.18-20&nbsp;&nbsp;)
+  กิจกรรมของ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แตกต่างจากบุคคลธรรมดาทั่วไปด้วยลักษณะที่หยุดจาก<wbr>ความต้องการทางวัตถุทั้งปวงซึ่งมีเพศสัมพันธ์เป็นตัวนำ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ผู้สมบูรณ์มีระเบียบวินัย<wbr>อย่างดีในกิจกรรมของจิตใจที่ทำให้ตัวเขาไม่ถูกรบกวนจากความต้องการทางวัตถุใด&nbsp;&nbsp;ๆทั้งสิ้น&nbsp;&nbsp;ระดับอันสมบูรณ์เช่นนี้บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกบรรลุได้โดยปริยาย&nbsp;&nbsp;ดังที่ได้<wbr>กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(9.4.18-20&nbsp;&nbsp;)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ส ไว มนฮ กฺฤษฺณ-ปทารวินฺทโยรฺ</i><br /><i>วจาํสิ ไวกุณฺฐ-คุณานุวรฺณเน</i><br /><i>กระอุ หเรรฺ มนฺทิร-มารฺชนาทิษุ</i><br /><i>ศฺรุติํ จการาจฺยุต-สตฺ-กโตฺหทเย</i>
+<span class="slant iast">sa vai manaḥ kṛṣṇa-padāravindayor<br /></span>
+<span class="slant pali">ส ไว มนห์ กฺฤษฺณ-ปทารวินฺทโยรฺ<br /></span>
+<span class="slant thai">สะ ไว มะนะห์ กฤษณะ-ปะทาระวินทะโยร<br /></span>
+<span class="slant ram">สะ ไว มะนะฮ คริชณะ-พะดาระวินดะโยร<br /></span>
+<span class="slant iast">vacāṁsi vaikuṇṭha-guṇānuvarṇane<br /></span>
+<span class="slant pali">วจำสิ ไวกุณฺฐ-คุณานุวรฺณเน<br /></span>
+<span class="slant thai">วะจางสิ ไวกุณฐะ-คุณานุวัรณะเน<br /></span>
+<span class="slant ram">วะชามสิ ไวคุณธฺะ-กุณานุวารณะเน<br /></span>
+<span class="slant iast">karau harer mandira-mārjanādiṣu<br /></span>
+<span class="slant pali">กเรา หเรรฺ มนฺทิร-มารฺชนาทิษุ<br /></span>
+<span class="slant thai">กะเรา หะเรร มันทิระ-มารชะนาทิษุ<br /></span>
+<span class="slant ram">คะโร ฮะเรร มันดิระ-มารจะนาดิชุ<br /></span>
+<span class="slant iast">śrutiṁ cakārācyuta-sat-kathodaye<br /></span>
+<span class="slant pali">ศฺรุตึ จการาจฺยุต-สตฺ-กโถทเย<br /></span>
+<span class="slant thai">ศรุติง จะการาจยุตะ-สัต-กะโถทะเย<br /></span>
+<span class="slant ram">ชรุทิม ชะคาราชยุทะ-สัท-คะโทฺดะเยฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มุกุนฺท-ลิงฺคาลย-ทรฺศเน ทฺฤศะอุ</i><br /><i>ตทฺ-ภฺฤตฺย-คาตฺร-สฺปเรฺศ ′งฺค-สงฺคมมฺ</i><br /><i>ฆฺราณํ จ ตตฺ-ปาท-สโรช-สะอุรเภ</i><br /><i>ศฺรีมตฺ-ตุลสฺยา รสนาํ ตทฺ-อรฺปิเต</i>
+<span class="slant iast">mukunda-liṅgālaya-darśane dṛśau<br /></span>
+<span class="slant pali">มุกุนฺท-ลิงฺคาลย-ทรฺศเน ทฺฤเศา<br /></span>
+<span class="slant thai">มุกุนทะ-ลิงคาละยะ-ทัรศะเน ทฤเศา<br /></span>
+<span class="slant ram">มุคุนดะ-ลิงกาละยะ-ดารชะเน ดริโช<br /></span>
+<span class="slant iast">tad-bhṛtya-gātra-sparśe ’ṅga-saṅgamam<br /></span>
+<span class="slant pali">ตทฺ-ภฺฤตฺย-คาตฺร-สฺปรฺเศ ’งฺค-สงฺคมมฺ<br /></span>
+<span class="slant thai">ตัท-ภฤตยะ-คาตระ-สปัรเศ ’งคะ-สังคะมัม<br /></span>
+<span class="slant ram">ทัด-บฺริทยะ-กาทระ-สพารเช ่งกะ-สังกะมัม<br /></span>
+<span class="slant iast">ghrāṇaṁ ca tat-pāda-saroja-saurabhe<br /></span>
+<span class="slant pali">ฆฺราณํ จ ตตฺ-ปาท-สโรช-เสารเภ<br /></span>
+<span class="slant thai">ฆราณัง จะ ตัต-ปาทะ-สะโรชะ-เสาระเภ<br /></span>
+<span class="slant ram">กฺราณัม ชะ ทัท-พาดะ-สะโรจะ-โสระเบฺ<br /></span>
+<span class="slant iast">śrīmat-tulasyā rasanāṁ tad-arpite<br /></span>
+<span class="slant pali">ศฺรีมตฺ-ตุลสฺยา รสนำ ตทฺ-อรฺปิเต<br /></span>
+<span class="slant thai">ศรีมัต-ตุลัสยา ระสะนาง ตัท-อัรปิเต<br /></span>
+<span class="slant ram">ชรีมัท-ทุลัสยา ระสะนาม ทัด-อารพิเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปาทะอุ หเรฮ เกฺษตฺร-ปทานุสรฺปเณ</i><br /><i>ศิโร หฺฤษีเกศ-ปทาภิวนฺทเน</i><br /><i>กามํ จ ทาเสฺย น ตุ กาม-กามฺยยา</i><br /><i>ยโตฺหตฺตม-โศฺลก-ชนาศฺรยา รติฮ</i>
+<span class="slant iast">pādau hareḥ kṣetra-padānusarpaṇe<br /></span>
+<span class="slant pali">ปาเทา หเรห์ เกฺษตฺร-ปทานุสรฺปเณ<br /></span>
+<span class="slant thai">ปาเทา หะเรห์ กเษตระ-ปะทานุสัรปะเณ<br /></span>
+<span class="slant ram">พาโด ฮะเรฮ คเชทระ-พะดานุสารพะเณ<br /></span>
+<span class="slant iast">śiro hṛṣīkeśa-padābhivandane<br /></span>
+<span class="slant pali">ศิโร หฺฤษีเกศ-ปทาภิวนฺทเน<br /></span>
+<span class="slant thai">ศิโร หฤษีเกศะ-ปะทาภิวันทะเน<br /></span>
+<span class="slant ram">ชิโร ฮริชีเคชะ-พะดาบิฺวันดะเน<br /></span>
+<span class="slant iast">kāmaṁ ca dāsye na tu kāma-kāmyayā<br /></span>
+<span class="slant pali">กามํ จ ทาเสฺย น ตุ กาม-กามฺยยา<br /></span>
+<span class="slant thai">กามัง จะ ทาสเย นะ ตุ กามะ-กามยะยา<br /></span>
+<span class="slant ram">คามัม ชะ ดาสเย นะ ทุ คามะ-คามยะยา<br /></span>
+<span class="slant iast">yathottama-śloka-janāśrayā ratiḥ<br /></span>
+<span class="slant pali">ยโถตฺตม-โศฺลก-ชนาศฺรยา รติห์<br /></span>
+<span class="slant thai">ยะโถตตะมะ-ศโลกะ-ชะนาศระยา ระติห์<br /></span>
+<span class="slant ram">ยะโทฺททะมะ-ชโลคะ-จะนาชระยา ระทิฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “พระราชา&nbsp;&nbsp;<i>อมฺพรีษ</i>&nbsp;&nbsp;ครั้งแรกทรงใช้พระจิตของพระองค์ตั้งอยู่ที่พระบาทรูปดอกบัว<wbr>ขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จากนั้นทรงใช้พระดำรัสอธิบายคุณสมบัติทิพย์ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระหัตถ์ทำความสะอาดวัดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระกรรณสดับฟังกิจกรรมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระเนตรมองรูปลักษณ์ทิพย์ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระวรกายสัมผัสร่างกายของสาวก&nbsp;&nbsp;ทรงใช้<wbr>ประสาทสัมผัสดมกลิ่นหอมจากดอกบัวที่ถวายให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระชิวหาลิ้มรสใบทุละสีที่<wbr>ถวายแด่พระบาทรูปดอกบัวของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระบาทเสด็จไปยังสถานที่ศักดิ์สิทธิ์และวัด<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระเศียรถวายความเคารพแด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และพระราชดำริปฏิบัติพระภาร<wbr>กิจของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;กิจกรรมทิพย์ทั้งหลายเหล่านี้&nbsp;&nbsp;เหมาะสมสำหรับสาวกผู้บริสุทธิ์”
+  “พระราชา&nbsp;&nbsp;<span class="slant iast">ambarīṣa</span><span class="slant pali">อมฺพรีษ</span><span class="slant thai">อัมพะรีษะ</span><span class="slant ram">อัมบะรีชะ</span>&nbsp;&nbsp;ครั้งแรกทรงใช้พระจิตของพระองค์ตั้งอยู่ที่พระบาทรูปดอกบัว<wbr>ขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จากนั้นทรงใช้พระดำรัสอธิบายคุณสมบัติทิพย์ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระหัตถ์ทำความสะอาดวัดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระกรรณสดับฟังกิจกรรมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระเนตรมองรูปลักษณ์ทิพย์ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระวรกายสัมผัสร่างกายของสาวก&nbsp;&nbsp;ทรงใช้<wbr>ประสาทสัมผัสดมกลิ่นหอมจากดอกบัวที่ถวายให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระชิวหาลิ้มรสใบทุละสีที่<wbr>ถวายแด่พระบาทรูปดอกบัวของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระบาทเสด็จไปยังสถานที่ศักดิ์สิทธิ์และวัด<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระเศียรถวายความเคารพแด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และพระราชดำริปฏิบัติพระภาร<wbr>กิจของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;กิจกรรมทิพย์ทั้งหลายเหล่านี้&nbsp;&nbsp;เหมาะสมสำหรับสาวกผู้บริสุทธิ์”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ระดับทิพย์นี้ผู้ปฏิบัติตามวิถีทางที่ไร้รูปลักษณ์ไม่สามารถแสดงออกให้เห็นเป็น<wbr>รูปธรรมได้&nbsp;&nbsp;แต่เป็นสิ่งที่ง่ายและปฏิบัติได้สำหรับบุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ดังปรากฎ<wbr>การณ์ที่กล่าวไว้ข้างต้นที่&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;<i>อมฺพรีษ</i>&nbsp;&nbsp;ทรงปฏิบัติ&nbsp;&nbsp;นอกจากจิตจะตั้งมั่นอยู่ที่<wbr>พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยการระลึกถึงพระองค์อยู่เสมอ&nbsp;&nbsp;การปฏิบัติทิพย์<wbr>เช่นนี้จะเป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;กิจกรรมที่ได้กล่าว<wbr>ไว้เหล่านี้เรียกว่า&nbsp;&nbsp;<i>อรฺจน</i>&nbsp;&nbsp;หรือการใช้ประสาทสัมผัสทั้งหมดไปในการรับใช้พระองค์ประสาทสัมผัสและจิตใจจำเป็นต้องทำงาน&nbsp;&nbsp;การทำเป็นละเลยไม่สนใจไม่ให้มันทำงาน<wbr>เป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สำหรับประชาชนทั่วไปโดยเฉพาะบุคคลที่ไม่อยู่ในระดับสละโลกวัตถุการใช้ประสาทสัมผัสและจิตใจปฏิบัติรับใช้ทิพย์ดังที่ได้อธิบายแล้วข้างต้นจึงเป็นวิธีที่<wbr>สมบูรณ์ในการบรรลุถึงวิถีทิพย์&nbsp;&nbsp;ซึ่งเรียกว่า&nbsp;&nbsp;<i>ยุกฺต</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;
+  ระดับทิพย์นี้ผู้ปฏิบัติตามวิถีทางที่ไร้รูปลักษณ์ไม่สามารถแสดงออกให้เห็นเป็น<wbr>รูปธรรมได้&nbsp;&nbsp;แต่เป็นสิ่งที่ง่ายและปฏิบัติได้สำหรับบุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ดังปรากฎ<wbr>การณ์ที่กล่าวไว้ข้างต้นที่&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;<span class="slant iast">ambarīṣa</span><span class="slant pali">อมฺพรีษ</span><span class="slant thai">อัมพะรีษะ</span><span class="slant ram">อัมบะรีชะ</span>&nbsp;&nbsp;ทรงปฏิบัติ&nbsp;&nbsp;นอกจากจิตจะตั้งมั่นอยู่ที่<wbr>พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยการระลึกถึงพระองค์อยู่เสมอ&nbsp;&nbsp;การปฏิบัติทิพย์<wbr>เช่นนี้จะเป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;กิจกรรมที่ได้กล่าว<wbr>ไว้เหล่านี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">arcana</span><span class="slant pali">อรฺจน</span><span class="slant thai">อัรจะนะ</span><span class="slant ram">อารชะนะ</span>&nbsp;&nbsp;หรือการใช้ประสาทสัมผัสทั้งหมดไปในการรับใช้พระองค์ประสาทสัมผัสและจิตใจจำเป็นต้องทำงาน&nbsp;&nbsp;การทำเป็นละเลยไม่สนใจไม่ให้มันทำงาน<wbr>เป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สำหรับประชาชนทั่วไปโดยเฉพาะบุคคลที่ไม่อยู่ในระดับสละโลกวัตถุการใช้ประสาทสัมผัสและจิตใจปฏิบัติรับใช้ทิพย์ดังที่ได้อธิบายแล้วข้างต้นจึงเป็นวิธีที่<wbr>สมบูรณ์ในการบรรลุถึงวิถีทิพย์&nbsp;&nbsp;ซึ่งเรียกว่า&nbsp;&nbsp;<span class="slant iast">yukta</span><span class="slant pali">ยุกฺต</span><span class="slant thai">ยุกตะ</span><span class="slant ram">ยุคทะ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.27</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรกฺฤเตฮ กฺริยมาณานิ</i><br /><i>คุไณฮ กรฺมาณิ สรฺวศฮ</i><br /><i>อหงฺการ-วิมูฒาตฺมา</i><br /><i>กรฺตาหมฺ อิติ มนฺยเต</i>
+<span class="slant iast">prakṛteḥ kriyamāṇāni<br /></span>
+<span class="slant pali">ปฺรกฺฤเตห์ กฺริยมาณานิ<br /></span>
+<span class="slant thai">ปรักฤเตห์ กริยะมาณานิ<br /></span>
+<span class="slant ram">พระคริเทฮ คริยะมาณานิ<br /></span>
+<span class="slant iast">guṇaiḥ karmāṇi sarvaśaḥ<br /></span>
+<span class="slant pali">คุไณห์ กรฺมาณิ สรฺวศห์<br /></span>
+<span class="slant thai">คุไณห์ กัรมาณิ สัรวะศะห์<br /></span>
+<span class="slant ram">กุไณฮ คารมาณิ สารวะชะฮ<br /></span>
+<span class="slant iast">ahaṅkāra-vimūḍhātmā<br /></span>
+<span class="slant pali">อหงฺการ-วิมูฒาตฺมา<br /></span>
+<span class="slant thai">อะหังการะ-วิมูฒาตมา<br /></span>
+<span class="slant ram">อฮังคาระ-วิมูดฺาทมา<br /></span>
+<span class="slant iast">kartāham iti manyate<br /></span>
+<span class="slant pali">กรฺตาหมฺ อิติ มนฺยเต<br /></span>
+<span class="slant thai">กัรตาหัม อิติ มันยะเต<br /></span>
+<span class="slant ram">คารทาฮัม อิทิ มันยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรกฺฤเตฮ</i> — ของธรรมชาติวัตถุ, <i>กฺริยมาณานิ</i> — กระทำอยู่, <i>คุไณฮ</i> — โดยระดับต่าง ๆ, <i>กรฺมาณิ</i> — กิจกรรม, <i>สรฺวศฮ</i> — ทุกชนิด, <i>อหงฺการ-วิมูฒ</i> — สับสนด้วยอหังการ, <i>อาตฺมา</i> — ดวงวิญญาณ, <i>กรฺตา</i> — ผู้กระทำ, <i>อหมฺ</i> — ข้า,<i>อิติ</i> — ดังนั้น, <i>มนฺยเต</i> — เขาคิด
+  <span class="slant iast">prakṛteḥ</span><span class="slant pali">ปฺรกฺฤเตห์</span><span class="slant thai">ปรักฤเตห์</span><span class="slant ram">พระคริเทฮ</span> — ของธรรมชาติวัตถุ, <span class="slant iast">kriyamāṇāni</span><span class="slant pali">กฺริยมาณานิ</span><span class="slant thai">กริยะมาณานิ</span><span class="slant ram">คริยะ มาณานิ</span> — กระทำอยู่, <span class="slant iast">guṇaiḥ</span><span class="slant pali">คุไณห์</span><span class="slant thai">คุไณห์</span><span class="slant ram">กุไณฮ</span> — โดยระดับต่าง ๆ, <span class="slant iast">karmāṇi</span><span class="slant pali">กรฺมาณิ</span><span class="slant thai">กัรมาณิ</span><span class="slant ram">คารมาณิ</span> — กิจกรรม, <span class="slant iast">sarvaśaḥ</span><span class="slant pali">สรฺวศห์</span><span class="slant thai">สัรวะศะห์</span><span class="slant ram">สารวะชะฮ</span> — ทุกชนิด, <span class="slant iast">ahaṅkāra-vimūḍha</span><span class="slant pali">อหงฺการ-วิมูฒ</span><span class="slant thai">อะหังการะ-วิมูฒะ</span><span class="slant ram">อฮังคาระ-วิมูดฺะ</span> — สับสนด้วยอหังการ, <span class="slant iast">ātmā</span><span class="slant pali">อาตฺมา</span><span class="slant thai">อาตมา</span><span class="slant ram">อาทมา</span> — ดวงวิญญาณ, <span class="slant iast">kartā</span><span class="slant pali">กรฺตา</span><span class="slant thai">กัรตา</span><span class="slant ram">คารทา</span> — ผู้กระทำ, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า,<span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">manyate</span><span class="slant pali">มนฺยเต</span><span class="slant thai">มันยะเต</span><span class="slant ram">มันยะเท</span> — เขาคิด
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  บุคคลสองคน&nbsp;&nbsp;คนหนึ่งมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและอีกคนหนึ่งมีวัตถุจิตสำนึก&nbsp;&nbsp;ทำงาน<wbr>ในระดับเดียวกันอาจดูเหมือนว่าทำงานอยู่บนพื้นฐานเดียวกัน&nbsp;&nbsp;แต่มีข้อแตกต่างอย่าง<wbr>มหาศาลในสถาภาพของบุคคลทั้งสอง&nbsp;&nbsp;บุคคลในวัตถุจิตสำนึกมีความมั่นใจด้วยอหังการ<wbr>ว่าตนเองเป็นผู้กระทำทุกสิ่งทุกอย่าง&nbsp;&nbsp;โดยไม่รู้ว่ากลไกแห่งร่างกายนี้ธรรมชาติวัตถุซึ่ง<wbr>ทำงานภายใต้การควบคุมขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นผู้ผลิต&nbsp;&nbsp;นักวัตถุนิยมไม่รู้ว่าในที่สุดตัวเขา<wbr>เองก็อยู่ภายใต้การควบคุมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคคลผู้อยู่ภายใต้อหังการจะรับเอาเกียรติยศ<wbr>ชื่อเสียงทั้งหมดในการทำทุกสิ่งโดยเอกเทศ&nbsp;&nbsp;และนี่คือลักษณะอาการแห่งอวิชชา&nbsp;&nbsp;โดยไม่รู้<wbr>ว่าร่างกายทั้งหยาบและละเอียดของเขานี้ธรรมชาติวัตถุเป็นผู้สร้างภายใต้คำสั่งขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เมื่อเป็นเช่นนี้กิจกรรมของร่างกายและจิตใจของเขาควรทำไปเพื่อรับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้อยู่ในอวิชชาลืมไปว่าบุคลิกภาพสูงสุดแห่งพระเจ้าทรงพระนามว่า<i>หฺฤษีเกศ</i>&nbsp;&nbsp;หรือเจ้านายของประสาทสัมผัสแห่งร่างวัตถุ&nbsp;&nbsp;เนื่องจากการใช้ประสาทสัมผัส<wbr>ไปในทางที่ผิดเพื่อสนองประสาทสัมผัสของตนเองเป็นเวลายาวนาน&nbsp;&nbsp;เขาจึงเกิดสับสน<wbr>อย่างจริงจังจากอหังการซึ่งทำให้ลืมความสัมพันธ์นิรันดรกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  บุคคลสองคน&nbsp;&nbsp;คนหนึ่งมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและอีกคนหนึ่งมีวัตถุจิตสำนึก&nbsp;&nbsp;ทำงาน<wbr>ในระดับเดียวกันอาจดูเหมือนว่าทำงานอยู่บนพื้นฐานเดียวกัน&nbsp;&nbsp;แต่มีข้อแตกต่างอย่าง<wbr>มหาศาลในสถาภาพของบุคคลทั้งสอง&nbsp;&nbsp;บุคคลในวัตถุจิตสำนึกมีความมั่นใจด้วยอหังการ<wbr>ว่าตนเองเป็นผู้กระทำทุกสิ่งทุกอย่าง&nbsp;&nbsp;โดยไม่รู้ว่ากลไกแห่งร่างกายนี้ธรรมชาติวัตถุซึ่ง<wbr>ทำงานภายใต้การควบคุมขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นผู้ผลิต&nbsp;&nbsp;นักวัตถุนิยมไม่รู้ว่าในที่สุดตัวเขา<wbr>เองก็อยู่ภายใต้การควบคุมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคคลผู้อยู่ภายใต้อหังการจะรับเอาเกียรติยศ<wbr>ชื่อเสียงทั้งหมดในการทำทุกสิ่งโดยเอกเทศ&nbsp;&nbsp;และนี่คือลักษณะอาการแห่งอวิชชา&nbsp;&nbsp;โดยไม่รู้<wbr>ว่าร่างกายทั้งหยาบและละเอียดของเขานี้ธรรมชาติวัตถุเป็นผู้สร้างภายใต้คำสั่งขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เมื่อเป็นเช่นนี้กิจกรรมของร่างกายและจิตใจของเขาควรทำไปเพื่อรับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้อยู่ในอวิชชาลืมไปว่าบุคลิกภาพสูงสุดแห่งพระเจ้าทรงพระนามว่า<span class="slant iast">hṛṣīkeśa</span><span class="slant pali">หฺฤษีเกศ</span><span class="slant thai">หฤษีเกศะ</span><span class="slant ram">ฮริชีเคชะ</span>&nbsp;&nbsp;หรือเจ้านายของประสาทสัมผัสแห่งร่างวัตถุ&nbsp;&nbsp;เนื่องจากการใช้ประสาทสัมผัส<wbr>ไปในทางที่ผิดเพื่อสนองประสาทสัมผัสของตนเองเป็นเวลายาวนาน&nbsp;&nbsp;เขาจึงเกิดสับสน<wbr>อย่างจริงจังจากอหังการซึ่งทำให้ลืมความสัมพันธ์นิรันดรกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

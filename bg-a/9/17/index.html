@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.17</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปิตาหมฺ อสฺย ชคโต</i><br /><i>มาตา ธาตา ปิตามหฮ</i><br /><i>เวทฺยํ ปวิตฺรมฺ โอํ-การ</i><br /><i>ฤกฺ สาม ยชุรฺ เอว จ</i>
+<span class="slant iast">pitāham asya jagato<br /></span>
+<span class="slant pali">ปิตาหมฺ อสฺย ชคโต<br /></span>
+<span class="slant thai">ปิตาหัม อัสยะ ชะคะโต<br /></span>
+<span class="slant ram">พิทาฮัม อัสยะ จะกะโท<br /></span>
+<span class="slant iast">mātā dhātā pitāmahaḥ<br /></span>
+<span class="slant pali">มาตา ธาตา ปิตามหห์<br /></span>
+<span class="slant thai">มาตา ธาตา ปิตามะหะห์<br /></span>
+<span class="slant ram">มาทา ดฺาทา พิทา มะฮะฮ<br /></span>
+<span class="slant iast">vedyaṁ pavitram oṁ-kāra<br /></span>
+<span class="slant pali">เวทฺยํ ปวิตฺรมฺ โอํ-การ<br /></span>
+<span class="slant thai">เวทยัง ปะวิตรัม โอง-การะ<br /></span>
+<span class="slant ram">เวดยัม พะวิทรัม โอมคาระ<br /></span>
+<span class="slant iast">ṛk sāma yajur eva ca<br /></span>
+<span class="slant pali">ฤกฺ สาม ยชุรฺ เอว จ<br /></span>
+<span class="slant thai">ฤก สามะ ยะชุร เอวะ จะ<br /></span>
+<span class="slant ram">ริค สามะ ยะจุร เอวะ ชะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปิตา</i> — บิดา, <i>อหมฺ</i> — ข้า,<i>อสฺย</i> — ของสิ่งนี้, <i>ชคตฮ</i> — จักรวาล, <i>มาตา</i> — มารดา, <i>ธาตา</i> — ผู้ สนับสนุน, <i>ปิตามหฮ</i> — ปู่ ตา, <i>เวทฺยมฺ</i> — อะไรที่ควรรู้, <i>ปวิตฺรมฺ</i> — สิ่งที่บริสุทธิ์, <i>โอํ-การ</i> — พยางค์ <i>โอํ</i>, <i>ฤกฺ</i> — <i>ฤคฺ เวท</i>,<i>สาม</i> — <i>สาม เวท</i>, <i>ยชุฮ</i> — <i>ยชุรฺ เวท</i>, <i>เอว</i> — แน่นอน, <i>จ</i> — และ
+  <span class="slant iast">pitā</span><span class="slant pali">ปิตา</span><span class="slant thai">ปิตา</span><span class="slant ram">พิทา</span> — บิดา, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า,<span class="slant iast">asya</span><span class="slant pali">อสฺย</span><span class="slant thai">อัสยะ</span><span class="slant ram">อัสยะ</span> — ของสิ่งนี้, <span class="slant iast">jagataḥ</span><span class="slant pali">ชคตห์</span><span class="slant thai">ชะคะตะห์</span><span class="slant ram">จะกะทะฮ</span> — จักรวาล, <span class="slant iast">mātā</span><span class="slant pali">มาตา</span><span class="slant thai">มาตา</span><span class="slant ram">มาทา</span> — มารดา, <span class="slant iast">dhātā</span><span class="slant pali">ธาตา</span><span class="slant thai">ธาตา</span><span class="slant ram">ดฺาทา</span> — ผู้ สนับสนุน, <span class="slant iast">pitāmahaḥ</span><span class="slant pali">ปิตามหห์</span><span class="slant thai">ปิตามะหะห์</span><span class="slant ram">พิทามะฮะฮ</span> — ปู่ ตา, <span class="slant iast">vedyam</span><span class="slant pali">เวทฺยมฺ</span><span class="slant thai">เวทยัม</span><span class="slant ram">เวดยัม</span> — อะไรที่ควรรู้, <span class="slant iast">pavitram</span><span class="slant pali">ปวิตฺรมฺ</span><span class="slant thai">ปะวิตรัม</span><span class="slant ram">พะวิทรัม</span> — สิ่งที่บริสุทธิ์, <span class="slant iast">oṁ-kāra</span><span class="slant pali">โอํ-การ</span><span class="slant thai">โอง-การะ</span><span class="slant ram">โอม-คาระ,โอมคาระ</span> — พยางค์ <span class="slant iast">oṁ</span><span class="slant pali">โอํ</span><span class="slant thai">โอง</span><span class="slant ram">โอม</span>, <span class="slant iast">ṛk</span><span class="slant pali">ฤกฺ</span><span class="slant thai">ฤก</span><span class="slant ram">ริค</span> — <span class="slant iast">ṛg veda</span><span class="slant pali">ฤคฺเวท</span><span class="slant thai">ฤคเวทะ</span><span class="slant ram">ริก</span>,<span class="slant iast">sāma</span><span class="slant pali">สาม</span><span class="slant thai">สามะ</span><span class="slant ram">สามะ</span> — <span class="slant iast">sāma veda</span><span class="slant pali">สามเวท</span><span class="slant thai">สามะเวทะ</span><span class="slant ram">สามะเวท</span>, <span class="slant iast">yajuḥ</span><span class="slant pali">ยชุห์</span><span class="slant thai">ยะชุห์</span><span class="slant ram">ยะจุฮ</span> — <span class="slant iast">yajur veda</span><span class="slant pali">ยชุรฺเวท</span><span class="slant thai">ยะชุรเวทะ</span><span class="slant ram">ยะจุร</span>, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ข้าคือบิดาของจักรวาลนี้&nbsp;&nbsp;มารดา&nbsp;&nbsp;ผู้ค้ำจุน&nbsp;&nbsp;และบรรพบุรุษ&nbsp;&nbsp;ข้าคือจุดมุ่งหมายแห่งความรู้&nbsp;&nbsp;ผู้ทำให้บริสุทธิ์&nbsp;&nbsp;และคำพยางค์&nbsp;&nbsp;<i>โอํ</i>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<i>ฤคฺ</i>&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>สาม</i>&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ยชุรฺ</i>&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เช่นเดียวกัน
+  ข้าคือบิดาของจักรวาลนี้&nbsp;&nbsp;มารดา&nbsp;&nbsp;ผู้ค้ำจุน&nbsp;&nbsp;และบรรพบุรุษ&nbsp;&nbsp;ข้าคือจุดมุ่งหมายแห่งความรู้&nbsp;&nbsp;ผู้ทำให้บริสุทธิ์&nbsp;&nbsp;และคำพยางค์&nbsp;&nbsp;<span class="slant iast">oṁ</span><span class="slant pali">โอํ</span><span class="slant thai">โอง</span><span class="slant ram">โอม</span>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<span class="slant iast">ṛg</span><span class="slant pali">ฤคฺ</span><span class="slant thai">ฤค</span><span class="slant ram">ริก</span>&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">sāma</span><span class="slant pali">สาม</span><span class="slant thai">สามะ</span><span class="slant ram">สามะ</span>&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">yajur</span><span class="slant pali">ยชุรฺ</span><span class="slant thai">ยะชุร</span><span class="slant ram">ยะจุร</span>&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เช่นเดียวกัน
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ปรากฏการณ์ในจักรวาลทั้งหมดทั้งที่เคลื่อนที่และไม่เคลื่อนที่ปรากฏออกมาด้วย<wbr>กิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งพลังงานของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;เราสร้างความสัมพันธ์<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับสิ่งมีชีวิต&nbsp;&nbsp;ซึ่งไม่ใช่ใครอื่นแต่เป็นพลังงานพรมแดนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ภายใต้การสร้าง<wbr>ของ&nbsp;&nbsp;<i>ปฺรกฺฤติ</i>&nbsp;&nbsp;บางคนปรากฏเป็นบิดา&nbsp;&nbsp;มารดา&nbsp;&nbsp;คุณปู่&nbsp;&nbsp;คุณตา&nbsp;&nbsp;ผู้สร้าง&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของเรา&nbsp;&nbsp;แต่อันที่<wbr>จริงพวกท่านเป็นละอองอณูของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในโศลกนี้คำว่า&nbsp;&nbsp;<i>ธาตา</i>&nbsp;&nbsp;หมายถึง&nbsp;&nbsp;“ผู้สร้าง”&nbsp;&nbsp;ไม่เพียง<wbr>แต่บิดาและมารดาของเราเป็นละอองอณูของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;แต่ผู้สร้างคุณย่า&nbsp;&nbsp;คุณยายและคุณปู่&nbsp;&nbsp;คุณตา&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ก็คือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;อันที่จริงสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นละอองอณู<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดตั้งเป้าไปสู่องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;อะไร<wbr>ก็แล้วแต่ที่เราต้องการรู้ผ่านทางคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เป็นเพียงความเจริญก้าวหน้าไปสู่ความเข้า<wbr>ใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ประเด็นที่ช่วยทำให้สถานภาพพื้นฐานของเราบริสุทธิ์ขึ้นคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยเฉพาะในลักษณะเดียวกัน&nbsp;&nbsp;สิ่งมีชีวิตผู้ชอบถามเพื่อให้เข้าใจหลักธรรมคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดก็<wbr>เป็นละอองอณูของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;คือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>มนฺตฺร</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดคำว่า&nbsp;&nbsp;<i>โอํ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ปฺรณว</i>&nbsp;&nbsp;เป็นคลื่นเสียงทิพย์คือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;และเนื่องจากในบท<wbr>มนต์ทั้งหมดของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งสี่เล่ม&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>สาม,ยชุรฺ,ฤคฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อตฺหรฺว&nbsp;&nbsp;ปฺรณว</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>โอํ-การ</i>&nbsp;&nbsp;โดดเด่นมาก&nbsp;&nbsp;เข้าใจกันว่าคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  ปรากฏการณ์ในจักรวาลทั้งหมดทั้งที่เคลื่อนที่และไม่เคลื่อนที่ปรากฏออกมาด้วย<wbr>กิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งพลังงานของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;เราสร้างความสัมพันธ์<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับสิ่งมีชีวิต&nbsp;&nbsp;ซึ่งไม่ใช่ใครอื่นแต่เป็นพลังงานพรมแดนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ภายใต้การสร้าง<wbr>ของ&nbsp;&nbsp;<span class="slant iast">prakṛti</span><span class="slant pali">ปฺรกฺฤติ</span><span class="slant thai">ปรักฤติ</span><span class="slant ram">พระคริทิ</span>&nbsp;&nbsp;บางคนปรากฏเป็นบิดา&nbsp;&nbsp;มารดา&nbsp;&nbsp;คุณปู่&nbsp;&nbsp;คุณตา&nbsp;&nbsp;ผู้สร้าง&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของเรา&nbsp;&nbsp;แต่อันที่<wbr>จริงพวกท่านเป็นละอองอณูของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในโศลกนี้คำว่า&nbsp;&nbsp;<span class="slant iast">dhātā</span><span class="slant pali">ธาตา</span><span class="slant thai">ธาตา</span><span class="slant ram">ดฺาทา</span>&nbsp;&nbsp;หมายถึง&nbsp;&nbsp;“ผู้สร้าง”&nbsp;&nbsp;ไม่เพียง<wbr>แต่บิดาและมารดาของเราเป็นละอองอณูของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;แต่ผู้สร้างคุณย่า&nbsp;&nbsp;คุณยายและคุณปู่&nbsp;&nbsp;คุณตา&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ก็คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;อันที่จริงสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นละอองอณู<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดตั้งเป้าไปสู่องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;อะไร<wbr>ก็แล้วแต่ที่เราต้องการรู้ผ่านทางคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เป็นเพียงความเจริญก้าวหน้าไปสู่ความเข้า<wbr>ใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ประเด็นที่ช่วยทำให้สถานภาพพื้นฐานของเราบริสุทธิ์ขึ้นคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยเฉพาะในลักษณะเดียวกัน&nbsp;&nbsp;สิ่งมีชีวิตผู้ชอบถามเพื่อให้เข้าใจหลักธรรมคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดก็<wbr>เป็นละอองอณูของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">mantra</span><span class="slant pali">มนฺตฺร</span><span class="slant thai">มันตระ</span><span class="slant ram"></span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดคำว่า&nbsp;&nbsp;<span class="slant iast">oṁ</span><span class="slant pali">โอํ</span><span class="slant thai">โอง</span><span class="slant ram">โอม</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">praṇava</span><span class="slant pali">ปฺรณว</span><span class="slant thai">ประณะวะ</span><span class="slant ram">พระณะวะ</span>&nbsp;&nbsp;เป็นคลื่นเสียงทิพย์คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;และเนื่องจากในบท<wbr>มนต์ทั้งหมดของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งสี่เล่ม&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">sāma,&nbsp;&nbsp;yajur,&nbsp;&nbsp;ṛg</span><span class="slant pali">สามยชุรฺฤคฺ</span><span class="slant thai">สามะยะชุรฤค</span><span class="slant ram">สามะยะจุรริก</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">atharva&nbsp;&nbsp;praṇava</span><span class="slant pali">อถรฺวปฺรณว</span><span class="slant thai">อะถัรวะประณะวะ</span><span class="slant ram">พระณะวะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">oṁ-kāra</span><span class="slant pali">โอํ-การ</span><span class="slant thai">โอง-การะ</span><span class="slant ram">โอม-คาระ,โอมคาระ</span>&nbsp;&nbsp;โดดเด่นมาก&nbsp;&nbsp;เข้าใจกันว่าคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

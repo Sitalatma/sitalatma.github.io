@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.20</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กรฺมไณว หิ สํสิทฺธิมฺ</i><br /><i>อาสฺตฺหิตา ชนกาทยฮ</i><br /><i>โลก-สงฺคฺรหมฺ เอวาปิ</i><br /><i>สมฺปศฺยนฺ กรฺตุมฺ อรฺหสิ</i>
+<span class="slant iast">karmaṇaiva hi saṁsiddhim<br /></span>
+<span class="slant pali">กรฺมไณว หิ สํสิทฺธิมฺ<br /></span>
+<span class="slant thai">กัรมะไณวะ หิ สังสิทธิม<br /></span>
+<span class="slant ram">คารมะไณวะ ฮิ สัมสิดดฺิม<br /></span>
+<span class="slant iast">āsthitā janakādayaḥ<br /></span>
+<span class="slant pali">อาสฺถิตา ชนกาทยห์<br /></span>
+<span class="slant thai">อาสถิตา ชะนะกาทะยะห์<br /></span>
+<span class="slant ram">อาสทฺิทา จะนะคาดะยะฮ<br /></span>
+<span class="slant iast">loka-saṅgraham evāpi<br /></span>
+<span class="slant pali">โลก-สงฺคฺรหมฺ เอวาปิ<br /></span>
+<span class="slant thai">โลกะ-สังคระหัม เอวาปิ<br /></span>
+<span class="slant ram">โลคะ-สังกระฮัม เอวาพิ<br /></span>
+<span class="slant iast">sampaśyan kartum arhasi<br /></span>
+<span class="slant pali">สมฺปศฺยนฺ กรฺตุมฺ อรฺหสิ<br /></span>
+<span class="slant thai">สัมปัศยัน กัรตุม อัรหะสิ<br /></span>
+<span class="slant ram">สัมพัชยัน คารทุม อารฮะสิ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กรฺมณา</i> — ด้วยงาน, <i>เอว</i> — แม้แต่, <i>หิ</i> — แน่นอน, <i>สํสิทฺธิมฺ</i> — ในความสมบูรณ์, <i>อาสฺตฺหิตาฮ</i> — สถิต, <i>ชนก-อาทยฮ</i> — <i>ชนก</i> และกษัตริย์อื่น ๆ, <i>โลก-สงฺคฺรหมฺ</i> — ผู้คนโดย ทั่วไป, <i>เอว อปิ</i> — เช่นกัน, <i>สมฺปศฺยนฺ</i> — พิจารณา, <i>กรฺตุมฺ</i> — ปฎิบัติ, <i>อรฺหสิ</i> — เธอควรได้รับ
+  <span class="slant iast">karmaṇā</span><span class="slant pali">กรฺมณา</span><span class="slant thai">กัรมะณา</span><span class="slant ram">คารมะณา</span> — ด้วยงาน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แม้แต่, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">saṁsiddhim</span><span class="slant pali">สํสิทฺธิมฺ</span><span class="slant thai">สังสิทธิม</span><span class="slant ram">สัมสิดดิฺม</span> — ในความสมบูรณ์, <span class="slant iast">āsthitāḥ</span><span class="slant pali">อาสฺถิตาห์</span><span class="slant thai">อาสถิตาห์</span><span class="slant ram">อาสทฺิทาฮ</span> — สถิต, <span class="slant iast">janaka-ādayaḥ</span><span class="slant pali">ชนก-อาทยห์</span><span class="slant thai">ชะนะกะ-อาทะยะห์</span><span class="slant ram">จะนะคะ-อาดะยะฮ</span> — <span class="slant iast">janaka</span><span class="slant pali">ชนก</span><span class="slant thai">ชะนะกะ</span><span class="slant ram">จะนะคะ</span> และกษัตริย์อื่น ๆ, <span class="slant iast">loka-saṅgraham</span><span class="slant pali">โลก-สงฺคฺรหมฺ</span><span class="slant thai">โลกะ-สังคระหัม</span><span class="slant ram">โลคะ-สังกระฮัม</span> — ผู้คนโดย ทั่วไป, <span class="slant iast">eva api</span><span class="slant pali">เอวอปิ</span><span class="slant thai">เอวะอะปิ</span><span class="slant ram">เอวะ อพิ</span> — เช่นกัน, <span class="slant iast">sampaśyan</span><span class="slant pali">สมฺปศฺยนฺ</span><span class="slant thai">สัมปัศยัน</span><span class="slant ram">สัมพัชยัน</span> — พิจารณา, <span class="slant iast">kartum</span><span class="slant pali">กรฺตุมฺ</span><span class="slant thai">กัรตุม</span><span class="slant ram">คารทุม</span> — ปฎิบัติ, <span class="slant iast">arhasi</span><span class="slant pali">อรฺหสิ</span><span class="slant thai">อัรหะสิ</span><span class="slant ram">อารฮะสิ</span> — เธอควรได้รับ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  กษัตริย์&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระเจ้า&nbsp;&nbsp;<i>ชนก</i>&nbsp;&nbsp;ทรงบรรลุถึงความสมบูรณ์ด้วยเพียงแต่ทรงปฏิบัติตามหน้าที่ที่กำหนดไว้เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อเป็นการส่งเสริมการศึกษาแก่ประชาชนโดยทั่วไป&nbsp;&nbsp;เธอควรจะปฎิบัติงานของเธอ
+  กษัตริย์&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระเจ้า&nbsp;&nbsp;<span class="slant iast">janaka</span><span class="slant pali">ชนก</span><span class="slant thai">ชะนะกะ</span><span class="slant ram">จะนะคะ</span>&nbsp;&nbsp;ทรงบรรลุถึงความสมบูรณ์ด้วยเพียงแต่ทรงปฏิบัติตามหน้าที่ที่กำหนดไว้เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อเป็นการส่งเสริมการศึกษาแก่ประชาชนโดยทั่วไป&nbsp;&nbsp;เธอควรจะปฎิบัติงานของเธอ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เหล่า&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ดังเช่นพระเจ้า&nbsp;&nbsp;<i>ชนก</i>&nbsp;&nbsp;ทรงเป็นดวงวิญญาณผู้รู้แจ้งแห่งตน&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;เหล่านี้ทรงไม่มีข้อผูกพันในการที่จะต้องฎิบัติตามหน้าที่ที่กำหนดไว้ในคัมภีร์<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;แต่ถึงกระนั้น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;เหล่านี้ก็ยังทรงปฎิบัติตามหน้าที่ที่ได้กำหนดไว้ทั้งหมดเพื่อทำตนเป็นตัวอย่างสำหรับประชาชนโดยทั่วไป&nbsp;&nbsp;พระเจ้า&nbsp;&nbsp;<i>ชนก</i>&nbsp;&nbsp;เป็นพระราชบิดา<wbr>ของพระนาง&nbsp;&nbsp;<i>สีตา</i>&nbsp;&nbsp;ทรงเป็นพระสัสสุระของพระ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;เนื่องจากเป็นสาวกผู้ยิ่งใหญ่ของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระองค์ทรงสถิตเหนือโลกวัตถุ&nbsp;&nbsp;แต่เนื่องจากทรงเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;แห่งนคร&nbsp;&nbsp;<i>มิตฺหิลา</i>&nbsp;&nbsp;(เมืองหนึ่งของจังหวัดบิฮารในประเทศอินเดีย)&nbsp;&nbsp;จึงจำเป็นต้องสอนประชาชนของพระองค์<wbr>ว่าควรปฎิบัติหน้าที่ที่กำหนดไว้อย่างไร&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ผู้เป็นสหายนิรันดรของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่มีความจำเป็นต้องต่อสู้ในสนามรบ&nbsp;&nbsp;<i>กุรุเกฺษตฺร</i>&nbsp;&nbsp;แต่ทั้งสองพระองค์ทรงต่อสู้เพื่อสอน<wbr>ประชาชนโดยทั่วไปว่า&nbsp;&nbsp;ความรุนแรงบางครั้งมีความจำเป็นในสถานการณ์ที่ความถูกต้อง<wbr>ยุติธรรมพ่ายแพ้&nbsp;&nbsp;ก่อนจะเกิดสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ที่&nbsp;&nbsp;<i>กุรุเกฺษตฺร</i>&nbsp;&nbsp;ได้มีความพยายามทุกวิถีทางที่จะหลีก<wbr>เลี่ยงสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;แม้แต่บุคลิกภาพสูงสุดแห่งพระเจ้าเองก็ทรงพยายาม&nbsp;&nbsp;แต่ฝ่ายตรงข้ามยืน<wbr>กรานว่าจะต้องรบ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อความถูกต้องยุติธรรมสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;จึงเป็นสิ่งจำเป็น&nbsp;&nbsp;ถึงแม้ว่า<wbr>ผู้ที่สถิตใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอาจจะไม่มีความสนใจต่อสิ่งใดในโลก&nbsp;&nbsp;แต่ยังต้องทำงาน<wbr>เพื่อสอนประชาชนทั่วไปว่าควรจะมีชีวิตอยู่อย่างไรและควรจะทำงานอย่างไร&nbsp;&nbsp;บุคคล<wbr>ผู้มีประสบการณ์ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกสามารถปฎิบัติตนให้ผู้อื่นปฎิบัติตามได้&nbsp;&nbsp;ดังจะได้<wbr>อธิบายในโศลกต่อไป
+  เหล่า&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ดังเช่นพระเจ้า&nbsp;&nbsp;<span class="slant iast">janaka</span><span class="slant pali">ชนก</span><span class="slant thai">ชะนะกะ</span><span class="slant ram">จะนะคะ</span>&nbsp;&nbsp;ทรงเป็นดวงวิญญาณผู้รู้แจ้งแห่งตน&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;เหล่านี้ทรงไม่มีข้อผูกพันในการที่จะต้องฎิบัติตามหน้าที่ที่กำหนดไว้ในคัมภีร์<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;แต่ถึงกระนั้น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;เหล่านี้ก็ยังทรงปฎิบัติตามหน้าที่ที่ได้กำหนดไว้ทั้งหมดเพื่อทำตนเป็นตัวอย่างสำหรับประชาชนโดยทั่วไป&nbsp;&nbsp;พระเจ้า&nbsp;&nbsp;<span class="slant iast">janaka</span><span class="slant pali">ชนก</span><span class="slant thai">ชะนะกะ</span><span class="slant ram">จะนะคะ</span>&nbsp;&nbsp;เป็นพระราชบิดา<wbr>ของพระนาง&nbsp;&nbsp;<span class="slant iast">sītā</span><span class="slant pali">สีตา</span><span class="slant thai">สีตา</span><span class="slant ram">สีดา</span>&nbsp;&nbsp;ทรงเป็นพระสัสสุระของพระ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;เนื่องจากเป็นสาวกผู้ยิ่งใหญ่ของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระองค์ทรงสถิตเหนือโลกวัตถุ&nbsp;&nbsp;แต่เนื่องจากทรงเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;แห่งนคร&nbsp;&nbsp;<span class="slant iast">mithilā</span><span class="slant pali">มิถิลา</span><span class="slant thai">มิถิลา</span><span class="slant ram">มิทฺิลา</span>&nbsp;&nbsp;(เมืองหนึ่งของจังหวัดบิฮารในประเทศอินเดีย)&nbsp;&nbsp;จึงจำเป็นต้องสอนประชาชนของพระองค์<wbr>ว่าควรปฎิบัติหน้าที่ที่กำหนดไว้อย่างไร&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ผู้เป็นสหายนิรันดรของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่มีความจำเป็นต้องต่อสู้ในสนามรบ&nbsp;&nbsp;<span class="slant iast">kurukṣetra</span><span class="slant pali">กุรุกฺเษตฺร</span><span class="slant thai">กุรุกเษตระ</span><span class="slant ram">คุรุคเชทระ</span>&nbsp;&nbsp;แต่ทั้งสองพระองค์ทรงต่อสู้เพื่อสอน<wbr>ประชาชนโดยทั่วไปว่า&nbsp;&nbsp;ความรุนแรงบางครั้งมีความจำเป็นในสถานการณ์ที่ความถูกต้อง<wbr>ยุติธรรมพ่ายแพ้&nbsp;&nbsp;ก่อนจะเกิดสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ที่&nbsp;&nbsp;<span class="slant iast">kurukṣetra</span><span class="slant pali">กุรุกฺเษตฺร</span><span class="slant thai">กุรุกเษตระ</span><span class="slant ram">คุรุคเชทระ</span>&nbsp;&nbsp;ได้มีความพยายามทุกวิถีทางที่จะหลีก<wbr>เลี่ยงสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;แม้แต่บุคลิกภาพสูงสุดแห่งพระเจ้าเองก็ทรงพยายาม&nbsp;&nbsp;แต่ฝ่ายตรงข้ามยืน<wbr>กรานว่าจะต้องรบ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อความถูกต้องยุติธรรมสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;จึงเป็นสิ่งจำเป็น&nbsp;&nbsp;ถึงแม้ว่า<wbr>ผู้ที่สถิตใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอาจจะไม่มีความสนใจต่อสิ่งใดในโลก&nbsp;&nbsp;แต่ยังต้องทำงาน<wbr>เพื่อสอนประชาชนทั่วไปว่าควรจะมีชีวิตอยู่อย่างไรและควรจะทำงานอย่างไร&nbsp;&nbsp;บุคคล<wbr>ผู้มีประสบการณ์ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกสามารถปฎิบัติตนให้ผู้อื่นปฎิบัติตามได้&nbsp;&nbsp;ดังจะได้<wbr>อธิบายในโศลกต่อไป
   </p>
 </div>
 

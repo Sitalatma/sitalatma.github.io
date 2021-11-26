@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.1</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรี-ภควานฺ อุวาจ</i><br /><i>อิมํ วิวสฺวเต โยคํ</i><br /><i>โปฺรกฺตวานฺ อหมฺ อวฺยยมฺ</i><br /><i>วิวสฺวานฺ มนเว ปฺราห</i><br /><i>มนุรฺ อิกฺษฺวากเว ′พฺรวีตฺ</i>
+<span class="slant iast">śrī-bhagavān uvāca<br /></span>
+<span class="slant pali">ศฺรี-ภควานฺ อุวาจ<br /></span>
+<span class="slant thai">ศรี-ภะคะวาน อุวาจะ<br /></span>
+<span class="slant ram">ชรี-บฺะกะวาน อุวาชะ<br /></span>
+<span class="slant iast">imaṁ vivasvate yogaṁ<br /></span>
+<span class="slant pali">อิมํ วิวสฺวเต โยคํ<br /></span>
+<span class="slant thai">อิมัง วิวัสวะเต โยคัง<br /></span>
+<span class="slant ram">อิมัม วิวัสวะเท โยกัม<br /></span>
+<span class="slant iast">proktavān aham avyayam<br /></span>
+<span class="slant pali">โปฺรกฺตวานฺ อหมฺ อวฺยยมฺ<br /></span>
+<span class="slant thai">ปโรกตะวาน อะหัม อัวยะยัม<br /></span>
+<span class="slant ram">โพรคทะวาน อฮัม อัพยะยัม<br /></span>
+<span class="slant iast">vivasvān manave prāha<br /></span>
+<span class="slant pali">วิวสฺวานฺ มนเว ปฺราห<br /></span>
+<span class="slant thai">วิวัสวาน มะนะเว ปราหะ<br /></span>
+<span class="slant ram">วิวัสวาน มะนะเว พราฮะ<br /></span>
+<span class="slant iast">manur ikṣvākave ’bravīt<br /></span>
+<span class="slant pali">มนุรฺ อิกฺษฺวากเว ’พฺรวีตฺ<br /></span>
+<span class="slant thai">มะนุร อิกษวากะเว ’พระวีต<br /></span>
+<span class="slant ram">มะนุร อิคชวาคะเว บฺระวีทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรี-ภควานฺ อุวาจ</i> — บุคลิกภาพสูงสุดแห่งพระเจ้าตรัส, <i>อิมมฺ</i> — นี้, <i>วิวสฺวเต</i> — แด่สุริย เทพ, <i>โยคมฺ</i> — ศาสตร์แห่งความสัมพันธ์ระหว่างเรากับองค์ภควาน, <i>โปฺรกฺตวานฺ</i> — สอน, <i>อหมฺ</i> — ข้า, <i>อวฺยยมฺ</i> — อมตะ, <i>วิวสฺวานฺ</i> — <i>วิวสฺวานฺ</i> (พระนามของสุริยเทพ), <i>มนเว</i> — แด่ พระบิดาของมนุษยชาติ (มีพระนามว่า ไววัสวะทา), <i>ปฺราห</i> — บอก, <i>มนุฮ</i> — พระบิดาแห่ง มนุษยชาติ,<i>อิกฺษฺวากเว</i> — แด่กษัตริย์ <i>อิกฺษฺวากุ</i>, <i>อพฺรวีตฺ</i> — ตรัส
+  <span class="slant iast">śrī-bhagavān uvāca</span><span class="slant pali">ศฺรี-ภควานฺอุวาจ</span><span class="slant thai">ศรี-ภะคะวานอุวาจะ</span><span class="slant ram">ชรี-บฺะกะวาน อุวาชะ</span> — บุคลิกภาพสูงสุดแห่งพระเจ้าตรัส, <span class="slant iast">imam</span><span class="slant pali">อิมมฺ</span><span class="slant thai">อิมัม</span><span class="slant ram">อิมัม</span> — นี้, <span class="slant iast">vivasvate</span><span class="slant pali">วิวสฺวเต</span><span class="slant thai">วิวัสวะเต</span><span class="slant ram">วิวัสวะเท</span> — แด่สุริย เทพ, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — ศาสตร์แห่งความสัมพันธ์ระหว่างเรากับองค์ภควาน, <span class="slant iast">proktavān</span><span class="slant pali">โปฺรกฺตวานฺ</span><span class="slant thai">ปโรกตะวาน</span><span class="slant ram">โพรคทะวาน</span> — สอน, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">avyayam</span><span class="slant pali">อวฺยยมฺ</span><span class="slant thai">อัวยะยัม</span><span class="slant ram">อัพยะยัม</span> — อมตะ, <span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span> — <span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span> (พระนามของสุริยเทพ), <span class="slant iast">manave</span><span class="slant pali">มนเว</span><span class="slant thai">มะนะเว</span><span class="slant ram">มะนะเว</span> — แด่ พระบิดาของมนุษยชาติ (มีพระนามว่า ไววัสวะทา), <span class="slant iast">prāha</span><span class="slant pali">ปฺราห</span><span class="slant thai">ปราหะ</span><span class="slant ram">พราฮะ</span> — บอก, <span class="slant iast">manuḥ</span><span class="slant pali">มนุห์</span><span class="slant thai">มะนุห์</span><span class="slant ram">มะนุฮ</span> — พระบิดาแห่ง มนุษยชาติ,<span class="slant iast">ikṣvākave</span><span class="slant pali">อิกฺษฺวากเว</span><span class="slant thai">อิกษวากะเว</span><span class="slant ram"> อิคชวาคะเว</span> — แด่กษัตริย์ <span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>, <span class="slant iast">abravīt</span><span class="slant pali">อพฺรวีตฺ</span><span class="slant thai">อัพระวีต</span><span class="slant ram">อับฺราวีท</span> — ตรัส
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  บุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;ข้าได้สอนศาสตร์อมตะแห่ง&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;นี้แด่พระอาทิตย์&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;ได้สอนแด่&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;พระบิดาแห่งมนุษยชาติ&nbsp;&nbsp;และ&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ได้สอนให้แด่&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;
+  บุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;ข้าได้สอนศาสตร์อมตะแห่ง&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;นี้แด่พระอาทิตย์&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;ได้สอนแด่&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;พระบิดาแห่งมนุษยชาติ&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ได้สอนให้แด่&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,55 +178,93 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ณ&nbsp;&nbsp;ที่นี้เราพบประวัติศาสตร์แห่ง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ย้อนอดีตถึงกาลเวลาที่ได้<wbr>ถ่ายทอดผ่านราชวงศ์&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ของดาวเคราะห์ทั้งหลายเริ่มต้นจากดวงอาทิตย์&nbsp;&nbsp;เจตนา<wbr>โดยเฉพาะของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;แห่งดาวเคราะห์ทั้งหลายก็เพื่อปกป้องคุ้มครองผู้อยู่อาศัย&nbsp;&nbsp;ฉะนั้นราชวงศ์&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ควรเข้าใจศาสตร์แห่ง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เพื่อสามารถปกครองและคุ้มครอง<wbr>ป้องกันประชากรจากราคะซึ่งเป็นพันธนาการทางวัตถุ&nbsp;&nbsp;จุดมุ่งหมายของชีวิตมนุษย์<wbr>เพื่อพัฒนาความรู้ทิพย์ในความสัมพันธ์นิรันดรกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และมวลผู้นำรัฐแห่ง<wbr>ดาวเคราะห์ทั้งหลายมีพันธกรณีในการถ่ายทอดบทเรียนนี้แด่ประชากรด้วยการศึกษาวัฒนธรรม&nbsp;&nbsp;และการอุทิศตนเสียสละ&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;เจตนาของมวลผู้นำรัฐคือเผยแพร่<wbr>ศาสตร์แห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเพื่อประชากรอาจได้รับประโยชน์จากศาสตร์อันยิ่งใหญ่นี้<wbr>และมุ่งหน้าอยู่บนหนทางแห่งความสำเร็จ&nbsp;&nbsp;ใช้ประโยชน์ที่ได้มีโอกาสมาอยู่ในร่างมนุษย์
+  ณ&nbsp;&nbsp;ที่นี้เราพบประวัติศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ย้อนอดีตถึงกาลเวลาที่ได้<wbr>ถ่ายทอดผ่านราชวงศ์&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ของดาวเคราะห์ทั้งหลายเริ่มต้นจากดวงอาทิตย์&nbsp;&nbsp;เจตนา<wbr>โดยเฉพาะของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;แห่งดาวเคราะห์ทั้งหลายก็เพื่อปกป้องคุ้มครองผู้อยู่อาศัย&nbsp;&nbsp;ฉะนั้นราชวงศ์&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ควรเข้าใจศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เพื่อสามารถปกครองและคุ้มครอง<wbr>ป้องกันประชากรจากราคะซึ่งเป็นพันธนาการทางวัตถุ&nbsp;&nbsp;จุดมุ่งหมายของชีวิตมนุษย์<wbr>เพื่อพัฒนาความรู้ทิพย์ในความสัมพันธ์นิรันดรกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และมวลผู้นำรัฐแห่ง<wbr>ดาวเคราะห์ทั้งหลายมีพันธกรณีในการถ่ายทอดบทเรียนนี้แด่ประชากรด้วยการศึกษาวัฒนธรรม&nbsp;&nbsp;และการอุทิศตนเสียสละ&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;เจตนาของมวลผู้นำรัฐคือเผยแพร่<wbr>ศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเพื่อประชากรอาจได้รับประโยชน์จากศาสตร์อันยิ่งใหญ่นี้<wbr>และมุ่งหน้าอยู่บนหนทางแห่งความสำเร็จ&nbsp;&nbsp;ใช้ประโยชน์ที่ได้มีโอกาสมาอยู่ในร่างมนุษย์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในกัปนี้&nbsp;&nbsp;เจ้าแห่งดวงอาทิตย์ทรงมีพระนามว่า&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;ซึ่งเป็นแหล่งกำเนิดของ<wbr>มวลดาวเคราะห์ในระบบสุริยะ&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.52)&nbsp;&nbsp;ว่า
-  </p>
-</div>
-
-<div class="r r-lang-en r-verse-text">
-  
-  <i>ยจฺ-จกฺษุรฺ เอษ สวิตา สกล-คฺรหาณาํ</i><br /><i>ราชา สมสฺต-สุร-มูรฺติรฺ อเศษ-เตชาฮ</i><br /><i>ยสฺยาชฺญยา ภฺรมติ สมฺภฺฤต-กาล-จโกฺร</i><br /><i>โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ</i>
-  
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;“ข้าพเจ้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)ผู้ทรงเป็นบุคคลแรก&nbsp;&nbsp;จากคำสั่งของพระองค์&nbsp;&nbsp;พระอาทิตย์ผู้ทรงเป็นเจ้าแห่งมวลดาว<wbr>เคราะห์ได้รับพลังและความร้อนอย่างมหาศาล&nbsp;&nbsp;ดวงอาทิตย์เสมือนดุจดังพระเนตรของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และโคจรไปโดยรอบด้วยความเคารพในพระราชดำริของพระองค์”
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  พระอาทิตย์ทรงเป็นเจ้าแห่งมวลดาวเคราะห์&nbsp;&nbsp;สุริยเทพ&nbsp;&nbsp;(องค์ปัจจุบันทรงพระนามว่า&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ทรงเป็นผู้ปกครองดวงอาทิตย์&nbsp;&nbsp;และควบคุมมวลดาวเคราะห์โดยการ<wbr>แจกจ่ายความร้อนและแสง&nbsp;&nbsp;พระองค์ทรงโคจรไปรอบ&nbsp;&nbsp;ๆ&nbsp;&nbsp;ภายใต้คำสั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เดิมที<wbr>องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงให้&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;เป็นสาวกองค์แรกที่เข้าใจศาสตร์แห่ง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ใช่ตำราคาดคะเนสำหรับนักวิชาการทางวัตถุผู้ไม่มีความสำคัญอันใด&nbsp;&nbsp;แต่เป็น<wbr>หนังสือมาตรฐานที่ถ่ายทอดลงมาจากโบราณกาล
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ในมหา&nbsp;&nbsp;<i>ภรต</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;(<i>ศานฺติ-ปรฺว</i>&nbsp;&nbsp;348.51-52)&nbsp;&nbsp;เราสามารถย้อนรอยประวัติศาสตร์<wbr>ของ&nbsp;&nbsp;ได้ดังนี้
+  ในกัปนี้&nbsp;&nbsp;เจ้าแห่งดวงอาทิตย์ทรงมีพระนามว่า&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;ซึ่งเป็นแหล่งกำเนิดของ<wbr>มวลดาวเคราะห์ในระบบสุริยะ&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.52)&nbsp;&nbsp;ว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เตฺรตา-ยุคาทะอุ จ ตโต</i><br /><i>วิวสฺวานฺ มนเว ททะอุ</i><br /><i>มนุศฺ จ โลก-ภฺฤตฺยฺ-อรฺตฺหํ</i><br /><i>สุตาเยกฺษฺวากเว ททะอุ</i><br /><i>อิกฺษฺวากุณา จ กตฺหิโต</i><br /><i>วฺยาปฺย โลกานฺ อวสฺตฺหิตฮ</i>
+<span class="slant iast">yac-cakṣur eṣa savitā sakala-grahāṇāṁ<br /></span>
+<span class="slant pali">ยจฺ-จกฺษุรฺ เอษ สวิตา สกล-คฺรหาณำ<br /></span>
+<span class="slant thai">ยัจ-จักษุร เอษะ สะวิตา สะกะละ-คระหาณาง<br /></span>
+<span class="slant ram">ยัช-ชัคชุร เอชะ สะวิทา สะคะละ-กระฮาณาม<br /></span>
+<span class="slant iast">rājā samasta-sura-mūrtir aśeṣa-tejāḥ<br /></span>
+<span class="slant pali">ราชา สมสฺต-สุร-มูรฺติรฺ อเศษ-เตชาห์<br /></span>
+<span class="slant thai">ราชา สะมัสตะ-สุระ-มูรติร อะเศษะ-เตชาห์<br /></span>
+<span class="slant ram">ราจา สะมัสทะ-สุระ-มูรทิร อเชชะ-เทจาฮ<br /></span>
+<span class="slant iast">yasyājñayā bhramati sambhṛta-kāla-cakro<br /></span>
+<span class="slant pali">ยสฺยาชฺญยา ภฺรมติ สมฺภฺฤต-กาล-จโกฺร<br /></span>
+<span class="slant thai">ยัสยาชญะยา ภระมะติ สัมภฤตะ-กาละ-จักโร<br /></span>
+<span class="slant ram">ยัสยากยะยา บฺระมะทิ สัมบฺริทะ-คาละ-ชัคโรฺ<br /></span>
+<span class="slant iast">govindam ādi-puruṣaṁ tam ahaṁ bhajāmi<br /></span>
+<span class="slant pali">โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ<br /></span>
+<span class="slant thai">โควินทัม อาทิ-ปุรุษัง ตัม อะหัง ภะชามิ<br /></span>
+<span class="slant ram">โกวินดัม อาดิ-พุรุชัม ทัม อฮัม บฺะจามิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ในตอนต้นของกัปที่มีชื่อว่า&nbsp;&nbsp;<i>เตฺรตา-ยุค</i>&nbsp;&nbsp;ศาสตร์แห่งความสัมพันธ์กับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นี้ได้<wbr>ถ่ายทอดจากองค์&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;แด่&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ผู้ทรงเป็นพระบิดาแห่งมนุษยชาติทรงประทาน<wbr>ศาสตร์นี้แด่โอรสมีนามว่า&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;ผู้ทรงเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;แห่งโลกนี้&nbsp;&nbsp;และทรงเป็น<wbr>บรรพบุรุษแห่งราชวงศ์&nbsp;&nbsp;<i>รฆุ</i>&nbsp;&nbsp;ซึ่งพระ&nbsp;&nbsp;<i>รามจนฺทฺร</i>&nbsp;&nbsp;ทรงปรากฏพระวรกาย”&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;มีอยู่ในสังคมมนุษย์ตั้งแต่สมัย&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;
+  พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;“ข้าพเจ้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)ผู้ทรงเป็นบุคคลแรก&nbsp;&nbsp;จากคำสั่งของพระองค์&nbsp;&nbsp;พระอาทิตย์ผู้ทรงเป็นเจ้าแห่งมวลดาว<wbr>เคราะห์ได้รับพลังและความร้อนอย่างมหาศาล&nbsp;&nbsp;ดวงอาทิตย์เสมือนดุจดังพระเนตรของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และโคจรไปโดยรอบด้วยความเคารพในพระราชดำริของพระองค์”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ปัจจุบันเพิ่งผ่าน&nbsp;&nbsp;<i>กลิ-ยุค</i>&nbsp;&nbsp;มาห้าพันปี&nbsp;&nbsp;<i>กลิ-ยุค</i>&nbsp;&nbsp;นี้จะมีเวลายาวนาน<wbr>ถึง&nbsp;&nbsp;432,000&nbsp;&nbsp;ปี&nbsp;&nbsp;ก่อนหน้านี้เป็น&nbsp;&nbsp;<i>ทฺวาปร-ยุค</i>&nbsp;&nbsp;(800,000&nbsp;&nbsp;ปี)&nbsp;&nbsp;และก่อนหน้านั้นเป็น&nbsp;&nbsp;<i>เตฺรตา-ยุค</i>&nbsp;&nbsp;(1,200,000&nbsp;&nbsp;ปี)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประมาณ&nbsp;&nbsp;2,005,000&nbsp;&nbsp;ปีก่อนหน้านี้&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;แด่สาวกและโอรสทรงพระนามว่า&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;ผู้ทรงเป็นเจ้าแห่งโลกนี้อายุขัยของ&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;องค์ปัจจุบันคำนวณได้ประมาณ&nbsp;&nbsp;305,300,000&nbsp;&nbsp;ปี&nbsp;&nbsp;ปัจจุบันได้ผ่านไปแล้ว120,400,000&nbsp;&nbsp;ปี&nbsp;&nbsp;เรายอมรับว่าก่อน&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้ตรัส&nbsp;&nbsp;แด่สาวกสุริย<wbr>เทพ&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;เราคำนวณอย่างคร่าว&nbsp;&nbsp;ๆ&nbsp;&nbsp;ได้ว่า&nbsp;&nbsp;ได้ถูกตรัสขึ้นอย่างน้อย&nbsp;&nbsp;120,400,000ปีก่อนและได้มีอยู่ในสังคมมนุษย์เป็นเวลาสองล้านปี&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ได้ถูกตรัสขึ้นอีกครั้ง<wbr>แด่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ประมาณห้าพันปีก่อน&nbsp;&nbsp;ทั้งหมดนี้คือการประมาณประวัติของ&nbsp;&nbsp;<i>คีตา</i>&nbsp;&nbsp;อย่างคร่าวๆ&nbsp;&nbsp;ตามที่&nbsp;&nbsp;กล่าวและตามคำบอกเล่าของผู้ตรัสคือองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้ถูกตรัสแด่<wbr>สุริยเทพ&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;เนื่องจากทรงเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;และทรงเป็นพระบิดาของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ทั้งหลาย<wbr>ที่สืบราชวงศ์มาจากพระอาทิตย์หรือ&nbsp;&nbsp;<i>สูรฺย-วํศ&nbsp;&nbsp;กฺษตฺริย</i>&nbsp;&nbsp;เพราะว่า&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ดี<wbr>เท่ากับพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เนื่องจากบุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นผู้ตรัส&nbsp;&nbsp;ความรู้นี้เป็นความ<wbr>รู้เหนือมนุษย์&nbsp;&nbsp;<i>อปะอุรุเษย</i>&nbsp;&nbsp;และเนื่องจากคำสอนพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เป็นที่ยอมรับตามที่ปรากฏโดย<wbr>ไม่มีการตีความตามโลกียวัตร&nbsp;&nbsp;นักถกเถียงทางโลกอาจคาดคะเน&nbsp;&nbsp;ตามแนวความคิด<wbr>ของตน&nbsp;&nbsp;แต่นั่นมิใช่&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ฉบับเดิม&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จะต้องยอมรับไว้ให้เหมือน<wbr>ต้นฉบับเดิมจากสาย&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;และได้อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสแด่สุริยเทพ<wbr>และสุริยเทพตรัสแด่พระโอรสของพระองค์ทรงพระนามว่า&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ตรัสแด่พระ<wbr>โอรสของพระองค์&nbsp;&nbsp;ทรงพระนามว่า&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;
+  พระอาทิตย์ทรงเป็นเจ้าแห่งมวลดาวเคราะห์&nbsp;&nbsp;สุริยเทพ&nbsp;&nbsp;(องค์ปัจจุบันทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;)&nbsp;&nbsp;ทรงเป็นผู้ปกครองดวงอาทิตย์&nbsp;&nbsp;และควบคุมมวลดาวเคราะห์โดยการ<wbr>แจกจ่ายความร้อนและแสง&nbsp;&nbsp;พระองค์ทรงโคจรไปรอบ&nbsp;&nbsp;ๆ&nbsp;&nbsp;ภายใต้คำสั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เดิมที<wbr>องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงให้&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;เป็นสาวกองค์แรกที่เข้าใจศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ใช่ตำราคาดคะเนสำหรับนักวิชาการทางวัตถุผู้ไม่มีความสำคัญอันใด&nbsp;&nbsp;แต่เป็น<wbr>หนังสือมาตรฐานที่ถ่ายทอดลงมาจากโบราณกาล
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  ในมหา&nbsp;&nbsp;<span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;(<span class="slant iast">śānti-parva</span><span class="slant pali">ศานฺติ-ปรฺว</span><span class="slant thai">ศานติ-ปัรวะ</span><span class="slant ram">zzz-</span>&nbsp;&nbsp;348.51-52)&nbsp;&nbsp;เราสามารถย้อนรอยประวัติศาสตร์<wbr>ของ&nbsp;&nbsp;ได้ดังนี้
+  </p>
+</div>
+
+<div class="r r-lang-en r-verse-text">
+<span class="slant iast">tretā-yugādau ca tato<br /></span>
+<span class="slant pali">เตฺรตา-ยุคาเทา จ ตโต<br /></span>
+<span class="slant thai">ตเรตา-ยุคาเทา จะ ตะโต<br /></span>
+<span class="slant ram">เทรทา-ยุกาโด ชะ ทะโท<br /></span>
+<span class="slant iast">vivasvān manave dadau<br /></span>
+<span class="slant pali">วิวสฺวานฺ มนเว ทเทา<br /></span>
+<span class="slant thai">วิวัสวาน มะนะเว ทะเทา<br /></span>
+<span class="slant ram">วิวัสวาน มะนะเว ดะโดฺ<br /></span>
+<span class="slant iast">manuś ca loka-bhṛty-arthaṁ<br /></span>
+<span class="slant pali">มนุศฺ จ โลก-ภฺฤตฺยฺ-อรฺถํ<br /></span>
+<span class="slant thai">มะนุศ จะ โลกะ-ภฤตย-อัรถัง<br /></span>
+<span class="slant ram">มะนุช ชะ โลคะ-บฺริทิ-อารทฺัม<br /></span>
+<span class="slant iast">sutāyekṣvākave dadau<br /></span>
+<span class="slant pali">สุตาเยกฺษฺวากเว ทเทา<br /></span>
+<span class="slant thai">สุตาเยกษวากะเว ทะเทา<br /></span>
+<span class="slant ram">สุทาเยคชวาคะเว ดะโดฺ<br /></span>
+<span class="slant iast">ikṣvākuṇā ca kathito<br /></span>
+<span class="slant pali">อิกฺษฺวากุณา จ กถิโต<br /></span>
+<span class="slant thai">อิกษวากุณา จะ กะถิโต<br /></span>
+<span class="slant ram">อิชวาคุณา ชะ คะทฺิโท<br /></span>
+<span class="slant iast">vyāpya lokān avasthitaḥ<br /></span>
+<span class="slant pali">วฺยาปฺย โลกานฺ อวสฺถิตห์<br /></span>
+<span class="slant thai">วยาปยะ โลกาน อะวัสถิตะห์<br /></span>
+<span class="slant ram">วิยาพยะ โลคาน อวัสทฺิทะฮ<br /></span>
+
+  
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  “ในตอนต้นของกัปที่มีชื่อว่า&nbsp;&nbsp;<span class="slant iast">tretā-yuga</span><span class="slant pali">เตฺรตา-ยุค</span><span class="slant thai">ตเรตา-ยุคะ</span><span class="slant ram">เทรทา-ยุกะ</span>&nbsp;&nbsp;ศาสตร์แห่งความสัมพันธ์กับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นี้ได้<wbr>ถ่ายทอดจากองค์&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;แด่&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ผู้ทรงเป็นพระบิดาแห่งมนุษยชาติทรงประทาน<wbr>ศาสตร์นี้แด่โอรสมีนามว่า&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;ผู้ทรงเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;แห่งโลกนี้&nbsp;&nbsp;และทรงเป็น<wbr>บรรพบุรุษแห่งราชวงศ์&nbsp;&nbsp;<span class="slant iast">raghu</span><span class="slant pali">รฆุ</span><span class="slant thai">ระฆุ</span><span class="slant ram">ระกํุ </span>&nbsp;&nbsp;ซึ่งพระ&nbsp;&nbsp;<span class="slant iast">rāmacandra</span><span class="slant pali">รามจนฺทฺร</span><span class="slant thai">รามะจันทระ</span><span class="slant ram">รามชันดระ</span>&nbsp;&nbsp;ทรงปรากฏพระวรกาย”&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;มีอยู่ในสังคมมนุษย์ตั้งแต่สมัย&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  ปัจจุบันเพิ่งผ่าน&nbsp;&nbsp;<span class="slant iast">kali-yuga</span><span class="slant pali">กลิ-ยุค</span><span class="slant thai">กะลิ-ยุคะ</span><span class="slant ram">คะลิ-ยุกะ</span>&nbsp;&nbsp;มาห้าพันปี&nbsp;&nbsp;<span class="slant iast">kali-yuga</span><span class="slant pali">กลิ-ยุค</span><span class="slant thai">กะลิ-ยุคะ</span><span class="slant ram">คะลิ-ยุกะ</span>&nbsp;&nbsp;นี้จะมีเวลายาวนาน<wbr>ถึง&nbsp;&nbsp;432,000&nbsp;&nbsp;ปี&nbsp;&nbsp;ก่อนหน้านี้เป็น&nbsp;&nbsp;<span class="slant iast">dvāpara-yuga</span><span class="slant pali">ทฺวาปร-ยุค</span><span class="slant thai">ทวาปะระ-ยุคะ</span><span class="slant ram">ดวาพะระ-ยุกะ</span>&nbsp;&nbsp;(800,000&nbsp;&nbsp;ปี)&nbsp;&nbsp;และก่อนหน้านั้นเป็น&nbsp;&nbsp;<span class="slant iast">tretā-yuga</span><span class="slant pali">เตฺรตา-ยุค</span><span class="slant thai">ตเรตา-ยุคะ</span><span class="slant ram">เทรทา-ยุกะ</span>&nbsp;&nbsp;(1,200,000&nbsp;&nbsp;ปี)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประมาณ&nbsp;&nbsp;2,005,000&nbsp;&nbsp;ปีก่อนหน้านี้&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;แด่สาวกและโอรสทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;ผู้ทรงเป็นเจ้าแห่งโลกนี้อายุขัยของ&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;องค์ปัจจุบันคำนวณได้ประมาณ&nbsp;&nbsp;305,300,000&nbsp;&nbsp;ปี&nbsp;&nbsp;ปัจจุบันได้ผ่านไปแล้ว120,400,000&nbsp;&nbsp;ปี&nbsp;&nbsp;เรายอมรับว่าก่อน&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้ตรัส&nbsp;&nbsp;แด่สาวกสุริย<wbr>เทพ&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;เราคำนวณอย่างคร่าว&nbsp;&nbsp;ๆ&nbsp;&nbsp;ได้ว่า&nbsp;&nbsp;ได้ถูกตรัสขึ้นอย่างน้อย&nbsp;&nbsp;120,400,000ปีก่อนและได้มีอยู่ในสังคมมนุษย์เป็นเวลาสองล้านปี&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ได้ถูกตรัสขึ้นอีกครั้ง<wbr>แด่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ประมาณห้าพันปีก่อน&nbsp;&nbsp;ทั้งหมดนี้คือการประมาณประวัติของ&nbsp;&nbsp;<span class="slant iast">gītā</span><span class="slant pali">คีตา</span><span class="slant thai">คีตา</span><span class="slant ram">คีตา</span>&nbsp;&nbsp;อย่างคร่าวๆ&nbsp;&nbsp;ตามที่&nbsp;&nbsp;กล่าวและตามคำบอกเล่าของผู้ตรัสคือองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้ถูกตรัสแด่<wbr>สุริยเทพ&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;เนื่องจากทรงเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;และทรงเป็นพระบิดาของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ทั้งหลาย<wbr>ที่สืบราชวงศ์มาจากพระอาทิตย์หรือ&nbsp;&nbsp;<span class="slant iast">sūrya-vaṁśa&nbsp;&nbsp;kṣatriya</span><span class="slant pali">สูรฺย-วํศกฺษตฺริย</span><span class="slant thai">สูรยะ-วังศะกษัตริยะ</span><span class="slant ram">สูรยะ-zzzกษัตริย์</span>&nbsp;&nbsp;เพราะว่า&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ดี<wbr>เท่ากับพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เนื่องจากบุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นผู้ตรัส&nbsp;&nbsp;ความรู้นี้เป็นความ<wbr>รู้เหนือมนุษย์&nbsp;&nbsp;<span class="slant iast">apauruṣeya</span><span class="slant pali">อเปารุเษย</span><span class="slant thai">อะเปารุเษยะ</span><span class="slant ram">อโพรุเชยะ</span>&nbsp;&nbsp;และเนื่องจากคำสอนพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เป็นที่ยอมรับตามที่ปรากฏโดย<wbr>ไม่มีการตีความตามโลกียวัตร&nbsp;&nbsp;นักถกเถียงทางโลกอาจคาดคะเน&nbsp;&nbsp;ตามแนวความคิด<wbr>ของตน&nbsp;&nbsp;แต่นั่นมิใช่&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ฉบับเดิม&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จะต้องยอมรับไว้ให้เหมือน<wbr>ต้นฉบับเดิมจากสาย&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;และได้อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสแด่สุริยเทพ<wbr>และสุริยเทพตรัสแด่พระโอรสของพระองค์ทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ตรัสแด่พระ<wbr>โอรสของพระองค์&nbsp;&nbsp;ทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;
   </p>
 </div>
 

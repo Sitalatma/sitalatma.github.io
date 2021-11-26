@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.11</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กาเยน มนสา พุทฺธฺยา</i><br /><i>เกวไลรฺ อินฺทฺริไยรฺ อปิ</i><br /><i>โยคินฮ กรฺม กุรฺวนฺติ</i><br /><i>สงฺคํ ตฺยกฺตฺวาตฺม-ศุทฺธเย</i>
+<span class="slant iast">kāyena manasā buddhyā<br /></span>
+<span class="slant pali">กาเยน มนสา พุทฺธฺยา<br /></span>
+<span class="slant thai">กาเยนะ มะนะสา พุทธยา<br /></span>
+<span class="slant ram">คาเยนะ มะนะสา บุดดฺยา<br /></span>
+<span class="slant iast">kevalair indriyair api<br /></span>
+<span class="slant pali">เกวไลรฺ อินฺทฺริไยรฺ อปิ<br /></span>
+<span class="slant thai">เกวะไลร อินทริไยร อะปิ<br /></span>
+<span class="slant ram">เควะไลร อิรดริไยร อพิฺ<br /></span>
+<span class="slant iast">yoginaḥ karma kurvanti<br /></span>
+<span class="slant pali">โยคินห์ กรฺม กุรฺวนฺติ<br /></span>
+<span class="slant thai">โยคินะห์ กัรมะ กุรวันติ<br /></span>
+<span class="slant ram">โยกินะฮ คารมะ คุรวันทิ<br /></span>
+<span class="slant iast">saṅgaṁ tyaktvātma-śuddhaye<br /></span>
+<span class="slant pali">สงฺคํ ตฺยกฺตฺวาตฺม-ศุทฺธเย<br /></span>
+<span class="slant thai">สังคัง ตยักตวาตมะ-ศุทธะเย<br /></span>
+<span class="slant ram">สังกัม ทยัคทวาทมะ-ชุดดฺะเยฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กาเยน</i> — ด้วยร่างกาย, <i>มนสา</i> — ด้วยจิตใจ, <i>พุทฺธฺยา</i> — ด้วยปัญญา, <i>เกวไลฮ</i> — บริสุทธิ์, <i>อินฺทฺริไยฮ</i> — ด้วยประสาทสัมผัส, <i>อปิ</i> — แม้แต่, <i>โยคินฮ</i> — บุคคลผู้มี <i>กฺฤษฺณ</i> จิตสำนึก, <i>กรฺม</i> — การกระทำ, <i>กุรฺวนฺติ</i> — พวกเขาปฏิบัติ, <i>สงฺคมฺ</i> — การยึดติด, <i>ตฺยกฺตฺวา</i> — สละ, <i>อาตฺม</i> — ของตนเอง, <i>ศุทฺธเย</i> — เพื่อจุดมุ่งหมายแห่งความบริสุทธิ์
+  <span class="slant iast">kāyena</span><span class="slant pali">กาเยน</span><span class="slant thai">กาเยนะ</span><span class="slant ram">คาเยนะ</span> — ด้วยร่างกาย, <span class="slant iast">manasā</span><span class="slant pali">มนสา</span><span class="slant thai">มะนะสา</span><span class="slant ram">มะนะสา</span> — ด้วยจิตใจ, <span class="slant iast">buddhyā</span><span class="slant pali">พุทฺธฺยา</span><span class="slant thai">พุทธยา</span><span class="slant ram">บุดดฺยา</span> — ด้วยปัญญา, <span class="slant iast">kevalaiḥ</span><span class="slant pali">เกวไลห์</span><span class="slant thai">เกวะไลห์</span><span class="slant ram">เควะไลฮ</span> — บริสุทธิ์, <span class="slant iast">indriyaiḥ</span><span class="slant pali">อินฺทฺริไยห์</span><span class="slant thai">อินทริไยห์</span><span class="slant ram">อินดริไยฮ</span> — ด้วยประสาทสัมผัส, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แม้แต่, <span class="slant iast">yoginaḥ</span><span class="slant pali">โยคินห์</span><span class="slant thai">โยคินะห์</span><span class="slant ram">โยกินะฮ</span> — บุคคลผู้มี <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> จิตสำนึก, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — การกระทำ, <span class="slant iast">kurvanti</span><span class="slant pali">กุรฺวนฺติ</span><span class="slant thai">กุรวันติ</span><span class="slant ram">คุรวันทิ</span> — พวกเขาปฏิบัติ, <span class="slant iast">saṅgam</span><span class="slant pali">สงฺคมฺ</span><span class="slant thai">สังคัม</span><span class="slant ram">สังกัม</span> — การยึดติด, <span class="slant iast">tyaktvā</span><span class="slant pali">ตฺยกฺตฺวา</span><span class="slant thai">ตยักตวา</span><span class="slant ram">ทยัคทวา</span> — สละ, <span class="slant iast">ātma</span><span class="slant pali">อาตฺม</span><span class="slant thai">อาตมะ</span><span class="slant ram">อาทมะ</span> — ของตนเอง, <span class="slant iast">śuddhaye</span><span class="slant pali">ศุทฺธเย</span><span class="slant thai">ศุทธะเย</span><span class="slant ram">ชุดดฺะเย</span> — เพื่อจุดมุ่งหมายแห่งความบริสุทธิ์
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>โยคี</i>&nbsp;&nbsp;ผู้สละความยึดติด&nbsp;&nbsp;ปฏิบัติด้วยร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;และแม้แต่ด้วยประสาทสัมผัส&nbsp;&nbsp;เพียงเพื่อจุดมุ่งหมายแห่งความบริสุทธิ์เท่านั้น
+  <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ผู้สละความยึดติด&nbsp;&nbsp;ปฏิบัติด้วยร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;และแม้แต่ด้วยประสาทสัมผัส&nbsp;&nbsp;เพียงเพื่อจุดมุ่งหมายแห่งความบริสุทธิ์เท่านั้น
   </p>
 </div>
 
@@ -73,19 +174,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เมื่อเราปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกโดยสนองประสาทสัมผัสของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพื่อให้<wbr>พระองค์ทรงพอพระทัย&nbsp;&nbsp;การปฏิบัติไม่ว่าด้วยส่วนไหน&nbsp;&nbsp;เช่น&nbsp;&nbsp;ร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;หรือ<wbr>แม้แต่ประสาทสัมผัสจะทำให้บริสุทธิ์จากมลทินทางวัตถุ&nbsp;&nbsp;และจะไม่มีวิบากกรรมทาง<wbr>วัตถุใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นผลมาจากกิจกรรมของผู้มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;กิจกรรมบริสุทธิ์โดยทั่วไปเรียกว่า&nbsp;&nbsp;<i>สทฺ-อาจาร</i>&nbsp;&nbsp;สามารถปฏิบัติได้โดยง่ายด้วยการปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>รูป</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภกฺติ-รสามฺฤต-สินฺธุ</i>&nbsp;&nbsp;(1.2.187)&nbsp;&nbsp;ได้อธิบายไว้ดังนี้
+  เมื่อเราปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกโดยสนองประสาทสัมผัสของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพื่อให้<wbr>พระองค์ทรงพอพระทัย&nbsp;&nbsp;การปฏิบัติไม่ว่าด้วยส่วนไหน&nbsp;&nbsp;เช่น&nbsp;&nbsp;ร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;หรือ<wbr>แม้แต่ประสาทสัมผัสจะทำให้บริสุทธิ์จากมลทินทางวัตถุ&nbsp;&nbsp;และจะไม่มีวิบากกรรมทาง<wbr>วัตถุใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นผลมาจากกิจกรรมของผู้มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;กิจกรรมบริสุทธิ์โดยทั่วไปเรียกว่า&nbsp;&nbsp;<span class="slant iast">sad-ācāra</span><span class="slant pali">สทฺ-อาจาร</span><span class="slant thai">สัท-อาจาระ</span><span class="slant ram">-zzz</span>&nbsp;&nbsp;สามารถปฏิบัติได้โดยง่ายด้วยการปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">rūpa</span><span class="slant pali">รูป</span><span class="slant thai">รูปะ</span><span class="slant ram">รูพะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhakti-rasāmṛta-sindhu</span><span class="slant pali">ภกฺติ-รสามฺฤต-สินฺธุ</span><span class="slant thai">ภักติ-ระสามฤตะ-สินธุ</span><span class="slant ram">บัฺคธิ,บัคฺธิ--</span>&nbsp;&nbsp;(1.2.187)&nbsp;&nbsp;ได้อธิบายไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อีหา ยสฺย หเรรฺ ทาเสฺย</i><br /><i>กรฺมณา มนสา คิรา</i><br /><i>นิขิลาสฺวฺ อปฺยฺ อวสฺตฺหาสุ</i><br /><i>ชีวนฺ-มุกฺตฮ ส อุจฺยเต</i>
+<span class="slant iast">īhā yasya harer dāsye<br /></span>
+<span class="slant pali">อีหา ยสฺย หเรรฺ ทาเสฺย<br /></span>
+<span class="slant thai">อีหา ยัสยะ หะเรร ทาสเย<br /></span>
+<span class="slant ram">อีฮา ยัสยะ ฮะเรร ดาสเย<br /></span>
+<span class="slant iast">karmaṇā manasā girā<br /></span>
+<span class="slant pali">กรฺมณา มนสา คิรา<br /></span>
+<span class="slant thai">กัรมะณา มะนะสา คิรา<br /></span>
+<span class="slant ram">คารมะณา มะนะสา กิรา<br /></span>
+<span class="slant iast">nikhilāsv apy avasthāsu<br /></span>
+<span class="slant pali">นิขิลาสฺวฺ อปฺยฺ อวสฺถาสุ<br /></span>
+<span class="slant thai">นิขิลาสว อัปย อะวัสถาสุ<br /></span>
+<span class="slant ram">นิคิฺลาสุ อพิ อวัสทฺาสุ<br /></span>
+<span class="slant iast">jīvan-muktaḥ sa ucyate<br /></span>
+<span class="slant pali">ชีวนฺ-มุกฺตห์ ส อุจฺยเต<br /></span>
+<span class="slant thai">ชีวัน-มุกตะห์ สะ อุจยะเต<br /></span>
+<span class="slant ram">จีวัน-มุคทะฮ สะ อุชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “บุคคลผู้ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;(หรืออีกนัยหนึ่งรับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ด้วยร่างกาย&nbsp;&nbsp;จิตใจปัญญา&nbsp;&nbsp;และคำพูดเป็นผู้หลุดพ้นแม้อยู่ในโลกวัตถุ&nbsp;&nbsp;ถึงแม้ท่านอาจปฏิบัติสิ่งที่เรียกว่า<wbr>กิจกรรมทางวัตถุมากมาย”&nbsp;&nbsp;แต่ไม่มีอหังการเพราะท่านไม่เชื่อว่าตัวท่านคือร่างวัตถุนี้หรือว่าตัวท่านเป็นเจ้าของร่างวัตถุ&nbsp;&nbsp;รู้ดีว่าตัวท่านไม่ใช่ร่างกายนี้และร่างกายนี้ไม่ใช่เป็น<wbr>ของท่าน&nbsp;&nbsp;ตัวท่านเองเป็นของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และร่างกายก็เช่นกันเป็นของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เมื่อนำทุกสิ่ง<wbr>ทุกอย่างที่ผลิตโดย&nbsp;&nbsp;ร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;คำพูด&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;ทรัพย์สมบัติ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และอะไรก็<wbr>แล้วแต่ที่ท่านอาจเป็นเจ้าของ&nbsp;&nbsp;นำมารับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;ท่านจะประสานกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทันที<wbr>โดยเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และปราศจากอหังการที่จะนำท่านให้เชื่อว่าตัวท่านคือ<wbr>ร่างกาย&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;นี่คือระดับสมบูรณ์แห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก
+  “บุคคลผู้ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;(หรืออีกนัยหนึ่งรับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ด้วยร่างกาย&nbsp;&nbsp;จิตใจปัญญา&nbsp;&nbsp;และคำพูดเป็นผู้หลุดพ้นแม้อยู่ในโลกวัตถุ&nbsp;&nbsp;ถึงแม้ท่านอาจปฏิบัติสิ่งที่เรียกว่า<wbr>กิจกรรมทางวัตถุมากมาย”&nbsp;&nbsp;แต่ไม่มีอหังการเพราะท่านไม่เชื่อว่าตัวท่านคือร่างวัตถุนี้หรือว่าตัวท่านเป็นเจ้าของร่างวัตถุ&nbsp;&nbsp;รู้ดีว่าตัวท่านไม่ใช่ร่างกายนี้และร่างกายนี้ไม่ใช่เป็น<wbr>ของท่าน&nbsp;&nbsp;ตัวท่านเองเป็นของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และร่างกายก็เช่นกันเป็นของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เมื่อนำทุกสิ่ง<wbr>ทุกอย่างที่ผลิตโดย&nbsp;&nbsp;ร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;คำพูด&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;ทรัพย์สมบัติ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และอะไรก็<wbr>แล้วแต่ที่ท่านอาจเป็นเจ้าของ&nbsp;&nbsp;นำมารับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;ท่านจะประสานกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทันที<wbr>โดยเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และปราศจากอหังการที่จะนำท่านให้เชื่อว่าตัวท่านคือ<wbr>ร่างกาย&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;นี่คือระดับสมบูรณ์แห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก
   </p>
 </div>
 

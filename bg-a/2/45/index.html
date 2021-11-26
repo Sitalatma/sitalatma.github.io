@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.45</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ไตฺร-คุณฺย-วิษยา เวทา</i><br /><i>นิไสฺตฺร-คุโณฺย ภวารฺชุน</i><br /><i>นิรฺทฺวโนฺทฺว นิตฺย-สตฺตฺว-โสฺตฺห</i><br /><i>นิโรฺยค-เกฺษม อาตฺมวานฺ</i>
+<span class="slant iast">trai-guṇya-viṣayā vedā<br /></span>
+<span class="slant pali">ไตฺร-คุณฺย-วิษยา เวทา<br /></span>
+<span class="slant thai">ตไร-คุณยะ-วิษะยา เวทา<br /></span>
+<span class="slant ram">ไทร-กุณยะ-วิชะยา เวดา<br /></span>
+<span class="slant iast">nistrai-guṇyo bhavārjuna<br /></span>
+<span class="slant pali">นิไสฺตฺร-คุโณฺย ภวารฺชุน<br /></span>
+<span class="slant thai">นิสตไร-คุณโย ภะวารชุนะ<br /></span>
+<span class="slant ram">นิสไทร-กุณโย บฺะวารจุนะ<br /></span>
+<span class="slant iast">nirdvandvo nitya-sattva-stho<br /></span>
+<span class="slant pali">นิรฺทฺวนฺโทฺว นิตฺย-สตฺตฺว-โสฺถ<br /></span>
+<span class="slant thai">นิรทวันทโว นิตยะ-สัตตวะ-สโถ<br /></span>
+<span class="slant ram">นิรดวันดโว นิทยะ-สัททวะ-สโทฺฺ<br /></span>
+<span class="slant iast">niryoga-kṣema ātmavān<br /></span>
+<span class="slant pali">นิโรฺยค-กฺเษม อาตฺมวานฺ<br /></span>
+<span class="slant thai">นิรโยคะ-กเษมะ อาตมะวาน<br /></span>
+<span class="slant ram">นิรโยกะ-คเชมะ อาทมะวาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ไตฺร-คุณฺย</i> — เกี่ยวเนื่องกับสามระดับของธรรมชาติวัตถุ, <i>วิษยาฮ</i> — เรื่องนี้, <i>เวทาฮ</i> — วรรณกรรมพระ <i>เวท</i>, <i>นิไสฺตฺร-คุณฺยฮ</i> — อยู่เหนือสามระดับของธรรมชาติวัตถุ, <i>ภว</i> — เป็น, <i>อรฺชุน</i> — โอ้ <i>อรฺชุน</i>, <i>นิรฺทฺวนฺทฺวฮ</i> — ปราศจากสภาวะคู่, <i>นิตฺย-สตฺตฺว-สฺตฺหฮ</i> — ในระดับบริสุทธิ์ของความเป็นอยู่ทิพย์, <i>นิโรฺยค-เกฺษมฮ</i> — ปราศจากความคิดเพื่อผล กำไรและสวัสดิภาพ, <i>อาตฺม-วานฺ</i> — สถิตอยู่ในตัว
+  <span class="slant iast">trai-guṇya</span><span class="slant pali">ไตฺร-คุณฺย</span><span class="slant thai">ตไร-คุณยะ</span><span class="slant ram">ไทร-กุณยะ</span> — เกี่ยวเนื่องกับสามระดับของธรรมชาติวัตถุ, <span class="slant iast">viṣayāḥ</span><span class="slant pali">วิษยาห์</span><span class="slant thai">วิษะยาห์</span><span class="slant ram">วิชะยาฮ</span> — เรื่องนี้, <span class="slant iast">vedāḥ</span><span class="slant pali">เวทาห์</span><span class="slant thai">เวทาห์</span><span class="slant ram">เวดาฮ</span> — วรรณกรรมพระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">nistrai-guṇyaḥ</span><span class="slant pali">นิไสฺตฺร-คุณฺยห์</span><span class="slant thai">นิสตไร-คุณยะห์</span><span class="slant ram">นิสไทร-กุณยะฮ</span> — อยู่เหนือสามระดับของธรรมชาติวัตถุ, <span class="slant iast">bhava</span><span class="slant pali">ภว</span><span class="slant thai">ภะวะ</span><span class="slant ram">บฺะวะ</span> — เป็น, <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> — โอ้ <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">nirdvandvaḥ</span><span class="slant pali">นิรฺทฺวนฺทฺวห์</span><span class="slant thai">นิรทวันทวะห์</span><span class="slant ram">นิรดวันดวะฮ</span> — ปราศจากสภาวะคู่, <span class="slant iast">nitya-sattva-sthaḥ</span><span class="slant pali">นิตฺย-สตฺตฺว-สฺถห์</span><span class="slant thai">นิตยะ-สัตตวะ-สถะห์</span><span class="slant ram">นิทยะ-สัททวะ-สทฺะฮ</span> — ในระดับบริสุทธิ์ของความเป็นอยู่ทิพย์, <span class="slant iast">niryoga-kṣemaḥ</span><span class="slant pali">นิโรฺยค-กฺเษมห์</span><span class="slant thai">นิรโยคะ-กเษมะห์</span><span class="slant ram">นิรโยกะ-คเชมะฮ</span> — ปราศจากความคิดเพื่อผล กำไรและสวัสดิภาพ, <span class="slant iast">ātma-vān</span><span class="slant pali">อาตฺม-วานฺ</span><span class="slant thai">อาตมะ-วาน</span><span class="slant ram">อาทมะ-วาน</span> — สถิตอยู่ในตัว
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ส่วนใหญ่กล่าวถึงเรื่องสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จงอยู่เหนือทั้งสามระดับนี้&nbsp;&nbsp;จงเป็นอิสระจากสภาวะคู่ทั้งปวง&nbsp;&nbsp;เป็นอิสระจากความวิตกกังวลเพื่อผลกำไรและความปลอดภัยทั้งปวง&nbsp;&nbsp;และจงสถิตในตนเอง
+  คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ส่วนใหญ่กล่าวถึงเรื่องสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จงอยู่เหนือทั้งสามระดับนี้&nbsp;&nbsp;จงเป็นอิสระจากสภาวะคู่ทั้งปวง&nbsp;&nbsp;เป็นอิสระจากความวิตกกังวลเพื่อผลกำไรและความปลอดภัยทั้งปวง&nbsp;&nbsp;และจงสถิตในตนเอง
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  กิจกรรมทางวัตถุทั้งหมดเกี่ยวกับกรรมและผลกรรมในสามระดับของ<wbr>ธรรมชาติวัตถุเพื่อผลประโยชน์ซึ่งเป็นเหตุให้ถูกพันธนาการในโลกวัตถุ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>ส่วนใหญ่จะกล่าวถึงกิจกรรมที่ให้ผลทางวัตถุ&nbsp;&nbsp;แล้วจึงค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาประชาชนทั่วไปให้<wbr>เจริญขึ้นจากสนามแห่งการสนองประสาทสัมผัสมาสู่ระดับทิพย์&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นทั้ง<wbr>ศิษย์และสหายขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงได้รับคำแนะนำให้ยกระดับตนเองมาสู่ระดับทิพย์<wbr>แห่งปรัชญา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;ซึ่งในตอนต้นมี&nbsp;&nbsp;<i>พฺรหฺม-ชิชฺญาสา</i>&nbsp;&nbsp;หรือคำถามเกี่ยวกับองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหมดในโลกวัตถุดิ้นรนด้วยความยากลำบากมากเพื่อความอยู่รอดดังนั้น&nbsp;&nbsp;หลังจากการสร้างโลกวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงให้ปรัชญาพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เพื่อแนะนำวิธีการ<wbr>ดำรงชีวิตและขจัดพันธนาการทางวัตถุ&nbsp;&nbsp;พระองค์ทรงให้ปรัชญาพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เพื่อแนะนำวิธี<wbr>การดำรงชีวิตและขจัดพันธนาการทางวัตถุ&nbsp;&nbsp;เมื่อกิจกรรมเพื่อสนองประสาทสัมผัสชื่อ<wbr>บท&nbsp;&nbsp;<i>กรฺม-กาณฺฑ</i>&nbsp;&nbsp;สิ้นสุดลง&nbsp;&nbsp;ก็จะเปิดโอกาสเพื่อความรู้แจ้งทิพย์ในรูปของ&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;ซึ่งเป็นส่วนหนึ่งของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ที่มีหลายเล่ม&nbsp;&nbsp;ดังเช่น&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เป็นส่วนหนึ่งของ<wbr>คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เล่มที่ห้าชื่อ&nbsp;&nbsp;<i>มหาภารต</i>&nbsp;&nbsp;หนังสือ&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;จึงเป็นจุดเริ่มต้นแห่งชีวิตทิพย์
+  กิจกรรมทางวัตถุทั้งหมดเกี่ยวกับกรรมและผลกรรมในสามระดับของ<wbr>ธรรมชาติวัตถุเพื่อผลประโยชน์ซึ่งเป็นเหตุให้ถูกพันธนาการในโลกวัตถุ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>ส่วนใหญ่จะกล่าวถึงกิจกรรมที่ให้ผลทางวัตถุ&nbsp;&nbsp;แล้วจึงค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาประชาชนทั่วไปให้<wbr>เจริญขึ้นจากสนามแห่งการสนองประสาทสัมผัสมาสู่ระดับทิพย์&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นทั้ง<wbr>ศิษย์และสหายขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงได้รับคำแนะนำให้ยกระดับตนเองมาสู่ระดับทิพย์<wbr>แห่งปรัชญา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;ซึ่งในตอนต้นมี&nbsp;&nbsp;<span class="slant iast">brahma-jijñāsā</span><span class="slant pali">พฺรหฺม-ชิชฺญาสา</span><span class="slant thai">พรัหมะ-ชิชญาสา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;หรือคำถามเกี่ยวกับองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหมดในโลกวัตถุดิ้นรนด้วยความยากลำบากมากเพื่อความอยู่รอดดังนั้น&nbsp;&nbsp;หลังจากการสร้างโลกวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงให้ปรัชญาพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เพื่อแนะนำวิธีการ<wbr>ดำรงชีวิตและขจัดพันธนาการทางวัตถุ&nbsp;&nbsp;พระองค์ทรงให้ปรัชญาพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เพื่อแนะนำวิธี<wbr>การดำรงชีวิตและขจัดพันธนาการทางวัตถุ&nbsp;&nbsp;เมื่อกิจกรรมเพื่อสนองประสาทสัมผัสชื่อ<wbr>บท&nbsp;&nbsp;<span class="slant iast">karma-kāṇḍa</span><span class="slant pali">กรฺม-กาณฺฑ</span><span class="slant thai">กัรมะ-กาณฑะ</span><span class="slant ram">คารมะ-</span>&nbsp;&nbsp;สิ้นสุดลง&nbsp;&nbsp;ก็จะเปิดโอกาสเพื่อความรู้แจ้งทิพย์ในรูปของ&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;ซึ่งเป็นส่วนหนึ่งของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ที่มีหลายเล่ม&nbsp;&nbsp;ดังเช่น&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เป็นส่วนหนึ่งของ<wbr>คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เล่มที่ห้าชื่อ&nbsp;&nbsp;<span class="slant iast">mahābhārata</span><span class="slant pali">มหาภารต</span><span class="slant thai">มะหาภาระตะ</span><span class="slant ram">มหาภารตะ</span>&nbsp;&nbsp;หนังสือ&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;จึงเป็นจุดเริ่มต้นแห่งชีวิตทิพย์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ตราบใดที่เรายังมีร่างกายวัตถุอยู่&nbsp;&nbsp;จะมีกรรมและผลกรรมในสามระดับทาง<wbr>วัตถุ&nbsp;&nbsp;เราต้องฝึกฝนความอดทนในการเผชิญหน้ากับสภาวะคู่เช่นความสุขและความ<wbr>ทุกข์&nbsp;&nbsp;ความเย็นและความร้อน&nbsp;&nbsp;และจากการอดทนต่อสภาวะคู่เช่นนี้&nbsp;&nbsp;เราจะได้รับอิสรภาพ<wbr>จากความวิตกกังวลอันเนื่องมาจากผลกำไรและขาดทุนระดับทิพย์นี้บรรลุได้ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกที่สมบูรณ์&nbsp;&nbsp;เมื่อเราขึ้นอยู่กับพระราชประสงค์อันดีงามของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อย่าง<wbr>บริบูรณ์
+  ตราบใดที่เรายังมีร่างกายวัตถุอยู่&nbsp;&nbsp;จะมีกรรมและผลกรรมในสามระดับทาง<wbr>วัตถุ&nbsp;&nbsp;เราต้องฝึกฝนความอดทนในการเผชิญหน้ากับสภาวะคู่เช่นความสุขและความ<wbr>ทุกข์&nbsp;&nbsp;ความเย็นและความร้อน&nbsp;&nbsp;และจากการอดทนต่อสภาวะคู่เช่นนี้&nbsp;&nbsp;เราจะได้รับอิสรภาพ<wbr>จากความวิตกกังวลอันเนื่องมาจากผลกำไรและขาดทุนระดับทิพย์นี้บรรลุได้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกที่สมบูรณ์&nbsp;&nbsp;เมื่อเราขึ้นอยู่กับพระราชประสงค์อันดีงามของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อย่าง<wbr>บริบูรณ์
   </p>
 </div>
 

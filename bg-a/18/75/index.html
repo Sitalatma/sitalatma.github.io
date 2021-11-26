@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.75</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วฺยาส-ปฺรสาทาจฺ ฉฺรุตวานฺ</i><br /><i>เอตทฺ คุหฺยมฺ อหํ ปรมฺ</i><br /><i>โยคํ โยเคศฺวราตฺ กฺฤษฺณาตฺ</i><br /><i>สากฺษาตฺ กตฺหยตฮ สฺวยมฺ</i>
+<span class="slant iast">vyāsa-prasādāc chrutavān<br /></span>
+<span class="slant pali">วฺยาส-ปฺรสาทาจฺ ฉฺรุตวานฺ<br /></span>
+<span class="slant thai">วยาสะ-ประสาทาจ ฉรุตะวาน<br /></span>
+<span class="slant ram">วิยาสะ-พระสาดาช ชฺรุทะวาน<br /></span>
+<span class="slant iast">etad guhyam ahaṁ param<br /></span>
+<span class="slant pali">เอตทฺ คุหฺยมฺ อหํ ปรมฺ<br /></span>
+<span class="slant thai">เอตัท คุหยัม อะหัง ปะรัม<br /></span>
+<span class="slant ram">เอทัด กุฮยัม อฮัม พะรัม<br /></span>
+<span class="slant iast">yogaṁ yogeśvarāt kṛṣṇāt<br /></span>
+<span class="slant pali">โยคํ โยเคศฺวราตฺ กฺฤษฺณาตฺ<br /></span>
+<span class="slant thai">โยคัง โยเคศวะราต กฤษณาต<br /></span>
+<span class="slant ram">โยกัม โยเกชวะราท คริชณาท<br /></span>
+<span class="slant iast">sākṣāt kathayataḥ svayam<br /></span>
+<span class="slant pali">สากฺษาตฺ กถยตห์ สฺวยมฺ<br /></span>
+<span class="slant thai">สากษาต กะถะยะตะห์ สวะยัม<br /></span>
+<span class="slant ram">สาคชาท คะทฺะยะทะฮ สวะยัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วฺยาส-ปฺรสาทาตฺ</i> — ด้วยพระกรุณาของวิยาสะเดวะ, <i>ศฺรุตวานฺ</i> — ได้สดับฟัง, <i>เอตตฺ</i> — นี้, <i>คุหฺยมฺ</i> — ความลับ, <i>อหมฺ</i> — ข้า, <i>ปรมฺ</i> — สูงสุด, <i>โยคมฺ</i> — ลัทธิโยคะ, <i>โยค-อีศฺวราตฺ</i> — จากเจ้า นายของระบบโยคะทั้งหมด, <i>กฺฤษฺณาตฺ</i> — จาก <i>กฺฤษฺณ</i>, <i>สากฺษาตฺ</i> — โดยตรง, <i>กตฺหยตฮ</i> — ตรัส, <i>สฺวยมฺ</i> — ด้วยตัวพระองค์เอง
+  <span class="slant iast">vyāsa-prasādāt</span><span class="slant pali">วฺยาส-ปฺรสาทาตฺ</span><span class="slant thai">วยาสะ-ประสาทาต</span><span class="slant ram">วิยาสะ-พระสาดาท</span> — ด้วยพระกรุณาของวิยาสะเดวะ, <span class="slant iast">śrutavān</span><span class="slant pali">ศฺรุตวานฺ</span><span class="slant thai">ศรุตะวาน</span><span class="slant ram">ชรุทะวาน</span> — ได้สดับฟัง, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">guhyam</span><span class="slant pali">คุหฺยมฺ</span><span class="slant thai">คุหยัม</span><span class="slant ram">กุฮยัม</span> — ความลับ, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — สูงสุด, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — ลัทธิโยคะ, <span class="slant iast">yoga-īśvarāt</span><span class="slant pali">โยค-อีศฺวราตฺ</span><span class="slant thai">โยคะ-อีศวะราต</span><span class="slant ram">โยกะ-อีชวะราท</span> — จากเจ้า นายของระบบโยคะทั้งหมด, <span class="slant iast">kṛṣṇāt</span><span class="slant pali">กฺฤษฺณาตฺ</span><span class="slant thai">กฤษณาต</span><span class="slant ram">คริชณาท</span> — จาก <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">sākṣāt</span><span class="slant pali">สากฺษาตฺ</span><span class="slant thai">สากษาต</span><span class="slant ram">สาคชาท</span> — โดยตรง, <span class="slant iast">kathayataḥ</span><span class="slant pali">กถยตห์</span><span class="slant thai">กะถะยะตะห์</span><span class="slant ram">คะทฺะยะทะฮ</span> — ตรัส, <span class="slant iast">svayam</span><span class="slant pali">สฺวยมฺ</span><span class="slant thai">สวะยัม</span><span class="slant ram">สวะยัม</span> — ด้วยตัวพระองค์เอง
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ด้วยพระเมตตาของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ข้าได้สดับฟังการสนทนาที่ลับสุดยอดนี้โดยตรงจากชรี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ปรมาจารย์แห่งระบบโยคะทั้งหลาย&nbsp;&nbsp;ผู้ตรัสต่อ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ด้วยพระองค์เอง
+  ด้วยพระเมตตาของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ข้าได้สดับฟังการสนทนาที่ลับสุดยอดนี้โดยตรงจากชรี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ปรมาจารย์แห่งระบบโยคะทั้งหลาย&nbsp;&nbsp;ผู้ตรัสต่อ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ด้วยพระองค์เอง
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>วฺยาส</i>&nbsp;&nbsp;ทรงเป็นพระอาจารย์ทิพย์ของ&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;ยอมรับว่า&nbsp;&nbsp;ด้วย<wbr>พระเมตตาของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ที่ทำให้ท่านสามารถเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;หมายความว่าเรา<wbr>ต้องเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ใช่โดยตรง&nbsp;&nbsp;แต่ผ่านการเชื่อมต่อจากพระอาจารย์ทิพย์&nbsp;&nbsp;พระอาจารย์<wbr>ทิพย์เป็นผู้เชื่อมโยงที่โปร่งใส&nbsp;&nbsp;ถึงแม้เป็นความจริงที่เราได้รับประสบการณ์โดยตรง&nbsp;&nbsp;นี่คือ<wbr>ความเร้นลับของระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;เมื่อพระอาจารย์ทิพย์เป็นผู้ที่เชื่อถือได้เราสามารถ<wbr>สดับฟัง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;โดยตรงเหมือนกับ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงได้สดับฟัง&nbsp;&nbsp;มีผู้มีฤทธิ์เดชและ&nbsp;&nbsp;<i>โยค</i>มากมายทั่วโลกแต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;คำสั่งสอนของ<i>กฺฤษฺณ</i>&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;จงศิโรราบต่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ปฏิบัติเช่นนี้<wbr>เป็น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;สูงสุด&nbsp;&nbsp;ได้ยืนยันไว้ในโศลกสุดท้ายของบทที่หกว่า&nbsp;&nbsp;<i>โยคินามฺ&nbsp;&nbsp;อปิ&nbsp;&nbsp;สเรฺวษามฺ</i>&nbsp;&nbsp;
+  <span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ทรงเป็นพระอาจารย์ทิพย์ของ&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;ยอมรับว่า&nbsp;&nbsp;ด้วย<wbr>พระเมตตาของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ที่ทำให้ท่านสามารถเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;หมายความว่าเรา<wbr>ต้องเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ใช่โดยตรง&nbsp;&nbsp;แต่ผ่านการเชื่อมต่อจากพระอาจารย์ทิพย์&nbsp;&nbsp;พระอาจารย์<wbr>ทิพย์เป็นผู้เชื่อมโยงที่โปร่งใส&nbsp;&nbsp;ถึงแม้เป็นความจริงที่เราได้รับประสบการณ์โดยตรง&nbsp;&nbsp;นี่คือ<wbr>ความเร้นลับของระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;เมื่อพระอาจารย์ทิพย์เป็นผู้ที่เชื่อถือได้เราสามารถ<wbr>สดับฟัง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;โดยตรงเหมือนกับ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงได้สดับฟัง&nbsp;&nbsp;มีผู้มีฤทธิ์เดชและ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>มากมายทั่วโลกแต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;คำสั่งสอนของ<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;จงศิโรราบต่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ปฏิบัติเช่นนี้<wbr>เป็น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;สูงสุด&nbsp;&nbsp;ได้ยืนยันไว้ในโศลกสุดท้ายของบทที่หกว่า&nbsp;&nbsp;<span class="slant iast">yoginām&nbsp;&nbsp;api&nbsp;&nbsp;sarveṣām…</span><span class="slant pali">โยคินามฺอปิสเรฺวษามฺ…</span><span class="slant thai">โยคินามอะปิสัรเวษาม…</span><span class="slant ram">โยกินามอพิสารเวชาม…</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>นารท</i>&nbsp;&nbsp;เป็นสาวกโดยตรงของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และเป็นพระอาจารย์ทิพย์ของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ก็เป็นผู้ที่เชื่อถือได้เช่นเดียวกับ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เพราะมาในระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;เป็นสาวกโดยตรงของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;ทำให้<wbr>ประสาทสัมผัสของ&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;บริสุทธิ์ขึ้น&nbsp;&nbsp;ท่านจึงสามารถเห็นและได้ยิน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ผู้<wbr>ได้ยิน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยตรงสามารถเข้าใจความรู้อันเร้นลับนี้&nbsp;&nbsp;หากไม่มาในระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;จะไม่สามารถได้ยิน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความรู้จะไม่สมบูรณ์อยู่เสมอ&nbsp;&nbsp;อย่างน้อยที่สุดเกี่ยว<wbr>กับการเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;
+  <span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;เป็นสาวกโดยตรงของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และเป็นพระอาจารย์ทิพย์ของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ก็เป็นผู้ที่เชื่อถือได้เช่นเดียวกับ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เพราะมาในระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;เป็นสาวกโดยตรงของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;ทำให้<wbr>ประสาทสัมผัสของ&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;บริสุทธิ์ขึ้น&nbsp;&nbsp;ท่านจึงสามารถเห็นและได้ยิน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ผู้<wbr>ได้ยิน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยตรงสามารถเข้าใจความรู้อันเร้นลับนี้&nbsp;&nbsp;หากไม่มาในระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;จะไม่สามารถได้ยิน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความรู้จะไม่สมบูรณ์อยู่เสมอ&nbsp;&nbsp;อย่างน้อยที่สุดเกี่ยว<wbr>กับการเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ได้อธิบายระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทั้งหมดเช่น&nbsp;&nbsp;<i>กรฺม-โยค,ชฺญาน-โยค</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทั้งหลายเหล่านี้&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;เข้าใจว่า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงโชคดีพอที่เข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ<wbr>&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;จึงสามารถได้ยิน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;ไม่มีข้อแตกต่างระหว่างการ<wbr>ได้ยินโดยตรงจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และการได้ยินโดยตรงจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยผ่านทางพระอาจารย์<wbr>ทิพย์ผู้เชื่อถือได้เช่น&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;พระอาจารย์ทิพย์เป็นผู้แทนของ&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;เช่นเดียวกันดังนั้น&nbsp;&nbsp;ตามระบบพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ในวันคล้ายวันเกิดของพระอาจารย์ทิพย์&nbsp;&nbsp;สาวกจะทำพิธีบูชา<wbr>มีชื่อว่า&nbsp;&nbsp;<i>วฺยาส-ปูชา</i>&nbsp;&nbsp;
+  ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ได้อธิบายระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทั้งหมดเช่น&nbsp;&nbsp;<span class="slant iast">karma-yoga,&nbsp;&nbsp;jñāna-yoga</span><span class="slant pali">กรฺม-โยคชฺญาน-โยค</span><span class="slant thai">กัรมะ-โยคะชญานะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ,โยคะ,โยคกยานะ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทั้งหลายเหล่านี้&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;เข้าใจว่า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงโชคดีพอที่เข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ<wbr>&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;จึงสามารถได้ยิน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;ไม่มีข้อแตกต่างระหว่างการ<wbr>ได้ยินโดยตรงจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และการได้ยินโดยตรงจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยผ่านทางพระอาจารย์<wbr>ทิพย์ผู้เชื่อถือได้เช่น&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;พระอาจารย์ทิพย์เป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;เช่นเดียวกันดังนั้น&nbsp;&nbsp;ตามระบบพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ในวันคล้ายวันเกิดของพระอาจารย์ทิพย์&nbsp;&nbsp;สาวกจะทำพิธีบูชา<wbr>มีชื่อว่า&nbsp;&nbsp;<span class="slant iast">vyāsa-pūjā</span><span class="slant pali">วฺยาส-ปูชา</span><span class="slant thai">วยาสะ-ปูชา</span><span class="slant ram">วิยาสะ-</span>&nbsp;&nbsp;
   </p>
 </div>
 

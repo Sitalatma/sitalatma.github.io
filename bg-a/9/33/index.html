@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.33</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กิํ ปุนรฺ พฺราหฺมณาฮ ปุณฺยา</i><br /><i>ภกฺตา ราชรฺษยสฺ ตตฺหา</i><br /><i>อนิตฺยมฺ อสุขํ โลกมฺ</i><br /><i>อิมํ ปฺราปฺย ภชสฺว มามฺ</i>
+<span class="slant iast">kiṁ punar brāhmaṇāḥ puṇyā<br /></span>
+<span class="slant pali">กึ ปุนรฺ พฺราหฺมณาห์ ปุณฺยา<br /></span>
+<span class="slant thai">กิง ปุนัร พราหมะณาห์ ปุณยา<br /></span>
+<span class="slant ram">คิม พุนาร บราฮมะณาฮ พุนยา<br /></span>
+<span class="slant iast">bhaktā rājarṣayas tathā<br /></span>
+<span class="slant pali">ภกฺตา ราชรฺษยสฺ ตถา<br /></span>
+<span class="slant thai">ภักตา ราชัรษะยัส ตะถา<br /></span>
+<span class="slant ram">บัฺคธา ราจารชะยัส ทะทฺา<br /></span>
+<span class="slant iast">anityam asukhaṁ lokam<br /></span>
+<span class="slant pali">อนิตฺยมฺ อสุขํ โลกมฺ<br /></span>
+<span class="slant thai">อะนิตยัม อะสุขัง โลกัม<br /></span>
+<span class="slant ram">อนิทยัม อสุคัฺม โลคัม<br /></span>
+<span class="slant iast">imaṁ prāpya bhajasva mām<br /></span>
+<span class="slant pali">อิมํ ปฺราปฺย ภชสฺว มามฺ<br /></span>
+<span class="slant thai">อิมัง ปราปยะ ภะชัสวะ มาม<br /></span>
+<span class="slant ram">อิมัม พราพยะ บฺะจัสวะ มาม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กิมฺ</i> — เท่าไร, <i>ปุนฮ</i> — อีกครั้งหนึ่ง, <i>พฺราหฺมณาฮ</i> — <i>พฺราหฺมณ</i>, <i>ปุณฺยาฮ</i> — บุญ, <i>ภกฺตาฮ</i> — เหล่าสาวก, <i>ราช-ฤษยฮ</i> — กษัตริย์ผู้ทรงธรรม, <i>ตตฺหา</i> — เช่นกัน, <i>อนิตฺยมฺ</i> — ชั่วคราว, <i>อสุขมฺ</i> — เต็มไปด้วยความทุกข์, <i>โลกมฺ</i> — โลก-โลก, <i>อิมมฺ</i> — นี้, <i>ปฺราปฺย</i> — ได้รับ, <i>ภชสฺว</i> — ปฏิบัติ ในการรับใช้ด้วยความรัก, <i>มามฺ</i> — แด่ข้า
+  <span class="slant iast">kim</span><span class="slant pali">กิมฺ</span><span class="slant thai">กิม</span><span class="slant ram">คิม</span> — เท่าไร, <span class="slant iast">punaḥ</span><span class="slant pali">ปุนห์</span><span class="slant thai">ปุนะห์</span><span class="slant ram">พุนะฮ</span> — อีกครั้งหนึ่ง, <span class="slant iast">brāhmaṇāḥ</span><span class="slant pali">พฺราหฺมณาห์</span><span class="slant thai">พราหมะณาห์</span><span class="slant ram">บราฮมะณาฮ</span> — <span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>, <span class="slant iast">puṇyāḥ</span><span class="slant pali">ปุณฺยาห์</span><span class="slant thai">ปุณยาห์</span><span class="slant ram">พุณยาฮ</span> — บุญ, <span class="slant iast">bhaktāḥ</span><span class="slant pali">ภกฺตาห์</span><span class="slant thai">ภักตาห์</span><span class="slant ram">บัฺคธาฮ</span> — เหล่าสาวก, <span class="slant iast">rāja-ṛṣayaḥ</span><span class="slant pali">ราช-ฤษยห์</span><span class="slant thai">ราชะ-ฤษะยะห์</span><span class="slant ram">ราจะ-ริชะยะฮ</span> — กษัตริย์ผู้ทรงธรรม, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เช่นกัน, <span class="slant iast">anityam</span><span class="slant pali">อนิตฺยมฺ</span><span class="slant thai">อะนิตยัม</span><span class="slant ram">อนิทยัม</span> — ชั่วคราว, <span class="slant iast">asukham</span><span class="slant pali">อสุขมฺ</span><span class="slant thai">อะสุขัม</span><span class="slant ram">อสุคัฺม</span> — เต็มไปด้วยความทุกข์, <span class="slant iast">lokam</span><span class="slant pali">โลกมฺ</span><span class="slant thai">โลกัม</span><span class="slant ram">โลคัม</span> — โลก-โลก, <span class="slant iast">imam</span><span class="slant pali">อิมมฺ</span><span class="slant thai">อิมัม</span><span class="slant ram">อิมัม</span> — นี้, <span class="slant iast">prāpya</span><span class="slant pali">ปฺราปฺย</span><span class="slant thai">ปราปยะ</span><span class="slant ram">พราพยะ</span> — ได้รับ, <span class="slant iast">bhajasva</span><span class="slant pali">ภชสฺว</span><span class="slant thai">ภะชัสวะ</span><span class="slant ram">บฺะจัสวะ</span> — ปฏิบัติ ในการรับใช้ด้วยความรัก, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  แล้วจะเป็นเช่นนี้อีกมากเพียงใด&nbsp;&nbsp;สำหรับ&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;ผู้มีบุญ&nbsp;&nbsp;เหล่าสาวก&nbsp;&nbsp;และกษัตริย์ผู้ทรงธรรม&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อมาอยู่ในโลกแห่งความทุกข์ที่ไม่ถาวรนี้&nbsp;&nbsp;จงปฏิบัติรับใช้ข้าด้วยความรัก
+  แล้วจะเป็นเช่นนี้อีกมากเพียงใด&nbsp;&nbsp;สำหรับ&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;ผู้มีบุญ&nbsp;&nbsp;เหล่าสาวก&nbsp;&nbsp;และกษัตริย์ผู้ทรงธรรม&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อมาอยู่ในโลกแห่งความทุกข์ที่ไม่ถาวรนี้&nbsp;&nbsp;จงปฏิบัติรับใช้ข้าด้วยความรัก
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในโลกนี้มีการแบ่งชั้นสำหรับผู้คน&nbsp;&nbsp;แต่ในที่สุดโลกนี้ไม่ใช่สถานที่ที่มีความสุข<wbr>สำหรับผู้ใด&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;<i>อนิตฺยมฺ&nbsp;&nbsp;อสุขํ&nbsp;&nbsp;โลกมฺ</i>&nbsp;&nbsp;โลกนี้ไม่ถาวรเต็ม<wbr>ไปด้วยความทุกข์&nbsp;&nbsp;และไม่ใช่ที่อยู่อาศัยของสุภาพบุรุษผู้มีสติสัมปชัญญะดี&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้าทรงประกาศว่าโลกนี้ไม่ถาวร&nbsp;&nbsp;และเต็มไปด้วยความทุกข์&nbsp;&nbsp;นักปราชญ์<wbr>บางท่านโดยเฉพาะนักปราชญ์&nbsp;&nbsp;<i>มายาวาที</i>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;โลกนี้ไม่จริง&nbsp;&nbsp;แต่เราสามารถเข้าใจได้<wbr>จาก&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;โลกนี้มิใช่ว่าไม่จริง&nbsp;&nbsp;แต่ไม่ถาวร&nbsp;&nbsp;มีข้อแตกต่างระหว่างความไม่ถาวร<wbr>และความไม่จริง&nbsp;&nbsp;โลกนี้ไม่ถาวรแต่มีอีกโลกหนึ่งที่ถาวร&nbsp;&nbsp;โลกนี้มีความทุกข์แต่มีอีกโลก<wbr>หนึ่งเป็นอมตะและมีความปลื้มปีติสุข
+  ในโลกนี้มีการแบ่งชั้นสำหรับผู้คน&nbsp;&nbsp;แต่ในที่สุดโลกนี้ไม่ใช่สถานที่ที่มีความสุข<wbr>สำหรับผู้ใด&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;<span class="slant iast">anityam&nbsp;&nbsp;asukhaṁ&nbsp;&nbsp;lokam</span><span class="slant pali">อนิตฺยมฺอสุขํโลกมฺ</span><span class="slant thai">อะนิตยัมอะสุขังโลกัม</span><span class="slant ram">อนิทยัม อสุคัฺม โลคัม</span>&nbsp;&nbsp;โลกนี้ไม่ถาวรเต็ม<wbr>ไปด้วยความทุกข์&nbsp;&nbsp;และไม่ใช่ที่อยู่อาศัยของสุภาพบุรุษผู้มีสติสัมปชัญญะดี&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้าทรงประกาศว่าโลกนี้ไม่ถาวร&nbsp;&nbsp;และเต็มไปด้วยความทุกข์&nbsp;&nbsp;นักปราชญ์<wbr>บางท่านโดยเฉพาะนักปราชญ์&nbsp;&nbsp;<span class="slant iast">māyāvādī</span><span class="slant pali">มายาวาที</span><span class="slant thai">มายาวาที</span><span class="slant ram">มายาวาดี</span>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;โลกนี้ไม่จริง&nbsp;&nbsp;แต่เราสามารถเข้าใจได้<wbr>จาก&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;โลกนี้มิใช่ว่าไม่จริง&nbsp;&nbsp;แต่ไม่ถาวร&nbsp;&nbsp;มีข้อแตกต่างระหว่างความไม่ถาวร<wbr>และความไม่จริง&nbsp;&nbsp;โลกนี้ไม่ถาวรแต่มีอีกโลกหนึ่งที่ถาวร&nbsp;&nbsp;โลกนี้มีความทุกข์แต่มีอีกโลก<wbr>หนึ่งเป็นอมตะและมีความปลื้มปีติสุข
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ประสูติในราชวงศ์&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ผู้ทรงธรรม&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสต่อ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เช่น<wbr>กันว่า&nbsp;&nbsp;“จงรับเอาการอุทิศตนเสียสละรับใช้ต่อข้าไปปฏิบัติ&nbsp;&nbsp;และกลับคืนสู่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คืน<wbr>สู่เหย้าโดยเร็ว”&nbsp;&nbsp;ไม่มีผู้ใดควรจมปรักอยู่ในโลกที่ไม่ถาวรนี้ซึ่งเต็มไปด้วยความทุกข์&nbsp;&nbsp;ตาม<wbr>ความเป็นจริง&nbsp;&nbsp;ทุกคนควรซบตนเองอยู่ที่พระอุระของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;เพื่อ<wbr>จะได้มีความสุขนิรันดร&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นวิถีทางเดียวเท่านั้นที่ปัญหาทั้งหมดของชนทุกชั้นสามารถได้รับการแก้ไข&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ทุกคนควรรับเอา&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกมาปฏิบัติ&nbsp;&nbsp;และทำให้ชีวิตสมบูรณ์
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ประสูติในราชวงศ์&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ผู้ทรงธรรม&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสต่อ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เช่น<wbr>กันว่า&nbsp;&nbsp;“จงรับเอาการอุทิศตนเสียสละรับใช้ต่อข้าไปปฏิบัติ&nbsp;&nbsp;และกลับคืนสู่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คืน<wbr>สู่เหย้าโดยเร็ว”&nbsp;&nbsp;ไม่มีผู้ใดควรจมปรักอยู่ในโลกที่ไม่ถาวรนี้ซึ่งเต็มไปด้วยความทุกข์&nbsp;&nbsp;ตาม<wbr>ความเป็นจริง&nbsp;&nbsp;ทุกคนควรซบตนเองอยู่ที่พระอุระของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;เพื่อ<wbr>จะได้มีความสุขนิรันดร&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นวิถีทางเดียวเท่านั้นที่ปัญหาทั้งหมดของชนทุกชั้นสามารถได้รับการแก้ไข&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ทุกคนควรรับเอา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกมาปฏิบัติ&nbsp;&nbsp;และทำให้ชีวิตสมบูรณ์
   </p>
 </div>
 

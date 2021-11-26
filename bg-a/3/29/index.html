@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.29</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรกฺฤเตรฺ คุณ-สมฺมูฒาฮ</i><br /><i>สชฺชเนฺต คุณ-กรฺมสุ</i><br /><i>ตานฺ อกฺฤตฺสฺน-วิโท มนฺทานฺ</i><br /><i>กฺฤตฺสฺน-วินฺ น วิจาลเยตฺ</i>
+<span class="slant iast">prakṛter guṇa-sammūḍhāḥ<br /></span>
+<span class="slant pali">ปฺรกฺฤเตรฺ คุณ-สมฺมูฒาห์<br /></span>
+<span class="slant thai">ปรักฤเตร คุณะ-สัมมูฒาห์<br /></span>
+<span class="slant ram">พระคริเทร กุณะ-สัมมูดฺาฮ<br /></span>
+<span class="slant iast">sajjante guṇa-karmasu<br /></span>
+<span class="slant pali">สชฺชนฺเต คุณ-กรฺมสุ<br /></span>
+<span class="slant thai">สัชชันเต คุณะ-กัรมะสุ<br /></span>
+<span class="slant ram">สัจจันเท กุณะ-คารมะสฺุ<br /></span>
+<span class="slant iast">tān akṛtsna-vido mandān<br /></span>
+<span class="slant pali">ตานฺ อกฺฤตฺสฺน-วิโท มนฺทานฺ<br /></span>
+<span class="slant thai">ตาน อักฤตสนะ-วิโท มันทาน<br /></span>
+<span class="slant ram">ทาน อคริทสนะ-วิโด มันดาน<br /></span>
+<span class="slant iast">kṛtsna-vin na vicālayet<br /></span>
+<span class="slant pali">กฺฤตฺสฺน-วินฺ น วิจาลเยตฺ<br /></span>
+<span class="slant thai">กฤตสนะ-วิน นะ วิจาละเยต<br /></span>
+<span class="slant ram">คริทสนะ-วิน นะ วิชาละเยทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรกฺฤเตฮ</i> — ของธรรมชาติวัตถุ, <i>คุณ</i> — โดยสามระดับ, <i>สมฺมูฒาฮ</i> — โง่เพราะสำนึกตนกับ วัตถุ, <i>สชฺชเนฺต</i> — พวกเขามาปฎิบัติ, <i>คุณ-กรฺมสุ</i> — ในกิจกรรมทางวัตถุ, <i>ตานฺ</i> — ของพวก เขา, <i>อกฺฤตฺสฺน-วิทฮ</i> — บุคคลผู้ด้อยความรู้, <i>มนฺทานฺ</i> — เกียจคร้านที่จะเข้าใจการรู้แจ้ง แห่งตน, <i>กฺฤตฺสฺน-วิตฺ</i> — ผู้มีความรู้ที่ถูกต้อง, <i>น</i> — ไม่, <i>วิจาลเยตฺ</i> — ควรพยายามรบกวน
+  <span class="slant iast">prakṛteḥ</span><span class="slant pali">ปฺรกฺฤเตห์</span><span class="slant thai">ปรักฤเตห์</span><span class="slant ram">พระคริเทฮ</span> — ของธรรมชาติวัตถุ, <span class="slant iast">guṇa</span><span class="slant pali">คุณ</span><span class="slant thai">คุณะ</span><span class="slant ram">กุณะ</span> — โดยสามระดับ, <span class="slant iast">sammūḍhāḥ</span><span class="slant pali">สมฺมูฒาห์</span><span class="slant thai">สัมมูฒาห์</span><span class="slant ram">สัมมูดฺาฮ</span> — โง่เพราะสำนึกตนกับ วัตถุ, <span class="slant iast">sajjante</span><span class="slant pali">สชฺชนฺเต</span><span class="slant thai">สัชชันเต</span><span class="slant ram">สัจจันเท</span> — พวกเขามาปฎิบัติ, <span class="slant iast">guṇa-karmasu</span><span class="slant pali">คุณ-กรฺมสุ</span><span class="slant thai">คุณะ-กัรมะสุ</span><span class="slant ram">กุณะ-คารมะสุ</span> — ในกิจกรรมทางวัตถุ, <span class="slant iast">tān</span><span class="slant pali">ตานฺ</span><span class="slant thai">ตาน</span><span class="slant ram">ทาน</span> — ของพวก เขา, <span class="slant iast">akṛtsna-vidaḥ</span><span class="slant pali">อกฺฤตฺสฺน-วิทห์</span><span class="slant thai">อักฤตสนะ-วิทะห์</span><span class="slant ram">อคริทสนะ-วิดะฮ</span> — บุคคลผู้ด้อยความรู้, <span class="slant iast">mandān</span><span class="slant pali">มนฺทานฺ</span><span class="slant thai">มันทาน</span><span class="slant ram">มันดาน</span> — เกียจคร้านที่จะเข้าใจการรู้แจ้ง แห่งตน, <span class="slant iast">kṛtsna-vit</span><span class="slant pali">กฺฤตฺสฺน-วิตฺ</span><span class="slant thai">กฤตสนะ-วิต</span><span class="slant ram">คริทสนะ-วิท</span> — ผู้มีความรู้ที่ถูกต้อง, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">vicālayet</span><span class="slant pali">วิจาลเยตฺ</span><span class="slant thai">วิจาละเยต</span><span class="slant ram">วิชาละเยท</span> — ควรพยายามรบกวน
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ไม่มีความรู้สำนึกตนเองอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับจิตสำนึกวัตถุหยาบ&nbsp;&nbsp;ๆ&nbsp;&nbsp;และเต็มไป<wbr>ด้วยชื่อระบุทางวัตถุต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ร่างกายนี้เป็นของขวัญจากธรรมชาติวัตถุ&nbsp;&nbsp;ผู้ที่ยึดติดมากกับ<wbr>จิตสำนึกทางร่างกายเรียกว่า&nbsp;&nbsp;<i>มนฺท</i>&nbsp;&nbsp;หรือผู้เกียจคร้านที่ไม่เข้าใจดวงวิญญาณ&nbsp;&nbsp;ผู้ที่อยู่<wbr>ภายใต้อวิชชาคิดว่าตนเองคือร่างกาย&nbsp;&nbsp;ยอมรับความสัมพันธ์ทางร่างกายกับผู้อื่นว่าเป็น<wbr>วงศาคณาญาติ&nbsp;&nbsp;แผ่นดินที่ร่างกายนี้ได้รับมาเป็นสถานที่สักการะบูชา&nbsp;&nbsp;และพิจารณาว่า<wbr>ระเบียบการของพิธีกรรมทางศาสนาคือจุดมุ่งหมายสูงสุดในตัวมันเอง&nbsp;&nbsp;งานสังคม&nbsp;&nbsp;ลัทธิ<wbr>ความรักชาติ&nbsp;&nbsp;และลัทธิการเห็นประโยชน์ผู้อื่น&nbsp;&nbsp;เหล่านี้คือกิจกรรมบางประการของบุคคล<wbr>ผู้อยู่ภายใต้ชื่อระบุทางวัตถุ&nbsp;&nbsp;ภายใต้มนต์สะกดแห่งชื่อระบุนี้ทำให้พวกเขามีภารกิจยุ่ง<wbr>ยากอยู่ในสนามวัตถุเสมอ&nbsp;&nbsp;สำหรับบุคคลเหล่านี้&nbsp;&nbsp;ความรู้แจ้งดวงวิญญาณเป็นสิ่งเร้นลับดังนั้น&nbsp;&nbsp;พวกเขาจะไม่สนใจ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ผู้ที่ได้รับแสงสว่างในชีวิตทิพย์ไม่ควรพยายาม<wbr>รบกวนบุคคลผู้หมกมุ่นอยู่ในวัตถุเช่นนี้&nbsp;&nbsp;ทางที่ดีเราควรปฎิบัติกิจกรรมทิพย์ของเรา<wbr>อย่างเงียบสงบ&nbsp;&nbsp;ผู้สับสนเช่นนี้อาจปฎิบัติตนตามหลักศีลธรรมพื้นฐานของชีวิต&nbsp;&nbsp;เช่นไม่<wbr>เบียดเบียนกันและร่วมงานการกุศลทางวัตถุ
+  ผู้ไม่มีความรู้สำนึกตนเองอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับจิตสำนึกวัตถุหยาบ&nbsp;&nbsp;ๆ&nbsp;&nbsp;และเต็มไป<wbr>ด้วยชื่อระบุทางวัตถุต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ร่างกายนี้เป็นของขวัญจากธรรมชาติวัตถุ&nbsp;&nbsp;ผู้ที่ยึดติดมากกับ<wbr>จิตสำนึกทางร่างกายเรียกว่า&nbsp;&nbsp;<span class="slant iast">manda</span><span class="slant pali">มนฺท</span><span class="slant thai">มันทะ</span><span class="slant ram">มันดะ</span>&nbsp;&nbsp;หรือผู้เกียจคร้านที่ไม่เข้าใจดวงวิญญาณ&nbsp;&nbsp;ผู้ที่อยู่<wbr>ภายใต้อวิชชาคิดว่าตนเองคือร่างกาย&nbsp;&nbsp;ยอมรับความสัมพันธ์ทางร่างกายกับผู้อื่นว่าเป็น<wbr>วงศาคณาญาติ&nbsp;&nbsp;แผ่นดินที่ร่างกายนี้ได้รับมาเป็นสถานที่สักการะบูชา&nbsp;&nbsp;และพิจารณาว่า<wbr>ระเบียบการของพิธีกรรมทางศาสนาคือจุดมุ่งหมายสูงสุดในตัวมันเอง&nbsp;&nbsp;งานสังคม&nbsp;&nbsp;ลัทธิ<wbr>ความรักชาติ&nbsp;&nbsp;และลัทธิการเห็นประโยชน์ผู้อื่น&nbsp;&nbsp;เหล่านี้คือกิจกรรมบางประการของบุคคล<wbr>ผู้อยู่ภายใต้ชื่อระบุทางวัตถุ&nbsp;&nbsp;ภายใต้มนต์สะกดแห่งชื่อระบุนี้ทำให้พวกเขามีภารกิจยุ่ง<wbr>ยากอยู่ในสนามวัตถุเสมอ&nbsp;&nbsp;สำหรับบุคคลเหล่านี้&nbsp;&nbsp;ความรู้แจ้งดวงวิญญาณเป็นสิ่งเร้นลับดังนั้น&nbsp;&nbsp;พวกเขาจะไม่สนใจ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ผู้ที่ได้รับแสงสว่างในชีวิตทิพย์ไม่ควรพยายาม<wbr>รบกวนบุคคลผู้หมกมุ่นอยู่ในวัตถุเช่นนี้&nbsp;&nbsp;ทางที่ดีเราควรปฎิบัติกิจกรรมทิพย์ของเรา<wbr>อย่างเงียบสงบ&nbsp;&nbsp;ผู้สับสนเช่นนี้อาจปฎิบัติตนตามหลักศีลธรรมพื้นฐานของชีวิต&nbsp;&nbsp;เช่นไม่<wbr>เบียดเบียนกันและร่วมงานการกุศลทางวัตถุ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้อยู่ในอวิชชาไม่สามารถรู้ถึงคุณค่าแห่งกิจกรรมใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ฉะนั้น<wbr>องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแนะนำไม่ให้ไปรบกวนพวกเขาและเสียเวลาอันมีค่าไปโดยเปล่า<wbr>ประโยชน์&nbsp;&nbsp;แต่สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มีความเมตตามากกว่าพระองค์&nbsp;&nbsp;เพราะเข้าใจจุดมุ่ง<wbr>หมายขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงยอมเสี่ยงอันตรายนานัปการ&nbsp;&nbsp;แม้กระทั่งต้องเข้า<wbr>พบผู้อยู่ภายใต้อวิชชาเพื่อแนะนำให้ปฎิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งเป็นสิ่งจำเป็นอย่างยิ่ง<wbr>สำหรับชีวิตมนุษย์
+  ผู้อยู่ในอวิชชาไม่สามารถรู้ถึงคุณค่าแห่งกิจกรรมใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ฉะนั้น<wbr>องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแนะนำไม่ให้ไปรบกวนพวกเขาและเสียเวลาอันมีค่าไปโดยเปล่า<wbr>ประโยชน์&nbsp;&nbsp;แต่สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มีความเมตตามากกว่าพระองค์&nbsp;&nbsp;เพราะเข้าใจจุดมุ่ง<wbr>หมายขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงยอมเสี่ยงอันตรายนานัปการ&nbsp;&nbsp;แม้กระทั่งต้องเข้า<wbr>พบผู้อยู่ภายใต้อวิชชาเพื่อแนะนำให้ปฎิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งเป็นสิ่งจำเป็นอย่างยิ่ง<wbr>สำหรับชีวิตมนุษย์
   </p>
 </div>
 

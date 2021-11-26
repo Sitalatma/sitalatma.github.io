@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 1.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -32,7 +118,7 @@
 </div>
 <div class="r r-lang-en r-chapter-title r-title">
   <h2 class="section-title">
-    สำรวจกองทัพที่สมรภูมิ <i>กุรุเกฺษตฺร</i> 
+    สำรวจกองทัพที่สมรภูมิ <i>กุรุกฺเษตฺร</i> 
   <h2>
 </div>
 <div class="bb r-verse">
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตตฮ เศฺวไตรฺ หไยรฺ ยุเกฺต</i><br /><i>มหติ สฺยนฺทเน สฺตฺหิตะอุ</i><br /><i>มาธวฮ ปาณฺฑวศฺ ไจว</i><br /><i>ทิวฺยะอุ ศงฺขะอุ ปฺรทธฺมตุฮ</i>
+<span class="slant iast">tataḥ śvetair hayair yukte<br /></span>
+<span class="slant pali">ตตห์ เศฺวไตรฺ หไยรฺ ยุกฺเต<br /></span>
+<span class="slant thai">ตะตะห์ ศเวไตร หะไยร ยุกเต<br /></span>
+<span class="slant ram">ทะทะฮ ชเวไทร ฮะไยร ยุคเท<br /></span>
+<span class="slant iast">mahati syandane sthitau<br /></span>
+<span class="slant pali">มหติ สฺยนฺทเน สฺถิเตา<br /></span>
+<span class="slant thai">มะหะติ สยันทะเน สถิเตา<br /></span>
+<span class="slant ram">มะฮะทิ สยันดะเน สทิฺโทฺ<br /></span>
+<span class="slant iast">mādhavaḥ pāṇḍavaś caiva<br /></span>
+<span class="slant pali">มาธวห์ ปาณฺฑวศฺ ไจว<br /></span>
+<span class="slant thai">มาธะวะห์ ปาณฑะวัศ ไจวะ<br /></span>
+<span class="slant ram">มาดฺะวะฮ พาณดะวัช ไชวะ<br /></span>
+<span class="slant iast">divyau śaṅkhau pradadhmatuḥ<br /></span>
+<span class="slant pali">ทิเวฺยา ศงฺเขา ปฺรทธฺมตุห์<br /></span>
+<span class="slant thai">ทิวเยา ศังเขา ประทัธมะตุห์<br /></span>
+<span class="slant ram">ดิพโย ชังโคฺ พระดัดฺฮมะทุฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตตฮ</i> — หลังจากนั้น, <i>เศฺวไตฮ</i> — สีขาว, <i>หไยฮ</i> — ม้า, <i>ยุเกฺต</i> — เข้าคู่กัน, <i>มหติ</i> — ในความยิ่ง ใหญ่, <i>สฺยนฺทเน</i> — ราชรถ, <i>สฺตฺหิตะอุ</i> — สถิต, <i>มาธวฮ</i> — <i>กฺฤษฺณ</i> (สวามีของเทพธิดาแห่งโชค ลาภ), <i>ปาณฺฑวฮ</i> — <i>อรฺชุน</i> (โอรสของพาณดุ), <i>จ</i> — ด้วยเหมือนกัน, <i>เอว</i> — แน่นอน, <i>ทิวฺยะอุ</i> — ทิพย์, <i>ศงฺขะอุ</i> — หอยสังข์, <i>ปฺรทธฺมตุฮ</i> — ส่งเสียง
+  <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — หลังจากนั้น, <span class="slant iast">śvetaiḥ</span><span class="slant pali">เศฺวไตห์</span><span class="slant thai">ศเวไตห์</span><span class="slant ram">ชเวไทฮ</span> — สีขาว, <span class="slant iast">hayaiḥ</span><span class="slant pali">หไยห์</span><span class="slant thai">หะไยห์</span><span class="slant ram">ฮะไยฮ</span> — ม้า, <span class="slant iast">yukte</span><span class="slant pali">ยุกฺเต</span><span class="slant thai">ยุกเต</span><span class="slant ram">ยุคเท</span> — เข้าคู่กัน, <span class="slant iast">mahati</span><span class="slant pali">มหติ</span><span class="slant thai">มะหะติ</span><span class="slant ram">มะฮะทิ</span> — ในความยิ่ง ใหญ่, <span class="slant iast">syandane</span><span class="slant pali">สฺยนฺทเน</span><span class="slant thai">สยันทะเน</span><span class="slant ram">สยันดะเน</span> — ราชรถ, <span class="slant iast">sthitau</span><span class="slant pali">สฺถิเตา</span><span class="slant thai">สถิเตา</span><span class="slant ram">สทิฺโท</span> — สถิต, <span class="slant iast">mādhavaḥ</span><span class="slant pali">มาธวห์</span><span class="slant thai">มาธะวะห์</span><span class="slant ram">มาดฺะวะฮ</span> — <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> (สวามีของเทพธิดาแห่งโชค ลาภ), <span class="slant iast">pāṇḍavaḥ</span><span class="slant pali">ปาณฺฑวห์</span><span class="slant thai">ปาณฑะวะห์</span><span class="slant ram">พาณดะวะฮ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> (โอรสของพาณดุ), <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — ด้วยเหมือนกัน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">divyau</span><span class="slant pali">ทิเวฺยา</span><span class="slant thai">ทิวเยา</span><span class="slant ram">ดิพโย</span> — ทิพย์, <span class="slant iast">śaṅkhau</span><span class="slant pali">ศงฺเขา</span><span class="slant thai">ศังเขา</span><span class="slant ram">ชังโคฺ</span> — หอยสังข์, <span class="slant iast">pradadhmatuḥ</span><span class="slant pali">ปฺรทธฺมตุห์</span><span class="slant thai">ประทัธมะตุห์</span><span class="slant ram">พระดัดฺมะทุฮ</span> — ส่งเสียง
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  อีกฝ่ายหนึ่ง&nbsp;&nbsp;ทั้งองค์ชรี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงประทับอยู่บนราชรถอันยิ่งใหญ่ที่ลากด้วยม้าขาว&nbsp;&nbsp;ทั้งคู่ทรงเริ่มเป่าสังข์ทิพย์
+  อีกฝ่ายหนึ่ง&nbsp;&nbsp;ทั้งองค์ชรี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงประทับอยู่บนราชรถอันยิ่งใหญ่ที่ลากด้วยม้าขาว&nbsp;&nbsp;ทั้งคู่ทรงเริ่มเป่าสังข์ทิพย์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  แตกต่างไปจากสังข์ที่เป่าโดย&nbsp;&nbsp;<i>ภีษฺมเทว</i>&nbsp;&nbsp;หอยสังข์ในพระหัตถ์ของ&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เป็นทิพย์&nbsp;&nbsp;เสียงของสังข์ทิพย์แสดงให้เห็นว่าฝ่ายตรงข้ามไม่มีหวังที่<wbr>จะได้รับชัยชนะ&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงอยู่ฝ่ายของ&nbsp;&nbsp;<i>ปาณฺฑว</i>&nbsp;&nbsp;<i>ชยสฺ&nbsp;&nbsp;ตุ&nbsp;&nbsp;ปาณฺฑุ-ปุตฺราณาํ&nbsp;&nbsp;เยษาํ&nbsp;&nbsp;ปเกฺษ&nbsp;&nbsp;ชนารฺทนฮ</i>&nbsp;&nbsp;ชัยชนะจะเป็นของผู้ที่เหมือนโอรสของ&nbsp;&nbsp;<i>ปาณฺฑุ</i>&nbsp;&nbsp;เสมอเพราะ&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงอยู่ด้วยกันกับพวกเขา&nbsp;&nbsp;เมื่อใดและสถานที่ใดที่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงปรากฏเทพธิดาแห่งโชคลาภทรงประทับอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นั้นด้วยเช่นกัน&nbsp;&nbsp;เพราะว่าเทพธิดาแห่งโชคลาภทรงไม่ประทับอยู่องค์เดียวโดยปราศจากพระสวามี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชัยชนะและโชคลาภกำลังรอ<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;อยู่&nbsp;&nbsp;ดังที่ได้แสดงออกมาในเสียงทิพย์จากหอยสังข์ของพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;นอกจากนั้นราชรถที่สหายทั้งสองทรงประทับอยู่&nbsp;&nbsp;<i>อคฺนิ</i>&nbsp;&nbsp;เทพ&nbsp;&nbsp;(เจ้าแห่งไฟ)&nbsp;&nbsp;ทรงเป็นผู้ถวาย<wbr>ให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;แสดงให้เห็นว่าราชรถนี้สามารถนำชัยชนะมาให้ได้จากทั่วทุกสารทิศไม่ว่าจะ<wbr>ถูกขับไป&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่แห่งใดภายในสามโลก
+  แตกต่างไปจากสังข์ที่เป่าโดย&nbsp;&nbsp;<span class="slant iast">bhīṣmadeva</span><span class="slant pali">ภีษฺมเทว</span><span class="slant thai">ภีษมะเทวะ</span><span class="slant ram">บีฺชมะเดวะ</span>&nbsp;&nbsp;หอยสังข์ในพระหัตถ์ของ&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เป็นทิพย์&nbsp;&nbsp;เสียงของสังข์ทิพย์แสดงให้เห็นว่าฝ่ายตรงข้ามไม่มีหวังที่<wbr>จะได้รับชัยชนะ&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงอยู่ฝ่ายของ&nbsp;&nbsp;<span class="slant iast">pāṇḍava</span><span class="slant pali">ปาณฺฑว</span><span class="slant thai">ปาณฑะวะ</span><span class="slant ram">พาณดะวะ</span>&nbsp;&nbsp;<span class="slant iast">jayas&nbsp;&nbsp;tu&nbsp;&nbsp;pāṇḍu-putrāṇāṁ&nbsp;&nbsp;yeṣāṁ&nbsp;&nbsp;pakṣe&nbsp;&nbsp;janārdanaḥ</span><span class="slant pali">ชยสฺตุปาณฺฑุ-ปุตฺราณำเยษำปกฺเษชนารฺทนห์</span><span class="slant thai">ชะยัสตุปาณฑุ-ปุตราณางเยษางปักเษชะนารทะนะห์</span><span class="slant ram">zzzทุพณดุ,พาณดุ,พาณ ดุ-zzzzzzzzz</span>&nbsp;&nbsp;ชัยชนะจะเป็นของผู้ที่เหมือนโอรสของ&nbsp;&nbsp;<span class="slant iast">pāṇḍu</span><span class="slant pali">ปาณฺฑุ</span><span class="slant thai">ปาณฑุ</span><span class="slant ram">พณดุ,พาณดุ,พาณ ดุ</span>&nbsp;&nbsp;เสมอเพราะ&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงอยู่ด้วยกันกับพวกเขา&nbsp;&nbsp;เมื่อใดและสถานที่ใดที่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงปรากฏเทพธิดาแห่งโชคลาภทรงประทับอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นั้นด้วยเช่นกัน&nbsp;&nbsp;เพราะว่าเทพธิดาแห่งโชคลาภทรงไม่ประทับอยู่องค์เดียวโดยปราศจากพระสวามี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชัยชนะและโชคลาภกำลังรอ<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;อยู่&nbsp;&nbsp;ดังที่ได้แสดงออกมาในเสียงทิพย์จากหอยสังข์ของพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;นอกจากนั้นราชรถที่สหายทั้งสองทรงประทับอยู่&nbsp;&nbsp;<span class="slant iast">agni</span><span class="slant pali">อคฺนิ</span><span class="slant thai">อัคนิ</span><span class="slant ram">อักนิ</span>&nbsp;&nbsp;เทพ&nbsp;&nbsp;(เจ้าแห่งไฟ)&nbsp;&nbsp;ทรงเป็นผู้ถวาย<wbr>ให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;แสดงให้เห็นว่าราชรถนี้สามารถนำชัยชนะมาให้ได้จากทั่วทุกสารทิศไม่ว่าจะ<wbr>ถูกขับไป&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่แห่งใดภายในสามโลก
   </p>
 </div>
 

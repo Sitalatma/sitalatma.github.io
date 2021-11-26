@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.10</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อุตฺกฺรามนฺตํ สฺตฺหิตํ วาปิ</i><br /><i>ภุญฺชานํ วา คุณานฺวิตมฺ</i><br /><i>วิมูฒา นานุปศฺยนฺติ</i><br /><i>ปศฺยนฺติ ชฺญาน-จกฺษุษฮ</i>
+<span class="slant iast">utkrāmantaṁ sthitaṁ vāpi<br /></span>
+<span class="slant pali">อุตฺกฺรามนฺตํ สฺถิตํ วาปิ<br /></span>
+<span class="slant thai">อุตกรามันตัง สถิตัง วาปิ<br /></span>
+<span class="slant ram">อุทครามันทัม สทิฺทัม วาพิ<br /></span>
+<span class="slant iast">bhuñjānaṁ vā guṇānvitam<br /></span>
+<span class="slant pali">ภุญฺชานํ วา คุณานฺวิตมฺ<br /></span>
+<span class="slant thai">ภุญชานัง วา คุณานวิตัม<br /></span>
+<span class="slant ram">บํุนจานัม วา กุณานวิทัม<br /></span>
+<span class="slant iast">vimūḍhā nānupaśyanti<br /></span>
+<span class="slant pali">วิมูฒา นานุปศฺยนฺติ<br /></span>
+<span class="slant thai">วิมูฒา นานุปัศยันติ<br /></span>
+<span class="slant ram">วิมูดฺา นานุพัชยันทิ<br /></span>
+<span class="slant iast">paśyanti jñāna-cakṣuṣaḥ<br /></span>
+<span class="slant pali">ปศฺยนฺติ ชฺญาน-จกฺษุษห์<br /></span>
+<span class="slant thai">ปัศยันติ ชญานะ-จักษุษะห์<br /></span>
+<span class="slant ram">พัชยันทิ กยานะ-ชัคชุชะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อุตฺกฺรามนฺตมฺ</i> — ออกจากร่างกาย, <i>สฺตฺหิตมฺ</i> — สถิตในร่างกาย, <i>วา อปิ</i> — ทั้งสอง, <i>ภุญฺชานมฺ</i> — รื่นเริง, <i>วา</i> — หรือ, <i>คุณ-อนฺวิตมฺ</i> — ภายใต้มนต์สะกดของสามระดับแห่งธรรมชาติวัตถุ, <i>วิมูฒาฮ</i> — คนโง่, <i>น</i> — ไม่เคย, <i>อนุปศฺยนฺติ</i> — สามารถเห็น, <i>ปศฺยนฺติ</i> — สามารถเห็น, <i>ชฺญาน-จกฺษุษฮ</i> — พวกที่มีจักษุแห่งความรู้
+  <span class="slant iast">utkrāmantam</span><span class="slant pali">อุตฺกฺรามนฺตมฺ</span><span class="slant thai">อุตกรามันตัม</span><span class="slant ram">อุทครามันทัม</span> — ออกจากร่างกาย, <span class="slant iast">sthitam</span><span class="slant pali">สฺถิตมฺ</span><span class="slant thai">สถิตัม</span><span class="slant ram">สทิฺทัม</span> — สถิตในร่างกาย, <span class="slant iast">vā api</span><span class="slant pali">วาอปิ</span><span class="slant thai">วาอะปิ</span><span class="slant ram">วา อพิ</span> — ทั้งสอง, <span class="slant iast">bhuñjānam</span><span class="slant pali">ภุญฺชานมฺ</span><span class="slant thai">ภุญชานัม</span><span class="slant ram">บํุนจานัม</span> — รื่นเริง, <span class="slant iast">vā</span><span class="slant pali">วา</span><span class="slant thai">วา</span><span class="slant ram">วา</span> — หรือ, <span class="slant iast">guṇa-anvitam</span><span class="slant pali">คุณ-อนฺวิตมฺ</span><span class="slant thai">คุณะ-อันวิตัม</span><span class="slant ram">กุณะ-อันวิทัม</span> — ภายใต้มนต์สะกดของสามระดับแห่งธรรมชาติวัตถุ, <span class="slant iast">vimūḍhāḥ</span><span class="slant pali">วิมูฒาห์</span><span class="slant thai">วิมูฒาห์</span><span class="slant ram">วิมูดฺาฮ</span> — คนโง่, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">anupaśyanti</span><span class="slant pali">อนุปศฺยนฺติ</span><span class="slant thai">อะนุปัศยันติ</span><span class="slant ram">อนุพัชยันทิ</span> — สามารถเห็น, <span class="slant iast">paśyanti</span><span class="slant pali">ปศฺยนฺติ</span><span class="slant thai">ปัศยันติ</span><span class="slant ram">พัชยันทิ</span> — สามารถเห็น, <span class="slant iast">jñāna-cakṣuṣaḥ</span><span class="slant pali">ชฺญาน-จกฺษุษห์</span><span class="slant thai">ชญานะ-จักษุษะห์</span><span class="slant ram">กยานะ- ชัคชุชะฮ</span> — พวกที่มีจักษุแห่งความรู้
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ชฺญาน-จกฺษุษฮ</i>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;ปราศจากความรู้จะไม่สามารถเข้าใจ<wbr>ว่า&nbsp;&nbsp;สิ่งมีชีวิตออกจากร่างปัจจุบันได้อย่างไร&nbsp;&nbsp;ร่างกายชนิดไหนที่เขาจะได้รับในชาติหน้าและทำไมจึงมาอยู่ในร่างนี้โดยเฉพาะ&nbsp;&nbsp;สิ่งเหล่านี้จำเป็นต้องมีความรู้มากพอสมควร<wbr>ที่เข้าใจมาจาก&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;และวรรณกรรมคล้ายกันนี้&nbsp;&nbsp;รวมทั้งสดับฟังมาจากพระ<wbr>อาจารย์ทิพย์ผู้ที่เชื่อถือ&nbsp;&nbsp;ผู้ใดที่ได้รับการฝึกฝนให้สำเหนียกสิ่งทั้งหลายเหล่านี้เป็นผู้โชค<wbr>ดี&nbsp;&nbsp;ทุกๆ&nbsp;&nbsp;ชีวิตออกจากร่างของตนภายใต้สถานการณ์เฉพาะ&nbsp;&nbsp;ซึ่งอยู่ภายใต้มนต์สะกดของ<wbr>ธรรมชาติวัตถุ&nbsp;&nbsp;ผลก็คือเราได้รับความทรมานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากความสุขและความทุกข์&nbsp;&nbsp;ภาย<wbr>ใต้ความหลงแห่งการรื่นรมณ์ในประสาทสัมผัส&nbsp;&nbsp;คนที่โง่อยู่กับราคะและความต้องการ<wbr>อยู่ตลอดเวลา&nbsp;&nbsp;ได้สูญเสียพลังอำนาจในการเข้าใจทั้งหมดเกี่ยวกับเรื่องการเปลี่ยนร่าง<wbr>และการที่ตนเองมาอยู่ในร่างเฉพาะนี้&nbsp;&nbsp;บุคคลเหล่านี้ไม่สามารถทำความเข้าใจ&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;พวกที่ได้พัฒนาความรู้ทิพย์จะสามารถเห็นว่าดวงวิญญาณนั้นแตกต่างจากร่างกายดวงวิญญาณเปลี่ยนร่างและรื่นเริงในวิถีทางต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผู้มีความรู้เช่นนี้สามารถเข้าใจว่า<wbr>ชีวิตที่ถูกพันธนาการได้รับความทุกข์ทรมานในความเป็นอยู่ทางวัตถุนี้ได้อย่างไร&nbsp;&nbsp;ดังนั้นบุคคลผู้ที่พัฒนาใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างจริงจังพยายามอย่างดีที่สุดเพื่อแจกจ่ายความ<wbr>รู้นี้แก่ผู้คนโดยทั่วไป&nbsp;&nbsp;เนื่องจากพันธชีวิตมีปัญหามาก&nbsp;&nbsp;เราจึงควรออกไปจากมันและมี<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกซึ่งจะทำให้ตนเองได้รับอิสรภาพและย้ายไปอยู่โลกทิพย์
+  คำว่า&nbsp;&nbsp;<span class="slant iast">jñāna-cakṣuṣaḥ</span><span class="slant pali">ชฺญาน-จกฺษุษห์</span><span class="slant thai">ชญานะ-จักษุษะห์</span><span class="slant ram">กยานะ- ชัคชุชะฮ</span>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;ปราศจากความรู้จะไม่สามารถเข้าใจ<wbr>ว่า&nbsp;&nbsp;สิ่งมีชีวิตออกจากร่างปัจจุบันได้อย่างไร&nbsp;&nbsp;ร่างกายชนิดไหนที่เขาจะได้รับในชาติหน้าและทำไมจึงมาอยู่ในร่างนี้โดยเฉพาะ&nbsp;&nbsp;สิ่งเหล่านี้จำเป็นต้องมีความรู้มากพอสมควร<wbr>ที่เข้าใจมาจาก&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;และวรรณกรรมคล้ายกันนี้&nbsp;&nbsp;รวมทั้งสดับฟังมาจากพระ<wbr>อาจารย์ทิพย์ผู้ที่เชื่อถือ&nbsp;&nbsp;ผู้ใดที่ได้รับการฝึกฝนให้สำเหนียกสิ่งทั้งหลายเหล่านี้เป็นผู้โชค<wbr>ดี&nbsp;&nbsp;ทุกๆ&nbsp;&nbsp;ชีวิตออกจากร่างของตนภายใต้สถานการณ์เฉพาะ&nbsp;&nbsp;ซึ่งอยู่ภายใต้มนต์สะกดของ<wbr>ธรรมชาติวัตถุ&nbsp;&nbsp;ผลก็คือเราได้รับความทรมานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากความสุขและความทุกข์&nbsp;&nbsp;ภาย<wbr>ใต้ความหลงแห่งการรื่นรมณ์ในประสาทสัมผัส&nbsp;&nbsp;คนที่โง่อยู่กับราคะและความต้องการ<wbr>อยู่ตลอดเวลา&nbsp;&nbsp;ได้สูญเสียพลังอำนาจในการเข้าใจทั้งหมดเกี่ยวกับเรื่องการเปลี่ยนร่าง<wbr>และการที่ตนเองมาอยู่ในร่างเฉพาะนี้&nbsp;&nbsp;บุคคลเหล่านี้ไม่สามารถทำความเข้าใจ&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;พวกที่ได้พัฒนาความรู้ทิพย์จะสามารถเห็นว่าดวงวิญญาณนั้นแตกต่างจากร่างกายดวงวิญญาณเปลี่ยนร่างและรื่นเริงในวิถีทางต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผู้มีความรู้เช่นนี้สามารถเข้าใจว่า<wbr>ชีวิตที่ถูกพันธนาการได้รับความทุกข์ทรมานในความเป็นอยู่ทางวัตถุนี้ได้อย่างไร&nbsp;&nbsp;ดังนั้นบุคคลผู้ที่พัฒนาใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างจริงจังพยายามอย่างดีที่สุดเพื่อแจกจ่ายความ<wbr>รู้นี้แก่ผู้คนโดยทั่วไป&nbsp;&nbsp;เนื่องจากพันธชีวิตมีปัญหามาก&nbsp;&nbsp;เราจึงควรออกไปจากมันและมี<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกซึ่งจะทำให้ตนเองได้รับอิสรภาพและย้ายไปอยู่โลกทิพย์
   </p>
 </div>
 

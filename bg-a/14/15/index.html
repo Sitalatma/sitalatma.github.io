@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 14.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>รชสิ ปฺรลยํ คตฺวา</i><br /><i>กรฺม-สงฺคิษุ ชายเต</i><br /><i>ตตฺหา ปฺรลีนสฺ ตมสิ</i><br /><i>มูฒ-โยนิษุ ชายเต</i>
+<span class="slant iast">rajasi pralayaṁ gatvā<br /></span>
+<span class="slant pali">รชสิ ปฺรลยํ คตฺวา<br /></span>
+<span class="slant thai">ระชะสิ ประละยัง คัตวา<br /></span>
+<span class="slant ram">ระจะสิ พระละยัม กัทวา<br /></span>
+<span class="slant iast">karma-saṅgiṣu jāyate<br /></span>
+<span class="slant pali">กรฺม-สงฺคิษุ ชายเต<br /></span>
+<span class="slant thai">กัรมะ-สังคิษุ ชายะเต<br /></span>
+<span class="slant ram">คารมะ-สังกิชุ จายะเท<br /></span>
+<span class="slant iast">tathā pralīnas tamasi<br /></span>
+<span class="slant pali">ตถา ปฺรลีนสฺ ตมสิ<br /></span>
+<span class="slant thai">ตะถา ประลีนัส ตะมะสิ<br /></span>
+<span class="slant ram">ทะทฺา พระลีนัส ทะมะสิ<br /></span>
+<span class="slant iast">mūḍha-yoniṣu jāyate<br /></span>
+<span class="slant pali">มูฒ-โยนิษุ ชายเต<br /></span>
+<span class="slant thai">มูฒะ-โยนิษุ ชายะเต<br /></span>
+<span class="slant ram">มูดฺะ-โยนิชุ จายะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>รชสิ</i> — ในตัณหา, <i>ปฺรลยมฺ</i> — สิ้นสุด, <i>คตฺวา</i> — บรรลุ, <i>กรฺม-สงฺคิษุ</i> — ในการคบหา สมาคมกับพวกที่ปฏิบัติกิจกรรมเพื่อผลทางวัตถุ, <i>ชายเต</i> — เกิด, <i>ตตฺหา</i> — ในทำนองเดียว กัน, <i>ปฺรลีนฮ</i> — สิ้นสุด, <i>ตมสิ</i> — ในอวิชชา, <i>มูฒ-โยนิษุ</i> — ในเผ่าพันธุ์สัตว์, <i>ชายเต</i> — เกิด
+  <span class="slant iast">rajasi</span><span class="slant pali">รชสิ</span><span class="slant thai">ระชะสิ</span><span class="slant ram">ระจะสิ</span> — ในตัณหา, <span class="slant iast">pralayam</span><span class="slant pali">ปฺรลยมฺ</span><span class="slant thai">ประละยัม</span><span class="slant ram">พระละยัม</span> — สิ้นสุด, <span class="slant iast">gatvā</span><span class="slant pali">คตฺวา</span><span class="slant thai">คัตวา</span><span class="slant ram">กัทวา</span> — บรรลุ, <span class="slant iast">karma-saṅgiṣu</span><span class="slant pali">กรฺม-สงฺคิษุ</span><span class="slant thai">กัรมะ-สังคิษุ</span><span class="slant ram">คารมะ-สังกิชุ</span> — ในการคบหา สมาคมกับพวกที่ปฏิบัติกิจกรรมเพื่อผลทางวัตถุ, <span class="slant iast">jāyate</span><span class="slant pali">ชายเต</span><span class="slant thai">ชายะเต</span><span class="slant ram">จายะเท</span> — เกิด, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — ในทำนองเดียว กัน, <span class="slant iast">pralīnaḥ</span><span class="slant pali">ปฺรลีนห์</span><span class="slant thai">ประลีนะห์</span><span class="slant ram">พระลีนะฮ</span> — สิ้นสุด, <span class="slant iast">tamasi</span><span class="slant pali">ตมสิ</span><span class="slant thai">ตะมะสิ</span><span class="slant ram">ทะมะสิ</span> — ในอวิชชา, <span class="slant iast">mūḍha-yoniṣu</span><span class="slant pali">มูฒ-โยนิษุ</span><span class="slant thai">มูฒะ-โยนิษุ</span><span class="slant ram">มูดฺะ-โยนิชุ</span> — ในเผ่าพันธุ์สัตว์, <span class="slant iast">jāyate</span><span class="slant pali">ชายเต</span><span class="slant thai">ชายะเต</span><span class="slant ram">จายะเท</span> — เกิด
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  บางคนมีความรู้สึกว่าเมื่อดวงวิญญาณมาถึงระดับชีวิตมนุษย์แล้วจะไม่<wbr>ตกลงต่ำอีก&nbsp;&nbsp;เช่นนี้ไม่ถูกต้อง&nbsp;&nbsp;ตามโศลกนี้&nbsp;&nbsp;หากผู้ใดพัฒนาระดับอวิชชา&nbsp;&nbsp;หลังจากตาย<wbr>ไปจะตกต่ำลงไปใช้ชีวิตในร่างสัตว์เดรัจฉาน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นั้น&nbsp;&nbsp;เขาต้องพัฒนาตนเองด้วยวิธี<wbr>วิวัฒนาการเพื่อให้ได้ร่างชีวิตมนุษย์อีกครั้งหนึ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกที่จริงจังกับชีวิตมนุษย์อย่าง<wbr>แท้จริงควรอยู่ในระดับความดี&nbsp;&nbsp;จากการคบหากัลยาณมิตรจะทำให้ตนเองข้ามพ้นระดับ<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;และมาสถิตใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;นี่คือจุดมุ่งหมายของชีวิตมนุษย์&nbsp;&nbsp;มิฉะนั้น<wbr>ไม่รับประกันว่ามนุษย์จะได้รับร่างมนุษย์อีกครั้งหนึ่งหรือไม่
+  บางคนมีความรู้สึกว่าเมื่อดวงวิญญาณมาถึงระดับชีวิตมนุษย์แล้วจะไม่<wbr>ตกลงต่ำอีก&nbsp;&nbsp;เช่นนี้ไม่ถูกต้อง&nbsp;&nbsp;ตามโศลกนี้&nbsp;&nbsp;หากผู้ใดพัฒนาระดับอวิชชา&nbsp;&nbsp;หลังจากตาย<wbr>ไปจะตกต่ำลงไปใช้ชีวิตในร่างสัตว์เดรัจฉาน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นั้น&nbsp;&nbsp;เขาต้องพัฒนาตนเองด้วยวิธี<wbr>วิวัฒนาการเพื่อให้ได้ร่างชีวิตมนุษย์อีกครั้งหนึ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกที่จริงจังกับชีวิตมนุษย์อย่าง<wbr>แท้จริงควรอยู่ในระดับความดี&nbsp;&nbsp;จากการคบหากัลยาณมิตรจะทำให้ตนเองข้ามพ้นระดับ<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;และมาสถิตใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;นี่คือจุดมุ่งหมายของชีวิตมนุษย์&nbsp;&nbsp;มิฉะนั้น<wbr>ไม่รับประกันว่ามนุษย์จะได้รับร่างมนุษย์อีกครั้งหนึ่งหรือไม่
   </p>
 </div>
 

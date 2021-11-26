@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.44</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กฺฤษิ-โค-รกฺษฺย-วาณิชฺยํ</i><br /><i>ไวศฺย-กรฺม สฺวภาว-ชมฺ</i><br /><i>ปริจรฺยาตฺมกํ กรฺม</i><br /><i>ศูทฺรสฺยาปิ สฺวภาว-ชมฺ</i>
+<span class="slant iast">kṛṣi-go-rakṣya-vāṇijyaṁ<br /></span>
+<span class="slant pali">กฺฤษิ-โค-รกฺษฺย-วาณิชฺยํ<br /></span>
+<span class="slant thai">กฤษิ-โค-รักษยะ-วาณิชยัง<br /></span>
+<span class="slant ram">คริชิ-โก-รัคชยะ-วาณิจยัม<br /></span>
+<span class="slant iast">vaiśya-karma svabhāva-jam<br /></span>
+<span class="slant pali">ไวศฺย-กรฺม สฺวภาว-ชมฺ<br /></span>
+<span class="slant thai">ไวศยะ-กัรมะ สวะภาวะ-ชัม<br /></span>
+<span class="slant ram">ไวชยะ-คารมะ-สวะบฺาวะ-จัม<br /></span>
+<span class="slant iast">paricaryātmakaṁ karma<br /></span>
+<span class="slant pali">ปริจรฺยาตฺมกํ กรฺม<br /></span>
+<span class="slant thai">ปะริจัรยาตมะกัง กัรมะ<br /></span>
+<span class="slant ram">พะริชารยาทมะคัม คารมะ<br /></span>
+<span class="slant iast">śūdrasyāpi svabhāva-jam<br /></span>
+<span class="slant pali">ศูทฺรสฺยาปิ สฺวภาว-ชมฺ<br /></span>
+<span class="slant thai">ศูทรัสยาปิ สวะภาวะ-ชัม<br /></span>
+<span class="slant ram">ชูดรัสยาพิ สวะบฺาวะ-จัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กฺฤษิ</i> — ไถนา, <i>โค</i> — ของโค, <i>รกฺษฺย</i> — ปกป้อง, <i>วาณิชฺยมฺ</i> — ค้าขาย, <i>ไวศฺย</i> — ของ <i>ไวศฺย</i>, <i>กรฺม</i> — หน้าที่, <i>สฺวภาว-ชมฺ</i> — เกิดจากธรรมชาติของตัวเขา, <i>ปริจรฺยา</i> — รับใช้ บริการ, <i>อาตฺมกมฺ</i> — ประกอบด้วย, <i>กรฺม</i> — หน้าที่, <i>ศูทฺรสฺย</i> — ของ <i>ศูทฺร</i>, <i>อปิ</i> — เช่นกัน, <i>สฺวภาว-ชมฺ</i> — เกิดจากธรรมชาติของตัวเขา
+  <span class="slant iast">kṛṣi</span><span class="slant pali">กฺฤษิ</span><span class="slant thai">กฤษิ</span><span class="slant ram">คริชิ</span> — ไถนา, <span class="slant iast">go</span><span class="slant pali">โค</span><span class="slant thai">โค</span><span class="slant ram">โก</span> — ของโค, <span class="slant iast">rakṣya</span><span class="slant pali">รกฺษฺย</span><span class="slant thai">รักษยะ</span><span class="slant ram">รัคชยะ</span> — ปกป้อง, <span class="slant iast">vāṇijyam</span><span class="slant pali">วาณิชฺยมฺ</span><span class="slant thai">วาณิชยัม</span><span class="slant ram">วาณิจยัม</span> — ค้าขาย, <span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span> — ของ <span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span>, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — หน้าที่, <span class="slant iast">svabhāva-jam</span><span class="slant pali">สฺวภาว-ชมฺ</span><span class="slant thai">สวะภาวะ-ชัม</span><span class="slant ram">สวะบฺาวะ-จัม</span> — เกิดจากธรรมชาติของตัวเขา, <span class="slant iast">paricaryā</span><span class="slant pali">ปริจรฺยา</span><span class="slant thai">ปะริจัรยา</span><span class="slant ram">พะริชารยา</span> — รับใช้ บริการ, <span class="slant iast">ātmakam</span><span class="slant pali">อาตฺมกมฺ</span><span class="slant thai">อาตมะกัม</span><span class="slant ram">อาทมะคัม</span> — ประกอบด้วย, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — หน้าที่, <span class="slant iast">śūdrasya</span><span class="slant pali">ศูทฺรสฺย</span><span class="slant thai">ศูทรัสยะ</span><span class="slant ram">ชูดรัสยะ</span> — ของ <span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">svabhāva-jam</span><span class="slant pali">สฺวภาว-ชมฺ</span><span class="slant thai">สวะภาวะ-ชัม</span><span class="slant ram">สวะบฺาวะ-จัม</span> — เกิดจากธรรมชาติของตัวเขา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  การทำฟาร์ม&nbsp;&nbsp;ปกป้องโค&nbsp;&nbsp;และธุรกิจ&nbsp;&nbsp;เป็นธรรมชาติการทำงานของ&nbsp;&nbsp;<i>ไวศฺย</i>&nbsp;&nbsp;สำหรับ&nbsp;&nbsp;<i>ศูทฺร</i>&nbsp;&nbsp;จะใช้แรงงานและบริการรับใช้ผู้อื่น
+  การทำฟาร์ม&nbsp;&nbsp;ปกป้องโค&nbsp;&nbsp;และธุรกิจ&nbsp;&nbsp;เป็นธรรมชาติการทำงานของ&nbsp;&nbsp;<span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span>&nbsp;&nbsp;สำหรับ&nbsp;&nbsp;<span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>&nbsp;&nbsp;จะใช้แรงงานและบริการรับใช้ผู้อื่น
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 17.16</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มนฮ-ปฺรสาทฮ สะอุมฺยตฺวํ</i><br /><i>มะอุนมฺ อาตฺม-วินิคฺรหฮ</i><br /><i>ภาว-สํศุทฺธิรฺ อิตฺยฺ เอตตฺ</i><br /><i>ตโป มานสมฺ อุจฺยเต</i>
+<span class="slant iast">manaḥ-prasādaḥ saumyatvaṁ<br /></span>
+<span class="slant pali">มนห์-ปฺรสาทห์ เสามฺยตฺวํ<br /></span>
+<span class="slant thai">มะนะห์-ประสาทะห์ เสามยัตวัง<br /></span>
+<span class="slant ram">มะนะฮ-พระสาดะฮ สะอุมยัทวัม<br /></span>
+<span class="slant iast">maunam ātma-vinigrahaḥ<br /></span>
+<span class="slant pali">เมานมฺ อาตฺม-วินิคฺรหห์<br /></span>
+<span class="slant thai">เมานัม อาตมะ-วินิคระหะห์<br /></span>
+<span class="slant ram">โมนัม อาทมะ-วินิกระฮะฮ<br /></span>
+<span class="slant iast">bhāva-saṁśuddhir ity etat<br /></span>
+<span class="slant pali">ภาว-สํศุทฺธิรฺ อิตฺยฺ เอตตฺ<br /></span>
+<span class="slant thai">ภาวะ-สังศุทธิร อิตย เอตัต<br /></span>
+<span class="slant ram">บฺาวะ-สัมชุดดิฺร อิทิ เอทัท<br /></span>
+<span class="slant iast">tapo mānasam ucyate<br /></span>
+<span class="slant pali">ตโป มานสมฺ อุจฺยเต<br /></span>
+<span class="slant thai">ตะโป มานะสัม อุจยะเต<br /></span>
+<span class="slant ram">ทะโพ มานะสัม อุชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>มนฮ-ปฺรสาทฮ</i> — ความพึงพอใจของจิต, <i>สะอุมฺยตฺวมฺ</i> — ไม่ตีสองหน้ากับผู้อื่น, <i>มะอุนมฺ</i> — ความจริงจัง, <i>อาตฺม</i> — ของตัวเขา, <i>วินิคฺรหฮ</i> — ควบคุม, <i>ภาว</i> — ธรรมชาติของตน, <i>สํศุทฺธิฮ</i> — ความบริสุทธิ์, <i>อิติ</i> — ดังนั้น, <i>เอตตฺ</i> — นี้, <i>ตปฮ</i> — ความสมถะ, <i>มานสมฺ</i> — ของจิต, <i>อุจฺยเต</i> — กล่าวว่าเป็น
+  <span class="slant iast">manaḥ-prasādaḥ</span><span class="slant pali">มนห์-ปฺรสาทห์</span><span class="slant thai">มะนะห์-ประสาทะห์</span><span class="slant ram">มะนะฮ-พระสาดะฮ</span> — ความพึงพอใจของจิต, <span class="slant iast">saumyatvam</span><span class="slant pali">เสามฺยตฺวมฺ</span><span class="slant thai">เสามยัตวัม</span><span class="slant ram">สะอุมยัทวัม</span> — ไม่ตีสองหน้ากับผู้อื่น, <span class="slant iast">maunam</span><span class="slant pali">เมานมฺ</span><span class="slant thai">เมานัม</span><span class="slant ram">โมนัม</span> — ความจริงจัง, <span class="slant iast">ātma</span><span class="slant pali">อาตฺม</span><span class="slant thai">อาตมะ</span><span class="slant ram">อาทมะ</span> — ของตัวเขา, <span class="slant iast">vinigrahaḥ</span><span class="slant pali">วินิคฺรหห์</span><span class="slant thai">วินิคระหะห์</span><span class="slant ram">วินิกระฮะฮ</span> — ควบคุม, <span class="slant iast">bhāva</span><span class="slant pali">ภาว</span><span class="slant thai">ภาวะ</span><span class="slant ram">บฺาวะ</span> — ธรรมชาติของตน, <span class="slant iast">saṁśuddhiḥ</span><span class="slant pali">สํศุทฺธิห์</span><span class="slant thai">สังศุทธิห์</span><span class="slant ram">สัม- ชุดดิฺฮ</span> — ความบริสุทธิ์, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">tapaḥ</span><span class="slant pali">ตปห์</span><span class="slant thai">ตะปะห์</span><span class="slant ram">ทะพะฮ</span> — ความสมถะ, <span class="slant iast">mānasam</span><span class="slant pali">มานสมฺ</span><span class="slant thai">มานะสัม</span><span class="slant ram">มานะสัม</span> — ของจิต, <span class="slant iast">ucyate</span><span class="slant pali">อุจฺยเต</span><span class="slant thai">อุจยะเต</span><span class="slant ram">อุชยะเท</span> — กล่าวว่าเป็น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การทำให้จิตใจมีความสมถะ&nbsp;&nbsp;คือ&nbsp;&nbsp;ไม่ให้จิตใจไปยึดติดกับการสนองประสาท<wbr>สัมผัส&nbsp;&nbsp;จิตใจควรได้รับการฝึกฝนจนสามารถคิดถึงการทำดีต่อผู้อื่นอยู่เสมอ&nbsp;&nbsp;วิธีการ<wbr>ฝึกฝนจิตใจที่ดีที่สุดคือ&nbsp;&nbsp;มีความจริงจังในความคิด&nbsp;&nbsp;ไม่ควรเบี่ยงเบนจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและต้องหลีกเลี่ยงการสนองประสาทสัมผัสอยู่เสมอ&nbsp;&nbsp;การทำให้ธรรมชาติของตนเอง<wbr>บริสุทธิ์คือมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ความพึงพอใจของจิตบรรลุได้ด้วยเพียงแต่นำจิตใจออก<wbr>ห่างจากความคิดเพื่อรื่นรมย์ทางประสาทสัมผัส&nbsp;&nbsp;หากเราคิดถึงแต่ความรื่นรมย์ทาง<wbr>ประสาทสัมผัสมากเท่าไร&nbsp;&nbsp;จิตใจก็จะไม่มีความพึงพอใจมากเท่านั้น&nbsp;&nbsp;ในยุคปัจจุบัน&nbsp;&nbsp;เราใช้<wbr>จิตใจไปในหลาย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางเพื่อสนองประสาทสัมผัสโดยไม่จำเป็น&nbsp;&nbsp;จึงเป็นไปไม่ได้ที่จิตใจจะ<wbr>มีความพึงพอใจ&nbsp;&nbsp;วิธีที่ดีที่สุดคือหันเหจิตใจมาที่คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ซึ่งเต็มไปด้วยเรื่องราวที่น่า<wbr>พึงพอใจ&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ปุราณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>มหาภารต</i>&nbsp;&nbsp;เราจะได้รับประโยชน์จากความรู้นี้และกลายมา<wbr>เป็นผู้บริสุทธิ์&nbsp;&nbsp;จิตใจควรหลีกเลี่ยงการตีสองหน้า&nbsp;&nbsp;และควรคิดถึงประโยชน์สุขของสรรพ<wbr>สัตว์&nbsp;&nbsp;ความนิ่งเงียบหมายความว่าเราคิดถึงความรู้แจ้งแห่งตนเสมอ&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกถือปฏิบัติความนิ่งเงียบอย่างสมบูรณ์ด้วยเหตุผลนี้&nbsp;&nbsp;การควบคุมจิตใจหมายถึง<wbr>ไม่ให้จิตใจยึดติดอยู่กับความรื่นเริงทางประสาทสัมผัส&nbsp;&nbsp;เราควรเป็นคนตรงไปตรงมาใน<wbr>การสัมพันธ์กับผู้อื่น&nbsp;&nbsp;และทำให้ชีวิตความเป็นอยู่บริสุทธิ์&nbsp;&nbsp;คุณสมบัติทั้งหลายเหล่านี้รวม<wbr>กันเป็นองค์ประกอบแห่งความสมถะทางจิตใจ
+  การทำให้จิตใจมีความสมถะ&nbsp;&nbsp;คือ&nbsp;&nbsp;ไม่ให้จิตใจไปยึดติดกับการสนองประสาท<wbr>สัมผัส&nbsp;&nbsp;จิตใจควรได้รับการฝึกฝนจนสามารถคิดถึงการทำดีต่อผู้อื่นอยู่เสมอ&nbsp;&nbsp;วิธีการ<wbr>ฝึกฝนจิตใจที่ดีที่สุดคือ&nbsp;&nbsp;มีความจริงจังในความคิด&nbsp;&nbsp;ไม่ควรเบี่ยงเบนจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและต้องหลีกเลี่ยงการสนองประสาทสัมผัสอยู่เสมอ&nbsp;&nbsp;การทำให้ธรรมชาติของตนเอง<wbr>บริสุทธิ์คือมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ความพึงพอใจของจิตบรรลุได้ด้วยเพียงแต่นำจิตใจออก<wbr>ห่างจากความคิดเพื่อรื่นรมย์ทางประสาทสัมผัส&nbsp;&nbsp;หากเราคิดถึงแต่ความรื่นรมย์ทาง<wbr>ประสาทสัมผัสมากเท่าไร&nbsp;&nbsp;จิตใจก็จะไม่มีความพึงพอใจมากเท่านั้น&nbsp;&nbsp;ในยุคปัจจุบัน&nbsp;&nbsp;เราใช้<wbr>จิตใจไปในหลาย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางเพื่อสนองประสาทสัมผัสโดยไม่จำเป็น&nbsp;&nbsp;จึงเป็นไปไม่ได้ที่จิตใจจะ<wbr>มีความพึงพอใจ&nbsp;&nbsp;วิธีที่ดีที่สุดคือหันเหจิตใจมาที่คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ซึ่งเต็มไปด้วยเรื่องราวที่น่า<wbr>พึงพอใจ&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">purāṇa</span><span class="slant pali">ปุราณ</span><span class="slant thai">ปุราณะ</span><span class="slant ram">พุราณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">mahābhārata</span><span class="slant pali">มหาภารต</span><span class="slant thai">มะหาภาระตะ</span><span class="slant ram">มหาภารตะ</span>&nbsp;&nbsp;เราจะได้รับประโยชน์จากความรู้นี้และกลายมา<wbr>เป็นผู้บริสุทธิ์&nbsp;&nbsp;จิตใจควรหลีกเลี่ยงการตีสองหน้า&nbsp;&nbsp;และควรคิดถึงประโยชน์สุขของสรรพ<wbr>สัตว์&nbsp;&nbsp;ความนิ่งเงียบหมายความว่าเราคิดถึงความรู้แจ้งแห่งตนเสมอ&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกถือปฏิบัติความนิ่งเงียบอย่างสมบูรณ์ด้วยเหตุผลนี้&nbsp;&nbsp;การควบคุมจิตใจหมายถึง<wbr>ไม่ให้จิตใจยึดติดอยู่กับความรื่นเริงทางประสาทสัมผัส&nbsp;&nbsp;เราควรเป็นคนตรงไปตรงมาใน<wbr>การสัมพันธ์กับผู้อื่น&nbsp;&nbsp;และทำให้ชีวิตความเป็นอยู่บริสุทธิ์&nbsp;&nbsp;คุณสมบัติทั้งหลายเหล่านี้รวม<wbr>กันเป็นองค์ประกอบแห่งความสมถะทางจิตใจ
   </p>
 </div>
 

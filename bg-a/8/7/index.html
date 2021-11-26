@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.7</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตสฺมาตฺ สเรฺวษุ กาเลษุ</i><br /><i>มามฺ อนุสฺมร ยุธฺย จ</i><br /><i>มยฺยฺ อรฺปิต-มโน-พุทฺธิรฺ</i><br /><i>มามฺ เอไวษฺยสฺยฺ อสํศยฮ</i>
+<span class="slant iast">tasmāt sarveṣu kāleṣu<br /></span>
+<span class="slant pali">ตสฺมาตฺ สเรฺวษุ กาเลษุ<br /></span>
+<span class="slant thai">ตัสมาต สัรเวษุ กาเลษุ<br /></span>
+<span class="slant ram">ทัสมาท สารเวชุ คาเลชุ<br /></span>
+<span class="slant iast">mām anusmara yudhya ca<br /></span>
+<span class="slant pali">มามฺ อนุสฺมร ยุธฺย จ<br /></span>
+<span class="slant thai">มาม อะนุสมะระ ยุธยะ จะ<br /></span>
+<span class="slant ram">มาม อนุสมะระ ยุดฺยะ ชะ<br /></span>
+<span class="slant iast">mayy arpita-mano-buddhir<br /></span>
+<span class="slant pali">มยฺยฺ อรฺปิต-มโน-พุทฺธิรฺ<br /></span>
+<span class="slant thai">มัยย อัรปิตะ-มะโน-พุทธิร<br /></span>
+<span class="slant ram">มะยิ อารพิทะ-มะโน-บุดดิฺร<br /></span>
+<span class="slant iast">mām evaiṣyasy asaṁśayaḥ<br /></span>
+<span class="slant pali">มามฺ เอไวษฺยสฺยฺ อสํศยห์<br /></span>
+<span class="slant thai">มาม เอไวษยัสย อะสังศะยะห์<br /></span>
+<span class="slant ram">มาม เอไวชยะสิ อสัมชะยะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตสฺมาตฺ</i> — ดังนั้น, <i>สเรฺวษุ</i> — ตลอด, <i>กาเลษุ</i> — เวลา, <i>มามฺ</i> — ข้า, <i>อนุสฺมร</i> — ระลึกถึงเรื่อย ๆ, <i>ยุธฺย</i> — ต่อสู้, <i>จ</i> — เช่นกัน, <i>มยิ</i> — แด่ข้า, <i>อรฺปิต</i> — ศิโรราบ, <i>มนฮ</i> — จิตใจ, <i>พุทฺธิฮ</i> — ปัญญา, <i>มามฺ</i> — แด่ข้า, <i>เอว</i> — แน่นอน, <i>เอษฺยสิ</i> — เธอจะได้รับ, <i>อสํศยฮ</i> — เหนือความ สงสัย
+  <span class="slant iast">tasmāt</span><span class="slant pali">ตสฺมาตฺ</span><span class="slant thai">ตัสมาต</span><span class="slant ram">ทัสมาท</span> — ดังนั้น, <span class="slant iast">sarveṣu</span><span class="slant pali">สเรฺวษุ</span><span class="slant thai">สัรเวษุ</span><span class="slant ram">สารเวชุ</span> — ตลอด, <span class="slant iast">kāleṣu</span><span class="slant pali">กาเลษุ</span><span class="slant thai">กาเลษุ</span><span class="slant ram">คาเลชุ</span> — เวลา, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">anusmara</span><span class="slant pali">อนุสฺมร</span><span class="slant thai">อะนุสมะระ</span><span class="slant ram">อนุสมะระ</span> — ระลึกถึงเรื่อย ๆ, <span class="slant iast">yudhya</span><span class="slant pali">ยุธฺย</span><span class="slant thai">ยุธยะ</span><span class="slant ram">ยุดฺยะ</span> — ต่อสู้, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">mayi</span><span class="slant pali">มยิ</span><span class="slant thai">มะยิ</span><span class="slant ram">มะยิ</span> — แด่ข้า, <span class="slant iast">arpita</span><span class="slant pali">อรฺปิต</span><span class="slant thai">อัรปิตะ</span><span class="slant ram">อารพิทะ</span> — ศิโรราบ, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — จิตใจ, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">eṣyasi</span><span class="slant pali">เอษฺยสิ</span><span class="slant thai">เอษยะสิ</span><span class="slant ram">เอชยะสิ</span> — เธอจะได้รับ, <span class="slant iast">asaṁśayaḥ</span><span class="slant pali">อสํศยห์</span><span class="slant thai">อะสังศะยะห์</span><span class="slant ram">อสัมชะ ยะฮ</span> — เหนือความ สงสัย
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ฉะนั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เธอควรระลึกถึงข้าในรูปลักษณ์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อยู่เสมอ&nbsp;&nbsp;และในขณะเดียวกันก็ปฏิบัติหน้าที่ในการต่อสู้ที่ได้กำหนดไว้&nbsp;&nbsp;โดยอุทิศกิจกรรมต่าง&nbsp;&nbsp;ๆของเธอแด่ข้า&nbsp;&nbsp;จิตใจและปัญญาตั้งมั่นอยู่ที่ข้า&nbsp;&nbsp;เธอจะบรรลุถึงข้าโดยไม่ต้องสงสัย
+  ฉะนั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เธอควรระลึกถึงข้าในรูปลักษณ์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อยู่เสมอ&nbsp;&nbsp;และในขณะเดียวกันก็ปฏิบัติหน้าที่ในการต่อสู้ที่ได้กำหนดไว้&nbsp;&nbsp;โดยอุทิศกิจกรรมต่าง&nbsp;&nbsp;ๆของเธอแด่ข้า&nbsp;&nbsp;จิตใจและปัญญาตั้งมั่นอยู่ที่ข้า&nbsp;&nbsp;เธอจะบรรลุถึงข้าโดยไม่ต้องสงสัย
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำสั่งสอนที่ให้แก่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;นี้มีความสำคัญมากสำหรับมวลมนุษย์ที่ปฏิบัติอยู่ใน<wbr>กิจกรรมทางวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มิได้ตรัสว่าควรยกเลิกหน้าที่หรือการปฏิบัติที่กำหนดไว้<wbr>สำหรับเรา&nbsp;&nbsp;เรายังคงปฏิบัติหน้าที่ต่อไป&nbsp;&nbsp;แต่ในขณะเดียวกันระลึกถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยการสวด<wbr>ภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้จะทำให้เราเป็นอิสระจากมลทินทางวัตถุและทำให้จิตใจและ<wbr>ปัญญาของเราอยู่กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จากการสวดภาวนาพระนามต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราจะถูก<wbr>ย้ายไปยังดาวเคราะห์สูงสุด&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;โดยไม่ต้องสงสัย
+  คำสั่งสอนที่ให้แก่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;นี้มีความสำคัญมากสำหรับมวลมนุษย์ที่ปฏิบัติอยู่ใน<wbr>กิจกรรมทางวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มิได้ตรัสว่าควรยกเลิกหน้าที่หรือการปฏิบัติที่กำหนดไว้<wbr>สำหรับเรา&nbsp;&nbsp;เรายังคงปฏิบัติหน้าที่ต่อไป&nbsp;&nbsp;แต่ในขณะเดียวกันระลึกถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยการสวด<wbr>ภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้จะทำให้เราเป็นอิสระจากมลทินทางวัตถุและทำให้จิตใจและ<wbr>ปัญญาของเราอยู่กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จากการสวดภาวนาพระนามต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราจะถูก<wbr>ย้ายไปยังดาวเคราะห์สูงสุด&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;โดยไม่ต้องสงสัย
   </p>
 </div>
 

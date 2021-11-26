@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.1</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>สนฺนฺยาสํ กรฺมณาํ กฺฤษฺณ</i><br /><i>ปุนรฺ โยคํ จ ศํสสิ</i><br /><i>ยจฺ เฉฺรย เอตโยรฺ เอกํ</i><br /><i>ตนฺ เม พฺรูหิ สุ-นิศฺจิตมฺ</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">sannyāsaṁ karmaṇāṁ kṛṣṇa<br /></span>
+<span class="slant pali">สนฺนฺยาสํ กรฺมณำ กฺฤษฺณ<br /></span>
+<span class="slant thai">สันนยาสัง กัรมะณาง กฤษณะ<br /></span>
+<span class="slant ram">สันนยาสัม คารมะณาม คริชณะ<br /></span>
+<span class="slant iast">punar yogaṁ ca śaṁsasi<br /></span>
+<span class="slant pali">ปุนรฺ โยคํ จ ศํสสิ<br /></span>
+<span class="slant thai">ปุนัร โยคัง จะ ศังสะสิ<br /></span>
+<span class="slant ram">พุนาร โยกัม ชะ ชัมสะสิ<br /></span>
+<span class="slant iast">yac chreya etayor ekaṁ<br /></span>
+<span class="slant pali">ยจฺ เฉฺรย เอตโยรฺ เอกํ<br /></span>
+<span class="slant thai">ยัจ ฉเรยะ เอตะโยร เอกัง<br /></span>
+<span class="slant ram">ยัช ชฺเรยะ เอทะโย เอคัม<br /></span>
+<span class="slant iast">tan me brūhi su-niścitam<br /></span>
+<span class="slant pali">ตนฺ เม พฺรูหิ สุ-นิศฺจิตมฺ<br /></span>
+<span class="slant thai">ตัน เม พรูหิ สุ-นิศจิตัม<br /></span>
+<span class="slant ram">ทัน เม บรูฮิ สุ-นิชชิทัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัส, <i>สนฺนฺยาสมฺ</i> — สละ, <i>กรฺมณามฺ</i> — ของกิจกรรมทั้งหลาย, <i>กฺฤษฺณ</i> — โอ้ <i>กฺฤษฺณ</i>, <i>ปุนฮ</i> — อีกครั้ง, <i>โยคมฺ</i> — การอุทิศตนเสียสละรับใช้, <i>จ</i> — เช่นกัน, <i>ศํสสิ</i> — ท่านสรรเสริญ, <i>ยตฺ</i> — ซึ่ง, <i>เศฺรยฮ</i> — มีประโยชน์มากกว่า, <i>เอตโยฮ</i> — ทั้งสองสิ่ง นี้, <i>เอกมฺ</i> — หนึ่ง, <i>ตตฺ</i> — นั้น, <i>เม</i> — แก่ข้าพเจ้า, <i>พฺรูหิ</i> — กรุณาบอก, <i>สุ-นิศฺจิตมฺ</i> — อย่างชัดเจน
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัส, <span class="slant iast">sannyāsam</span><span class="slant pali">สนฺนฺยาสมฺ</span><span class="slant thai">สันนยาสัม</span><span class="slant ram">สันนยาสัม</span> — สละ, <span class="slant iast">karmaṇām</span><span class="slant pali">กรฺมณามฺ</span><span class="slant thai">กัรมะณาม</span><span class="slant ram">คารมะณาม</span> — ของกิจกรรมทั้งหลาย, <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> — โอ้ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">punaḥ</span><span class="slant pali">ปุนห์</span><span class="slant thai">ปุนะห์</span><span class="slant ram">พุนะฮ</span> — อีกครั้ง, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — การอุทิศตนเสียสละรับใช้, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">śaṁsasi</span><span class="slant pali">ศํสสิ</span><span class="slant thai">ศังสะสิ</span><span class="slant ram">ชัมสะสิ</span> — ท่านสรรเสริญ, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">śreyaḥ</span><span class="slant pali">เศฺรยห์</span><span class="slant thai">ศเรยะห์</span><span class="slant ram">ชะเรยะฮ</span> — มีประโยชน์มากกว่า, <span class="slant iast">etayoḥ</span><span class="slant pali">เอตโยห์</span><span class="slant thai">เอตะโยห์</span><span class="slant ram">เอทะโยฮ</span> — ทั้งสองสิ่ง นี้, <span class="slant iast">ekam</span><span class="slant pali">เอกมฺ</span><span class="slant thai">เอกัม</span><span class="slant ram">เอคัม</span> — หนึ่ง, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — แก่ข้าพเจ้า, <span class="slant iast">brūhi</span><span class="slant pali">พฺรูหิ</span><span class="slant thai">พรูหิ</span><span class="slant ram">บรูฮิ</span> — กรุณาบอก, <span class="slant iast">su-niścitam</span><span class="slant pali">สุ-นิศฺจิตมฺ</span><span class="slant thai">สุ-นิศจิตัม</span><span class="slant ram">สุ-นิชชิทัม</span> — อย่างชัดเจน
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เริ่มแรกพระองค์ทรงบอกให้ข้าพเจ้าสละงาน&nbsp;&nbsp;และแล้วทรงแนะนำให้ทำงานด้วยการอุทิศตนเสียสละ&nbsp;&nbsp;ขอให้พระองค์ทรงโปรดกรุณาตรัสอย่างชัดเจนว่า&nbsp;&nbsp;ทั้งสองสิ่งนี้สิ่งไหนจะมีประโยชน์มากกว่ากัน
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เริ่มแรกพระองค์ทรงบอกให้ข้าพเจ้าสละงาน&nbsp;&nbsp;และแล้วทรงแนะนำให้ทำงานด้วยการอุทิศตนเสียสละ&nbsp;&nbsp;ขอให้พระองค์ทรงโปรดกรุณาตรัสอย่างชัดเจนว่า&nbsp;&nbsp;ทั้งสองสิ่งนี้สิ่งไหนจะมีประโยชน์มากกว่ากัน
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในบทที่ห้าของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่างานในการอุทิศตนเสียสละรับใช้ดี<wbr>กว่าการคาดคะเนทางจิตใจอย่างลม&nbsp;&nbsp;ๆ&nbsp;&nbsp;แล้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้นั้นง่ายกว่า<wbr>เพราะว่าเป็นทิพย์โดยธรรมชาติ&nbsp;&nbsp;และทำให้เราเป็นอิสระจากวิบากกรรม&nbsp;&nbsp;ในบทที่สองได้อธิบายถึงความรู้พื้นฐานของดวงวิญญาณและการที่ดวงวิญญาณถูกพันธนาการใน<wbr>ร่างวัตถุ&nbsp;&nbsp;พร้อมทั้งอธิบายถึงความหลุดพ้นจากพันธนาการทางวัตถุนี้ด้วย&nbsp;&nbsp;<i>พุทฺธิ-โยค</i>&nbsp;&nbsp;หรือการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ในบทที่สาม&nbsp;&nbsp;ได้อธิบายถึงบุคคลผู้สถิตในระดับแห่งความ<wbr>รู้&nbsp;&nbsp;จะไม่มีหน้าที่ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ต้องปฏิบัติอีกต่อไป&nbsp;&nbsp;ในบทที่สี่&nbsp;&nbsp;พระองค์ตรัสแก่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ว่างานบูชา<wbr>ทั้งหมดมาจบลงที่ความรู้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ในตอนท้ายของบทที่สี่&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงแนะนำให้<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ตื่นขึ้น&nbsp;&nbsp;ต่อสู้&nbsp;&nbsp;และสถิตในความรู้อันสมบูรณ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จากการเน้นถึงความสำคัญ<wbr>พร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันทั้งงานแห่งการอุทิศตนเสียสละและการวางเฉยอยู่ในความรู้&nbsp;&nbsp;ได้สร้างความ<wbr>งุนงงและสับสนให้แก่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ในการตัดสินใจ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเข้าใจว่าการเสียสละในความ<wbr>รู้คือหยุดการงานทั้งหมดที่เป็นกิจกรรมทางประสาทสัมผัส&nbsp;&nbsp;แต่ถ้าหากว่าเราปฏิบัติงาน<wbr>ในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;แล้วงานจะหยุดลงได้อย่างไร&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;<i>อรฺชุน</i>ทรงคิดว่า&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;หรือการสละในความรู้&nbsp;&nbsp;ควรเป็นอิสระจากกิจกรรมทั้งมวล&nbsp;&nbsp;เพราะ<wbr>ว่าการทำงานและการเสียสละไปด้วยกันไม่ได้&nbsp;&nbsp;ปรากฏว่า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงไม่เข้าใจว่าการ<wbr>ทำงานที่เปี่ยมไปด้วยความรู้นั้นจะไม่มีวิบากกรรมจึงดูเหมือนว่าไม่ได้ทำอะไรเลย&nbsp;&nbsp;ดังนั้นจึงทรงถามว่าควรจะหยุดทำงานทั้งหมดหรือควรทำงานในแบบที่เปี่ยมไปด้วยความรู้
+  ในบทที่ห้าของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่างานในการอุทิศตนเสียสละรับใช้ดี<wbr>กว่าการคาดคะเนทางจิตใจอย่างลม&nbsp;&nbsp;ๆ&nbsp;&nbsp;แล้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้นั้นง่ายกว่า<wbr>เพราะว่าเป็นทิพย์โดยธรรมชาติ&nbsp;&nbsp;และทำให้เราเป็นอิสระจากวิบากกรรม&nbsp;&nbsp;ในบทที่สองได้อธิบายถึงความรู้พื้นฐานของดวงวิญญาณและการที่ดวงวิญญาณถูกพันธนาการใน<wbr>ร่างวัตถุ&nbsp;&nbsp;พร้อมทั้งอธิบายถึงความหลุดพ้นจากพันธนาการทางวัตถุนี้ด้วย&nbsp;&nbsp;<span class="slant iast">buddhi-yoga</span><span class="slant pali">พุทฺธิ-โยค</span><span class="slant thai">พุทธิ-โยคะ</span><span class="slant ram">บุดดิฺ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หรือการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ในบทที่สาม&nbsp;&nbsp;ได้อธิบายถึงบุคคลผู้สถิตในระดับแห่งความ<wbr>รู้&nbsp;&nbsp;จะไม่มีหน้าที่ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ต้องปฏิบัติอีกต่อไป&nbsp;&nbsp;ในบทที่สี่&nbsp;&nbsp;พระองค์ตรัสแก่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ว่างานบูชา<wbr>ทั้งหมดมาจบลงที่ความรู้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ในตอนท้ายของบทที่สี่&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงแนะนำให้<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตื่นขึ้น&nbsp;&nbsp;ต่อสู้&nbsp;&nbsp;และสถิตในความรู้อันสมบูรณ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จากการเน้นถึงความสำคัญ<wbr>พร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันทั้งงานแห่งการอุทิศตนเสียสละและการวางเฉยอยู่ในความรู้&nbsp;&nbsp;ได้สร้างความ<wbr>งุนงงและสับสนให้แก่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ในการตัดสินใจ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเข้าใจว่าการเสียสละในความ<wbr>รู้คือหยุดการงานทั้งหมดที่เป็นกิจกรรมทางประสาทสัมผัส&nbsp;&nbsp;แต่ถ้าหากว่าเราปฏิบัติงาน<wbr>ในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;แล้วงานจะหยุดลงได้อย่างไร&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>ทรงคิดว่า&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;หรือการสละในความรู้&nbsp;&nbsp;ควรเป็นอิสระจากกิจกรรมทั้งมวล&nbsp;&nbsp;เพราะ<wbr>ว่าการทำงานและการเสียสละไปด้วยกันไม่ได้&nbsp;&nbsp;ปรากฏว่า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงไม่เข้าใจว่าการ<wbr>ทำงานที่เปี่ยมไปด้วยความรู้นั้นจะไม่มีวิบากกรรมจึงดูเหมือนว่าไม่ได้ทำอะไรเลย&nbsp;&nbsp;ดังนั้นจึงทรงถามว่าควรจะหยุดทำงานทั้งหมดหรือควรทำงานในแบบที่เปี่ยมไปด้วยความรู้
   </p>
 </div>
 

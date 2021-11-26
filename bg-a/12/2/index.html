@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 12.2</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรี-ภควานฺ อุวาจ</i><br /><i>มยฺยฺ อาเวศฺย มโน เย มาํ</i><br /><i>นิตฺย-ยุกฺตา อุปาสเต</i><br /><i>ศฺรทฺธยา ปรโยเปตาสฺ</i><br /><i>เต เม ยุกฺต-ตมา มตาฮ</i>
+<span class="slant iast">śrī-bhagavān uvāca<br /></span>
+<span class="slant pali">ศฺรี-ภควานฺ อุวาจ<br /></span>
+<span class="slant thai">ศรี-ภะคะวาน อุวาจะ<br /></span>
+<span class="slant ram">ชรี-บฺะกะวาน อุวาชะ<br /></span>
+<span class="slant iast">mayy āveśya mano ye māṁ<br /></span>
+<span class="slant pali">มยฺยฺ อาเวศฺย มโน เย มำ<br /></span>
+<span class="slant thai">มัยย อาเวศยะ มะโน เย มาง<br /></span>
+<span class="slant ram">มะยิ อาเวชยะ มะโน เย มาม<br /></span>
+<span class="slant iast">nitya-yuktā upāsate<br /></span>
+<span class="slant pali">นิตฺย-ยุกฺตา อุปาสเต<br /></span>
+<span class="slant thai">นิตยะ-ยุกตา อุปาสะเต<br /></span>
+<span class="slant ram">นิทยะ-ยุคทา อุพาสะเท<br /></span>
+<span class="slant iast">śraddhayā parayopetās<br /></span>
+<span class="slant pali">ศฺรทฺธยา ปรโยเปตาสฺ<br /></span>
+<span class="slant thai">ศรัทธะยา ปะระโยเปตาส<br /></span>
+<span class="slant ram">ชรัดดฺะยา พะระโยเพทาส<br /></span>
+<span class="slant iast">te me yukta-tamā matāḥ<br /></span>
+<span class="slant pali">เต เม ยุกฺต-ตมา มตาห์<br /></span>
+<span class="slant thai">เต เม ยุกตะ-ตะมา มะตาห์<br /></span>
+<span class="slant ram">เท เม ยุคทะทะมา มะทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรี-ภควานฺ อุวาจ</i> — องค์ภควานตรัส, <i>มยิ</i> — แด่ข้า, <i>อาเวศฺย</i> — ตั้งมั่น, <i>มนฮ</i> — จิตใจ, <i>เย</i> — พวกที่, <i>มามฺ</i> — ข้า, <i>นิตฺย</i> — เสมอ, <i>ยุกฺตาฮ</i> — ปฏิบัติ, <i>อุปาสเต</i> — บูชา, <i>ศฺรทฺธยา</i> — ด้วย ศรัทธา, <i>ปรยา</i> — ทิพย์, <i>อุเปตาฮ</i> — ได้รับ, <i>เต</i> — พวกเขา, <i>เม</i> — จากข้า, <i>ยุกฺต-ตมาฮ</i> — สมบูรณ์ที่สุดใน <i>โยค</i>, <i>มตาฮ</i> — พิจารณา
+  <span class="slant iast">śrī-bhagavān uvāca</span><span class="slant pali">ศฺรี-ภควานฺอุวาจ</span><span class="slant thai">ศรี-ภะคะวานอุวาจะ</span><span class="slant ram">ชรี-บฺะกะวาน อุวาชะ</span> — องค์ภควานตรัส, <span class="slant iast">mayi</span><span class="slant pali">มยิ</span><span class="slant thai">มะยิ</span><span class="slant ram">มะยิ</span> — แด่ข้า, <span class="slant iast">āveśya</span><span class="slant pali">อาเวศฺย</span><span class="slant thai">อาเวศยะ</span><span class="slant ram">อาเวชยะ</span> — ตั้งมั่น, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — จิตใจ, <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — พวกที่, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">nitya</span><span class="slant pali">นิตฺย</span><span class="slant thai">นิตยะ</span><span class="slant ram">นิทยะ</span> — เสมอ, <span class="slant iast">yuktāḥ</span><span class="slant pali">ยุกฺตาห์</span><span class="slant thai">ยุกตาห์</span><span class="slant ram">ยุคทาฮ</span> — ปฏิบัติ, <span class="slant iast">upāsate</span><span class="slant pali">อุปาสเต</span><span class="slant thai">อุปาสะเต</span><span class="slant ram">อุพาสะเท</span> — บูชา, <span class="slant iast">śraddhayā</span><span class="slant pali">ศฺรทฺธยา</span><span class="slant thai">ศรัทธะยา</span><span class="slant ram">ชรัดดฺะยา</span> — ด้วย ศรัทธา, <span class="slant iast">parayā</span><span class="slant pali">ปรยา</span><span class="slant thai">ปะระยา</span><span class="slant ram">พะระยา</span> — ทิพย์, <span class="slant iast">upetāḥ</span><span class="slant pali">อุเปตาห์</span><span class="slant thai">อุเปตาห์</span><span class="slant ram">อุเพทาฮ</span> — ได้รับ, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — จากข้า, <span class="slant iast">yukta-tamāḥ</span><span class="slant pali">ยุกฺต-ตมาห์</span><span class="slant thai">ยุกตะ-ตะมาห์</span><span class="slant ram">ยุคทะ-ทะมาฮ</span> — สมบูรณ์ที่สุดใน <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>, <span class="slant iast">matāḥ</span><span class="slant pali">มตาห์</span><span class="slant thai">มะตาห์</span><span class="slant ram">มะทาฮ</span> — พิจารณา
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในการตอบคำถามของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสอย่างชัดเจนว่า&nbsp;&nbsp;ผู้ที่ตั้งสมาธิอยู่<wbr>ที่รูปลักษณ์ส่วนตัวของพระองค์&nbsp;&nbsp;บูชาพระองค์ด้วยความศรัทธา&nbsp;&nbsp;และอุทิศตนเสียสละพิจารณาว่าเป็นผู้สมบูรณ์สูงสุดใน&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;สำหรับผู้ที่อยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเช่นนี้จะไม่มี<wbr>กิจกรรมทางวัตถุ&nbsp;&nbsp;เพราะว่าทุกสิ่งทุกอย่างกระทำไปเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สาวกผู้บริสุทธิ์ปฏิบัติ<wbr>อยู่ตลอดเวลา&nbsp;&nbsp;บางครั้งสวดภาวนา&nbsp;&nbsp;บางครั้งสดับฟัง&nbsp;&nbsp;หรืออ่านหนังสือเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บางครั้งปรุง&nbsp;&nbsp;<i>ปฺรสาทมฺ</i>&nbsp;&nbsp;หรือไปตลาดเพื่อซื้อสิ่งของให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บางครั้งทำความสะอาด<wbr>วัดหรือล้างจาน&nbsp;&nbsp;เขาจะทำทุกสิ่งทุกอย่างเพื่อไม่ให้เวลาแม้แต่นาทีเดียวผ่านไปโดยไม่<wbr>อุทิศตนเสียสละกิจกรรมให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;การกระทำเช่นนี้พิจารณาว่าอยู่ในสมาธิที่สมบูรณ์
+  ในการตอบคำถามของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสอย่างชัดเจนว่า&nbsp;&nbsp;ผู้ที่ตั้งสมาธิอยู่<wbr>ที่รูปลักษณ์ส่วนตัวของพระองค์&nbsp;&nbsp;บูชาพระองค์ด้วยความศรัทธา&nbsp;&nbsp;และอุทิศตนเสียสละพิจารณาว่าเป็นผู้สมบูรณ์สูงสุดใน&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;สำหรับผู้ที่อยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเช่นนี้จะไม่มี<wbr>กิจกรรมทางวัตถุ&nbsp;&nbsp;เพราะว่าทุกสิ่งทุกอย่างกระทำไปเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สาวกผู้บริสุทธิ์ปฏิบัติ<wbr>อยู่ตลอดเวลา&nbsp;&nbsp;บางครั้งสวดภาวนา&nbsp;&nbsp;บางครั้งสดับฟัง&nbsp;&nbsp;หรืออ่านหนังสือเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บางครั้งปรุง&nbsp;&nbsp;<span class="slant iast">prasādam</span><span class="slant pali">ปฺรสาทมฺ</span><span class="slant thai">ประสาทัม</span><span class="slant ram">พระ- สาดัม,พระ- <wbr>สาดัม</span>&nbsp;&nbsp;หรือไปตลาดเพื่อซื้อสิ่งของให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บางครั้งทำความสะอาด<wbr>วัดหรือล้างจาน&nbsp;&nbsp;เขาจะทำทุกสิ่งทุกอย่างเพื่อไม่ให้เวลาแม้แต่นาทีเดียวผ่านไปโดยไม่<wbr>อุทิศตนเสียสละกิจกรรมให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;การกระทำเช่นนี้พิจารณาว่าอยู่ในสมาธิที่สมบูรณ์
   </p>
 </div>
 

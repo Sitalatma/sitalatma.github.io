@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เวเทษุ ยเชฺญษุ ตปฮสุ ไจว</i><br /><i>ทาเนษุ ยตฺ ปุณฺย-ผลํ ปฺรทิษฺฏมฺ</i><br /><i>อเตฺยติ ตตฺ สรฺวมฺ อิทํ วิทิตฺวา</i><br /><i>โยคี ปรํ สฺตฺหานมฺ อุไปติ จาทฺยมฺ</i>
+<span class="slant iast">vedeṣu yajñeṣu tapaḥsu caiva<br /></span>
+<span class="slant pali">เวเทษุ ยชฺเญษุ ตปห์สุ ไจว<br /></span>
+<span class="slant thai">เวเทษุ ยัชเญษุ ตะปะห์สุ ไจวะ<br /></span>
+<span class="slant ram">เวเดชุ ยะกเยชชุ ทะพะฮสุ ไชวะ<br /></span>
+<span class="slant iast">dāneṣu yat puṇya-phalaṁ pradiṣṭam<br /></span>
+<span class="slant pali">ทาเนษุ ยตฺ ปุณฺย-ผลํ ปฺรทิษฺฏมฺ<br /></span>
+<span class="slant thai">ทาเนษุ ยัต ปุณยะ-ผะลัง ประทิษฏัม<br /></span>
+<span class="slant ram">ดาเนชุ ยัท พุณยะ-พฺะลัม พระดิชทัม<br /></span>
+<span class="slant iast">atyeti tat sarvam idaṁ viditvā<br /></span>
+<span class="slant pali">อเตฺยติ ตตฺ สรฺวมฺ อิทํ วิทิตฺวา<br /></span>
+<span class="slant thai">อัตเยติ ตัต สัรวัม อิทัง วิทิตวา<br /></span>
+<span class="slant ram">อัทเยทิ ทัท สารวัม อิดัม วิดิทวา<br /></span>
+<span class="slant iast">yogī paraṁ sthānam upaiti cādyam<br /></span>
+<span class="slant pali">โยคี ปรํ สฺถานมฺ อุไปติ จาทฺยมฺ<br /></span>
+<span class="slant thai">โยคี ปะรัง สถานัม อุไปติ จาทยัม<br /></span>
+<span class="slant ram">โยกี พะรัม สทฺานัม อุไพทิ ชาดยัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เวเทษุ</i> — ในการศึกษาคัมภีร์พระ <i>เวท</i>, <i>ยเชฺญษุ</i> — ในการปฏิบัติ <i>ยชฺญ,</i>, การบูชา, <i>ตปฮสุ</i> — ใน การปฏิบัติสมถะวิธีต่าง ๆ, <i>จ</i>, <i>เอว</i> — แน่นอน, <i>ทาเนษุ</i> — ในการให้ทาน, <i>ยตฺ</i> — ซึ่ง, <i>ปุณฺย-ผลมฺ</i> — ผลบุญ, <i>ปฺรทิษฺฏมฺ</i> — แสดง, <i>อเตฺยติ</i> — ข้ามพ้น, <i>ตตฺ สรฺวมฺ</i> — เหล่านี้ทั้งหมด, <i>อิทมฺ</i> — นี้, <i>วิทิตฺวา</i> — รู้, <i>โยคี</i> — สาวก, <i>ปรมฺ</i> — สูงสุด, <i>สฺตฺหานมฺ</i> — พระตำหนัก, <i>อุไปติ</i> — บรรลุ, <i>จ</i> — เช่นกัน, <i>อาทฺยมฺ</i> — เดิม
+  <span class="slant iast">vedeṣu</span><span class="slant pali">เวเทษุ</span><span class="slant thai">เวเทษุ</span><span class="slant ram">เวเดชุ</span> — ในการศึกษาคัมภีร์พระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">yajñeṣu</span><span class="slant pali">ยชฺเญษุ</span><span class="slant thai">ยัชเญษุ</span><span class="slant ram">ยะกเยชุ</span> — ในการปฏิบัติ <span class="slant iast">yajña,</span><span class="slant pali">ยชฺญ,</span><span class="slant thai">ยัชญะ,</span><span class="slant ram">ยะกยะ</span>, การบูชา, <span class="slant iast">tapaḥsu</span><span class="slant pali">ตปห์สุ</span><span class="slant thai">ตะปะห์สุ</span><span class="slant ram">ทะพะฮสุ</span> — ใน การปฏิบัติสมถะวิธีต่าง ๆ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span>, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">dāneṣu</span><span class="slant pali">ทาเนษุ</span><span class="slant thai">ทาเนษุ</span><span class="slant ram">ดาเนชุ</span> — ในการให้ทาน, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">puṇya-phalam</span><span class="slant pali">ปุณฺย-ผลมฺ</span><span class="slant thai">ปุณยะ-ผะลัม</span><span class="slant ram">พุณยะ-พะลัม</span> — ผลบุญ, <span class="slant iast">pradiṣṭam</span><span class="slant pali">ปฺรทิษฺฏมฺ</span><span class="slant thai">ประทิษฏัม</span><span class="slant ram">พระดิชทัม</span> — แสดง, <span class="slant iast">atyeti</span><span class="slant pali">อเตฺยติ</span><span class="slant thai">อัตเยติ</span><span class="slant ram">อัทเยทิ</span> — ข้ามพ้น, <span class="slant iast">tat sarvam</span><span class="slant pali">ตตฺสรฺวมฺ</span><span class="slant thai">ตัตสัรวัม</span><span class="slant ram">ทัท สารวัม</span> — เหล่านี้ทั้งหมด, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — นี้, <span class="slant iast">viditvā</span><span class="slant pali">วิทิตฺวา</span><span class="slant thai">วิทิตวา</span><span class="slant ram">วิดิทวา</span> — รู้, <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span> — สาวก, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — สูงสุด, <span class="slant iast">sthānam</span><span class="slant pali">สฺถานมฺ</span><span class="slant thai">สถานัม</span><span class="slant ram">สทฺานัม</span> — พระตำหนัก, <span class="slant iast">upaiti</span><span class="slant pali">อุไปติ</span><span class="slant thai">อุไปติ</span><span class="slant ram">อุไพทิ</span> — บรรลุ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">ādyam</span><span class="slant pali">อาทฺยมฺ</span><span class="slant thai">อาทยัม</span><span class="slant ram">อาดยัม</span> — เดิม
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  บุคคลผู้รับเอาวิถีแห่งการอุทิศตนเสียสละรับใช้มาปฏิบัติ&nbsp;&nbsp;จะไม่สูญเสียผลที่ได้รับจากการศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ปฏิบัติพิธีบูชา&nbsp;&nbsp;ปฏิบัติความเพียร&nbsp;&nbsp;ให้ทานหรือแสวงหาปรัชญาความรู้&nbsp;&nbsp;และกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;เพียงแต่ปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เขาจะบรรลุถึงสิ่งเหล่านี้ทั้งหมด&nbsp;&nbsp;และในที่สุดจะบรรลุถึงพระตำหนักนิรันดรสูงสุด
+  บุคคลผู้รับเอาวิถีแห่งการอุทิศตนเสียสละรับใช้มาปฏิบัติ&nbsp;&nbsp;จะไม่สูญเสียผลที่ได้รับจากการศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ปฏิบัติพิธีบูชา&nbsp;&nbsp;ปฏิบัติความเพียร&nbsp;&nbsp;ให้ทานหรือแสวงหาปรัชญาความรู้&nbsp;&nbsp;และกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;เพียงแต่ปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เขาจะบรรลุถึงสิ่งเหล่านี้ทั้งหมด&nbsp;&nbsp;และในที่สุดจะบรรลุถึงพระตำหนักนิรันดรสูงสุด
   </p>
 </div>
 
@@ -73,37 +174,37 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้เป็นการสรุปบทที่เจ็ดและบทที่แปด&nbsp;&nbsp;ซึ่งพูดถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและ<wbr>การอุทิศตนเสียสละรับใช้โดยเฉพาะ&nbsp;&nbsp;เราต้องศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ภายใต้การนำของพระ<wbr>อาจารย์ทิพย์&nbsp;&nbsp;ปฏิบัติสมถะและบำเพ็ญเพียรอย่างมากในขณะที่อยู่ภายใต้การดูแลของ<wbr>พระอาจารย์&nbsp;&nbsp;<i>พฺรหฺมจารี</i>&nbsp;&nbsp;ต้องอยู่ในบ้านของพระอาจารย์ทิพย์เหมือนเป็นผู้รับใช้&nbsp;&nbsp;และ<wbr>ต้องออกไปภิกขาจารตามบ้าน&nbsp;&nbsp;นำสิ่งของมาให้พระอาจารย์&nbsp;&nbsp;รับประทานอาหารตามคำ<wbr>สั่งของพระอาจารย์เท่านั้น&nbsp;&nbsp;หากพระอาจารย์ละเลยไม่เรียกศิษย์มารับประทาน&nbsp;&nbsp;ศิษย์จะ<wbr>อดอาหารในวันนั้น&nbsp;&nbsp;เหล่านี้คือหลักธรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;บางประการที่<i>พฺรหฺมจรฺย</i>&nbsp;&nbsp;ฝึกปฏิบัติ
+  โศลกนี้เป็นการสรุปบทที่เจ็ดและบทที่แปด&nbsp;&nbsp;ซึ่งพูดถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและ<wbr>การอุทิศตนเสียสละรับใช้โดยเฉพาะ&nbsp;&nbsp;เราต้องศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ภายใต้การนำของพระ<wbr>อาจารย์ทิพย์&nbsp;&nbsp;ปฏิบัติสมถะและบำเพ็ญเพียรอย่างมากในขณะที่อยู่ภายใต้การดูแลของ<wbr>พระอาจารย์&nbsp;&nbsp;<span class="slant iast">brahmacārī</span><span class="slant pali">พฺรหฺมจารี</span><span class="slant thai">พรัหมะจารี</span><span class="slant ram">บระฮมะชารี</span>&nbsp;&nbsp;ต้องอยู่ในบ้านของพระอาจารย์ทิพย์เหมือนเป็นผู้รับใช้&nbsp;&nbsp;และ<wbr>ต้องออกไปภิกขาจารตามบ้าน&nbsp;&nbsp;นำสิ่งของมาให้พระอาจารย์&nbsp;&nbsp;รับประทานอาหารตามคำ<wbr>สั่งของพระอาจารย์เท่านั้น&nbsp;&nbsp;หากพระอาจารย์ละเลยไม่เรียกศิษย์มารับประทาน&nbsp;&nbsp;ศิษย์จะ<wbr>อดอาหารในวันนั้น&nbsp;&nbsp;เหล่านี้คือหลักธรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;บางประการที่<span class="slant iast">brahmacarya</span><span class="slant pali">พฺรหฺมจรฺย</span><span class="slant thai">พรัหมะจัรยะ</span><span class="slant ram"></span>&nbsp;&nbsp;ฝึกปฏิบัติ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  หลังจากศิษย์ศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;อยู่กับพระอาจารย์&nbsp;&nbsp;จากอายุห้าปีจนถึงอายุ<wbr>ยี่สิบปีเขาอาจกลายมาเป็นสุภาพบุรุษผู้มีบุคลิกที่สมบูรณ์&nbsp;&nbsp;การศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>มิใช่เป็นการพักผ่อนหย่อนใจเหมือนนักคาดคะเนที่นั่งบนเก้าอี้นวม&nbsp;&nbsp;แต่เป็นไปเพื่อการ<wbr>เปลี่ยนแปลงบุคลิก&nbsp;&nbsp;หลังจากได้รับการฝึกฝนเช่นนี้&nbsp;&nbsp;<i>พฺรหฺมจารี</i>&nbsp;&nbsp;จะได้รับอนุญาตให้ไป<wbr>แต่งงานและใช้ชีวิตคฤหัสถ์&nbsp;&nbsp;เมื่อเป็นคฤหัสถ์เขาต้องปฏิบัติการบูชาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อบรรลุถึง<wbr>ความรู้แจ้งยิ่งขึ้น&nbsp;&nbsp;และต้องให้ทานตามภูมิประเทศ&nbsp;&nbsp;ตามกาลเวลา&nbsp;&nbsp;และตามผู้ปรารถนาโดยรู้จักแยกแยะระหว่างการให้ทานในความดี&nbsp;&nbsp;ในตัณหา&nbsp;&nbsp;และอวิชชา&nbsp;&nbsp;ดังที่ได้อธิบายไว้<wbr>ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;หลังจากเกษียณจากชีวิตคฤหัสถ์เมื่อรับเอาระดับของ&nbsp;&nbsp;<i>วานปฺรสฺตฺห</i>&nbsp;&nbsp;มา<wbr>ปฏิบัติ&nbsp;&nbsp;เขาจะบำเพ็ญเพียรอย่างเคร่งครัดไปอยู่ในป่า&nbsp;&nbsp;นุ่งห่มด้วยใบไม้&nbsp;&nbsp;ไม่โกนหนวดเคราฯลฯ&nbsp;&nbsp;จากการรับเอาระดับ&nbsp;&nbsp;<i>พฺรหฺมจรฺย</i>&nbsp;&nbsp;,&nbsp;&nbsp;คฤหัสถ์,&nbsp;&nbsp;<i>วานปฺรสฺตฺห</i>&nbsp;&nbsp;,&nbsp;&nbsp;แลในที่สุด&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;มาปฏิบัติ&nbsp;&nbsp;เขาจะพัฒนาไปสู่ระดับชีวิตที่สมบูรณ์&nbsp;&nbsp;บางคนพัฒนาไปยังอาณาจักรสวรรค์และเมื่อเจริญมากยิ่งขึ้น&nbsp;&nbsp;จะได้รับอิสรภาพในท้องฟ้าทิพย์&nbsp;&nbsp;อาจอยู่ใน&nbsp;&nbsp;<i>พฺรหฺม-โชฺยติรฺ</i>&nbsp;&nbsp;ที่<wbr>ไร้รูปลักษณ์&nbsp;&nbsp;ในดาวเคราะห์&nbsp;&nbsp;<i>ไวกุณฺฐ</i>&nbsp;&nbsp;หรือใน&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;นี่คือวิถีทางที่วรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้กำหนดไว้
+  หลังจากศิษย์ศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;อยู่กับพระอาจารย์&nbsp;&nbsp;จากอายุห้าปีจนถึงอายุ<wbr>ยี่สิบปีเขาอาจกลายมาเป็นสุภาพบุรุษผู้มีบุคลิกที่สมบูรณ์&nbsp;&nbsp;การศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>มิใช่เป็นการพักผ่อนหย่อนใจเหมือนนักคาดคะเนที่นั่งบนเก้าอี้นวม&nbsp;&nbsp;แต่เป็นไปเพื่อการ<wbr>เปลี่ยนแปลงบุคลิก&nbsp;&nbsp;หลังจากได้รับการฝึกฝนเช่นนี้&nbsp;&nbsp;<span class="slant iast">brahmacārī</span><span class="slant pali">พฺรหฺมจารี</span><span class="slant thai">พรัหมะจารี</span><span class="slant ram">บระฮมะชารี</span>&nbsp;&nbsp;จะได้รับอนุญาตให้ไป<wbr>แต่งงานและใช้ชีวิตคฤหัสถ์&nbsp;&nbsp;เมื่อเป็นคฤหัสถ์เขาต้องปฏิบัติการบูชาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อบรรลุถึง<wbr>ความรู้แจ้งยิ่งขึ้น&nbsp;&nbsp;และต้องให้ทานตามภูมิประเทศ&nbsp;&nbsp;ตามกาลเวลา&nbsp;&nbsp;และตามผู้ปรารถนาโดยรู้จักแยกแยะระหว่างการให้ทานในความดี&nbsp;&nbsp;ในตัณหา&nbsp;&nbsp;และอวิชชา&nbsp;&nbsp;ดังที่ได้อธิบายไว้<wbr>ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;หลังจากเกษียณจากชีวิตคฤหัสถ์เมื่อรับเอาระดับของ&nbsp;&nbsp;<span class="slant iast">vānaprastha</span><span class="slant pali">วานปฺรสฺถ</span><span class="slant thai">วานัปรัสถะ</span><span class="slant ram"></span>&nbsp;&nbsp;มา<wbr>ปฏิบัติ&nbsp;&nbsp;เขาจะบำเพ็ญเพียรอย่างเคร่งครัดไปอยู่ในป่า&nbsp;&nbsp;นุ่งห่มด้วยใบไม้&nbsp;&nbsp;ไม่โกนหนวดเคราฯลฯ&nbsp;&nbsp;จากการรับเอาระดับ&nbsp;&nbsp;<span class="slant iast">brahmacarya</span><span class="slant pali">พฺรหฺมจรฺย</span><span class="slant thai">พรัหมะจัรยะ</span><span class="slant ram"></span>&nbsp;&nbsp;,&nbsp;&nbsp;คฤหัสถ์,&nbsp;&nbsp;<span class="slant iast">vānaprastha</span><span class="slant pali">วานปฺรสฺถ</span><span class="slant thai">วานัปรัสถะ</span><span class="slant ram"></span>&nbsp;&nbsp;,&nbsp;&nbsp;แลในที่สุด&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;มาปฏิบัติ&nbsp;&nbsp;เขาจะพัฒนาไปสู่ระดับชีวิตที่สมบูรณ์&nbsp;&nbsp;บางคนพัฒนาไปยังอาณาจักรสวรรค์และเมื่อเจริญมากยิ่งขึ้น&nbsp;&nbsp;จะได้รับอิสรภาพในท้องฟ้าทิพย์&nbsp;&nbsp;อาจอยู่ใน&nbsp;&nbsp;<span class="slant iast">brahma-jyotir</span><span class="slant pali">พฺรหฺม-โชฺยติรฺ</span><span class="slant thai">พรัหมะ-ชโยติร</span><span class="slant ram">บระฮมะจโยทิ</span>&nbsp;&nbsp;ที่<wbr>ไร้รูปลักษณ์&nbsp;&nbsp;ในดาวเคราะห์&nbsp;&nbsp;<span class="slant iast">vaikuṇṭha</span><span class="slant pali">ไวกุณฺฐ</span><span class="slant thai">ไวกุณฐะ</span><span class="slant ram">ไวคุณทธฺะ</span>&nbsp;&nbsp;หรือใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;นี่คือวิถีทางที่วรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้กำหนดไว้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  อย่างไรก็ดี&nbsp;&nbsp;ความสวยงามของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกคือ&nbsp;&nbsp;จากการกระทำเพียงสิ่ง<wbr>เดียว&nbsp;&nbsp;ด้วยการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เราสามารถข้ามพ้นพิธีกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;รวมทั้งระดับ<wbr>ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด
+  อย่างไรก็ดี&nbsp;&nbsp;ความสวยงามของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกคือ&nbsp;&nbsp;จากการกระทำเพียงสิ่ง<wbr>เดียว&nbsp;&nbsp;ด้วยการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เราสามารถข้ามพ้นพิธีกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;รวมทั้งระดับ<wbr>ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>อิทํ&nbsp;&nbsp;วิทิตฺวา</i>&nbsp;&nbsp;แสดงให้เห็นว่าเราควรเข้าใจคำสั่งสอนที่&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรง<wbr>ให้ไว้ในบทนี้และบทที่เจ็ดของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เราควรพยายามเข้าใจบทเหล่านี้มิใช่แบบ<wbr>วิชาการ&nbsp;&nbsp;หรือแบบคาดคะเนทางจิต&nbsp;&nbsp;แต่จากการสดับฟังในการคบหาสมาคมกับเหล่า<wbr>สาวก&nbsp;&nbsp;บทที่หกถึงบทที่สิบสองเป็นสาระสำคัญของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;หกบทแรกและหกบท<wbr>สุดท้ายเหมือนกับปกหน้าและปกหลังที่ห่อหุ้มหกบทกลาง&nbsp;&nbsp;ซึ่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นผู้<wbr>ปกป้องคุ้มครองโดยเฉพาะ&nbsp;&nbsp;หากใครโชคดีพอที่เข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;โดยเฉพาะในหกบท<wbr>กลางนี้&nbsp;&nbsp;ด้วยการคบหาสมาคมกับเหล่าสาวก&nbsp;&nbsp;ชีวิตของเขาจะได้รับการสรรเสริญเหนือ<wbr>การบำเพ็ญเพียร&nbsp;&nbsp;การทำพิธีบูชา&nbsp;&nbsp;การให้ทาน&nbsp;&nbsp;การคาดคะเนทั้งหลายทั้งปวง&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;เพราะ<wbr>เขาสามารถบรรลุถึงผลแห่งกิจกรรมเหล่านี้ทั้งหมด&nbsp;&nbsp;ด้วยเพียงแต่ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกเท่านั้น
+  คำว่า&nbsp;&nbsp;<span class="slant iast">idaṁ&nbsp;&nbsp;viditvā</span><span class="slant pali">อิทํวิทิตฺวา</span><span class="slant thai">อิทังวิทิตวา</span><span class="slant ram">วิดิทวา</span>&nbsp;&nbsp;แสดงให้เห็นว่าเราควรเข้าใจคำสั่งสอนที่&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรง<wbr>ให้ไว้ในบทนี้และบทที่เจ็ดของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เราควรพยายามเข้าใจบทเหล่านี้มิใช่แบบ<wbr>วิชาการ&nbsp;&nbsp;หรือแบบคาดคะเนทางจิต&nbsp;&nbsp;แต่จากการสดับฟังในการคบหาสมาคมกับเหล่า<wbr>สาวก&nbsp;&nbsp;บทที่หกถึงบทที่สิบสองเป็นสาระสำคัญของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;หกบทแรกและหกบท<wbr>สุดท้ายเหมือนกับปกหน้าและปกหลังที่ห่อหุ้มหกบทกลาง&nbsp;&nbsp;ซึ่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นผู้<wbr>ปกป้องคุ้มครองโดยเฉพาะ&nbsp;&nbsp;หากใครโชคดีพอที่เข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;โดยเฉพาะในหกบท<wbr>กลางนี้&nbsp;&nbsp;ด้วยการคบหาสมาคมกับเหล่าสาวก&nbsp;&nbsp;ชีวิตของเขาจะได้รับการสรรเสริญเหนือ<wbr>การบำเพ็ญเพียร&nbsp;&nbsp;การทำพิธีบูชา&nbsp;&nbsp;การให้ทาน&nbsp;&nbsp;การคาดคะเนทั้งหลายทั้งปวง&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;เพราะ<wbr>เขาสามารถบรรลุถึงผลแห่งกิจกรรมเหล่านี้ทั้งหมด&nbsp;&nbsp;ด้วยเพียงแต่ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกเท่านั้น
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ที่มีความศรัทธาบ้างใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ควรเรียนรู้&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จากสาวกเพราะในตอนต้นของบทที่สี่ได้กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;เหล่าสาวกเท่านั้นที่สามารถเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ไม่มีผู้ใดเข้าใจจุดมุ่งหมายของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควร<wbr>เรียนรู้&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จากสาวกของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มิใช่จากนักคาดคะเนทางจิต&nbsp;&nbsp;นี่คือลักษณะ<wbr>แห่งความศรัทธา&nbsp;&nbsp;หลังจากแสวงหาสาวกและในที่สุดได้มาคบสมาคมกับสาวก&nbsp;&nbsp;เมื่อนั้น<wbr>จึงเริ่มต้นการศึกษา&nbsp;&nbsp;และเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;อย่างแท้จริง&nbsp;&nbsp;จากความเจริญก้าวหน้าใน<wbr>การมาคบหาสมาคมกับสาวก&nbsp;&nbsp;เขาถูกวางตัวในการอุทิศตนเสียสละ&nbsp;&nbsp;และการรับใช้นั้น<wbr>จะปัดเป่าความสงสัยทั้งหลายที่ตนเองมีอยู่เกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เกี่ยวกับ<wbr>กิจกรรม&nbsp;&nbsp;รูปลักษณ์&nbsp;&nbsp;ลีลา&nbsp;&nbsp;พระนาม&nbsp;&nbsp;และ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หลังจากความสงสัยทั้งหลาย<wbr>เหล่านี้ได้ถูกทำให้กระจ่างขึ้นโดยสมบูรณ์&nbsp;&nbsp;เขาตั้งมั่นในการศึกษา&nbsp;&nbsp;จากนั้น&nbsp;&nbsp;จะได้รับรสใน<wbr>การศึกษา&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;และบรรลุถึงระดับแห่งความรู้สึกอยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเสมอในระดับที่เจริญมากขึ้น&nbsp;&nbsp;เขาจะอยู่ในความรักกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยสมบูรณ์&nbsp;&nbsp;ระดับแห่งความ<wbr>สมบูรณ์สูงสุดของชีวิตนี้&nbsp;&nbsp;สาวกจะย้ายไปยังพระตำหนักทิพย์ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในท้องฟ้า<wbr>ทิพย์&nbsp;&nbsp;<i>โคโลก</i>&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;สถานที่ที่สาวกมีความสุขนิรันดร
+  ผู้ที่มีความศรัทธาบ้างใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ควรเรียนรู้&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จากสาวกเพราะในตอนต้นของบทที่สี่ได้กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;เหล่าสาวกเท่านั้นที่สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ไม่มีผู้ใดเข้าใจจุดมุ่งหมายของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควร<wbr>เรียนรู้&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จากสาวกของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มิใช่จากนักคาดคะเนทางจิต&nbsp;&nbsp;นี่คือลักษณะ<wbr>แห่งความศรัทธา&nbsp;&nbsp;หลังจากแสวงหาสาวกและในที่สุดได้มาคบสมาคมกับสาวก&nbsp;&nbsp;เมื่อนั้น<wbr>จึงเริ่มต้นการศึกษา&nbsp;&nbsp;และเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;อย่างแท้จริง&nbsp;&nbsp;จากความเจริญก้าวหน้าใน<wbr>การมาคบหาสมาคมกับสาวก&nbsp;&nbsp;เขาถูกวางตัวในการอุทิศตนเสียสละ&nbsp;&nbsp;และการรับใช้นั้น<wbr>จะปัดเป่าความสงสัยทั้งหลายที่ตนเองมีอยู่เกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เกี่ยวกับ<wbr>กิจกรรม&nbsp;&nbsp;รูปลักษณ์&nbsp;&nbsp;ลีลา&nbsp;&nbsp;พระนาม&nbsp;&nbsp;และ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หลังจากความสงสัยทั้งหลาย<wbr>เหล่านี้ได้ถูกทำให้กระจ่างขึ้นโดยสมบูรณ์&nbsp;&nbsp;เขาตั้งมั่นในการศึกษา&nbsp;&nbsp;จากนั้น&nbsp;&nbsp;จะได้รับรสใน<wbr>การศึกษา&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;และบรรลุถึงระดับแห่งความรู้สึกอยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเสมอในระดับที่เจริญมากขึ้น&nbsp;&nbsp;เขาจะอยู่ในความรักกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยสมบูรณ์&nbsp;&nbsp;ระดับแห่งความ<wbr>สมบูรณ์สูงสุดของชีวิตนี้&nbsp;&nbsp;สาวกจะย้ายไปยังพระตำหนักทิพย์ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในท้องฟ้า<wbr>ทิพย์&nbsp;&nbsp;<span class="slant iast">goloka</span><span class="slant pali">โคโลก</span><span class="slant thai">โคโลกะ</span><span class="slant ram">โกโลคะ</span>&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;สถานที่ที่สาวกมีความสุขนิรันดร
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph-thus-ends">
   <p>
-  <em>ดังนั้น ได้จบคำอธิบายโดย <i>ภกฺติเวทนฺต</i>  บทที่แปดของหนังสือ   <i>ศฺรีมทฺ ภควทฺ-คีตา</i> <wbr>ในหัวข้อเรื่อง การบรรลุถึงองค์ภควาน </em>
+  <em>ดังนั้น ได้จบคำอธิบายโดย <span class="slant iast">bhaktivedanta</span><span class="slant pali">ภกฺติเวทนฺต</span><span class="slant thai">ภักติเวทันตะ</span><span class="slant ram">บัฺคธิเวดันธะ</span>  บทที่แปดของหนังสือ   <span class="slant iast">śrīmad bhagavad-gītā</span><span class="slant pali">ศฺรีมทฺภควทฺ-คีตา</span><span class="slant thai">ศรีมัทภะคะวัท-คีตา</span><span class="slant ram">ชรีมัด บฺะกะวัด-คีตา</span> <wbr>ในหัวข้อเรื่อง การบรรลุถึงองค์ภควาน </em>
   </p>
 </div>
 

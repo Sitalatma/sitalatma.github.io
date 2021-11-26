@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.42</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศโม ทมสฺ ตปฮ ศะอุจํ</i><br /><i>กฺษานฺติรฺ อารฺชวมฺ เอว จ</i><br /><i>ชฺญานํ วิชฺญานมฺ อาสฺติกฺยํ</i><br /><i>พฺรหฺม-กรฺม สฺวภาว-ชมฺ</i>
+<span class="slant iast">śamo damas tapaḥ śaucaṁ<br /></span>
+<span class="slant pali">ศโม ทมสฺ ตปห์ เศาจํ<br /></span>
+<span class="slant thai">ศะโม ทะมัส ตะปะห์ เศาจัง<br /></span>
+<span class="slant ram">ชะโม ดะมัส ทะพะฮ โชชัม<br /></span>
+<span class="slant iast">kṣāntir ārjavam eva ca<br /></span>
+<span class="slant pali">กฺษานฺติรฺ อารฺชวมฺ เอว จ<br /></span>
+<span class="slant thai">กษานติร อารชะวัม เอวะ จะ<br /></span>
+<span class="slant ram">คชานทิร อารจะวัม เอวะ ชะ<br /></span>
+<span class="slant iast">jñānaṁ vijñānam āstikyaṁ<br /></span>
+<span class="slant pali">ชฺญานํ วิชฺญานมฺ อาสฺติกฺยํ<br /></span>
+<span class="slant thai">ชญานัง วิชญานัม อาสติกยัง<br /></span>
+<span class="slant ram">กยานัม วิกยานัม อาสทิคยัม<br /></span>
+<span class="slant iast">brahma-karma svabhāva-jam<br /></span>
+<span class="slant pali">พฺรหฺม-กรฺม สฺวภาว-ชมฺ<br /></span>
+<span class="slant thai">พรัหมะ-กัรมะ สวะภาวะ-ชัม<br /></span>
+<span class="slant ram">บระฮมะ-คารมะ สวะบฺาวะ-จัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศมฮ</i> — ความสงบ, <i>ทมฮ</i> — ควบคุมตนเอง, <i>ตปฮ</i> — ความสมถะ, <i>ศะอุจมฺ</i> — ความบริสุทธิ์, <i>กฺษานฺติฮ</i> — ความอดทน, <i>อารฺชวมฺ</i> — ความซื่อสัตย์, <i>เอว</i> — แน่นอน, <i>จ</i> — และ, <i>ชฺญานมฺ</i> — ความรู้, <i>วิชฺญานมฺ</i> — ปัญญา, <i>อาสฺติกฺยมฺ</i> — ศาสนา, <i>พฺรหฺม</i> — ของ <i>พฺราหฺมณ</i>, <i>กรฺม</i> — หน้าที่, <i>สฺวภาว-ชมฺ</i> — เกิดจากธรรมชาติของตัวเขา
+  <span class="slant iast">śamaḥ</span><span class="slant pali">ศมห์</span><span class="slant thai">ศะมะห์</span><span class="slant ram">ชะมะฮ</span> — ความสงบ, <span class="slant iast">damaḥ</span><span class="slant pali">ทมห์</span><span class="slant thai">ทะมะห์</span><span class="slant ram">ดะมะฮ</span> — ควบคุมตนเอง, <span class="slant iast">tapaḥ</span><span class="slant pali">ตปห์</span><span class="slant thai">ตะปะห์</span><span class="slant ram">ทะพะฮ</span> — ความสมถะ, <span class="slant iast">śaucam</span><span class="slant pali">เศาจมฺ</span><span class="slant thai">เศาจัม</span><span class="slant ram">โชชัม</span> — ความบริสุทธิ์, <span class="slant iast">kṣāntiḥ</span><span class="slant pali">กฺษานฺติห์</span><span class="slant thai">กษานติห์</span><span class="slant ram">คชานทิฮ</span> — ความอดทน, <span class="slant iast">ārjavam</span><span class="slant pali">อารฺชวมฺ</span><span class="slant thai">อารชะวัม</span><span class="slant ram">อารจะวัม</span> — ความซื่อสัตย์, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">jñānam</span><span class="slant pali">ชฺญานมฺ</span><span class="slant thai">ชญานัม</span><span class="slant ram">กยานัม</span> — ความรู้, <span class="slant iast">vijñānam</span><span class="slant pali">วิชฺญานมฺ</span><span class="slant thai">วิชญานัม</span><span class="slant ram">วิกยานัม</span> — ปัญญา, <span class="slant iast">āstikyam</span><span class="slant pali">อาสฺติกฺยมฺ</span><span class="slant thai">อาสติกยัม</span><span class="slant ram">อาสทิคยัม</span> — ศาสนา, <span class="slant iast">brahma</span><span class="slant pali">พฺรหฺม</span><span class="slant thai">พรัหมะ</span><span class="slant ram">บระฮมะ</span> — ของ <span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — หน้าที่, <span class="slant iast">svabhāva-jam</span><span class="slant pali">สฺวภาว-ชมฺ</span><span class="slant thai">สวะภาวะ-ชัม</span><span class="slant ram">สวะบฺาวะ-จัม</span> — เกิดจากธรรมชาติของตัวเขา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ความสงบ&nbsp;&nbsp;ควบคุมตนเองได้&nbsp;&nbsp;สมถะ&nbsp;&nbsp;บริสุทธิ์&nbsp;&nbsp;อดทน&nbsp;&nbsp;ซื่อสัตย์&nbsp;&nbsp;ความรู้&nbsp;&nbsp;ปัญญาและปฏิบัติตามหลักศาสนา&nbsp;&nbsp;สิ่งเหล่านี้คือคุณลักษณะตามธรรมชาติที่บรรดา<i>พฺราหฺมณ</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ถือปฏิบัติ
+  ความสงบ&nbsp;&nbsp;ควบคุมตนเองได้&nbsp;&nbsp;สมถะ&nbsp;&nbsp;บริสุทธิ์&nbsp;&nbsp;อดทน&nbsp;&nbsp;ซื่อสัตย์&nbsp;&nbsp;ความรู้&nbsp;&nbsp;ปัญญาและปฏิบัติตามหลักศาสนา&nbsp;&nbsp;สิ่งเหล่านี้คือคุณลักษณะตามธรรมชาติที่บรรดา<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;)&nbsp;&nbsp;ถือปฏิบัติ
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.29</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,37 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อปาเน ชุหฺวติ ปฺราณํ</i><br /><i>ปฺราเณ ′ปานํ ตตฺหาปเร</i><br /><i>ปฺราณาปาน-คตี รุทฺธฺวา</i><br /><i>ปฺราณายาม-ปรายณาฮ</i><br /><i>อปเร นิยตาหาราฮ</i><br /><i>ปฺราณานฺ ปฺราเณษุ ชุหฺวติ</i>
+<span class="slant iast">apāne juhvati prāṇaṁ<br /></span>
+<span class="slant pali">อปาเน ชุหฺวติ ปฺราณํ<br /></span>
+<span class="slant thai">อะปาเน ชุหวะติ ปราณัง<br /></span>
+<span class="slant ram">อพาเน จุฮวะทิ พราณัม<br /></span>
+<span class="slant iast">prāṇe ’pānaṁ tathāpare<br /></span>
+<span class="slant pali">ปฺราเณ ’ปานํ ตถาปเร<br /></span>
+<span class="slant thai">ปราเณ ’ปานัง ตะถาปะเร<br /></span>
+<span class="slant ram">พราเณ พานัม ทะทฺาพะเรฺ<br /></span>
+<span class="slant iast">prāṇāpāna-gatī ruddhvā<br /></span>
+<span class="slant pali">ปฺราณาปาน-คตี รุทฺธฺวา<br /></span>
+<span class="slant thai">ปราณาปานะ-คะตี รุทธวา<br /></span>
+<span class="slant ram">พราณาพานะ-กะที รุดดฺวา<br /></span>
+<span class="slant iast">prāṇāyāma-parāyaṇāḥ<br /></span>
+<span class="slant pali">ปฺราณายาม-ปรายณาห์<br /></span>
+<span class="slant thai">ปราณายามะ-ปะรายะณาห์<br /></span>
+<span class="slant ram">พราณายามะ-พะรายะณาฮ<br /></span>
+<span class="slant iast">apare niyatāhārāḥ<br /></span>
+<span class="slant pali">อปเร นิยตาหาราห์<br /></span>
+<span class="slant thai">อะปะเร นิยะตาหาราห์<br /></span>
+<span class="slant ram">อพะเร นิยะทาฮาราฮ<br /></span>
+<span class="slant iast">prāṇān prāṇeṣu juhvati<br /></span>
+<span class="slant pali">ปฺราณานฺ ปฺราเณษุ ชุหฺวติ<br /></span>
+<span class="slant thai">ปราณาน ปราเณษุ ชุหวะติ<br /></span>
+<span class="slant ram">พราณาน พราเณชุ จุฮวะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อปาเน</i> — ในลมซึ่งเดินลงข้างล่าง, <i>ชุหฺวติ</i> — ถวาย, <i>ปฺราณมฺ</i> — ลมเดินออกข้างนอก, <i>ปฺราเณ</i> — ในลมที่เดินออก, <i>อปานมฺ</i> — ลมเดินลงข้างล่าง, <i>ตตฺหา</i> — เป็นเช่นเดียวกัน, <i>อปเร</i> — คนอื่น, <i>ปฺราณ</i> — ของลมเดินออก, <i>อปาน</i> — และลมเดินลงข้างล่าง, <i>คตี</i> — การ เคลื่อนไหว, <i>รุทฺธฺวา</i> — ตรวจสอบ, <i>ปฺราณ-อายาม</i> — ฌานอันเกิดจากการกลั้นลมหายใจ ทั้งหมด, <i>ปรายณาฮ</i> — เอนเอียง, <i>อปเร</i> — คนอื่น, <i>นิยต</i> — ควบคุม, <i>อาหาราฮ</i> — การรับ ประทาน, <i>ปฺราณานฺ</i> — ลมที่เดินออก, <i>ปฺราเณษุ</i> — ในลมที่เดินออก, <i>ชุหฺวติ</i> — บูชา
+  <span class="slant iast">apāne</span><span class="slant pali">อปาเน</span><span class="slant thai">อะปาเน</span><span class="slant ram">อพาเน</span> — ในลมซึ่งเดินลงข้างล่าง, <span class="slant iast">juhvati</span><span class="slant pali">ชุหฺวติ</span><span class="slant thai">ชุหวะติ</span><span class="slant ram">จุฮวะทิ</span> — ถวาย, <span class="slant iast">prāṇam</span><span class="slant pali">ปฺราณมฺ</span><span class="slant thai">ปราณัม</span><span class="slant ram">พราณัม</span> — ลมเดินออกข้างนอก, <span class="slant iast">prāṇe</span><span class="slant pali">ปฺราเณ</span><span class="slant thai">ปราเณ</span><span class="slant ram">พราเณ</span> — ในลมที่เดินออก, <span class="slant iast">apānam</span><span class="slant pali">อปานมฺ</span><span class="slant thai">อะปานัม</span><span class="slant ram">อพานัม</span> — ลมเดินลงข้างล่าง, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เป็นเช่นเดียวกัน, <span class="slant iast">apare</span><span class="slant pali">อปเร</span><span class="slant thai">อะปะเร</span><span class="slant ram">อพะเร</span> — คนอื่น, <span class="slant iast">prāṇa</span><span class="slant pali">ปฺราณ</span><span class="slant thai">ปราณะ</span><span class="slant ram">พราณะ</span> — ของลมเดินออก, <span class="slant iast">apāna</span><span class="slant pali">อปาน</span><span class="slant thai">อะปานะ</span><span class="slant ram">อพานะ</span> — และลมเดินลงข้างล่าง, <span class="slant iast">gatī</span><span class="slant pali">คตี</span><span class="slant thai">คะตี</span><span class="slant ram">กะที</span> — การ เคลื่อนไหว, <span class="slant iast">ruddhvā</span><span class="slant pali">รุทฺธฺวา</span><span class="slant thai">รุทธวา</span><span class="slant ram">รุดดฺวา</span> — ตรวจสอบ, <span class="slant iast">prāṇa-āyāma</span><span class="slant pali">ปฺราณ-อายาม</span><span class="slant thai">ปราณะ-อายามะ</span><span class="slant ram">พราณะ-อายามะ</span> — ฌานอันเกิดจากการกลั้นลมหายใจ ทั้งหมด, <span class="slant iast">parāyaṇāḥ</span><span class="slant pali">ปรายณาห์</span><span class="slant thai">ปะรายะณาห์</span><span class="slant ram">พะรายะณาฮ</span> — เอนเอียง, <span class="slant iast">apare</span><span class="slant pali">อปเร</span><span class="slant thai">อะปะเร</span><span class="slant ram">อพะเร</span> — คนอื่น, <span class="slant iast">niyata</span><span class="slant pali">นิยต</span><span class="slant thai">นิยะตะ</span><span class="slant ram">นิยะทะ</span> — ควบคุม, <span class="slant iast">āhārāḥ</span><span class="slant pali">อาหาราห์</span><span class="slant thai">อาหาราห์</span><span class="slant ram">อาฮาราฮ</span> — การรับ ประทาน, <span class="slant iast">prāṇān</span><span class="slant pali">ปฺราณานฺ</span><span class="slant thai">ปราณาน</span><span class="slant ram">พราณาน</span> — ลมที่เดินออก, <span class="slant iast">prāṇeṣu</span><span class="slant pali">ปฺราเณษุ</span><span class="slant thai">ปราเณษุ</span><span class="slant ram">พราเณชุ</span> — ในลมที่เดินออก, <span class="slant iast">juhvati</span><span class="slant pali">ชุหฺวติ</span><span class="slant thai">ชุหวะติ</span><span class="slant ram">จุฮวะทิ</span> — บูชา
   </p>
 </div>
 
@@ -73,19 +182,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แห่งการควบคุมขบวนการหายใจนี้เรียกว่า&nbsp;&nbsp;<i>ปฺราณายาม</i>&nbsp;&nbsp;ในตอน<wbr>ต้นฝึกปฏิบัติในระบบ&nbsp;&nbsp;<i>หฐ-โยค</i>&nbsp;&nbsp;ด้วยท่านั่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;วิธีการทั้งหมดนี้แนะนำเพื่อให้<wbr>ควบคุมประสาทสัมผัสและพัฒนาในความรู้แจ้งทิพย์&nbsp;&nbsp;การปฏิบัติเช่นนี้เกี่ยวกับการ<wbr>ควบคุมลมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ภายในร่างกายเพื่อให้มันเดินไปในทางตรงกันข้าม&nbsp;&nbsp;ลม&nbsp;&nbsp;<i>อปาน</i>&nbsp;&nbsp;เดิน<wbr>ลงข้างล่าง&nbsp;&nbsp;และลม&nbsp;&nbsp;<i>ปฺราณ</i>&nbsp;&nbsp;เดินขึ้นข้างบน&nbsp;&nbsp;<i>ปฺราณายาม-โยคี</i>&nbsp;&nbsp;ฝึกปฏิบัติการหายใจ<wbr>ไปในทางตรงกันข้ามจนกว่ากระแสลมจะเป็นกลางอยู่ใน&nbsp;&nbsp;<i>ปูรก</i>&nbsp;&nbsp;หรือดุลยภาพสงบ<wbr>นิ่ง&nbsp;&nbsp;การถวายลมหายใจออกไปในลมหายใจเข้าเรียกว่า&nbsp;&nbsp;<i>เรจก</i>&nbsp;&nbsp;เมื่อลมทั้งสองกระแส<wbr>หยุดแน่นิ่งกล่าวได้ว่าผู้นั้นอยู่ใน&nbsp;&nbsp;<i>กุมฺภก-โยค</i>&nbsp;&nbsp;ด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<i>กุมฺภก-โยค</i>&nbsp;&nbsp;เราสามารถเพิ่มเวลาให้แก่ชีวิตเพื่อความสมบูรณ์แห่งความรู้แจ้งทิพย์&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ผู้มีปัญญา<wbr>สนใจในการบรรลุความสมบูรณ์ในชาติเดียวโดยไม่ต้องรอชาติหน้า&nbsp;&nbsp;ด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<i>กุมฺภก-โยค</i>&nbsp;&nbsp;พวก&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;สามารถเพิ่มเวลาให้แก่ชีวิตได้หลายต่อหลายปี&nbsp;&nbsp;อย่างไรก็ดี<wbr>บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกสถิตในการปฏิบัติรับใช้ทิพย์ด้วยความรักต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ<wbr>เป็นผู้ควบคุมประสาทสัมผัสได้โดยปริยาย&nbsp;&nbsp;ประสาทสัมผัสของท่านปฏิบัติรับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>เสมอ&nbsp;&nbsp;โดยไม่เปิดโอกาสให้ไปทำอย่างอื่น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในบั้นปลายของชีวิตจะถูกย้ายไปสู่<wbr>ระดับทิพย์แห่งองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;ด้วยเหตุนี้จึงไม่พยายามต่ออายุ&nbsp;&nbsp;ท่านได้ยก<wbr>ระดับมาถึงจุดหลุดพ้นทันที&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(14.26&nbsp;&nbsp;)
+  ระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แห่งการควบคุมขบวนการหายใจนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">prāṇāyāma</span><span class="slant pali">ปฺราณายาม</span><span class="slant thai">ปราณายามะ</span><span class="slant ram"></span>&nbsp;&nbsp;ในตอน<wbr>ต้นฝึกปฏิบัติในระบบ&nbsp;&nbsp;<span class="slant iast">haṭha-yoga</span><span class="slant pali">หฐ-โยค</span><span class="slant thai">หะฐะ-โยคะ</span><span class="slant ram">-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ด้วยท่านั่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;วิธีการทั้งหมดนี้แนะนำเพื่อให้<wbr>ควบคุมประสาทสัมผัสและพัฒนาในความรู้แจ้งทิพย์&nbsp;&nbsp;การปฏิบัติเช่นนี้เกี่ยวกับการ<wbr>ควบคุมลมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ภายในร่างกายเพื่อให้มันเดินไปในทางตรงกันข้าม&nbsp;&nbsp;ลม&nbsp;&nbsp;<span class="slant iast">apāna</span><span class="slant pali">อปาน</span><span class="slant thai">อะปานะ</span><span class="slant ram">อพานะ</span>&nbsp;&nbsp;เดิน<wbr>ลงข้างล่าง&nbsp;&nbsp;และลม&nbsp;&nbsp;<span class="slant iast">prāṇa</span><span class="slant pali">ปฺราณ</span><span class="slant thai">ปราณะ</span><span class="slant ram">พราณะ</span>&nbsp;&nbsp;เดินขึ้นข้างบน&nbsp;&nbsp;<span class="slant iast">prāṇāyāma-yogī</span><span class="slant pali">ปฺราณายาม-โยคี</span><span class="slant thai">ปราณายามะ-โยคี</span><span class="slant ram">-โยคี</span>&nbsp;&nbsp;ฝึกปฏิบัติการหายใจ<wbr>ไปในทางตรงกันข้ามจนกว่ากระแสลมจะเป็นกลางอยู่ใน&nbsp;&nbsp;<span class="slant iast">pūraka</span><span class="slant pali">ปูรก</span><span class="slant thai">ปูระกะ</span><span class="slant ram">พูระคะ</span>&nbsp;&nbsp;หรือดุลยภาพสงบ<wbr>นิ่ง&nbsp;&nbsp;การถวายลมหายใจออกไปในลมหายใจเข้าเรียกว่า&nbsp;&nbsp;<span class="slant iast">recaka</span><span class="slant pali">เรจก</span><span class="slant thai">เรจะกะ</span><span class="slant ram">เรชะคะ</span>&nbsp;&nbsp;เมื่อลมทั้งสองกระแส<wbr>หยุดแน่นิ่งกล่าวได้ว่าผู้นั้นอยู่ใน&nbsp;&nbsp;<span class="slant iast">kumbhaka-yoga</span><span class="slant pali">กุมฺภก-โยค</span><span class="slant thai">กุมภะกะ-โยคะ</span><span class="slant ram">zzz-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kumbhaka-yoga</span><span class="slant pali">กุมฺภก-โยค</span><span class="slant thai">กุมภะกะ-โยคะ</span><span class="slant ram">zzz-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;เราสามารถเพิ่มเวลาให้แก่ชีวิตเพื่อความสมบูรณ์แห่งความรู้แจ้งทิพย์&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ผู้มีปัญญา<wbr>สนใจในการบรรลุความสมบูรณ์ในชาติเดียวโดยไม่ต้องรอชาติหน้า&nbsp;&nbsp;ด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kumbhaka-yoga</span><span class="slant pali">กุมฺภก-โยค</span><span class="slant thai">กุมภะกะ-โยคะ</span><span class="slant ram">zzz-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;พวก&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;สามารถเพิ่มเวลาให้แก่ชีวิตได้หลายต่อหลายปี&nbsp;&nbsp;อย่างไรก็ดี<wbr>บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกสถิตในการปฏิบัติรับใช้ทิพย์ด้วยความรักต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ<wbr>เป็นผู้ควบคุมประสาทสัมผัสได้โดยปริยาย&nbsp;&nbsp;ประสาทสัมผัสของท่านปฏิบัติรับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>เสมอ&nbsp;&nbsp;โดยไม่เปิดโอกาสให้ไปทำอย่างอื่น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในบั้นปลายของชีวิตจะถูกย้ายไปสู่<wbr>ระดับทิพย์แห่งองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;ด้วยเหตุนี้จึงไม่พยายามต่ออายุ&nbsp;&nbsp;ท่านได้ยก<wbr>ระดับมาถึงจุดหลุดพ้นทันที&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(14.26&nbsp;&nbsp;)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มาํ จ โย ′วฺยภิจาเรณ</i><br /><i>ภกฺติ-โยเคน เสวเต</i><br /><i>ส คุณานฺ สมตีไตฺยตานฺ</i><br /><i>พฺรหฺม-ภูยาย กลฺปเต</i>
+<span class="slant iast">māṁ ca yo ’vyabhicāreṇa<br /></span>
+<span class="slant pali">มำ จ โย ’วฺยภิจาเรณ<br /></span>
+<span class="slant thai">มาง จะ โย ’วยะภิจาเรณะ<br /></span>
+<span class="slant ram">มาม ชะ โย ่วิยะบิฺชาเรณะ<br /></span>
+<span class="slant iast">bhakti-yogena sevate<br /></span>
+<span class="slant pali">ภกฺติ-โยเคน เสวเต<br /></span>
+<span class="slant thai">ภักติ-โยเคนะ เสวะเต<br /></span>
+<span class="slant ram">บัฺคธิ-โยเกนะ เสวะเท<br /></span>
+<span class="slant iast">sa guṇān samatītyaitān<br /></span>
+<span class="slant pali">ส คุณานฺ สมตีไตฺยตานฺ<br /></span>
+<span class="slant thai">สะ คุณาน สะมะตีตไยตาน<br /></span>
+<span class="slant ram">สะ กุณาน สะมะทีทไยทาน<br /></span>
+<span class="slant iast">brahma-bhūyāya kalpate<br /></span>
+<span class="slant pali">พฺรหฺม-ภูยาย กลฺปเต<br /></span>
+<span class="slant thai">พรัหมะ-ภูยายะ กัลปะเต<br /></span>
+<span class="slant ram">บระฮมะ-บํูยายะ คัลพะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ผู้ที่ปฏิบัติการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยความบริสุทธิ์ใจได้ข้ามพ้นระดับ<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติวัตถุ&nbsp;&nbsp;และพัฒนามาสู่ระดับทิพย์โดยทันที”&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกเริ่มต้นจากระดับทิพย์&nbsp;&nbsp;และจะอยู่ในจิตสำนึกเช่นนี้เสมอ&nbsp;&nbsp;ดังนั้นจึงไม่มีการ<wbr>ตกต่ำลง&nbsp;&nbsp;และในที่สุดจะบรรลุถึงอาณาจักรขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยไม่ล่าช้า&nbsp;&nbsp;การฝึกปฏิบัติ<wbr>ตัดทอนการรับประทานอาหารทำไปโดยปริยายเมื่อเรารับประทาน&nbsp;&nbsp;<i>กฺฤษฺณ-ปฺรสาทมฺ</i>&nbsp;&nbsp;หรืออาหารที่ถวายให้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก่อนเท่านั้น&nbsp;&nbsp;วิธีการลดอาหารช่วยได้มากในเรื่องของ<wbr>การควบคุมประสาทสัมผัส&nbsp;&nbsp;ปราศจากการควบคุมประสาทสัมผัสเป็นไปไม่ได้ที่จะหลุด<wbr>ออกจากพันธนาการทางวัตถุ
+  “ผู้ที่ปฏิบัติการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยความบริสุทธิ์ใจได้ข้ามพ้นระดับ<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติวัตถุ&nbsp;&nbsp;และพัฒนามาสู่ระดับทิพย์โดยทันที”&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกเริ่มต้นจากระดับทิพย์&nbsp;&nbsp;และจะอยู่ในจิตสำนึกเช่นนี้เสมอ&nbsp;&nbsp;ดังนั้นจึงไม่มีการ<wbr>ตกต่ำลง&nbsp;&nbsp;และในที่สุดจะบรรลุถึงอาณาจักรขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยไม่ล่าช้า&nbsp;&nbsp;การฝึกปฏิบัติ<wbr>ตัดทอนการรับประทานอาหารทำไปโดยปริยายเมื่อเรารับประทาน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa-prasādam</span><span class="slant pali">กฺฤษฺณ-ปฺรสาทมฺ</span><span class="slant thai">กฤษณะ-ประสาทัม</span><span class="slant ram">คริชณะ-พระ- สาดัม,พระ- <wbr>สาดัม</span>&nbsp;&nbsp;หรืออาหารที่ถวายให้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก่อนเท่านั้น&nbsp;&nbsp;วิธีการลดอาหารช่วยได้มากในเรื่องของ<wbr>การควบคุมประสาทสัมผัส&nbsp;&nbsp;ปราศจากการควบคุมประสาทสัมผัสเป็นไปไม่ได้ที่จะหลุด<wbr>ออกจากพันธนาการทางวัตถุ
   </p>
 </div>
 

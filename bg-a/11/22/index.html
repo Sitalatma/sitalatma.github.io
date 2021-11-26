@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.22</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>รุทฺราทิตฺยา วสโว เย จ สาธฺยา</i><br /><i>วิเศฺว ′ศฺวินะอุ มรุตศฺ โจษฺมปาศฺ จ</i><br /><i>คนฺธรฺว-ยกฺษาสุร-สิทฺธ-สงฺฆา</i><br /><i>วีกฺษเนฺต ตฺวาํ วิสฺมิตาศฺ ไจว สเรฺว</i>
+<span class="slant iast">rudrādityā vasavo ye ca sādhyā<br /></span>
+<span class="slant pali">รุทฺราทิตฺยา วสโว เย จ สาธฺยา<br /></span>
+<span class="slant thai">รุทราทิตยา วะสะโว เย จะ สาธยา<br /></span>
+<span class="slant ram">รุดราดิทยา วะสะโว เย ชะ สาดฺยา<br /></span>
+<span class="slant iast">viśve ’śvinau marutaś coṣmapāś ca<br /></span>
+<span class="slant pali">วิเศฺว ’ศฺวิเนา มรุตศฺ โจษฺมปาศฺ จ<br /></span>
+<span class="slant thai">วิศเว ’ศวิเนา มะรุตัศ โจษมะปาศ จะ<br /></span>
+<span class="slant ram">วิชเว ่ชวิโน มะรุทัช โชชมะพาช ชะ<br /></span>
+<span class="slant iast">gandharva-yakṣāsura-siddha-saṅghā<br /></span>
+<span class="slant pali">คนฺธรฺว-ยกฺษาสุร-สิทฺธ-สงฺฆา<br /></span>
+<span class="slant thai">คันธัรวะ-ยักษาสุระ-สิทธะ-สังฆา<br /></span>
+<span class="slant ram">กันดฺารวะ-ยัคชาสุระ-สิดดฺะ-สังกฺา<br /></span>
+<span class="slant iast">vīkṣante tvāṁ vismitāś caiva sarve<br /></span>
+<span class="slant pali">วีกฺษนฺเต ตฺวำ วิสฺมิตาศฺ ไจว สเรฺว<br /></span>
+<span class="slant thai">วีกษันเต ตวาง วิสมิตาศ ไจวะ สัรเว<br /></span>
+<span class="slant ram">วีคชันเท ทวาม วิสมิทาช ไชวะ สารเวฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>รุทฺร</i> — ปรากฏการณ์ของพระ <i>ศิว</i>, <i>อาทิตฺยาฮ</i> — เหล่า <i>อาทิตฺย</i>, <i>วสวฮ</i> — เหล่า <i>วสุ</i>, <i>เย</i> — ทั้งหมดนั้น, <i>จ</i> — และ, <i>สาธฺยาฮ</i> — เหล่า <i>สาธฺย</i>, <i>วิเศฺว</i> — เหล่า <i>วิเศฺวเทว</i>, <i>อศฺวินะอุ</i> — อัชวินี- คุมาระ, <i>มรุตฺaḥ</i> — เหล่ <i>มรุตฺ</i>, <i>จ</i> — และ, <i>อุษฺม-ปาฮ</i> — เหล่าบรรพบุรุษ, <i>จ</i> — และ, <i>คนฺธรฺว</i> — ของเหล่า <i>คนฺธรฺว</i>, <i>ยกฺษ</i> — เหล่า <i>ยกฺษ</i>, <i>อสุร</i> — เหล่ามาร, <i>สิทฺธ</i> — และเหล่า เทวดาที่สมบูรณ์, <i>สงฺฆาฮ</i> — ที่มาชุมนุมกัน, <i>วีกฺษเนฺต</i> — ได้เห็น, <i>ตฺวามฺ</i> — พระองค์, <i>วิสฺมิตาฮ</i> — ในความอัศจรรย์, <i>จ</i> — เช่นกัน, <i>เอว</i> — แน่นอน, <i>สเรฺว</i> — ทั้งหมด
+  <span class="slant iast">rudra</span><span class="slant pali">รุทฺร</span><span class="slant thai">รุทระ</span><span class="slant ram">รุดระ</span> — ปรากฏการณ์ของพระ <span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>, <span class="slant iast">ādityāḥ</span><span class="slant pali">อาทิตฺยาห์</span><span class="slant thai">อาทิตยาห์</span><span class="slant ram">อาดิทยาฮ</span> — เหล่า <span class="slant iast">āditya</span><span class="slant pali">อาทิตฺย</span><span class="slant thai">อาทิตยะ</span><span class="slant ram">อาดิทยะ</span>, <span class="slant iast">vasavaḥ</span><span class="slant pali">วสวห์</span><span class="slant thai">วะสะวะห์</span><span class="slant ram">วะสะวะฮ</span> — เหล่า <span class="slant iast">vasu</span><span class="slant pali">วสุ</span><span class="slant thai">วะสุ</span><span class="slant ram">วะสุ</span>, <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — ทั้งหมดนั้น, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">sādhyāḥ</span><span class="slant pali">สาธฺยาห์</span><span class="slant thai">สาธยาห์</span><span class="slant ram">สาดฺยาฮ</span> — เหล่า <span class="slant iast">sādhya</span><span class="slant pali">สาธฺย</span><span class="slant thai">สาธยะ</span><span class="slant ram">สาดฺยะ</span>, <span class="slant iast">viśve</span><span class="slant pali">วิเศฺว</span><span class="slant thai">วิศเว</span><span class="slant ram">วิชเว</span> — เหล่า <span class="slant iast">viśvedeva</span><span class="slant pali">วิเศฺวเทว</span><span class="slant thai">วิศเวเทวะ</span><span class="slant ram">วิชเวเดวะ</span>, <span class="slant iast">aśvinau</span><span class="slant pali">อศฺวิเนา</span><span class="slant thai">อัศวิเนา</span><span class="slant ram">อัชวิโน</span> — อัชวินี- คุมาระ, <span class="slant iast">marutaḥ</span><span class="slant pali">มรุตห์</span><span class="slant thai">มะรุตะห์</span><span class="slant ram">มะรุทะฮ</span> — เหล่ <span class="slant iast">marut</span><span class="slant pali">มรุตฺ</span><span class="slant thai">มะรุต</span><span class="slant ram">ามะรุท</span>, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">uṣma-pāḥ</span><span class="slant pali">อุษฺม-ปาห์</span><span class="slant thai">อุษมะ-ปาห์</span><span class="slant ram">อุชมะ-พาฮ</span> — เหล่าบรรพบุรุษ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span> — ของเหล่า <span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span>, <span class="slant iast">yakṣa</span><span class="slant pali">ยกฺษ</span><span class="slant thai">ยักษะ</span><span class="slant ram">ยะกยะ</span> — เหล่า <span class="slant iast">yakṣa</span><span class="slant pali">ยกฺษ</span><span class="slant thai">ยักษะ</span><span class="slant ram">ยะกยะ</span>, <span class="slant iast">asura</span><span class="slant pali">อสุร</span><span class="slant thai">อะสุระ</span><span class="slant ram">อสุระ</span> — เหล่ามาร, <span class="slant iast">siddha</span><span class="slant pali">สิทฺธ</span><span class="slant thai">สิทธะ</span><span class="slant ram">สิดดฺะ</span> — และเหล่า เทวดาที่สมบูรณ์, <span class="slant iast">saṅghāḥ</span><span class="slant pali">สงฺฆาห์</span><span class="slant thai">สังฆาห์</span><span class="slant ram">สังกฺาฮ</span> — ที่มาชุมนุมกัน, <span class="slant iast">vīkṣante</span><span class="slant pali">วีกฺษนฺเต</span><span class="slant thai">วีกษันเต</span><span class="slant ram">วีคชันเท</span> — ได้เห็น, <span class="slant iast">tvām</span><span class="slant pali">ตฺวามฺ</span><span class="slant thai">ตวาม</span><span class="slant ram">ทวาม</span> — พระองค์, <span class="slant iast">vismitāḥ</span><span class="slant pali">วิสฺมิตาห์</span><span class="slant thai">วิสมิตาห์</span><span class="slant ram">วิสมิทาฮ</span> — ในความอัศจรรย์, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">sarve</span><span class="slant pali">สเรฺว</span><span class="slant thai">สัรเว</span><span class="slant ram">สารเว</span> — ทั้งหมด
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ปรากฏการณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;บรรดา&nbsp;&nbsp;<i>อาทิตฺย</i>&nbsp;&nbsp;<i>วสุ</i>&nbsp;&nbsp;<i>สาธฺย</i>&nbsp;&nbsp;<i>วิเศฺวเทว</i>&nbsp;&nbsp;<i>อศฺวี</i>&nbsp;&nbsp;ทั้งสอง&nbsp;&nbsp;เหล่&nbsp;&nbsp;<i>มรุตฺ</i>&nbsp;&nbsp;บรรพบุรุษ&nbsp;&nbsp;<i>คนฺธรฺว</i>&nbsp;&nbsp;<i>ยกฺษ</i>&nbsp;&nbsp;<i>อสุร</i>&nbsp;&nbsp;และเหล่าเทวดาที่สมบูรณ์&nbsp;&nbsp;ทั้งหมดเห็นพระองค์ด้วยความมหัศจรรย์ใจ
+  ปรากฏการณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;บรรดา&nbsp;&nbsp;<span class="slant iast">āditya</span><span class="slant pali">อาทิตฺย</span><span class="slant thai">อาทิตยะ</span><span class="slant ram">อาดิทยะ</span>&nbsp;&nbsp;<span class="slant iast">vasu</span><span class="slant pali">วสุ</span><span class="slant thai">วะสุ</span><span class="slant ram">วะสุ</span>&nbsp;&nbsp;<span class="slant iast">sādhya</span><span class="slant pali">สาธฺย</span><span class="slant thai">สาธยะ</span><span class="slant ram">สาดฺยะ</span>&nbsp;&nbsp;<span class="slant iast">viśvedeva</span><span class="slant pali">วิเศฺวเทว</span><span class="slant thai">วิศเวเทวะ</span><span class="slant ram">วิชเวเดวะ</span>&nbsp;&nbsp;<span class="slant iast">aśvī</span><span class="slant pali">อศฺวี</span><span class="slant thai">อัศวี</span><span class="slant ram">อัชวี</span>&nbsp;&nbsp;ทั้งสอง&nbsp;&nbsp;เหล่&nbsp;&nbsp;<span class="slant iast">marut</span><span class="slant pali">มรุตฺ</span><span class="slant thai">มะรุต</span><span class="slant ram">ามะรุท</span>&nbsp;&nbsp;บรรพบุรุษ&nbsp;&nbsp;<span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span>&nbsp;&nbsp;<span class="slant iast">yakṣa</span><span class="slant pali">ยกฺษ</span><span class="slant thai">ยักษะ</span><span class="slant ram">ยะกยะ</span>&nbsp;&nbsp;<span class="slant iast">asura</span><span class="slant pali">อสุร</span><span class="slant thai">อะสุระ</span><span class="slant ram">อสุระ</span>&nbsp;&nbsp;และเหล่าเทวดาที่สมบูรณ์&nbsp;&nbsp;ทั้งหมดเห็นพระองค์ด้วยความมหัศจรรย์ใจ
   </p>
 </div>
 

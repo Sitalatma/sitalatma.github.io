@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.7</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โยค-ยุโกฺต วิศุทฺธาตฺมา</i><br /><i>วิชิตาตฺมา ชิเตนฺทฺริยฮ</i><br /><i>สรฺว-ภูตาตฺม-ภูตาตฺมา</i><br /><i>กุรฺวนฺนฺ อปิ น ลิปฺยเต</i>
+<span class="slant iast">yoga-yukto viśuddhātmā<br /></span>
+<span class="slant pali">โยค-ยุกฺโต วิศุทฺธาตฺมา<br /></span>
+<span class="slant thai">โยคะ-ยุกโต วิศุทธาตมา<br /></span>
+<span class="slant ram">โยกะ-ยุคโท วิชุดดฺาทมา<br /></span>
+<span class="slant iast">vijitātmā jitendriyaḥ<br /></span>
+<span class="slant pali">วิชิตาตฺมา ชิเตนฺทฺริยห์<br /></span>
+<span class="slant thai">วิชิตาตมา ชิเตนทริยะห์<br /></span>
+<span class="slant ram">วิจิทาทมา จิเทนดริยะฮ<br /></span>
+<span class="slant iast">sarva-bhūtātma-bhūtātmā<br /></span>
+<span class="slant pali">สรฺว-ภูตาตฺม-ภูตาตฺมา<br /></span>
+<span class="slant thai">สัรวะ-ภูตาตมะ-ภูตาตมา<br /></span>
+<span class="slant ram">สารวะ-บํูทาทมะ-บํูทาทมา<br /></span>
+<span class="slant iast">kurvann api na lipyate<br /></span>
+<span class="slant pali">กุรฺวนฺนฺ อปิ น ลิปฺยเต<br /></span>
+<span class="slant thai">กุรวันน อะปิ นะ ลิปยะเต<br /></span>
+<span class="slant ram">คุรวันน อพิ นะ ลิพยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>โยค-ยุกฺตฮ</i> — ปฏิบัติการอุทิศตนเสียสละรับใช้, <i>วิศุทฺธ-อาตฺมา</i> — วิญญาณผู้บริสุทธิ์, <i>วิชิต-อาตฺมา</i> — ควบคุมตนเองได้, <i>ชิต-อินฺทฺริยฮ</i> — ได้ปรามประสาทสัมผัส, <i>สรฺว-ภูต</i> — แด่มวลชีวิต, <i>อาตฺม-ภูต-อาตฺมา</i> — เมตตากรุณา, <i>กุรฺวนฺ อปิ</i> — แม้ปฏิบัติงาน, <i>น</i> — ไม่เคย, <i>ลิปฺยเต</i> — ถูกพันธนาการ
+  <span class="slant iast">yoga-yuktaḥ</span><span class="slant pali">โยค-ยุกฺตห์</span><span class="slant thai">โยคะ-ยุกตะห์</span><span class="slant ram">โยกะ-ยุคทะฮ</span> — ปฏิบัติการอุทิศตนเสียสละรับใช้, <span class="slant iast">viśuddha-ātmā</span><span class="slant pali">วิศุทฺธ-อาตฺมา</span><span class="slant thai">วิศุทธะ-อาตมา</span><span class="slant ram">วิชุดดะ-อาทมา</span> — วิญญาณผู้บริสุทธิ์, <span class="slant iast">vijita-ātmā</span><span class="slant pali">วิชิต-อาตฺมา</span><span class="slant thai">วิชิตะ-อาตมา</span><span class="slant ram">วิจิทะ-อาทมา</span> — ควบคุมตนเองได้, <span class="slant iast">jita-indriyaḥ</span><span class="slant pali">ชิต-อินฺทฺริยห์</span><span class="slant thai">ชิตะ-อินทริยะห์</span><span class="slant ram">จิทะ-อินดริยะฮ</span> — ได้ปรามประสาทสัมผัส, <span class="slant iast">sarva-bhūta</span><span class="slant pali">สรฺว-ภูต</span><span class="slant thai">สัรวะ-ภูตะ</span><span class="slant ram">สารวะ-บํูทะ</span> — แด่มวลชีวิต, <span class="slant iast">ātma-bhūta-ātmā</span><span class="slant pali">อาตฺม-ภูต-อาตฺมา</span><span class="slant thai">อาตมะ-ภูตะ-อาตมา</span><span class="slant ram">อาทมะ-บํูทะ-อาทมา</span> — เมตตากรุณา, <span class="slant iast">kurvan api</span><span class="slant pali">กุรฺวนฺอปิ</span><span class="slant thai">กุรวันอะปิ</span><span class="slant ram">คุรวัน อพิ</span> — แม้ปฏิบัติงาน, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">lipyate</span><span class="slant pali">ลิปฺยเต</span><span class="slant thai">ลิปยะเต</span><span class="slant ram">ลิพยะเท</span> — ถูกพันธนาการ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ที่อยู่บนหนทางแห่งความหลุดพ้นใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเป็นที่รักยิ่งของทุก&nbsp;&nbsp;ๆ<wbr>ชีวิตและทุกชีวิตก็เป็นที่รักของท่าน&nbsp;&nbsp;ที่เป็นเช่นนี้ได้ก็เนื่องมาจากมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกบุคคลนี้ไม่สามารถคิดว่าสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;สามารถแยกออกจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;ดังเช่นใบไม้และ<wbr>กิ่งไม้ที่ไม่สามารถแยกออกจากต้นไม้ได้ฉันใด&nbsp;&nbsp;ท่านทราบดีว่าจากการรดน้ำที่รากของ<wbr>ต้นไม้&nbsp;&nbsp;น้ำจะถูกแจกจ่ายไปที่ใบและกิ่งก้านทั้งหมด&nbsp;&nbsp;หรือจากการส่งอาหารไปที่กระเพาะ<wbr>อาหารพลังงานจะถูกส่งไปทั่วร่างกายโดยปริยาย&nbsp;&nbsp;เพราะผู้ที่ทำงานใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก<wbr>เป็นผู้รับใช้ของมวลชีวิต&nbsp;&nbsp;จึงเป็นที่รักยิ่งของทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;และเนื่องจากทุกคนได้รับความ<wbr>พึงพอใจจากงานของท่าน&nbsp;&nbsp;จึงทำให้มีจิตสำนึกที่บริสุทธิ์&nbsp;&nbsp;เนื่องจากมีจิตสำนึกที่บริสุทธิ์จิตใจจึงอยู่ภายใต้การควบคุมอย่างสมบูรณ์&nbsp;&nbsp;และเนื่องจากจิตใจอยู่ภายใต้การควบคุมประสาทสัมผัสก็อยู่ภายใต้การควบคุมเช่นเดียวกัน&nbsp;&nbsp;เนื่องจากจิตใจตั้งมั่นอยู่ที่&nbsp;&nbsp;<i>กฺฤษฺณ</i>เสมอท่านจึงไม่มีโอกาสเบี่ยงเบนไปจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือเปิดโอกาสให้ประสาทสัมผัสของ<wbr>ท่านปฏิบัติในสิ่งที่มิใช่เป็นการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ท่านจะไม่ชอบฟังอะไรนอกจากเรื่อง<wbr>ราวที่เกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะไม่ชอบรับประทานอะไรที่ไม่ได้ถวายให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และจะไม่<wbr>ปรารถนาจะไปไหนหาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไม่มีส่วนร่วม&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประสาทสัมผัสของท่านอยู่<wbr>ภายใต้การควบคุม&nbsp;&nbsp;บุคคลที่ประสาทสัมผัสอยู่ภายใต้การควบคุมไม่สามารถก้าวร้าวผู้<wbr>ใด&nbsp;&nbsp;อาจมีคนถามว่า&nbsp;&nbsp;“แล้วทำไม&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จึงทรงก้าวร้าวผู้อื่นในสนามรบ?&nbsp;&nbsp;ท่านมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกอยู่ใช่หรือไม่?”&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงก้าวร้าวโดยผิวเผินเท่านั้น&nbsp;&nbsp;(ดังที่ได้อธิบายไว้แล้วใน<wbr>บทที่สอง)&nbsp;&nbsp;เพราะว่าผู้ที่มารวมกันอยู่ในสนามรบจะยังคงมีปัจเจกชีวิตอยู่ต่อไปเนื่องจากดวงวิญญาณไม่สามารถถูกฆ่าได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในวิถีทิพย์ไม่มีผู้ใดถูกฆ่าในสนามรบ&nbsp;&nbsp;<i>กุรุเกฺษตฺร</i>&nbsp;&nbsp;เพียงแต่เสื้อผ้าของพวกเขาเท่านั้นที่ได้ถูกเปลี่ยนไปโดยคำสั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ทรง<wbr>ปรากฏพระวรกายด้วยพระองค์เอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในขณะที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงต่อสู้อยู่ที่สนามรบ&nbsp;&nbsp;<i>กุรุเกฺษตฺร</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมิได้ต่อสู้จริง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ท่านเพียงแต่ปฏิบัติตามคำสั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วย<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกที่สมบูรณ์&nbsp;&nbsp;บุคคลเช่นนี้จะไม่มีวันถูกพันธนาการอยู่ในวิบากกรรม
+  ผู้ที่อยู่บนหนทางแห่งความหลุดพ้นใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเป็นที่รักยิ่งของทุก&nbsp;&nbsp;ๆ<wbr>ชีวิตและทุกชีวิตก็เป็นที่รักของท่าน&nbsp;&nbsp;ที่เป็นเช่นนี้ได้ก็เนื่องมาจากมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกบุคคลนี้ไม่สามารถคิดว่าสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;สามารถแยกออกจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;ดังเช่นใบไม้และ<wbr>กิ่งไม้ที่ไม่สามารถแยกออกจากต้นไม้ได้ฉันใด&nbsp;&nbsp;ท่านทราบดีว่าจากการรดน้ำที่รากของ<wbr>ต้นไม้&nbsp;&nbsp;น้ำจะถูกแจกจ่ายไปที่ใบและกิ่งก้านทั้งหมด&nbsp;&nbsp;หรือจากการส่งอาหารไปที่กระเพาะ<wbr>อาหารพลังงานจะถูกส่งไปทั่วร่างกายโดยปริยาย&nbsp;&nbsp;เพราะผู้ที่ทำงานใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก<wbr>เป็นผู้รับใช้ของมวลชีวิต&nbsp;&nbsp;จึงเป็นที่รักยิ่งของทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;และเนื่องจากทุกคนได้รับความ<wbr>พึงพอใจจากงานของท่าน&nbsp;&nbsp;จึงทำให้มีจิตสำนึกที่บริสุทธิ์&nbsp;&nbsp;เนื่องจากมีจิตสำนึกที่บริสุทธิ์จิตใจจึงอยู่ภายใต้การควบคุมอย่างสมบูรณ์&nbsp;&nbsp;และเนื่องจากจิตใจอยู่ภายใต้การควบคุมประสาทสัมผัสก็อยู่ภายใต้การควบคุมเช่นเดียวกัน&nbsp;&nbsp;เนื่องจากจิตใจตั้งมั่นอยู่ที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>เสมอท่านจึงไม่มีโอกาสเบี่ยงเบนไปจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือเปิดโอกาสให้ประสาทสัมผัสของ<wbr>ท่านปฏิบัติในสิ่งที่มิใช่เป็นการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ท่านจะไม่ชอบฟังอะไรนอกจากเรื่อง<wbr>ราวที่เกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะไม่ชอบรับประทานอะไรที่ไม่ได้ถวายให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และจะไม่<wbr>ปรารถนาจะไปไหนหาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไม่มีส่วนร่วม&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประสาทสัมผัสของท่านอยู่<wbr>ภายใต้การควบคุม&nbsp;&nbsp;บุคคลที่ประสาทสัมผัสอยู่ภายใต้การควบคุมไม่สามารถก้าวร้าวผู้<wbr>ใด&nbsp;&nbsp;อาจมีคนถามว่า&nbsp;&nbsp;“แล้วทำไม&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จึงทรงก้าวร้าวผู้อื่นในสนามรบ?&nbsp;&nbsp;ท่านมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกอยู่ใช่หรือไม่?”&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงก้าวร้าวโดยผิวเผินเท่านั้น&nbsp;&nbsp;(ดังที่ได้อธิบายไว้แล้วใน<wbr>บทที่สอง)&nbsp;&nbsp;เพราะว่าผู้ที่มารวมกันอยู่ในสนามรบจะยังคงมีปัจเจกชีวิตอยู่ต่อไปเนื่องจากดวงวิญญาณไม่สามารถถูกฆ่าได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในวิถีทิพย์ไม่มีผู้ใดถูกฆ่าในสนามรบ&nbsp;&nbsp;<span class="slant iast">kurukṣetra</span><span class="slant pali">กุรุกฺเษตฺร</span><span class="slant thai">กุรุกเษตระ</span><span class="slant ram">คุรุคเชทระ</span>&nbsp;&nbsp;เพียงแต่เสื้อผ้าของพวกเขาเท่านั้นที่ได้ถูกเปลี่ยนไปโดยคำสั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ทรง<wbr>ปรากฏพระวรกายด้วยพระองค์เอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในขณะที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงต่อสู้อยู่ที่สนามรบ&nbsp;&nbsp;<span class="slant iast">kurukṣetra</span><span class="slant pali">กุรุกฺเษตฺร</span><span class="slant thai">กุรุกเษตระ</span><span class="slant ram">คุรุคเชทระ</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมิได้ต่อสู้จริง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ท่านเพียงแต่ปฏิบัติตามคำสั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วย<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกที่สมบูรณ์&nbsp;&nbsp;บุคคลเช่นนี้จะไม่มีวันถูกพันธนาการอยู่ในวิบากกรรม
   </p>
 </div>
 

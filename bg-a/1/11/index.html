@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 1.11</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -32,7 +118,7 @@
 </div>
 <div class="r r-lang-en r-chapter-title r-title">
   <h2 class="section-title">
-    สำรวจกองทัพที่สมรภูมิ <i>กุรุเกฺษตฺร</i> 
+    สำรวจกองทัพที่สมรภูมิ <i>กุรุกฺเษตฺร</i> 
   <h2>
 </div>
 <div class="bb r-verse">
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อยเนษุ จ สเรฺวษุ</i><br /><i>ยตฺหา-ภาคมฺ อวสฺตฺหิตาฮ</i><br /><i>ภีษฺมมฺ เอวาภิรกฺษนฺตุ</i><br /><i>ภวนฺตฮ สรฺว เอว หิ</i>
+<span class="slant iast">ayaneṣu ca sarveṣu<br /></span>
+<span class="slant pali">อยเนษุ จ สเรฺวษุ<br /></span>
+<span class="slant thai">อะยะเนษุ จะ สัรเวษุ<br /></span>
+<span class="slant ram">อยะเนชุ ชะ สารเวชุ<br /></span>
+<span class="slant iast">yathā-bhāgam avasthitāḥ<br /></span>
+<span class="slant pali">ยถา-ภาคมฺ อวสฺถิตาห์<br /></span>
+<span class="slant thai">ยะถา-ภาคัม อะวัสถิตาห์<br /></span>
+<span class="slant ram">ยะทฺา-บฺากัม อวัสทิฺทาฮ<br /></span>
+<span class="slant iast">bhīṣmam evābhirakṣantu<br /></span>
+<span class="slant pali">ภีษฺมมฺ เอวาภิรกฺษนฺตุ<br /></span>
+<span class="slant thai">ภีษมัม เอวาภิรักษันตุ<br /></span>
+<span class="slant ram">บีฺชมัม เอวาบิฺรัคชันทุ<br /></span>
+<span class="slant iast">bhavantaḥ sarva eva hi<br /></span>
+<span class="slant pali">ภวนฺตห์ สรฺว เอว หิ<br /></span>
+<span class="slant thai">ภะวันตะห์ สัรวะ เอวะ หิ<br /></span>
+<span class="slant ram">บฺะวันทะฮ สารวะ เอวะ ฮิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อยเนษุ</i> — ในจุดยุทธศาสตร์, <i>จ</i> — เช่นกัน, <i>สเรฺวษุ</i> — ทุกหนทุกแห่ง, <i>ยตฺหา-ภาคมฺ</i> — จัดทัพ แตกต่างกัน, <i>อวสฺตฺหิตาฮ</i> — สถิต, <i>ภีษฺมมฺ</i> — แด่พระอัยกา <i>ภีษฺม</i>, <i>เอว</i> — แน่นอน, <i>อภิรกฺษนฺตุ</i> — ควรให้การสนับสนุน, <i>ภวนฺตฮ</i> — ท่าน, <i>สเรฺว</i> — ตามลำดับทั้งหมด, <i>เอว หิ</i> — แน่นอน
+  <span class="slant iast">ayaneṣu</span><span class="slant pali">อยเนษุ</span><span class="slant thai">อะยะเนษุ</span><span class="slant ram">อยะเนชุ</span> — ในจุดยุทธศาสตร์, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">sarveṣu</span><span class="slant pali">สเรฺวษุ</span><span class="slant thai">สัรเวษุ</span><span class="slant ram">สารเวชุ</span> — ทุกหนทุกแห่ง, <span class="slant iast">yathā-bhāgam</span><span class="slant pali">ยถา-ภาคมฺ</span><span class="slant thai">ยะถา-ภาคัม</span><span class="slant ram">ยะทฺา-บฺากัม</span> — จัดทัพ แตกต่างกัน, <span class="slant iast">avasthitāḥ</span><span class="slant pali">อวสฺถิตาห์</span><span class="slant thai">อะวัสถิตาห์</span><span class="slant ram">อวัสทิฺทาฮ</span> — สถิต, <span class="slant iast">bhīṣmam</span><span class="slant pali">ภีษฺมมฺ</span><span class="slant thai">ภีษมัม</span><span class="slant ram">บีชมัม</span> — แด่พระอัยกา <span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">abhirakṣantu</span><span class="slant pali">อภิรกฺษนฺตุ</span><span class="slant thai">อะภิรักษันตุ</span><span class="slant ram">อบิฺรัคชันทุ</span> — ควรให้การสนับสนุน, <span class="slant iast">bhavantaḥ</span><span class="slant pali">ภวนฺตห์</span><span class="slant thai">ภะวันตะห์</span><span class="slant ram">บฺะวันทะฮ</span> — ท่าน, <span class="slant iast">sarve</span><span class="slant pali">สเรฺว</span><span class="slant thai">สัรเว</span><span class="slant ram">สารเว</span> — ตามลำดับทั้งหมด, <span class="slant iast">eva hi</span><span class="slant pali">เอวหิ</span><span class="slant thai">เอวะหิ</span><span class="slant ram">เอวะ ฮิ</span> — แน่นอน
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  บัดนี้&nbsp;&nbsp;พวกท่านทั้งหลายต้องช่วยให้การสนับสนุนพระอัยกา&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;อย่างเต็มที่&nbsp;&nbsp;โดยอยู่ในตำแหน่งจุดยุทธศาสตร์ทางเข้าไปสู่กองทัพ
+  บัดนี้&nbsp;&nbsp;พวกท่านทั้งหลายต้องช่วยให้การสนับสนุนพระอัยกา&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;อย่างเต็มที่&nbsp;&nbsp;โดยอยู่ในตำแหน่งจุดยุทธศาสตร์ทางเข้าไปสู่กองทัพ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  หลังจากสรรเสริญพลังอำนาจของ&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<i>ทุโรฺยธน</i>&nbsp;&nbsp;ทรงพิจารณาว่า<wbr>นักรบคนอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;อาจคิดว่าตนเองมีความสำคัญน้อย&nbsp;&nbsp;จึงตรัสแบบนักการทูตเพื่อปรับ<wbr>สถานการณ์ด้วยคำพูดที่กล่าวมาแล้ว&nbsp;&nbsp;โดยเน้นว่า&nbsp;&nbsp;<i>ภีษฺมเทว</i>&nbsp;&nbsp;ทรงเป็นวีรบุรุษผู้ยิ่งใหญ่<wbr>ที่สุดอย่างไม่ต้องสงสัยแต่ว่าทรงมีอายุมากแล้ว&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทุกคนต้องตระหนักเป็นพิเศษที่<wbr>จะปกป้องท่านจากรอบด้าน&nbsp;&nbsp;ขณะที่สู้รบกันอย่างเต็มที่อยู่ด้านหนึ่งศัตรูอาจจะฉวยโอกาส<wbr>จากด้านอื่น&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ตรงนี้เป็นสิ่งสำคัญ&nbsp;&nbsp;คือวีรบุรุษท่านอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ควรออกห่างจาก<wbr>ตำแหน่งยุทธศาสตร์จนให้ศัตรูทะลวงเข้ามาในกองทัพได้&nbsp;&nbsp;<i>ทุโรฺยธน</i>&nbsp;&nbsp;ทรงมีความรู้สึก<wbr>อย่างชัดเจนว่าชัยชนะของ&nbsp;&nbsp;<i>กุรุ</i>&nbsp;&nbsp;ขึ้นอยู่กับการปรากฏกายของ&nbsp;&nbsp;<i>ภีษฺมเทว</i>&nbsp;&nbsp;และมั่นใจในการ<wbr>สนับสนุนอย่างเต็มที่ของ&nbsp;&nbsp;<i>ภีษฺมเทว</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>โทฺรณาจารฺย</i>&nbsp;&nbsp;ในสนามรบ&nbsp;&nbsp;เพราะเห็นแล้วว่าทั้ง<wbr>สองท่านมิได้เอ่ยปากแม้แต่คำเดียวขณะที่&nbsp;&nbsp;<i>ทฺระอุปที</i>&nbsp;&nbsp;ภรรยาของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ขอร้องในสภาวะ<wbr>ที่ต้องการความช่วยเหลือ&nbsp;&nbsp;นางได้ขอความเป็นธรรมขณะถูกเปลื้องผ้าออกต่อหน้าที่<wbr>ชุมนุมของยอดขุนพลทั้งหลาย&nbsp;&nbsp;แม้ทราบว่ายอดขุนพลทั้งสองท่านมีใจรัก&nbsp;&nbsp;<i>ปาณฺฑว</i>แต่&nbsp;&nbsp;<i>ทุโรฺยธน</i>&nbsp;&nbsp;ทรงยังหวังว่าทั้งสองท่านจะสลัดความรักออกไปทั้งหมดเหมือนกับที่ท่าน<wbr>ทั้งสองได้ทำตอนที่เล่นเกมการพนันกัน
+  หลังจากสรรเสริญพลังอำนาจของ&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<span class="slant iast">duryodhana</span><span class="slant pali">ทุโรฺยธน</span><span class="slant thai">ทุรโยธะนะ</span><span class="slant ram">ดุรโยดฺะนะ</span>&nbsp;&nbsp;ทรงพิจารณาว่า<wbr>นักรบคนอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;อาจคิดว่าตนเองมีความสำคัญน้อย&nbsp;&nbsp;จึงตรัสแบบนักการทูตเพื่อปรับ<wbr>สถานการณ์ด้วยคำพูดที่กล่าวมาแล้ว&nbsp;&nbsp;โดยเน้นว่า&nbsp;&nbsp;<span class="slant iast">bhīṣmadeva</span><span class="slant pali">ภีษฺมเทว</span><span class="slant thai">ภีษมะเทวะ</span><span class="slant ram">บีฺชมะเดวะ</span>&nbsp;&nbsp;ทรงเป็นวีรบุรุษผู้ยิ่งใหญ่<wbr>ที่สุดอย่างไม่ต้องสงสัยแต่ว่าทรงมีอายุมากแล้ว&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทุกคนต้องตระหนักเป็นพิเศษที่<wbr>จะปกป้องท่านจากรอบด้าน&nbsp;&nbsp;ขณะที่สู้รบกันอย่างเต็มที่อยู่ด้านหนึ่งศัตรูอาจจะฉวยโอกาส<wbr>จากด้านอื่น&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ตรงนี้เป็นสิ่งสำคัญ&nbsp;&nbsp;คือวีรบุรุษท่านอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ควรออกห่างจาก<wbr>ตำแหน่งยุทธศาสตร์จนให้ศัตรูทะลวงเข้ามาในกองทัพได้&nbsp;&nbsp;<span class="slant iast">duryodhana</span><span class="slant pali">ทุโรฺยธน</span><span class="slant thai">ทุรโยธะนะ</span><span class="slant ram">ดุรโยดฺะนะ</span>&nbsp;&nbsp;ทรงมีความรู้สึก<wbr>อย่างชัดเจนว่าชัยชนะของ&nbsp;&nbsp;<span class="slant iast">kuru</span><span class="slant pali">กุรุ</span><span class="slant thai">กุรุ</span><span class="slant ram">คุรุ</span>&nbsp;&nbsp;ขึ้นอยู่กับการปรากฏกายของ&nbsp;&nbsp;<span class="slant iast">bhīṣmadeva</span><span class="slant pali">ภีษฺมเทว</span><span class="slant thai">ภีษมะเทวะ</span><span class="slant ram">บีฺชมะเดวะ</span>&nbsp;&nbsp;และมั่นใจในการ<wbr>สนับสนุนอย่างเต็มที่ของ&nbsp;&nbsp;<span class="slant iast">bhīṣmadeva</span><span class="slant pali">ภีษฺมเทว</span><span class="slant thai">ภีษมะเทวะ</span><span class="slant ram">บีฺชมะเดวะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">droṇācārya</span><span class="slant pali">โทฺรณาจารฺย</span><span class="slant thai">ทโรณาจารยะ</span><span class="slant ram">โดรณาชารยะ</span>&nbsp;&nbsp;ในสนามรบ&nbsp;&nbsp;เพราะเห็นแล้วว่าทั้ง<wbr>สองท่านมิได้เอ่ยปากแม้แต่คำเดียวขณะที่&nbsp;&nbsp;<span class="slant iast">draupadī</span><span class="slant pali">เทฺราปที</span><span class="slant thai">ทเราปะที</span><span class="slant ram">โดรพะดี</span>&nbsp;&nbsp;ภรรยาของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ขอร้องในสภาวะ<wbr>ที่ต้องการความช่วยเหลือ&nbsp;&nbsp;นางได้ขอความเป็นธรรมขณะถูกเปลื้องผ้าออกต่อหน้าที่<wbr>ชุมนุมของยอดขุนพลทั้งหลาย&nbsp;&nbsp;แม้ทราบว่ายอดขุนพลทั้งสองท่านมีใจรัก&nbsp;&nbsp;<span class="slant iast">pāṇḍava</span><span class="slant pali">ปาณฺฑว</span><span class="slant thai">ปาณฑะวะ</span><span class="slant ram">พาณดะวะ</span>แต่&nbsp;&nbsp;<span class="slant iast">duryodhana</span><span class="slant pali">ทุโรฺยธน</span><span class="slant thai">ทุรโยธะนะ</span><span class="slant ram">ดุรโยดฺะนะ</span>&nbsp;&nbsp;ทรงยังหวังว่าทั้งสองท่านจะสลัดความรักออกไปทั้งหมดเหมือนกับที่ท่าน<wbr>ทั้งสองได้ทำตอนที่เล่นเกมการพนันกัน
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.18</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อวฺยกฺตาทฺ วฺยกฺตยฮ สรฺวาฮ</i><br /><i>ปฺรภวนฺตฺยฺ อหรฺ-อาคเม</i><br /><i>ราตฺรฺยฺ-อาคเม ปฺรลียเนฺต</i><br /><i>ตไตฺรวาวฺยกฺต-สํชฺญเก</i>
+<span class="slant iast">avyaktād vyaktayaḥ sarvāḥ<br /></span>
+<span class="slant pali">อวฺยกฺตาทฺ วฺยกฺตยห์ สรฺวาห์<br /></span>
+<span class="slant thai">อัวยักตาท วยักตะยะห์ สัรวาห์<br /></span>
+<span class="slant ram">อัพยัคทาด วิยัคทะยะฮ สารวาฮ<br /></span>
+<span class="slant iast">prabhavanty ahar-āgame<br /></span>
+<span class="slant pali">ปฺรภวนฺตฺยฺ อหรฺ-อาคเม<br /></span>
+<span class="slant thai">ประภะวันตย อะหัร-อาคะเม<br /></span>
+<span class="slant ram">พระบฺะวันทิ อฮาร-อากะเม<br /></span>
+<span class="slant iast">rātry-āgame pralīyante<br /></span>
+<span class="slant pali">ราตฺรฺยฺ-อาคเม ปฺรลียนฺเต<br /></span>
+<span class="slant thai">ราตรย-อาคะเม ประลียันเต<br /></span>
+<span class="slant ram">ราทริ-อากะเม พระลียันเท<br /></span>
+<span class="slant iast">tatraivāvyakta-saṁjñake<br /></span>
+<span class="slant pali">ตไตฺรวาวฺยกฺต-สํชฺญเก<br /></span>
+<span class="slant thai">ตัตไรวาวยักตะ-สัญชญะเก<br /></span>
+<span class="slant ram">ทะไทรวาพยัคทะ-สัมกยะเคฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อวฺยกฺตาตฺ</i> — จากที่ไม่ปรากฏ, <i>วฺยกฺตยฮ</i> — สิ่งมีชีวิต, <i>สรฺวาฮ</i> — ทั้งหมด, <i>ปฺรภวนฺติ</i> — ปรากฏออกมา, <i>อหฮ-อาคเม</i> — ในตอนเริ่มต้นของวัน, <i>ราตฺริ-อาคเม</i> — ตกตอนกลาง คืน, <i>ปฺรลียเนฺต</i> — ถูกทำลาย, <i>ตตฺร</i> — ในนั้น, <i>เอว</i> — แน่นอน, <i>อวฺยกฺต</i> — ไม่ปรากฏ, <i>สํชฺญเก</i> — ซึ่งเรียกว่า
+  <span class="slant iast">avyaktāt</span><span class="slant pali">อวฺยกฺตาตฺ</span><span class="slant thai">อัวยักตาต</span><span class="slant ram">อัพยัคทาท</span> — จากที่ไม่ปรากฏ, <span class="slant iast">vyaktayaḥ</span><span class="slant pali">วฺยกฺตยห์</span><span class="slant thai">วยักตะยะห์</span><span class="slant ram">วยัคทะยะฮ</span> — สิ่งมีชีวิต, <span class="slant iast">sarvāḥ</span><span class="slant pali">สรฺวาห์</span><span class="slant thai">สัรวาห์</span><span class="slant ram">สารวาฮ</span> — ทั้งหมด, <span class="slant iast">prabhavanti</span><span class="slant pali">ปฺรภวนฺติ</span><span class="slant thai">ประภะวันติ</span><span class="slant ram">พระบฺะวันทิ</span> — ปรากฏออกมา, <span class="slant iast">ahaḥ-āgame</span><span class="slant pali">อหห์-อาคเม</span><span class="slant thai">อะหะห์-อาคะเม</span><span class="slant ram">อฮะฮ-อากะเม</span> — ในตอนเริ่มต้นของวัน, <span class="slant iast">rātri-āgame</span><span class="slant pali">ราตฺริ-อาคเม</span><span class="slant thai">ราตริ-อาคะเม</span><span class="slant ram">ราทริ-อากะเม</span> — ตกตอนกลาง คืน, <span class="slant iast">pralīyante</span><span class="slant pali">ปฺรลียนฺเต</span><span class="slant thai">ประลียันเต</span><span class="slant ram">พระลียันเท</span> — ถูกทำลาย, <span class="slant iast">tatra</span><span class="slant pali">ตตฺร</span><span class="slant thai">ตัตระ</span><span class="slant ram">ทะทระ</span> — ในนั้น, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">avyakta</span><span class="slant pali">อวฺยกฺต</span><span class="slant thai">อัวยักตะ</span><span class="slant ram">อัพยัคทะ</span> — ไม่ปรากฏ, <span class="slant iast">saṁjñake</span><span class="slant pali">สํชฺญเก</span><span class="slant thai">สัญชญะเก</span><span class="slant ram">สัมกยะเค</span> — ซึ่งเรียกว่า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในตอนเริ่มต้นวันของพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหลายปรากฏออกมาจากสภาวะที่ไม่ปรากฏ&nbsp;&nbsp;หลังจากนั้นเมื่อตกตอนกลางคืน&nbsp;&nbsp;พวกเขาก็กลืนเข้าไปในการไม่ปรากฏอีกครั้งหนึ่ง
+  ในตอนเริ่มต้นวันของพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหลายปรากฏออกมาจากสภาวะที่ไม่ปรากฏ&nbsp;&nbsp;หลังจากนั้นเมื่อตกตอนกลางคืน&nbsp;&nbsp;พวกเขาก็กลืนเข้าไปในการไม่ปรากฏอีกครั้งหนึ่ง
   </p>
 </div>
 

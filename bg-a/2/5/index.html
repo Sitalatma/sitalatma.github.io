@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>คุรูนฺ อหตฺวา หิ มหานุภาวานฺ</i><br /><i>เศฺรโย โภกฺตุํ ไภกฺษฺยมฺ อปีห โลเก</i><br /><i>หตฺวารฺตฺห-กามาํสฺ ตุ คุรูนฺ อิไหว</i><br /><i>ภุญฺชีย โภคานฺ รุธิร-ปฺรทิคฺธานฺ</i>
+<span class="slant iast">gurūn ahatvā hi mahānubhāvān<br /></span>
+<span class="slant pali">คุรูนฺ อหตฺวา หิ มหานุภาวานฺ<br /></span>
+<span class="slant thai">คุรูน อะหัตวา หิ มะหานุภาวาน<br /></span>
+<span class="slant ram">กูรูน อฮัทวา ฮิ มะฮานุบฺาวาน<br /></span>
+<span class="slant iast">śreyo bhoktuṁ bhaikṣyam apīha loke<br /></span>
+<span class="slant pali">เศฺรโย โภกฺตุํ ไภกฺษฺยมฺ อปีห โลเก<br /></span>
+<span class="slant thai">ศเรโย โภกตุง ไภกษยัม อะปีหะ โลเก<br /></span>
+<span class="slant ram">ชเรโย โบฺคทุม ไบฺคชยัม อพีฮะ โลเคฺ<br /></span>
+<span class="slant iast">hatvārtha-kāmāṁs tu gurūn ihaiva<br /></span>
+<span class="slant pali">หตฺวารฺถ-กามำสฺ ตุ คุรูนฺ อิไหว<br /></span>
+<span class="slant thai">หัตวารถะ-กามางส ตุ คุรูน อิไหวะ<br /></span>
+<span class="slant ram">ฮัทวารทฺะ-คามามส ทุ กุรูน อิไฮวะ<br /></span>
+<span class="slant iast">bhuñjīya bhogān rudhira-pradigdhān<br /></span>
+<span class="slant pali">ภุญฺชีย โภคานฺ รุธิร-ปฺรทิคฺธานฺ<br /></span>
+<span class="slant thai">ภุญชียะ โภคาน รุธิระ-ประทิคธาน<br /></span>
+<span class="slant ram">บํุนจียะ โบฺกาน รุดิระ-พระดิกดฺาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>คุรูนฺ</i> — ผู้อาวุโส, <i>อหตฺวา</i> — ไม่สังหาร, <i>หิ</i> — แน่นอน, <i>มหา-อนุภาวานฺ</i> — ดวงวิญญาณผู้ยิ่ง ใหญ่, <i>เศฺรยฮ</i> — เป็นสิ่งที่ดีกว่า, <i>โภกฺตุมฺ</i> — ใช้ชีวิตอย่างมีความสุข, <i>ไภกฺษฺยมฺ</i> — ด้วยการ ภิกขาจาร, <i>อปิ</i> — ถึงแม้ว่า, <i>อิห</i> — ในชีวิตนี้, <i>โลเก</i> — ในโลกนี้, <i>หตฺวา</i> — สังหาร, <i>อรฺตฺห</i> — ได้ รับ, <i>กามานฺ</i> — ปรารถนา, <i>ตุ</i> — แต่, <i>คุรูนฺ</i> — ผู้อาวุโส, <i>อิห</i> — ในโลกนี้, <i>เอว</i> — แน่นอน, <i>ภุญฺชีย</i> — ผู้ที่ต้องหาความสุข, <i>โภคานฺ</i> — สิ่งที่ให้ความสุข, <i>รุธิร</i> — เลือด, <i>ปฺรทิคฺธานฺ</i> — เปื้อนด้วย
+  <span class="slant iast">gurūn</span><span class="slant pali">คุรูนฺ</span><span class="slant thai">คุรูน</span><span class="slant ram">กุรูน</span> — ผู้อาวุโส, <span class="slant iast">ahatvā</span><span class="slant pali">อหตฺวา</span><span class="slant thai">อะหัตวา</span><span class="slant ram">อฮัทวา</span> — ไม่สังหาร, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">mahā-anubhāvān</span><span class="slant pali">มหา-อนุภาวานฺ</span><span class="slant thai">มะหา-อะนุภาวาน</span><span class="slant ram">มะฮาอนุบฺาวาน</span> — ดวงวิญญาณผู้ยิ่ง ใหญ่, <span class="slant iast">śreyaḥ</span><span class="slant pali">เศฺรยห์</span><span class="slant thai">ศเรยะห์</span><span class="slant ram">ชะเรยะฮ</span> — เป็นสิ่งที่ดีกว่า, <span class="slant iast">bhoktum</span><span class="slant pali">โภกฺตุมฺ</span><span class="slant thai">โภกตุม</span><span class="slant ram">โบฺคทุม</span> — ใช้ชีวิตอย่างมีความสุข, <span class="slant iast">bhaikṣyam</span><span class="slant pali">ไภกฺษฺยมฺ</span><span class="slant thai">ไภกษยัม</span><span class="slant ram">ไบฺคชยัม</span> — ด้วยการ ภิกขาจาร, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — ถึงแม้ว่า, <span class="slant iast">iha</span><span class="slant pali">อิห</span><span class="slant thai">อิหะ</span><span class="slant ram">อิฮะ</span> — ในชีวิตนี้, <span class="slant iast">loke</span><span class="slant pali">โลเก</span><span class="slant thai">โลเก</span><span class="slant ram">โลเค</span> — ในโลกนี้, <span class="slant iast">hatvā</span><span class="slant pali">หตฺวา</span><span class="slant thai">หัตวา</span><span class="slant ram">ฮัทวา</span> — สังหาร, <span class="slant iast">artha</span><span class="slant pali">อรฺถ</span><span class="slant thai">อัรถะ</span><span class="slant ram">อารทฺะ</span> — ได้ รับ, <span class="slant iast">kāmān</span><span class="slant pali">กามานฺ</span><span class="slant thai">กามาน</span><span class="slant ram">คามาน</span> — ปรารถนา, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">gurūn</span><span class="slant pali">คุรูนฺ</span><span class="slant thai">คุรูน</span><span class="slant ram">กุรูน</span> — ผู้อาวุโส, <span class="slant iast">iha</span><span class="slant pali">อิห</span><span class="slant thai">อิหะ</span><span class="slant ram">อิฮะ</span> — ในโลกนี้, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">bhuñjīya</span><span class="slant pali">ภุญฺชีย</span><span class="slant thai">ภุญชียะ</span><span class="slant ram">บํุนจี- ยะ</span> — ผู้ที่ต้องหาความสุข, <span class="slant iast">bhogān</span><span class="slant pali">โภคานฺ</span><span class="slant thai">โภคาน</span><span class="slant ram">โบฺกาน</span> — สิ่งที่ให้ความสุข, <span class="slant iast">rudhira</span><span class="slant pali">รุธิร</span><span class="slant thai">รุธิระ</span><span class="slant ram">รุดิระ</span> — เลือด, <span class="slant iast">pradigdhān</span><span class="slant pali">ปฺรทิคฺธานฺ</span><span class="slant thai">ประทิคธาน</span><span class="slant ram">พระดิกดฺาน</span> — เปื้อนด้วย
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ตามหลักพระคัมภีร์&nbsp;&nbsp;อาจารย์ผู้กระทำสิ่งที่น่ารังเกียจ&nbsp;&nbsp;ขาดสติดุลยพินิจ&nbsp;&nbsp;สมควร<wbr>ถูกทอดทิ้ง&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>โทฺรณ</i>&nbsp;&nbsp;จำเป็นต้องอยู่ฝ่าย&nbsp;&nbsp;<i>ทุโรฺยธน</i>&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<i>ทุโรฺยธน</i>&nbsp;&nbsp;ช่วยเหลือ<wbr>เรื่องการเงิน&nbsp;&nbsp;ทั้งสองท่านไม่ควรรับสถานภาพนี้เพียงเพื่อเห็นแก่เงินเท่านั้น&nbsp;&nbsp;เมื่อเป็นเช่น<wbr>นี้ท่านได้สูญเสียคุณสมบัติความน่าเคารพนับถือในฐานะเป็นอาจารย์ไปแล้ว&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>อรฺชุน</i>ทรงถือว่าท่านทั้งสองเป็นผู้อาวุโส&nbsp;&nbsp;หากถูกสังหารเท่ากับผลกำไรทางวัตถุและความสุขที่<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ได้รับเป็นสิ่งปฏิกูลที่เปื้อนไปด้วยเลือด
+  ตามหลักพระคัมภีร์&nbsp;&nbsp;อาจารย์ผู้กระทำสิ่งที่น่ารังเกียจ&nbsp;&nbsp;ขาดสติดุลยพินิจ&nbsp;&nbsp;สมควร<wbr>ถูกทอดทิ้ง&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">droṇa</span><span class="slant pali">โทฺรณ</span><span class="slant thai">ทโรณะ</span><span class="slant ram">โดรณะ</span>&nbsp;&nbsp;จำเป็นต้องอยู่ฝ่าย&nbsp;&nbsp;<span class="slant iast">duryodhana</span><span class="slant pali">ทุโรฺยธน</span><span class="slant thai">ทุรโยธะนะ</span><span class="slant ram">ดุรโยดฺะนะ</span>&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<span class="slant iast">duryodhana</span><span class="slant pali">ทุโรฺยธน</span><span class="slant thai">ทุรโยธะนะ</span><span class="slant ram">ดุรโยดฺะนะ</span>&nbsp;&nbsp;ช่วยเหลือ<wbr>เรื่องการเงิน&nbsp;&nbsp;ทั้งสองท่านไม่ควรรับสถานภาพนี้เพียงเพื่อเห็นแก่เงินเท่านั้น&nbsp;&nbsp;เมื่อเป็นเช่น<wbr>นี้ท่านได้สูญเสียคุณสมบัติความน่าเคารพนับถือในฐานะเป็นอาจารย์ไปแล้ว&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>ทรงถือว่าท่านทั้งสองเป็นผู้อาวุโส&nbsp;&nbsp;หากถูกสังหารเท่ากับผลกำไรทางวัตถุและความสุขที่<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ได้รับเป็นสิ่งปฏิกูลที่เปื้อนไปด้วยเลือด
   </p>
 </div>
 

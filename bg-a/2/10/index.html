@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.10</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตมฺ อุวาจ หฺฤษีเกศฮ</i><br /><i>ปฺรหสนฺนฺ อิว ภารต</i><br /><i>เสนโยรฺ อุภโยรฺ มเธฺย</i><br /><i>วิษีทนฺตมฺ อิทํ วจฮ</i>
+<span class="slant iast">tam uvāca hṛṣīkeśaḥ<br /></span>
+<span class="slant pali">ตมฺ อุวาจ หฺฤษีเกศห์<br /></span>
+<span class="slant thai">ตัม อุวาจะ หฤษีเกศะห์<br /></span>
+<span class="slant ram">ทัม อุวาชะ ฮริชีเคชะฮ<br /></span>
+<span class="slant iast">prahasann iva bhārata<br /></span>
+<span class="slant pali">ปฺรหสนฺนฺ อิว ภารต<br /></span>
+<span class="slant thai">ประหะสันน อิวะ ภาระตะ<br /></span>
+<span class="slant ram">พระฮะสันน อิวะ บฺาระทะ<br /></span>
+<span class="slant iast">senayor ubhayor madhye<br /></span>
+<span class="slant pali">เสนโยรฺ อุภโยรฺ มเธฺย<br /></span>
+<span class="slant thai">เสนะโยร อุภะโยร มัธเย<br /></span>
+<span class="slant ram">เสนะโยร อุบฺะโยร มัดฮเย<br /></span>
+<span class="slant iast">viṣīdantam idaṁ vacaḥ<br /></span>
+<span class="slant pali">วิษีทนฺตมฺ อิทํ วจห์<br /></span>
+<span class="slant thai">วิษีทันตัม อิทัง วะจะห์<br /></span>
+<span class="slant ram">วิชีดันทัม อิดัม วะชะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตมฺ</i> — แต่เขา, <i>อุวาจ</i> — ตรัส, <i>หฺฤษีเกศฮ</i> — <i>กฺฤษฺณ</i> เจ้าแห่งประสาทสัมผัส, <i>ปฺรหสนฺ</i> — ทรงแย้มพระสรวล,<i>อิว</i> — เหมือนเช่นนั้น, <i>ภารต</i> — โอ้ <i>ธฺฤตราษฺฏฺร</i> ผู้สืบราชวงศ์ <i>ภรต</i>, <i>เสนโยฮ</i> — ของศัตรู, <i>อุภโยฮ</i> — ของทั้งสองฝ่าย, <i>มเธฺย</i> — ระหว่าง, <i>วิษีทนฺตมฺ</i> — แด่ผู้ที่มีความโศกเศร้า, <i>อิทมฺ</i> — ต่อไปนี้, <i>วจฮ</i> — คำพูด
+  <span class="slant iast">tam</span><span class="slant pali">ตมฺ</span><span class="slant thai">ตัม</span><span class="slant ram">ทัม</span> — แต่เขา, <span class="slant iast">uvāca</span><span class="slant pali">อุวาจ</span><span class="slant thai">อุวาจะ</span><span class="slant ram">อุวาชะ</span> — ตรัส, <span class="slant iast">hṛṣīkeśaḥ</span><span class="slant pali">หฺฤษีเกศห์</span><span class="slant thai">หฤษีเกศะห์</span><span class="slant ram">ฮริชีเคชะฮ</span> — <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> เจ้าแห่งประสาทสัมผัส, <span class="slant iast">prahasan</span><span class="slant pali">ปฺรหสนฺ</span><span class="slant thai">ประหะสัน</span><span class="slant ram">พระฮะสัน</span> — ทรงแย้มพระสรวล,<span class="slant iast">iva</span><span class="slant pali">อิว</span><span class="slant thai">อิวะ</span><span class="slant ram">อิวะ</span> — เหมือนเช่นนั้น, <span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span> — โอ้ <span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span> ผู้สืบราชวงศ์ <span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>, <span class="slant iast">senayoḥ</span><span class="slant pali">เสนโยห์</span><span class="slant thai">เสนะโยห์</span><span class="slant ram">เสนะโยฮ</span> — ของศัตรู, <span class="slant iast">ubhayoḥ</span><span class="slant pali">อุภโยห์</span><span class="slant thai">อุภะโยห์</span><span class="slant ram">อุบฺะโยฮ</span> — ของทั้งสองฝ่าย, <span class="slant iast">madhye</span><span class="slant pali">มเธฺย</span><span class="slant thai">มัธเย</span><span class="slant ram">มัดฺเย</span> — ระหว่าง, <span class="slant iast">viṣīdantam</span><span class="slant pali">วิษีทนฺตมฺ</span><span class="slant thai">วิษีทันตัม</span><span class="slant ram">วิชีดันทัม</span> — แด่ผู้ที่มีความโศกเศร้า, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — ต่อไปนี้, <span class="slant iast">vacaḥ</span><span class="slant pali">วจห์</span><span class="slant thai">วะจะห์</span><span class="slant ram">วะชะฮ</span> — คำพูด
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้สืบราชวงศ์&nbsp;&nbsp;<i>ภรต</i>&nbsp;&nbsp;ขณะนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแย้มพระสรวลอยู่ท่ามกลางกองทัพทั้งสองฝ่าย&nbsp;&nbsp;และตรัสแด่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ผู้ทรงเปี่ยมไปด้วยความเศร้าโศก&nbsp;&nbsp;ดังต่อไปนี้
+  โอ้&nbsp;&nbsp;ผู้สืบราชวงศ์&nbsp;&nbsp;<span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>&nbsp;&nbsp;ขณะนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแย้มพระสรวลอยู่ท่ามกลางกองทัพทั้งสองฝ่าย&nbsp;&nbsp;และตรัสแด่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ผู้ทรงเปี่ยมไปด้วยความเศร้าโศก&nbsp;&nbsp;ดังต่อไปนี้
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การสนทนาได้ดำเนินต่อไประหว่างสหายสนิทผู้ทรงมีพระนามว่า&nbsp;&nbsp;<i>หฺฤษีเกศ</i>&nbsp;&nbsp;และ<wbr>&nbsp;&nbsp;<i>คุฑาเกศ</i>&nbsp;&nbsp;ในฐานะที่เป็นสหายทั้งคู่ทรงอยู่ในระดับเดียวกัน&nbsp;&nbsp;แต่เมื่อองค์หนึ่งอาสามาเป็น<wbr>ศิษย์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแย้มพระสรวลเพราะสหายของพระองค์ยอมมาเป็นศิษย์&nbsp;&nbsp;ในฐานะที่เป็น<wbr>เจ้าของมวลชีวิตพระองค์ทรงอยู่ในสถานภาพที่เหนือกว่า&nbsp;&nbsp;คือเป็นพระอาจารย์ของทุก&nbsp;&nbsp;ๆชีวิต&nbsp;&nbsp;แต่พระองค์ทรงยอมมาเป็นสหาย&nbsp;&nbsp;เป็นโอรส&nbsp;&nbsp;หรือเป็นที่รักของสาวกผู้ปรารถนาให้<wbr>พระองค์แสดงบทเหล่านี้&nbsp;&nbsp;เมื่อได้รับการยอมรับให้เป็นพระอาจารย์ก็ทรงรับบทนี้ทันทีและตรัสต่อสาวกเยี่ยงพระอาจารย์ด้วยสุรเสียงอันหนักแน่น&nbsp;&nbsp;การสนทนาระหว่างพระ<wbr>อาจารย์และศิษย์แลกเปลี่ยนกันอย่างเปิดเผยต่อหน้ากองทัพทั้งสองฝ่ายเพื่อประโยชน์<wbr>ของทุกคน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การสนทนา&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;มิใช่สำหรับเฉพาะบุคคล&nbsp;&nbsp;สมาคม&nbsp;&nbsp;หรือ<wbr>เฉพาะสังคมใดสังคมหนึ่งเท่านั้น&nbsp;&nbsp;แต่สำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ไม่ว่าจะเป็นมิตรหรือเป็นศัตรูก็มี<wbr>สิทธิ์รับฟังได้เท่าเทียมกัน
+  การสนทนาได้ดำเนินต่อไประหว่างสหายสนิทผู้ทรงมีพระนามว่า&nbsp;&nbsp;<span class="slant iast">hṛṣīkeśa</span><span class="slant pali">หฺฤษีเกศ</span><span class="slant thai">หฤษีเกศะ</span><span class="slant ram">ฮริชีเคชะ</span>&nbsp;&nbsp;และ<wbr>&nbsp;&nbsp;<span class="slant iast">guḍākeśa</span><span class="slant pali">คุฑาเกศ</span><span class="slant thai">คุฑาเกศะ</span><span class="slant ram">กุดาเคชะ</span>&nbsp;&nbsp;ในฐานะที่เป็นสหายทั้งคู่ทรงอยู่ในระดับเดียวกัน&nbsp;&nbsp;แต่เมื่อองค์หนึ่งอาสามาเป็น<wbr>ศิษย์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแย้มพระสรวลเพราะสหายของพระองค์ยอมมาเป็นศิษย์&nbsp;&nbsp;ในฐานะที่เป็น<wbr>เจ้าของมวลชีวิตพระองค์ทรงอยู่ในสถานภาพที่เหนือกว่า&nbsp;&nbsp;คือเป็นพระอาจารย์ของทุก&nbsp;&nbsp;ๆชีวิต&nbsp;&nbsp;แต่พระองค์ทรงยอมมาเป็นสหาย&nbsp;&nbsp;เป็นโอรส&nbsp;&nbsp;หรือเป็นที่รักของสาวกผู้ปรารถนาให้<wbr>พระองค์แสดงบทเหล่านี้&nbsp;&nbsp;เมื่อได้รับการยอมรับให้เป็นพระอาจารย์ก็ทรงรับบทนี้ทันทีและตรัสต่อสาวกเยี่ยงพระอาจารย์ด้วยสุรเสียงอันหนักแน่น&nbsp;&nbsp;การสนทนาระหว่างพระ<wbr>อาจารย์และศิษย์แลกเปลี่ยนกันอย่างเปิดเผยต่อหน้ากองทัพทั้งสองฝ่ายเพื่อประโยชน์<wbr>ของทุกคน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การสนทนา&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;มิใช่สำหรับเฉพาะบุคคล&nbsp;&nbsp;สมาคม&nbsp;&nbsp;หรือ<wbr>เฉพาะสังคมใดสังคมหนึ่งเท่านั้น&nbsp;&nbsp;แต่สำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ไม่ว่าจะเป็นมิตรหรือเป็นศัตรูก็มี<wbr>สิทธิ์รับฟังได้เท่าเทียมกัน
   </p>
 </div>
 

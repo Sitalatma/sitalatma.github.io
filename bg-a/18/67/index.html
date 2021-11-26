@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.67</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อิทํ เต นาตปสฺกาย</i><br /><i>นาภกฺตาย กทาจน</i><br /><i>น จาศุศฺรูษเว วาจฺยํ</i><br /><i>น จ มาํ โย ′ภฺยสูยติ</i>
+<span class="slant iast">idaṁ te nātapaskāya<br /></span>
+<span class="slant pali">อิทํ เต นาตปสฺกาย<br /></span>
+<span class="slant thai">อิทัง เต นาตะปัสกายะ<br /></span>
+<span class="slant ram">อิดัม เท นาทะพัสคายะ<br /></span>
+<span class="slant iast">nābhaktāya kadācana<br /></span>
+<span class="slant pali">นาภกฺตาย กทาจน<br /></span>
+<span class="slant thai">นาภักตายะ กะทาจะนะ<br /></span>
+<span class="slant ram">นาบัฺคธายะ คะดาชะนะ<br /></span>
+<span class="slant iast">na cāśuśrūṣave vācyaṁ<br /></span>
+<span class="slant pali">น จาศุศฺรูษเว วาจฺยํ<br /></span>
+<span class="slant thai">นะ จาศุศรูษะเว วาจยัง<br /></span>
+<span class="slant ram">นะ ชาชุชรูชะเว วาชยัม<br /></span>
+<span class="slant iast">na ca māṁ yo ’bhyasūyati<br /></span>
+<span class="slant pali">น จ มำ โย ’ภฺยสูยติ<br /></span>
+<span class="slant thai">นะ จะ มาง โย ’ภยะสูยะติ<br /></span>
+<span class="slant ram">นะ ชะ มาม โย ่บฺยะสูยะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อิทมฺ</i> — นี้, <i>เต</i> — โดยเธอ, <i>น</i> — ไม่เคย, <i>อตปสฺกาย</i> — แก่ผู้ที่ไม่สมถะ, <i>น</i> — ไม่เคย, <i>อภกฺตาย</i> — แก่ผู้ที่ไม่ใช่สาวก, <i>กทาจน</i> — ทุกเวลา, <i>น</i> — ไม่เคย, <i>จ</i> — เช่นกัน, <i>อศุศฺรูษเว</i> — แก่ผู้ ที่ไม่ปฏิบัติการอุทิศตนเสียสละรับใช้, <i>วาจฺยมฺ</i> — พูด, <i>น</i> — ไม่เคย, <i>จ</i> — เช่นกัน, <i>มามฺ</i> — แก่ข้า, <i>ยฮ</i> — ผู้ใดซึ่ง, <i>อภฺยสูยติ</i> — อิจฉาริษยา
+  <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — นี้, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — โดยเธอ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">atapaskāya</span><span class="slant pali">อตปสฺกาย</span><span class="slant thai">อะตะปัสกายะ</span><span class="slant ram">อทะพัสคายะ</span> — แก่ผู้ที่ไม่สมถะ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">abhaktāya</span><span class="slant pali">อภกฺตาย</span><span class="slant thai">อะภักตายะ</span><span class="slant ram">อบัฺคธา ยะ</span> — แก่ผู้ที่ไม่ใช่สาวก, <span class="slant iast">kadācana</span><span class="slant pali">กทาจน</span><span class="slant thai">กะทาจะนะ</span><span class="slant ram">คะดาชะนะ</span> — ทุกเวลา, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">aśuśrūṣave</span><span class="slant pali">อศุศฺรูษเว</span><span class="slant thai">อะศุศรูษะเว</span><span class="slant ram">อชุชรูชะเว</span> — แก่ผู้ ที่ไม่ปฏิบัติการอุทิศตนเสียสละรับใช้, <span class="slant iast">vācyam</span><span class="slant pali">วาจฺยมฺ</span><span class="slant thai">วาจยัม</span><span class="slant ram">วาชยัม</span> — พูด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แก่ข้า, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ใดซึ่ง, <span class="slant iast">abhyasūyati</span><span class="slant pali">อภฺยสูยติ</span><span class="slant thai">อัภยะสูยะติ</span><span class="slant ram">อับฺยะสูยะทิ</span> — อิจฉาริษยา
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พวกที่ไม่เคยผ่านการฝึกฝนความสมถะของวิธีทางศาสนา&nbsp;&nbsp;ไม่เคยพยายาม<wbr>อุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้ไม่เคยรับใช้สาวกผู้บริสุทธิ์&nbsp;&nbsp;และโดยเฉพาะ<wbr>พวกที่มีจิตสำนึกว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นเพียงบุคคลทางประวัติศาสตร์&nbsp;&nbsp;หรือผู้อิจฉาริษยา<wbr>ความยิ่งใหญ่ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ควรได้รับการบอกเล่าส่วนลับที่สุดแห่งความรู้นี้&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;บางครั้งเราพบว่าแม้เหล่ามารผู้อิจฉาริษยา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะบูชา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;มี<wbr>อาชีพเป็นผู้อธิบาย&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อทำธุรกิจ&nbsp;&nbsp;แต่ผู้ใดปรารถนาที่จะเข้าใจ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยแท้จริงต้องหลีกเลี่ยงการบรรยาย&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;อันที่จริงจุดมุ่งหมาย<wbr>ของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;พวกอยู่ในระดับประสาทสัมผัสไม่สามารถเข้าใจได้&nbsp;&nbsp;แม้ผู้ที่ไม่อยู่ใน<wbr>ระดับประสาทสัมผัส&nbsp;&nbsp;แต่ปฏิบัติตามหลักธรรมอย่างเคร่งครัดที่กำหนดไว้ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;หากไม่ใช่สาวกก็ไม่สามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แม้หากอ้างตนเองว่าเป็นสาวกของ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แต่ไม่ปฏิบัติในกิจกรรมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ก็จะไม่สามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มี<wbr>หลายคนที่อิจฉาริษยา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพราะว่าพระองค์ทรงอธิบายใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ว่าพระองค์<wbr>ทรงเป็นผู้สูงสุดและไม่มีผู้ใดเหนือไปกว่าหรือเทียบเท่าพระองค์ได้&nbsp;&nbsp;มีหลายคนที่อิจฉา<wbr>ริษยา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคคลเหล่านี้ไม่ควรได้รับการบอกเล่าเกี่ยวกับ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เพราะว่า<wbr>จะไม่สามารถเข้าใจ&nbsp;&nbsp;เป็นไปไม่ได้ที่พวกไม่ศรัทธาจะเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ปราศจากการเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยผ่านทางสาวกผู้บริสุทธิ์ที่เชื่อถือได้&nbsp;&nbsp;เราไม่ควรพยายาม<wbr>วิจารณ์&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;
+  พวกที่ไม่เคยผ่านการฝึกฝนความสมถะของวิธีทางศาสนา&nbsp;&nbsp;ไม่เคยพยายาม<wbr>อุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้ไม่เคยรับใช้สาวกผู้บริสุทธิ์&nbsp;&nbsp;และโดยเฉพาะ<wbr>พวกที่มีจิตสำนึกว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นเพียงบุคคลทางประวัติศาสตร์&nbsp;&nbsp;หรือผู้อิจฉาริษยา<wbr>ความยิ่งใหญ่ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ควรได้รับการบอกเล่าส่วนลับที่สุดแห่งความรู้นี้&nbsp;&nbsp;อย่างไรก็<wbr>ดี&nbsp;&nbsp;บางครั้งเราพบว่าแม้เหล่ามารผู้อิจฉาริษยา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะบูชา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;มี<wbr>อาชีพเป็นผู้อธิบาย&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อทำธุรกิจ&nbsp;&nbsp;แต่ผู้ใดปรารถนาที่จะเข้าใจ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยแท้จริงต้องหลีกเลี่ยงการบรรยาย&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;อันที่จริงจุดมุ่งหมาย<wbr>ของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;พวกอยู่ในระดับประสาทสัมผัสไม่สามารถเข้าใจได้&nbsp;&nbsp;แม้ผู้ที่ไม่อยู่ใน<wbr>ระดับประสาทสัมผัส&nbsp;&nbsp;แต่ปฏิบัติตามหลักธรรมอย่างเคร่งครัดที่กำหนดไว้ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;หากไม่ใช่สาวกก็ไม่สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แม้หากอ้างตนเองว่าเป็นสาวกของ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แต่ไม่ปฏิบัติในกิจกรรมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ก็จะไม่สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มี<wbr>หลายคนที่อิจฉาริษยา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพราะว่าพระองค์ทรงอธิบายใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ว่าพระองค์<wbr>ทรงเป็นผู้สูงสุดและไม่มีผู้ใดเหนือไปกว่าหรือเทียบเท่าพระองค์ได้&nbsp;&nbsp;มีหลายคนที่อิจฉา<wbr>ริษยา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคคลเหล่านี้ไม่ควรได้รับการบอกเล่าเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เพราะว่า<wbr>จะไม่สามารถเข้าใจ&nbsp;&nbsp;เป็นไปไม่ได้ที่พวกไม่ศรัทธาจะเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ปราศจากการเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยผ่านทางสาวกผู้บริสุทธิ์ที่เชื่อถือได้&nbsp;&nbsp;เราไม่ควรพยายาม<wbr>วิจารณ์&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

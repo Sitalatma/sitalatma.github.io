@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศุภาศุภ-ผไลรฺ เอวํ</i><br /><i>โมกฺษฺยเส กรฺม-พนฺธไนฮ</i><br /><i>สนฺนฺยาส-โยค-ยุกฺตาตฺมา</i><br /><i>วิมุโกฺต มามฺ อุไปษฺยสิ</i>
+<span class="slant iast">śubhāśubha-phalair evaṁ<br /></span>
+<span class="slant pali">ศุภาศุภ-ผไลรฺ เอวํ<br /></span>
+<span class="slant thai">ศุภาศุภะ-ผะไลร เอวัง<br /></span>
+<span class="slant ram">ชุบฺาชุบฺะ-พฺะไลร เอวัม<br /></span>
+<span class="slant iast">mokṣyase karma-bandhanaiḥ<br /></span>
+<span class="slant pali">โมกฺษฺยเส กรฺม-พนฺธไนห์<br /></span>
+<span class="slant thai">โมกษยะเส กัรมะ-พันธะไนห์<br /></span>
+<span class="slant ram">โมคชยะเส คารมะ-บันดฺะไนฮ<br /></span>
+<span class="slant iast">sannyāsa-yoga-yuktātmā<br /></span>
+<span class="slant pali">สนฺนฺยาส-โยค-ยุกฺตาตฺมา<br /></span>
+<span class="slant thai">สันนยาสะ-โยคะ-ยุกตาตมา<br /></span>
+<span class="slant ram">สันนยาสะ-โยกะ-ยุคทาทมา<br /></span>
+<span class="slant iast">vimukto mām upaiṣyasi<br /></span>
+<span class="slant pali">วิมุกฺโต มามฺ อุไปษฺยสิ<br /></span>
+<span class="slant thai">วิมุกโต มาม อุไปษยะสิ<br /></span>
+<span class="slant ram">วิมุคโท มาม อุไพชยะสิ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศุภ</i> — จากบุญ, <i>อศุภ</i> — และบาป, <i>ผไลฮ</i> — ผล, <i>เอวมฺ</i> — ดังนั้น, <i>โมกฺษฺยเส</i> — เธอจะเป็นอิสระ, <i>กรฺม</i> — ของงาน, <i>พนฺธไนฮ</i> — จากพันธนาการ, <i>สนฺนฺยาส</i> — ของการเสียสละ, <i>โยค</i> — <i>โยค</i>, <i>ยุกฺต-อาตฺมา</i> — มีจิตใจมั่นคงอยู่ที่, <i>วิมุกฺตฮ</i> — หลุดพ้น, <i>มามฺ</i> — แด่ข้า, <i>อุไปษฺยสิ</i> — เธอจะ บรรลุ
+  <span class="slant iast">śubha</span><span class="slant pali">ศุภ</span><span class="slant thai">ศุภะ</span><span class="slant ram">ชุบฺะ</span> — จากบุญ, <span class="slant iast">aśubha</span><span class="slant pali">อศุภ</span><span class="slant thai">อะศุภะ</span><span class="slant ram">อชุบฺะ</span> — และบาป, <span class="slant iast">phalaiḥ</span><span class="slant pali">ผไลห์</span><span class="slant thai">ผะไลห์</span><span class="slant ram">พฺะไลฮ</span> — ผล, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น, <span class="slant iast">mokṣyase</span><span class="slant pali">โมกฺษฺยเส</span><span class="slant thai">โมกษยะเส</span><span class="slant ram">โมคชยะเส</span> — เธอจะเป็นอิสระ, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — ของงาน, <span class="slant iast">bandhanaiḥ</span><span class="slant pali">พนฺธไนห์</span><span class="slant thai">พันธะไนห์</span><span class="slant ram">บันดฺะไนฮ</span> — จากพันธนาการ, <span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span> — ของการเสียสละ, <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span> — <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>, <span class="slant iast">yukta-ātmā</span><span class="slant pali">ยุกฺต-อาตฺมา</span><span class="slant thai">ยุกตะ-อาตมา</span><span class="slant ram">ยุคทะ-อาทมา</span> — มีจิตใจมั่นคงอยู่ที่, <span class="slant iast">vimuktaḥ</span><span class="slant pali">วิมุกฺตห์</span><span class="slant thai">วิมุกตะห์</span><span class="slant ram">วิมุคทะฮ</span> — หลุดพ้น, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">upaiṣyasi</span><span class="slant pali">อุไปษฺยสิ</span><span class="slant thai">อุไปษยะสิ</span><span class="slant ram">อุไพชยะสิ</span> — เธอจะ บรรลุ
   </p>
 </div>
 
@@ -73,37 +174,52 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกภายใต้การแนะนำที่สูงส่งเรียกว่า&nbsp;&nbsp;<i>ยุกฺต</i>&nbsp;&nbsp;ศัพท์ทาง<wbr>เทคนิค&nbsp;&nbsp;<i>ยุกฺต-ไวราคฺย</i>&nbsp;&nbsp;ซึ่ง&nbsp;&nbsp;<i>รูป</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;ได้อธิบายดังต่อไปนี้
+  ผู้ปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกภายใต้การแนะนำที่สูงส่งเรียกว่า&nbsp;&nbsp;<span class="slant iast">yukta</span><span class="slant pali">ยุกฺต</span><span class="slant thai">ยุกตะ</span><span class="slant ram">ยุคทะ</span>&nbsp;&nbsp;ศัพท์ทาง<wbr>เทคนิค&nbsp;&nbsp;<span class="slant iast">yukta-vairāgya</span><span class="slant pali">ยุกฺต-ไวราคฺย</span><span class="slant thai">ยุกตะ-ไวราคยะ</span><span class="slant ram">ยุคทะ-</span>&nbsp;&nbsp;ซึ่ง&nbsp;&nbsp;<span class="slant iast">rūpa</span><span class="slant pali">รูป</span><span class="slant thai">รูปะ</span><span class="slant ram">รูพะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;ได้อธิบายดังต่อไปนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อนาสกฺตสฺย วิษยานฺ</i><br /><i>ยตฺหารฺหมฺ อุปยุญฺชตฮ</i><br /><i>นิรฺพนฺธฮ กฺฤษฺณ-สมฺพเนฺธ</i><br /><i>ยุกฺตํ ไวราคฺยมฺ อุจฺยเต</i>
+<span class="slant iast">anāsaktasya viṣayān<br /></span>
+<span class="slant pali">อนาสกฺตสฺย วิษยานฺ<br /></span>
+<span class="slant thai">อะนาสักตัสยะ วิษะยาน<br /></span>
+<span class="slant ram">อนาสัคทัสยะ วิชะยาน<br /></span>
+<span class="slant iast">yathārham upayuñjataḥ<br /></span>
+<span class="slant pali">ยถารฺหมฺ อุปยุญฺชตห์<br /></span>
+<span class="slant thai">ยะถารหัม อุปะยุญชะตะห์<br /></span>
+<span class="slant ram">ยะทฺารฮัม อุพะยุนจะทะฮ<br /></span>
+<span class="slant iast">nirbandhaḥ kṛṣṇa-sambandhe<br /></span>
+<span class="slant pali">นิรฺพนฺธห์ กฺฤษฺณ-สมฺพนฺเธ<br /></span>
+<span class="slant thai">นิรพันธะห์ กฤษณะ-สัมพันเธ<br /></span>
+<span class="slant ram">นิรบันดฺะฮ คริชณะ-สัมบันเดฺ<br /></span>
+<span class="slant iast">yuktaṁ vairāgyam ucyate<br /></span>
+<span class="slant pali">ยุกฺตํ ไวราคฺยมฺ อุจฺยเต<br /></span>
+<span class="slant thai">ยุกตัง ไวราคยัม อุจยะเต<br /></span>
+<span class="slant ram">ยุคทัม ไวรากยัม อุชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-reference">
   <p>
-  <i>(ภกฺติ-รสามฺฤต-สินฺธุ 1.2.255)</i>
+  <span class="slant iast">(Bhakti-rasāmṛta-sindhu 1.2.255)</span><span class="slant pali">(ภกฺติ-รสามฺฤต-สินฺธุ๑ฯ๒ฯ๒๕๕)</span><span class="slant thai">(ภักติ-ระสามฤตะ-สินธุ๑ฯ๒ฯ๒๕๕)</span><span class="slant ram">(บัฺคธิ,บัคฺธิ-- 1.2.255)</span>
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>รูป</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;กล่าวว่าตราบเท่าที่เรายังอยู่ในโลกวัตถุ&nbsp;&nbsp;เรายังต้องทำงาน&nbsp;&nbsp;ไม่สามารถ<wbr>หยุดการกระทำได้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;หากการปฏิบัติงานยังดำเนินต่อไปและผลของงานถวายให้<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ยุกฺต-ไวราคฺย</i>&nbsp;&nbsp;สถิตในการเสียสละอย่างแท้จริง&nbsp;&nbsp;กิจกรรมเช่นนี้จะ<wbr>ทำให้กระจกแห่งดวงจิตใสสว่างขึ้น&nbsp;&nbsp;ขณะที่ผู้ปฏิบัติค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เจริญก้าวหน้าในความรู้แจ้ง<wbr>ทิพย์&nbsp;&nbsp;จะศิโรราบโดยสมบูรณ์ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และจะเป็นอิสรภาพในที่สุด&nbsp;&nbsp;ซึ่งได้ระบุไว้ว่าเมื่อเป็นอิสระแล้วจะไม่กลายมาเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<i>พฺรหฺม-โชฺยติรฺ</i>&nbsp;&nbsp;แต่จะเข้าไปในโลกของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;<i>มามฺ&nbsp;&nbsp;อุไปษฺยสิ</i>&nbsp;&nbsp;“เขามาหาข้า”&nbsp;&nbsp;กลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะมีอิสรภาพอยู่ห้าระดับ&nbsp;&nbsp;ตรงนี้ระบุว่าสาวกผู้ใช้ชีวิตภายใต้คำ<wbr>สั่งสอนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ว่าได้พัฒนามาจนถึงจุดที่หลังจากออกจาก<wbr>ร่างนี้ไปแล้วจะกลับคืนสู่เหย้าและปฏิบัติรับใช้โดยตรงอย่างใกล้ชิดกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  <span class="slant iast">rūpa</span><span class="slant pali">รูป</span><span class="slant thai">รูปะ</span><span class="slant ram">รูพะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;กล่าวว่าตราบเท่าที่เรายังอยู่ในโลกวัตถุ&nbsp;&nbsp;เรายังต้องทำงาน&nbsp;&nbsp;ไม่สามารถ<wbr>หยุดการกระทำได้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;หากการปฏิบัติงานยังดำเนินต่อไปและผลของงานถวายให้<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">yukta-vairāgya</span><span class="slant pali">ยุกฺต-ไวราคฺย</span><span class="slant thai">ยุกตะ-ไวราคยะ</span><span class="slant ram">ยุคทะ-</span>&nbsp;&nbsp;สถิตในการเสียสละอย่างแท้จริง&nbsp;&nbsp;กิจกรรมเช่นนี้จะ<wbr>ทำให้กระจกแห่งดวงจิตใสสว่างขึ้น&nbsp;&nbsp;ขณะที่ผู้ปฏิบัติค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เจริญก้าวหน้าในความรู้แจ้ง<wbr>ทิพย์&nbsp;&nbsp;จะศิโรราบโดยสมบูรณ์ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และจะเป็นอิสรภาพในที่สุด&nbsp;&nbsp;ซึ่งได้ระบุไว้ว่าเมื่อเป็นอิสระแล้วจะไม่กลายมาเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<span class="slant iast">brahma-jyotir</span><span class="slant pali">พฺรหฺม-โชฺยติรฺ</span><span class="slant thai">พรัหมะ-ชโยติร</span><span class="slant ram">บระฮมะจโยทิ</span>&nbsp;&nbsp;แต่จะเข้าไปในโลกของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;<span class="slant iast">mām&nbsp;&nbsp;upaiṣyasi</span><span class="slant pali">มามฺอุไปษฺยสิ</span><span class="slant thai">มามอุไปษยะสิ</span><span class="slant ram">มามอุไพชยะสิ</span>&nbsp;&nbsp;“เขามาหาข้า”&nbsp;&nbsp;กลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะมีอิสรภาพอยู่ห้าระดับ&nbsp;&nbsp;ตรงนี้ระบุว่าสาวกผู้ใช้ชีวิตภายใต้คำ<wbr>สั่งสอนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ว่าได้พัฒนามาจนถึงจุดที่หลังจากออกจาก<wbr>ร่างนี้ไปแล้วจะกลับคืนสู่เหย้าและปฏิบัติรับใช้โดยตรงอย่างใกล้ชิดกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ใดที่ไม่มีความสนใจกับสิ่งอื่นใดนอกจากอุทิศชีวิตในการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>เป็น&nbsp;&nbsp;<i>สนฺนฺยาสี</i>&nbsp;&nbsp;ที่แท้จริง&nbsp;&nbsp;บุคคลเช่นนี้คิดว่าตนเองเป็นผู้รับใช้นิรันดรและจะขึ้นอยู่กับความ<wbr>ปรารถนาสูงสุดขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เช่นนี้ไม่ว่าทำอะไรเขาจะทำเพื่อประโยชน์ของพระองค์ไม่ว่าปฏิบัติสิ่งใดเขาจะปฏิบัติเพื่อรับใช้พระองค์&nbsp;&nbsp;และไม่ให้ความสนใจอย่างจริงจังกับ<wbr>กิจกรรมเพื่อผลทางวัตถุหรือหน้าที่ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;สำหรับบุคคล<wbr>ทั่วไปจะมีข้อบังคับที่ต้องปฏิบัติตามหน้าที่ที่กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;บางครั้งสาวกผู้<wbr>บริสุทธิ์ปฏิบัติอย่างสมบูรณ์ในการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อาจดูเหมือนว่าเขาฝืนต่อหน้าที่ที่<wbr>กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;แต่อันที่จริงมิได้เป็นเช่นนั้น
+  ผู้ใดที่ไม่มีความสนใจกับสิ่งอื่นใดนอกจากอุทิศชีวิตในการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>เป็น&nbsp;&nbsp;<span class="slant iast">sannyāsī</span><span class="slant pali">สนฺนฺยาสี</span><span class="slant thai">สันนยาสี</span><span class="slant ram">สันนยาสี</span>&nbsp;&nbsp;ที่แท้จริง&nbsp;&nbsp;บุคคลเช่นนี้คิดว่าตนเองเป็นผู้รับใช้นิรันดรและจะขึ้นอยู่กับความ<wbr>ปรารถนาสูงสุดขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เช่นนี้ไม่ว่าทำอะไรเขาจะทำเพื่อประโยชน์ของพระองค์ไม่ว่าปฏิบัติสิ่งใดเขาจะปฏิบัติเพื่อรับใช้พระองค์&nbsp;&nbsp;และไม่ให้ความสนใจอย่างจริงจังกับ<wbr>กิจกรรมเพื่อผลทางวัตถุหรือหน้าที่ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;สำหรับบุคคล<wbr>ทั่วไปจะมีข้อบังคับที่ต้องปฏิบัติตามหน้าที่ที่กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;บางครั้งสาวกผู้<wbr>บริสุทธิ์ปฏิบัติอย่างสมบูรณ์ในการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อาจดูเหมือนว่าเขาฝืนต่อหน้าที่ที่<wbr>กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;แต่อันที่จริงมิได้เป็นเช่นนั้น
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังนั้น&nbsp;&nbsp;<i>ไวษฺณว</i>&nbsp;&nbsp;ผู้เชื่อถือได้&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;แม้บุคคลผู้มีปัญญามากที่สุดก็ไม่<wbr>สามารถเข้าใจแผนและกิจกรรมของสาวกผู้บริสุทธ์&nbsp;&nbsp;คำเฉพาะที่ใช้คือ&nbsp;&nbsp;<i>ตางฺร&nbsp;&nbsp;วากฺย,กฺริยา,มุทฺรา&nbsp;&nbsp;วิเชฺญห&nbsp;&nbsp;นา&nbsp;&nbsp;พุฌย</i>&nbsp;&nbsp;(<i>ไจตนฺย-จริตามฺฤต,มธฺย</i>&nbsp;&nbsp;23.39)&nbsp;&nbsp;ผู้ที่ปฏิบัติ<wbr>ในการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;หรือคิด&nbsp;&nbsp;และวางแผนที่จะรับใช้พระองค์อยู่เสมอพิจารณา<wbr>ว่าเป็นผู้ที่มีอิสรภาพโดยสมบูรณ์&nbsp;&nbsp;ทั้งในปัจจุบันและอนาคต&nbsp;&nbsp;การกลับคืนสู่เหย้าคืนสู่องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นที่รับประกัน&nbsp;&nbsp;เขาอยู่เหนือการวิจารณ์ทางวัตถุทั้งปวง&nbsp;&nbsp;เสมือนดัง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ที่อยู่<wbr>เหนือการวิจารณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด
+  ดังนั้น&nbsp;&nbsp;<span class="slant iast">vaiṣṇava</span><span class="slant pali">ไวษฺณว</span><span class="slant thai">ไวษณะวะ</span><span class="slant ram">ไวชณะวะ</span>&nbsp;&nbsp;ผู้เชื่อถือได้&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;แม้บุคคลผู้มีปัญญามากที่สุดก็ไม่<wbr>สามารถเข้าใจแผนและกิจกรรมของสาวกผู้บริสุทธ์&nbsp;&nbsp;คำเฉพาะที่ใช้คือ&nbsp;&nbsp;<span class="slant iast">tāṅra&nbsp;&nbsp;vākya,&nbsp;&nbsp;kriyā,&nbsp;&nbsp;mudrā&nbsp;&nbsp;vijñeha&nbsp;&nbsp;nā&nbsp;&nbsp;bujhaya</span><span class="slant pali">ตางฺรวากฺยกฺริยามุทฺราวิชฺเญหนาพุฌย</span><span class="slant thai">ตางระวากยะกริยามุทราวิชเญหะนาพุฌะยะ</span><span class="slant ram">zzzzzzzzzzzzzzzzzz</span>&nbsp;&nbsp;(<span class="slant iast">caitanya-caritāmṛta,&nbsp;&nbsp;madhya</span><span class="slant pali">ไจตนฺย-จริตามฺฤตมธฺย</span><span class="slant thai">ไจตันยะ-จะริตามฤตะมัธยะ</span><span class="slant ram">เชธันญะ-มัดฮยะ</span>&nbsp;&nbsp;23.39)&nbsp;&nbsp;ผู้ที่ปฏิบัติ<wbr>ในการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;หรือคิด&nbsp;&nbsp;และวางแผนที่จะรับใช้พระองค์อยู่เสมอพิจารณา<wbr>ว่าเป็นผู้ที่มีอิสรภาพโดยสมบูรณ์&nbsp;&nbsp;ทั้งในปัจจุบันและอนาคต&nbsp;&nbsp;การกลับคืนสู่เหย้าคืนสู่องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นที่รับประกัน&nbsp;&nbsp;เขาอยู่เหนือการวิจารณ์ทางวัตถุทั้งปวง&nbsp;&nbsp;เสมือนดัง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ที่อยู่<wbr>เหนือการวิจารณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด
   </p>
 </div>
 

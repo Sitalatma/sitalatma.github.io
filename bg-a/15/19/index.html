@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.19</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โย มามฺ เอวมฺ อสมฺมูโฒ</i><br /><i>ชานาติ ปุรุโษตฺตมมฺ</i><br /><i>ส สรฺว-วิทฺ ภชติ มาํ</i><br /><i>สรฺว-ภาเวน ภารต</i>
+<span class="slant iast">yo mām evam asammūḍho<br /></span>
+<span class="slant pali">โย มามฺ เอวมฺ อสมฺมูโฒ<br /></span>
+<span class="slant thai">โย มาม เอวัม อะสัมมูโฒ<br /></span>
+<span class="slant ram">โย มาม เอวัม อสัมมูโดฺ<br /></span>
+<span class="slant iast">jānāti puruṣottamam<br /></span>
+<span class="slant pali">ชานาติ ปุรุโษตฺตมมฺ<br /></span>
+<span class="slant thai">ชานาติ ปุรุโษตตะมัม<br /></span>
+<span class="slant ram">จานาทิ พุรุโชททะมัม<br /></span>
+<span class="slant iast">sa sarva-vid bhajati māṁ<br /></span>
+<span class="slant pali">ส สรฺว-วิทฺ ภชติ มำ<br /></span>
+<span class="slant thai">สะ สัรวะ-วิท ภะชะติ มาง<br /></span>
+<span class="slant ram">สะ สารวะ-วิด บฺะจะทิ มาม<br /></span>
+<span class="slant iast">sarva-bhāvena bhārata<br /></span>
+<span class="slant pali">สรฺว-ภาเวน ภารต<br /></span>
+<span class="slant thai">สัรวะ-ภาเวนะ ภาระตะ<br /></span>
+<span class="slant ram">สารวะ-บฺาเวนะ บฺาระทะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยฮ</i> — ผู้ใดซึ่ง, <i>มามฺ</i> — ข้า, <i>เอวมฺ</i> — ดังนั้น, <i>อสมฺมูฒฮ</i> — ปราศจากความสงสัย, <i>ชานาติ</i> — รู้, <i>ปุรุษ-อุตฺตมมฺ</i> — บุคลิกภาพสูงสุดแห่งพระเจ้า, <i>สฮ</i> — เขา, <i>สรฺว-วิตฺ</i> — ผู้รู้ทุกสิ่งทุก อย่าง, <i>ภชติ</i> — ถวายการอุทิศตนเสียสละรับใช้, <i>มามฺ</i> — แด่ข้า, <i>สรฺว-ภาเวน</i> — ในทุก ๆ ด้าน,<i>ภารต</i> — โอ้ โอรสแห่งบฺาระทะ
+  <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ใดซึ่ง, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น, <span class="slant iast">asammūḍhaḥ</span><span class="slant pali">อสมฺมูฒห์</span><span class="slant thai">อะสัมมูฒะห์</span><span class="slant ram">อสัมมูดฺะฮ</span> — ปราศจากความสงสัย, <span class="slant iast">jānāti</span><span class="slant pali">ชานาติ</span><span class="slant thai">ชานาติ</span><span class="slant ram">จานาทิ</span> — รู้, <span class="slant iast">puruṣa-uttamam</span><span class="slant pali">ปุรุษ-อุตฺตมมฺ</span><span class="slant thai">ปุรุษะ-อุตตะมัม</span><span class="slant ram">พุรุชะ-อุททะมัม</span> — บุคลิกภาพสูงสุดแห่งพระเจ้า, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">sarva-vit</span><span class="slant pali">สรฺว-วิตฺ</span><span class="slant thai">สัรวะ-วิต</span><span class="slant ram">สารวะ-วิท</span> — ผู้รู้ทุกสิ่งทุก อย่าง, <span class="slant iast">bhajati</span><span class="slant pali">ภชติ</span><span class="slant thai">ภะชะติ</span><span class="slant ram">บฺะจะทิ</span> — ถวายการอุทิศตนเสียสละรับใช้, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">sarva-bhāvena</span><span class="slant pali">สรฺว-ภาเวน</span><span class="slant thai">สัรวะ-ภาเวนะ</span><span class="slant ram">สารวะ-บฺาเวนะ</span> — ในทุก ๆ ด้าน,<span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span> — โอ้ โอรสแห่งบฺาระทะ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ผู้ใดรู้จักข้าในฐานะองค์ภควานโดยไม่มีความสงสัยเป็นผู้รู้ทุกสิ่งทุกอย่าง&nbsp;&nbsp;ฉะนั้นเขาปฏิบัติการอุทิศตนเสียสละรับใช้แด่ข้าอย่างสมบูรณ์&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<i>ภรต</i>&nbsp;&nbsp;
+  ผู้ใดรู้จักข้าในฐานะองค์ภควานโดยไม่มีความสงสัยเป็นผู้รู้ทุกสิ่งทุกอย่าง&nbsp;&nbsp;ฉะนั้นเขาปฏิบัติการอุทิศตนเสียสละรับใช้แด่ข้าอย่างสมบูรณ์&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีการคาดคะเนทางปรัชญามากมายเกี่ยวกับสถานภาพเดิมแท้ของสิ่งมีชีวิตและสัจธรรมสูงสุด&nbsp;&nbsp;โศลกนี้บุคลิกภาพสูงสุดแห่งพระเจ้าทรงอธิบายอย่างชัดเจนว่า&nbsp;&nbsp;ผู้<wbr>ใดรู้ว่าองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดเป็นผู้รู้ทุกสิ่งทุกอย่างโดยแท้จริง&nbsp;&nbsp;ผู้รู้ที่ไม่<wbr>สมบูรณ์ได้แต่คาดคะเนเกี่ยวกับสัจธรรมเรื่อยไป&nbsp;&nbsp;ผู้รู้ที่สมบูรณ์จะไม่เสียเวลาอันมีค่า<wbr>ไป&nbsp;&nbsp;แต่จะปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วยการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยตรงตลอดทั้งเล่มของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ความจริงนี้ได้เน้นทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขั้นตอน&nbsp;&nbsp;แต่ยังมีนักตีความ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ที่หัวรั้นมากมายพิจารณาว่าสัจธรรมสูงสุดและสิ่งมีชีวิตเป็นหนึ่งเดียวกัน<wbr>และเหมือนกัน
+  มีการคาดคะเนทางปรัชญามากมายเกี่ยวกับสถานภาพเดิมแท้ของสิ่งมีชีวิตและสัจธรรมสูงสุด&nbsp;&nbsp;โศลกนี้บุคลิกภาพสูงสุดแห่งพระเจ้าทรงอธิบายอย่างชัดเจนว่า&nbsp;&nbsp;ผู้<wbr>ใดรู้ว่าองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดเป็นผู้รู้ทุกสิ่งทุกอย่างโดยแท้จริง&nbsp;&nbsp;ผู้รู้ที่ไม่<wbr>สมบูรณ์ได้แต่คาดคะเนเกี่ยวกับสัจธรรมเรื่อยไป&nbsp;&nbsp;ผู้รู้ที่สมบูรณ์จะไม่เสียเวลาอันมีค่า<wbr>ไป&nbsp;&nbsp;แต่จะปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วยการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยตรงตลอดทั้งเล่มของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ความจริงนี้ได้เน้นทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขั้นตอน&nbsp;&nbsp;แต่ยังมีนักตีความ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ที่หัวรั้นมากมายพิจารณาว่าสัจธรรมสูงสุดและสิ่งมีชีวิตเป็นหนึ่งเดียวกัน<wbr>และเหมือนกัน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความรู้พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ศฺรุติ</i>&nbsp;&nbsp;เรียนรู้ด้วยการสดับฟัง&nbsp;&nbsp;เราควรรับสาส์นพระ&nbsp;&nbsp;<i>เวท</i>จากผู้ที่เชื่อถือได้อย่างแท้จริง&nbsp;&nbsp;เช่น&nbsp;&nbsp;จาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และผู้แทนของพระองค์&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงแยกแยะทุกสิ่งทุกอย่างได้งดงามมาก&nbsp;&nbsp;และเราควรสดับฟังจากแหล่งนี้&nbsp;&nbsp;เพียงแต่สดับ<wbr>ฟังเหมือนกับสุกรนั้นไม่เพียงพอ&nbsp;&nbsp;เราต้องเข้าใจจากผู้ที่เชื่อถือได้&nbsp;&nbsp;ไม่ใช่เพียงคาดคะเนเชิง<wbr>วิชาการ&nbsp;&nbsp;แต่เราควรสดับฟัง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ด้วยยอมจำนนว่าสิ่งมีชีวิตเหล่านี้เป็นรององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ผู้ใดเข้าใจเช่นนี้ตามบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นผู้รู้จุดมุ่ง<wbr>หมายของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;นอกนั้นจะไม่มีใครรู้จุดมุ่งหมายของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;
+  ความรู้พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">śruti</span><span class="slant pali">ศฺรุติ</span><span class="slant thai">ศรุติ</span><span class="slant ram">ชรุทิ</span>&nbsp;&nbsp;เรียนรู้ด้วยการสดับฟัง&nbsp;&nbsp;เราควรรับสาส์นพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>จากผู้ที่เชื่อถือได้อย่างแท้จริง&nbsp;&nbsp;เช่น&nbsp;&nbsp;จาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และผู้แทนของพระองค์&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงแยกแยะทุกสิ่งทุกอย่างได้งดงามมาก&nbsp;&nbsp;และเราควรสดับฟังจากแหล่งนี้&nbsp;&nbsp;เพียงแต่สดับ<wbr>ฟังเหมือนกับสุกรนั้นไม่เพียงพอ&nbsp;&nbsp;เราต้องเข้าใจจากผู้ที่เชื่อถือได้&nbsp;&nbsp;ไม่ใช่เพียงคาดคะเนเชิง<wbr>วิชาการ&nbsp;&nbsp;แต่เราควรสดับฟัง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ด้วยยอมจำนนว่าสิ่งมีชีวิตเหล่านี้เป็นรององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ผู้ใดเข้าใจเช่นนี้ตามบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นผู้รู้จุดมุ่ง<wbr>หมายของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;นอกนั้นจะไม่มีใครรู้จุดมุ่งหมายของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ภชติ</i>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;มีหลายแห่งได้เน้นคำ&nbsp;&nbsp;<i>ภชติ</i>&nbsp;&nbsp;ในความสัมพันธ์<wbr>กับการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หากบุคคลปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกในการอุทิศตนเสียสละรับ<wbr>ใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;เข้าใจได้ว่าเขาเข้าใจความรู้พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดใน&nbsp;&nbsp;<i>ไวษฺณว&nbsp;&nbsp;ปรมฺปรา</i>&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;หากผู้ใดปฏิบัติการอุทิศตนเสียสละรับใช้แด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ก็ไม่มีความ<wbr>จำเป็นกับวิถีทิพย์อื่นใดเพื่อให้เข้าใจสัจธรรมที่สมบูรณ์สูงสุดเพราะได้มาถึงจุดหมาย<wbr>ปลายทางเรียบร้อยแล้ว&nbsp;&nbsp;จากการปฏิบัติการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้<wbr>เสร็จสิ้นวิธีการพื้นฐานเพื่อความเข้าใจทั้งหมด&nbsp;&nbsp;แต่หากผู้ใดหลังจากคาดคะเนเป็นเวลา<wbr>ร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชาติ&nbsp;&nbsp;และมาไม่ถึงจุดที่ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้าและตัว<wbr>เขาต้องศิโรราบต่อพระองค์&nbsp;&nbsp;ตรงนี้การคาดคะเนทั้งหมดเป็นเวลาหลายปีและหลายชาติ<wbr>จะเป็นการเสียเวลาไปโดยเปล่าประโยชน์
+  คำว่า&nbsp;&nbsp;<span class="slant iast">bhajati</span><span class="slant pali">ภชติ</span><span class="slant thai">ภะชะติ</span><span class="slant ram">บฺะจะทิ</span>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;มีหลายแห่งได้เน้นคำ&nbsp;&nbsp;<span class="slant iast">bhajati</span><span class="slant pali">ภชติ</span><span class="slant thai">ภะชะติ</span><span class="slant ram">บฺะจะทิ</span>&nbsp;&nbsp;ในความสัมพันธ์<wbr>กับการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หากบุคคลปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกในการอุทิศตนเสียสละรับ<wbr>ใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;เข้าใจได้ว่าเขาเข้าใจความรู้พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดใน&nbsp;&nbsp;<span class="slant iast">vaiṣṇava&nbsp;&nbsp;paramparā</span><span class="slant pali">ไวษฺณวปรมฺปรา</span><span class="slant thai">ไวษณะวะปะรัมปะรา</span><span class="slant ram">ไวชณะวะมพะรา</span>&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;หากผู้ใดปฏิบัติการอุทิศตนเสียสละรับใช้แด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ก็ไม่มีความ<wbr>จำเป็นกับวิถีทิพย์อื่นใดเพื่อให้เข้าใจสัจธรรมที่สมบูรณ์สูงสุดเพราะได้มาถึงจุดหมาย<wbr>ปลายทางเรียบร้อยแล้ว&nbsp;&nbsp;จากการปฏิบัติการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้<wbr>เสร็จสิ้นวิธีการพื้นฐานเพื่อความเข้าใจทั้งหมด&nbsp;&nbsp;แต่หากผู้ใดหลังจากคาดคะเนเป็นเวลา<wbr>ร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชาติ&nbsp;&nbsp;และมาไม่ถึงจุดที่ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้าและตัว<wbr>เขาต้องศิโรราบต่อพระองค์&nbsp;&nbsp;ตรงนี้การคาดคะเนทั้งหมดเป็นเวลาหลายปีและหลายชาติ<wbr>จะเป็นการเสียเวลาไปโดยเปล่าประโยชน์
   </p>
 </div>
 

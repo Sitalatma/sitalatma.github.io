@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น จ มตฺ-สฺตฺหานิ ภูตานิ</i><br /><i>ปศฺย เม โยคมฺ ไอศฺวรมฺ</i><br /><i>ภูต-ภฺฤนฺ น จ ภูต-โสฺตฺห</i><br /><i>มมาตฺมา ภูต-ภาวนฮ</i>
+<span class="slant iast">na ca mat-sthāni bhūtāni<br /></span>
+<span class="slant pali">น จ มตฺ-สฺถานิ ภูตานิ<br /></span>
+<span class="slant thai">นะ จะ มัต-สถานิ ภูตานิ<br /></span>
+<span class="slant ram">นะ ชะ มัท-สทฺานิ บํูทานิ<br /></span>
+<span class="slant iast">paśya me yogam aiśvaram<br /></span>
+<span class="slant pali">ปศฺย เม โยคมฺ ไอศฺวรมฺ<br /></span>
+<span class="slant thai">ปัศยะ เม โยคัม ไอศวะรัม<br /></span>
+<span class="slant ram">พัชยะ เม โยกัม ไอชวะรัม<br /></span>
+<span class="slant iast">bhūta-bhṛn na ca bhūta-stho<br /></span>
+<span class="slant pali">ภูต-ภฺฤนฺ น จ ภูต-โสฺถ<br /></span>
+<span class="slant thai">ภูตะ-ภฤน นะ จะ ภูตะ-สโถ<br /></span>
+<span class="slant ram">บํูทะ-บฺริน นะ ชะ บํูทะ-สโทฺ<br /></span>
+<span class="slant iast">mamātmā bhūta-bhāvanaḥ<br /></span>
+<span class="slant pali">มมาตฺมา ภูต-ภาวนห์<br /></span>
+<span class="slant thai">มะมาตมา ภูตะ-ภาวะนะห์<br /></span>
+<span class="slant ram">มะมาทมา บํูทะ-บฺาวะนะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่เคย, <i>จ</i> — เช่นกัน, <i>มตฺ-สฺตฺหานิ</i> — สถิตในข้า, <i>ภูตานิ</i> — การสร้างทั้งหมด, <i>ปศฺย</i> — จงดู, <i>เม</i> — ของข้า, <i>โยคมฺ ไอศฺวรมฺ</i> — อิทธิฤทธิ์ที่ไม่สามารถมองเห็น, <i>ภูต-ภฺฤตฺ</i> — ผู้บำรุงรักษาสิ่งมี ชีวิตทั้งมวล, <i>น</i> — ไม่เคย, <i>จ</i> — เช่นกัน, <i>ภูต-สฺตฺหฮ</i> — ในปรากฏการณ์จักรวาล, <i>มม</i> — ของ ข้า, <i>อาตฺมา</i> — ตัวข้า, <i>ภูต-ภาวนฮ</i> — แหล่งกำเนิดของปรากฏการณ์ทั้งหลาย
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">mat-sthāni</span><span class="slant pali">มตฺ-สฺถานิ</span><span class="slant thai">มัต-สถานิ</span><span class="slant ram">มัท-สทฺานิ</span> — สถิตในข้า, <span class="slant iast">bhūtāni</span><span class="slant pali">ภูตานิ</span><span class="slant thai">ภูตานิ</span><span class="slant ram">บํูทานิ</span> — การสร้างทั้งหมด, <span class="slant iast">paśya</span><span class="slant pali">ปศฺย</span><span class="slant thai">ปัศยะ</span><span class="slant ram">พัชยะ</span> — จงดู, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">yogam aiśvaram</span><span class="slant pali">โยคมฺไอศฺวรมฺ</span><span class="slant thai">โยคัมไอศวะรัม</span><span class="slant ram">โยกัม ไอชวะรัม</span> — อิทธิฤทธิ์ที่ไม่สามารถมองเห็น, <span class="slant iast">bhūta-bhṛt</span><span class="slant pali">ภูต-ภฺฤตฺ</span><span class="slant thai">ภูตะ-ภฤต</span><span class="slant ram">บํูทะ-บฺริท</span> — ผู้บำรุงรักษาสิ่งมี ชีวิตทั้งมวล, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">bhūta-sthaḥ</span><span class="slant pali">ภูต-สฺถห์</span><span class="slant thai">ภูตะ-สถะห์</span><span class="slant ram">บํูทะ-สทฺะฮ</span> — ในปรากฏการณ์จักรวาล, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของ ข้า, <span class="slant iast">ātmā</span><span class="slant pali">อาตฺมา</span><span class="slant thai">อาตมา</span><span class="slant ram">อาทมา</span> — ตัวข้า, <span class="slant iast">bhūta-bhāvanaḥ</span><span class="slant pali">ภูต-ภาวนห์</span><span class="slant thai">ภูตะ-ภาวะนะห์</span><span class="slant ram">บํูทะ-บฺาวะนะฮ</span> — แหล่งกำเนิดของปรากฏการณ์ทั้งหลาย
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าทุกสิ่งทุกอย่างพำนักอยู่ที่พระองค์&nbsp;&nbsp;<i>(มตฺ-สฺตฺหานิ&nbsp;&nbsp;สรฺว-ภูตานิ)</i>&nbsp;&nbsp;เช่นนี้ควรทำความเข้าใจให้ถูกต้อง&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมิได้เข้ามายุ่งเกี่ยวโดยตรงกับ<wbr>การดำรงรักษาและค้ำจุนปรากฏการณ์ทางธรรมชาตินี้&nbsp;&nbsp;บางครั้งเราเห็นภาพแอทลาสหรือเทพเจ้ากรีกแบกโลกใบนี้อยู่บนบ่า&nbsp;&nbsp;ดูเหมือนว่าท่านเหนื่อยมากที่แบกโลกทั้งโลกอัน<wbr>ยิ่งใหญ่นี้&nbsp;&nbsp;ภาพเช่นนี้ไม่ควรนำมาแสดงในความสัมพันธ์กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เกี่ยวกับการค้ำจุน<wbr>จักรวาลที่สร้างขึ้นมานี้&nbsp;&nbsp;พระองค์ตรัสว่า&nbsp;&nbsp;ถึงแม้ทุกสิ่งทุกอย่างพำนักพักพิงอยู่ที่พระองค์ตัวพระองค์เองก็ยังอยู่ห่างออกไป&nbsp;&nbsp;ระบบดาวเคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ลอยอยู่ในนภากาศ&nbsp;&nbsp;และ<wbr>นภากาศนี้เป็นพลังงานขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่พระองค์ทรงแตกต่างไปจากนภากาศ&nbsp;&nbsp;และ<wbr>ประทับอยู่ที่อื่น&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทรงตรัสว่า&nbsp;&nbsp;“ถึงแม้ว่าสิ่งเหล่านี้สถิตอยู่ที่พลังงานอันไม่สามารถ<wbr>มองเห็นได้ของข้า&nbsp;&nbsp;ในฐานะที่เป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ข้าก็อยู่ห่างจากสิ่งเหล่า<wbr>นี้”&nbsp;&nbsp;นี่คือความมั่งคั่งที่ไม่สามารถมองเห็นได้ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าทุกสิ่งทุกอย่างพำนักอยู่ที่พระองค์&nbsp;&nbsp;<span class="slant iast">(mat-sthāni&nbsp;&nbsp;sarva-bhūtāni)</span><span class="slant pali">(มตฺ-สฺถานิสรฺว-ภูตานิ)</span><span class="slant thai">(มัต-สถานิสัรวะ-ภูตานิ)</span><span class="slant ram">(มัท-สทฺานิสารวะ-บํูทานิ)</span>&nbsp;&nbsp;เช่นนี้ควรทำความเข้าใจให้ถูกต้อง&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมิได้เข้ามายุ่งเกี่ยวโดยตรงกับ<wbr>การดำรงรักษาและค้ำจุนปรากฏการณ์ทางธรรมชาตินี้&nbsp;&nbsp;บางครั้งเราเห็นภาพแอทลาสหรือเทพเจ้ากรีกแบกโลกใบนี้อยู่บนบ่า&nbsp;&nbsp;ดูเหมือนว่าท่านเหนื่อยมากที่แบกโลกทั้งโลกอัน<wbr>ยิ่งใหญ่นี้&nbsp;&nbsp;ภาพเช่นนี้ไม่ควรนำมาแสดงในความสัมพันธ์กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เกี่ยวกับการค้ำจุน<wbr>จักรวาลที่สร้างขึ้นมานี้&nbsp;&nbsp;พระองค์ตรัสว่า&nbsp;&nbsp;ถึงแม้ทุกสิ่งทุกอย่างพำนักพักพิงอยู่ที่พระองค์ตัวพระองค์เองก็ยังอยู่ห่างออกไป&nbsp;&nbsp;ระบบดาวเคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ลอยอยู่ในนภากาศ&nbsp;&nbsp;และ<wbr>นภากาศนี้เป็นพลังงานขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่พระองค์ทรงแตกต่างไปจากนภากาศ&nbsp;&nbsp;และ<wbr>ประทับอยู่ที่อื่น&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทรงตรัสว่า&nbsp;&nbsp;“ถึงแม้ว่าสิ่งเหล่านี้สถิตอยู่ที่พลังงานอันไม่สามารถ<wbr>มองเห็นได้ของข้า&nbsp;&nbsp;ในฐานะที่เป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ข้าก็อยู่ห่างจากสิ่งเหล่า<wbr>นี้”&nbsp;&nbsp;นี่คือความมั่งคั่งที่ไม่สามารถมองเห็นได้ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในพจนานุกรม&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>เวท&nbsp;&nbsp;นิรุกฺติ</i>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>ยุชฺยเต&nbsp;&nbsp;′เนน&nbsp;&nbsp;ทุรฺฆเฏษุ&nbsp;&nbsp;กาเรฺยษุ</i>&nbsp;&nbsp;”องค์<i>ภควานฺ</i>&nbsp;&nbsp;ทรงแสดงลีลาอันน่าอัศจรรย์ที่ไม่สามารถสำเหนียกได้เพื่อทรงแสดงพลังอำนาจ<wbr>ของพระองค์”&nbsp;&nbsp;บุคลิกของพระองค์ทรงเปี่ยมไปด้วยพลังงานนานัปการ&nbsp;&nbsp;และความมุ่งมั่น<wbr>ของพระองค์เป็นสัจจะที่แท้จริงอยู่ในตัว&nbsp;&nbsp;เช่นนี้จึงเข้าใจบุคลิกภาพแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;เรา<wbr>อาจคิดจะทำบางสิ่งบางอย่างแต่ก็มีอุปสรรคมากมาย&nbsp;&nbsp;บางครั้งเราไม่สามารถทำสิ่งที่เรา<wbr>ชอบได้&nbsp;&nbsp;แต่เมื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงปรารถนาจะทำสิ่งใด&nbsp;&nbsp;พระองค์ทรงเพียงแต่ปรารถนาทุกสิ่ง<wbr>ทุกอย่างจะดำเนินไปอย่างสมบูรณ์จนเราไม่สามารถจินตนาการว่ามันเกิดขึ้นได้อย่างไรองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบายสัจธรรมนี้&nbsp;&nbsp;ถึงแม้ว่าทรงเป็นผู้ดำรงรักษาและค้ำจุนปรากฏการณ์<wbr>ทางธรรมชาติทั้งหมด&nbsp;&nbsp;พระองค์ทรงมิได้แตะต้องปรากฏการณ์ทางธรรมชาตินี้&nbsp;&nbsp;เพียงแต่<wbr>ทรงปรารถนาทุกสิ่งทุกอย่างก็ถูกสร้างขึ้นมา&nbsp;&nbsp;ทุกสิ่งทุกอย่างได้รับการค้ำจุน&nbsp;&nbsp;ทุกสิ่งทุก<wbr>อย่างได้รับการดำรงรักษา&nbsp;&nbsp;และทุกสิ่งทุกอย่างก็ถูกทำลายลง&nbsp;&nbsp;ไม่มีข้อแตกต่างระหว่าง<wbr>จิตใจและพระวรกายของพระองค์&nbsp;&nbsp;(เหมือนกับที่มีข้อแตกต่างระหว่างตัวเราและจิตวัตถุ<wbr>ปัจจุบันของเรา)&nbsp;&nbsp;เพราะทรงเป็นจิตวิญญาณที่สมบูรณ์&nbsp;&nbsp;พระองค์ทรงปรากฏอยู่ในทุก<wbr>สิ่งทุกอย่างพร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;คนธรรมดาสามัญทั่วไปไม่สามารถเข้าใจว่าทรงปรากฏ<wbr>ด้วยพระวรกายของพระองค์เองได้อย่างไร&nbsp;&nbsp;พระองค์ทรงแตกต่างจากปรากฏการณ์ทาง<wbr>วัตถุนี้&nbsp;&nbsp;แต่ทุกสิ่งทุกอย่างก็พำนักพักพิงอยู่ที่พระองค์&nbsp;&nbsp;ได้อธิบายไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเป็น&nbsp;&nbsp;<i>โยคมฺ&nbsp;&nbsp;ไอศฺวรมฺ</i>&nbsp;&nbsp;หรือพลังอิทธิฤทธิ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  ในพจนานุกรม&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">veda&nbsp;&nbsp;nirukti</span><span class="slant pali">เวทนิรุกฺติ</span><span class="slant thai">เวทะนิรุกติ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">yujyate&nbsp;&nbsp;’nena&nbsp;&nbsp;durghaṭeṣu&nbsp;&nbsp;kāryeṣu</span><span class="slant pali">ยุชฺยเตเนนทุรฺฆเฏษุกาเรฺยษุ</span><span class="slant thai">ยุชยะเตเนนะทุรฆะเฏษุการเยษุ</span><span class="slant ram">ยุจยะเทzzzzzz</span>&nbsp;&nbsp;”องค์<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงแสดงลีลาอันน่าอัศจรรย์ที่ไม่สามารถสำเหนียกได้เพื่อทรงแสดงพลังอำนาจ<wbr>ของพระองค์”&nbsp;&nbsp;บุคลิกของพระองค์ทรงเปี่ยมไปด้วยพลังงานนานัปการ&nbsp;&nbsp;และความมุ่งมั่น<wbr>ของพระองค์เป็นสัจจะที่แท้จริงอยู่ในตัว&nbsp;&nbsp;เช่นนี้จึงเข้าใจบุคลิกภาพแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;เรา<wbr>อาจคิดจะทำบางสิ่งบางอย่างแต่ก็มีอุปสรรคมากมาย&nbsp;&nbsp;บางครั้งเราไม่สามารถทำสิ่งที่เรา<wbr>ชอบได้&nbsp;&nbsp;แต่เมื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงปรารถนาจะทำสิ่งใด&nbsp;&nbsp;พระองค์ทรงเพียงแต่ปรารถนาทุกสิ่ง<wbr>ทุกอย่างจะดำเนินไปอย่างสมบูรณ์จนเราไม่สามารถจินตนาการว่ามันเกิดขึ้นได้อย่างไรองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบายสัจธรรมนี้&nbsp;&nbsp;ถึงแม้ว่าทรงเป็นผู้ดำรงรักษาและค้ำจุนปรากฏการณ์<wbr>ทางธรรมชาติทั้งหมด&nbsp;&nbsp;พระองค์ทรงมิได้แตะต้องปรากฏการณ์ทางธรรมชาตินี้&nbsp;&nbsp;เพียงแต่<wbr>ทรงปรารถนาทุกสิ่งทุกอย่างก็ถูกสร้างขึ้นมา&nbsp;&nbsp;ทุกสิ่งทุกอย่างได้รับการค้ำจุน&nbsp;&nbsp;ทุกสิ่งทุก<wbr>อย่างได้รับการดำรงรักษา&nbsp;&nbsp;และทุกสิ่งทุกอย่างก็ถูกทำลายลง&nbsp;&nbsp;ไม่มีข้อแตกต่างระหว่าง<wbr>จิตใจและพระวรกายของพระองค์&nbsp;&nbsp;(เหมือนกับที่มีข้อแตกต่างระหว่างตัวเราและจิตวัตถุ<wbr>ปัจจุบันของเรา)&nbsp;&nbsp;เพราะทรงเป็นจิตวิญญาณที่สมบูรณ์&nbsp;&nbsp;พระองค์ทรงปรากฏอยู่ในทุก<wbr>สิ่งทุกอย่างพร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;คนธรรมดาสามัญทั่วไปไม่สามารถเข้าใจว่าทรงปรากฏ<wbr>ด้วยพระวรกายของพระองค์เองได้อย่างไร&nbsp;&nbsp;พระองค์ทรงแตกต่างจากปรากฏการณ์ทาง<wbr>วัตถุนี้&nbsp;&nbsp;แต่ทุกสิ่งทุกอย่างก็พำนักพักพิงอยู่ที่พระองค์&nbsp;&nbsp;ได้อธิบายไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเป็น&nbsp;&nbsp;<span class="slant iast">yogam&nbsp;&nbsp;aiśvaram</span><span class="slant pali">โยคมฺไอศฺวรมฺ</span><span class="slant thai">โยคัมไอศวะรัม</span><span class="slant ram">โยกัม ไอชวะรัม</span>&nbsp;&nbsp;หรือพลังอิทธิฤทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

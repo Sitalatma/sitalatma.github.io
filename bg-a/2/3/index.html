@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.3</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ไกฺลพฺยํ มา สฺม คมฮ ปารฺตฺห</i><br /><i>ไนตตฺ ตฺวยฺยฺ อุปปทฺยเต</i><br /><i>กฺษุทฺรํ หฺฤทย-ทะอุรฺพลฺยํ</i><br /><i>ตฺยโกฺตฺวตฺติษฺฐ ปรนฺ-ตป</i>
+<span class="slant iast">klaibyaṁ mā sma gamaḥ pārtha<br /></span>
+<span class="slant pali">ไกฺลพฺยํ มา สฺม คมห์ ปารฺถ<br /></span>
+<span class="slant thai">กไลพยัง มา สมะ คะมะห์ ปารถะ<br /></span>
+<span class="slant ram">คไลบยัม มา สมะ กะมะฮ พารทฺะ<br /></span>
+<span class="slant iast">naitat tvayy upapadyate<br /></span>
+<span class="slant pali">ไนตตฺ ตฺวยฺยฺ อุปปทฺยเต<br /></span>
+<span class="slant thai">ไนตัต ตวัยย อุปะปัทยะเต<br /></span>
+<span class="slant ram">ไนทัท ทวะยิ อุพะพัดยะเท<br /></span>
+<span class="slant iast">kṣudraṁ hṛdaya-daurbalyaṁ<br /></span>
+<span class="slant pali">กฺษุทฺรํ หฺฤทย-เทารฺพลฺยํ<br /></span>
+<span class="slant thai">กษุทรัง หฤทะยะ-เทารพัลยัง<br /></span>
+<span class="slant ram">คชุดรัม ฮริดะยะ-โดรบัลยัม<br /></span>
+<span class="slant iast">tyaktvottiṣṭha paran-tapa<br /></span>
+<span class="slant pali">ตฺยกฺโตฺวตฺติษฺฐ ปรนฺ-ตป<br /></span>
+<span class="slant thai">ตยักตโวตติษฐะ ปะรัน-ตะปะ<br /></span>
+<span class="slant ram">ทยัคทโวททิชทฺะ พะรันทะพะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ไกฺลพฺยมฺ</i> — ไร้สมรรถภาพ, <i>มา สฺม</i> — ไม่, <i>คมฮ</i> — นำไป, <i>ปารฺตฺห</i> — โอ้ โอรสพระนาง <i>ปฺฤตฺหา</i>, <i>น</i> — ไม่เคย, <i>เอตตฺ</i> — นี้, <i>ตฺวยิ</i> — แก่เธอ, <i>อุปปทฺยเต</i> — เหมาะสม, <i>กฺษุทฺรมฺ</i> — เล็ก น้อย,<i>หฺฤทย</i> — ของหัวใจ, <i>ทะอุรฺพลฺยมฺ</i> — ความอ่อนแอ, <i>ตฺยกฺตฺวา</i> — ยกเลิก, <i>อุตฺติษฺฐ</i> — ลุก ขึ้น, <i>ปรมฺ-ตป</i> — โอ้ ผู้กำราบศัตรู
+  <span class="slant iast">klaibyam</span><span class="slant pali">ไกฺลพฺยมฺ</span><span class="slant thai">กไลพยัม</span><span class="slant ram">คไลบยัม</span> — ไร้สมรรถภาพ, <span class="slant iast">mā sma</span><span class="slant pali">มาสฺม</span><span class="slant thai">มาสมะ</span><span class="slant ram">มา สมะ</span> — ไม่, <span class="slant iast">gamaḥ</span><span class="slant pali">คมห์</span><span class="slant thai">คะมะห์</span><span class="slant ram">กะมะฮ</span> — นำไป, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้ โอรสพระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">tvayi</span><span class="slant pali">ตฺวยิ</span><span class="slant thai">ตวะยิ</span><span class="slant ram">ทวะยิ</span> — แก่เธอ, <span class="slant iast">upapadyate</span><span class="slant pali">อุปปทฺยเต</span><span class="slant thai">อุปะปัทยะเต</span><span class="slant ram">อุพะพัดยะเท</span> — เหมาะสม, <span class="slant iast">kṣudram</span><span class="slant pali">กฺษุทฺรมฺ</span><span class="slant thai">กษุทรัม</span><span class="slant ram">คชุดรัม</span> — เล็ก น้อย,<span class="slant iast">hṛdaya</span><span class="slant pali">หฺฤทย</span><span class="slant thai">หฤทะยะ</span><span class="slant ram"> ฮริดะยะ</span> — ของหัวใจ, <span class="slant iast">daurbalyam</span><span class="slant pali">เทารฺพลฺยมฺ</span><span class="slant thai">เทารพัลยัม</span><span class="slant ram">โดรบัลยัม</span> — ความอ่อนแอ, <span class="slant iast">tyaktvā</span><span class="slant pali">ตฺยกฺตฺวา</span><span class="slant thai">ตยักตวา</span><span class="slant ram">ทยัคทวา</span> — ยกเลิก, <span class="slant iast">uttiṣṭha</span><span class="slant pali">อุตฺติษฺฐ</span><span class="slant thai">อุตติษฐะ</span><span class="slant ram">อุททิชทฺะ</span> — ลุก ขึ้น, <span class="slant iast">param-tapa</span><span class="slant pali">ปรมฺ-ตป</span><span class="slant thai">ปะรัม-ตะปะ</span><span class="slant ram">พะรันทะพะ</span> — โอ้ ผู้กำราบศัตรู
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<i>ปฺฤตฺหา</i>&nbsp;&nbsp;เธอจงอย่ายอมจำนนให้กับความไร้สมรรถภาพที่น่าอับอายจนไม่เป็นตัวของตัวเองเช่นนี้&nbsp;&nbsp;จงสลัดความอ่อนแอแห่งจิตใจเพียงเล็กน้อยนี้ออกไปให้พ้น&nbsp;&nbsp;และลุกขึ้นมาสู้&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้กำราบศัตรู
+  โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>&nbsp;&nbsp;เธอจงอย่ายอมจำนนให้กับความไร้สมรรถภาพที่น่าอับอายจนไม่เป็นตัวของตัวเองเช่นนี้&nbsp;&nbsp;จงสลัดความอ่อนแอแห่งจิตใจเพียงเล็กน้อยนี้ออกไปให้พ้น&nbsp;&nbsp;และลุกขึ้นมาสู้&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้กำราบศัตรู
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ทรงถูกเรียกว่า&nbsp;&nbsp;โอรสของ&nbsp;&nbsp;<i>ปฺฤตฺหา</i>&nbsp;&nbsp;ผู้ทรงเป็นพระขนิษฐภคินีของ&nbsp;&nbsp;<i>วสุเทว</i>&nbsp;&nbsp;พระบิดาของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมีความสัมพันธ์ทางสายเลือดกับ<i>กฺฤษฺณ</i>&nbsp;&nbsp;หากโอรส&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ปฏิเสธการสู้รบผู้นั้นก็เป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;แต่เพียงในนามเท่านั้นและหากบุตรของ&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;ทำบาป&nbsp;&nbsp;เขาก็เป็น&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;แต่เพียงในนามเท่านั้น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;เช่นนี้เป็นบุตรที่ไร้ค่าของบิดา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ทรงปรารถนาให้<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;มาเป็นโอรส&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ที่ไร้คุณค่า&nbsp;&nbsp;จากความน่าเชื่อถือได้ที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นพระ<wbr>สหายที่สนิทสนมมากกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้นำทางของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;โดยตรงบน<wbr>ราชรถ&nbsp;&nbsp;หาก&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงละทิ้งสนามรบไปจะเป็นการกระทำสิ่งที่เสื่อมเสียชื่อเสียงเป็น<wbr>อย่างยิ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จึงตรัสว่าท่าทีของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เช่นนี้ไม่เหมาะสมสำหรับบุคลิกภาพ<wbr>แห่ง&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงอาจมีข้อโต้แย้งว่าทรงยกเลิกการสู้รบบนพื้นฐานแนวคิดแห่ง<wbr>คุณธรรมอันสูงส่งเพื่อผู้ที่เราควรให้ความเคารพสูงสุด&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;และบรรดาสังคญาติแต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงพิจารณาว่าความมีคุณธรรมอันสูงส่งเช่นนี้&nbsp;&nbsp;เป็นเพียงความอ่อนแอแห่ง<wbr>จิตใจเท่านั้น&nbsp;&nbsp;คุณธรรมอันสูงส่งที่ผิดเช่นนี้&nbsp;&nbsp;ผู้ที่เชื่อถือได้ไม่เห็นด้วย&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คุณธรรมอัน<wbr>สูงส่งหรือที่เรียกว่าอหิงสานี้&nbsp;&nbsp;บุคคลเช่น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ควรยกเลิกภายใต้การชี้นำโดยตรงของ<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถูกเรียกว่า&nbsp;&nbsp;โอรสของ&nbsp;&nbsp;<span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>&nbsp;&nbsp;ผู้ทรงเป็นพระขนิษฐภคินีของ&nbsp;&nbsp;<span class="slant iast">vasudeva</span><span class="slant pali">วสุเทว</span><span class="slant thai">วะสุเทวะ</span><span class="slant ram">วะสุเดวะ</span>&nbsp;&nbsp;พระบิดาของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมีความสัมพันธ์ทางสายเลือดกับ<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หากโอรส&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ปฏิเสธการสู้รบผู้นั้นก็เป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;แต่เพียงในนามเท่านั้นและหากบุตรของ&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;ทำบาป&nbsp;&nbsp;เขาก็เป็น&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;แต่เพียงในนามเท่านั้น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;เช่นนี้เป็นบุตรที่ไร้ค่าของบิดา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ทรงปรารถนาให้<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;มาเป็นโอรส&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ที่ไร้คุณค่า&nbsp;&nbsp;จากความน่าเชื่อถือได้ที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นพระ<wbr>สหายที่สนิทสนมมากกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้นำทางของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;โดยตรงบน<wbr>ราชรถ&nbsp;&nbsp;หาก&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงละทิ้งสนามรบไปจะเป็นการกระทำสิ่งที่เสื่อมเสียชื่อเสียงเป็น<wbr>อย่างยิ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จึงตรัสว่าท่าทีของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เช่นนี้ไม่เหมาะสมสำหรับบุคลิกภาพ<wbr>แห่ง&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงอาจมีข้อโต้แย้งว่าทรงยกเลิกการสู้รบบนพื้นฐานแนวคิดแห่ง<wbr>คุณธรรมอันสูงส่งเพื่อผู้ที่เราควรให้ความเคารพสูงสุด&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;และบรรดาสังคญาติแต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงพิจารณาว่าความมีคุณธรรมอันสูงส่งเช่นนี้&nbsp;&nbsp;เป็นเพียงความอ่อนแอแห่ง<wbr>จิตใจเท่านั้น&nbsp;&nbsp;คุณธรรมอันสูงส่งที่ผิดเช่นนี้&nbsp;&nbsp;ผู้ที่เชื่อถือได้ไม่เห็นด้วย&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คุณธรรมอัน<wbr>สูงส่งหรือที่เรียกว่าอหิงสานี้&nbsp;&nbsp;บุคคลเช่น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ควรยกเลิกภายใต้การชี้นำโดยตรงของ<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยตฺหา นทีนาํ พหโว ′มฺพุ-เวคาฮ</i><br /><i>สมุทฺรมฺ เอวาภิมุขา ทฺรวนฺติ</i><br /><i>ตตฺหา ตวามี นร-โลก-วีรา</i><br /><i>วิศนฺติ วกฺตฺราณฺยฺ อภิวิชฺวลนฺติ</i>
+<span class="slant iast">yathā nadīnāṁ bahavo ’mbu-vegāḥ<br /></span>
+<span class="slant pali">ยถา นทีนำ พหโว ’มฺพุ-เวคาห์<br /></span>
+<span class="slant thai">ยะถา นะทีนาง พะหะโว ’มพุ-เวคาห์<br /></span>
+<span class="slant ram">ยะทฺา นะดีนาม บะฮะโว ่มบุ-เวกาฮ<br /></span>
+<span class="slant iast">samudram evābhimukhā dravanti<br /></span>
+<span class="slant pali">สมุทฺรมฺ เอวาภิมุขา ทฺรวนฺติ<br /></span>
+<span class="slant thai">สะมุทรัม เอวาภิมุขา ทระวันติ<br /></span>
+<span class="slant ram">สะมุดรัม เอวาบิฺมุคฺา ดระวันทิฺ<br /></span>
+<span class="slant iast">tathā tavāmī nara-loka-vīrā<br /></span>
+<span class="slant pali">ตถา ตวามี นร-โลก-วีรา<br /></span>
+<span class="slant thai">ตะถา ตะวามี นะระ-โลกะ-วีรา<br /></span>
+<span class="slant ram">ทะทฺา ทะวามี นะระ-โลคะ-วีรา<br /></span>
+<span class="slant iast">viśanti vaktrāṇy abhivijvalanti<br /></span>
+<span class="slant pali">วิศนฺติ วกฺตฺราณฺยฺ อภิวิชฺวลนฺติ<br /></span>
+<span class="slant thai">วิศันติ วักตราณย อะภิวิชวะลันติ<br /></span>
+<span class="slant ram">วิชันทิ วัคทราณิ อบิฺวิจวะลันทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยตฺหา</i> — ดังที่, <i>นทีนามฺ</i> — ของแม่น้ำ, <i>พหวฮ</i> — มากมาย, <i>อมฺพุ-เวคาฮ</i> — คลื่นของน้ำ, <i>สมุทฺรมฺ</i> — มหาสมุทร, <i>เอว</i> — แน่นอน, <i>อภิมุขาฮ</i> — ไปสู่, <i>ทฺรวนฺติ</i> — ไหล, <i>ตตฺหา</i> — เช่น เดียวกัน, <i>ตว</i> — ของพระองค์, <i>อมี</i> — ทั้งหมดนี้,<i>นร-โลก-วีราฮ</i> — เหล่ากษัตริย์ของ สังคมมนุษย์, <i>วิศนฺติ</i> — เข้าไป, <i>วกฺตฺราณิ</i> — พระโอษฐ์, <i>อภิวิชฺวลนฺติ</i> — และกำลังโชติช่วง
+  <span class="slant iast">yathā</span><span class="slant pali">ยถา</span><span class="slant thai">ยะถา</span><span class="slant ram">ยะทฺา</span> — ดังที่, <span class="slant iast">nadīnām</span><span class="slant pali">นทีนามฺ</span><span class="slant thai">นะทีนาม</span><span class="slant ram">นะดีนาม</span> — ของแม่น้ำ, <span class="slant iast">bahavaḥ</span><span class="slant pali">พหวห์</span><span class="slant thai">พะหะวะห์</span><span class="slant ram">บะฮะวะฮ</span> — มากมาย, <span class="slant iast">ambu-vegāḥ</span><span class="slant pali">อมฺพุ-เวคาห์</span><span class="slant thai">อัมพุ-เวคาห์</span><span class="slant ram">อัมบฺุ-เวกาฮ</span> — คลื่นของน้ำ, <span class="slant iast">samudram</span><span class="slant pali">สมุทฺรมฺ</span><span class="slant thai">สะมุทรัม</span><span class="slant ram">สะมุดรัม</span> — มหาสมุทร, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">abhimukhāḥ</span><span class="slant pali">อภิมุขาห์</span><span class="slant thai">อะภิมุขาห์</span><span class="slant ram">อบิฺมุคฮาฮ</span> — ไปสู่, <span class="slant iast">dravanti</span><span class="slant pali">ทฺรวนฺติ</span><span class="slant thai">ทระวันติ</span><span class="slant ram">ดระวันทิ</span> — ไหล, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เช่น เดียวกัน, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของพระองค์, <span class="slant iast">amī</span><span class="slant pali">อมี</span><span class="slant thai">อะมี</span><span class="slant ram">อมี</span> — ทั้งหมดนี้,<span class="slant iast">nara-loka-vīrāḥ</span><span class="slant pali">นร-โลก-วีราห์</span><span class="slant thai">นะระ-โลกะ-วีราห์</span><span class="slant ram"> นะระ-โลคะ-วีราฮ</span> — เหล่ากษัตริย์ของ สังคมมนุษย์, <span class="slant iast">viśanti</span><span class="slant pali">วิศนฺติ</span><span class="slant thai">วิศันติ</span><span class="slant ram">วิชันทิ</span> — เข้าไป, <span class="slant iast">vaktrāṇi</span><span class="slant pali">วกฺตฺราณิ</span><span class="slant thai">วักตราณิ</span><span class="slant ram">วัคทราณิ</span> — พระโอษฐ์, <span class="slant iast">abhivijvalanti</span><span class="slant pali">อภิวิชฺวลนฺติ</span><span class="slant thai">อะภิวิชวะลันติ</span><span class="slant ram">อบิฺวิจวะลันทิ</span> — และกำลังโชติช่วง
   </p>
 </div>
 

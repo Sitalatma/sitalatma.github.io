@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.21</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เต ตํ ภุกฺตฺวา สฺวรฺค-โลกํ วิศาลํ</i><br /><i>กฺษีเณ ปุเณฺย มรฺตฺย-โลกํ วิศนฺติ</i><br /><i>เอวํ ตฺรยี-ธรฺมมฺ อนุปฺรปนฺนา</i><br /><i>คตาคตํ กาม-กามา ลภเนฺต</i>
+<span class="slant iast">te taṁ bhuktvā svarga-lokaṁ viśālaṁ<br /></span>
+<span class="slant pali">เต ตํ ภุกฺตฺวา สฺวรฺค-โลกํ วิศาลํ<br /></span>
+<span class="slant thai">เต ตัง ภุกตวา สวัรคะ-โลกัง วิศาลัง<br /></span>
+<span class="slant ram">เท ทัม บํุคทวา สวารกะ-โลคัม วิชาลัม<br /></span>
+<span class="slant iast">kṣīṇe puṇye martya-lokaṁ viśanti<br /></span>
+<span class="slant pali">กฺษีเณ ปุเณฺย มรฺตฺย-โลกํ วิศนฺติ<br /></span>
+<span class="slant thai">กษีเณ ปุณเย มัรตยะ-โลกัง วิศันติ<br /></span>
+<span class="slant ram">คชีเณ พุณเย มารทยะ-โลคัม วิชันทิฺ<br /></span>
+<span class="slant iast">evaṁ trayī-dharmam anuprapannā<br /></span>
+<span class="slant pali">เอวํ ตฺรยี-ธรฺมมฺ อนุปฺรปนฺนา<br /></span>
+<span class="slant thai">เอวัง ตระยี-ธัรมัม อะนุประปันนา<br /></span>
+<span class="slant ram">เอวัม ทระยี-ดฺารมัม อนุพระพันนา<br /></span>
+<span class="slant iast">gatāgataṁ kāma-kāmā labhante<br /></span>
+<span class="slant pali">คตาคตํ กาม-กามา ลภนฺเต<br /></span>
+<span class="slant thai">คะตาคะตัง กามะ-กามา ละภันเต<br /></span>
+<span class="slant ram">กะทากะทัม คามะ-คามา ละบัฺนเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เต</i> — พวกเขา, <i>ตมฺ</i> — นั้น, <i>ภุกฺตฺวา</i> — ได้รับความสุข, <i>สฺวรฺค-โลกมฺ</i> — สวรรค์, <i>วิศาลมฺ</i> — กว้าง ใหญ่, <i>กฺษีเณ</i> — หมดลง, <i>ปุเณฺย</i> — ผลบุญ, <i>มรฺตฺย-โลกมฺ</i> — โลกแห่งความตาย, <i>วิศนฺติ</i> — ตกลงมา, <i>เอวมฺ</i> — ดังนั้น, <i>ตฺรยี</i> — จากพระ <i>เวท</i> ทั้งสาม, <i>ธรฺมมฺ</i> — คำสอน, <i>อนุปฺรปนฺนาฮ</i> — ปฏิบัติตาม, <i>คต-อาคตมฺ</i> — การตายและการเกิด, <i>กาม-กามาฮ</i> — ปรารถนาหาความ สุขทางประสาทสัมผัส, <i>ลภเนฺต</i> — ได้รับ
+  <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">tam</span><span class="slant pali">ตมฺ</span><span class="slant thai">ตัม</span><span class="slant ram">ทัม</span> — นั้น, <span class="slant iast">bhuktvā</span><span class="slant pali">ภุกฺตฺวา</span><span class="slant thai">ภุกตวา</span><span class="slant ram">บํุคทวา</span> — ได้รับความสุข, <span class="slant iast">svarga-lokam</span><span class="slant pali">สฺวรฺค-โลกมฺ</span><span class="slant thai">สวัรคะ-โลกัม</span><span class="slant ram">สวารกะ-โลคัม</span> — สวรรค์, <span class="slant iast">viśālam</span><span class="slant pali">วิศาลมฺ</span><span class="slant thai">วิศาลัม</span><span class="slant ram">วิชาลัม</span> — กว้าง ใหญ่, <span class="slant iast">kṣīṇe</span><span class="slant pali">กฺษีเณ</span><span class="slant thai">กษีเณ</span><span class="slant ram">คชีเน</span> — หมดลง, <span class="slant iast">puṇye</span><span class="slant pali">ปุเณฺย</span><span class="slant thai">ปุณเย</span><span class="slant ram">พุณเย</span> — ผลบุญ, <span class="slant iast">martya-lokam</span><span class="slant pali">มรฺตฺย-โลกมฺ</span><span class="slant thai">มัรตยะ-โลกัม</span><span class="slant ram">มารทยะ-โลคัม</span> — โลกแห่งความตาย, <span class="slant iast">viśanti</span><span class="slant pali">วิศนฺติ</span><span class="slant thai">วิศันติ</span><span class="slant ram">วิชันทิ</span> — ตกลงมา, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น, <span class="slant iast">trayī</span><span class="slant pali">ตฺรยี</span><span class="slant thai">ตระยี</span><span class="slant ram">ทระยี</span> — จากพระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span> ทั้งสาม, <span class="slant iast">dharmam</span><span class="slant pali">ธรฺมมฺ</span><span class="slant thai">ธัรมัม</span><span class="slant ram">ดฺารมัม</span> — คำสอน, <span class="slant iast">anuprapannāḥ</span><span class="slant pali">อนุปฺรปนฺนาห์</span><span class="slant thai">อะนุประปันนาห์</span><span class="slant ram">อนุพระพันนาฮ</span> — ปฏิบัติตาม, <span class="slant iast">gata-āgatam</span><span class="slant pali">คต-อาคตมฺ</span><span class="slant thai">คะตะ-อาคะตัม</span><span class="slant ram">กะทะ-อากะทัม</span> — การตายและการเกิด, <span class="slant iast">kāma-kāmāḥ</span><span class="slant pali">กาม-กามาห์</span><span class="slant thai">กามะ-กามาห์</span><span class="slant ram">คามะ-คามาฮ</span> — ปรารถนาหาความ สุขทางประสาทสัมผัส, <span class="slant iast">labhante</span><span class="slant pali">ลภนฺเต</span><span class="slant thai">ละภันเต</span><span class="slant ram">ละบัฺนเท</span> — ได้รับ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  หลังจากได้รับความสุขทางประสาทสัมผัสบนสรวงสวรรค์มากมาย&nbsp;&nbsp;และเมื่อผลบุญหมดสิ้นลง&nbsp;&nbsp;พวกเขาจะกลับมายังโลกแห่งความตายนี้อีกครั้งหนึ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ผู้ที่แสวงหาความสุขทางประสาทสัมผัสด้วยการปฏิบัติตามหลักธรรมของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งสามเล่ม&nbsp;&nbsp;จะได้รับแค่เพียงการเกิดและการตายซ้ำซากเท่านั้น
+  หลังจากได้รับความสุขทางประสาทสัมผัสบนสรวงสวรรค์มากมาย&nbsp;&nbsp;และเมื่อผลบุญหมดสิ้นลง&nbsp;&nbsp;พวกเขาจะกลับมายังโลกแห่งความตายนี้อีกครั้งหนึ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ผู้ที่แสวงหาความสุขทางประสาทสัมผัสด้วยการปฏิบัติตามหลักธรรมของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งสามเล่ม&nbsp;&nbsp;จะได้รับแค่เพียงการเกิดและการตายซ้ำซากเท่านั้น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ที่ได้รับการส่งเสริมไปถึงระบบดาวเคราะห์ที่สูงกว่า&nbsp;&nbsp;ได้รับความสุขอยู่กับ<wbr>ชีวิตอันยืนยาวพร้อมทั้งสิ่งอำนวยความสะดวกที่ดีกว่าในการหาความสุขทางประสาท<wbr>สัมผัส&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ก็ไม่ได้รับอนุญาตให้อยู่ที่นั่นชั่วกัลปวสาน&nbsp;&nbsp;แต่จะถูกส่งกลับมายังโลก<wbr>นี้อีกครั้งหนึ่งเมื่อผลบุญหมดสิ้นลง&nbsp;&nbsp;ผู้ที่ไม่บรรลุถึงความรู้ที่สมบูรณ์ดังที่แสดงไว้ใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร&nbsp;&nbsp;(ชนฺมาทฺยฺ&nbsp;&nbsp;อสฺย&nbsp;&nbsp;ยตฮ</i>&nbsp;&nbsp;)&nbsp;&nbsp;หรืออีกนัยหนึ่งผู้ที่ไม่เข้าใจว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรง<wbr>เป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;ล้มเหลวในการบรรลุถึงจุดมุ่งหมายสูงสุด<wbr>ของชีวิต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมาอยู่ภายใต้ระเบียบแบบแผนประจำที่ถูกส่งขึ้นไปยังโลกสวรรค์และ<wbr>ตกลงมาใหม่&nbsp;&nbsp;เหมือนกับนั่งอยู่บนชิงช้าสวรรค์ที่บางครั้งขึ้นและบางครั้งลง&nbsp;&nbsp;คำอธิบาย<wbr>คือแทนที่จะเจริญขึ้นไปถึงโลกทิพย์ซึ่งไม่ต้องกลับมาอีก&nbsp;&nbsp;ก็ได้แต่เพียงหมุนเวียนอยู่ใน<wbr>วัฏจักรแห่งการเกิดและการตายในระบบดาวเคราะห์ที่สูงกว่าและต่ำกว่าเท่านั้น&nbsp;&nbsp;เรา<wbr>ควรไปให้ถึงโลกทิพย์และรื่นเริงกับชีวิตอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลี้มปีติสุขและความรู้และไม่ต้องกลับมาโลกวัตถุนี้ซึ่งเต็มไปด้วยความทุกข์อีกต่อไป
+  ผู้ที่ได้รับการส่งเสริมไปถึงระบบดาวเคราะห์ที่สูงกว่า&nbsp;&nbsp;ได้รับความสุขอยู่กับ<wbr>ชีวิตอันยืนยาวพร้อมทั้งสิ่งอำนวยความสะดวกที่ดีกว่าในการหาความสุขทางประสาท<wbr>สัมผัส&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ก็ไม่ได้รับอนุญาตให้อยู่ที่นั่นชั่วกัลปวสาน&nbsp;&nbsp;แต่จะถูกส่งกลับมายังโลก<wbr>นี้อีกครั้งหนึ่งเมื่อผลบุญหมดสิ้นลง&nbsp;&nbsp;ผู้ที่ไม่บรรลุถึงความรู้ที่สมบูรณ์ดังที่แสดงไว้ใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra&nbsp;&nbsp;(janmādy&nbsp;&nbsp;asya&nbsp;&nbsp;yataḥ</span><span class="slant pali">เวทานฺต-สูตฺรชนฺมาทฺยฺอสฺยยตห์</span><span class="slant thai">เวทานตะ-สูตระชันมาทยอัสยะยะตะห์</span><span class="slant ram">เวดานธะ-สูทระอัสยะยะทะฮ</span>&nbsp;&nbsp;)&nbsp;&nbsp;หรืออีกนัยหนึ่งผู้ที่ไม่เข้าใจว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรง<wbr>เป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;ล้มเหลวในการบรรลุถึงจุดมุ่งหมายสูงสุด<wbr>ของชีวิต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมาอยู่ภายใต้ระเบียบแบบแผนประจำที่ถูกส่งขึ้นไปยังโลกสวรรค์และ<wbr>ตกลงมาใหม่&nbsp;&nbsp;เหมือนกับนั่งอยู่บนชิงช้าสวรรค์ที่บางครั้งขึ้นและบางครั้งลง&nbsp;&nbsp;คำอธิบาย<wbr>คือแทนที่จะเจริญขึ้นไปถึงโลกทิพย์ซึ่งไม่ต้องกลับมาอีก&nbsp;&nbsp;ก็ได้แต่เพียงหมุนเวียนอยู่ใน<wbr>วัฏจักรแห่งการเกิดและการตายในระบบดาวเคราะห์ที่สูงกว่าและต่ำกว่าเท่านั้น&nbsp;&nbsp;เรา<wbr>ควรไปให้ถึงโลกทิพย์และรื่นเริงกับชีวิตอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลี้มปีติสุขและความรู้และไม่ต้องกลับมาโลกวัตถุนี้ซึ่งเต็มไปด้วยความทุกข์อีกต่อไป
   </p>
 </div>
 

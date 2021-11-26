@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.13</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>คามฺ อาวิศฺย จ ภูตานิ</i><br /><i>ธารยามฺยฺ อหมฺ โอชสา</i><br /><i>ปุษฺณามิ จะอุษธีฮ สรฺวาฮ</i><br /><i>โสโม ภูตฺวา รสาตฺมกฮ</i>
+<span class="slant iast">gām āviśya ca bhūtāni<br /></span>
+<span class="slant pali">คามฺ อาวิศฺย จ ภูตานิ<br /></span>
+<span class="slant thai">คาม อาวิศยะ จะ ภูตานิ<br /></span>
+<span class="slant ram">กาม อาวิชยะ ชะ บํูทานิ<br /></span>
+<span class="slant iast">dhārayāmy aham ojasā<br /></span>
+<span class="slant pali">ธารยามฺยฺ อหมฺ โอชสา<br /></span>
+<span class="slant thai">ธาระยามย อะหัม โอชะสา<br /></span>
+<span class="slant ram">ดฺาระยามิ อฮัม โอจะสา<br /></span>
+<span class="slant iast">puṣṇāmi cauṣadhīḥ sarvāḥ<br /></span>
+<span class="slant pali">ปุษฺณามิ เจาษธีห์ สรฺวาห์<br /></span>
+<span class="slant thai">ปุษณามิ เจาษะธีห์ สัรวาห์<br /></span>
+<span class="slant ram">พุชณามิ โชชะดีฺฮ สารวาฮ<br /></span>
+<span class="slant iast">somo bhūtvā rasātmakaḥ<br /></span>
+<span class="slant pali">โสโม ภูตฺวา รสาตฺมกห์<br /></span>
+<span class="slant thai">โสโม ภูตวา ระสาตมะกะห์<br /></span>
+<span class="slant ram">โสโม บํูทวา ระสารทมะคะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>คามฺ</i> — ดาวเคราะห์, <i>อาวิศฺย</i> — เข้าไป, <i>จ</i> — เช่นกัน, <i>ภูตานิ</i> — สิ่งมีชีวิต, <i>ธารยามิ</i> — ค้ำจุน, <i>อหมฺ</i> — ข้า, <i>โอชสา</i> — ด้วยพลังงานของข้า, <i>ปุษฺณามิ</i> — บำรุงเลี้ยง, <i>จ</i> — และ, <i>ะอุษธีฮ</i> — พวก ผัก, <i>สรฺวาฮ</i> — ทั้งหมด, <i>โสมฮ</i> — ดวงจันทร์, <i>ภูตฺวา</i> — มาเป็น, <i>รส-อาตฺมกฮ</i> — ส่งน้ำให้
+  <span class="slant iast">gām</span><span class="slant pali">คามฺ</span><span class="slant thai">คาม</span><span class="slant ram">กาม</span> — ดาวเคราะห์, <span class="slant iast">āviśya</span><span class="slant pali">อาวิศฺย</span><span class="slant thai">อาวิศยะ</span><span class="slant ram">อาวิชยะ</span> — เข้าไป, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">bhūtāni</span><span class="slant pali">ภูตานิ</span><span class="slant thai">ภูตานิ</span><span class="slant ram">บํูทานิ</span> — สิ่งมีชีวิต, <span class="slant iast">dhārayāmi</span><span class="slant pali">ธารยามิ</span><span class="slant thai">ธาระยามิ</span><span class="slant ram">ดฺาระยามิ</span> — ค้ำจุน, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">ojasā</span><span class="slant pali">โอชสา</span><span class="slant thai">โอชะสา</span><span class="slant ram">โอจะสา</span> — ด้วยพลังงานของข้า, <span class="slant iast">puṣṇāmi</span><span class="slant pali">ปุษฺณามิ</span><span class="slant thai">ปุษณามิ</span><span class="slant ram">พุชณามิ</span> — บำรุงเลี้ยง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">auṣadhīḥ</span><span class="slant pali">เอาษธีห์</span><span class="slant thai">เอาษะธีห์</span><span class="slant ram">โอชะดีฺฮ</span> — พวก ผัก, <span class="slant iast">sarvāḥ</span><span class="slant pali">สรฺวาห์</span><span class="slant thai">สัรวาห์</span><span class="slant ram">สารวาฮ</span> — ทั้งหมด, <span class="slant iast">somaḥ</span><span class="slant pali">โสมห์</span><span class="slant thai">โสมะห์</span><span class="slant ram">โสมะฮ</span> — ดวงจันทร์, <span class="slant iast">bhūtvā</span><span class="slant pali">ภูตฺวา</span><span class="slant thai">ภูตวา</span><span class="slant ram">บํูทวา</span> — มาเป็น, <span class="slant iast">rasa-ātmakaḥ</span><span class="slant pali">รส-อาตฺมกห์</span><span class="slant thai">ระสะ-อาตมะกะห์</span><span class="slant ram">ระสะ-อาทมะคะฮ</span> — ส่งน้ำให้
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เข้าใจว่าดาวเคราะห์ทั้งหมดลอยอยู่ในอากาศได้ก็เนื่องด้วยพลังงานขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;พระองค์เสด็จเข้าไปในทุกๆ&nbsp;&nbsp;อณู&nbsp;&nbsp;ทุกๆ&nbsp;&nbsp;ดาวเคราะห์&nbsp;&nbsp;และทุกๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;ได้<wbr>อธิบายไว้ใน&nbsp;&nbsp;บระฮมะ-สัมฮิทา&nbsp;&nbsp;ว่า&nbsp;&nbsp;หนึ่งในภาคแบ่งแยกอันสมบูรณ์ของบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ได้เสด็จเข้าไปในดาวเคราะห์&nbsp;&nbsp;ในจักรวาล&nbsp;&nbsp;ในสิ่งมีชีวิต&nbsp;&nbsp;และ<wbr>แม้แต่ในอณู&nbsp;&nbsp;เนื่องจากพระองค์เสด็จเข้าไป&nbsp;&nbsp;ทุกสิ่งทุกอย่างจึงปรากฏอย่างเหมาะสมเมื่อมีดวงวิญญาณอยู่ในร่าง&nbsp;&nbsp;มนุษย์จึงสามารถลอยอยู่ในน้ำได้&nbsp;&nbsp;แต่เมื่อละอองชีวิตออก<wbr>ไปจากร่าง&nbsp;&nbsp;ร่างกายจะตายและจมน้ำ&nbsp;&nbsp;แน่นอนว่าเมื่อร่างกายเน่าเปื่อยก็จะลอยขึ้น<wbr>มาเหมือนกับฟางและสิ่งอื่นๆ&nbsp;&nbsp;แต่ทันทีที่คนตายศพจะจมลงไปในน้ำ&nbsp;&nbsp;ลักษณะเดียวกันดาวเคราะห์ทั้งหมดลอยอยู่ในอวกาศ&nbsp;&nbsp;เป็นเช่นนี้ได้ก็เนื่องจากพลังงานเบื้องสูงขององค์<i>ภควานฺ</i>&nbsp;&nbsp;เข้าไป&nbsp;&nbsp;พลังงานของพระองค์ทรงค้ำจุนแต่ละดาวเคราะห์เหมือนกับฝุ่นในกำ<wbr>มือ&nbsp;&nbsp;หากผู้ใดกำฝุ่นอยู่ในมือ&nbsp;&nbsp;ฝุ่นก็จะไม่หลุดลอยไป&nbsp;&nbsp;แต่หากปาออกไปในอากาศฝุ่นก็จะ<wbr>กระจายตกลงพื้นดิน&nbsp;&nbsp;ทำนองเดียวกัน&nbsp;&nbsp;ดาวเคราะห์เหล่านี้ที่ลอยอยู่ในอากาศ&nbsp;&nbsp;อันที่จริง<wbr>อยู่ในกำมือของรูปลักษณ์จักรวาลแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยพลังและอำนาจของพระองค์สิ่ง<wbr>ต่างๆ&nbsp;&nbsp;ทั้งหมดทั้งเคลื่อนที่และไม่เคลื่อนจึงอยู่ในตำแหน่งของตนเอง&nbsp;&nbsp;ได้กล่าวไว้ในบท<wbr>มนต์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ว่าเนื่องมาจากบุคลิกภาพสูงสุดแห่งพระเจ้าดวงอาทิตย์จึงส่องแสง&nbsp;&nbsp;และ<wbr>ดาวเคราะห์ต่างๆ&nbsp;&nbsp;จึงเคลื่อนไปอย่างมั่นคง&nbsp;&nbsp;หากพระองค์ทรงไม่ทำเช่นนี้ดาวเคราะห์<wbr>ทั้งหมดจะกระจัดกระจายเหมือนกับฝุ่นในอากาศและสูญสลายไป&nbsp;&nbsp;ในทำนองเดียวกันเนื่องจากพระองค์ที่ทำให้ดวงจันทร์บำรุงเลี้ยงพืชผักต่างๆ&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;และด้วยอิทธิพลของ<wbr>ดวงจันทร์พืชผักต่างๆ&nbsp;&nbsp;จึงมีรสอร่อยปราศจากแสงจันทร์พืชผักต่างๆ&nbsp;&nbsp;เจริญเติบโตไม่ได้และจะไม่มีรสชุ่มฉ่่ำ&nbsp;&nbsp;สังคมมนุษย์ดำเนินต่อไป&nbsp;&nbsp;มีชีวิตอยู่อย่างสะดวกสบายและรื่นเริง<wbr>ไปกับอาหาร&nbsp;&nbsp;ทั้งหมดนี้เนื่องมาจากองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นผู้จัดส่งให้&nbsp;&nbsp;มิฉะนั้นมนุษยชาติจะ<wbr>ไม่สามารถมีชีวิตอยู่ได้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>รสาตฺมกฮ</i>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ทุกสิ่งทุกอย่างเป็นที่<wbr>อร่อยปากก็เนื่องมาจากผู้แทนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยผ่านทางอิทธิพลของดวงจันทร์
+  เข้าใจว่าดาวเคราะห์ทั้งหมดลอยอยู่ในอากาศได้ก็เนื่องด้วยพลังงานขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;พระองค์เสด็จเข้าไปในทุกๆ&nbsp;&nbsp;อณู&nbsp;&nbsp;ทุกๆ&nbsp;&nbsp;ดาวเคราะห์&nbsp;&nbsp;และทุกๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;ได้<wbr>อธิบายไว้ใน&nbsp;&nbsp;บระฮมะ-สัมฮิทา&nbsp;&nbsp;ว่า&nbsp;&nbsp;หนึ่งในภาคแบ่งแยกอันสมบูรณ์ของบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ได้เสด็จเข้าไปในดาวเคราะห์&nbsp;&nbsp;ในจักรวาล&nbsp;&nbsp;ในสิ่งมีชีวิต&nbsp;&nbsp;และ<wbr>แม้แต่ในอณู&nbsp;&nbsp;เนื่องจากพระองค์เสด็จเข้าไป&nbsp;&nbsp;ทุกสิ่งทุกอย่างจึงปรากฏอย่างเหมาะสมเมื่อมีดวงวิญญาณอยู่ในร่าง&nbsp;&nbsp;มนุษย์จึงสามารถลอยอยู่ในน้ำได้&nbsp;&nbsp;แต่เมื่อละอองชีวิตออก<wbr>ไปจากร่าง&nbsp;&nbsp;ร่างกายจะตายและจมน้ำ&nbsp;&nbsp;แน่นอนว่าเมื่อร่างกายเน่าเปื่อยก็จะลอยขึ้น<wbr>มาเหมือนกับฟางและสิ่งอื่นๆ&nbsp;&nbsp;แต่ทันทีที่คนตายศพจะจมลงไปในน้ำ&nbsp;&nbsp;ลักษณะเดียวกันดาวเคราะห์ทั้งหมดลอยอยู่ในอวกาศ&nbsp;&nbsp;เป็นเช่นนี้ได้ก็เนื่องจากพลังงานเบื้องสูงขององค์<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เข้าไป&nbsp;&nbsp;พลังงานของพระองค์ทรงค้ำจุนแต่ละดาวเคราะห์เหมือนกับฝุ่นในกำ<wbr>มือ&nbsp;&nbsp;หากผู้ใดกำฝุ่นอยู่ในมือ&nbsp;&nbsp;ฝุ่นก็จะไม่หลุดลอยไป&nbsp;&nbsp;แต่หากปาออกไปในอากาศฝุ่นก็จะ<wbr>กระจายตกลงพื้นดิน&nbsp;&nbsp;ทำนองเดียวกัน&nbsp;&nbsp;ดาวเคราะห์เหล่านี้ที่ลอยอยู่ในอากาศ&nbsp;&nbsp;อันที่จริง<wbr>อยู่ในกำมือของรูปลักษณ์จักรวาลแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยพลังและอำนาจของพระองค์สิ่ง<wbr>ต่างๆ&nbsp;&nbsp;ทั้งหมดทั้งเคลื่อนที่และไม่เคลื่อนจึงอยู่ในตำแหน่งของตนเอง&nbsp;&nbsp;ได้กล่าวไว้ในบท<wbr>มนต์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ว่าเนื่องมาจากบุคลิกภาพสูงสุดแห่งพระเจ้าดวงอาทิตย์จึงส่องแสง&nbsp;&nbsp;และ<wbr>ดาวเคราะห์ต่างๆ&nbsp;&nbsp;จึงเคลื่อนไปอย่างมั่นคง&nbsp;&nbsp;หากพระองค์ทรงไม่ทำเช่นนี้ดาวเคราะห์<wbr>ทั้งหมดจะกระจัดกระจายเหมือนกับฝุ่นในอากาศและสูญสลายไป&nbsp;&nbsp;ในทำนองเดียวกันเนื่องจากพระองค์ที่ทำให้ดวงจันทร์บำรุงเลี้ยงพืชผักต่างๆ&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;และด้วยอิทธิพลของ<wbr>ดวงจันทร์พืชผักต่างๆ&nbsp;&nbsp;จึงมีรสอร่อยปราศจากแสงจันทร์พืชผักต่างๆ&nbsp;&nbsp;เจริญเติบโตไม่ได้และจะไม่มีรสชุ่มฉ่่ำ&nbsp;&nbsp;สังคมมนุษย์ดำเนินต่อไป&nbsp;&nbsp;มีชีวิตอยู่อย่างสะดวกสบายและรื่นเริง<wbr>ไปกับอาหาร&nbsp;&nbsp;ทั้งหมดนี้เนื่องมาจากองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นผู้จัดส่งให้&nbsp;&nbsp;มิฉะนั้นมนุษยชาติจะ<wbr>ไม่สามารถมีชีวิตอยู่ได้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">rasātmakaḥ</span><span class="slant pali">รสาตฺมกห์</span><span class="slant thai">ระสาตมะกะห์</span><span class="slant ram"></span>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ทุกสิ่งทุกอย่างเป็นที่<wbr>อร่อยปากก็เนื่องมาจากผู้แทนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยผ่านทางอิทธิพลของดวงจันทร์
   </p>
 </div>
 

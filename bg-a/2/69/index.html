@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.69</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยา นิศา สรฺว-ภูตานาํ</i><br /><i>ตสฺยาํ ชาครฺติ สํยมี</i><br /><i>ยสฺยาํ ชาคฺรติ ภูตานิ</i><br /><i>สา นิศา ปศฺยโต มุเนฮ</i>
+<span class="slant iast">yā niśā sarva-bhūtānāṁ<br /></span>
+<span class="slant pali">ยา นิศา สรฺว-ภูตานำ<br /></span>
+<span class="slant thai">ยา นิศา สัรวะ-ภูตานาง<br /></span>
+<span class="slant ram">ยา นิชา สารวะ-บํูทานาม<br /></span>
+<span class="slant iast">tasyāṁ jāgarti saṁyamī<br /></span>
+<span class="slant pali">ตสฺยำ ชาครฺติ สํยมี<br /></span>
+<span class="slant thai">ตัสยาง ชาคัรติ สังยะมี<br /></span>
+<span class="slant ram">ทัสยาม จาการทิ สัมยะมีฺ<br /></span>
+<span class="slant iast">yasyāṁ jāgrati bhūtāni<br /></span>
+<span class="slant pali">ยสฺยำ ชาคฺรติ ภูตานิ<br /></span>
+<span class="slant thai">ยัสยาง ชาคระติ ภูตานิ<br /></span>
+<span class="slant ram">ยัสยาม จากระทิ บํูทานิ<br /></span>
+<span class="slant iast">sā niśā paśyato muneḥ<br /></span>
+<span class="slant pali">สา นิศา ปศฺยโต มุเนห์<br /></span>
+<span class="slant thai">สา นิศา ปัศยะโต มุเนห์<br /></span>
+<span class="slant ram">สา นิชา พัชยะโท มุเนฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยา</i> — อะไร, <i>นิศา</i> — เป็นเวลากลางคืน, <i>สรฺว</i> — ทั้งหมด, <i>ภูตานามฺ</i> — ของสิ่งมีชีวิต,<i>ตสฺยามฺ</i> — ในนั้น, <i>ชาครฺติ</i> — จะตื่น, <i>สํยมี</i> — การควบคุมตนเอง, <i>ยสฺยามฺ</i> — ในที่ซึ่ง,<i>ชาคฺรติ</i> — ตื่นอยู่, <i>ภูตานิ</i> — สิ่งมีชีวิตทั้งหมด, <i>สา</i> — นั้นเป็น,<i>นิศา</i> — กลางคืน, <i>ปศฺยตฮ</i> — สำหรับผู้ใคร่ครวญ, <i>มุเนฮ</i> — นักปราชญ์
+  <span class="slant iast">yā</span><span class="slant pali">ยา</span><span class="slant thai">ยา</span><span class="slant ram">ยา</span> — อะไร, <span class="slant iast">niśā</span><span class="slant pali">นิศา</span><span class="slant thai">นิศา</span><span class="slant ram"> นิชา</span> — เป็นเวลากลางคืน, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ทั้งหมด, <span class="slant iast">bhūtānām</span><span class="slant pali">ภูตานามฺ</span><span class="slant thai">ภูตานาม</span><span class="slant ram">บํูทานาม</span> — ของสิ่งมีชีวิต,<span class="slant iast">tasyām</span><span class="slant pali">ตสฺยามฺ</span><span class="slant thai">ตัสยาม</span><span class="slant ram"> ทัสยาม</span> — ในนั้น, <span class="slant iast">jāgarti</span><span class="slant pali">ชาครฺติ</span><span class="slant thai">ชาคัรติ</span><span class="slant ram">จาการทิ</span> — จะตื่น, <span class="slant iast">saṁyamī</span><span class="slant pali">สํยมี</span><span class="slant thai">สังยะมี</span><span class="slant ram">สัมยะมี</span> — การควบคุมตนเอง, <span class="slant iast">yasyām</span><span class="slant pali">ยสฺยามฺ</span><span class="slant thai">ยัสยาม</span><span class="slant ram">ยัสยาม</span> — ในที่ซึ่ง,<span class="slant iast">jāgrati</span><span class="slant pali">ชาคฺรติ</span><span class="slant thai">ชาคระติ</span><span class="slant ram"> จากระทิ</span> — ตื่นอยู่, <span class="slant iast">bhūtāni</span><span class="slant pali">ภูตานิ</span><span class="slant thai">ภูตานิ</span><span class="slant ram">บํูทานิ</span> — สิ่งมีชีวิตทั้งหมด, <span class="slant iast">sā</span><span class="slant pali">สา</span><span class="slant thai">สา</span><span class="slant ram">สา</span> — นั้นเป็น,<span class="slant iast">niśā</span><span class="slant pali">นิศา</span><span class="slant thai">นิศา</span><span class="slant ram"> นิชา</span> — กลางคืน, <span class="slant iast">paśyataḥ</span><span class="slant pali">ปศฺยตห์</span><span class="slant thai">ปัศยะตะห์</span><span class="slant ram">พัสยะทะฮ</span> — สำหรับผู้ใคร่ครวญ, <span class="slant iast">muneḥ</span><span class="slant pali">มุเนห์</span><span class="slant thai">มุเนห์</span><span class="slant ram">มุเนฮ</span> — นักปราชญ์
   </p>
 </div>
 

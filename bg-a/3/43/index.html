@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.43</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เอวํ พุเทฺธฮ ปรํ พุทฺธฺวา</i><br /><i>สํสฺตภฺยาตฺมานมฺ อาตฺมนา</i><br /><i>ชหิ ศตฺรุํ มหา-พาโห</i><br /><i>กาม-รูปํ ทุราสทมฺ</i>
+<span class="slant iast">evaṁ buddheḥ paraṁ buddhvā<br /></span>
+<span class="slant pali">เอวํ พุทฺเธห์ ปรํ พุทฺธฺวา<br /></span>
+<span class="slant thai">เอวัง พุทเธห์ ปะรัง พุทธวา<br /></span>
+<span class="slant ram">เอวัม บุดเดฺฮ พะรัม บุดดฺวา<br /></span>
+<span class="slant iast">saṁstabhyātmānam ātmanā<br /></span>
+<span class="slant pali">สํสฺตภฺยาตฺมานมฺ อาตฺมนา<br /></span>
+<span class="slant thai">สังสตัภยาตมานัม อาตมะนา<br /></span>
+<span class="slant ram">สัมสทับฺยาทมานัม อาทมะนา<br /></span>
+<span class="slant iast">jahi śatruṁ mahā-bāho<br /></span>
+<span class="slant pali">ชหิ ศตฺรุํ มหา-พาโห<br /></span>
+<span class="slant thai">ชะหิ ศัตรุง มะหา-พาโห<br /></span>
+<span class="slant ram">จะฮิ ชัทรุม มะฮา-บาโฮ<br /></span>
+<span class="slant iast">kāma-rūpaṁ durāsadam<br /></span>
+<span class="slant pali">กาม-รูปํ ทุราสทมฺ<br /></span>
+<span class="slant thai">กามะ-รูปัง ทุราสะทัม<br /></span>
+<span class="slant ram">คามะ-รูพัม ดุราสะดัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เอวมฺ</i> — ดังนั้น,<i>พุเทฺธฮ</i> — แด่ปัญญา, <i>ปรมฺ</i> — เหนือกว่า, <i>พุทฺธฺวา</i> — รู้, <i>สํสฺตภฺย</i> — ด้วยความ มั่นคง, <i>อาตฺมานมฺ</i> — จิตใจ, <i>อาตฺมนา</i> — ด้วยปัญญาที่สุขุม, <i>ชหิ</i> — ได้ชัยชนะ, <i>ศตฺรุมฺ</i> — ศัตรู,<i>มหา-พาโห</i> — โอ้ นักรบผู้เก่งกล้า, <i>กาม-รูปมฺ</i> — ในรูปของราคะ, <i>ทุราสทมฺ</i> — น่าสะพรึง กลัว
+  <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น,<span class="slant iast">buddheḥ</span><span class="slant pali">พุทฺเธห์</span><span class="slant thai">พุทเธห์</span><span class="slant ram">บุดเดฺฮ</span> — แด่ปัญญา, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — เหนือกว่า, <span class="slant iast">buddhvā</span><span class="slant pali">พุทฺธฺวา</span><span class="slant thai">พุทธวา</span><span class="slant ram">บุดดฮวา</span> — รู้, <span class="slant iast">saṁstabhya</span><span class="slant pali">สํสฺตภฺย</span><span class="slant thai">สังสตัภยะ</span><span class="slant ram">สัมสทับฺยะ</span> — ด้วยความ มั่นคง, <span class="slant iast">ātmānam</span><span class="slant pali">อาตฺมานมฺ</span><span class="slant thai">อาตมานัม</span><span class="slant ram">อาทมานัม</span> — จิตใจ, <span class="slant iast">ātmanā</span><span class="slant pali">อาตฺมนา</span><span class="slant thai">อาตมะนา</span><span class="slant ram">อาทมะนา</span> — ด้วยปัญญาที่สุขุม, <span class="slant iast">jahi</span><span class="slant pali">ชหิ</span><span class="slant thai">ชะหิ</span><span class="slant ram">จะฮิ</span> — ได้ชัยชนะ, <span class="slant iast">śatrum</span><span class="slant pali">ศตฺรุมฺ</span><span class="slant thai">ศัตรุม</span><span class="slant ram">ชัทรุม</span> — ศัตรู,<span class="slant iast">mahā-bāho</span><span class="slant pali">มหา-พาโห</span><span class="slant thai">มะหา-พาโห</span><span class="slant ram">มะฮา-บาโฮ</span> — โอ้ นักรบผู้เก่งกล้า, <span class="slant iast">kāma-rūpam</span><span class="slant pali">กาม-รูปมฺ</span><span class="slant thai">กามะ-รูปัม</span><span class="slant ram">คามะ-รูพัม</span> — ในรูปของราคะ, <span class="slant iast">durāsadam</span><span class="slant pali">ทุราสทมฺ</span><span class="slant thai">ทุราสะทัม</span><span class="slant ram">ดุราสะดัม</span> — น่าสะพรึง กลัว
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ดังนั้น&nbsp;&nbsp;เมื่อรู้ว่าตนเองเป็นทิพย์อยู่เหนือประสาทสัมผัสวัตถุ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญา&nbsp;&nbsp;โอ้<i>อรฺชุน</i>&nbsp;&nbsp;นักรบผู้เก่งกล้า&nbsp;&nbsp;เธอควรทำจิตใจให้แน่วแน่มั่นคงด้วยปัญญาทิพย์ที่สุขุม(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;และด้วยพลังทิพย์จงกำราบเจ้าตัวราคะ&nbsp;&nbsp;ศัตรูผู้ไม่รู้จักพอ
+  ดังนั้น&nbsp;&nbsp;เมื่อรู้ว่าตนเองเป็นทิพย์อยู่เหนือประสาทสัมผัสวัตถุ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญา&nbsp;&nbsp;โอ้<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;นักรบผู้เก่งกล้า&nbsp;&nbsp;เธอควรทำจิตใจให้แน่วแน่มั่นคงด้วยปัญญาทิพย์ที่สุขุม(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;และด้วยพลังทิพย์จงกำราบเจ้าตัวราคะ&nbsp;&nbsp;ศัตรูผู้ไม่รู้จักพอ
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  บทที่สามของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;นี้&nbsp;&nbsp;ได้นำเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าถึงจุดสรุปของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วย<wbr>การรู้จักตนเองว่าเป็นผู้รับใช้นิรันดรของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;โดยไม่พิจารณา<wbr>ว่าในที่สุดคือความว่างเปล่าไร้บุคลิกภาพ&nbsp;&nbsp;ในชีวิตความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;แน่นอนว่าเรา<wbr>จะต้องได้รับอิทธิพลที่มีนิสัยชอบราคะ&nbsp;&nbsp;และต้องการมีอำนาจเหนือทรัพยากรธรรมชาติ<wbr>วัตถุ&nbsp;&nbsp;ความต้องการเป็นเจ้าเหนือหัวและต้องการสนองประสาทสัมผัสเป็นศัตรูที่ร้ายกาจ<wbr>ที่สุดของพันธวิญญาณ&nbsp;&nbsp;แต่ด้วยพลังอำนาจแห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราสามารถควบคุม<wbr>ประสาทสัมผัสทางวัตถุ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญาได้&nbsp;&nbsp;เราอาจจะไม่ต้องยกเลิกการงานและ<wbr>หน้าที่ที่กำหนดไว้ทั้งหมดโดยฉับพลัน&nbsp;&nbsp;แต่ด้วยการพัฒนา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกทีละน้อยเราสามารถสถิตในสถานภาพทิพย์โดยไม่ถูกอิทธิพลของประสาทสัมผัสวัตถุและจิตใจ<wbr>ครอบงำ&nbsp;&nbsp;ด้วยปัญญาอันแน่วแน่มั่นคงจะนำเราไปสู่ตัวของเราเองที่บริสุทธิ์&nbsp;&nbsp;นี่คือข้อสรุป<wbr>ของบทนี้&nbsp;&nbsp;ในระดับความเป็นอยู่ทางวัตถุที่ยังไม่พัฒนา&nbsp;&nbsp;การคาดคะเนทางปรัชญาและ<wbr>ความพยายามที่ฝืนธรรมชาติในการที่จะควบคุมประสาทสัมผัสด้วยการฝึกปฏิบัติสิ่ง<wbr>ที่เรียกว่าท่า&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จะไม่มีวันช่วยให้มาสู่ชีวิตทิพย์&nbsp;&nbsp;เราจะต้องได้รับการฝึกฝนใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วยสติปัญญาที่สูงกว่า
+  บทที่สามของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;นี้&nbsp;&nbsp;ได้นำเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าถึงจุดสรุปของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วย<wbr>การรู้จักตนเองว่าเป็นผู้รับใช้นิรันดรของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;โดยไม่พิจารณา<wbr>ว่าในที่สุดคือความว่างเปล่าไร้บุคลิกภาพ&nbsp;&nbsp;ในชีวิตความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;แน่นอนว่าเรา<wbr>จะต้องได้รับอิทธิพลที่มีนิสัยชอบราคะ&nbsp;&nbsp;และต้องการมีอำนาจเหนือทรัพยากรธรรมชาติ<wbr>วัตถุ&nbsp;&nbsp;ความต้องการเป็นเจ้าเหนือหัวและต้องการสนองประสาทสัมผัสเป็นศัตรูที่ร้ายกาจ<wbr>ที่สุดของพันธวิญญาณ&nbsp;&nbsp;แต่ด้วยพลังอำนาจแห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราสามารถควบคุม<wbr>ประสาทสัมผัสทางวัตถุ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญาได้&nbsp;&nbsp;เราอาจจะไม่ต้องยกเลิกการงานและ<wbr>หน้าที่ที่กำหนดไว้ทั้งหมดโดยฉับพลัน&nbsp;&nbsp;แต่ด้วยการพัฒนา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกทีละน้อยเราสามารถสถิตในสถานภาพทิพย์โดยไม่ถูกอิทธิพลของประสาทสัมผัสวัตถุและจิตใจ<wbr>ครอบงำ&nbsp;&nbsp;ด้วยปัญญาอันแน่วแน่มั่นคงจะนำเราไปสู่ตัวของเราเองที่บริสุทธิ์&nbsp;&nbsp;นี่คือข้อสรุป<wbr>ของบทนี้&nbsp;&nbsp;ในระดับความเป็นอยู่ทางวัตถุที่ยังไม่พัฒนา&nbsp;&nbsp;การคาดคะเนทางปรัชญาและ<wbr>ความพยายามที่ฝืนธรรมชาติในการที่จะควบคุมประสาทสัมผัสด้วยการฝึกปฏิบัติสิ่ง<wbr>ที่เรียกว่าท่า&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จะไม่มีวันช่วยให้มาสู่ชีวิตทิพย์&nbsp;&nbsp;เราจะต้องได้รับการฝึกฝนใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วยสติปัญญาที่สูงกว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph-thus-ends">
   <p>
-  <em>ดังนั้น ได้จบคำอธิบายโดย <i>ภกฺติเวทนฺต</i>  บทที่สามของหนังสือ   <i>ศฺรีมทฺ ภควทฺ-คีตา</i>  ในหัวข้อเรื่อง  <i>กรฺม-โยค</i>  หรือการปฏิบัติหน้าที่ของตนที่กำหนดไว้ใน <i>กฺฤษฺณ</i> จิตสำนึก </em>
+  <em>ดังนั้น ได้จบคำอธิบายโดย <span class="slant iast">bhaktivedanta</span><span class="slant pali">ภกฺติเวทนฺต</span><span class="slant thai">ภักติเวทันตะ</span><span class="slant ram">บัฺคธิเวดันธะ</span>  บทที่สามของหนังสือ   <span class="slant iast">śrīmad bhagavad-gītā</span><span class="slant pali">ศฺรีมทฺภควทฺ-คีตา</span><span class="slant thai">ศรีมัทภะคะวัท-คีตา</span><span class="slant ram">ชรีมัด บฺะกะวัด-คีตา</span>  ในหัวข้อเรื่อง  <span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>  หรือการปฏิบัติหน้าที่ของตนที่กำหนดไว้ใน <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> จิตสำนึก </em>
   </p>
 </div>
 

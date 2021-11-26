@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.24</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อวฺยกฺตํ วฺยกฺติมฺ อาปนฺนํ</i><br /><i>มนฺยเนฺต มามฺ อพุทฺธยฮ</i><br /><i>ปรํ ภาวมฺ อชานโนฺต</i><br /><i>มมาวฺยยมฺ อนุตฺตมมฺ</i>
+<span class="slant iast">avyaktaṁ vyaktim āpannaṁ<br /></span>
+<span class="slant pali">อวฺยกฺตํ วฺยกฺติมฺ อาปนฺนํ<br /></span>
+<span class="slant thai">อัวยักตัง วยักติม อาปันนัง<br /></span>
+<span class="slant ram">อัพยัคทัม วิยัคทิม อาพันนัม<br /></span>
+<span class="slant iast">manyante mām abuddhayaḥ<br /></span>
+<span class="slant pali">มนฺยนฺเต มามฺ อพุทฺธยห์<br /></span>
+<span class="slant thai">มันยันเต มาม อะพุทธะยะห์<br /></span>
+<span class="slant ram">มันยันเท มาม อบุดดฺะยะฮ<br /></span>
+<span class="slant iast">paraṁ bhāvam ajānanto<br /></span>
+<span class="slant pali">ปรํ ภาวมฺ อชานนฺโต<br /></span>
+<span class="slant thai">ปะรัง ภาวัม อะชานันโต<br /></span>
+<span class="slant ram">พะรัม บฺาวัม อจานันโท<br /></span>
+<span class="slant iast">mamāvyayam anuttamam<br /></span>
+<span class="slant pali">มมาวฺยยมฺ อนุตฺตมมฺ<br /></span>
+<span class="slant thai">มะมาวยะยัม อะนุตตะมัม<br /></span>
+<span class="slant ram">มะมาวยะยัม อนุททะมัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อวฺยกฺตมฺ</i> — ไม่ปรากฏ, <i>วฺยกฺติมฺ</i> — บุคลิกภาพ, <i>อาปนฺนมฺ</i> — บรรลุถึง, <i>มนฺยเนฺต</i> — คิด, <i>มามฺ</i> — ข้า,<i>อพุทฺธยฮ</i> — บุคคลผู้ด้อยปัญญา, <i>ปรมฺ</i> — สูงสุด, <i>ภาวมฺ</i> — เป็นอยู่, <i>อชานนฺตฮ</i> — โดย ไม่รู้, <i>มม</i> — ของข้า, <i>อวฺยยมฺ</i> — ไม่สูญสลาย, <i>อนุตฺตมมฺ</i> — ละเอียดอ่อนที่สุด
+  <span class="slant iast">avyaktam</span><span class="slant pali">อวฺยกฺตมฺ</span><span class="slant thai">อัวยักตัม</span><span class="slant ram">อัพยัคทัม</span> — ไม่ปรากฏ, <span class="slant iast">vyaktim</span><span class="slant pali">วฺยกฺติมฺ</span><span class="slant thai">วยักติม</span><span class="slant ram">วิยัคทิม</span> — บุคลิกภาพ, <span class="slant iast">āpannam</span><span class="slant pali">อาปนฺนมฺ</span><span class="slant thai">อาปันนัม</span><span class="slant ram">อาพันนัม</span> — บรรลุถึง, <span class="slant iast">manyante</span><span class="slant pali">มนฺยนฺเต</span><span class="slant thai">มันยันเต</span><span class="slant ram">มันยันเท</span> — คิด, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า,<span class="slant iast">abuddhayaḥ</span><span class="slant pali">อพุทฺธยห์</span><span class="slant thai">อะพุทธะยะห์</span><span class="slant ram"> อบุดดฺะยะฮ</span> — บุคคลผู้ด้อยปัญญา, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — สูงสุด, <span class="slant iast">bhāvam</span><span class="slant pali">ภาวมฺ</span><span class="slant thai">ภาวัม</span><span class="slant ram">บาวัม</span> — เป็นอยู่, <span class="slant iast">ajānantaḥ</span><span class="slant pali">อชานนฺตห์</span><span class="slant thai">อะชานันตะห์</span><span class="slant ram">อจานันทะฮ</span> — โดย ไม่รู้, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า, <span class="slant iast">avyayam</span><span class="slant pali">อวฺยยมฺ</span><span class="slant thai">อัวยะยัม</span><span class="slant ram">อัพยะยัม</span> — ไม่สูญสลาย, <span class="slant iast">anuttamam</span><span class="slant pali">อนุตฺตมมฺ</span><span class="slant thai">อะนุตตะมัม</span><span class="slant ram">อนุททะมัม</span> — ละเอียดอ่อนที่สุด
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  มนุษย์ผู้ด้อยปัญญาไม่รู้จักข้าอย่างสมบูรณ์&nbsp;&nbsp;คิดว่าข้า&nbsp;&nbsp;องค์ภควาน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไร้รูปลักษณ์ในอดีต&nbsp;&nbsp;และปัจจุบันมาอยู่ในรูปลักษณ์นี้&nbsp;&nbsp;เนื่องจากความรู้อันน้อยนิดจึงไม่รู้ธรรมชาติที่สูงกว่าของข้า&nbsp;&nbsp;ซึ่งไม่มีวันสูญสลายและสูงที่สุด
+  มนุษย์ผู้ด้อยปัญญาไม่รู้จักข้าอย่างสมบูรณ์&nbsp;&nbsp;คิดว่าข้า&nbsp;&nbsp;องค์ภควาน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไร้รูปลักษณ์ในอดีต&nbsp;&nbsp;และปัจจุบันมาอยู่ในรูปลักษณ์นี้&nbsp;&nbsp;เนื่องจากความรู้อันน้อยนิดจึงไม่รู้ธรรมชาติที่สูงกว่าของข้า&nbsp;&nbsp;ซึ่งไม่มีวันสูญสลายและสูงที่สุด
   </p>
 </div>
 
@@ -73,55 +174,85 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้อธิบายไว้ว่า&nbsp;&nbsp;พวกที่บูชาเทวดาเป็นบุคคลผู้มีปัญญาน้อย&nbsp;&nbsp;และผู้ไม่เชื่อใน<wbr>รูปลักษณ์ก็ทำนองเดียวกัน&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในรูปลักษณ์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงประทับอยู่ต่อหน้า<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;แต่เนื่องด้วยอวิชชา&nbsp;&nbsp;พวกที่ไม่เชื่อในรูปลักษณ์เถียงว่าในที่สุดองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงไม่มีรูปลักษณ์&nbsp;&nbsp;<i>ยามุนาจารฺย</i>&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่ในสาย&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;ของ<wbr>&nbsp;&nbsp;<i>รามานุชาจารฺย</i>&nbsp;&nbsp;ได้เขียนสองโศลกที่เหมาะสมเกี่ยวกับประเด็นนี้&nbsp;&nbsp;ไว้ดังนี้
+  ได้อธิบายไว้ว่า&nbsp;&nbsp;พวกที่บูชาเทวดาเป็นบุคคลผู้มีปัญญาน้อย&nbsp;&nbsp;และผู้ไม่เชื่อใน<wbr>รูปลักษณ์ก็ทำนองเดียวกัน&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในรูปลักษณ์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงประทับอยู่ต่อหน้า<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;แต่เนื่องด้วยอวิชชา&nbsp;&nbsp;พวกที่ไม่เชื่อในรูปลักษณ์เถียงว่าในที่สุดองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงไม่มีรูปลักษณ์&nbsp;&nbsp;<span class="slant iast">yāmunācārya</span><span class="slant pali">ยามุนาจารฺย</span><span class="slant thai">ยามุนาจารยะ</span><span class="slant ram">ยามุนาชารยะ</span>&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่ในสาย&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;ของ<wbr>&nbsp;&nbsp;<span class="slant iast">rāmānujācārya</span><span class="slant pali">รามานุชาจารฺย</span><span class="slant thai">รามานุชาจารยะ</span><span class="slant ram">รามานุจาชารยะ</span>&nbsp;&nbsp;ได้เขียนสองโศลกที่เหมาะสมเกี่ยวกับประเด็นนี้&nbsp;&nbsp;ไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตฺวาํ ศีล-รูป-จริไตฮ ปรม-ปฺรกฺไฤษฺฏฮ</i><br /><i>สเตฺตฺวน สาตฺตฺวิกตยา ปฺรพไลศฺ จ ศาไสฺตฺรฮ</i><br /><i>ปฺรขฺยาต-ไทว-ปรมารฺตฺห-วิทาํ มไตศฺ จ</i><br /><i>ไนวาสุร-ปฺรกฺฤตยฮ ปฺรภวนฺติ โพทฺธุมฺ</i>
+<span class="slant iast">tvāṁ śīla-rūpa-caritaiḥ parama-prakṛṣṭaiḥ<br /></span>
+<span class="slant pali">ตฺวำ ศีล-รูป-จริไตห์ ปรม-ปฺรกฺฤษฺไฏห์<br /></span>
+<span class="slant thai">ตวาง ศีละ-รูปะ-จะริไตห์ ปะระมะ-ปรักฤษไฏห์<br /></span>
+<span class="slant ram">ทวาม ชีละ-รูพะ-ชะริไทฮ พะระมะ-พระคริชไทฮ<br /></span>
+<span class="slant iast">sattvena sāttvikatayā prabalaiś ca śāstraiḥ<br /></span>
+<span class="slant pali">สตฺเตฺวน สาตฺตฺวิกตยา ปฺรพไลศฺ จ ศาไสฺตฺรห์<br /></span>
+<span class="slant thai">สัตตเวนะ สาตตวิกะตะยา ประพะไลศ จะ ศาสตไรห์<br /></span>
+<span class="slant ram">สัททเวนะ สาททวิคะทะยา พระบะไลช ชะ ชาสไทรฮ<br /></span>
+<span class="slant iast">prakhyāta-daiva-paramārtha-vidāṁ mataiś ca<br /></span>
+<span class="slant pali">ปฺรขฺยาต-ไทว-ปรมารฺถ-วิทำ มไตศฺ จ<br /></span>
+<span class="slant thai">ปรัขยาตะ-ไทวะ-ปะระมารถะ-วิทาง มะไตศ จะ<br /></span>
+<span class="slant ram">พรัคฮยาทะ-ไดวะ-พะระมารทฺะ-วิดาม มะไทช ชะ<br /></span>
+<span class="slant iast">naivāsura-prakṛtayaḥ prabhavanti boddhum<br /></span>
+<span class="slant pali">ไนวาสุร-ปฺรกฺฤตยห์ ปฺรภวนฺติ โพทฺธุมฺ<br /></span>
+<span class="slant thai">ไนวาสุระ-ปรักฤตะยะห์ ประภะวันติ โพทธุม<br /></span>
+<span class="slant ram">ไนวาสุระ-พระคริทะยะฮ พระบะวันทิ โบดดํุม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “พระผู้เป็นเจ้าที่รัก&nbsp;&nbsp;สาวกเช่น&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;รู้ว่าพระองค์คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จาก<wbr>การเข้าใจวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เราสามารถรู้ถึงบุคลิกลักษณะของพระองค์&nbsp;&nbsp;รูปลักษณ์ของ<wbr>พระองค์&nbsp;&nbsp;และกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;และเราสามารถเข้าใจว่าพระองค์คือบุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้า&nbsp;&nbsp;แต่พวกที่อยู่ในระดับตัณหา&nbsp;&nbsp;ระดับอวิชชา&nbsp;&nbsp;และเหล่ามารที่ไม่ใช่สาวก&nbsp;&nbsp;ไม่<wbr>สามารถเข้าใจพระองค์&nbsp;&nbsp;ไม่ว่าพวกนี้จะมีความชำนาญมากเพียงใดในการสนทนา&nbsp;&nbsp;<i>เวทานฺต,อุปนิษทฺ</i>&nbsp;&nbsp;และวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เล่มอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เป็นไปไม่ได้ที่จะเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;”(<i>โสฺตตฺร-รตฺน</i>&nbsp;&nbsp;12)
+  “พระผู้เป็นเจ้าที่รัก&nbsp;&nbsp;สาวกเช่น&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;รู้ว่าพระองค์คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จาก<wbr>การเข้าใจวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เราสามารถรู้ถึงบุคลิกลักษณะของพระองค์&nbsp;&nbsp;รูปลักษณ์ของ<wbr>พระองค์&nbsp;&nbsp;และกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;และเราสามารถเข้าใจว่าพระองค์คือบุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้า&nbsp;&nbsp;แต่พวกที่อยู่ในระดับตัณหา&nbsp;&nbsp;ระดับอวิชชา&nbsp;&nbsp;และเหล่ามารที่ไม่ใช่สาวก&nbsp;&nbsp;ไม่<wbr>สามารถเข้าใจพระองค์&nbsp;&nbsp;ไม่ว่าพวกนี้จะมีความชำนาญมากเพียงใดในการสนทนา&nbsp;&nbsp;<span class="slant iast">vedānta,&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เวทานฺตอุปนิษทฺ</span><span class="slant thai">เวทานตะอุปะนิษัท</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;และวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เล่มอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เป็นไปไม่ได้ที่จะเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;”(<span class="slant iast">stotra-ratna</span><span class="slant pali">โสฺตตฺร-รตฺน</span><span class="slant thai">สโตตระ-รัตนะ</span><span class="slant ram">-</span>&nbsp;&nbsp;12)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;เราจะไม่สามารถเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จาก<wbr>การศึกษาวรรณกรรม&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;แต่ด้วยพระเมตตาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้นที่ทำให้<wbr>เรารู้ถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในโศลกนี้ได้กล่าวไว้อย่างชัดเจนว่าไม่เพียงแต่พวกที่บูชา<wbr>เทวดาเท่านั้นที่ด้อยปัญญา&nbsp;&nbsp;แต่พวกไม่ใช่สาวกที่ศึกษา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;และคาดคะเนเกี่ยว<wbr>กับวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;โดยไม่ประสานกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกที่แท้จริง&nbsp;&nbsp;แท้ที่จริงแล้วพวก<wbr>นี้ด้อยปัญญาเช่นเดียวกัน&nbsp;&nbsp;เป็นไปไม่ได้ที่จะเข้าใจธรรมชาติส่วนพระองค์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อธิบายว่าพวกที่อยู่ภายใต้ความรู้สึกที่ว่าสัจธรรมนั้นไร้รูปลักษณ์เป็น&nbsp;&nbsp;<i>อพุทฺธยฮ</i>&nbsp;&nbsp;ซึ่ง<wbr>หมายถึงพวกที่ไม่รู้ลักษณะสูงสุดของสัจธรรม&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ว่า<wbr>ความรู้แจ้งสูงสุดเริ่มจาก&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;จากนั้นก็เจริญขึ้นไปถึงอภิวิญญาณ<wbr>ผู้ประทับอยู่ภายในหัวใจของทุกคน&nbsp;&nbsp;แต่คำสุดท้ายของสัจธรรมที่สมบูรณ์คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พวกที่ไม่เชื่อในรูปลักษณ์สมัยปัจจุบันก็เป็นผู้ด้อยปัญญาเช่นเดียวกัน&nbsp;&nbsp;เพราะยังไม่ปฏิบัติ<wbr>ตาม&nbsp;&nbsp;ชังคะราชารยะ&nbsp;&nbsp;บรรพบุรุษผู้ยิ่งใหญ่ของพวกตน&nbsp;&nbsp;ซึ่งกล่าวอย่างเจาะจงว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และไม่รู้สัจธรรมสูงสุด<wbr>คิดว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นเพียงบุตรของ&nbsp;&nbsp;<i>เทวกี</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>วสุเทว</i>&nbsp;&nbsp;หรือเป็นเพียงเจ้าชายองค์หนึ่งหรือเป็นสิ่งมีชีวิตที่มีพลังอำนาจ&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(9.11)&nbsp;&nbsp;ได้ประนามไว้เช่นกันว่า&nbsp;&nbsp;<i>อวชานนฺติ&nbsp;&nbsp;มาํ&nbsp;&nbsp;มูฒา&nbsp;&nbsp;มานุษีํ&nbsp;&nbsp;ตนุมฺ&nbsp;&nbsp;อาศฺริตมฺ</i>&nbsp;&nbsp;“คนโง่เขลาเท่านั้นที่คิดว่าข้าเป็นบุคคล<wbr>ธรรมดา”
+  ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;เราจะไม่สามารถเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จาก<wbr>การศึกษาวรรณกรรม&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;แต่ด้วยพระเมตตาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้นที่ทำให้<wbr>เรารู้ถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ในโศลกนี้ได้กล่าวไว้อย่างชัดเจนว่าไม่เพียงแต่พวกที่บูชา<wbr>เทวดาเท่านั้นที่ด้อยปัญญา&nbsp;&nbsp;แต่พวกไม่ใช่สาวกที่ศึกษา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;และคาดคะเนเกี่ยว<wbr>กับวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;โดยไม่ประสานกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกที่แท้จริง&nbsp;&nbsp;แท้ที่จริงแล้วพวก<wbr>นี้ด้อยปัญญาเช่นเดียวกัน&nbsp;&nbsp;เป็นไปไม่ได้ที่จะเข้าใจธรรมชาติส่วนพระองค์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อธิบายว่าพวกที่อยู่ภายใต้ความรู้สึกที่ว่าสัจธรรมนั้นไร้รูปลักษณ์เป็น&nbsp;&nbsp;<span class="slant iast">abuddhayaḥ</span><span class="slant pali">อพุทฺธยห์</span><span class="slant thai">อะพุทธะยะห์</span><span class="slant ram"> อบุดดฺะยะฮ</span>&nbsp;&nbsp;ซึ่ง<wbr>หมายถึงพวกที่ไม่รู้ลักษณะสูงสุดของสัจธรรม&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ว่า<wbr>ความรู้แจ้งสูงสุดเริ่มจาก&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;จากนั้นก็เจริญขึ้นไปถึงอภิวิญญาณ<wbr>ผู้ประทับอยู่ภายในหัวใจของทุกคน&nbsp;&nbsp;แต่คำสุดท้ายของสัจธรรมที่สมบูรณ์คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พวกที่ไม่เชื่อในรูปลักษณ์สมัยปัจจุบันก็เป็นผู้ด้อยปัญญาเช่นเดียวกัน&nbsp;&nbsp;เพราะยังไม่ปฏิบัติ<wbr>ตาม&nbsp;&nbsp;ชังคะราชารยะ&nbsp;&nbsp;บรรพบุรุษผู้ยิ่งใหญ่ของพวกตน&nbsp;&nbsp;ซึ่งกล่าวอย่างเจาะจงว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และไม่รู้สัจธรรมสูงสุด<wbr>คิดว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นเพียงบุตรของ&nbsp;&nbsp;<span class="slant iast">devakī</span><span class="slant pali">เทวกี</span><span class="slant thai">เทวะกี</span><span class="slant ram">เดวะคี</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">vasudeva</span><span class="slant pali">วสุเทว</span><span class="slant thai">วะสุเทวะ</span><span class="slant ram">วะสุเดวะ</span>&nbsp;&nbsp;หรือเป็นเพียงเจ้าชายองค์หนึ่งหรือเป็นสิ่งมีชีวิตที่มีพลังอำนาจ&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(9.11)&nbsp;&nbsp;ได้ประนามไว้เช่นกันว่า&nbsp;&nbsp;<span class="slant iast">avajānanti&nbsp;&nbsp;māṁ&nbsp;&nbsp;mūḍhā&nbsp;&nbsp;mānuṣīṁ&nbsp;&nbsp;tanum&nbsp;&nbsp;āśritam</span><span class="slant pali">อวชานนฺติมำมูฒามานุษีํตนุมฺอาศฺริตมฺ</span><span class="slant thai">อะวะชานันติมางมูฒามานุษีงตะนุมอาศริตัม</span><span class="slant ram">อวะจานันทิมามทะนุมอาชริทัม</span>&nbsp;&nbsp;“คนโง่เขลาเท่านั้นที่คิดว่าข้าเป็นบุคคล<wbr>ธรรมดา”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความจริงคือไม่มีผู้ใดสามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หากไม่ถวายการอุทิศตนเสียสละ<wbr>รับใช้และไม่พัฒนา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;(10.14.29)&nbsp;&nbsp;ยืนยันไว้ดังนี้
+  ความจริงคือไม่มีผู้ใดสามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หากไม่ถวายการอุทิศตนเสียสละ<wbr>รับใช้และไม่พัฒนา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;(10.14.29)&nbsp;&nbsp;ยืนยันไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อตฺหาปิ เต เทว ปทามฺพุช-ทฺวย-</i><br /><i>ปฺรสาท-เลศานุคฺฤหีต เอว หิ</i><br /><i>ชานาติ ตตฺตฺวํ ภควนฺ-มหิโมฺน</i><br /><i>น จานฺย เอโก ′ปิ จิรํ วิจินฺวนฺ</i>
+<span class="slant iast">athāpi te deva padāmbuja-dvaya-<br /></span>
+<span class="slant pali">อถาปิ เต เทว ปทามฺพุช-ทฺวย-<br /></span>
+<span class="slant thai">อะถาปิ เต เทวะ ปะทามพุชะ-ทวะยะ-<br /></span>
+<span class="slant ram">อทฺาพิ เท เดวะ พะดามบุจะ-ดวะยะ-<br /></span>
+<span class="slant iast">prasāda-leśānugṛhīta eva hi<br /></span>
+<span class="slant pali">ปฺรสาท-เลศานุคฺฤหีต เอว หิ<br /></span>
+<span class="slant thai">ประสาทะ-เลศานุคฤหีตะ เอวะ หิ<br /></span>
+<span class="slant ram">พระสาดะ-เลชานุกริฮีทะ เอวะ ฮิฺ<br /></span>
+<span class="slant iast">jānāti tattvaṁ bhagavan-mahimno<br /></span>
+<span class="slant pali">ชานาติ ตตฺตฺวํ ภควนฺ-มหิมฺโน<br /></span>
+<span class="slant thai">ชานาติ ตัตตวัง ภะคะวัน-มะหิมโน<br /></span>
+<span class="slant ram">จานาทิ ทัททวัม บฺะกะวัน-มะฮิมโน<br /></span>
+<span class="slant iast">na cānya eko ’pi ciraṁ vicinvan<br /></span>
+<span class="slant pali">น จานฺย เอโก ’ปิ จิรํ วิจินฺวนฺ<br /></span>
+<span class="slant thai">นะ จานยะ เอโก ’ปิ จิรัง วิจินวัน<br /></span>
+<span class="slant ram">นะ ชานยะ เอโค ´พิ ชิรัม วิชินวัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ของข้า&nbsp;&nbsp;หากผู้ใดได้รับความชื่นชอบแม้จากช่องทางเพียงเล็กน้อยด้วย<wbr>พระเมตตาแห่งพระบาทรูปดอกบัวของพระองค์&nbsp;&nbsp;เขาจะสามารถเข้าใจความยิ่งใหญ่ใน<wbr>บุคลิกภาพของพระองค์&nbsp;&nbsp;แต่พวกที่คาดคะเนเพื่อเข้าใจบุคลิกภาพสูงสุดแห่งพระเจ้าไม่<wbr>สามารถรู้ถึงพระองค์&nbsp;&nbsp;ถึงแม้จะศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ติดต่อกันเป็นเวลาหลายต่อหลาย<wbr>ปี”&nbsp;&nbsp;เราไม่สามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือรูปลักษณ์&nbsp;&nbsp;คุณสมบัติ&nbsp;&nbsp;และพระนาม<wbr>ของพระองค์&nbsp;&nbsp;จากการคาดคะเนทางจิตหรือจากการสนทนาวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เท่านั้นเราต้องเข้าใจพระองค์ด้วยการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เมื่อเราปฏิบัติตนอย่างสมบูรณ์ใน<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เริ่มด้วยการสวดภาวนา&nbsp;&nbsp;<i>มหา-มนฺตฺร</i>&nbsp;&nbsp;-&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;ตรงนี้เท่านั้น<wbr>ที่เราสามารถเข้าใจบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ผู้ไม่ใช่สาวกที่ไม่เชื่อในรูปลักษณ์คิดว่า<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงมีพระวรกายที่ทำมาจากธรรมชาติวัตถุ&nbsp;&nbsp;กิจกรรมทั้งหลายของพระองค์&nbsp;&nbsp;รูป<wbr>ลักษณ์ของพระองค์&nbsp;&nbsp;และทุกสิ่งทุกอย่างคือ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;ผู้ไม่เชื่อในรูปลักษณ์เหล่านี้เรียกว่า<wbr>&nbsp;&nbsp;<i>มายาวาที</i>&nbsp;&nbsp;ที่ไม่รู้สัจธรรมสูงสุด
+  “องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ของข้า&nbsp;&nbsp;หากผู้ใดได้รับความชื่นชอบแม้จากช่องทางเพียงเล็กน้อยด้วย<wbr>พระเมตตาแห่งพระบาทรูปดอกบัวของพระองค์&nbsp;&nbsp;เขาจะสามารถเข้าใจความยิ่งใหญ่ใน<wbr>บุคลิกภาพของพระองค์&nbsp;&nbsp;แต่พวกที่คาดคะเนเพื่อเข้าใจบุคลิกภาพสูงสุดแห่งพระเจ้าไม่<wbr>สามารถรู้ถึงพระองค์&nbsp;&nbsp;ถึงแม้จะศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ติดต่อกันเป็นเวลาหลายต่อหลาย<wbr>ปี”&nbsp;&nbsp;เราไม่สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือรูปลักษณ์&nbsp;&nbsp;คุณสมบัติ&nbsp;&nbsp;และพระนาม<wbr>ของพระองค์&nbsp;&nbsp;จากการคาดคะเนทางจิตหรือจากการสนทนาวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เท่านั้นเราต้องเข้าใจพระองค์ด้วยการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;เมื่อเราปฏิบัติตนอย่างสมบูรณ์ใน<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เริ่มด้วยการสวดภาวนา&nbsp;&nbsp;<span class="slant iast">mahā-mantra</span><span class="slant pali">มหา-มนฺตฺร</span><span class="slant thai">มะหา-มันตระ</span><span class="slant ram">มะฮา-</span>&nbsp;&nbsp;-&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;ตรงนี้เท่านั้น<wbr>ที่เราสามารถเข้าใจบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ผู้ไม่ใช่สาวกที่ไม่เชื่อในรูปลักษณ์คิดว่า<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงมีพระวรกายที่ทำมาจากธรรมชาติวัตถุ&nbsp;&nbsp;กิจกรรมทั้งหลายของพระองค์&nbsp;&nbsp;รูป<wbr>ลักษณ์ของพระองค์&nbsp;&nbsp;และทุกสิ่งทุกอย่างคือ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;ผู้ไม่เชื่อในรูปลักษณ์เหล่านี้เรียกว่า<wbr>&nbsp;&nbsp;<span class="slant iast">māyāvādī</span><span class="slant pali">มายาวาที</span><span class="slant thai">มายาวาที</span><span class="slant ram">มายาวาดี</span>&nbsp;&nbsp;ที่ไม่รู้สัจธรรมสูงสุด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกยี่สิบได้กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;<i>กาไมสฺ&nbsp;&nbsp;ไตสฺ&nbsp;&nbsp;ไตรฺ&nbsp;&nbsp;หฺฤต-ชฺญานาฮ&nbsp;&nbsp;ปฺรปทฺยเนฺต&nbsp;&nbsp;′นฺย-เทวตาฮ</i>&nbsp;&nbsp;“พวกที่ตาบอดอันเนื่องมาจากความปรารถนาแห่งราคะจะ<wbr>ศิโรราบต่อเทวดา”&nbsp;&nbsp;เป็นที่ยอมรับว่า&nbsp;&nbsp;นอกจากองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แล้วยังมีเหล่าเทวดาผู้มีดาว<wbr>เคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีดาวเคราะห์เช่นเดียวกัน&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลก<wbr>ที่ยี่สิบสามว่า&nbsp;&nbsp;<i>เทวานฺ&nbsp;&nbsp;เทว-ยโช&nbsp;&nbsp;ยานฺติ&nbsp;&nbsp;มทฺ-ภกฺตา&nbsp;&nbsp;ยานฺติ&nbsp;&nbsp;มามฺ&nbsp;&nbsp;อปิ</i>&nbsp;&nbsp;พวกที่บูชาเทวดา<wbr>จะไปยังดาวเคราะห์ของเทวดา&nbsp;&nbsp;และพวกที่เป็นสาวกขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะไปที่&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;ถึงแม้จะกล่าวไว้อย่างชัดเจนเช่นนี้&nbsp;&nbsp;คนโง่ผู้ไม่เชื่อในรูปลักษณ์ยังยืนกรานว่าองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงไร้รูปลักษณ์&nbsp;&nbsp;และรูปลักษณ์เหล่านี้เป็นการกำหนดขึ้นมา&nbsp;&nbsp;จากการศึกษา&nbsp;&nbsp;มีปรากฏหรือไม่ว่าเทวดาและตำหนักของพวกท่านไร้รูปลักษณ์?&nbsp;&nbsp;ได้บ่งบอกไว้<wbr>อย่างชัดเจนว่า&nbsp;&nbsp;ทั้งเทวดาและ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มิใช่ว่าไม่มีรูปลักษณ์&nbsp;&nbsp;ทั้งหมดทรงเป็น<wbr>บุคคล&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ทรงมีดาวเคราะห์ของพระองค์เองและเทวดาก็ทรงมีดาวเคราะห์ของพวกตน
+  โศลกยี่สิบได้กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;<span class="slant iast">kāmais&nbsp;&nbsp;tais&nbsp;&nbsp;tair&nbsp;&nbsp;hṛta-jñānāḥ&nbsp;&nbsp;prapadyante&nbsp;&nbsp;’nya-devatāḥ</span><span class="slant pali">กาไมสฺไตสฺไตรฺหฺฤต-ชฺญานาห์ปฺรปทฺยนฺเตนฺย-เทวตาห์</span><span class="slant thai">กาไมสไตสไตรหฤตะ-ชญานาห์ประปัทยันเตนยะ-เทวะตาห์</span><span class="slant ram">ฮริทะ-กยานาฮพระ พัดยันเท-เดวะทาฮ</span>&nbsp;&nbsp;“พวกที่ตาบอดอันเนื่องมาจากความปรารถนาแห่งราคะจะ<wbr>ศิโรราบต่อเทวดา”&nbsp;&nbsp;เป็นที่ยอมรับว่า&nbsp;&nbsp;นอกจากองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แล้วยังมีเหล่าเทวดาผู้มีดาว<wbr>เคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีดาวเคราะห์เช่นเดียวกัน&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลก<wbr>ที่ยี่สิบสามว่า&nbsp;&nbsp;<span class="slant iast">devān&nbsp;&nbsp;deva-yajo&nbsp;&nbsp;yānti&nbsp;&nbsp;mad-bhaktā&nbsp;&nbsp;yānti&nbsp;&nbsp;mām&nbsp;&nbsp;api</span><span class="slant pali">เทวานฺเทว-ยโชยานฺติมทฺ-ภกฺตายานฺติมามฺอปิ</span><span class="slant thai">เทวานเทวะ-ยะโชยานติมัท-ภักตายานติมามอะปิ</span><span class="slant ram">เดวานเดวะ-ยานทิมัด-ยานทิมามอพิ</span>&nbsp;&nbsp;พวกที่บูชาเทวดา<wbr>จะไปยังดาวเคราะห์ของเทวดา&nbsp;&nbsp;และพวกที่เป็นสาวกขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะไปที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;ถึงแม้จะกล่าวไว้อย่างชัดเจนเช่นนี้&nbsp;&nbsp;คนโง่ผู้ไม่เชื่อในรูปลักษณ์ยังยืนกรานว่าองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงไร้รูปลักษณ์&nbsp;&nbsp;และรูปลักษณ์เหล่านี้เป็นการกำหนดขึ้นมา&nbsp;&nbsp;จากการศึกษา&nbsp;&nbsp;มีปรากฏหรือไม่ว่าเทวดาและตำหนักของพวกท่านไร้รูปลักษณ์?&nbsp;&nbsp;ได้บ่งบอกไว้<wbr>อย่างชัดเจนว่า&nbsp;&nbsp;ทั้งเทวดาและ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มิใช่ว่าไม่มีรูปลักษณ์&nbsp;&nbsp;ทั้งหมดทรงเป็น<wbr>บุคคล&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ทรงมีดาวเคราะห์ของพระองค์เองและเทวดาก็ทรงมีดาวเคราะห์ของพวกตน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังนั้น&nbsp;&nbsp;ข้อโต้เถียงของพวกที่เชื่อในความเป็นหนึ่งเดียวกันว่าความจริงที่สูงสุด<wbr>นั้นไร้รูปลักษณ์&nbsp;&nbsp;และรูปลักษณ์ที่กำหนดขึ้นมาก็ไม่ใช่ของจริง&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้อย่าง<wbr>ชัดเจนว่าไม่ใช่เป็นการกำหนดขึ้นมา&nbsp;&nbsp;จาก&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เราสามารถเข้าใจอย่างชัดเจน<wbr>ว่ารูปลักษณ์ของเทวดาและรูปลักษณ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มีอยู่พร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;รูปลักษณ์ขององค์<wbr>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็น&nbsp;&nbsp;<i>สจฺ-จิทฺ-อานนฺท</i>&nbsp;&nbsp;คือเป็นอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลื้มปีติสุข&nbsp;&nbsp;และความรู้คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ยังยืนยันด้วยว่าสัจธรรมสูงสุดคือ&nbsp;&nbsp;<i>อานนฺท-มโยภฺยาสาตฺ</i>&nbsp;&nbsp;โดยธรรมชาติ<wbr>เต็มไปด้วยความปลื้มปีติสุข&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดของคุณสมบัติที่เป็นมงคลอัน<wbr>หาที่สุดมิได้&nbsp;&nbsp;ใน&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;แม้ทรงเป็น&nbsp;&nbsp;<i>อช</i>&nbsp;&nbsp;(ไม่มีการเกิด)&nbsp;&nbsp;พระองค์ยังทรง<wbr>ปรากฏ&nbsp;&nbsp;สิ่งเหล่านี้เป็นความจริงที่เราควรทำความเข้าใจจาก&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เราไม่เข้าใจว่า<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงไร้รูปลักษณ์ได้อย่างไร&nbsp;&nbsp;ทฤษฎีหลอกลวงของผู้ที่เชื่อว่าไร้รูปลักษณ์และเป็น<wbr>หนึ่งเดียวกันนั้นผิดตามที่&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;กล่าว&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;สัจธรรม<wbr>สูงสุดองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงมีทั้งรูปลักษณ์และมีบุคลิกภาพ
+  ดังนั้น&nbsp;&nbsp;ข้อโต้เถียงของพวกที่เชื่อในความเป็นหนึ่งเดียวกันว่าความจริงที่สูงสุด<wbr>นั้นไร้รูปลักษณ์&nbsp;&nbsp;และรูปลักษณ์ที่กำหนดขึ้นมาก็ไม่ใช่ของจริง&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้อย่าง<wbr>ชัดเจนว่าไม่ใช่เป็นการกำหนดขึ้นมา&nbsp;&nbsp;จาก&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เราสามารถเข้าใจอย่างชัดเจน<wbr>ว่ารูปลักษณ์ของเทวดาและรูปลักษณ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มีอยู่พร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;รูปลักษณ์ขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็น&nbsp;&nbsp;<span class="slant iast">sac-cid-ānanda</span><span class="slant pali">สจฺ-จิทฺ-อานนฺท</span><span class="slant thai">สัจ-จิท-อานันทะ</span><span class="slant ram">--</span>&nbsp;&nbsp;คือเป็นอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลื้มปีติสุข&nbsp;&nbsp;และความรู้คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ยังยืนยันด้วยว่าสัจธรรมสูงสุดคือ&nbsp;&nbsp;<span class="slant iast">ānanda-mayo&nbsp;&nbsp;'bhyāsāt</span><span class="slant pali">อานนฺท-มโยภฺยาสาตฺ</span><span class="slant thai">อานันทะ-มะโยภยาสาต</span><span class="slant ram">-</span>&nbsp;&nbsp;โดยธรรมชาติ<wbr>เต็มไปด้วยความปลื้มปีติสุข&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดของคุณสมบัติที่เป็นมงคลอัน<wbr>หาที่สุดมิได้&nbsp;&nbsp;ใน&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;แม้ทรงเป็น&nbsp;&nbsp;<span class="slant iast">aja</span><span class="slant pali">อช</span><span class="slant thai">อะชะ</span><span class="slant ram">อจะ</span>&nbsp;&nbsp;(ไม่มีการเกิด)&nbsp;&nbsp;พระองค์ยังทรง<wbr>ปรากฏ&nbsp;&nbsp;สิ่งเหล่านี้เป็นความจริงที่เราควรทำความเข้าใจจาก&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เราไม่เข้าใจว่า<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงไร้รูปลักษณ์ได้อย่างไร&nbsp;&nbsp;ทฤษฎีหลอกลวงของผู้ที่เชื่อว่าไร้รูปลักษณ์และเป็น<wbr>หนึ่งเดียวกันนั้นผิดตามที่&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;กล่าว&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;สัจธรรม<wbr>สูงสุดองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงมีทั้งรูปลักษณ์และมีบุคลิกภาพ
   </p>
 </div>
 

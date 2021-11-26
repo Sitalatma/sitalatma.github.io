@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.22</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วาสาํสิ ชีรฺณานิ ยตฺหา วิหาย</i><br /><i>นวานิ คฺฤหฺณาติ นโร ′ปราณิ</i><br /><i>ตตฺหา ศรีราณิ วิหาย ชีรฺณานฺยฺ</i><br /><i>อนฺยานิ สํยาติ นวานิ เทหี</i>
+<span class="slant iast">vāsāṁsi jīrṇāni yathā vihāya<br /></span>
+<span class="slant pali">วาสำสิ ชีรฺณานิ ยถา วิหาย<br /></span>
+<span class="slant thai">วาสางสิ ชีรณานิ ยะถา วิหายะ<br /></span>
+<span class="slant ram">วาสามสิ จีรณานิ ยะทฺา วิฮายะ<br /></span>
+<span class="slant iast">navāni gṛhṇāti naro ’parāṇi<br /></span>
+<span class="slant pali">นวานิ คฺฤหฺณาติ นโร ’ปราณิ<br /></span>
+<span class="slant thai">นะวานิ คฤหณาติ นะโร ’ปะราณิ<br /></span>
+<span class="slant ram">นะวานิ กริฮณาทิ นะโร ‘พะราณิฺ<br /></span>
+<span class="slant iast">tathā śarīrāṇi vihāya jīrṇāny<br /></span>
+<span class="slant pali">ตถา ศรีราณิ วิหาย ชีรฺณานฺยฺ<br /></span>
+<span class="slant thai">ตะถา ศะรีราณิ วิหายะ ชีรณานย<br /></span>
+<span class="slant ram">ทะทฺา ชะรีราณิ วิฮายะ จีรณานิ<br /></span>
+<span class="slant iast">anyāni saṁyāti navāni dehī<br /></span>
+<span class="slant pali">อนฺยานิ สํยาติ นวานิ เทหี<br /></span>
+<span class="slant thai">อันยานิ สังยาติ นะวานิ เทหี<br /></span>
+<span class="slant ram">อันยานิ สัมยาทิ นะวานิ เดฮีฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วาสาํสิ</i> — เสื้อผ้า, <i>ชีรฺณานิ</i> — เก่าและขาด, <i>ยตฺหา</i> — เช่นเดียวกัน, <i>วิหาย</i> — ยกเลิก, <i>นวานิ</i> — เสื้อผ้าใหม่, <i>คฺฤหฺณาติ</i> — ยอมรับ, <i>นรฮ</i> — บุคคล, <i>อปราณิ</i> — ผู้อื่น, <i>ตตฺหา</i> — เช่นเดียวกัน, <i>ศรีราณิ</i> — ร่างกาย,<i>วิหาย</i> — ยกเลิก, <i>ชิรฺณานิ</i> — เก่าและไร้ประโยชน์, <i>อนฺยานิ</i> — แตกต่าง, <i>สํยาติ</i> — ยอมรับว่าเป็นความจริง, <i>นวานิ</i> — ชุดใหม่, <i>เทหี</i> — เป็นรูปร่าง
+  <span class="slant iast">vāsāṁsi</span><span class="slant pali">วาสำสิ</span><span class="slant thai">วาสางสิ</span><span class="slant ram">วาสามสิ</span> — เสื้อผ้า, <span class="slant iast">jīrṇāni</span><span class="slant pali">ชีรฺณานิ</span><span class="slant thai">ชีรณานิ</span><span class="slant ram">จีรณานิ</span> — เก่าและขาด, <span class="slant iast">yathā</span><span class="slant pali">ยถา</span><span class="slant thai">ยะถา</span><span class="slant ram">ยะทฺา</span> — เช่นเดียวกัน, <span class="slant iast">vihāya</span><span class="slant pali">วิหาย</span><span class="slant thai">วิหายะ</span><span class="slant ram">วิฮายะ</span> — ยกเลิก, <span class="slant iast">navāni</span><span class="slant pali">นวานิ</span><span class="slant thai">นะวานิ</span><span class="slant ram">นะวานิ</span> — เสื้อผ้าใหม่, <span class="slant iast">gṛhṇāti</span><span class="slant pali">คฺฤหฺณาติ</span><span class="slant thai">คฤหณาติ</span><span class="slant ram">กริฮณาทิ</span> — ยอมรับ, <span class="slant iast">naraḥ</span><span class="slant pali">นรห์</span><span class="slant thai">นะระห์</span><span class="slant ram">นะระฮ</span> — บุคคล, <span class="slant iast">aparāṇi</span><span class="slant pali">อปราณิ</span><span class="slant thai">อะปะราณิ</span><span class="slant ram">อพะราณิ</span> — ผู้อื่น, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เช่นเดียวกัน, <span class="slant iast">śarīrāṇi</span><span class="slant pali">ศรีราณิ</span><span class="slant thai">ศะรีราณิ</span><span class="slant ram">ชะรีราณิ</span> — ร่างกาย,<span class="slant iast">vihāya</span><span class="slant pali">วิหาย</span><span class="slant thai">วิหายะ</span><span class="slant ram">วิฮายะ</span> — ยกเลิก, <span class="slant iast">jirṇāni</span><span class="slant pali">ชิรฺณานิ</span><span class="slant thai">ชิรณานิ</span><span class="slant ram">จีรณานิ</span> — เก่าและไร้ประโยชน์, <span class="slant iast">anyāni</span><span class="slant pali">อนฺยานิ</span><span class="slant thai">อันยานิ</span><span class="slant ram">อันยานิ</span> — แตกต่าง, <span class="slant iast">saṁyāti</span><span class="slant pali">สํยาติ</span><span class="slant thai">สังยาติ</span><span class="slant ram">สัมยาทิ</span> — ยอมรับว่าเป็นความจริง, <span class="slant iast">navāni</span><span class="slant pali">นวานิ</span><span class="slant thai">นะวานิ</span><span class="slant ram">นะวานิ</span> — ชุดใหม่, <span class="slant iast">dehī</span><span class="slant pali">เทหี</span><span class="slant thai">เทหี</span><span class="slant ram">เดฮี</span> — เป็นรูปร่าง
   </p>
 </div>
 
@@ -79,25 +180,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การเปลี่ยนแปลงโยกย้ายของปัจเจกละอองวิญญาณจากร่างหนึ่งไปสู่อีก<wbr>ร่างหนึ่งเป็นไปได้&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของอภิวิญญาณ&nbsp;&nbsp;อภิวิญญาณทรงทำให้ละออง<wbr>วิญญาณสมปรารถนาเหมือนกับเพื่อนที่ปฏิบัติต่อเพื่อให้ได้สมความปรารถนา&nbsp;&nbsp;คัมภีร์<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>มุณฺฑก&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;พร้อมทั้ง&nbsp;&nbsp;<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;ได้เปรียบเทียบอนุ<wbr>วิญญาณและอภิวิญญาณว่าเป็นเสมือนเพื่อนนกสองตัวที่เกาะอยู่บนต้นไม้ต้นเดียวกันนกตัวหนึ่ง&nbsp;&nbsp;(ปัจเจกวิญญาณ)&nbsp;&nbsp;กำลังกินผลไม้ของต้น&nbsp;&nbsp;และนกอีกตัวหนึ่ง&nbsp;&nbsp;(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)ทรงเพียงแต่ทอดพระเนตรไปที่สหายของพระองค์เท่านั้น&nbsp;&nbsp;นกทั้งสองตัวถึงแม้ว่าจะมี<wbr>คุณสมบัติเช่นเดียวกันแต่ตัวหนึ่งจะถูกยั่วยวนด้วยผลของต้นไม้วัตถุ&nbsp;&nbsp;ในขณะที่อีกตัว<wbr>หนึ่งเพียงแต่ทรงเป็นพยานในกิจกรรมของเพื่อนนกเท่านั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือนกพยานและ<i>อรฺชุน</i>&nbsp;&nbsp;คือนกที่กินผล&nbsp;&nbsp;ถึงแม้ว่าทั้งคู่จะเป็นเพื่อนกัน&nbsp;&nbsp;แต่นกตัวหนึ่งคงสถานภาพความ<wbr>เป็นนายและอีกตัวหนึ่งเป็นบ่าว&nbsp;&nbsp;การลืมความสัมพันธ์ของละอองวิญญาณเช่นนี้เป็น<wbr>เหตุให้เราต้องเปลี่ยนตำแหน่งจากต้นไม้ต้นหนึ่งไปสู่ต้นไม้อีกต้นหนึ่ง&nbsp;&nbsp;หรือเปลี่ยนจาก<wbr>ร่างหนึ่งไปสู่อีกร่างหนึ่ง&nbsp;&nbsp;ดวงวิญญาณ&nbsp;&nbsp;<i>ชีว</i>&nbsp;&nbsp;ดิ้นรนต่อสู้ด้วยความยากลำบากบนต้นไม้<wbr>แห่งร่างวัตถุ&nbsp;&nbsp;แต่ทันทีที่เขายอมรับนกอีกตัวหนึ่งว่าเป็นพระอาจารย์ทิพย์สูงสุด&nbsp;&nbsp;ดังเช่น<i>อรฺชุน</i>&nbsp;&nbsp;ทรงอาสามาศิโรราบยอมรับที่จะปฏิบัติตามคำสั่งสอนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยความ<wbr>สมัครใจ&nbsp;&nbsp;ทันใดนั้น&nbsp;&nbsp;นกบ่าวตัวนี้ก็จะมีอิสรภาพจากความโศกเศร้าทั้งมวล&nbsp;&nbsp;ทั้ง&nbsp;&nbsp;<i>มุณฺฑก&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(3.1.2)&nbsp;&nbsp;และ&nbsp;&nbsp;<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(4.7)&nbsp;&nbsp;ได้ยืนยันไว้ดังนี้
+  การเปลี่ยนแปลงโยกย้ายของปัจเจกละอองวิญญาณจากร่างหนึ่งไปสู่อีก<wbr>ร่างหนึ่งเป็นไปได้&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของอภิวิญญาณ&nbsp;&nbsp;อภิวิญญาณทรงทำให้ละออง<wbr>วิญญาณสมปรารถนาเหมือนกับเพื่อนที่ปฏิบัติต่อเพื่อให้ได้สมความปรารถนา&nbsp;&nbsp;คัมภีร์<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">muṇḍaka&nbsp;&nbsp;upaniṣad</span><span class="slant pali">มุณฺฑกอุปนิษทฺ</span><span class="slant thai">มุณฑะกะอุปะนิษัท</span><span class="slant ram">มุนดะคะ อุพะนิชัด</span>&nbsp;&nbsp;พร้อมทั้ง&nbsp;&nbsp;<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;ได้เปรียบเทียบอนุ<wbr>วิญญาณและอภิวิญญาณว่าเป็นเสมือนเพื่อนนกสองตัวที่เกาะอยู่บนต้นไม้ต้นเดียวกันนกตัวหนึ่ง&nbsp;&nbsp;(ปัจเจกวิญญาณ)&nbsp;&nbsp;กำลังกินผลไม้ของต้น&nbsp;&nbsp;และนกอีกตัวหนึ่ง&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)ทรงเพียงแต่ทอดพระเนตรไปที่สหายของพระองค์เท่านั้น&nbsp;&nbsp;นกทั้งสองตัวถึงแม้ว่าจะมี<wbr>คุณสมบัติเช่นเดียวกันแต่ตัวหนึ่งจะถูกยั่วยวนด้วยผลของต้นไม้วัตถุ&nbsp;&nbsp;ในขณะที่อีกตัว<wbr>หนึ่งเพียงแต่ทรงเป็นพยานในกิจกรรมของเพื่อนนกเท่านั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือนกพยานและ<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;คือนกที่กินผล&nbsp;&nbsp;ถึงแม้ว่าทั้งคู่จะเป็นเพื่อนกัน&nbsp;&nbsp;แต่นกตัวหนึ่งคงสถานภาพความ<wbr>เป็นนายและอีกตัวหนึ่งเป็นบ่าว&nbsp;&nbsp;การลืมความสัมพันธ์ของละอองวิญญาณเช่นนี้เป็น<wbr>เหตุให้เราต้องเปลี่ยนตำแหน่งจากต้นไม้ต้นหนึ่งไปสู่ต้นไม้อีกต้นหนึ่ง&nbsp;&nbsp;หรือเปลี่ยนจาก<wbr>ร่างหนึ่งไปสู่อีกร่างหนึ่ง&nbsp;&nbsp;ดวงวิญญาณ&nbsp;&nbsp;<span class="slant iast">jīva</span><span class="slant pali">ชีว</span><span class="slant thai">ชีวะ</span><span class="slant ram">จีวะ</span>&nbsp;&nbsp;ดิ้นรนต่อสู้ด้วยความยากลำบากบนต้นไม้<wbr>แห่งร่างวัตถุ&nbsp;&nbsp;แต่ทันทีที่เขายอมรับนกอีกตัวหนึ่งว่าเป็นพระอาจารย์ทิพย์สูงสุด&nbsp;&nbsp;ดังเช่น<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงอาสามาศิโรราบยอมรับที่จะปฏิบัติตามคำสั่งสอนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยความ<wbr>สมัครใจ&nbsp;&nbsp;ทันใดนั้น&nbsp;&nbsp;นกบ่าวตัวนี้ก็จะมีอิสรภาพจากความโศกเศร้าทั้งมวล&nbsp;&nbsp;ทั้ง&nbsp;&nbsp;<span class="slant iast">muṇḍaka&nbsp;&nbsp;upaniṣad</span><span class="slant pali">มุณฺฑกอุปนิษทฺ</span><span class="slant thai">มุณฑะกะอุปะนิษัท</span><span class="slant ram">มุนดะคะ อุพะนิชัด</span>&nbsp;&nbsp;(3.1.2)&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(4.7)&nbsp;&nbsp;ได้ยืนยันไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สมาเน วฺเฤกฺษ ปุรุโษ นิมโคฺน</i><br /><i>′นีศยา โศจติ มุหฺยมานฮ</i><br /><i>ชุษฺฏํ ยทา ปศฺยตฺยฺ อนฺยมฺ อีศมฺ</i><br /><i>อสฺย มหิมานมฺ อิติ วีต-โศกฮ</i>
+<span class="slant iast">samāne vṛkṣe puruṣo nimagno<br /></span>
+<span class="slant pali">สมาเน วฺฤกฺเษ ปุรุโษ นิมคฺโน<br /></span>
+<span class="slant thai">สะมาเน วฤกเษ ปุรุโษ นิมัคโน<br /></span>
+<span class="slant ram">สะมาเน วริคเช พุรุโช นิมักโน<br /></span>
+<span class="slant iast">’nīśayā śocati muhyamānaḥ<br /></span>
+<span class="slant pali">’นีศยา โศจติ มุหฺยมานห์<br /></span>
+<span class="slant thai">’นีศะยา โศจะติ มุหยะมานะห์<br /></span>
+<span class="slant ram">ฺ'นีชะยา โชชะทิ มุฮยะมานะฮ<br /></span>
+<span class="slant iast">juṣṭaṁ yadā paśyaty anyam īśam<br /></span>
+<span class="slant pali">ชุษฺฏํ ยทา ปศฺยตฺยฺ อนฺยมฺ อีศมฺ<br /></span>
+<span class="slant thai">ชุษฏัง ยะทา ปัศยัตย อันยัม อีศัม<br /></span>
+<span class="slant ram">จุชทัม ยะดา พัชยะทิ อันยัม อีชัม<br /></span>
+<span class="slant iast">asya mahimānam iti vīta-śokaḥ<br /></span>
+<span class="slant pali">อสฺย มหิมานมฺ อิติ วีต-โศกห์<br /></span>
+<span class="slant thai">อัสยะ มะหิมานัม อิติ วีตะ-โศกะห์<br /></span>
+<span class="slant ram">อัสยะ มะฮิมานัม อิทิ วีทะ-โชคะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ถึงแม้ว่านกสองตัวจะอยู่บนต้นไม้ต้นเดียวกัน&nbsp;&nbsp;นกที่กินผลจะจดจ่อหมกมุ่นอยู่กับความ<wbr>วิตกกังวลและเศร้าสลดในฐานะเป็นผู้มีความสุขจากผลของต้นไม้&nbsp;&nbsp;หากเป็นไปได้ที่เขาจะ<wbr>หันมาหาเพื่อนผู้ทรงเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และทราบถึงพระบารมีของพระองค์&nbsp;&nbsp;ในทันใดนั้น<wbr>นกที่ได้รับความทุกข์ทรมานอยู่นี้ก็จะมีอิสรภาพจากความวิตกกังวลทั้งปวง”&nbsp;&nbsp;มาบัดนี้<i>อรฺชุน</i>&nbsp;&nbsp;ทรงหันพระพักตร์เข้าหาพระสหายนิรันดร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จาก<wbr>พระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยการสดับฟังจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงสามารถเข้าใจถึงพระบารมี<wbr>อันสูงส่งของพระองค์&nbsp;&nbsp;และมีอิสรภาพจากความเศร้าโศกทั้งปวง
+  “ถึงแม้ว่านกสองตัวจะอยู่บนต้นไม้ต้นเดียวกัน&nbsp;&nbsp;นกที่กินผลจะจดจ่อหมกมุ่นอยู่กับความ<wbr>วิตกกังวลและเศร้าสลดในฐานะเป็นผู้มีความสุขจากผลของต้นไม้&nbsp;&nbsp;หากเป็นไปได้ที่เขาจะ<wbr>หันมาหาเพื่อนผู้ทรงเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และทราบถึงพระบารมีของพระองค์&nbsp;&nbsp;ในทันใดนั้น<wbr>นกที่ได้รับความทุกข์ทรมานอยู่นี้ก็จะมีอิสรภาพจากความวิตกกังวลทั้งปวง”&nbsp;&nbsp;มาบัดนี้<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงหันพระพักตร์เข้าหาพระสหายนิรันดร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จาก<wbr>พระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยการสดับฟังจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงสามารถเข้าใจถึงพระบารมี<wbr>อันสูงส่งของพระองค์&nbsp;&nbsp;และมีอิสรภาพจากความเศร้าโศกทั้งปวง
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงแนะนำให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;อย่าได้โศกเศร้าต่อการที่พระอัยกา<wbr>และพระอาจารย์จะมีการเปลี่ยนร่าง&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงควรยินดีกับการสังหารร่างกายของ<wbr>พวกท่านในการต่อสู้เพื่อคุณธรรม&nbsp;&nbsp;เพื่อที่ท่านเหล่านี้จะได้ชำระล้างผลแห่งกรรมทั้งปวงจากกรรมของร่างกายในอดีต&nbsp;&nbsp;ผู้ที่ได้สังเวยชีวิตบนแท่นบูชาหรือในสมรภูมิที่เหมาะสมเป็นผู้ชำระล้างผลกรรมของร่างกายได้ในทันที&nbsp;&nbsp;และเลื่อนขึ้นไปมีคุณภาพชีวิตที่สูงกว่าฉะนั้น&nbsp;&nbsp;จึงไม่มีเหตุผลที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงต้องเศร้าโศกเสียใจ
+  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงแนะนำให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;อย่าได้โศกเศร้าต่อการที่พระอัยกา<wbr>และพระอาจารย์จะมีการเปลี่ยนร่าง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงควรยินดีกับการสังหารร่างกายของ<wbr>พวกท่านในการต่อสู้เพื่อคุณธรรม&nbsp;&nbsp;เพื่อที่ท่านเหล่านี้จะได้ชำระล้างผลแห่งกรรมทั้งปวงจากกรรมของร่างกายในอดีต&nbsp;&nbsp;ผู้ที่ได้สังเวยชีวิตบนแท่นบูชาหรือในสมรภูมิที่เหมาะสมเป็นผู้ชำระล้างผลกรรมของร่างกายได้ในทันที&nbsp;&nbsp;และเลื่อนขึ้นไปมีคุณภาพชีวิตที่สูงกว่าฉะนั้น&nbsp;&nbsp;จึงไม่มีเหตุผลที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงต้องเศร้าโศกเสียใจ
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ชฺญาน-ยเชฺญน จาปฺยฺ อเนฺย</i><br /><i>ยชโนฺต มามฺ อุปาสเต</i><br /><i>เอเกตฺวน ปฺฤตฺเหกฺตฺวน</i><br /><i>พหุธา วิศฺวโต-มุขมฺ</i>
+<span class="slant iast">jñāna-yajñena cāpy anye<br /></span>
+<span class="slant pali">ชฺญาน-ยชฺเญน จาปฺยฺ อเนฺย<br /></span>
+<span class="slant thai">ชญานะ-ยัชเญนะ จาปย อันเย<br /></span>
+<span class="slant ram">กยานะ-ยะกเยนะ ชาพิ อันเย<br /></span>
+<span class="slant iast">yajanto mām upāsate<br /></span>
+<span class="slant pali">ยชนฺโต มามฺ อุปาสเต<br /></span>
+<span class="slant thai">ยะชันโต มาม อุปาสะเต<br /></span>
+<span class="slant ram">ยะจันโท มาม อุพาสะเท<br /></span>
+<span class="slant iast">ekatvena pṛthaktvena<br /></span>
+<span class="slant pali">เอกเตฺวน ปฺฤถกฺเตฺวน<br /></span>
+<span class="slant thai">เอกัตเวนะ ปฤถักตเวนะ<br /></span>
+<span class="slant ram">เอคัทเวนะ พริทัฺคทเวนะ<br /></span>
+<span class="slant iast">bahudhā viśvato-mukham<br /></span>
+<span class="slant pali">พหุธา วิศฺวโต-มุขมฺ<br /></span>
+<span class="slant thai">พะหุธา วิศวะโต-มุขัม<br /></span>
+<span class="slant ram">บะฮุดฺา วิชวะโท-มุคัฺม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ชฺญาน-ยเชฺญน</i> — ด้วยการพัฒนาความรู้, <i>จ</i> — เช่นกัน, <i>อปิ</i> — แน่นอน, <i>อเนฺย</i> — ผู้อื่น, <i>ยชนฺตฮ</i> — บูชา, <i>มามฺ</i> — ข้า, <i>อุปาสเต</i> — บูชา, <i>เอเกตฺวน</i> — ในความเป็นหนึ่ง, <i>ปฺฤตฺเหกฺตฺวน</i> — ในสิ่งคู่, <i>พหุธา</i> — ในพหุภาค, <i>วิศฺวตฮ-มุขมฺ</i> — และในรูปลักษณ์จักรวาล
+  <span class="slant iast">jñāna-yajñena</span><span class="slant pali">ชฺญาน-ยชฺเญน</span><span class="slant thai">ชญานะ-ยัชเญนะ</span><span class="slant ram">กยานะ-ยะกเยนะ</span> — ด้วยการพัฒนาความรู้, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แน่นอน, <span class="slant iast">anye</span><span class="slant pali">อเนฺย</span><span class="slant thai">อันเย</span><span class="slant ram">อันเย</span> — ผู้อื่น, <span class="slant iast">yajantaḥ</span><span class="slant pali">ยชนฺตห์</span><span class="slant thai">ยะชันตะห์</span><span class="slant ram">ยะจันทะฮ</span> — บูชา, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">upāsate</span><span class="slant pali">อุปาสเต</span><span class="slant thai">อุปาสะเต</span><span class="slant ram">อุพาสะเท</span> — บูชา, <span class="slant iast">ekatvena</span><span class="slant pali">เอกเตฺวน</span><span class="slant thai">เอกัตเวนะ</span><span class="slant ram">เอคัทเวนะ</span> — ในความเป็นหนึ่ง, <span class="slant iast">pṛthaktvena</span><span class="slant pali">ปฺฤถกฺเตฺวน</span><span class="slant thai">ปฤถักตเวนะ</span><span class="slant ram">พริทัฺคทเวนะ</span> — ในสิ่งคู่, <span class="slant iast">bahudhā</span><span class="slant pali">พหุธา</span><span class="slant thai">พะหุธา</span><span class="slant ram">บะฮุดฺา</span> — ในพหุภาค, <span class="slant iast">viśvataḥ-mukham</span><span class="slant pali">วิศฺวตห์-มุขมฺ</span><span class="slant thai">วิศวะตะห์-มุขัม</span><span class="slant ram">วิชวะทะฮ-มุคัฺม</span> — และในรูปลักษณ์จักรวาล
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้เป็นบทสรุปของโศลกก่อน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสแด่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ว่าผู้ที่มี<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างบริสุทธิ์&nbsp;&nbsp;ไม่รู้จักสิ่งใดนอกจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>มหาตฺมา</i>&nbsp;&nbsp;ถึง<wbr>กระนั้น&nbsp;&nbsp;ยังมีบุคคลอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผู้ไม่อยู่ในตำแหน่ง&nbsp;&nbsp;<i>มหาตฺมา</i>&nbsp;&nbsp;โดยแท้จริง&nbsp;&nbsp;แต่ยังบูชา&nbsp;&nbsp;<i>กฺฤษฺณ</i>ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังที่ได้อธิบายไว้แล้วว่าบางคนอยู่ในความทุกข์&nbsp;&nbsp;บางคนขาดแคลนเงิน&nbsp;&nbsp;บาง<wbr>คนชอบถาม&nbsp;&nbsp;และบางคนปฏิบัติในการพัฒนาความรู้&nbsp;&nbsp;แต่ยังมีพวกที่ต่ำกว่าซึ่งแบ่งออก<wbr>เป็นสามพวกคือ&nbsp;&nbsp;(1)&nbsp;&nbsp;ผู้ที่บูชาตนเองว่าเป็นหนึ่งเดียวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;(2)&nbsp;&nbsp;ผู้ที่อุปโลกคิดรูป<wbr>ลักษณ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ขึ้นมาและบูชารูปลักษณ์นั้น&nbsp;&nbsp;และ&nbsp;&nbsp;(3)&nbsp;&nbsp;ผู้ที่ยอมรับรูปลักษณ์จักรวาล&nbsp;&nbsp;<i>วิศฺว-รูป</i>&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และบูชารูปลักษณ์นั้น&nbsp;&nbsp;จากที่กล่าวมาทั้งสามกลุ่ม&nbsp;&nbsp;กลุ่มที่บูชา<wbr>ตนเองว่าเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ถือว่าต่ำสุดที่คิดว่าตนเองและพระองค์เป็นหนึ่งเดียวกัน&nbsp;&nbsp;กลุ่มนี้มี<wbr>มากที่สุด&nbsp;&nbsp;บุคคลเหล่านี้คิดว่าตนเองเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และด้วยความคิดเช่นนี้จึงบูชาตนเองเช่นนี้&nbsp;&nbsp;ก็เป็นการบูชาพระองค์อีกรูปแบบหนึ่ง&nbsp;&nbsp;เพราะเข้าใจว่าตนเองไม่ใช่ร่างกายวัตถุ&nbsp;&nbsp;แต่<wbr>อันที่จริงเป็นดวงวิญญาณ&nbsp;&nbsp;อย่างน้อยที่สุดความรู้สึกนึกคิดแบบนี้เด่นชัด&nbsp;&nbsp;โดยทั่วไปพวก<wbr>ไม่เชื่อในรูปลักษณ์บูชาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แบบนี้&nbsp;&nbsp;พวกที่สองรวมไปถึงกลุ่มที่บูชาเทวดา&nbsp;&nbsp;โดยใช้<wbr>จินตนาการพิจารณาว่ารูปลักษณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เป็นรูปลักษณ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พวกที่สามรวมไป<wbr>ถึงกลุ่มที่ไม่สามารถสำเหนียกสิ่งใดนอกเหนือไปจากปรากฏการณ์ของจักรวาลวัตถุนี้&nbsp;&nbsp;โดย<wbr>พิจารณาว่าจักรวาลคือสิ่งมีชีวิตที่สูงสุดและบูชาจักรวาลนี้&nbsp;&nbsp;จักรวาลก็เป็นรูปลักษณ์ของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เช่นเดียวกัน
+  โศลกนี้เป็นบทสรุปของโศลกก่อน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสแด่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ว่าผู้ที่มี<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างบริสุทธิ์&nbsp;&nbsp;ไม่รู้จักสิ่งใดนอกจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">mahātmā</span><span class="slant pali">มหาตฺมา</span><span class="slant thai">มะหาตมา</span><span class="slant ram"></span>&nbsp;&nbsp;ถึง<wbr>กระนั้น&nbsp;&nbsp;ยังมีบุคคลอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผู้ไม่อยู่ในตำแหน่ง&nbsp;&nbsp;<span class="slant iast">mahātmā</span><span class="slant pali">มหาตฺมา</span><span class="slant thai">มะหาตมา</span><span class="slant ram"></span>&nbsp;&nbsp;โดยแท้จริง&nbsp;&nbsp;แต่ยังบูชา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ในวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังที่ได้อธิบายไว้แล้วว่าบางคนอยู่ในความทุกข์&nbsp;&nbsp;บางคนขาดแคลนเงิน&nbsp;&nbsp;บาง<wbr>คนชอบถาม&nbsp;&nbsp;และบางคนปฏิบัติในการพัฒนาความรู้&nbsp;&nbsp;แต่ยังมีพวกที่ต่ำกว่าซึ่งแบ่งออก<wbr>เป็นสามพวกคือ&nbsp;&nbsp;(1)&nbsp;&nbsp;ผู้ที่บูชาตนเองว่าเป็นหนึ่งเดียวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;(2)&nbsp;&nbsp;ผู้ที่อุปโลกคิดรูป<wbr>ลักษณ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ขึ้นมาและบูชารูปลักษณ์นั้น&nbsp;&nbsp;และ&nbsp;&nbsp;(3)&nbsp;&nbsp;ผู้ที่ยอมรับรูปลักษณ์จักรวาล&nbsp;&nbsp;<span class="slant iast">viśva-rūpa</span><span class="slant pali">วิศฺว-รูป</span><span class="slant thai">วิศวะ-รูปะ</span><span class="slant ram">วิชวะ-รูพะ</span>&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และบูชารูปลักษณ์นั้น&nbsp;&nbsp;จากที่กล่าวมาทั้งสามกลุ่ม&nbsp;&nbsp;กลุ่มที่บูชา<wbr>ตนเองว่าเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ถือว่าต่ำสุดที่คิดว่าตนเองและพระองค์เป็นหนึ่งเดียวกัน&nbsp;&nbsp;กลุ่มนี้มี<wbr>มากที่สุด&nbsp;&nbsp;บุคคลเหล่านี้คิดว่าตนเองเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และด้วยความคิดเช่นนี้จึงบูชาตนเองเช่นนี้&nbsp;&nbsp;ก็เป็นการบูชาพระองค์อีกรูปแบบหนึ่ง&nbsp;&nbsp;เพราะเข้าใจว่าตนเองไม่ใช่ร่างกายวัตถุ&nbsp;&nbsp;แต่<wbr>อันที่จริงเป็นดวงวิญญาณ&nbsp;&nbsp;อย่างน้อยที่สุดความรู้สึกนึกคิดแบบนี้เด่นชัด&nbsp;&nbsp;โดยทั่วไปพวก<wbr>ไม่เชื่อในรูปลักษณ์บูชาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แบบนี้&nbsp;&nbsp;พวกที่สองรวมไปถึงกลุ่มที่บูชาเทวดา&nbsp;&nbsp;โดยใช้<wbr>จินตนาการพิจารณาว่ารูปลักษณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เป็นรูปลักษณ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พวกที่สามรวมไป<wbr>ถึงกลุ่มที่ไม่สามารถสำเหนียกสิ่งใดนอกเหนือไปจากปรากฏการณ์ของจักรวาลวัตถุนี้&nbsp;&nbsp;โดย<wbr>พิจารณาว่าจักรวาลคือสิ่งมีชีวิตที่สูงสุดและบูชาจักรวาลนี้&nbsp;&nbsp;จักรวาลก็เป็นรูปลักษณ์ของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เช่นเดียวกัน
   </p>
 </div>
 

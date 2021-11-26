@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.46</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยาวานฺ อรฺตฺห อุท-ปาเน</i><br /><i>สรฺวตฮ สมฺปฺลุโตทเก</i><br /><i>ตาวานฺ สเรฺวษุ เวเทษุ</i><br /><i>พฺราหฺมณสฺย วิชานตฮ</i>
+<span class="slant iast">yāvān artha uda-pāne<br /></span>
+<span class="slant pali">ยาวานฺ อรฺถ อุท-ปาเน<br /></span>
+<span class="slant thai">ยาวาน อัรถะ อุทะ-ปาเน<br /></span>
+<span class="slant ram">ยาวาน อารทฺะ อุดะพาเน<br /></span>
+<span class="slant iast">sarvataḥ samplutodake<br /></span>
+<span class="slant pali">สรฺวตห์ สมฺปฺลุโตทเก<br /></span>
+<span class="slant thai">สัรวะตะห์ สัมปลุโตทะเก<br /></span>
+<span class="slant ram">สารวะทะฮ สัมพลูโทดะเคฺ<br /></span>
+<span class="slant iast">tāvān sarveṣu vedeṣu<br /></span>
+<span class="slant pali">ตาวานฺ สเรฺวษุ เวเทษุ<br /></span>
+<span class="slant thai">ตาวาน สัรเวษุ เวเทษุ<br /></span>
+<span class="slant ram">ทาวาน สารเวชุ เวเดชุ<br /></span>
+<span class="slant iast">brāhmaṇasya vijānataḥ<br /></span>
+<span class="slant pali">พฺราหฺมณสฺย วิชานตห์<br /></span>
+<span class="slant thai">พราหมะณัสยะ วิชานะตะห์<br /></span>
+<span class="slant ram">บราฮมะณัสยะ วิจานะทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยาวานฺ</i> — ทั้งหมดนั้น, <i>อรฺตฺหฮ</i> — หมายถึง, <i>อุท-ปาเน</i> — ในบ่อน้ำ, <i>สรฺวตฮ</i> — ทุกแง่ทุกมุม, <i>สมฺปฺลุต-อุทเก</i> — ในแหล่งน้ำอันยิ่งใหญ่, <i>ตาวานฺ</i> — เช่นเดียวกัน, <i>สเรฺวษุ</i> — ในทั้งหมด, <i>เวเทษุ</i> — วรรณกรรมพระ <i>เวท</i>, <i>พฺราหฺมณสฺย</i> — ของผู้ที่รู้ <i>พฺรหฺมนฺ</i> สูงสุด, <i>วิชานตฮ</i> — ผู้ อยู่ในความรู้อันสมบูรณ์
+  <span class="slant iast">yāvān</span><span class="slant pali">ยาวานฺ</span><span class="slant thai">ยาวาน</span><span class="slant ram">ยาวาน</span> — ทั้งหมดนั้น, <span class="slant iast">arthaḥ</span><span class="slant pali">อรฺถห์</span><span class="slant thai">อัรถะห์</span><span class="slant ram">อารทฺะฮ</span> — หมายถึง, <span class="slant iast">uda-pāne</span><span class="slant pali">อุท-ปาเน</span><span class="slant thai">อุทะ-ปาเน</span><span class="slant ram">อุดะ-พาเน</span> — ในบ่อน้ำ, <span class="slant iast">sarvataḥ</span><span class="slant pali">สรฺวตห์</span><span class="slant thai">สัรวะตะห์</span><span class="slant ram">สารวะทะฮ</span> — ทุกแง่ทุกมุม, <span class="slant iast">sampluta-udake</span><span class="slant pali">สมฺปฺลุต-อุทเก</span><span class="slant thai">สัมปลุตะ-อุทะเก</span><span class="slant ram">สัมพลุทะ-อุดะเค</span> — ในแหล่งน้ำอันยิ่งใหญ่, <span class="slant iast">tāvān</span><span class="slant pali">ตาวานฺ</span><span class="slant thai">ตาวาน</span><span class="slant ram">ทาวาน</span> — เช่นเดียวกัน, <span class="slant iast">sarveṣu</span><span class="slant pali">สเรฺวษุ</span><span class="slant thai">สัรเวษุ</span><span class="slant ram">สารเวชุ</span> — ในทั้งหมด, <span class="slant iast">vedeṣu</span><span class="slant pali">เวเทษุ</span><span class="slant thai">เวเทษุ</span><span class="slant ram">เวเดชุ</span> — วรรณกรรมพระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">brāhmaṇasya</span><span class="slant pali">พฺราหฺมณสฺย</span><span class="slant thai">พราหมะณัสยะ</span><span class="slant ram">บราฮมะณัสยะ</span> — ของผู้ที่รู้ <span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span> สูงสุด, <span class="slant iast">vijānataḥ</span><span class="slant pali">วิชานตห์</span><span class="slant thai">วิชานะตะห์</span><span class="slant ram">วิจานะทะฮ</span> — ผู้ อยู่ในความรู้อันสมบูรณ์
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ความปรารถนาทั้งหลายที่ได้มาจากบ่อน้ำเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;แหล่งน้ำอันยิ่งใหญ่สามารถตอบสนองได้ในทันที&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ความปรารถนาทั้งปวงในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;สามารถได้รับการสนองตอบ&nbsp;&nbsp;โดยผู้ที่รู้จุดมุ่งหมายอันแท้จริง
+  ความปรารถนาทั้งหลายที่ได้มาจากบ่อน้ำเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;แหล่งน้ำอันยิ่งใหญ่สามารถตอบสนองได้ในทันที&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ความปรารถนาทั้งปวงในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;สามารถได้รับการสนองตอบ&nbsp;&nbsp;โดยผู้ที่รู้จุดมุ่งหมายอันแท้จริง
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พิธีกรรมและการบูชาที่กล่าวไว้ในบท&nbsp;&nbsp;<i>กรฺม-กาณฺฑ</i>&nbsp;&nbsp;ของวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;มีไว้เพื่อส่งเสริมการค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาความรู้แจ้งแห่งตน&nbsp;&nbsp;และจุดมุ่งหมายของการรู้<wbr>แจ้งแห่งตนเอง&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจนในบทที่สิบห้าของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(15.15)&nbsp;&nbsp;ว่า&nbsp;&nbsp;จุดมุ่ง<wbr>หมายของการศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เพื่อให้ทราบถึงองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิด<wbr>แรกของสรรพสิ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การรู้แจ้งตนเองหมายถึงการเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และความสัมพันธ์<wbr>นิรันดรที่เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีต่อพระองค์&nbsp;&nbsp;ความสัมพันธ์ของสิ่งมีชีวิตที่มีต่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้กล่าวไว้ในบท<wbr>ที่สิบห้าของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(15.7)&nbsp;&nbsp;เช่นกันว่า&nbsp;&nbsp;สิ่งมีชีวิตเป็นละอองอณูของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฉะนั้นการฟื้นฟู&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกของปัจเจกชีวิตจึงเป็นระดับที่สมบูรณ์สูงสุดของวิชาพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(3.33.7)&nbsp;&nbsp;ได้ยืนยันไว้ดังต่อไปนี้
+  พิธีกรรมและการบูชาที่กล่าวไว้ในบท&nbsp;&nbsp;<span class="slant iast">karma-kāṇḍa</span><span class="slant pali">กรฺม-กาณฺฑ</span><span class="slant thai">กัรมะ-กาณฑะ</span><span class="slant ram">คารมะ-</span>&nbsp;&nbsp;ของวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;มีไว้เพื่อส่งเสริมการค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาความรู้แจ้งแห่งตน&nbsp;&nbsp;และจุดมุ่งหมายของการรู้<wbr>แจ้งแห่งตนเอง&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจนในบทที่สิบห้าของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(15.15)&nbsp;&nbsp;ว่า&nbsp;&nbsp;จุดมุ่ง<wbr>หมายของการศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เพื่อให้ทราบถึงองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิด<wbr>แรกของสรรพสิ่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การรู้แจ้งตนเองหมายถึงการเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และความสัมพันธ์<wbr>นิรันดรที่เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีต่อพระองค์&nbsp;&nbsp;ความสัมพันธ์ของสิ่งมีชีวิตที่มีต่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้กล่าวไว้ในบท<wbr>ที่สิบห้าของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(15.7)&nbsp;&nbsp;เช่นกันว่า&nbsp;&nbsp;สิ่งมีชีวิตเป็นละอองอณูของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฉะนั้นการฟื้นฟู&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกของปัจเจกชีวิตจึงเป็นระดับที่สมบูรณ์สูงสุดของวิชาพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(3.33.7)&nbsp;&nbsp;ได้ยืนยันไว้ดังต่อไปนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อโห พต ศฺว-ปโจ ′โต ครียานฺ</i><br /><i>ยชฺ-ชิหฺวาเคฺร วรฺตเต นาม ตุภฺยมฺ</i><br /><i>เตปุสฺ ตปสฺ เต ชุหุวุฮ สสฺนุรฺ อารฺยา</i><br /><i>พฺรหฺมานูจุรฺ นาม คฺฤณนฺติ เย เต</i>
+<span class="slant iast">aho bata śva-paco ’to garīyān<br /></span>
+<span class="slant pali">อโห พต ศฺว-ปโจ ’โต ครียานฺ<br /></span>
+<span class="slant thai">อะโห พะตะ ศวะ-ปะโจ ’โต คะรียาน<br /></span>
+<span class="slant ram">อโฮ บะทะ ชวะ-พะโช ่โท กะรียาน<br /></span>
+<span class="slant iast">yaj-jihvāgre vartate nāma tubhyam<br /></span>
+<span class="slant pali">ยชฺ-ชิหฺวาเคฺร วรฺตเต นาม ตุภฺยมฺ<br /></span>
+<span class="slant thai">ยัช-ชิหวาคเร วัรตะเต นามะ ตุภยัม<br /></span>
+<span class="slant ram">ยัจ-จิฮวาเกร วารทะเท นามะ ทุบฺยัม<br /></span>
+<span class="slant iast">tepus tapas te juhuvuḥ sasnur āryā<br /></span>
+<span class="slant pali">เตปุสฺ ตปสฺ เต ชุหุวุห์ สสฺนุรฺ อารฺยา<br /></span>
+<span class="slant thai">เตปุส ตะปัส เต ชุหุวุห์ สัสนุร อารยา<br /></span>
+<span class="slant ram">เทพุส ทะพัส เท จุฮุวุฮ สัสนุร อารยา<br /></span>
+<span class="slant iast">brahmānūcur nāma gṛṇanti ye te<br /></span>
+<span class="slant pali">พฺรหฺมานูจุรฺ นาม คฺฤณนฺติ เย เต<br /></span>
+<span class="slant thai">พรัหมานูจุร นามะ คฤณันติ เย เต<br /></span>
+<span class="slant ram">บระฮมานูชุร นามะ กริณันทิ เย เท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “โอ้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;บุคคลผู้สวดภาวนาพระนามอันศักดิ์สิทธิ์ของพระองค์&nbsp;&nbsp;แม้เกิดในตระกูล<wbr>ต่ำ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>จณฺฑาล</i>&nbsp;&nbsp;(คนกินสุนัข)&nbsp;&nbsp;จะสถิตในระดับสูงสุดแห่งการรู้แจ้งตนเอง&nbsp;&nbsp;บุคคลเช่นนี้<wbr>ต้องปฏิบัติการบำเพ็ญเพียรและการบูชานานัปการตามพิธีกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และศึกษา<wbr>วรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;มาแล้วหลายต่อหลายครั้งหลังจากได้อาบน้ำในสถานที่อันศักดิ์สิทธิ์<wbr>ทุกแห่งของนักบุญ&nbsp;&nbsp;บุคคลนี้พิจารณาว่าดีที่สุดในครอบครัว&nbsp;&nbsp;<i>อารฺยนฺ</i>&nbsp;&nbsp;”
+  “โอ้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;บุคคลผู้สวดภาวนาพระนามอันศักดิ์สิทธิ์ของพระองค์&nbsp;&nbsp;แม้เกิดในตระกูล<wbr>ต่ำ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">caṇḍāla</span><span class="slant pali">จณฺฑาล</span><span class="slant thai">จัณฑาละ</span><span class="slant ram">ชัณดาละ</span>&nbsp;&nbsp;(คนกินสุนัข)&nbsp;&nbsp;จะสถิตในระดับสูงสุดแห่งการรู้แจ้งตนเอง&nbsp;&nbsp;บุคคลเช่นนี้<wbr>ต้องปฏิบัติการบำเพ็ญเพียรและการบูชานานัปการตามพิธีกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และศึกษา<wbr>วรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;มาแล้วหลายต่อหลายครั้งหลังจากได้อาบน้ำในสถานที่อันศักดิ์สิทธิ์<wbr>ทุกแห่งของนักบุญ&nbsp;&nbsp;บุคคลนี้พิจารณาว่าดีที่สุดในครอบครัว&nbsp;&nbsp;<span class="slant iast">āryan</span><span class="slant pali">อารฺยนฺ</span><span class="slant thai">อารยัน</span><span class="slant ram">อารยัน</span>&nbsp;&nbsp;”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังนั้น&nbsp;&nbsp;เราต้องมีปัญญาพอที่จะเข้าใจจุดมุ่งหมายของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;โดยไม่ยึดติด<wbr>กับพิธีกรรมเท่านั้น&nbsp;&nbsp;และต้องไม่ปรารถนาจะพัฒนาตนเองไปสู่อาณาจักรสวรรค์&nbsp;&nbsp;เพื่อ<wbr>คุณภาพแห่งการสนองประสาทสัมผัสที่ดีกว่า&nbsp;&nbsp;เป็นไปไม่ได้สำหรับคนธรรมดาทั่วไป<wbr>ในยุคนี้&nbsp;&nbsp;ที่จะปฏิบัติตามกฎเกณฑ์ทั้งหมดในพิธีกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;หรือจะศึกษา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;อย่างละเอียดถี่ถ้วน&nbsp;&nbsp;เพราะต้องใช้เวลา&nbsp;&nbsp;พลังงาน&nbsp;&nbsp;ความรู้&nbsp;&nbsp;และทรัพยากร<wbr>อย่างมากมายเพื่อปฏิบัติตามจุดมุ่งหมายต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;จึงเป็นไปได้ยากมากใน<wbr>ยุคนี้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;จุดประสงค์ที่ดีที่สุดของวัฒนธรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;สามารถตอบสนองได้ด้วย<wbr>การสวดภาวนาพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังที่องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ผู้จัดส่งมวล<wbr>วิญญาณที่ตกต่ำ&nbsp;&nbsp;เมื่อนักวิชาการพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ผู้ยิ่งใหญ่ชื่อ&nbsp;&nbsp;<i>ปฺรกาศานนฺท</i>&nbsp;&nbsp;<i>สรสฺวตี</i>&nbsp;&nbsp;ถามองค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;ทำไมมาสวดภาวนาพระนามอันศักดิ์สิทธิ์ขององ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เหมือนเป็นคน<wbr>เจ้าอารมณ์&nbsp;&nbsp;แทนที่จะไปศึกษาปรัชญา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงตอบว่าพระอาจารย์<wbr>เห็นว่าพระองค์ทรงเบาปัญญายิ่งนัก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงขอร้องให้ไปสวดภาวนาพระนามอัน<wbr>ศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระองค์จึงทรงทำเช่นนี้และมีความปลื้มปีติสุขเหมือนคน<wbr>เสียสติ&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคนี้ประชาชนส่วนใหญ่เบาปัญญา&nbsp;&nbsp;ไม่พร้อมที่จะศึกษาและเข้าใจปรัชญา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;จุดประสงค์ที่ดีที่สุดของปรัชญา&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;จะได้รับการตอบสนองด้วยการ<wbr>สวดภาวนาพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อย่างไร้อาบัติ&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;เป็นคำสุดท้าย<wbr>ของปรัชญาพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ผู้เขียนและผู้รู้ปรัชญา<i>เวทานฺต</i>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<i>ศฺรี&nbsp;&nbsp;กฺฤษฺณ</i>&nbsp;&nbsp;และนัก<i>เวทานฺต</i>&nbsp;&nbsp;สูงสุดคือดวงวิญญาณผู้ยิ่งใหญ่ที่มีความสุขในการสวดภาวนาพระนามอันศักดิ์สิทธิ์ของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นี่คือจุดมุ่งหมายสูงสุดแห่งความเร้นลับของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมด
+  ดังนั้น&nbsp;&nbsp;เราต้องมีปัญญาพอที่จะเข้าใจจุดมุ่งหมายของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;โดยไม่ยึดติด<wbr>กับพิธีกรรมเท่านั้น&nbsp;&nbsp;และต้องไม่ปรารถนาจะพัฒนาตนเองไปสู่อาณาจักรสวรรค์&nbsp;&nbsp;เพื่อ<wbr>คุณภาพแห่งการสนองประสาทสัมผัสที่ดีกว่า&nbsp;&nbsp;เป็นไปไม่ได้สำหรับคนธรรมดาทั่วไป<wbr>ในยุคนี้&nbsp;&nbsp;ที่จะปฏิบัติตามกฎเกณฑ์ทั้งหมดในพิธีกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;หรือจะศึกษา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;อย่างละเอียดถี่ถ้วน&nbsp;&nbsp;เพราะต้องใช้เวลา&nbsp;&nbsp;พลังงาน&nbsp;&nbsp;ความรู้&nbsp;&nbsp;และทรัพยากร<wbr>อย่างมากมายเพื่อปฏิบัติตามจุดมุ่งหมายต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;จึงเป็นไปได้ยากมากใน<wbr>ยุคนี้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;จุดประสงค์ที่ดีที่สุดของวัฒนธรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;สามารถตอบสนองได้ด้วย<wbr>การสวดภาวนาพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังที่องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ผู้จัดส่งมวล<wbr>วิญญาณที่ตกต่ำ&nbsp;&nbsp;เมื่อนักวิชาการพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ผู้ยิ่งใหญ่ชื่อ&nbsp;&nbsp;<span class="slant iast">prakāśānanda</span><span class="slant pali">ปฺรกาศานนฺท</span><span class="slant thai">ประกาศานันทะ</span><span class="slant ram">พระคาชานันดะ</span>&nbsp;&nbsp;<span class="slant iast">sarasvatī</span><span class="slant pali">สรสฺวตี</span><span class="slant thai">สะรัสวะตี</span><span class="slant ram">สะรัสวะที</span>&nbsp;&nbsp;ถามองค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;ทำไมมาสวดภาวนาพระนามอันศักดิ์สิทธิ์ขององ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เหมือนเป็นคน<wbr>เจ้าอารมณ์&nbsp;&nbsp;แทนที่จะไปศึกษาปรัชญา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงตอบว่าพระอาจารย์<wbr>เห็นว่าพระองค์ทรงเบาปัญญายิ่งนัก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงขอร้องให้ไปสวดภาวนาพระนามอัน<wbr>ศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระองค์จึงทรงทำเช่นนี้และมีความปลื้มปีติสุขเหมือนคน<wbr>เสียสติ&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคนี้ประชาชนส่วนใหญ่เบาปัญญา&nbsp;&nbsp;ไม่พร้อมที่จะศึกษาและเข้าใจปรัชญา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;จุดประสงค์ที่ดีที่สุดของปรัชญา&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;จะได้รับการตอบสนองด้วยการ<wbr>สวดภาวนาพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อย่างไร้อาบัติ&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;เป็นคำสุดท้าย<wbr>ของปรัชญาพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ผู้เขียนและผู้รู้ปรัชญา<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<span class="slant iast">śrī&nbsp;&nbsp;kṛṣṇa</span><span class="slant pali">ศฺรีกฺฤษฺณ</span><span class="slant thai">ศรีกฤษณะ</span><span class="slant ram">ชรีคริชณะ</span>&nbsp;&nbsp;และนัก<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;สูงสุดคือดวงวิญญาณผู้ยิ่งใหญ่ที่มีความสุขในการสวดภาวนาพระนามอันศักดิ์สิทธิ์ของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นี่คือจุดมุ่งหมายสูงสุดแห่งความเร้นลับของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมด
   </p>
 </div>
 

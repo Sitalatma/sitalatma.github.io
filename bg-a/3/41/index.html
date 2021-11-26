@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.41</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตสฺมาตฺ ตฺวมฺ อินฺทฺริยาณฺยฺ อาทะอุ</i><br /><i>นิยมฺย ภรตรฺษภ</i><br /><i>ปาปฺมานํ ปฺรชหิ หฺยฺ เอนํ</i><br /><i>ชฺญาน-วิชฺญาน-นาศนมฺ</i>
+<span class="slant iast">tasmāt tvam indriyāṇy ādau<br /></span>
+<span class="slant pali">ตสฺมาตฺ ตฺวมฺ อินฺทฺริยาณฺยฺ อาเทา<br /></span>
+<span class="slant thai">ตัสมาต ตวัม อินทริยาณย อาเทา<br /></span>
+<span class="slant ram">ทัสมาท ทวัม อินดริยาณิ อาโด<br /></span>
+<span class="slant iast">niyamya bharatarṣabha<br /></span>
+<span class="slant pali">นิยมฺย ภรตรฺษภ<br /></span>
+<span class="slant thai">นิยัมยะ ภะระตัรษะภะ<br /></span>
+<span class="slant ram">นิยัมยะ บฺะระทารชะบฺะ<br /></span>
+<span class="slant iast">pāpmānaṁ prajahi hy enaṁ<br /></span>
+<span class="slant pali">ปาปฺมานํ ปฺรชหิ หฺยฺ เอนํ<br /></span>
+<span class="slant thai">ปาปมานัง ประชะหิ หย เอนัง<br /></span>
+<span class="slant ram">พาพมานัม พระจะฮิ ฮิ เอนัม<br /></span>
+<span class="slant iast">jñāna-vijñāna-nāśanam<br /></span>
+<span class="slant pali">ชฺญาน-วิชฺญาน-นาศนมฺ<br /></span>
+<span class="slant thai">ชญานะ-วิชญานะ-นาศะนัม<br /></span>
+<span class="slant ram">กยานะ-วิกยานะ-นาชะนัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตสฺมาตฺ</i> — ดังนั้น, <i>ตฺวมฺ</i> — เธอ, <i>อินฺทฺริยาณิ</i> — ประสาทสัมผัส, <i>อาทะอุ</i> — ในตอนต้น, <i>นิยมฺย</i> — ด้วยการประมาณ, <i>ภรต-ฤษภ</i> — โอ้ ผู้นำในหมู่ผู้สืบราชวงศ์ <i>ภรต</i>, <i>ปาปฺมานมฺ</i> — เครื่องหมายบาปอันยิ่งใหญ่, <i>ปฺรชหิ</i> — ดัด, <i>หิ</i> — แน่นอน, <i>เอนมฺ</i> — นี้, <i>ชฺญาน</i> — ของความรู้, <i>วิชฺญาน</i> — และศาสตร์แห่งความรู้ดวงวิญญาณบริสุทธิ์, <i>นาศนมฺ</i> — ผู้ทำลาย
+  <span class="slant iast">tasmāt</span><span class="slant pali">ตสฺมาตฺ</span><span class="slant thai">ตัสมาต</span><span class="slant ram">ทัสมาท</span> — ดังนั้น, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — เธอ, <span class="slant iast">indriyāṇi</span><span class="slant pali">อินฺทฺริยาณิ</span><span class="slant thai">อินทริยาณิ</span><span class="slant ram">อินดริยาณิ</span> — ประสาทสัมผัส, <span class="slant iast">ādau</span><span class="slant pali">อาเทา</span><span class="slant thai">อาเทา</span><span class="slant ram">อาโด</span> — ในตอนต้น, <span class="slant iast">niyamya</span><span class="slant pali">นิยมฺย</span><span class="slant thai">นิยัมยะ</span><span class="slant ram">นิยัมยะ</span> — ด้วยการประมาณ, <span class="slant iast">bharata-ṛṣabha</span><span class="slant pali">ภรต-ฤษภ</span><span class="slant thai">ภะระตะ-ฤษะภะ</span><span class="slant ram">บฺะระทา-ริชะบฺะ</span> — โอ้ ผู้นำในหมู่ผู้สืบราชวงศ์ <span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>, <span class="slant iast">pāpmānam</span><span class="slant pali">ปาปฺมานมฺ</span><span class="slant thai">ปาปมานัม</span><span class="slant ram">พาพมานัม</span> — เครื่องหมายบาปอันยิ่งใหญ่, <span class="slant iast">prajahi</span><span class="slant pali">ปฺรชหิ</span><span class="slant thai">ประชะหิ</span><span class="slant ram">พระจะฮิ</span> — ดัด, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">enam</span><span class="slant pali">เอนมฺ</span><span class="slant thai">เอนัม</span><span class="slant ram">เอนัม</span> — นี้, <span class="slant iast">jñāna</span><span class="slant pali">ชฺญาน</span><span class="slant thai">ชญานะ</span><span class="slant ram">กยานะ</span> — ของความรู้, <span class="slant iast">vijñāna</span><span class="slant pali">วิชฺญาน</span><span class="slant thai">วิชญานะ</span><span class="slant ram">วิกยานะ</span> — และศาสตร์แห่งความรู้ดวงวิญญาณบริสุทธิ์, <span class="slant iast">nāśanam</span><span class="slant pali">นาศนมฺ</span><span class="slant thai">นาศะนัม</span><span class="slant ram">นาชะนัม</span> — ผู้ทำลาย
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ฉะนั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ผู้ดีเลิศแห่ง&nbsp;&nbsp;<i>ภารต</i>&nbsp;&nbsp;ในตอนแรกจงกั้นขอบเครื่องหมายแห่งบาปอันยิ่งใหญ่นี้&nbsp;&nbsp;(ราคะ)&nbsp;&nbsp;ด้วยการประมาณประสาทสัมผัส&nbsp;&nbsp;และจงสังหารผู้ทำลายวิชาความรู้และความรู้แจ้งแห่งตนนี้เสีย
+  ฉะนั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ผู้ดีเลิศแห่ง&nbsp;&nbsp;<span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span>&nbsp;&nbsp;ในตอนแรกจงกั้นขอบเครื่องหมายแห่งบาปอันยิ่งใหญ่นี้&nbsp;&nbsp;(ราคะ)&nbsp;&nbsp;ด้วยการประมาณประสาทสัมผัส&nbsp;&nbsp;และจงสังหารผู้ทำลายวิชาความรู้และความรู้แจ้งแห่งตนนี้เสีย
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงแนะนำ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ให้ทรงประมาณประสาทสัมผัสตั้งแต่ตอนแรกเพื่อให้สามารถกั้นขอบเขตของศัตรูบาปที่ร้ายกาจที่สุดคือตัวราคะ&nbsp;&nbsp;ซึ่งเป็นตัวทำลาย<wbr>พลังเพื่อความรู้แจ้งแห่งตนและวิชาความรู้แห่งตนโดยเฉพาะ&nbsp;&nbsp;<i>ชฺญาน</i>&nbsp;&nbsp;หมายถึงวิชา<wbr>ความรู้แห่งตน&nbsp;&nbsp;ซึ่งแตกต่างจากความรู้ที่ไม่ใช่ตน&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;คือความรู้ที่ว่าดวงวิญญาณ<wbr>ไม่ใช่ร่างกาย&nbsp;&nbsp;<i>วิชฺญาน</i>&nbsp;&nbsp;หมายถึงความรู้โดยเฉพาะ&nbsp;&nbsp;คือรู้ถึงสถานภาพพื้นฐานของดวง<wbr>วิญญาณและความสัมพันธ์ที่ตนเองมีต่อดวงอภิวิญญาณสูงสุด&nbsp;&nbsp;ได้อธิบายไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(2.9.31)&nbsp;&nbsp;ดังนี้
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงแนะนำ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ให้ทรงประมาณประสาทสัมผัสตั้งแต่ตอนแรกเพื่อให้สามารถกั้นขอบเขตของศัตรูบาปที่ร้ายกาจที่สุดคือตัวราคะ&nbsp;&nbsp;ซึ่งเป็นตัวทำลาย<wbr>พลังเพื่อความรู้แจ้งแห่งตนและวิชาความรู้แห่งตนโดยเฉพาะ&nbsp;&nbsp;<span class="slant iast">jñāna</span><span class="slant pali">ชฺญาน</span><span class="slant thai">ชญานะ</span><span class="slant ram">กยานะ</span>&nbsp;&nbsp;หมายถึงวิชา<wbr>ความรู้แห่งตน&nbsp;&nbsp;ซึ่งแตกต่างจากความรู้ที่ไม่ใช่ตน&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;คือความรู้ที่ว่าดวงวิญญาณ<wbr>ไม่ใช่ร่างกาย&nbsp;&nbsp;<span class="slant iast">vijñāna</span><span class="slant pali">วิชฺญาน</span><span class="slant thai">วิชญานะ</span><span class="slant ram">วิกยานะ</span>&nbsp;&nbsp;หมายถึงความรู้โดยเฉพาะ&nbsp;&nbsp;คือรู้ถึงสถานภาพพื้นฐานของดวง<wbr>วิญญาณและความสัมพันธ์ที่ตนเองมีต่อดวงอภิวิญญาณสูงสุด&nbsp;&nbsp;ได้อธิบายไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(2.9.31)&nbsp;&nbsp;ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ชฺญานํ ปรม-คุหฺยํ เม</i><br /><i>ยทฺ วิชฺญาน-สมนฺวิตมฺ</i><br /><i>ส-รหสฺยํ ตทฺ-องฺคํ จ</i><br /><i>คฺฤหาณ คทิตํ มยา</i>
+<span class="slant iast">jñānaṁ parama-guhyaṁ me<br /></span>
+<span class="slant pali">ชฺญานํ ปรม-คุหฺยํ เม<br /></span>
+<span class="slant thai">ชญานัง ปะระมะ-คุหยัง เม<br /></span>
+<span class="slant ram">กยานัม พะระมะ-กุฮยัม เม<br /></span>
+<span class="slant iast">yad vijñāna-samanvitam<br /></span>
+<span class="slant pali">ยทฺ วิชฺญาน-สมนฺวิตมฺ<br /></span>
+<span class="slant thai">ยัท วิชญานะ-สะมันวิตัม<br /></span>
+<span class="slant ram">ยัด วิกยานะ-สะมันวิทัม<br /></span>
+<span class="slant iast">sa-rahasyaṁ tad-aṅgaṁ ca<br /></span>
+<span class="slant pali">ส-รหสฺยํ ตทฺ-องฺคํ จ<br /></span>
+<span class="slant thai">สะ-ระหัสยัง ตัท-อังคัง จะ<br /></span>
+<span class="slant ram">สะ-ระฮัสยัม ทัด-อังกัม ชะ<br /></span>
+<span class="slant iast">gṛhāṇa gaditaṁ mayā<br /></span>
+<span class="slant pali">คฺฤหาณ คทิตํ มยา<br /></span>
+<span class="slant thai">คฤหาณะ คะทิตัง มะยา<br /></span>
+<span class="slant ram">กริฮาณะ กะดิทัม มะยา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ความรู้แห่งตนเองและความรู้แห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นความรู้ที่ลับเฉพาะ&nbsp;&nbsp;และลึกซึ้งมากความรู้เช่นนี้และความรู้แจ้งโดยเฉพาะนี้สามารถเข้าใจได้&nbsp;&nbsp;หากองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบาย<wbr>ทุกแง่ทุกมุมด้วยพระองค์เอง”&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ได้ให้ความรู้ทั่วไปและความรู้โดยเฉพาะ<wbr>ของตัวเรา&nbsp;&nbsp;สิ่งมีชีวิตเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชีวิตเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีไว้เพียงเพื่อรับใช้<wbr>พระองค์เท่านั้น&nbsp;&nbsp;จิตสำนึกเช่นนี้เรียกว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จากตอนเริ่มต้นของชีวิตต้อง<wbr>เรียนรู้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกนี้&nbsp;&nbsp;หลังจากนั้นเราอาจมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกโดยสมบูรณ์และปฏิบัติ<wbr>ตนตามนั้น
+  “ความรู้แห่งตนเองและความรู้แห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นความรู้ที่ลับเฉพาะ&nbsp;&nbsp;และลึกซึ้งมากความรู้เช่นนี้และความรู้แจ้งโดยเฉพาะนี้สามารถเข้าใจได้&nbsp;&nbsp;หากองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบาย<wbr>ทุกแง่ทุกมุมด้วยพระองค์เอง”&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ได้ให้ความรู้ทั่วไปและความรู้โดยเฉพาะ<wbr>ของตัวเรา&nbsp;&nbsp;สิ่งมีชีวิตเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชีวิตเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีไว้เพียงเพื่อรับใช้<wbr>พระองค์เท่านั้น&nbsp;&nbsp;จิตสำนึกเช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จากตอนเริ่มต้นของชีวิตต้อง<wbr>เรียนรู้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกนี้&nbsp;&nbsp;หลังจากนั้นเราอาจมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกโดยสมบูรณ์และปฏิบัติ<wbr>ตนตามนั้น
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ราคะเป็นความวิปริตที่สะท้อนมาจากความรักแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อันเป็น<wbr>ธรรมชาติของทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;หากเราได้รับการศึกษาใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกตั้งแต่แรกเริ่ม&nbsp;&nbsp;ความ<wbr>รักองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยธรรมชาติไม่สามารถเสื่อมท&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;มาเป็นราคะได้&nbsp;&nbsp;เมื่อความรักแห่งองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสื่อมท&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;มาเป็นราคะ&nbsp;&nbsp;ยากมากที่จะให้กลับคืนมาสู่สภาวะปรกติดังเดิม&nbsp;&nbsp;แต่<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกมีพลังมากแม้แต่ผู้เริ่มต้นช้าก็ยังสามารถกลายมาเป็นผู้รักองค์&nbsp;&nbsp;<i>ภควานฺ</i>ได้&nbsp;&nbsp;ด้วยการปฏิบัติตามหลักธรรมแห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ไม่ว่าจะอยู่ในช่วง<wbr>ไหนของชีวิต&nbsp;&nbsp;หรือเริ่มจากจุดที่เข้าใจความฉุกเฉินนี้&nbsp;&nbsp;เราสามารถเริ่มประมาณประสาท<wbr>สัมผัสใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วยการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และเปลี่ยนจาก<wbr>ราคะมาเป็นความรักพระองค์&nbsp;&nbsp;ซึ่งเป็นระดับที่สมบูรณ์สูงสุดของชีวิตมนุษย์
+  ราคะเป็นความวิปริตที่สะท้อนมาจากความรักแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อันเป็น<wbr>ธรรมชาติของทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;หากเราได้รับการศึกษาใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกตั้งแต่แรกเริ่ม&nbsp;&nbsp;ความ<wbr>รักองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยธรรมชาติไม่สามารถเสื่อมท&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;มาเป็นราคะได้&nbsp;&nbsp;เมื่อความรักแห่งองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสื่อมท&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;มาเป็นราคะ&nbsp;&nbsp;ยากมากที่จะให้กลับคืนมาสู่สภาวะปรกติดังเดิม&nbsp;&nbsp;แต่<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกมีพลังมากแม้แต่ผู้เริ่มต้นช้าก็ยังสามารถกลายมาเป็นผู้รักองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>ได้&nbsp;&nbsp;ด้วยการปฏิบัติตามหลักธรรมแห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ไม่ว่าจะอยู่ในช่วง<wbr>ไหนของชีวิต&nbsp;&nbsp;หรือเริ่มจากจุดที่เข้าใจความฉุกเฉินนี้&nbsp;&nbsp;เราสามารถเริ่มประมาณประสาท<wbr>สัมผัสใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วยการอุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และเปลี่ยนจาก<wbr>ราคะมาเป็นความรักพระองค์&nbsp;&nbsp;ซึ่งเป็นระดับที่สมบูรณ์สูงสุดของชีวิตมนุษย์
   </p>
 </div>
 

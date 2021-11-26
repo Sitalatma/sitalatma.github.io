@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.53</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรุติ-วิปฺรติปนฺนา เต</i><br /><i>ยทา สฺตฺหาสฺยติ นิศฺจลา</i><br /><i>สมาธาวฺ อจลา พุทฺธิสฺ</i><br /><i>ตทา โยคมฺ อวาปฺสฺยสิ</i>
+<span class="slant iast">śruti-vipratipannā te<br /></span>
+<span class="slant pali">ศฺรุติ-วิปฺรติปนฺนา เต<br /></span>
+<span class="slant thai">ศรุติ-วิประติปันนา เต<br /></span>
+<span class="slant ram">ชรุทิ-วิพระทิพันนา เท<br /></span>
+<span class="slant iast">yadā sthāsyati niścalā<br /></span>
+<span class="slant pali">ยทา สฺถาสฺยติ นิศฺจลา<br /></span>
+<span class="slant thai">ยะทา สถาสยะติ นิศจะลา<br /></span>
+<span class="slant ram">ยะดา สทฺาสยะทิ นิชชะลา<br /></span>
+<span class="slant iast">samādhāv acalā buddhis<br /></span>
+<span class="slant pali">สมาธาวฺ อจลา พุทฺธิสฺ<br /></span>
+<span class="slant thai">สะมาธาว อะจะลา พุทธิส<br /></span>
+<span class="slant ram">สะมาดฺาพ อชะลา บุดดฺิส<br /></span>
+<span class="slant iast">tadā yogam avāpsyasi<br /></span>
+<span class="slant pali">ตทา โยคมฺ อวาปฺสฺยสิ<br /></span>
+<span class="slant thai">ตะทา โยคัม อะวาปสยะสิ<br /></span>
+<span class="slant ram">ทะดา โยกัม อวาพสยะสิ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรุติ</i> — ประทีปแห่งพระ <i>เวท</i>, <i>วิปฺรติปนฺนา</i> — โดยไม่ถูกอิทธิพลแห่งผลทางวัตถุ, <i>เต</i> — ของ เธอ, <i>ยทา</i> — เมื่อ, <i>สฺตฺหาสฺยติ</i> — คงอยู่, <i>นิศฺจลา</i> — ไม่เคลื่อนที่, <i>สมาธะอุ</i> — ในจิตสำนึกทิพย์ หรือ <i>กฺฤษฺณ</i> จิตสำนึก, <i>อจลา</i> — ความแน่วแน่, <i>พุทฺธิฮ</i> — ปัญญา, <i>ตทา</i> — ในเวลานั้น, <i>โยคมฺ</i> — ความรู้แจ้งตนเอง, <i>อวาปฺสฺยสิ</i> — เธอจะบรรลุผล
+  <span class="slant iast">śruti</span><span class="slant pali">ศฺรุติ</span><span class="slant thai">ศรุติ</span><span class="slant ram">ชรุทิ</span> — ประทีปแห่งพระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">vipratipannā</span><span class="slant pali">วิปฺรติปนฺนา</span><span class="slant thai">วิประติปันนา</span><span class="slant ram">วิพระทิพันนา</span> — โดยไม่ถูกอิทธิพลแห่งผลทางวัตถุ, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของ เธอ, <span class="slant iast">yadā</span><span class="slant pali">ยทา</span><span class="slant thai">ยะทา</span><span class="slant ram">ยะดา</span> — เมื่อ, <span class="slant iast">sthāsyati</span><span class="slant pali">สฺถาสฺยติ</span><span class="slant thai">สถาสยะติ</span><span class="slant ram">สทฺาสยะทิ</span> — คงอยู่, <span class="slant iast">niścalā</span><span class="slant pali">นิศฺจลา</span><span class="slant thai">นิศจะลา</span><span class="slant ram">นิชชะลา</span> — ไม่เคลื่อนที่, <span class="slant iast">samādhau</span><span class="slant pali">สมาเธา</span><span class="slant thai">สะมาเธา</span><span class="slant ram">สะมาโดฺ</span> — ในจิตสำนึกทิพย์ หรือ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> จิตสำนึก, <span class="slant iast">acalā</span><span class="slant pali">อจลา</span><span class="slant thai">อะจะลา</span><span class="slant ram">อชะลา</span> — ความแน่วแน่, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">tadā</span><span class="slant pali">ตทา</span><span class="slant thai">ตะทา</span><span class="slant ram">ทะดา</span> — ในเวลานั้น, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — ความรู้แจ้งตนเอง, <span class="slant iast">avāpsyasi</span><span class="slant pali">อวาปฺสฺยสิ</span><span class="slant thai">อะวาปสยะสิ</span><span class="slant ram">อวาพสยะ สิ</span> — เธอจะบรรลุผล
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เมื่อจิตใจของเธอไม่ถูกรบกวนจากสำนวนโวหารของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และเมื่อจิตของเธอตั้งมั่นอยู่ในสมาธิเพื่อความรู้แจ้งแห่งตน&nbsp;&nbsp;เมื่อนั้นเธอได้บรรลุถึงจิตสำนึกทิพย์แล้ว
+  เมื่อจิตใจของเธอไม่ถูกรบกวนจากสำนวนโวหารของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และเมื่อจิตของเธอตั้งมั่นอยู่ในสมาธิเพื่อความรู้แจ้งแห่งตน&nbsp;&nbsp;เมื่อนั้นเธอได้บรรลุถึงจิตสำนึกทิพย์แล้ว
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เมื่อกล่าวว่าบุคคลนี้อยู่ในสมาธิ&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>สมาธิ</i>&nbsp;&nbsp;หมายความว่าผู้นั้นมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกอย่างบริบูรณ์&nbsp;&nbsp;ผู้อยู่ใน&nbsp;&nbsp;<i>สมาธิ</i>&nbsp;&nbsp;ที่สมบูรณ์รู้แจ้งถึง&nbsp;&nbsp;<i>พฺรหฺมนฺ&nbsp;&nbsp;ปรมาตฺมา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ความสมบูรณ์สูงสุดแห่งการรู้แจ้งแห่งตนคือการเข้าใจอย่างถูกต้องว่า<wbr>ตนเองเป็นผู้รับใช้นิรันดรของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ภารกิจเดียวของตนคือการปฏิบัติหน้าที่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกหรือสาวกผู้มีความมั่นคงต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะไม่ถูก<wbr>รบกวนจากสำนวนโวหารของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;หรือไปปฏิบัติกิจกรรมเพื่อผลทางวัตถุให้<wbr>เจริญขึ้นไปสู่สวรรค์&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีความสัมพันธ์กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;และคำ<wbr>แนะนำทั้งหมดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราอาจเข้าใจได้จากระดับทิพย์นี้&nbsp;&nbsp;ด้วยการกระทำเช่นนี้เรา<wbr>มั่นใจได้ว่าจะบรรลุผลและได้รับความรู้ที่แท้จริงอย่างแน่นอน&nbsp;&nbsp;เราเพียงแต่ต้องปฏิบัติ<wbr>ตามคำสั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือพระอาจารย์ทิพย์ซึ่งเป็นผู้แทนของพระองค์
+  เมื่อกล่าวว่าบุคคลนี้อยู่ในสมาธิ&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">samādhi</span><span class="slant pali">สมาธิ</span><span class="slant thai">สะมาธิ</span><span class="slant ram">สะมาดิฺ</span>&nbsp;&nbsp;หมายความว่าผู้นั้นมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกอย่างบริบูรณ์&nbsp;&nbsp;ผู้อยู่ใน&nbsp;&nbsp;<span class="slant iast">samādhi</span><span class="slant pali">สมาธิ</span><span class="slant thai">สะมาธิ</span><span class="slant ram">สะมาดิฺ</span>&nbsp;&nbsp;ที่สมบูรณ์รู้แจ้งถึง&nbsp;&nbsp;<span class="slant iast">brahman&nbsp;&nbsp;paramātmā</span><span class="slant pali">พฺรหฺมนฺปรมาตฺมา</span><span class="slant thai">พรัหมันปะระมาตมา</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺพะระมาทมา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ความสมบูรณ์สูงสุดแห่งการรู้แจ้งแห่งตนคือการเข้าใจอย่างถูกต้องว่า<wbr>ตนเองเป็นผู้รับใช้นิรันดรของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ภารกิจเดียวของตนคือการปฏิบัติหน้าที่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกหรือสาวกผู้มีความมั่นคงต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะไม่ถูก<wbr>รบกวนจากสำนวนโวหารของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;หรือไปปฏิบัติกิจกรรมเพื่อผลทางวัตถุให้<wbr>เจริญขึ้นไปสู่สวรรค์&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีความสัมพันธ์กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;และคำ<wbr>แนะนำทั้งหมดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราอาจเข้าใจได้จากระดับทิพย์นี้&nbsp;&nbsp;ด้วยการกระทำเช่นนี้เรา<wbr>มั่นใจได้ว่าจะบรรลุผลและได้รับความรู้ที่แท้จริงอย่างแน่นอน&nbsp;&nbsp;เราเพียงแต่ต้องปฏิบัติ<wbr>ตามคำสั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือพระอาจารย์ทิพย์ซึ่งเป็นผู้แทนของพระองค์
   </p>
 </div>
 

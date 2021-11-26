@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.6</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อโช ′ปิ สนฺนฺ อวฺยยาตฺมา</i><br /><i>ภูตานามฺ อีศฺวโร ′ปิ สนฺ</i><br /><i>ปฺรกฺฤติํ สฺวามฺ อธิษฺฐาย</i><br /><i>สมฺภวามฺยฺ อาตฺม-มายยา</i>
+<span class="slant iast">ajo ’pi sann avyayātmā<br /></span>
+<span class="slant pali">อโช ’ปิ สนฺนฺ อวฺยยาตฺมา<br /></span>
+<span class="slant thai">อะโช ’ปิ สันน อัวยะยาตมา<br /></span>
+<span class="slant ram">อโจ 'พิ สันน อัพยะยาทมา<br /></span>
+<span class="slant iast">bhūtānām īśvaro ’pi san<br /></span>
+<span class="slant pali">ภูตานามฺ อีศฺวโร ’ปิ สนฺ<br /></span>
+<span class="slant thai">ภูตานาม อีศวะโร ’ปิ สัน<br /></span>
+<span class="slant ram">บํูทานาม อีชวะโร 'พิ สัน<br /></span>
+<span class="slant iast">prakṛtiṁ svām adhiṣṭhāya<br /></span>
+<span class="slant pali">ปฺรกฺฤตึ สฺวามฺ อธิษฺฐาย<br /></span>
+<span class="slant thai">ปรักฤติง สวาม อะธิษฐายะ<br /></span>
+<span class="slant ram">พระคริทิม สวาม อดฺิชทฺายะ<br /></span>
+<span class="slant iast">sambhavāmy ātma-māyayā<br /></span>
+<span class="slant pali">สมฺภวามฺยฺ อาตฺม-มายยา<br /></span>
+<span class="slant thai">สัมภะวามย อาตมะ-มายะยา<br /></span>
+<span class="slant ram">สัมบฺะวามิ อาทมะ-มายะยา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อชฮ</i> — ไม่มีการเกิด, <i>อปิ</i> — ถึงแม้ว่า, <i>สนฺ</i> — เป็นเช่นนั้น, <i>อวฺยย</i> — ไม่มีการเสื่อมสลาย, <i>อาตฺมา</i> — ร่างกาย, <i>ภูตานามฺ</i> — ของผู้ที่เกิดทั้งหมด, <i>อีศฺวรฮ</i> — องค์ภควาน, <i>อปิ</i> — ถึงแม้ว่า, <i>สนฺ</i> — เป็นเช่นนั้น, <i>ปฺรกฺฤติมฺ</i> — ในรูปทิพย์, <i>สฺวามฺ</i> — ของตัวข้า, <i>อธิษฺฐาย</i> — สถิตเช่นนั้น, <i>สมฺภวามิ</i> — ข้าอวตาร, <i>อาตฺม-มายยา</i> — ด้วยพลังเบื้องสูงของข้า
+  <span class="slant iast">ajaḥ</span><span class="slant pali">อชห์</span><span class="slant thai">อะชะห์</span><span class="slant ram">อจะฮ</span> — ไม่มีการเกิด, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — ถึงแม้ว่า, <span class="slant iast">san</span><span class="slant pali">สนฺ</span><span class="slant thai">สัน</span><span class="slant ram">สัน</span> — เป็นเช่นนั้น, <span class="slant iast">avyaya</span><span class="slant pali">อวฺยย</span><span class="slant thai">อัวยะยะ</span><span class="slant ram">อัพยะยะ</span> — ไม่มีการเสื่อมสลาย, <span class="slant iast">ātmā</span><span class="slant pali">อาตฺมา</span><span class="slant thai">อาตมา</span><span class="slant ram">อาทมา</span> — ร่างกาย, <span class="slant iast">bhūtānām</span><span class="slant pali">ภูตานามฺ</span><span class="slant thai">ภูตานาม</span><span class="slant ram">บํูทานาม</span> — ของผู้ที่เกิดทั้งหมด, <span class="slant iast">īśvaraḥ</span><span class="slant pali">อีศฺวรห์</span><span class="slant thai">อีศวะระห์</span><span class="slant ram">อีชวะระฮ</span> — องค์ภควาน, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — ถึงแม้ว่า, <span class="slant iast">san</span><span class="slant pali">สนฺ</span><span class="slant thai">สัน</span><span class="slant ram">สัน</span> — เป็นเช่นนั้น, <span class="slant iast">prakṛtim</span><span class="slant pali">ปฺรกฺฤติมฺ</span><span class="slant thai">ปรักฤติม</span><span class="slant ram">พระคริทิม</span> — ในรูปทิพย์, <span class="slant iast">svām</span><span class="slant pali">สฺวามฺ</span><span class="slant thai">สวาม</span><span class="slant ram">สวาม</span> — ของตัวข้า, <span class="slant iast">adhiṣṭhāya</span><span class="slant pali">อธิษฺฐาย</span><span class="slant thai">อะธิษฐายะ</span><span class="slant ram">อดิฺชทฺายะ</span> — สถิตเช่นนั้น, <span class="slant iast">sambhavāmi</span><span class="slant pali">สมฺภวามิ</span><span class="slant thai">สัมภะวามิ</span><span class="slant ram">สัมบฺะวามิ</span> — ข้าอวตาร, <span class="slant iast">ātma-māyayā</span><span class="slant pali">อาตฺม-มายยา</span><span class="slant thai">อาตมะ-มายะยา</span><span class="slant ram">อาทมะมายะยา</span> — ด้วยพลังเบื้องสูงของข้า
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสเกี่ยวกับลักษณะพิเศษแห่งการเกิดของพระองค์&nbsp;&nbsp;แม้ทรงอาจ<wbr>ปรากฏพระวรกายคล้ายบุคคลธรรมดา&nbsp;&nbsp;แต่ทรงจำทุกสิ่งทุกอย่างเกี่ยวกับ&nbsp;&nbsp;“การเสด็จ<wbr>มา”&nbsp;&nbsp;หลายต่อหลายชาติของพระองค์ในอดีตได้&nbsp;&nbsp;ขณะที่มนุษย์ธรรมดาไม่สามารถจำได้<wbr>ว่าได้ทำอะไรไปเมื่อหลายชั่วโมงก่อนหน้านี้&nbsp;&nbsp;หากมีใครมาถามว่าท่านได้ทำอะไรเมื่อวาน<wbr>นี้ในเวลาเดียวกัน&nbsp;&nbsp;สำหรับคนทั่วไปจะให้ตอบโดยทันทีได้ยากมาก&nbsp;&nbsp;แน่นอนว่าต้องเค้น<wbr>ความจำว่าเมื่อวานนี้และเวลาเดียวกันนี้ได้ทำอะไรอยู่&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ยังมีบ่อยครั้งที่มนุษย์<wbr>กล้าอ้างว่าตนเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราไม่ควรหลงผิดกับคำกล่าวอ้างที่ไร้สาระ<wbr>เช่นนี้&nbsp;&nbsp;จากนั้นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบายถึง&nbsp;&nbsp;<i>ปฺรกฺฤติ</i>&nbsp;&nbsp;หรือพระวรกายของพระองค์&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>ปฺรกฺฤติ</i>&nbsp;&nbsp;มีความหมายเช่นเดียวกับคำว่า&nbsp;&nbsp;<i>สฺวรูป</i>&nbsp;&nbsp;“ธรรมชาติ”&nbsp;&nbsp;หรือ&nbsp;&nbsp;“รูปลักษณ์ของ<wbr>ตนเอง”&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าพระองค์ทรงปรากฏมาในพระวรกายของพระองค์เอง&nbsp;&nbsp;ทรง<wbr>มิได้เปลี่ยนพระวรกายของพระองค์เยี่ยงสิ่งมีชีวิตทั่วไปที่เปลี่ยนจากร่างหนึ่งไปสู่อีกร่าง<wbr>หนึ่ง&nbsp;&nbsp;พันธวิญญาณอาจมีร่างหนึ่งในชาตินี้แต่จะมีร่างอื่นในชาติหน้า&nbsp;&nbsp;ในโลกวัตถุสิ่งมีชีวิต<wbr>ไม่มีร่างกายที่ถาวร&nbsp;&nbsp;แต่จะเปลี่ยนจากร่างหนึ่งไปสู่อีกร่างหนึ่ง&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมิได้เป็นเช่นนั้น&nbsp;&nbsp;เมื่อใดที่ทรงปรากฏ&nbsp;&nbsp;จะทรงปรากฏในร่างเดิมด้วยพลังเบื้อง<wbr>สูงของพระองค์&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงปรากฏพระวรกายในโลกวัตถุนี้ในร่างอมตะเดิม<wbr>แท้ของพระองค์ที่มีสองกร&nbsp;&nbsp;ทรงขลุ่ย&nbsp;&nbsp;ทรงปรากฏมาในร่างอมตะของพระองค์เหมือนเดิมโดยปราศจากมลทินของโลกวัตถุนี้&nbsp;&nbsp;แม้ทรงปรากฏในร่างทิพย์เดิมและทรงเป็นพระผู้เป็น<wbr>เจ้าแห่งจักรวาล&nbsp;&nbsp;แต่ยังปรากฏว่าทรงประสูติเหมือนกับสิ่งมีชีวิตธรรมดาทั่วไป&nbsp;&nbsp;และแม้ว่า<wbr>พระวรกายของพระองค์ทรงไม่เสื่อมสลายเหมือนร่างวัตถุ&nbsp;&nbsp;ยังปรากฏว่าองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเจริญเติบโตจากวัยทารกมาเป็นวัยเด็ก&nbsp;&nbsp;และจากวัยเด็กมาเป็นวัยหนุ่ม&nbsp;&nbsp;แต่เป็นที่น่า<wbr>อัศจรรย์ว่าพระองค์ทรงไม่แก่ไปกว่าวัยหนุ่ม&nbsp;&nbsp;ขณะที่อยู่ในสมรภูมิ&nbsp;&nbsp;<i>กุรุเกฺษตฺร</i>&nbsp;&nbsp;ทรงมีพระ<wbr>ราชนัดดาหลายองค์อยู่ที่พระราชวัง&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;พระองค์ทรงมีพระชนมายุค่อนข้าง<wbr>มากจากการคำนวณทางวัตถุ&nbsp;&nbsp;แต่ทรงดูเหมือนเด็กหนุ่มที่มีอายุประมาณยี่สิบถึงยี่สิบ<wbr>ห้าพรรษา&nbsp;&nbsp;เราไม่เคยเห็นภาพของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในร่างของผู้สูงอายุ&nbsp;&nbsp;เพราะพระองค์ทรงไม่ชรา<wbr>เหมือนพวกเราถึงแม้ทรงเป็นบุคคลผู้อาวุโสที่สุดในขบวนการสร้างทั้งหมด&nbsp;&nbsp;ไม่ว่าในอดีตปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ทั้งพระวรกายและสติปัญญาของพระองค์ทรงไม่เคยเสื่อมสลาย<wbr>หรือเปลี่ยนแปลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงปรากฏชัดเจนว่าถึงแม้จะทรงประทับอยู่ในโลกวัตถุ&nbsp;&nbsp;แต่<wbr>ทรงอยู่ในร่างอมตะที่ไม่มีการเกิด&nbsp;&nbsp;เปี่ยมไปด้วยความสุขเกษมสำราญและความรู้&nbsp;&nbsp;พระ<wbr>วรกายทิพย์และสติปัญญาของพระองค์ทรงไม่มีการเปลี่ยนแปลง&nbsp;&nbsp;อันที่จริงการปรากฏ<wbr>และไม่ปรากฏของพระองค์ทรงเปรียบเสมือนกับดวงอาทิตย์ขึ้น&nbsp;&nbsp;ที่ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เคลื่อนผ่าน<wbr>หน้าเราและหายลับจากสายตาของเราไป&nbsp;&nbsp;เมื่อดวงอาทิตย์ลับตาเราคิดว่าดวงอาทิตย์ตกและเมื่อดวงอาทิตย์อยู่ในสายตาของเรา&nbsp;&nbsp;เราคิดว่าดวงอาทิตย์อยู่บนขอบฟ้า&nbsp;&nbsp;อันที่จริงดวงอาทิตย์อยู่ในตำแหน่งถาวรเสมอ&nbsp;&nbsp;แต่เนื่องมาจากข้อบกพร่องของเราเอง&nbsp;&nbsp;ประสาท<wbr>สัมผัสที่สมบูรณ์ไม่เพียงพอของเราคำนวณการปรากฏและไม่ปรากฏของดวงอาทิตย์<wbr>ในท้องฟ้า&nbsp;&nbsp;และเพราะว่าการปรากฏและไม่ปรากฏของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแตกต่างจากสิ่งมี<wbr>ชีวิตสามัญธรรมดาทั่วไปโดยสิ้นเชิง&nbsp;&nbsp;จึงเป็นหลักฐานว่าพระองค์ทรงเป็นอมตะ&nbsp;&nbsp;เปี่ยมไป<wbr>ด้วยความสุขเกษมสำราญและความรู้&nbsp;&nbsp;อันเนื่องมาจากพลังอำนาจเบื้องสูงของพระองค์และปราศจากมลทินจากธรรมชาติวัตถุ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้าทรงไม่มีการเกิด&nbsp;&nbsp;แต่ยังปรากฏว่าพระองค์ทรงเกิดมาในอวตารหลาก<wbr>หลายมากมาย&nbsp;&nbsp;ภาคผนวกของวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;แม้ดูเหมือนว่าจะ<wbr>มีการเกิด&nbsp;&nbsp;แต่พระองค์ทรงไม่มีการเปลี่ยนแปลงพระวรกาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;พระองค์<wbr>ทรงปรากฏต่อหน้าพระพักตร์ของพระมารดาในรูปของพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;สี่กร&nbsp;&nbsp;พร้อมทั้ง<wbr>เครื่องประดับหกชนิดด้วยความมั่งคั่งสมบูรณ์&nbsp;&nbsp;การปรากฏมาในพระวรกายอมตะเดิม<wbr>แท้ของพระองค์ทรงเป็นพระเมตตาธิคุณอันหาที่สุดมิได้ที่ทรงประทานแก่สิ่งมีชีวิต&nbsp;&nbsp;เพื่อ<wbr>ให้พวกเราสามารถทำสมาธิอยู่ที่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้ตามความเป็นจริง&nbsp;&nbsp;มิใช่เป็นการกุขึ้นหรือ<wbr>เป็นจินตนาการจากจิตใจของเรา&nbsp;&nbsp;ดังเช่นพวก&nbsp;&nbsp;<i>มายาวาที</i>&nbsp;&nbsp;คิดผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าพระวรกายขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงควรเป็นเช่นนั้นหรือเช่นนี้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>อาตฺม-มายา</i>&nbsp;&nbsp;หมายถึงพระ<wbr>เมตตาธิคุณอันหาที่สุดมิได้ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตามพจนานุกรม&nbsp;&nbsp;<i>วิศฺว-โกศ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีจิตสำนึกถึงการปรากฏและไม่ปรากฏของพระองค์ในอดีต&nbsp;&nbsp;แต่สิ่งมีชีวิตจะลืมทุก<wbr>สิ่งทุกอย่างเกี่ยวกับอดีตชาติทันทีที่ได้รับร่างใหม่&nbsp;&nbsp;พระองค์ทรงเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ของมวล<wbr>ชีวิต&nbsp;&nbsp;เพราะทรงปฏิบัติกิจกรรมอันมหัศจรรย์เหนือมนุษย์ขณะที่ทรงประทับอยู่บนโลก<wbr>นี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นสัจธรรมเหมือนเดิมอยู่เสมอ&nbsp;&nbsp;และทรงเป็นสัจธรรมที่ไม่มี<wbr>ข้อแตกต่างระหว่างพระวรกายและดวงวิญญาณของพระองค์&nbsp;&nbsp;หรือระหว่างคุณสมบัติ<wbr>และพระวรกายของพระองค์&nbsp;&nbsp;อาจมีคำถามว่าแล้วทำไมองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จึงทรงปรากฏและไม่<wbr>ปรากฏบนโลกนี้&nbsp;&nbsp;คำถามนี้จะอธิบายในโศลกต่อไป
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสเกี่ยวกับลักษณะพิเศษแห่งการเกิดของพระองค์&nbsp;&nbsp;แม้ทรงอาจ<wbr>ปรากฏพระวรกายคล้ายบุคคลธรรมดา&nbsp;&nbsp;แต่ทรงจำทุกสิ่งทุกอย่างเกี่ยวกับ&nbsp;&nbsp;“การเสด็จ<wbr>มา”&nbsp;&nbsp;หลายต่อหลายชาติของพระองค์ในอดีตได้&nbsp;&nbsp;ขณะที่มนุษย์ธรรมดาไม่สามารถจำได้<wbr>ว่าได้ทำอะไรไปเมื่อหลายชั่วโมงก่อนหน้านี้&nbsp;&nbsp;หากมีใครมาถามว่าท่านได้ทำอะไรเมื่อวาน<wbr>นี้ในเวลาเดียวกัน&nbsp;&nbsp;สำหรับคนทั่วไปจะให้ตอบโดยทันทีได้ยากมาก&nbsp;&nbsp;แน่นอนว่าต้องเค้น<wbr>ความจำว่าเมื่อวานนี้และเวลาเดียวกันนี้ได้ทำอะไรอยู่&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ยังมีบ่อยครั้งที่มนุษย์<wbr>กล้าอ้างว่าตนเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราไม่ควรหลงผิดกับคำกล่าวอ้างที่ไร้สาระ<wbr>เช่นนี้&nbsp;&nbsp;จากนั้นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบายถึง&nbsp;&nbsp;<span class="slant iast">prakṛti</span><span class="slant pali">ปฺรกฺฤติ</span><span class="slant thai">ปรักฤติ</span><span class="slant ram">พระคริทิ</span>&nbsp;&nbsp;หรือพระวรกายของพระองค์&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">prakṛti</span><span class="slant pali">ปฺรกฺฤติ</span><span class="slant thai">ปรักฤติ</span><span class="slant ram">พระคริทิ</span>&nbsp;&nbsp;มีความหมายเช่นเดียวกับคำว่า&nbsp;&nbsp;<span class="slant iast">svarūpa</span><span class="slant pali">สฺวรูป</span><span class="slant thai">สวะรูปะ</span><span class="slant ram">สวะรูพะ</span>&nbsp;&nbsp;“ธรรมชาติ”&nbsp;&nbsp;หรือ&nbsp;&nbsp;“รูปลักษณ์ของ<wbr>ตนเอง”&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าพระองค์ทรงปรากฏมาในพระวรกายของพระองค์เอง&nbsp;&nbsp;ทรง<wbr>มิได้เปลี่ยนพระวรกายของพระองค์เยี่ยงสิ่งมีชีวิตทั่วไปที่เปลี่ยนจากร่างหนึ่งไปสู่อีกร่าง<wbr>หนึ่ง&nbsp;&nbsp;พันธวิญญาณอาจมีร่างหนึ่งในชาตินี้แต่จะมีร่างอื่นในชาติหน้า&nbsp;&nbsp;ในโลกวัตถุสิ่งมีชีวิต<wbr>ไม่มีร่างกายที่ถาวร&nbsp;&nbsp;แต่จะเปลี่ยนจากร่างหนึ่งไปสู่อีกร่างหนึ่ง&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมิได้เป็นเช่นนั้น&nbsp;&nbsp;เมื่อใดที่ทรงปรากฏ&nbsp;&nbsp;จะทรงปรากฏในร่างเดิมด้วยพลังเบื้อง<wbr>สูงของพระองค์&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงปรากฏพระวรกายในโลกวัตถุนี้ในร่างอมตะเดิม<wbr>แท้ของพระองค์ที่มีสองกร&nbsp;&nbsp;ทรงขลุ่ย&nbsp;&nbsp;ทรงปรากฏมาในร่างอมตะของพระองค์เหมือนเดิมโดยปราศจากมลทินของโลกวัตถุนี้&nbsp;&nbsp;แม้ทรงปรากฏในร่างทิพย์เดิมและทรงเป็นพระผู้เป็น<wbr>เจ้าแห่งจักรวาล&nbsp;&nbsp;แต่ยังปรากฏว่าทรงประสูติเหมือนกับสิ่งมีชีวิตธรรมดาทั่วไป&nbsp;&nbsp;และแม้ว่า<wbr>พระวรกายของพระองค์ทรงไม่เสื่อมสลายเหมือนร่างวัตถุ&nbsp;&nbsp;ยังปรากฏว่าองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเจริญเติบโตจากวัยทารกมาเป็นวัยเด็ก&nbsp;&nbsp;และจากวัยเด็กมาเป็นวัยหนุ่ม&nbsp;&nbsp;แต่เป็นที่น่า<wbr>อัศจรรย์ว่าพระองค์ทรงไม่แก่ไปกว่าวัยหนุ่ม&nbsp;&nbsp;ขณะที่อยู่ในสมรภูมิ&nbsp;&nbsp;<span class="slant iast">kurukṣetra</span><span class="slant pali">กุรุกฺเษตฺร</span><span class="slant thai">กุรุกเษตระ</span><span class="slant ram">คุรุคเชทระ</span>&nbsp;&nbsp;ทรงมีพระ<wbr>ราชนัดดาหลายองค์อยู่ที่พระราชวัง&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;พระองค์ทรงมีพระชนมายุค่อนข้าง<wbr>มากจากการคำนวณทางวัตถุ&nbsp;&nbsp;แต่ทรงดูเหมือนเด็กหนุ่มที่มีอายุประมาณยี่สิบถึงยี่สิบ<wbr>ห้าพรรษา&nbsp;&nbsp;เราไม่เคยเห็นภาพของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในร่างของผู้สูงอายุ&nbsp;&nbsp;เพราะพระองค์ทรงไม่ชรา<wbr>เหมือนพวกเราถึงแม้ทรงเป็นบุคคลผู้อาวุโสที่สุดในขบวนการสร้างทั้งหมด&nbsp;&nbsp;ไม่ว่าในอดีตปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ทั้งพระวรกายและสติปัญญาของพระองค์ทรงไม่เคยเสื่อมสลาย<wbr>หรือเปลี่ยนแปลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงปรากฏชัดเจนว่าถึงแม้จะทรงประทับอยู่ในโลกวัตถุ&nbsp;&nbsp;แต่<wbr>ทรงอยู่ในร่างอมตะที่ไม่มีการเกิด&nbsp;&nbsp;เปี่ยมไปด้วยความสุขเกษมสำราญและความรู้&nbsp;&nbsp;พระ<wbr>วรกายทิพย์และสติปัญญาของพระองค์ทรงไม่มีการเปลี่ยนแปลง&nbsp;&nbsp;อันที่จริงการปรากฏ<wbr>และไม่ปรากฏของพระองค์ทรงเปรียบเสมือนกับดวงอาทิตย์ขึ้น&nbsp;&nbsp;ที่ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เคลื่อนผ่าน<wbr>หน้าเราและหายลับจากสายตาของเราไป&nbsp;&nbsp;เมื่อดวงอาทิตย์ลับตาเราคิดว่าดวงอาทิตย์ตกและเมื่อดวงอาทิตย์อยู่ในสายตาของเรา&nbsp;&nbsp;เราคิดว่าดวงอาทิตย์อยู่บนขอบฟ้า&nbsp;&nbsp;อันที่จริงดวงอาทิตย์อยู่ในตำแหน่งถาวรเสมอ&nbsp;&nbsp;แต่เนื่องมาจากข้อบกพร่องของเราเอง&nbsp;&nbsp;ประสาท<wbr>สัมผัสที่สมบูรณ์ไม่เพียงพอของเราคำนวณการปรากฏและไม่ปรากฏของดวงอาทิตย์<wbr>ในท้องฟ้า&nbsp;&nbsp;และเพราะว่าการปรากฏและไม่ปรากฏของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแตกต่างจากสิ่งมี<wbr>ชีวิตสามัญธรรมดาทั่วไปโดยสิ้นเชิง&nbsp;&nbsp;จึงเป็นหลักฐานว่าพระองค์ทรงเป็นอมตะ&nbsp;&nbsp;เปี่ยมไป<wbr>ด้วยความสุขเกษมสำราญและความรู้&nbsp;&nbsp;อันเนื่องมาจากพลังอำนาจเบื้องสูงของพระองค์และปราศจากมลทินจากธรรมชาติวัตถุ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุดแห่งพระเจ้าทรงไม่มีการเกิด&nbsp;&nbsp;แต่ยังปรากฏว่าพระองค์ทรงเกิดมาในอวตารหลาก<wbr>หลายมากมาย&nbsp;&nbsp;ภาคผนวกของวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;แม้ดูเหมือนว่าจะ<wbr>มีการเกิด&nbsp;&nbsp;แต่พระองค์ทรงไม่มีการเปลี่ยนแปลงพระวรกาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;พระองค์<wbr>ทรงปรากฏต่อหน้าพระพักตร์ของพระมารดาในรูปของพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;สี่กร&nbsp;&nbsp;พร้อมทั้ง<wbr>เครื่องประดับหกชนิดด้วยความมั่งคั่งสมบูรณ์&nbsp;&nbsp;การปรากฏมาในพระวรกายอมตะเดิม<wbr>แท้ของพระองค์ทรงเป็นพระเมตตาธิคุณอันหาที่สุดมิได้ที่ทรงประทานแก่สิ่งมีชีวิต&nbsp;&nbsp;เพื่อ<wbr>ให้พวกเราสามารถทำสมาธิอยู่ที่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้ตามความเป็นจริง&nbsp;&nbsp;มิใช่เป็นการกุขึ้นหรือ<wbr>เป็นจินตนาการจากจิตใจของเรา&nbsp;&nbsp;ดังเช่นพวก&nbsp;&nbsp;<span class="slant iast">māyāvādī</span><span class="slant pali">มายาวาที</span><span class="slant thai">มายาวาที</span><span class="slant ram">มายาวาดี</span>&nbsp;&nbsp;คิดผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าพระวรกายขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงควรเป็นเช่นนั้นหรือเช่นนี้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">ātma-māyā</span><span class="slant pali">อาตฺม-มายา</span><span class="slant thai">อาตมะ-มายา</span><span class="slant ram">อาทมะ-มายา</span>&nbsp;&nbsp;หมายถึงพระ<wbr>เมตตาธิคุณอันหาที่สุดมิได้ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตามพจนานุกรม&nbsp;&nbsp;<span class="slant iast">viśva-kośa</span><span class="slant pali">วิศฺว-โกศ</span><span class="slant thai">วิศวะ-โกศะ</span><span class="slant ram">-</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีจิตสำนึกถึงการปรากฏและไม่ปรากฏของพระองค์ในอดีต&nbsp;&nbsp;แต่สิ่งมีชีวิตจะลืมทุก<wbr>สิ่งทุกอย่างเกี่ยวกับอดีตชาติทันทีที่ได้รับร่างใหม่&nbsp;&nbsp;พระองค์ทรงเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ของมวล<wbr>ชีวิต&nbsp;&nbsp;เพราะทรงปฏิบัติกิจกรรมอันมหัศจรรย์เหนือมนุษย์ขณะที่ทรงประทับอยู่บนโลก<wbr>นี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นสัจธรรมเหมือนเดิมอยู่เสมอ&nbsp;&nbsp;และทรงเป็นสัจธรรมที่ไม่มี<wbr>ข้อแตกต่างระหว่างพระวรกายและดวงวิญญาณของพระองค์&nbsp;&nbsp;หรือระหว่างคุณสมบัติ<wbr>และพระวรกายของพระองค์&nbsp;&nbsp;อาจมีคำถามว่าแล้วทำไมองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จึงทรงปรากฏและไม่<wbr>ปรากฏบนโลกนี้&nbsp;&nbsp;คำถามนี้จะอธิบายในโศลกต่อไป
   </p>
 </div>
 

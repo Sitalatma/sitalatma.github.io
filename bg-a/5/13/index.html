@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.13</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สรฺว-กรฺมาณิ มนสา</i><br /><i>สนฺนฺยสฺยาเสฺต สุขํ วศี</i><br /><i>นว-ทฺวาเร ปุเร เทหี</i><br /><i>ไนว กุรฺวนฺ น การยนฺ</i>
+<span class="slant iast">sarva-karmāṇi manasā<br /></span>
+<span class="slant pali">สรฺว-กรฺมาณิ มนสา<br /></span>
+<span class="slant thai">สัรวะ-กัรมาณิ มะนะสา<br /></span>
+<span class="slant ram">สารวะ-คารมาณิ มะนะสา<br /></span>
+<span class="slant iast">sannyasyāste sukhaṁ vaśī<br /></span>
+<span class="slant pali">สนฺนฺยสฺยาเสฺต สุขํ วศี<br /></span>
+<span class="slant thai">สันนยัสยาสเต สุขัง วะศี<br /></span>
+<span class="slant ram">สันนยัสยาสเท สุคฺัม วะชีฺ<br /></span>
+<span class="slant iast">nava-dvāre pure dehī<br /></span>
+<span class="slant pali">นว-ทฺวาเร ปุเร เทหี<br /></span>
+<span class="slant thai">นะวะ-ทวาเร ปุเร เทหี<br /></span>
+<span class="slant ram">นะวะ-ดวาเร พุเร เดฮี<br /></span>
+<span class="slant iast">naiva kurvan na kārayan<br /></span>
+<span class="slant pali">ไนว กุรฺวนฺ น การยนฺ<br /></span>
+<span class="slant thai">ไนวะ กุรวัน นะ การะยัน<br /></span>
+<span class="slant ram">ไนวะ คุรวัน นะ คาระยัน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สรฺว</i> — ทั้งหมด, <i>กรฺมาณิ</i> — กิจกรรม, <i>มนสา</i> — ด้วยจิตใจ, <i>สนฺนฺยสฺย</i> — สละ, <i>อาเสฺต</i> — คงอยู่, <i>สุขมฺ</i> — ในความสุข, <i>วศี</i> — ผู้ควบคุม, <i>นว-ทฺวาเร</i> — ในสถานที่ที่มีเก้าประตู, <i>ปุเร</i> — ในเมือง, <i>เทหี</i> — วิญญาณในร่าง, <i>น</i> — ไม่, <i>เอว</i> — แน่นอน, <i>กุรฺวนฺ</i> — ทำอะไร, <i>น</i> — ไม่, <i>การยนฺ</i> — เป็นต้นเหตุให้ทำ
+  <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ทั้งหมด, <span class="slant iast">karmāṇi</span><span class="slant pali">กรฺมาณิ</span><span class="slant thai">กัรมาณิ</span><span class="slant ram">คารมาณิ</span> — กิจกรรม, <span class="slant iast">manasā</span><span class="slant pali">มนสา</span><span class="slant thai">มะนะสา</span><span class="slant ram">มะนะสา</span> — ด้วยจิตใจ, <span class="slant iast">sannyasya</span><span class="slant pali">สนฺนฺยสฺย</span><span class="slant thai">สันนยัสยะ</span><span class="slant ram">สันนยัสยะ</span> — สละ, <span class="slant iast">āste</span><span class="slant pali">อาเสฺต</span><span class="slant thai">อาสเต</span><span class="slant ram">อาสเท</span> — คงอยู่, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ในความสุข, <span class="slant iast">vaśī</span><span class="slant pali">วศี</span><span class="slant thai">วะศี</span><span class="slant ram">วะชี</span> — ผู้ควบคุม, <span class="slant iast">nava-dvāre</span><span class="slant pali">นว-ทฺวาเร</span><span class="slant thai">นะวะ-ทวาเร</span><span class="slant ram">นะวะ-ดวาเร</span> — ในสถานที่ที่มีเก้าประตู, <span class="slant iast">pure</span><span class="slant pali">ปุเร</span><span class="slant thai">ปุเร</span><span class="slant ram">พุเร</span> — ในเมือง, <span class="slant iast">dehī</span><span class="slant pali">เทหี</span><span class="slant thai">เทหี</span><span class="slant ram">เดฮี</span> — วิญญาณในร่าง, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">kurvan</span><span class="slant pali">กุรฺวนฺ</span><span class="slant thai">กุรวัน</span><span class="slant ram">คุรวัน</span> — ทำอะไร, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">kārayan</span><span class="slant pali">การยนฺ</span><span class="slant thai">การะยัน</span><span class="slant ram">คาระ ยัน</span> — เป็นต้นเหตุให้ทำ
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  วิญญาณในร่างอาศัยอยู่ในเมืองที่มีเก้าประตู&nbsp;&nbsp;กิจกรรมของร่างกายหรือเมือง<wbr>อุปมาแห่งร่างกาย&nbsp;&nbsp;ธรรมชาติวัตถุเฉพาะระดับเป็นผู้ควบคุมโดยปริยาย&nbsp;&nbsp;ดวงวิญญาณ<wbr>ถึงแม้ว่าจะทำตัวเองให้ขึ้นอยู่กับสภาวะของร่างกาย&nbsp;&nbsp;สามารถอยู่เหนือสภาวะเหล่านี้ได้<wbr>หากตัวเขาต้องการ&nbsp;&nbsp;ที่เป็นเช่นนี้เพราะลืมธรรมชาติที่สูงกว่าของตนและไปสำคัญตัวเอง<wbr>กับร่างวัตถุจึงต้องรับทุกข์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจะสามารถฟื้นฟูสถานภาพอันแท้จริงและ<wbr>ออกมาจากร่างกายนี้&nbsp;&nbsp;เมื่อยอมรับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเราจะออกห่างจากกิจกรรมทาง<wbr>ร่างกายอย่างสมบูรณ์ทันที&nbsp;&nbsp;ในชีวิตที่ควบคุมได้เช่นนี้&nbsp;&nbsp;ซึ่งเจตนารมณ์ได้เปลี่ยนไป&nbsp;&nbsp;เราจะ<wbr>มีชีวิตอยู่อย่างมีความสุขในเมืองเก้าประตู&nbsp;&nbsp;ได้กล่าวถึงประตูทั้งเก้าไว้ดังนี้
+  วิญญาณในร่างอาศัยอยู่ในเมืองที่มีเก้าประตู&nbsp;&nbsp;กิจกรรมของร่างกายหรือเมือง<wbr>อุปมาแห่งร่างกาย&nbsp;&nbsp;ธรรมชาติวัตถุเฉพาะระดับเป็นผู้ควบคุมโดยปริยาย&nbsp;&nbsp;ดวงวิญญาณ<wbr>ถึงแม้ว่าจะทำตัวเองให้ขึ้นอยู่กับสภาวะของร่างกาย&nbsp;&nbsp;สามารถอยู่เหนือสภาวะเหล่านี้ได้<wbr>หากตัวเขาต้องการ&nbsp;&nbsp;ที่เป็นเช่นนี้เพราะลืมธรรมชาติที่สูงกว่าของตนและไปสำคัญตัวเอง<wbr>กับร่างวัตถุจึงต้องรับทุกข์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจะสามารถฟื้นฟูสถานภาพอันแท้จริงและ<wbr>ออกมาจากร่างกายนี้&nbsp;&nbsp;เมื่อยอมรับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเราจะออกห่างจากกิจกรรมทาง<wbr>ร่างกายอย่างสมบูรณ์ทันที&nbsp;&nbsp;ในชีวิตที่ควบคุมได้เช่นนี้&nbsp;&nbsp;ซึ่งเจตนารมณ์ได้เปลี่ยนไป&nbsp;&nbsp;เราจะ<wbr>มีชีวิตอยู่อย่างมีความสุขในเมืองเก้าประตู&nbsp;&nbsp;ได้กล่าวถึงประตูทั้งเก้าไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นว-ทฺวาเร ปุเร เทหี</i><br /><i>หํโส เลลายเต พหิฮ</i><br /><i>วศี สรฺวสฺย โลกสฺย</i><br /><i>สฺตฺหาวรสฺย จรสฺย จ</i>
+<span class="slant iast">nava-dvāre pure dehī<br /></span>
+<span class="slant pali">นว-ทฺวาเร ปุเร เทหี<br /></span>
+<span class="slant thai">นะวะ-ทวาเร ปุเร เทหี<br /></span>
+<span class="slant ram">นะวะ-ดวาเร พุเร เดฮี<br /></span>
+<span class="slant iast">haṁso lelāyate bahiḥ<br /></span>
+<span class="slant pali">หํโส เลลายเต พหิห์<br /></span>
+<span class="slant thai">หังโส เลลายะเต พะหิห์<br /></span>
+<span class="slant ram">ฮัมโส เลลายะเท บะฮิฮ<br /></span>
+<span class="slant iast">vaśī sarvasya lokasya<br /></span>
+<span class="slant pali">วศี สรฺวสฺย โลกสฺย<br /></span>
+<span class="slant thai">วะศี สัรวัสยะ โลกัสยะ<br /></span>
+<span class="slant ram">วะชี สารวัสยะ โลคัสยะ<br /></span>
+<span class="slant iast">sthāvarasya carasya ca<br /></span>
+<span class="slant pali">สฺถาวรสฺย จรสฺย จ<br /></span>
+<span class="slant thai">สถาวะรัสยะ จะรัสยะ จะ<br /></span>
+<span class="slant ram">สทฺาวะรัสยะ ชะรัสยะ ชะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “บุคลิกภาพสูงสุดแห่งพระเจ้าทรงประทับอยู่ภายในร่างของสิ่งมีชีวิต&nbsp;&nbsp;และทรงเป็นผู้<wbr>ควบคุมมวลชีวิตในมวลจักรวาล&nbsp;&nbsp;ร่างกายประกอบด้วยเก้าประตู&nbsp;&nbsp;(สองตา&nbsp;&nbsp;สองโพรงจมูกสองหู&nbsp;&nbsp;หนึ่งปาก&nbsp;&nbsp;หนึ่งทวาร&nbsp;&nbsp;และอวัยวะสืบพันธุ์)&nbsp;&nbsp;สิ่งมีชีวิตในระดับวัตถุสำคัญตนเองกับ<wbr>ร่างกาย&nbsp;&nbsp;แต่เมื่อสำคัญตนเองกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ภายในร่าง&nbsp;&nbsp;เขาจะมีอิสรภาพเท่า&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แม้ขณะอยู่ในร่างกายนี้”&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;3.18)
+  “บุคลิกภาพสูงสุดแห่งพระเจ้าทรงประทับอยู่ภายในร่างของสิ่งมีชีวิต&nbsp;&nbsp;และทรงเป็นผู้<wbr>ควบคุมมวลชีวิตในมวลจักรวาล&nbsp;&nbsp;ร่างกายประกอบด้วยเก้าประตู&nbsp;&nbsp;(สองตา&nbsp;&nbsp;สองโพรงจมูกสองหู&nbsp;&nbsp;หนึ่งปาก&nbsp;&nbsp;หนึ่งทวาร&nbsp;&nbsp;และอวัยวะสืบพันธุ์)&nbsp;&nbsp;สิ่งมีชีวิตในระดับวัตถุสำคัญตนเองกับ<wbr>ร่างกาย&nbsp;&nbsp;แต่เมื่อสำคัญตนเองกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ภายในร่าง&nbsp;&nbsp;เขาจะมีอิสรภาพเท่า&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แม้ขณะอยู่ในร่างกายนี้”&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;3.18)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ฉะนั้น&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็นอิสระจากกิจกรรมทั้งภายนอกและ<wbr>ภายในร่างวัตถุ
+  ฉะนั้น&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็นอิสระจากกิจกรรมทั้งภายนอกและ<wbr>ภายในร่างวัตถุ
   </p>
 </div>
 

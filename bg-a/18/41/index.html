@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.41</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>พฺราหฺมณ-กฺษตฺริย-วิศาํ</i><br /><i>ศูทฺราณาํ จ ปรนฺ-ตป</i><br /><i>กรฺมาณิ ปฺรวิภกฺตานิ</i><br /><i>สฺวภาว-ปฺรภไวรฺ คุไณฮ</i>
+<span class="slant iast">brāhmaṇa-kṣatriya-viśāṁ<br /></span>
+<span class="slant pali">พฺราหฺมณ-กฺษตฺริย-วิศำ<br /></span>
+<span class="slant thai">พราหมะณะ-กษัตริยะ-วิศาง<br /></span>
+<span class="slant ram">บราฮมะณะ-คชัทริยะ-วิชาม<br /></span>
+<span class="slant iast">śūdrāṇāṁ ca paran-tapa<br /></span>
+<span class="slant pali">ศูทฺราณำ จ ปรนฺ-ตป<br /></span>
+<span class="slant thai">ศูทราณาง จะ ปะรัน-ตะปะ<br /></span>
+<span class="slant ram">ชูดราณาม ชะ พะรันทะพะ<br /></span>
+<span class="slant iast">karmāṇi pravibhaktāni<br /></span>
+<span class="slant pali">กรฺมาณิ ปฺรวิภกฺตานิ<br /></span>
+<span class="slant thai">กัรมาณิ ประวิภักตานิ<br /></span>
+<span class="slant ram">คารมาณิ พระวิบัฺคทานิ<br /></span>
+<span class="slant iast">svabhāva-prabhavair guṇaiḥ<br /></span>
+<span class="slant pali">สฺวภาว-ปฺรภไวรฺ คุไณห์<br /></span>
+<span class="slant thai">สวะภาวะ-ประภะไวร คุไณห์<br /></span>
+<span class="slant ram">สวะบฺาวะ-พระบฺะไวร กุไณฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>พฺราหฺมณ</i> — ของ <i>พฺราหฺมณ</i>, <i>กฺษตฺริย</i> — <i>กฺษตฺริย</i>, <i>วิศามฺ</i> — และ <i>ไวศฺย</i>, <i>ศูทฺราณามฺ</i> — ของ <i>ศูทฺร</i>, <i>จ</i> — และ, <i>ปรมฺ-ตป</i> — โอ้ ผู้ปราบศัตรู, <i>กรฺมาณิ</i> — กิจกรรม, <i>ปฺรวิภกฺตานิ</i> — แบ่ง ออก, <i>สฺวภาว</i> — ตามธรรมชาติของพวกเขา, <i>ปฺรภไวฮ</i> — เกิดจาก, <i>คุไณฮ</i> — โดยระดับ ต่าง ๆ แห่งธรรมชาติวัตถุ
+  <span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span> — ของ <span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>, <span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span> — <span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>, <span class="slant iast">viśām</span><span class="slant pali">วิศามฺ</span><span class="slant thai">วิศาม</span><span class="slant ram">วิชาม</span> — และ <span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span>, <span class="slant iast">śūdrāṇām</span><span class="slant pali">ศูทฺราณามฺ</span><span class="slant thai">ศูทราณาม</span><span class="slant ram">ชูดราณาม</span> — ของ <span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">param-tapa</span><span class="slant pali">ปรมฺ-ตป</span><span class="slant thai">ปะรัม-ตะปะ</span><span class="slant ram">พะรันทะพะ</span> — โอ้ ผู้ปราบศัตรู, <span class="slant iast">karmāṇi</span><span class="slant pali">กรฺมาณิ</span><span class="slant thai">กัรมาณิ</span><span class="slant ram">คารมาณิ</span> — กิจกรรม, <span class="slant iast">pravibhaktāni</span><span class="slant pali">ปฺรวิภกฺตานิ</span><span class="slant thai">ประวิภักตานิ</span><span class="slant ram">พระวิบัฺคทานิ</span> — แบ่ง ออก, <span class="slant iast">svabhāva</span><span class="slant pali">สฺวภาว</span><span class="slant thai">สวะภาวะ</span><span class="slant ram">สวะบฺาวะ</span> — ตามธรรมชาติของพวกเขา, <span class="slant iast">prabhavaiḥ</span><span class="slant pali">ปฺรภไวห์</span><span class="slant thai">ประภะไวห์</span><span class="slant ram">พระบฺะไวฮ</span> — เกิดจาก, <span class="slant iast">guṇaiḥ</span><span class="slant pali">คุไณห์</span><span class="slant thai">คุไณห์</span><span class="slant ram">กุไณฮ</span> — โดยระดับ ต่าง ๆ แห่งธรรมชาติวัตถุ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>พฺราหฺมณ</i>&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;<i>ไวศฺย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ศูทฺร</i>&nbsp;&nbsp;แบ่งออกตามคุณสมบัติที่เกิดจากธรรมชาติของตนเองตามระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้กำราบศัตรู
+  <span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;<span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>&nbsp;&nbsp;แบ่งออกตามคุณสมบัติที่เกิดจากธรรมชาติของตนเองตามระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้กำราบศัตรู
   </p>
 </div>
 

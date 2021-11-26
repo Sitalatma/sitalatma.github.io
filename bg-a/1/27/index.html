@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 1.27</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -32,7 +118,7 @@
 </div>
 <div class="r r-lang-en r-chapter-title r-title">
   <h2 class="section-title">
-    สำรวจกองทัพที่สมรภูมิ <i>กุรุเกฺษตฺร</i> 
+    สำรวจกองทัพที่สมรภูมิ <i>กุรุกฺเษตฺร</i> 
   <h2>
 </div>
 <div class="bb r-verse">
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตานฺ สมีกฺษฺย ส กะเอุนฺตยฮ</i><br /><i>สรฺวานฺ พนฺธูนฺ อวสฺตฺหิตานฺ</i><br /><i>กฺฤปยา ปรยาวิโษฺฏ</i><br /><i>วิษีทนฺนฺ อิทมฺ อพฺรวีตฺ</i>
+<span class="slant iast">tān samīkṣya sa kaunteyaḥ<br /></span>
+<span class="slant pali">ตานฺ สมีกฺษฺย ส เกานฺเตยห์<br /></span>
+<span class="slant thai">ตาน สะมีกษยะ สะ เกานเตยะห์<br /></span>
+<span class="slant ram">ทาน สะมีคชยะ สะ คะอุนเทยะฮ<br /></span>
+<span class="slant iast">sarvān bandhūn avasthitān<br /></span>
+<span class="slant pali">สรฺวานฺ พนฺธูนฺ อวสฺถิตานฺ<br /></span>
+<span class="slant thai">สัรวาน พันธูน อะวัสถิตาน<br /></span>
+<span class="slant ram">สารวาน บันดํูน อวัสทิฺทาน<br /></span>
+<span class="slant iast">kṛpayā parayāviṣṭo<br /></span>
+<span class="slant pali">กฺฤปยา ปรยาวิษฺโฏ<br /></span>
+<span class="slant thai">กฤปะยา ปะระยาวิษโฏ<br /></span>
+<span class="slant ram">คริพะยา พะระยาวิชโท<br /></span>
+<span class="slant iast">viṣīdann idam abravīt<br /></span>
+<span class="slant pali">วิษีทนฺนฺ อิทมฺ อพฺรวีตฺ<br /></span>
+<span class="slant thai">วิษีทันน อิทัม อัพระวีต<br /></span>
+<span class="slant ram">วิชีดันน อิดัม อบระวีทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตานฺ</i> — พวกเขาทั้งหมด, <i>สมีกฺษฺย</i> — หลังจากที่ได้เห็น, <i>สฮ</i> — เขา, <i>กะเอุนฺตยฮ</i> — พระโอรส ของพระนาง <i>กุนฺตี</i>, <i>สรฺวานฺ</i> — ทุกชนิด, <i>พนฺธูนฺ</i> — ญาติ ๆ, <i>อวสฺตฺหิตานฺ</i> — สถิต, <i>กฺฤปยา</i> — ด้วย เมตตา, <i>ปรยา</i> — ในระดับสูง, <i>อาวิษฺฏฮ</i> — ปลาบปลื้ม, <i>วิษีทนฺ</i> — ขณะที่เศร้าโศก, <i>อิทมฺ</i> — ดังนั้น, <i>อพฺรวีตฺ</i> — ตรัส
+  <span class="slant iast">tān</span><span class="slant pali">ตานฺ</span><span class="slant thai">ตาน</span><span class="slant ram">ทาน</span> — พวกเขาทั้งหมด, <span class="slant iast">samīkṣya</span><span class="slant pali">สมีกฺษฺย</span><span class="slant thai">สะมีกษยะ</span><span class="slant ram">สะมีคชยะ</span> — หลังจากที่ได้เห็น, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">kaunteyaḥ</span><span class="slant pali">เกานฺเตยห์</span><span class="slant thai">เกานเตยะห์</span><span class="slant ram">คะอุนเทยะฮ</span> — พระโอรส ของพระนาง <span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>, <span class="slant iast">sarvān</span><span class="slant pali">สรฺวานฺ</span><span class="slant thai">สัรวาน</span><span class="slant ram">สารวาน</span> — ทุกชนิด, <span class="slant iast">bandhūn</span><span class="slant pali">พนฺธูนฺ</span><span class="slant thai">พันธูน</span><span class="slant ram">บันดํูน</span> — ญาติ ๆ, <span class="slant iast">avasthitān</span><span class="slant pali">อวสฺถิตานฺ</span><span class="slant thai">อะวัสถิตาน</span><span class="slant ram">อวัสทิฺทาน</span> — สถิต, <span class="slant iast">kṛpayā</span><span class="slant pali">กฺฤปยา</span><span class="slant thai">กฤปะยา</span><span class="slant ram">คริพะยา</span> — ด้วย เมตตา, <span class="slant iast">parayā</span><span class="slant pali">ปรยา</span><span class="slant thai">ปะระยา</span><span class="slant ram">พะระยา</span> — ในระดับสูง, <span class="slant iast">āviṣṭaḥ</span><span class="slant pali">อาวิษฺฏห์</span><span class="slant thai">อาวิษฏะห์</span><span class="slant ram">อาวิชทะฮ</span> — ปลาบปลื้ม, <span class="slant iast">viṣīdan</span><span class="slant pali">วิษีทนฺ</span><span class="slant thai">วิษีทัน</span><span class="slant ram">วิชีดัน</span> — ขณะที่เศร้าโศก, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — ดังนั้น, <span class="slant iast">abravīt</span><span class="slant pali">อพฺรวีตฺ</span><span class="slant thai">อัพระวีต</span><span class="slant ram">อับฺราวีท</span> — ตรัส
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เมื่อ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>กุนฺตี</i>&nbsp;&nbsp;ทรงเห็นบรรดาสหายและญาติทั้งหมดในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;ทรงรู้สึกตื้นตันใจ&nbsp;&nbsp;เปี่ยมไปด้วยความเมตตาสงสาร&nbsp;&nbsp;และตรัสว่า
+  เมื่อ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>&nbsp;&nbsp;ทรงเห็นบรรดาสหายและญาติทั้งหมดในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;ทรงรู้สึกตื้นตันใจ&nbsp;&nbsp;เปี่ยมไปด้วยความเมตตาสงสาร&nbsp;&nbsp;และตรัสว่า
   </p>
 </div>
 

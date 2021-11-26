@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 16.23</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยฮ ศาสฺตฺร-วิธิมฺ อุตฺสฺฤชฺย</i><br /><i>วรฺตเต กาม-การตฮ</i><br /><i>น ส สิทฺธิมฺ อวาโปฺนติ</i><br /><i>น สุขํ น ปราํ คติมฺ</i>
+<span class="slant iast">yaḥ śāstra-vidhim utsṛjya<br /></span>
+<span class="slant pali">ยห์ ศาสฺตฺร-วิธิมฺ อุตฺสฺฤชฺย<br /></span>
+<span class="slant thai">ยะห์ ศาสตระ-วิธิม อุตสฤชยะ<br /></span>
+<span class="slant ram">ยะฮ ชาสทระ-วิดิฺม อุทสริจยะ<br /></span>
+<span class="slant iast">vartate kāma-kārataḥ<br /></span>
+<span class="slant pali">วรฺตเต กาม-การตห์<br /></span>
+<span class="slant thai">วัรตะเต กามะ-การะตะห์<br /></span>
+<span class="slant ram">วารทะเท คามะ-คาระทะฮ<br /></span>
+<span class="slant iast">na sa siddhim avāpnoti<br /></span>
+<span class="slant pali">น ส สิทฺธิมฺ อวาปฺโนติ<br /></span>
+<span class="slant thai">นะ สะ สิทธิม อะวาปโนติ<br /></span>
+<span class="slant ram">นะ สะ สิดดิฺม อวาพโนทิ<br /></span>
+<span class="slant iast">na sukhaṁ na parāṁ gatim<br /></span>
+<span class="slant pali">น สุขํ น ปรำ คติมฺ<br /></span>
+<span class="slant thai">นะ สุขัง นะ ปะราง คะติม<br /></span>
+<span class="slant ram">นะ สุคัฺม นะ พะราม กะทิม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยฮ</i> — ผู้ใดซึ่ง, <i>ศาสฺตฺร-วิธิมฺ</i> — กฎของพระคัมภีร์, <i>อุตฺสฺฤชฺย</i> — ยกเลิก, <i>วรฺตเต</i> — ยังคง, <i>กาม-การตฮ</i> — ทำตามอำเภอใจในราคะ, <i>น</i> — ไม่, <i>สฮ</i> — เขา, <i>สิทฺธิมฺ</i> — ความสมบูรณ์, <i>อวาโปฺนติ</i> — บรรลุ, <i>น</i> — ไม่เคย, <i>สุขมฺ</i> — ความสุข, <i>น</i> — ไม่, <i>ปรามฺ</i> — สูงสุด, <i>คติมฺ</i> — ระดับ สมบูรณ์
+  <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ใดซึ่ง, <span class="slant iast">śāstra-vidhim</span><span class="slant pali">ศาสฺตฺร-วิธิมฺ</span><span class="slant thai">ศาสตระ-วิธิม</span><span class="slant ram">ชาสทระ-วิดิฺม</span> — กฎของพระคัมภีร์, <span class="slant iast">utsṛjya</span><span class="slant pali">อุตฺสฺฤชฺย</span><span class="slant thai">อุตสฤชยะ</span><span class="slant ram">อุทสริจยะ</span> — ยกเลิก, <span class="slant iast">vartate</span><span class="slant pali">วรฺตเต</span><span class="slant thai">วัรตะเต</span><span class="slant ram">วารทะเท</span> — ยังคง, <span class="slant iast">kāma-kārataḥ</span><span class="slant pali">กาม-การตห์</span><span class="slant thai">กามะ-การะตะห์</span><span class="slant ram">คามะ-คาระทะฮ</span> — ทำตามอำเภอใจในราคะ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">siddhim</span><span class="slant pali">สิทฺธิมฺ</span><span class="slant thai">สิทธิม</span><span class="slant ram">สิดดิฺม</span> — ความสมบูรณ์, <span class="slant iast">avāpnoti</span><span class="slant pali">อวาปฺโนติ</span><span class="slant thai">อะวาปโนติ</span><span class="slant ram">อวาพโนทิ</span> — บรรลุ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ความสุข, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">parām</span><span class="slant pali">ปรามฺ</span><span class="slant thai">ปะราม</span><span class="slant ram">พะราม</span> — สูงสุด, <span class="slant iast">gatim</span><span class="slant pali">คติมฺ</span><span class="slant thai">คะติม</span><span class="slant ram">กะทิม</span> — ระดับ สมบูรณ์
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังที่ได้อธิบายไว้ก่อนหน้านี้ว่า<i>ศาสฺตฺร-วิธิ</i>&nbsp;&nbsp;หรือทิศทางของ&nbsp;&nbsp;<i>ศาสฺตฺร</i>&nbsp;&nbsp;ได้ให้<wbr>ไว้แก่วรรณะต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของสังคมมนุษย์&nbsp;&nbsp;คาดว่าทุกคนปฏิบัติตามกฎ<wbr>เกณฑ์เหล่านี้&nbsp;&nbsp;หากไม่ปฏิบัติตามและทำตามอำเภอใจ&nbsp;&nbsp;ตามราคะ&nbsp;&nbsp;ความโลภ&nbsp;&nbsp;และความ<wbr>ปรารถนาของตนเองจะไม่มีวันสมบูรณ์ในชีวิต&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;มนุษย์อาจรู้ทุกสิ่งทุกอย่าง<wbr>ทั้งหลายเหล่านี้ทางทฤษฎี&nbsp;&nbsp;แต่หากไม่ได้นำไปใช้กับชีวิตของตน&nbsp;&nbsp;ควรรู้ไว้ว่าเขาเป็นผู้ต่ำ<wbr>สุดของมนุษยชาติ&nbsp;&nbsp;ในรูปชีวิตมนุษย์&nbsp;&nbsp;สิ่งมีชีวิตคาดหวังว่าจะมีสติสัมปชัญญะดีพอและ<wbr>ปฏิบัติตามกฎที่ให้ไว้เพื่อพัฒนาชีวิตของตนเองไปสู่ระดับสูงสุด&nbsp;&nbsp;แต่หากไม่ปฏิบัติตามนั้นเท่ากับดึงตัวเองให้ตกต่ำลง&nbsp;&nbsp;ถ้าปฏิบัติตามกฎเกณฑ์และตามหลักศีลธรรม&nbsp;&nbsp;แต่ในที่สุด<wbr>มาไม่ถึงระดับแห่งความเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก็เท่ากับความรู้ทั้งหมดสูญเปล่า&nbsp;&nbsp;และหาก<wbr>ยอมรับความมีอยู่ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่ไม่ปฏิบัติในการรับใช้พระองค์ความพยายามก็<wbr>สูญเปล่า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาตนเองมาสู่ระดับแห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และอุทิศ<wbr>ตนเสียสละรับใช้&nbsp;&nbsp;ณ&nbsp;&nbsp;ตรงนี้&nbsp;&nbsp;ที่สามารถบรรลุถึงระดับแห่งความสมบูรณ์สูงสุด&nbsp;&nbsp;ไม่ใช่ไป<wbr>พัฒนาอย่างอื่น
+  ดังที่ได้อธิบายไว้ก่อนหน้านี้ว่า<span class="slant iast">śāstra-vidhi</span><span class="slant pali">ศาสฺตฺร-วิธิ</span><span class="slant thai">ศาสตระ-วิธิ</span><span class="slant ram">ชาสทระ-</span>&nbsp;&nbsp;หรือทิศทางของ&nbsp;&nbsp;<span class="slant iast">śāstra</span><span class="slant pali">ศาสฺตฺร</span><span class="slant thai">ศาสตระ</span><span class="slant ram">ชาสทระ</span>&nbsp;&nbsp;ได้ให้<wbr>ไว้แก่วรรณะต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของสังคมมนุษย์&nbsp;&nbsp;คาดว่าทุกคนปฏิบัติตามกฎ<wbr>เกณฑ์เหล่านี้&nbsp;&nbsp;หากไม่ปฏิบัติตามและทำตามอำเภอใจ&nbsp;&nbsp;ตามราคะ&nbsp;&nbsp;ความโลภ&nbsp;&nbsp;และความ<wbr>ปรารถนาของตนเองจะไม่มีวันสมบูรณ์ในชีวิต&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;มนุษย์อาจรู้ทุกสิ่งทุกอย่าง<wbr>ทั้งหลายเหล่านี้ทางทฤษฎี&nbsp;&nbsp;แต่หากไม่ได้นำไปใช้กับชีวิตของตน&nbsp;&nbsp;ควรรู้ไว้ว่าเขาเป็นผู้ต่ำ<wbr>สุดของมนุษยชาติ&nbsp;&nbsp;ในรูปชีวิตมนุษย์&nbsp;&nbsp;สิ่งมีชีวิตคาดหวังว่าจะมีสติสัมปชัญญะดีพอและ<wbr>ปฏิบัติตามกฎที่ให้ไว้เพื่อพัฒนาชีวิตของตนเองไปสู่ระดับสูงสุด&nbsp;&nbsp;แต่หากไม่ปฏิบัติตามนั้นเท่ากับดึงตัวเองให้ตกต่ำลง&nbsp;&nbsp;ถ้าปฏิบัติตามกฎเกณฑ์และตามหลักศีลธรรม&nbsp;&nbsp;แต่ในที่สุด<wbr>มาไม่ถึงระดับแห่งความเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก็เท่ากับความรู้ทั้งหมดสูญเปล่า&nbsp;&nbsp;และหาก<wbr>ยอมรับความมีอยู่ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่ไม่ปฏิบัติในการรับใช้พระองค์ความพยายามก็<wbr>สูญเปล่า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนาตนเองมาสู่ระดับแห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และอุทิศ<wbr>ตนเสียสละรับใช้&nbsp;&nbsp;ณ&nbsp;&nbsp;ตรงนี้&nbsp;&nbsp;ที่สามารถบรรลุถึงระดับแห่งความสมบูรณ์สูงสุด&nbsp;&nbsp;ไม่ใช่ไป<wbr>พัฒนาอย่างอื่น
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>กาม-การตฮ</i>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;บุคคลทั้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่รู้&nbsp;&nbsp;ยังไปละเมิดกฎคลุกคลี<wbr>อยู่ในราคะทั้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่รู้&nbsp;&nbsp;และรู้ว่าสิ่งนี้ต้องห้าม&nbsp;&nbsp;แต่ก็ยังทำ&nbsp;&nbsp;เช่นนี้เรียกว่าทำตามอำเภอใจหากรู้ว่าสิ่งนี้ควรทำแต่ไม่กระทำก็เรียกว่าทำตามอำเภอใจ&nbsp;&nbsp;บุคคลเหล่านี้จะถูกพระองค์<wbr>ลงโทษในที่สุดและจะไม่สามารถบรรลุถึงความสมบูรณ์ซึ่งหมายไว้สำหรับชีวิตมนุษย์ชีวิตมนุษย์หมายไว้โดยเฉพาะเพื่อทำให้ความเป็นอยู่ของตนเองบริสุทธิ์&nbsp;&nbsp;หากไม่ปฏิบัติ<wbr>ตามกฎเกณฑ์ก็จะไม่สามารถทำให้ตนเองบริสุทธิ์และไม่สามารถบรรลุถึงระดับแห่ง<wbr>ความสุขที่แท้จริงได้
+  คำว่า&nbsp;&nbsp;<span class="slant iast">kāma-kārataḥ</span><span class="slant pali">กาม-การตห์</span><span class="slant thai">กามะ-การะตะห์</span><span class="slant ram">คามะ-คาระทะฮ</span>&nbsp;&nbsp;สำคัญมาก&nbsp;&nbsp;บุคคลทั้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่รู้&nbsp;&nbsp;ยังไปละเมิดกฎคลุกคลี<wbr>อยู่ในราคะทั้ง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่รู้&nbsp;&nbsp;และรู้ว่าสิ่งนี้ต้องห้าม&nbsp;&nbsp;แต่ก็ยังทำ&nbsp;&nbsp;เช่นนี้เรียกว่าทำตามอำเภอใจหากรู้ว่าสิ่งนี้ควรทำแต่ไม่กระทำก็เรียกว่าทำตามอำเภอใจ&nbsp;&nbsp;บุคคลเหล่านี้จะถูกพระองค์<wbr>ลงโทษในที่สุดและจะไม่สามารถบรรลุถึงความสมบูรณ์ซึ่งหมายไว้สำหรับชีวิตมนุษย์ชีวิตมนุษย์หมายไว้โดยเฉพาะเพื่อทำให้ความเป็นอยู่ของตนเองบริสุทธิ์&nbsp;&nbsp;หากไม่ปฏิบัติ<wbr>ตามกฎเกณฑ์ก็จะไม่สามารถทำให้ตนเองบริสุทธิ์และไม่สามารถบรรลุถึงระดับแห่ง<wbr>ความสุขที่แท้จริงได้
   </p>
 </div>
 

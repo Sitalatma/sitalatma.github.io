@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.30</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เลลิหฺยเส คฺรสมานฮ สมนฺตาลฺ</i><br /><i>โลกานฺ สมคฺรานฺ วทไนรฺ ชฺวลทฺภิฮ</i><br /><i>เตโชภิรฺ อาปูรฺย ชคตฺ สมคฺรํ</i><br /><i>ภาสสฺ ตโวคฺราฮ ปฺรตปนฺติ วิโษฺณ</i>
+<span class="slant iast">lelihyase grasamānaḥ samantāl<br /></span>
+<span class="slant pali">เลลิหฺยเส คฺรสมานห์ สมนฺตาลฺ<br /></span>
+<span class="slant thai">เลลิหยะเส คระสะมานะห์ สะมันตาล<br /></span>
+<span class="slant ram">เลลิฮยะเส กระสะมานะฮ สะมันทาล<br /></span>
+<span class="slant iast">lokān samagrān vadanair jvaladbhiḥ<br /></span>
+<span class="slant pali">โลกานฺ สมคฺรานฺ วทไนรฺ ชฺวลทฺภิห์<br /></span>
+<span class="slant thai">โลกาน สะมัคราน วะทะไนร ชวะลัทภิห์<br /></span>
+<span class="slant ram">โลคาน สะมะกราน วะดะไนร จวะลัดบิฺฮ<br /></span>
+<span class="slant iast">tejobhir āpūrya jagat samagraṁ<br /></span>
+<span class="slant pali">เตโชภิรฺ อาปูรฺย ชคตฺ สมคฺรํ<br /></span>
+<span class="slant thai">เตโชภิร อาปูรยะ ชะคัต สะมัครัง<br /></span>
+<span class="slant ram">เทโจบิฺร อาพูรยะ จะกัท สะมะกรัม<br /></span>
+<span class="slant iast">bhāsas tavogrāḥ pratapanti viṣṇo<br /></span>
+<span class="slant pali">ภาสสฺ ตโวคฺราห์ ปฺรตปนฺติ วิษฺโณ<br /></span>
+<span class="slant thai">ภาสัส ตะโวคราห์ ประตะปันติ วิษโณ<br /></span>
+<span class="slant ram">บฺาสัส ทะโวกราฮ พระทะพันทิ วิชโณฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เลลิหฺยเส</i> — พระองค์ทรงเลีย, <i>คฺรสมานฮ</i> — กลืน, <i>สมนฺตาตฺ</i> — จากทั่วทุกสารทิศ, <i>โลกานฺ</i> — ผู้คน, <i>สมคฺรานฺ</i> — ทั้งหมด, <i>วทไนฮ</i> — ด้วยพระโอษฐ์มากมาย, <i>ชฺวลทฺภิฮ</i> — โชติช่วง, <i>เตโชภิฮ</i> — ด้วยรัศมี, <i>อาปูรฺย</i> — ปกคลุม, <i>ชคตฺ</i> — จักรวาล, <i>สมคฺรมฺ</i> — ทั้งหมด, <i>ภาสฮ</i> — แสง, <i>ตว</i> — ของพระองค์, <i>อุคฺราฮ</i> — น่ากลัว, <i>ปฺรตปนฺติ</i> — แผดจ้า, <i>วิโษฺณ</i> — โอ้ องค์ภควานผู้ทรงแผ่กระจายไปทั่ว
+  <span class="slant iast">lelihyase</span><span class="slant pali">เลลิหฺยเส</span><span class="slant thai">เลลิหยะเส</span><span class="slant ram">เลลิฮยะเส</span> — พระองค์ทรงเลีย, <span class="slant iast">grasamānaḥ</span><span class="slant pali">คฺรสมานห์</span><span class="slant thai">คระสะมานะห์</span><span class="slant ram">กระสะมานะฮ</span> — กลืน, <span class="slant iast">samantāt</span><span class="slant pali">สมนฺตาตฺ</span><span class="slant thai">สะมันตาต</span><span class="slant ram">สะมันทาท</span> — จากทั่วทุกสารทิศ, <span class="slant iast">lokān</span><span class="slant pali">โลกานฺ</span><span class="slant thai">โลกาน</span><span class="slant ram">โลคาน</span> — ผู้คน, <span class="slant iast">samagrān</span><span class="slant pali">สมคฺรานฺ</span><span class="slant thai">สะมัคราน</span><span class="slant ram">สะมะกราน</span> — ทั้งหมด, <span class="slant iast">vadanaiḥ</span><span class="slant pali">วทไนห์</span><span class="slant thai">วะทะไนห์</span><span class="slant ram">วะดะไนฮ</span> — ด้วยพระโอษฐ์มากมาย, <span class="slant iast">jvaladbhiḥ</span><span class="slant pali">ชฺวลทฺภิห์</span><span class="slant thai">ชวะลัทภิห์</span><span class="slant ram">จวะลัดบิฺฮ</span> — โชติช่วง, <span class="slant iast">tejobhiḥ</span><span class="slant pali">เตโชภิห์</span><span class="slant thai">เตโชภิห์</span><span class="slant ram">เทโจบิฺฮ</span> — ด้วยรัศมี, <span class="slant iast">āpūrya</span><span class="slant pali">อาปูรฺย</span><span class="slant thai">อาปูรยะ</span><span class="slant ram">อาพูรยะ</span> — ปกคลุม, <span class="slant iast">jagat</span><span class="slant pali">ชคตฺ</span><span class="slant thai">ชะคัต</span><span class="slant ram">จะกัท</span> — จักรวาล, <span class="slant iast">samagram</span><span class="slant pali">สมคฺรมฺ</span><span class="slant thai">สะมัครัม</span><span class="slant ram">สะมะกรัม</span> — ทั้งหมด, <span class="slant iast">bhāsaḥ</span><span class="slant pali">ภาสห์</span><span class="slant thai">ภาสะห์</span><span class="slant ram">บฺาสะฮ</span> — แสง, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของพระองค์, <span class="slant iast">ugrāḥ</span><span class="slant pali">อุคฺราห์</span><span class="slant thai">อุคราห์</span><span class="slant ram">อุกราฮ</span> — น่ากลัว, <span class="slant iast">pratapanti</span><span class="slant pali">ปฺรตปนฺติ</span><span class="slant thai">ประตะปันติ</span><span class="slant ram">พระทะพันทิ</span> — แผดจ้า, <span class="slant iast">viṣṇo</span><span class="slant pali">วิษฺโณ</span><span class="slant thai">วิษโณ</span><span class="slant ram">วิชโณ</span> — โอ้ องค์ภควานผู้ทรงแผ่กระจายไปทั่ว
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;ข้าพเจ้าเห็นพระองค์ทรงกลืนผู้คนทั้งหมดจากทั่วทุกสารทิศด้วยพระโอษฐ์มากมายที่ลุกเป็นไฟ&nbsp;&nbsp;ทรงปกคลุมจักรวาลทั้งหมดด้วยรัศมีของพระองค์พระองค์ทรงปรากฏด้วยแสงรัศมีที่ร้อนแผดเผาอย่างน่ากลัว
+  โอ้&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;ข้าพเจ้าเห็นพระองค์ทรงกลืนผู้คนทั้งหมดจากทั่วทุกสารทิศด้วยพระโอษฐ์มากมายที่ลุกเป็นไฟ&nbsp;&nbsp;ทรงปกคลุมจักรวาลทั้งหมดด้วยรัศมีของพระองค์พระองค์ทรงปรากฏด้วยแสงรัศมีที่ร้อนแผดเผาอย่างน่ากลัว
   </p>
 </div>
 

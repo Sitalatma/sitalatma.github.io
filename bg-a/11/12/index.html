@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.12</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ทิวิ สูรฺย-สหสฺรสฺย</i><br /><i>ภเวทฺ ยุคปทฺ อุตฺตฺหิตา</i><br /><i>ยทิ ภาฮ สทฺฤศี สา สฺยาทฺ</i><br /><i>ภาสสฺ ตสฺย มหาตฺมนฮ</i>
+<span class="slant iast">divi sūrya-sahasrasya<br /></span>
+<span class="slant pali">ทิวิ สูรฺย-สหสฺรสฺย<br /></span>
+<span class="slant thai">ทิวิ สูรยะ-สะหัสรัสยะ<br /></span>
+<span class="slant ram">ดิวิ สูรยะ-สะอัสรัสยะ<br /></span>
+<span class="slant iast">bhaved yugapad utthitā<br /></span>
+<span class="slant pali">ภเวทฺ ยุคปทฺ อุตฺถิตา<br /></span>
+<span class="slant thai">ภะเวท ยุคะปัท อุตถิตา<br /></span>
+<span class="slant ram">บฺะเวด ยุกะพัด อุททิฺทา<br /></span>
+<span class="slant iast">yadi bhāḥ sadṛśī sā syād<br /></span>
+<span class="slant pali">ยทิ ภาห์ สทฺฤศี สา สฺยาทฺ<br /></span>
+<span class="slant thai">ยะทิ ภาห์ สัทฤศี สา สยาท<br /></span>
+<span class="slant ram">ยะดิ บฺาฮ สะดริชี สา สยาด<br /></span>
+<span class="slant iast">bhāsas tasya mahātmanaḥ<br /></span>
+<span class="slant pali">ภาสสฺ ตสฺย มหาตฺมนห์<br /></span>
+<span class="slant thai">ภาสัส ตัสยะ มะหาตมะนะห์<br /></span>
+<span class="slant ram">บฺาสัส ทัสยะ มะฮาทมะณะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ทิวิ</i> — ในท้องฟ้า, <i>สูรฺย</i> — หมู่ดวงอาทิตย์, <i>สหสฺรสฺย</i> — หลาย ๆ พัน, <i>ภเวตฺ</i> — มี, <i>ยุคปตฺ</i> — พร้อม ๆ กัน, <i>อุตฺตฺหิตา</i> — ปรากฏ, <i>ยทิ</i> — ถ้า, <i>ภาฮ</i> — แสง, <i>สทฺฤศี</i> — เหมือนเช่นนั้น, <i>สา</i> — นั้น, <i>สฺยาตฺ</i> — อาจเป็น, <i>ภาสฮ</i> — รัศมี, <i>ตสฺย</i> — ของพระองค์, <i>มหา-อาตฺมนฮ</i> — องค์ภควานผู้ ยิ่งใหญ่
+  <span class="slant iast">divi</span><span class="slant pali">ทิวิ</span><span class="slant thai">ทิวิ</span><span class="slant ram">ดิวิ</span> — ในท้องฟ้า, <span class="slant iast">sūrya</span><span class="slant pali">สูรฺย</span><span class="slant thai">สูรยะ</span><span class="slant ram">สูรยะ</span> — หมู่ดวงอาทิตย์, <span class="slant iast">sahasrasya</span><span class="slant pali">สหสฺรสฺย</span><span class="slant thai">สะหัสรัสยะ</span><span class="slant ram">สะฮัสรัสยะ</span> — หลาย ๆ พัน, <span class="slant iast">bhavet</span><span class="slant pali">ภเวตฺ</span><span class="slant thai">ภะเวต</span><span class="slant ram">บฺะเวท</span> — มี, <span class="slant iast">yugapat</span><span class="slant pali">ยุคปตฺ</span><span class="slant thai">ยุคะปัต</span><span class="slant ram">ยุกะพัท</span> — พร้อม ๆ กัน, <span class="slant iast">utthitā</span><span class="slant pali">อุตฺถิตา</span><span class="slant thai">อุตถิตา</span><span class="slant ram">อุททิฺทา</span> — ปรากฏ, <span class="slant iast">yadi</span><span class="slant pali">ยทิ</span><span class="slant thai">ยะทิ</span><span class="slant ram">ยะดิ</span> — ถ้า, <span class="slant iast">bhāḥ</span><span class="slant pali">ภาห์</span><span class="slant thai">ภาห์</span><span class="slant ram">บฺาฮ</span> — แสง, <span class="slant iast">sadṛśī</span><span class="slant pali">สทฺฤศี</span><span class="slant thai">สัทฤศี</span><span class="slant ram">สะดริชี</span> — เหมือนเช่นนั้น, <span class="slant iast">sā</span><span class="slant pali">สา</span><span class="slant thai">สา</span><span class="slant ram">สา</span> — นั้น, <span class="slant iast">syāt</span><span class="slant pali">สฺยาตฺ</span><span class="slant thai">สยาต</span><span class="slant ram">สยาท</span> — อาจเป็น, <span class="slant iast">bhāsaḥ</span><span class="slant pali">ภาสห์</span><span class="slant thai">ภาสะห์</span><span class="slant ram">บฺาสะฮ</span> — รัศมี, <span class="slant iast">tasya</span><span class="slant pali">ตสฺย</span><span class="slant thai">ตัสยะ</span><span class="slant ram">ทัสยะ</span> — ของพระองค์, <span class="slant iast">mahā-ātmanaḥ</span><span class="slant pali">มหา-อาตฺมนห์</span><span class="slant thai">มะหา-อาตมะนะห์</span><span class="slant ram">มะฮา-อาทมะนะฮ</span> — องค์ภควานผู้ ยิ่งใหญ่
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สิ่งที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงได้เห็น&nbsp;&nbsp;อธิบายไม่ได้&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;พยายามให้<wbr>เห็นจินตนาการแห่งการเปิดเผยอันยิ่งใหญ่นั้นแด่&nbsp;&nbsp;<i>ธฺฤตราษฺฏฺร</i>&nbsp;&nbsp;ทั้ง&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;และ<i>ธฺฤตราษฺฏฺร</i>&nbsp;&nbsp;ไม่ได้อยู่&nbsp;&nbsp;ณที่นั้น&nbsp;&nbsp;แต่ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<i>วฺยาส</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;จึงสามารถ<wbr>เห็นเหตุการณ์ที่เกิดขึ้น&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;<i>สญฺชย</i>&nbsp;&nbsp;เปรียบเทียบสถานการณ์กับปรากฏการณ์ทาง<wbr>จินตนาการ&nbsp;&nbsp;(ตัวอย่างเช่น&nbsp;&nbsp;ดวงอาทิตย์ขึ้นเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดวง)&nbsp;&nbsp;เท่าที่พอจะเข้าใจได้
+  สิ่งที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงได้เห็น&nbsp;&nbsp;อธิบายไม่ได้&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;พยายามให้<wbr>เห็นจินตนาการแห่งการเปิดเผยอันยิ่งใหญ่นั้นแด่&nbsp;&nbsp;<span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>&nbsp;&nbsp;ทั้ง&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;และ<span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>&nbsp;&nbsp;ไม่ได้อยู่&nbsp;&nbsp;ณที่นั้น&nbsp;&nbsp;แต่ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<span class="slant iast">vyāsa</span><span class="slant pali">วฺยาส</span><span class="slant thai">วยาสะ</span><span class="slant ram">วิยาสะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;จึงสามารถ<wbr>เห็นเหตุการณ์ที่เกิดขึ้น&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;<span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;เปรียบเทียบสถานการณ์กับปรากฏการณ์ทาง<wbr>จินตนาการ&nbsp;&nbsp;(ตัวอย่างเช่น&nbsp;&nbsp;ดวงอาทิตย์ขึ้นเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดวง)&nbsp;&nbsp;เท่าที่พอจะเข้าใจได้
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อนฺต-กาเล จ มามฺ เอว</i><br /><i>สฺมรนฺ มุกฺตฺวา กเลวรมฺ</i><br /><i>ยฮ ปฺรยาติ ส มทฺ-ภาวํ</i><br /><i>ยาติ นาสฺตฺยฺ อตฺร สํศยฮ</i>
+<span class="slant iast">anta-kāle ca mām eva<br /></span>
+<span class="slant pali">อนฺต-กาเล จ มามฺ เอว<br /></span>
+<span class="slant thai">อันตะ-กาเล จะ มาม เอวะ<br /></span>
+<span class="slant ram">อันทะ-คาเล ชะ มาม เอวะ<br /></span>
+<span class="slant iast">smaran muktvā kalevaram<br /></span>
+<span class="slant pali">สฺมรนฺ มุกฺตฺวา กเลวรมฺ<br /></span>
+<span class="slant thai">สมะรัน มุกตวา กะเลวะรัม<br /></span>
+<span class="slant ram">สมะรัน มุคทวา คะเลวะรัม<br /></span>
+<span class="slant iast">yaḥ prayāti sa mad-bhāvaṁ<br /></span>
+<span class="slant pali">ยห์ ปฺรยาติ ส มทฺ-ภาวํ<br /></span>
+<span class="slant thai">ยะห์ ประยาติ สะ มัท-ภาวัง<br /></span>
+<span class="slant ram">ยะฮ พระยาทิ สะ มัด-บฺาวัม<br /></span>
+<span class="slant iast">yāti nāsty atra saṁśayaḥ<br /></span>
+<span class="slant pali">ยาติ นาสฺตฺยฺ อตฺร สํศยห์<br /></span>
+<span class="slant thai">ยาติ นาสตย อัตระ สังศะยะห์<br /></span>
+<span class="slant ram">ยาทิ นาสทิ อัทระ สัมชะยะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อนฺต-กาเล</i> — ในบั้นปลายของชีวิต, <i>จ</i> — เช่นกัน, <i>มามฺ</i>, <i>เอว</i> — แน่นอน, <i>สฺมรนฺ</i> — ระลึก ถึง, <i>มุกฺตฺวา</i> — ยกเลิก, <i>กเลวรมฺ</i> — ร่างกาย, <i>ยฮ</i> — เขาผู้ซึ่ง, <i>ปฺรยาติ</i> — ไป, <i>สฮ</i> — เขา, <i>มตฺ-ภาวมฺ</i> — ธรรมชาติของข้า, <i>ยาติ</i> — บรรลุ, <i>น</i> — ไม่, <i>อสฺติ</i> — มี, <i>อตฺร</i> — ที่นี่, <i>สํศยฮ</i> — ข้อสงสัย
+  <span class="slant iast">anta-kāle</span><span class="slant pali">อนฺต-กาเล</span><span class="slant thai">อันตะ-กาเล</span><span class="slant ram">อันทะ-คาเล</span> — ในบั้นปลายของชีวิต, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span>, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">smaran</span><span class="slant pali">สฺมรนฺ</span><span class="slant thai">สมะรัน</span><span class="slant ram">สมะรัน</span> — ระลึก ถึง, <span class="slant iast">muktvā</span><span class="slant pali">มุกฺตฺวา</span><span class="slant thai">มุกตวา</span><span class="slant ram">มุคทวา</span> — ยกเลิก, <span class="slant iast">kalevaram</span><span class="slant pali">กเลวรมฺ</span><span class="slant thai">กะเลวะรัม</span><span class="slant ram">คะเลวะรัม</span> — ร่างกาย, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — เขาผู้ซึ่ง, <span class="slant iast">prayāti</span><span class="slant pali">ปฺรยาติ</span><span class="slant thai">ประยาติ</span><span class="slant ram">พระยาทิ</span> — ไป, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">mat-bhāvam</span><span class="slant pali">มตฺ-ภาวมฺ</span><span class="slant thai">มัต-ภาวัม</span><span class="slant ram">มัท-บฺาวัม</span> — ธรรมชาติของข้า, <span class="slant iast">yāti</span><span class="slant pali">ยาติ</span><span class="slant thai">ยาติ</span><span class="slant ram">ยาทิ</span> — บรรลุ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">asti</span><span class="slant pali">อสฺติ</span><span class="slant thai">อัสติ</span><span class="slant ram">อัสทิ</span> — มี, <span class="slant iast">atra</span><span class="slant pali">อตฺร</span><span class="slant thai">อัตระ</span><span class="slant ram">อทระ</span> — ที่นี่, <span class="slant iast">saṁśayaḥ</span><span class="slant pali">สํศยห์</span><span class="slant thai">สังศะยะห์</span><span class="slant ram">สัมชะยะฮ</span> — ข้อสงสัย
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้&nbsp;&nbsp;ได้เน้นถึงจุดสำคัญของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้ใดที่วิญญาณออกจากร่าง<wbr>ในขณะที่มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจะถูกย้ายไปยังธรรมชาติทิพย์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทันที&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นผู้บริสุทธิ์ที่สุดในหมู่ผู้บริสุทธิ์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ผู้ใดที่มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอยู่เสมอจะ<wbr>เป็นผู้บริสุทธิ์ที่สุดในหมู่ผู้บริสุทธิ์เช่นเดียวกัน&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>สฺมรนฺ</i>&nbsp;&nbsp;(“ระลึกถึง”)&nbsp;&nbsp;มีความสำคัญการระลึกถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นไปไม่ได้สำหรับจิตวิญญาณผู้ไม่บริสุทธิ์ที่ไม่ได้ปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกตั้งแต่เริ่ม<wbr>แรกของชีวิต&nbsp;&nbsp;หากเราปรารถนาความสำเร็จในบั้นปลายชีวิต&nbsp;&nbsp;วิธีการระลึกถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>เป็นหัวใจสำคัญ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรสวดภาวนามหามนต์&nbsp;&nbsp;-ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;อยู่เสมอ<wbr>โดยไม่มีวันหยุด&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงแนะนำให้เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีความอดทนเหมือนกับต้นไม้&nbsp;&nbsp;(<i>ตโรรฺ&nbsp;&nbsp;อปิ&nbsp;&nbsp;สหิษฺณุนา</i>&nbsp;&nbsp;)&nbsp;&nbsp;อาจมีอุปสรรคมากมายสำหรับผู้ที่สวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อย่างไรก็ดีเราต้องอดทนต่ออุปสรรคทั้งหลายเหล่านี้&nbsp;&nbsp;และภาวนา&nbsp;&nbsp;-ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;อย่างต่อ<wbr>เนื่อง&nbsp;&nbsp;เพื่อในบั้นปลายชีวิตเราสามารถได้รับประโยชน์โดยสมบูรณ์จาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก
+  โศลกนี้&nbsp;&nbsp;ได้เน้นถึงจุดสำคัญของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ผู้ใดที่วิญญาณออกจากร่าง<wbr>ในขณะที่มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจะถูกย้ายไปยังธรรมชาติทิพย์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทันที&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นผู้บริสุทธิ์ที่สุดในหมู่ผู้บริสุทธิ์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ผู้ใดที่มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอยู่เสมอจะ<wbr>เป็นผู้บริสุทธิ์ที่สุดในหมู่ผู้บริสุทธิ์เช่นเดียวกัน&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">smaran</span><span class="slant pali">สฺมรนฺ</span><span class="slant thai">สมะรัน</span><span class="slant ram">สมะรัน</span>&nbsp;&nbsp;(“ระลึกถึง”)&nbsp;&nbsp;มีความสำคัญการระลึกถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นไปไม่ได้สำหรับจิตวิญญาณผู้ไม่บริสุทธิ์ที่ไม่ได้ปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกตั้งแต่เริ่ม<wbr>แรกของชีวิต&nbsp;&nbsp;หากเราปรารถนาความสำเร็จในบั้นปลายชีวิต&nbsp;&nbsp;วิธีการระลึกถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>เป็นหัวใจสำคัญ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรสวดภาวนามหามนต์&nbsp;&nbsp;-ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;อยู่เสมอ<wbr>โดยไม่มีวันหยุด&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงแนะนำให้เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีความอดทนเหมือนกับต้นไม้&nbsp;&nbsp;(<span class="slant iast">taror&nbsp;&nbsp;api&nbsp;&nbsp;sahiṣṇunā</span><span class="slant pali">ตโรรฺอปิสหิษฺณุนา</span><span class="slant thai">ตะโรรอะปิสะหิษณุนา</span><span class="slant ram">อพิzzz</span>&nbsp;&nbsp;)&nbsp;&nbsp;อาจมีอุปสรรคมากมายสำหรับผู้ที่สวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อย่างไรก็ดีเราต้องอดทนต่ออุปสรรคทั้งหลายเหล่านี้&nbsp;&nbsp;และภาวนา&nbsp;&nbsp;-ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร-&nbsp;&nbsp;อย่างต่อ<wbr>เนื่อง&nbsp;&nbsp;เพื่อในบั้นปลายชีวิตเราสามารถได้รับประโยชน์โดยสมบูรณ์จาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก
   </p>
 </div>
 

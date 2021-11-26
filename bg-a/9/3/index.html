@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.3</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อศฺรทฺทธานาฮ ปุรุษา</i><br /><i>ธรฺมสฺยาสฺย ปรนฺ-ตป</i><br /><i>อปฺราปฺย มาํ นิวรฺตเนฺต</i><br /><i>มฺฤตฺยุ-สํสาร-วรฺตฺมนิ</i>
+<span class="slant iast">aśraddadhānāḥ puruṣā<br /></span>
+<span class="slant pali">อศฺรทฺทธานาห์ ปุรุษา<br /></span>
+<span class="slant thai">อัศรัททะธานาห์ ปุรุษา<br /></span>
+<span class="slant ram">อัชรัดดะดฺานาฮ พุระชา<br /></span>
+<span class="slant iast">dharmasyāsya paran-tapa<br /></span>
+<span class="slant pali">ธรฺมสฺยาสฺย ปรนฺ-ตป<br /></span>
+<span class="slant thai">ธัรมัสยาสยะ ปะรัน-ตะปะ<br /></span>
+<span class="slant ram">ดฺารมัสยาสยะ พะรันทะพะ<br /></span>
+<span class="slant iast">aprāpya māṁ nivartante<br /></span>
+<span class="slant pali">อปฺราปฺย มำ นิวรฺตนฺเต<br /></span>
+<span class="slant thai">อัปราปยะ มาง นิวัรตันเต<br /></span>
+<span class="slant ram">อัพราพยะ มาม นิวารทันเท<br /></span>
+<span class="slant iast">mṛtyu-saṁsāra-vartmani<br /></span>
+<span class="slant pali">มฺฤตฺยุ-สํสาร-วรฺตฺมนิ<br /></span>
+<span class="slant thai">มฤตยุ-สังสาระ-วัรตมะนิ<br /></span>
+<span class="slant ram">มริทยุ-สัมสาระ-วารทมะนิ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อศฺรทฺทธานาฮ</i> — พวกที่ไม่มีศรัทธา, <i>ปุรุษาฮ</i> — บุคคลเหล่านี้, <i>ธรฺมสฺย</i> — ไปสู่วิธีแห่งศาสนา, <i>อสฺย</i> — นี้, <i>ปรมฺ-ตป</i> — โอ้ ผู้สังหารศัตรู, <i>อปฺราปฺย</i> — ไม่ได้รับ, <i>มามฺ</i> — ข้า, <i>นิวรฺตเนฺต</i> — กลับ มา, <i>มฺฤตฺยุ</i> — ของความตาย, <i>สํสาร</i> — ในความเป็นอยู่ทางวัตถุ, <i>วรฺตฺมนิ</i> — บนวิธีทาง
+  <span class="slant iast">aśraddadhānāḥ</span><span class="slant pali">อศฺรทฺทธานาห์</span><span class="slant thai">อัศรัททะธานาห์</span><span class="slant ram">อัชรัดดะดฺานาฮ</span> — พวกที่ไม่มีศรัทธา, <span class="slant iast">puruṣāḥ</span><span class="slant pali">ปุรุษาห์</span><span class="slant thai">ปุรุษาห์</span><span class="slant ram">พุรุชาฮ</span> — บุคคลเหล่านี้, <span class="slant iast">dharmasya</span><span class="slant pali">ธรฺมสฺย</span><span class="slant thai">ธัรมัสยะ</span><span class="slant ram">ดฺารมัสยะ</span> — ไปสู่วิธีแห่งศาสนา, <span class="slant iast">asya</span><span class="slant pali">อสฺย</span><span class="slant thai">อัสยะ</span><span class="slant ram">อัสยะ</span> — นี้, <span class="slant iast">param-tapa</span><span class="slant pali">ปรมฺ-ตป</span><span class="slant thai">ปะรัม-ตะปะ</span><span class="slant ram">พะรันทะพะ</span> — โอ้ ผู้สังหารศัตรู, <span class="slant iast">aprāpya</span><span class="slant pali">อปฺราปฺย</span><span class="slant thai">อัปราปยะ</span><span class="slant ram">อพราพยะ</span> — ไม่ได้รับ, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">nivartante</span><span class="slant pali">นิวรฺตนฺเต</span><span class="slant thai">นิวัรตันเต</span><span class="slant ram">นิวารทันเท</span> — กลับ มา, <span class="slant iast">mṛtyu</span><span class="slant pali">มฺฤตฺยุ</span><span class="slant thai">มฤตยุ</span><span class="slant ram">มริทยุ</span> — ของความตาย, <span class="slant iast">saṁsāra</span><span class="slant pali">สํสาร</span><span class="slant thai">สังสาระ</span><span class="slant ram">สัมสาระ</span> — ในความเป็นอยู่ทางวัตถุ, <span class="slant iast">vartmani</span><span class="slant pali">วรฺตฺมนิ</span><span class="slant thai">วัรตมะนิ</span><span class="slant ram">วารทมะนิ</span> — บนวิธีทาง
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ไม่ศรัทธาจะไม่สามารถประสบผลสำเร็จกับวิธีการอุทิศตนเสียสละรับใช้นี้&nbsp;&nbsp;นี่<wbr>คือคำอธิบายของโศลกนี้&nbsp;&nbsp;ความศรัทธาเกิดขึ้นจากการมาคบหาสมาคมกับสาวก&nbsp;&nbsp;คน<wbr>อับโชคแม้หลังจากสดับฟังตามหลักฐานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากบุคลิกภาพผู้ยิ่งใหญ่ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ก็ยังไม่มีความศรัทธาในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ยังลังเลใจ&nbsp;&nbsp;และไม่สามารถตั้งจิตมั่นอยู่<wbr>ในการอุทิศตนเสียสละรับใช้ต่อพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความศรัทธาเป็นปัจจัยสำคัญที่สุดเพื่อเจริญก้าวหน้าใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ไจตนฺย-จริตามฺฤต</i>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;ความศรัทธา<wbr>คือความมั่นใจอย่างสมบูรณ์ว่า&nbsp;&nbsp;จากการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราสามารถบรรลุ<wbr>ถึงความสมบูรณ์ทั้งหลายทั้งปวง&nbsp;&nbsp;เช่นนี้เรียกว่าความศรัทธาที่แท้จริง&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(4.31.14)
+  ผู้ไม่ศรัทธาจะไม่สามารถประสบผลสำเร็จกับวิธีการอุทิศตนเสียสละรับใช้นี้&nbsp;&nbsp;นี่<wbr>คือคำอธิบายของโศลกนี้&nbsp;&nbsp;ความศรัทธาเกิดขึ้นจากการมาคบหาสมาคมกับสาวก&nbsp;&nbsp;คน<wbr>อับโชคแม้หลังจากสดับฟังตามหลักฐานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากบุคลิกภาพผู้ยิ่งใหญ่ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ก็ยังไม่มีความศรัทธาในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ยังลังเลใจ&nbsp;&nbsp;และไม่สามารถตั้งจิตมั่นอยู่<wbr>ในการอุทิศตนเสียสละรับใช้ต่อพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความศรัทธาเป็นปัจจัยสำคัญที่สุดเพื่อเจริญก้าวหน้าใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">caitanya-caritāmṛta</span><span class="slant pali">ไจตนฺย-จริตามฺฤต</span><span class="slant thai">ไจตันยะ-จะริตามฤตะ</span><span class="slant ram">เชธันญะ-</span>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;ความศรัทธา<wbr>คือความมั่นใจอย่างสมบูรณ์ว่า&nbsp;&nbsp;จากการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราสามารถบรรลุ<wbr>ถึงความสมบูรณ์ทั้งหลายทั้งปวง&nbsp;&nbsp;เช่นนี้เรียกว่าความศรัทธาที่แท้จริง&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(4.31.14)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยตฺหา ตโรรฺ มูล-นิเษจเนน</i><br /><i>ตฺฤปฺยนฺติ ตตฺ-สฺกนฺธ-ภุโชปศาขาฮ</i><br /><i>ปฺราโณปหาราจฺ จ ยเตฺหนฺทฺริยาณาํ</i><br /><i>ตไตฺหว สรฺวารฺหณมฺ อจฺยุเตชฺยา</i>
+<span class="slant iast">yathā taror mūla-niṣecanena<br /></span>
+<span class="slant pali">ยถา ตโรรฺ มูล-นิเษจเนน<br /></span>
+<span class="slant thai">ยะถา ตะโรร มูละ-นิเษจะเนนะ<br /></span>
+<span class="slant ram">ยะทฺา ทะโรร มูละ-นิเชชะเนนะ<br /></span>
+<span class="slant iast">tṛpyanti tat-skandha-bhujopaśākhāḥ<br /></span>
+<span class="slant pali">ตฺฤปฺยนฺติ ตตฺ-สฺกนฺธ-ภุโชปศาขาห์<br /></span>
+<span class="slant thai">ตฤปยันติ ตัต-สกันธะ-ภุโชปะศาขาห์<br /></span>
+<span class="slant ram">ทริพยันทิ ทัท-สคันดฺะ-บํูโจพะชาคาฮ<br /></span>
+<span class="slant iast">prāṇopahārāc ca yathendriyāṇāṁ<br /></span>
+<span class="slant pali">ปฺราโณปหาราจฺ จ ยเถนฺทฺริยาณำ<br /></span>
+<span class="slant thai">ปราโณปะหาราจ จะ ยะเถนทริยาณาง<br /></span>
+<span class="slant ram">พราโณพะฮาราช ชะ ยะเทนดริยาณาม<br /></span>
+<span class="slant iast">tathaiva sarvārhaṇam acyutejyā<br /></span>
+<span class="slant pali">ตไถว สรฺวารฺหณมฺ อจฺยุเตชฺยา<br /></span>
+<span class="slant thai">ตะไถวะ สัรวารหะณัม อัจยุเตชยา<br /></span>
+<span class="slant ram">ทะไทฺวะ สารวารฮะณัม อัชยุเทจยา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “จากการรดน้ำที่รากของต้นไม้&nbsp;&nbsp;จะทำให้กิ่งก้านสาขาและใบต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดได้รับความพึง<wbr>พอใจ&nbsp;&nbsp;และจากการส่งอาหารไปที่ท้อง&nbsp;&nbsp;จะทำให้ประสาทสัมผัสต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหลายของร่างกาย<wbr>ได้รับความพึงพอใจ&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;จากการปฏิบัติรับใช้ทิพย์ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นี้จะทำให้<wbr>เทวดาและสิ่งมีชีวิตอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหลายได้รับความพึงพอใจโดยปริยาย”&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;หลังจากอ่าน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;เราควรมาถึงจุดสรุปของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ได้ในทันที&nbsp;&nbsp;เราควรยกเลิกการ<wbr>ปฏิบัติอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;และรับเอาวิธีการรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มาปฏิบัติ&nbsp;&nbsp;หากมั่นใจ<wbr>เกี่ยวกับปรัชญาชีวิตเช่นนี้&nbsp;&nbsp;นี่คือความศรัทธา
+  “จากการรดน้ำที่รากของต้นไม้&nbsp;&nbsp;จะทำให้กิ่งก้านสาขาและใบต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดได้รับความพึง<wbr>พอใจ&nbsp;&nbsp;และจากการส่งอาหารไปที่ท้อง&nbsp;&nbsp;จะทำให้ประสาทสัมผัสต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหลายของร่างกาย<wbr>ได้รับความพึงพอใจ&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;จากการปฏิบัติรับใช้ทิพย์ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นี้จะทำให้<wbr>เทวดาและสิ่งมีชีวิตอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหลายได้รับความพึงพอใจโดยปริยาย”&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;หลังจากอ่าน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;เราควรมาถึงจุดสรุปของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ได้ในทันที&nbsp;&nbsp;เราควรยกเลิกการ<wbr>ปฏิบัติอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;และรับเอาวิธีการรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มาปฏิบัติ&nbsp;&nbsp;หากมั่นใจ<wbr>เกี่ยวกับปรัชญาชีวิตเช่นนี้&nbsp;&nbsp;นี่คือความศรัทธา
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การพัฒนาความศรัทธานี้เป็นวิธีการของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกแบ่งออกเป็นสามระดับ&nbsp;&nbsp;ในระดับที่สามคือพวกไม่มีความศรัทธา&nbsp;&nbsp;ถึงแม้ปฏิบัติ<wbr>การอุทิศตนเสียสละรับใช้อย่างเป็นทางการ&nbsp;&nbsp;พวกนี้ไม่สามารถบรรลุถึงระดับแห่งความ<wbr>สมบูรณ์สูงสุด&nbsp;&nbsp;เป็นไปได้อย่างมากว่าหลังระยะเวลาหนึ่งก็จะลื่นไถลตกลงไป&nbsp;&nbsp;พวกเขา<wbr>อาจปฏิบัติรับใช้&nbsp;&nbsp;แต่เนื่องจากไม่มีความมั่นใจและความศรัทธาอย่างสมบูรณ์&nbsp;&nbsp;จึงเป็น<wbr>สิ่งยากมากที่จะปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างต่อเนื่อง&nbsp;&nbsp;เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีประสบการณ์ภาคปฏิบัติ<wbr>ว่า&nbsp;&nbsp;จากกิจกรรมเพื่อเผยแพร่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บางคนเข้ามาและปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกด้วยแรงกระตุ้นบางอย่างที่ซ่อนเร้นอยู่ภายในใจ&nbsp;&nbsp;ทันทีที่ฐานะดีขึ้นจะยกเลิกวิธี<wbr>การปฏิบัตินี้&nbsp;&nbsp;และไปปฏิบัติตามวิถีทางเดิมอีกครั้งหนึ่ง&nbsp;&nbsp;ความศรัทธาเท่านั้นที่จะทำให้<wbr>บุคคลเจริญก้าวหน้าใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เกี่ยวกับการพัฒนาความศรัทธา&nbsp;&nbsp;ผู้รอบรู้ใน<wbr>วรรณกรรมแห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;และบรรลุถึงระดับแห่งความศรัทธาที่มั่นคง<wbr>เรียกว่าบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลชั้นสองคือพวกที่ไม่ค่อยเจริญก้าวหน้า<wbr>เท่าใดนักในการเข้าใจพระคัมภีร์แห่งการอุทิศตนเสียสละ&nbsp;&nbsp;แต่มีความศรัทธาอย่างมั่นคง<wbr>โดยปริยายว่า&nbsp;&nbsp;<i>กฺฤษฺณ-ภกฺติ</i>&nbsp;&nbsp;หรือการรับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นวิถีทางที่ดีที่สุด&nbsp;&nbsp;และด้วยความ<wbr>ศรัทธาอันแรงกล้าจึงนำมาปฏิบัติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกนี้ดีกว่าบุคคลชั้นสามที่ไม่มีทั้งความรู้<wbr>ในพระคัมภีร์อย่างสมบูรณ์&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;แต่เนื่องจากได้มาคบหาสมาคมและ<wbr>จากความเรียบง่ายจึงพยายามปฏิบัติตาม&nbsp;&nbsp;บุคคลชั้นสามใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอาจตกลง<wbr>ต่ำ&nbsp;&nbsp;แต่บุคคลชั้นสองจะไม่ตกลงต่ำ&nbsp;&nbsp;สำหรับบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไม่มีโอกาส<wbr>ที่จะตกลงต่ำได้เลย&nbsp;&nbsp;และแน่นอนว่าจะเจริญก้าวหน้าจนบรรลุผลสำเร็จในที่สุด&nbsp;&nbsp;สำหรับ<wbr>บุคคลชั้นสามใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ถึงแม้ว่าจะมีความศรัทธาและมั่นใจว่าการอุทิศตน<wbr>เสียสละรับใช้ต่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นสิ่งที่ดีมาก&nbsp;&nbsp;แต่ยังไม่ได้รับความรู้เกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จากพระ<wbr>คัมภีร์&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;อย่างเพียงพอ&nbsp;&nbsp;บางครั้งบุคคลชั้นสามใน<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกมีแนวโน้มไปสู่&nbsp;&nbsp;<i>กรฺม-โยค</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ชฺญาน-โยค</i>&nbsp;&nbsp;บางครั้งพวกนี้รู้สึก<wbr>หวั่นไหว&nbsp;&nbsp;แต่ทันทีที่โรคร้ายแห่ง&nbsp;&nbsp;<i>กรฺม-โยค</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>ชฺญาน-โยค</i>&nbsp;&nbsp;ถูกขจัดไป&nbsp;&nbsp;จะกลาย<wbr>มาเป็นบุคคลชั้นสองหรือบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;อธิบาย<wbr>ว่าความศรัทธาใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แบ่งออกเป็นสามระดับ&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ภาคสิบเอ็ดได้<wbr>อธิบายถึงความเชื่อมั่นชั้นหนึ่ง&nbsp;&nbsp;ความเชื่อมั่นชั้นสอง&nbsp;&nbsp;และความเชื่อมั่นชั้นสาม&nbsp;&nbsp;ไว้เช่นกันบุคคลผู้ไม่มีศรัทธาแม้หลังจากสดับฟังเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และความดีเลิศแห่งการอุทิศ<wbr>ตนเสียสละรับใช้&nbsp;&nbsp;คิดว่าเป็นเพียงถ้อยคำสรรเสริญเท่านั้น&nbsp;&nbsp;จะพบว่าวิถีทางนี้ยากมาก&nbsp;&nbsp;ถึง<wbr>แม้ดูเหมือนว่าปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;สำหรับบุคคลเช่นนี้มีความหวังเพียงเล็ก<wbr>น้อยเท่านั้นที่จะบรรลุถึงความสมบูรณ์&nbsp;&nbsp;ดังนั้นความศรัทธาจึงเป็นสิ่งสำคัญมากในการ<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้
+  การพัฒนาความศรัทธานี้เป็นวิธีการของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกแบ่งออกเป็นสามระดับ&nbsp;&nbsp;ในระดับที่สามคือพวกไม่มีความศรัทธา&nbsp;&nbsp;ถึงแม้ปฏิบัติ<wbr>การอุทิศตนเสียสละรับใช้อย่างเป็นทางการ&nbsp;&nbsp;พวกนี้ไม่สามารถบรรลุถึงระดับแห่งความ<wbr>สมบูรณ์สูงสุด&nbsp;&nbsp;เป็นไปได้อย่างมากว่าหลังระยะเวลาหนึ่งก็จะลื่นไถลตกลงไป&nbsp;&nbsp;พวกเขา<wbr>อาจปฏิบัติรับใช้&nbsp;&nbsp;แต่เนื่องจากไม่มีความมั่นใจและความศรัทธาอย่างสมบูรณ์&nbsp;&nbsp;จึงเป็น<wbr>สิ่งยากมากที่จะปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างต่อเนื่อง&nbsp;&nbsp;เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีประสบการณ์ภาคปฏิบัติ<wbr>ว่า&nbsp;&nbsp;จากกิจกรรมเพื่อเผยแพร่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บางคนเข้ามาและปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกด้วยแรงกระตุ้นบางอย่างที่ซ่อนเร้นอยู่ภายในใจ&nbsp;&nbsp;ทันทีที่ฐานะดีขึ้นจะยกเลิกวิธี<wbr>การปฏิบัตินี้&nbsp;&nbsp;และไปปฏิบัติตามวิถีทางเดิมอีกครั้งหนึ่ง&nbsp;&nbsp;ความศรัทธาเท่านั้นที่จะทำให้<wbr>บุคคลเจริญก้าวหน้าใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เกี่ยวกับการพัฒนาความศรัทธา&nbsp;&nbsp;ผู้รอบรู้ใน<wbr>วรรณกรรมแห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;และบรรลุถึงระดับแห่งความศรัทธาที่มั่นคง<wbr>เรียกว่าบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลชั้นสองคือพวกที่ไม่ค่อยเจริญก้าวหน้า<wbr>เท่าใดนักในการเข้าใจพระคัมภีร์แห่งการอุทิศตนเสียสละ&nbsp;&nbsp;แต่มีความศรัทธาอย่างมั่นคง<wbr>โดยปริยายว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa-bhakti</span><span class="slant pali">กฺฤษฺณ-ภกฺติ</span><span class="slant thai">กฤษณะ-ภักติ</span><span class="slant ram">คริชณะ-บัฺคธิ,บัคฺธิ</span>&nbsp;&nbsp;หรือการรับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นวิถีทางที่ดีที่สุด&nbsp;&nbsp;และด้วยความ<wbr>ศรัทธาอันแรงกล้าจึงนำมาปฏิบัติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกนี้ดีกว่าบุคคลชั้นสามที่ไม่มีทั้งความรู้<wbr>ในพระคัมภีร์อย่างสมบูรณ์&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;แต่เนื่องจากได้มาคบหาสมาคมและ<wbr>จากความเรียบง่ายจึงพยายามปฏิบัติตาม&nbsp;&nbsp;บุคคลชั้นสามใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอาจตกลง<wbr>ต่ำ&nbsp;&nbsp;แต่บุคคลชั้นสองจะไม่ตกลงต่ำ&nbsp;&nbsp;สำหรับบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไม่มีโอกาส<wbr>ที่จะตกลงต่ำได้เลย&nbsp;&nbsp;และแน่นอนว่าจะเจริญก้าวหน้าจนบรรลุผลสำเร็จในที่สุด&nbsp;&nbsp;สำหรับ<wbr>บุคคลชั้นสามใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ถึงแม้ว่าจะมีความศรัทธาและมั่นใจว่าการอุทิศตน<wbr>เสียสละรับใช้ต่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นสิ่งที่ดีมาก&nbsp;&nbsp;แต่ยังไม่ได้รับความรู้เกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จากพระ<wbr>คัมภีร์&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;อย่างเพียงพอ&nbsp;&nbsp;บางครั้งบุคคลชั้นสามใน<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกมีแนวโน้มไปสู่&nbsp;&nbsp;<span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">jñāna-yoga</span><span class="slant pali">ชฺญาน-โยค</span><span class="slant thai">ชญานะ-โยคะ</span><span class="slant ram">กยานะ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;บางครั้งพวกนี้รู้สึก<wbr>หวั่นไหว&nbsp;&nbsp;แต่ทันทีที่โรคร้ายแห่ง&nbsp;&nbsp;<span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">jñāna-yoga</span><span class="slant pali">ชฺญาน-โยค</span><span class="slant thai">ชญานะ-โยคะ</span><span class="slant ram">กยานะ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ถูกขจัดไป&nbsp;&nbsp;จะกลาย<wbr>มาเป็นบุคคลชั้นสองหรือบุคคลชั้นหนึ่งใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;อธิบาย<wbr>ว่าความศรัทธาใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แบ่งออกเป็นสามระดับ&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ภาคสิบเอ็ดได้<wbr>อธิบายถึงความเชื่อมั่นชั้นหนึ่ง&nbsp;&nbsp;ความเชื่อมั่นชั้นสอง&nbsp;&nbsp;และความเชื่อมั่นชั้นสาม&nbsp;&nbsp;ไว้เช่นกันบุคคลผู้ไม่มีศรัทธาแม้หลังจากสดับฟังเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และความดีเลิศแห่งการอุทิศ<wbr>ตนเสียสละรับใช้&nbsp;&nbsp;คิดว่าเป็นเพียงถ้อยคำสรรเสริญเท่านั้น&nbsp;&nbsp;จะพบว่าวิถีทางนี้ยากมาก&nbsp;&nbsp;ถึง<wbr>แม้ดูเหมือนว่าปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;สำหรับบุคคลเช่นนี้มีความหวังเพียงเล็ก<wbr>น้อยเท่านั้นที่จะบรรลุถึงความสมบูรณ์&nbsp;&nbsp;ดังนั้นความศรัทธาจึงเป็นสิ่งสำคัญมากในการ<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้
   </p>
 </div>
 

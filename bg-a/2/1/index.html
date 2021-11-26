@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.1</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สญฺชย อุวาจ</i><br /><i>ตํ ตตฺหา กฺฤปยาวิษฺฏมฺ</i><br /><i>อศฺรุ-ปูรฺณากุเลกฺษณมฺ</i><br /><i>วิษีทนฺตมฺ อิทํ วากฺยมฺ</i><br /><i>อุวาจ มธุสูทนฮ</i>
+<span class="slant iast">sañjaya uvāca<br /></span>
+<span class="slant pali">สญฺชย อุวาจ<br /></span>
+<span class="slant thai">สัญชะยะ อุวาจะ<br /></span>
+<span class="slant ram">สันจะยะ อุวาชะ<br /></span>
+<span class="slant iast">taṁ tathā kṛpayāviṣṭam<br /></span>
+<span class="slant pali">ตํ ตถา กฺฤปยาวิษฺฏมฺ<br /></span>
+<span class="slant thai">ตัง ตะถา กฤปะยาวิษฏัม<br /></span>
+<span class="slant ram">ทัม ทะทฺา คริพะยาวิชทัม<br /></span>
+<span class="slant iast">aśru-pūrṇākulekṣaṇam<br /></span>
+<span class="slant pali">อศฺรุ-ปูรฺณากุเลกฺษณมฺ<br /></span>
+<span class="slant thai">อัศรุ-ปูรณากุเลกษะณัม<br /></span>
+<span class="slant ram">อัชรุ-พูรณาคุเลคชะณัม<br /></span>
+<span class="slant iast">viṣīdantam idaṁ vākyam<br /></span>
+<span class="slant pali">วิษีทนฺตมฺ อิทํ วากฺยมฺ<br /></span>
+<span class="slant thai">วิษีทันตัม อิทัง วากยัม<br /></span>
+<span class="slant ram">วิชีดันทัม อิดัม วาคยัม<br /></span>
+<span class="slant iast">uvāca madhusūdanaḥ<br /></span>
+<span class="slant pali">อุวาจ มธุสูทนห์<br /></span>
+<span class="slant thai">อุวาจะ มะธุสูทะนะห์<br /></span>
+<span class="slant ram">อุวาชะ มะดํุสูดะนะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สญฺชยฮ อุวาจ</i> — <i>สญฺชย</i> กล่าว, <i>ตมฺ</i> — แด่ <i>อรฺชุน</i>, <i>ตตฺหา</i> — ดังนั้น, <i>กฺฤปยา</i> — ด้วย ความสงสาร, <i>อาวิษฺฏมฺ</i> — เต็มตื้น, <i>อศฺรุ-ปูรฺณ-อากุล</i> — เปี่ยมไปด้วยน้ำตา, <i>อีกฺษณมฺ</i> — ดวงตา, <i>วิษีทนฺตมฺ</i> — เศร้าโศก, <i>อิทมฺ</i> — เหล่านี้, <i>วากฺยมฺ</i> — คำพูด, <i>อุวาจ</i> — กล่าว, <i>มธุ-สูทนฮ</i> — ผู้สังหารมะดํุ
+  <span class="slant iast">sañjayaḥ uvāca</span><span class="slant pali">สญฺชยห์อุวาจ</span><span class="slant thai">สัญชะยะห์อุวาจะ</span><span class="slant ram">สันจะยะฮ อุวาชะ</span> — <span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span> กล่าว, <span class="slant iast">tam</span><span class="slant pali">ตมฺ</span><span class="slant thai">ตัม</span><span class="slant ram">ทัม</span> — แด่ <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — ดังนั้น, <span class="slant iast">kṛpayā</span><span class="slant pali">กฺฤปยา</span><span class="slant thai">กฤปะยา</span><span class="slant ram">คริพะยา</span> — ด้วย ความสงสาร, <span class="slant iast">āviṣṭam</span><span class="slant pali">อาวิษฺฏมฺ</span><span class="slant thai">อาวิษฏัม</span><span class="slant ram">อาวิชทัม</span> — เต็มตื้น, <span class="slant iast">aśru-pūrṇa-ākula</span><span class="slant pali">อศฺรุ-ปูรฺณ-อากุล</span><span class="slant thai">อัศรุ-ปูรณะ-อากุละ</span><span class="slant ram">อัชรุ-พูรณะ-อาคุละ</span> — เปี่ยมไปด้วยน้ำตา, <span class="slant iast">īkṣaṇam</span><span class="slant pali">อีกฺษณมฺ</span><span class="slant thai">อีกษะณัม</span><span class="slant ram">อีคชะณัม</span> — ดวงตา, <span class="slant iast">viṣīdantam</span><span class="slant pali">วิษีทนฺตมฺ</span><span class="slant thai">วิษีทันตัม</span><span class="slant ram">วิชีดันทัม</span> — เศร้าโศก, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — เหล่านี้, <span class="slant iast">vākyam</span><span class="slant pali">วากฺยมฺ</span><span class="slant thai">วากยัม</span><span class="slant ram">วาคยัม</span> — คำพูด, <span class="slant iast">uvāca</span><span class="slant pali">อุวาจ</span><span class="slant thai">อุวาจะ</span><span class="slant ram">อุวาชะ</span> — กล่าว, <span class="slant iast">madhu-sūdanaḥ</span><span class="slant pali">มธุ-สูทนห์</span><span class="slant thai">มะธุ-สูทะนะห์</span><span class="slant ram">มะดํุ- สูดะนะฮ</span> — ผู้สังหารมะดํุ
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>สญฺชย</i>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;ได้เห็น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเปี่ยมไปด้วยความเมตตาสงสาร&nbsp;&nbsp;จิตใจเศร้าสลด&nbsp;&nbsp;ดวงตาเปี่ยมไปด้วยน้ำตา&nbsp;&nbsp;<i>มธุสูทน</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสดังต่อไปนี้
+  <span class="slant iast">sañjaya</span><span class="slant pali">สญฺชย</span><span class="slant thai">สัญชะยะ</span><span class="slant ram">สันจะยะ</span>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;ได้เห็น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเปี่ยมไปด้วยความเมตตาสงสาร&nbsp;&nbsp;จิตใจเศร้าสลด&nbsp;&nbsp;ดวงตาเปี่ยมไปด้วยน้ำตา&nbsp;&nbsp;<span class="slant iast">madhusūdana</span><span class="slant pali">มธุสูทน</span><span class="slant thai">มะธุสูทะนะ</span><span class="slant ram">มะดํุสูดะนะ,มะดํุ- สูดะนะ,มะดํุ- <wbr>สูดะนะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสดังต่อไปนี้
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความเมตตาสงสารทางวัตถุ&nbsp;&nbsp;ความเศร้าโศกเสียใจ&nbsp;&nbsp;และน้ำตา&nbsp;&nbsp;ทั้งหมดนี้คือ<wbr>สัญลักษณ์แห่งอวิชชาต่อดวงชีวิตที่แท้จริง&nbsp;&nbsp;ความเมตตาสงสารต่อดวงวิญญาณอมตะ<wbr>คือความรู้แจ้ง&nbsp;&nbsp;คำว่า&nbsp;&nbsp;“&nbsp;&nbsp;<i>มธุสูทน</i>&nbsp;&nbsp;”&nbsp;&nbsp;มีความสำคัญในโศลกนี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงสังหาร<wbr>อสูร&nbsp;&nbsp;<i>มธุ</i>&nbsp;&nbsp;และบัดนี้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงปรารถนาให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สังหารมารแห่งความเข้าใจผิดที่<wbr>ได้มาครอบงำพระองค์ในการปฏิบัติหน้าที่&nbsp;&nbsp;ไม่มีใครรู้ว่าความเมตตากรุณาควรนำไป<wbr>ใช้อย่างไร&nbsp;&nbsp;ความเมตตาสงสารต่อเสื้อผ้าของคนที่กำลังจมน้ำเป็นเรื่องไร้เหตุผล&nbsp;&nbsp;การ<wbr>ช่วยเสื้อผ้าหรือช่วยร่างวัตถุที่หยาบ&nbsp;&nbsp;ของผู้ที่กำลังตกอยู่ในมหาสมุทรแห่งอวิชชานั้น<wbr>ไม่สามารถช่วยเขาได้&nbsp;&nbsp;ผู้ไม่ทราบเช่นนี้&nbsp;&nbsp;และเศร้าโศกเสียใจกับเสื้อผ้าภายนอก&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ศูทฺร</i>&nbsp;&nbsp;หรือผู้ที่โศกเศร้าโดยไม่จำเป็น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;การกระทำเช่นนี้ไม่<wbr>สมควร&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงสามารถปัดเป่าความโศกเศร้าของผู้ที่ถูกอวิชชา<wbr>ครอบงำได้&nbsp;&nbsp;ด้วยจุดประสงค์นี้พระองค์จึงทรงขับร้องเพลง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;บทนี้ทรงแนะนำ<wbr>เราให้รู้สำนึกตนเองด้วยการวิเคราะห์ศึกษาร่างวัตถุและดวงวิญญาณ&nbsp;&nbsp;ดังที่ได้อธิบายไว้<wbr>โดยผู้ที่เชื่อถือได้สูงสุดคือองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;การรู้แจ้งเช่นนี้เป็นไปได้เมื่อเราทำงานโดยไม่<wbr>ยึดติดต่อผลทางวัตถุ&nbsp;&nbsp;และสถิตในแนวคิดแห่งตนเองที่แท้จริงอย่างมั่นคง
+  ความเมตตาสงสารทางวัตถุ&nbsp;&nbsp;ความเศร้าโศกเสียใจ&nbsp;&nbsp;และน้ำตา&nbsp;&nbsp;ทั้งหมดนี้คือ<wbr>สัญลักษณ์แห่งอวิชชาต่อดวงชีวิตที่แท้จริง&nbsp;&nbsp;ความเมตตาสงสารต่อดวงวิญญาณอมตะ<wbr>คือความรู้แจ้ง&nbsp;&nbsp;คำว่า&nbsp;&nbsp;“&nbsp;&nbsp;<span class="slant iast">madhusūdana</span><span class="slant pali">มธุสูทน</span><span class="slant thai">มะธุสูทะนะ</span><span class="slant ram">มะดํุสูดะนะ,มะดํุ- สูดะนะ,มะดํุ- <wbr>สูดะนะ</span>&nbsp;&nbsp;”&nbsp;&nbsp;มีความสำคัญในโศลกนี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงสังหาร<wbr>อสูร&nbsp;&nbsp;<span class="slant iast">madhu</span><span class="slant pali">มธุ</span><span class="slant thai">มะธุ</span><span class="slant ram">มะดํุ</span>&nbsp;&nbsp;และบัดนี้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงปรารถนาให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สังหารมารแห่งความเข้าใจผิดที่<wbr>ได้มาครอบงำพระองค์ในการปฏิบัติหน้าที่&nbsp;&nbsp;ไม่มีใครรู้ว่าความเมตตากรุณาควรนำไป<wbr>ใช้อย่างไร&nbsp;&nbsp;ความเมตตาสงสารต่อเสื้อผ้าของคนที่กำลังจมน้ำเป็นเรื่องไร้เหตุผล&nbsp;&nbsp;การ<wbr>ช่วยเสื้อผ้าหรือช่วยร่างวัตถุที่หยาบ&nbsp;&nbsp;ของผู้ที่กำลังตกอยู่ในมหาสมุทรแห่งอวิชชานั้น<wbr>ไม่สามารถช่วยเขาได้&nbsp;&nbsp;ผู้ไม่ทราบเช่นนี้&nbsp;&nbsp;และเศร้าโศกเสียใจกับเสื้อผ้าภายนอก&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>&nbsp;&nbsp;หรือผู้ที่โศกเศร้าโดยไม่จำเป็น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;การกระทำเช่นนี้ไม่<wbr>สมควร&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงสามารถปัดเป่าความโศกเศร้าของผู้ที่ถูกอวิชชา<wbr>ครอบงำได้&nbsp;&nbsp;ด้วยจุดประสงค์นี้พระองค์จึงทรงขับร้องเพลง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;บทนี้ทรงแนะนำ<wbr>เราให้รู้สำนึกตนเองด้วยการวิเคราะห์ศึกษาร่างวัตถุและดวงวิญญาณ&nbsp;&nbsp;ดังที่ได้อธิบายไว้<wbr>โดยผู้ที่เชื่อถือได้สูงสุดคือองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;การรู้แจ้งเช่นนี้เป็นไปได้เมื่อเราทำงานโดยไม่<wbr>ยึดติดต่อผลทางวัตถุ&nbsp;&nbsp;และสถิตในแนวคิดแห่งตนเองที่แท้จริงอย่างมั่นคง
   </p>
 </div>
 

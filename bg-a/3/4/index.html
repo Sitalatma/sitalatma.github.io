@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.4</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น กรฺมณามฺ อนารมฺภานฺ</i><br /><i>ไนษฺกรฺมฺยํ ปุรุโษ ′ศฺนุเต</i><br /><i>น จ สนฺนฺยสนาทฺ เอว</i><br /><i>สิทฺธิํ สมธิคจฺฉติ</i>
+<span class="slant iast">na karmaṇām anārambhān<br /></span>
+<span class="slant pali">น กรฺมณามฺ อนารมฺภานฺ<br /></span>
+<span class="slant thai">นะ กัรมะณาม อะนารัมภาน<br /></span>
+<span class="slant ram">นะ คารมะณาม อนารัมบฺาน<br /></span>
+<span class="slant iast">naiṣkarmyaṁ puruṣo ’śnute<br /></span>
+<span class="slant pali">ไนษฺกรฺมฺยํ ปุรุโษ ’ศฺนุเต<br /></span>
+<span class="slant thai">ไนษกัรมยัง ปุรุโษ ’ศนุเต<br /></span>
+<span class="slant ram">ไนชคารมยัม พุรุโช 'ชนุเท<br /></span>
+<span class="slant iast">na ca sannyasanād eva<br /></span>
+<span class="slant pali">น จ สนฺนฺยสนาทฺ เอว<br /></span>
+<span class="slant thai">นะ จะ สันนยะสะนาท เอวะ<br /></span>
+<span class="slant ram">นะ ชะ สันนยะสะนาด เอวะ<br /></span>
+<span class="slant iast">siddhiṁ samadhigacchati<br /></span>
+<span class="slant pali">สิทฺธึ สมธิคจฺฉติ<br /></span>
+<span class="slant thai">สิทธิง สะมะธิคัจฉะติ<br /></span>
+<span class="slant ram">สิดดฺิม สะมะดฺิกัชชะทีฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่, <i>กรฺมณามฺ</i> — แห่งหน้าที่ที่กำหนดไว้, <i>อนารมฺภาตฺ</i> — ด้วยการไม่ปฎิบัติ, <i>ไนษฺกรฺมฺยมฺ</i> — มีอิสระจากผลกรรม, <i>ปุรุษฮ</i> — บุคคล, <i>อศฺนุเต</i> — บรรลุ, <i>น</i> — ไม่, <i>จ</i> — เช่นกัน, <i>สนฺนฺยสนาตฺ</i> — ด้วยการเสียสละ, <i>เอว</i> — เพียงแต่, <i>สิทฺธิมฺ</i> — ประสบผลสำเร็จ, <i>สมธิคจฺฉติ</i> — บรรลุ
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">karmaṇām</span><span class="slant pali">กรฺมณามฺ</span><span class="slant thai">กัรมะณาม</span><span class="slant ram">คารมะณาม</span> — แห่งหน้าที่ที่กำหนดไว้, <span class="slant iast">anārambhāt</span><span class="slant pali">อนารมฺภาตฺ</span><span class="slant thai">อะนารัมภาต</span><span class="slant ram">อนารัมบฺาท</span> — ด้วยการไม่ปฎิบัติ, <span class="slant iast">naiṣkarmyam</span><span class="slant pali">ไนษฺกรฺมฺยมฺ</span><span class="slant thai">ไนษกัรมยัม</span><span class="slant ram">ไนชคาร- มยัม</span> — มีอิสระจากผลกรรม, <span class="slant iast">puruṣaḥ</span><span class="slant pali">ปุรุษห์</span><span class="slant thai">ปุรุษะห์</span><span class="slant ram">พุรุชะฮ</span> — บุคคล, <span class="slant iast">aśnute</span><span class="slant pali">อศฺนุเต</span><span class="slant thai">อัศนุเต</span><span class="slant ram">อัชนุเท</span> — บรรลุ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">sannyasanāt</span><span class="slant pali">สนฺนฺยสนาตฺ</span><span class="slant thai">สันนยะสะนาต</span><span class="slant ram">สันน ยะสะนาท</span> — ด้วยการเสียสละ, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — เพียงแต่, <span class="slant iast">siddhim</span><span class="slant pali">สิทฺธิมฺ</span><span class="slant thai">สิทธิม</span><span class="slant ram">สิดดิฺม</span> — ประสบผลสำเร็จ, <span class="slant iast">samadhigacchati</span><span class="slant pali">สมธิคจฺฉติ</span><span class="slant thai">สะมะธิคัจฉะติ</span><span class="slant ram">สะมะดฺิกัชชะ ที</span> — บรรลุ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ชีวิตระดับสละโลกรับนำมาปฎิบัติหลังจากจิตใจได้รับความบริสุทธิ์&nbsp;&nbsp;จากการปฎิบัติตามหน้าที่ที่กำหนดไว้&nbsp;&nbsp;หน้าที่นี้วางไว้เพื่อทำให้จิตใจของนักวัตถุนิยมบริสุทธิ์<wbr>ขึ้น&nbsp;&nbsp;หากไร้ซึ่งความบริสุทธิ์การรับเอาชีวิตระดับที่สี่หรือ&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;มาปฎิบัติอย่างเร่ง<wbr>ด่วนนั้นไม่สามารถทำให้เราประสบผลสำเร็จได้&nbsp;&nbsp;ตามที่นักปราชญ์ชอบทดลองกล่าวว่า<wbr>เพียงแต่รับเอาชีวิต&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;หรือเกษียณจากกิจกรรมเพื่อผลทางวัตถุแล้วเราจะดี<wbr>เทียบเท่ากับพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;ทันที&nbsp;&nbsp;หลักการนี้องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไม่ยอมรับ&nbsp;&nbsp;หากจิตใจยัง<wbr>ไม่บริสุทธิ์การอุปสมบทในระดับ&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;เพียงแต่จะสร้างความเดือดร้อนให้สังคม<wbr>เท่านั้น&nbsp;&nbsp;อีกด้านหนึ่ง&nbsp;&nbsp;หากบางคนมีความยินดีปฎิบัติรับใช้ทิพย์ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ถึงแม้ว่า<wbr>จะไม่ปฎิบัติตามหน้าที่ที่ได้กำหนดไว้&nbsp;&nbsp;ไม่ว่าอะไรที่เขาสามารถทำให้เจริญขึ้นในวิถีทาง<wbr>นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะทรงรับไว้&nbsp;&nbsp;(<i>พุทฺธิ-โยค</i>&nbsp;&nbsp;)&nbsp;&nbsp;<i>สฺวฺ-อลฺปมฺ&nbsp;&nbsp;อปฺยฺ&nbsp;&nbsp;อสฺย&nbsp;&nbsp;ธรฺมสฺย&nbsp;&nbsp;ตฺรายเต&nbsp;&nbsp;มหโต&nbsp;&nbsp;ภยาตฺ</i>&nbsp;&nbsp;แม้แต่การปฎิบัติตนเพียงนิดเดียวในหลักธรรมนี้จะสามารถนำเราให้<wbr>ข้ามพ้นความยากลำบากอันใหญ่หลวงได้
+  ชีวิตระดับสละโลกรับนำมาปฎิบัติหลังจากจิตใจได้รับความบริสุทธิ์&nbsp;&nbsp;จากการปฎิบัติตามหน้าที่ที่กำหนดไว้&nbsp;&nbsp;หน้าที่นี้วางไว้เพื่อทำให้จิตใจของนักวัตถุนิยมบริสุทธิ์<wbr>ขึ้น&nbsp;&nbsp;หากไร้ซึ่งความบริสุทธิ์การรับเอาชีวิตระดับที่สี่หรือ&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;มาปฎิบัติอย่างเร่ง<wbr>ด่วนนั้นไม่สามารถทำให้เราประสบผลสำเร็จได้&nbsp;&nbsp;ตามที่นักปราชญ์ชอบทดลองกล่าวว่า<wbr>เพียงแต่รับเอาชีวิต&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;หรือเกษียณจากกิจกรรมเพื่อผลทางวัตถุแล้วเราจะดี<wbr>เทียบเท่ากับพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;ทันที&nbsp;&nbsp;หลักการนี้องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไม่ยอมรับ&nbsp;&nbsp;หากจิตใจยัง<wbr>ไม่บริสุทธิ์การอุปสมบทในระดับ&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;เพียงแต่จะสร้างความเดือดร้อนให้สังคม<wbr>เท่านั้น&nbsp;&nbsp;อีกด้านหนึ่ง&nbsp;&nbsp;หากบางคนมีความยินดีปฎิบัติรับใช้ทิพย์ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ถึงแม้ว่า<wbr>จะไม่ปฎิบัติตามหน้าที่ที่ได้กำหนดไว้&nbsp;&nbsp;ไม่ว่าอะไรที่เขาสามารถทำให้เจริญขึ้นในวิถีทาง<wbr>นี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะทรงรับไว้&nbsp;&nbsp;(<span class="slant iast">buddhi-yoga</span><span class="slant pali">พุทฺธิ-โยค</span><span class="slant thai">พุทธิ-โยคะ</span><span class="slant ram">บุดดิฺ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;)&nbsp;&nbsp;<span class="slant iast">sv-alpam&nbsp;&nbsp;apy&nbsp;&nbsp;asya&nbsp;&nbsp;dharmasya&nbsp;&nbsp;trāyate&nbsp;&nbsp;mahato&nbsp;&nbsp;bhayāt</span><span class="slant pali">สฺวฺ-อลฺปมฺอปฺยฺอสฺยธรฺมสฺยตฺรายเตมหโตภยาตฺ</span><span class="slant thai">สว-อัลปัมอัปยอัสยะธัรมัสยะตรายะเตมะหะโตภะยาต</span><span class="slant ram">-อัลพัมอัสยะดฺารมัสยะทรายะเทบฺะยาท</span>&nbsp;&nbsp;แม้แต่การปฎิบัติตนเพียงนิดเดียวในหลักธรรมนี้จะสามารถนำเราให้<wbr>ข้ามพ้นความยากลำบากอันใหญ่หลวงได้
   </p>
 </div>
 

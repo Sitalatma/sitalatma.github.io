@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรี-ภควานฺ อุวาจ</i><br /><i>พหูนิ เม วฺยตีตานิ</i><br /><i>ชนฺมานิ ตว จารฺชุน</i><br /><i>ตานฺยฺ อหํ เวท สรฺวาณิ</i><br /><i>น ตฺวํ เวตฺตฺห ปรนฺ-ตป</i>
+<span class="slant iast">śrī-bhagavān uvāca<br /></span>
+<span class="slant pali">ศฺรี-ภควานฺ อุวาจ<br /></span>
+<span class="slant thai">ศรี-ภะคะวาน อุวาจะ<br /></span>
+<span class="slant ram">ชรี-บฺะกะวาน อุวาชะ<br /></span>
+<span class="slant iast">bahūni me vyatītāni<br /></span>
+<span class="slant pali">พหูนิ เม วฺยตีตานิ<br /></span>
+<span class="slant thai">พะหูนิ เม วยะตีตานิ<br /></span>
+<span class="slant ram">บะฮูนิ เม วิยะทีทานิ<br /></span>
+<span class="slant iast">janmāni tava cārjuna<br /></span>
+<span class="slant pali">ชนฺมานิ ตว จารฺชุน<br /></span>
+<span class="slant thai">ชันมานิ ตะวะ จารชุนะ<br /></span>
+<span class="slant ram">จันมานิ ทะวะ ชารจุนะ<br /></span>
+<span class="slant iast">tāny ahaṁ veda sarvāṇi<br /></span>
+<span class="slant pali">ตานฺยฺ อหํ เวท สรฺวาณิ<br /></span>
+<span class="slant thai">ตานย อะหัง เวทะ สัรวาณิ<br /></span>
+<span class="slant ram">ทานิ อะฮัม เวดะ สารวาณิ<br /></span>
+<span class="slant iast">na tvaṁ vettha paran-tapa<br /></span>
+<span class="slant pali">น ตฺวํ เวตฺถ ปรนฺ-ตป<br /></span>
+<span class="slant thai">นะ ตวัง เวตถะ ปะรัน-ตะปะ<br /></span>
+<span class="slant ram">นะ ทวัม เวททฺะ พะรันทะพะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรี-ภควานฺ อุวาจ</i> — บุคลิกภาพแห่งพระเจ้าตรัส,<i>พหูนิ</i> — หลาย, <i>เม</i> — ของข้า, <i>วฺยตีตานิ</i> — ได้ผ่านมา, <i>ชนฺมานิ</i> — เกิด, <i>ตว</i> — ของเธอ, <i>จ</i> — และเช่นกัน, <i>อรฺชุน</i> — โอ้ <i>อรฺชุน</i>, <i>ตานิ</i> — เหล่านั้น, <i>อหมฺ</i> — ข้า, <i>เวท</i> — ทราบ, <i>สรฺวาณิ</i> — ทั้งหมด, <i>น</i> — ไม่, <i>ตฺวมฺ</i> — เธอ, <i>เวตฺตฺห</i> — ทราบ, <i>ปรมฺ-ตป</i> — โอ้ ผู้กำราบศัตรู
+  <span class="slant iast">śrī-bhagavān uvāca</span><span class="slant pali">ศฺรี-ภควานฺอุวาจ</span><span class="slant thai">ศรี-ภะคะวานอุวาจะ</span><span class="slant ram">ชรี-บฺะกะวาน อุวาชะ</span> — บุคลิกภาพแห่งพระเจ้าตรัส,<span class="slant iast">bahūni</span><span class="slant pali">พหูนิ</span><span class="slant thai">พะหูนิ</span><span class="slant ram">บะฮูนิ</span> — หลาย, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">vyatītāni</span><span class="slant pali">วฺยตีตานิ</span><span class="slant thai">วยะตีตานิ</span><span class="slant ram">วิยะที ทานิ</span> — ได้ผ่านมา, <span class="slant iast">janmāni</span><span class="slant pali">ชนฺมานิ</span><span class="slant thai">ชันมานิ</span><span class="slant ram">จันมานิ</span> — เกิด, <span class="slant iast">tava</span><span class="slant pali">ตว</span><span class="slant thai">ตะวะ</span><span class="slant ram">ทะวะ</span> — ของเธอ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และเช่นกัน, <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> — โอ้ <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">tāni</span><span class="slant pali">ตานิ</span><span class="slant thai">ตานิ</span><span class="slant ram">ทานิ</span> — เหล่านั้น, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span> — ทราบ, <span class="slant iast">sarvāṇi</span><span class="slant pali">สรฺวาณิ</span><span class="slant thai">สัรวาณิ</span><span class="slant ram">สารวาณิ</span> — ทั้งหมด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — เธอ, <span class="slant iast">vettha</span><span class="slant pali">เวตฺถ</span><span class="slant thai">เวตถะ</span><span class="slant ram">เวททฺะ</span> — ทราบ, <span class="slant iast">param-tapa</span><span class="slant pali">ปรมฺ-ตป</span><span class="slant thai">ปะรัม-ตะปะ</span><span class="slant ram">พะรันทะพะ</span> — โอ้ ผู้กำราบศัตรู
   </p>
 </div>
 
@@ -73,43 +178,73 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.33)&nbsp;&nbsp;เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีข้อมูลเกี่ยวกับอวตารต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มากมาย&nbsp;&nbsp;ได้กล่าวไว้ดังนี้
+  ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.33)&nbsp;&nbsp;เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีข้อมูลเกี่ยวกับอวตารต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มากมาย&nbsp;&nbsp;ได้กล่าวไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อไทฺวตมฺ อจฺยุตมฺ อนาทิมฺ อนนฺต-รูปมฺ</i><br /><i>อาทฺยํ ปุราณ-ปุรุษํ นว-ยะอุวนํ จ</i><br /><i>เวเทษุ ทุรฺลภมฺ อทุรฺลภมฺ อาตฺม-ภกฺตะอุ</i><br /><i>โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ</i>
+<span class="slant iast">advaitam acyutam anādim ananta-rūpam<br /></span>
+<span class="slant pali">อไทฺวตมฺ อจฺยุตมฺ อนาทิมฺ อนนฺต-รูปมฺ<br /></span>
+<span class="slant thai">อัทไวตัม อัจยุตัม อะนาทิม อะนันตะ-รูปัม<br /></span>
+<span class="slant ram">อดไวทัม อัชยุทัม อนาดิม อนันทะ-รูพัม<br /></span>
+<span class="slant iast">ādyaṁ purāṇa-puruṣaṁ nava-yauvanaṁ ca<br /></span>
+<span class="slant pali">อาทฺยํ ปุราณ-ปุรุษํ นว-เยาวนํ จ<br /></span>
+<span class="slant thai">อาทยัง ปุราณะ-ปุรุษัง นะวะ-เยาวะนัง จะ<br /></span>
+<span class="slant ram">อาดยัม พุราณะ-พุรุชัม นะวะ-โยวะนัม ชะ<br /></span>
+<span class="slant iast">vedeṣu durlabham adurlabham ātma-bhaktau<br /></span>
+<span class="slant pali">เวเทษุ ทุรฺลภมฺ อทุรฺลภมฺ อาตฺม-ภกฺเตา<br /></span>
+<span class="slant thai">เวเทษุ ทุรละภัม อะทุรละภัม อาตมะ-ภักเตา<br /></span>
+<span class="slant ram">เวเดชุ ดุรลาบฺัม อดุรละบฺัม อาทมะ-บฺัคโท<br /></span>
+<span class="slant iast">govindam ādi-puruṣaṁ tam ahaṁ bhajāmi<br /></span>
+<span class="slant pali">โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ<br /></span>
+<span class="slant thai">โควินทัม อาทิ-ปุรุษัง ตัม อะหัง ภะชามิ<br /></span>
+<span class="slant ram">โกวินดัม อาดิ-พุรุชัม ทัม อฮัม บฺะจามิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ข้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้ทรงเป็นบุคคลแรกที่มี<wbr>ความสมบูรณ์บริบูรณ์&nbsp;&nbsp;ไม่มีข้อผิดพลาด&nbsp;&nbsp;ไม่มีจุดเริ่มต้น&nbsp;&nbsp;แม้ว่าทรงอวตารมาในรูปลักษณ์<wbr>ไม่มีที่สิ้นสุด&nbsp;&nbsp;พระองค์ยังทรงเป็น&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์แรกเหมือนเดิม&nbsp;&nbsp;อาวุโสที่สุด&nbsp;&nbsp;และทรง<wbr>ปรากฏอยู่ในรูปของชายหนุ่มผู้สดใสอยู่เสมอ&nbsp;&nbsp;รูปลักษณ์ที่เป็นอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความ<wbr>สุขเกษมสำราญ&nbsp;&nbsp;และสัพพัญญูของพระองค์นี้&nbsp;&nbsp;โดยทั่วไปแม้นักวิชาการพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ที่ดีที่สุด<wbr>ยังไม่เข้าใจ&nbsp;&nbsp;แต่รูปลักษณ์เหล่านี้จะปรากฏอยู่เสมอกับสาวกบริสุทธิ์ผู้ไร้มลทินเจือปน”
+  “ข้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้ทรงเป็นบุคคลแรกที่มี<wbr>ความสมบูรณ์บริบูรณ์&nbsp;&nbsp;ไม่มีข้อผิดพลาด&nbsp;&nbsp;ไม่มีจุดเริ่มต้น&nbsp;&nbsp;แม้ว่าทรงอวตารมาในรูปลักษณ์<wbr>ไม่มีที่สิ้นสุด&nbsp;&nbsp;พระองค์ยังทรงเป็น&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์แรกเหมือนเดิม&nbsp;&nbsp;อาวุโสที่สุด&nbsp;&nbsp;และทรง<wbr>ปรากฏอยู่ในรูปของชายหนุ่มผู้สดใสอยู่เสมอ&nbsp;&nbsp;รูปลักษณ์ที่เป็นอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความ<wbr>สุขเกษมสำราญ&nbsp;&nbsp;และสัพพัญญูของพระองค์นี้&nbsp;&nbsp;โดยทั่วไปแม้นักวิชาการพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ที่ดีที่สุด<wbr>ยังไม่เข้าใจ&nbsp;&nbsp;แต่รูปลักษณ์เหล่านี้จะปรากฏอยู่เสมอกับสาวกบริสุทธิ์ผู้ไร้มลทินเจือปน”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.39)&nbsp;&nbsp;อีกเช่นกันว่า
+  ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.39)&nbsp;&nbsp;อีกเช่นกันว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>รามาทิ-มูรฺติษุ กลา-นิยเมน ติษฺฐนฺ</i><br /><i>นานาวตารมฺ อกโรทฺ ภุวเนษุ กินฺตุ</i><br /><i>กฺฤษฺณฮ สฺวยํ สมภวตฺ ปรมฮ ปุมานฺ โย</i><br /><i>โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ</i>
+<span class="slant iast">rāmādi-mūrtiṣu kalā-niyamena tiṣṭhan<br /></span>
+<span class="slant pali">รามาทิ-มูรฺติษุ กลา-นิยเมน ติษฺฐนฺ<br /></span>
+<span class="slant thai">รามาทิ-มูรติษุ กะลา-นิยะเมนะ ติษฐัน<br /></span>
+<span class="slant ram">รามาดิ-มูรทิชุ คะลา-นิยะเมนะ ทิชทฺัน<br /></span>
+<span class="slant iast">nānāvatāram akarod bhuvaneṣu kintu<br /></span>
+<span class="slant pali">นานาวตารมฺ อกโรทฺ ภุวเนษุ กินฺตุ<br /></span>
+<span class="slant thai">นานาวะตารัม อะกะโรท ภุวะเนษุ กินตุ<br /></span>
+<span class="slant ram">นานาวะทารัม อคะโรด บํุวะเนชู คินทฺุ<br /></span>
+<span class="slant iast">kṛṣṇaḥ svayaṁ samabhavat paramaḥ pumān yo<br /></span>
+<span class="slant pali">กฺฤษฺณห์ สฺวยํ สมภวตฺ ปรมห์ ปุมานฺ โย<br /></span>
+<span class="slant thai">กฤษณะห์ สวะยัง สะมะภะวัต ปะระมะห์ ปุมาน โย<br /></span>
+<span class="slant ram">คริชณะฮ สวะยัม สะมะบฺะวัท พะระมะฮ พุมาน โย<br /></span>
+<span class="slant iast">govindam ādi-puruṣaṁ tam ahaṁ bhajāmi<br /></span>
+<span class="slant pali">โควินฺทมฺ อาทิ-ปุรุษํ ตมฺ อหํ ภชามิ<br /></span>
+<span class="slant thai">โควินทัม อาทิ-ปุรุษัง ตัม อะหัง ภะชามิ<br /></span>
+<span class="slant ram">โกวินดัม อาดิ-พุรุชัม ทัม อฮัม บฺะจามิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ข้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้สถิตในอวตารต่าง&nbsp;&nbsp;ๆเสมอ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>นฺฤสิํห</i>&nbsp;&nbsp;และในอนุอวตารอีกมากมายเช่นกัน&nbsp;&nbsp;แต่ทรงเป็น&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์<wbr>เดิมผู้ทรงพระนามว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และทรงอวตารด้วยพระองค์เองเช่นกัน”
+  “ข้าขอบูชาบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้สถิตในอวตารต่าง&nbsp;&nbsp;ๆเสมอ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">nṛsiṁha</span><span class="slant pali">นฺฤสึห</span><span class="slant thai">นฤสิงหะ</span><span class="slant ram">นริสิมฮะ</span>&nbsp;&nbsp;และในอนุอวตารอีกมากมายเช่นกัน&nbsp;&nbsp;แต่ทรงเป็น&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์<wbr>เดิมผู้ทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และทรงอวตารด้วยพระองค์เองเช่นกัน”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้กล่าวไว้เช่นกันว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แม้ทรงเป็นหนึ่งไม่มีสอง&nbsp;&nbsp;ยัง<wbr>ทรงปรากฏพระวรกายในรูปลักษณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมาย&nbsp;&nbsp;เหมือนกับมณี&nbsp;&nbsp;<i>ไวทูรฺย</i>&nbsp;&nbsp;ซึ่งเปลี่ยน<wbr>สีแต่ยังคงเป็นหนึ่ง&nbsp;&nbsp;รูปลักษณ์อันหลากหลายทั้งหมดขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สาวกบริสุทธิ์<wbr>ผู้ไร้มลทินจึงจะเข้าใจ&nbsp;&nbsp;มิใช่เพียงแต่ศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>เวเทษุ&nbsp;&nbsp;ทุรฺลภมฺ&nbsp;&nbsp;อทุรฺลภมฺ&nbsp;&nbsp;อาตฺม-ภกฺตะอุ</i>&nbsp;&nbsp;)&nbsp;&nbsp;สาวกเช่น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นสหายสนิทขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;เมื่อใดที่<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอวตารเหล่าสาวกจะอวตารมาร่วมด้วยเช่นเดียวกันเพื่อรับใช้พระองค์<wbr>ในขีดความสามารถของตนที่แตกต่างกันไป&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นหนึ่งในจำนวนสาวกเหล่า<wbr>นี้&nbsp;&nbsp;ในโศลกนี้เราเข้าใจได้ว่าหลายล้านปีมาแล้วเมื่อองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;แก่<wbr>สุริยเทพ&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ในขีดความสามารถที่แตกต่างกันก็ทรงปรากฏเช่นเดียวกันข้อแตกต่างระหว่างองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;คือ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงจำเหตุการณ์ได้ใน<wbr>ขณะที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงจำไม่ได้&nbsp;&nbsp;นี่คือข้อแตกต่างระหว่างสิ่งมีชีวิตผู้เป็นละอองอณูและ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แม้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จะทรงได้รับการยกย่อง&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเป็นวีรบุรุษผู้ยิ่งใหญ่สามารถ<wbr>กำราบศัตรู&nbsp;&nbsp;แต่ไม่สามารถเรียกความจำกับสิ่งที่เกิดขึ้นในชาติก่อนให้กลับคืนมาได้ฉะนั้น&nbsp;&nbsp;สิ่งมีชีวิตไม่ว่าจะยิ่งใหญ่แค่ไหนในการประเมินค่าทางวัตถุจะไม่มีวันเทียบเท่า<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;ผู้ใดเป็นสหายสนิทขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แน่นอนว่าเป็นบุคคลผู้หลุดพ้นแล้วแต่ถึงอย่างไรก็ไม่สามารถเทียบเท่ากับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ได้อธิบาย<wbr>ถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ว่าทรงเป็นผู้ที่ไม่มีความผิดพลาด&nbsp;&nbsp;(<i>อจฺยุต</i>&nbsp;&nbsp;)&nbsp;&nbsp;หมายความว่าทรงไม่เคยลืม<wbr>พระองค์เองแม้จะมาสัมผัสกับวัตถุ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสิ่งมีชีวิตจะไม่มีวันเทียบเท่า<wbr>กันได้ไม่ว่าในกรณีใด&nbsp;&nbsp;แม้กระทั่งสิ่งมีชีวิตที่หลุดพ้นแล้วเหมือนกับ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;แม้&nbsp;&nbsp;<i>อรฺชุน</i>ทรงเป็นสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;บางครั้งทรงลืมธรรมชาติขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่ด้วยพระ<wbr>กรุณาธิคุณของพระองค์&nbsp;&nbsp;สาวกสามารถเข้าใจสภาวะที่ไม่มีข้อผิดพลาดขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้ทันที&nbsp;&nbsp;ในขณะที่ผู้ไม่ใช่สาวกหรือมารไม่สามารถเข้าใจธรรมชาติทิพย์นี้&nbsp;&nbsp;ฉะนั้นคำอธิบายใน&nbsp;&nbsp;เหล่านี้สมองมารไม่สามารถเข้าใจได้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงจำสิ่งที่<wbr>กระทำเมื่อล้าน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ปีก่อนหน้านี้&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงไม่สามารถจำได้&nbsp;&nbsp;ถึงแม้ว่าทั้ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นอมตะโดยธรรมชาติ&nbsp;&nbsp;เราอาจพิจารณา&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;สิ่งมีชีวิตลืมทุกสิ่งทุก<wbr>อย่างเนื่องมาจากการเปลี่ยนร่างกาย&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงจำได้เพราะทรงมิได้เปลี่ยนร่าง&nbsp;&nbsp;<i>สจฺ-จิทฺ-อานนฺท</i>&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<i>อไทฺวต</i>&nbsp;&nbsp;หมายความว่าไม่มีข้อแตกต่างระหว่าง<wbr>พระวรกายและวิญญาณของพระองค์&nbsp;&nbsp;ทุกสิ่งทุกอย่างที่สัมพันธ์กับพระองค์เป็นทิพย์&nbsp;&nbsp;ใน<wbr>ขณะที่พันธวิญญาณแตกต่างจากร่างวัตถุของตน&nbsp;&nbsp;และเนื่องจากร่างขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ<wbr>ดวงวิญญาณเหมือนกัน&nbsp;&nbsp;สภาวะขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จึงทรงแตกต่างจากสิ่งมีชีวิตโดยทั่วไป<wbr>เสมอ&nbsp;&nbsp;แม้ในขณะที่พระองค์เสด็จมาในระดับวัตถุ&nbsp;&nbsp;พวกมารไม่สามารถปรับตนเองให้เข้า<wbr>กับธรรมชาติทิพย์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;ซึ่งพระองค์จะทรงอธิบายในโศลกต่อไป
+  ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้กล่าวไว้เช่นกันว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แม้ทรงเป็นหนึ่งไม่มีสอง&nbsp;&nbsp;ยัง<wbr>ทรงปรากฏพระวรกายในรูปลักษณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมาย&nbsp;&nbsp;เหมือนกับมณี&nbsp;&nbsp;<span class="slant iast">vaidūrya</span><span class="slant pali">ไวทูรฺย</span><span class="slant thai">ไวทูรยะ</span><span class="slant ram">ไวดุรยะ</span>&nbsp;&nbsp;ซึ่งเปลี่ยน<wbr>สีแต่ยังคงเป็นหนึ่ง&nbsp;&nbsp;รูปลักษณ์อันหลากหลายทั้งหมดขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สาวกบริสุทธิ์<wbr>ผู้ไร้มลทินจึงจะเข้าใจ&nbsp;&nbsp;มิใช่เพียงแต่ศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">vedeṣu&nbsp;&nbsp;durlabham&nbsp;&nbsp;adurlabham&nbsp;&nbsp;ātma-bhaktau</span><span class="slant pali">เวเทษุทุรฺลภมฺอทุรฺลภมฺอาตฺม-ภกฺเตา</span><span class="slant thai">เวเทษุทุรละภัมอะทุรละภัมอาตมะ-ภักเตา</span><span class="slant ram">เวเดชุ ดุรลาบฺัม อดุรละบฺัม อาทมะ-บฺัคโท</span>&nbsp;&nbsp;)&nbsp;&nbsp;สาวกเช่น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นสหายสนิทขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;เมื่อใดที่<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอวตารเหล่าสาวกจะอวตารมาร่วมด้วยเช่นเดียวกันเพื่อรับใช้พระองค์<wbr>ในขีดความสามารถของตนที่แตกต่างกันไป&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นหนึ่งในจำนวนสาวกเหล่า<wbr>นี้&nbsp;&nbsp;ในโศลกนี้เราเข้าใจได้ว่าหลายล้านปีมาแล้วเมื่อองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;แก่<wbr>สุริยเทพ&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ในขีดความสามารถที่แตกต่างกันก็ทรงปรากฏเช่นเดียวกันข้อแตกต่างระหว่างองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;คือ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงจำเหตุการณ์ได้ใน<wbr>ขณะที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงจำไม่ได้&nbsp;&nbsp;นี่คือข้อแตกต่างระหว่างสิ่งมีชีวิตผู้เป็นละอองอณูและ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แม้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จะทรงได้รับการยกย่อง&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเป็นวีรบุรุษผู้ยิ่งใหญ่สามารถ<wbr>กำราบศัตรู&nbsp;&nbsp;แต่ไม่สามารถเรียกความจำกับสิ่งที่เกิดขึ้นในชาติก่อนให้กลับคืนมาได้ฉะนั้น&nbsp;&nbsp;สิ่งมีชีวิตไม่ว่าจะยิ่งใหญ่แค่ไหนในการประเมินค่าทางวัตถุจะไม่มีวันเทียบเท่า<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;ผู้ใดเป็นสหายสนิทขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แน่นอนว่าเป็นบุคคลผู้หลุดพ้นแล้วแต่ถึงอย่างไรก็ไม่สามารถเทียบเท่ากับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ได้อธิบาย<wbr>ถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ว่าทรงเป็นผู้ที่ไม่มีความผิดพลาด&nbsp;&nbsp;(<span class="slant iast">acyuta</span><span class="slant pali">อจฺยุต</span><span class="slant thai">อัจยุตะ</span><span class="slant ram">อัชยุทะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;หมายความว่าทรงไม่เคยลืม<wbr>พระองค์เองแม้จะมาสัมผัสกับวัตถุ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสิ่งมีชีวิตจะไม่มีวันเทียบเท่า<wbr>กันได้ไม่ว่าในกรณีใด&nbsp;&nbsp;แม้กระทั่งสิ่งมีชีวิตที่หลุดพ้นแล้วเหมือนกับ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;แม้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>ทรงเป็นสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;บางครั้งทรงลืมธรรมชาติขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่ด้วยพระ<wbr>กรุณาธิคุณของพระองค์&nbsp;&nbsp;สาวกสามารถเข้าใจสภาวะที่ไม่มีข้อผิดพลาดขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้ทันที&nbsp;&nbsp;ในขณะที่ผู้ไม่ใช่สาวกหรือมารไม่สามารถเข้าใจธรรมชาติทิพย์นี้&nbsp;&nbsp;ฉะนั้นคำอธิบายใน&nbsp;&nbsp;เหล่านี้สมองมารไม่สามารถเข้าใจได้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงจำสิ่งที่<wbr>กระทำเมื่อล้าน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ปีก่อนหน้านี้&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงไม่สามารถจำได้&nbsp;&nbsp;ถึงแม้ว่าทั้ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นอมตะโดยธรรมชาติ&nbsp;&nbsp;เราอาจพิจารณา&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;สิ่งมีชีวิตลืมทุกสิ่งทุก<wbr>อย่างเนื่องมาจากการเปลี่ยนร่างกาย&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงจำได้เพราะทรงมิได้เปลี่ยนร่าง&nbsp;&nbsp;<span class="slant iast">sac-cid-ānanda</span><span class="slant pali">สจฺ-จิทฺ-อานนฺท</span><span class="slant thai">สัจ-จิท-อานันทะ</span><span class="slant ram">--</span>&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<span class="slant iast">advaita</span><span class="slant pali">อไทฺวต</span><span class="slant thai">อัทไวตะ</span><span class="slant ram">อะดเวทะ</span>&nbsp;&nbsp;หมายความว่าไม่มีข้อแตกต่างระหว่าง<wbr>พระวรกายและวิญญาณของพระองค์&nbsp;&nbsp;ทุกสิ่งทุกอย่างที่สัมพันธ์กับพระองค์เป็นทิพย์&nbsp;&nbsp;ใน<wbr>ขณะที่พันธวิญญาณแตกต่างจากร่างวัตถุของตน&nbsp;&nbsp;และเนื่องจากร่างขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ<wbr>ดวงวิญญาณเหมือนกัน&nbsp;&nbsp;สภาวะขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จึงทรงแตกต่างจากสิ่งมีชีวิตโดยทั่วไป<wbr>เสมอ&nbsp;&nbsp;แม้ในขณะที่พระองค์เสด็จมาในระดับวัตถุ&nbsp;&nbsp;พวกมารไม่สามารถปรับตนเองให้เข้า<wbr>กับธรรมชาติทิพย์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;ซึ่งพระองค์จะทรงอธิบายในโศลกต่อไป
   </p>
 </div>
 

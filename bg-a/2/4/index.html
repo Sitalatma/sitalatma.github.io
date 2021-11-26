@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.4</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>กตฺหํ ภีษฺมมฺ อหํ สเงฺขฺย</i><br /><i>โทฺรณํ จ มธุสูทน</i><br /><i>อิษุภิฮ ปฺรติโยตฺสฺยามิ</i><br /><i>ปูชารฺหาวฺ อริ-สูทน</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">kathaṁ bhīṣmam ahaṁ saṅkhye<br /></span>
+<span class="slant pali">กถํ ภีษฺมมฺ อหํ สงฺเขฺย<br /></span>
+<span class="slant thai">กะถัง ภีษมัม อะหัง สังขเย<br /></span>
+<span class="slant ram">คะทัม บีชมัม อฮัม สังคฺเย<br /></span>
+<span class="slant iast">droṇaṁ ca madhusūdana<br /></span>
+<span class="slant pali">โทฺรณํ จ มธุสูทน<br /></span>
+<span class="slant thai">ทโรณัง จะ มะธุสูทะนะ<br /></span>
+<span class="slant ram">โดรณัม ชะ มะดํุสูดะนะ<br /></span>
+<span class="slant iast">iṣubhiḥ pratiyotsyāmi<br /></span>
+<span class="slant pali">อิษุภิห์ ปฺรติโยตฺสฺยามิ<br /></span>
+<span class="slant thai">อิษุภิห์ ประติโยตสยามิ<br /></span>
+<span class="slant ram">อิชุบิฮ พระทิโยทสยามิ<br /></span>
+<span class="slant iast">pūjārhāv ari-sūdana<br /></span>
+<span class="slant pali">ปูชารฺหาวฺ อริ-สูทน<br /></span>
+<span class="slant thai">ปูชารหาว อะริ-สูทะนะ<br /></span>
+<span class="slant ram">พูจารฮาพ อริ-สูดะนะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัสว่า, <i>กตฺหมฺ</i> — อย่างไร, <i>ภีษฺมมฺ</i> — <i>ภีษฺม</i>, <i>อหมฺ</i> — ข้าพเจ้า, <i>สเงฺขฺย</i> — ในการสู้รบ, <i>โทฺรณมฺ</i> — <i>โทฺรณ</i>, <i>จ</i> — เช่นกัน, <i>มธุ-สูทน</i> — โอ้ ผู้สังหาร <i>มธุ</i>, <i>อิษุภิฮ</i> — ด้วยลูกศร, <i>ปฺรติโยตฺสฺยามิ</i> — จะโต้ตอบ,<i>ปูชา-อรฺหะอุ</i> — ผู้ที่ควรเคารพบูชา,<i>อริ-สูทน</i> — โอ้ ผู้สังหารศัตรู
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัสว่า, <span class="slant iast">katham</span><span class="slant pali">กถมฺ</span><span class="slant thai">กะถัม</span><span class="slant ram">คะทัฺม</span> — อย่างไร, <span class="slant iast">bhīṣmam</span><span class="slant pali">ภีษฺมมฺ</span><span class="slant thai">ภีษมัม</span><span class="slant ram">บีชมัม</span> — <span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้าพเจ้า, <span class="slant iast">saṅkhye</span><span class="slant pali">สงฺเขฺย</span><span class="slant thai">สังขเย</span><span class="slant ram">สังคฺเย</span> — ในการสู้รบ, <span class="slant iast">droṇam</span><span class="slant pali">โทฺรณมฺ</span><span class="slant thai">ทโรณัม</span><span class="slant ram">โดรณัม</span> — <span class="slant iast">droṇa</span><span class="slant pali">โทฺรณ</span><span class="slant thai">ทโรณะ</span><span class="slant ram">โดรณะ</span>, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">madhu-sūdana</span><span class="slant pali">มธุ-สูทน</span><span class="slant thai">มะธุ-สูทะนะ</span><span class="slant ram">มะดํุ-สูดะนะ</span> — โอ้ ผู้สังหาร <span class="slant iast">madhu</span><span class="slant pali">มธุ</span><span class="slant thai">มะธุ</span><span class="slant ram">มะดํุ</span>, <span class="slant iast">iṣubhiḥ</span><span class="slant pali">อิษุภิห์</span><span class="slant thai">อิษุภิห์</span><span class="slant ram">อิชุบิฮ</span> — ด้วยลูกศร, <span class="slant iast">pratiyotsyāmi</span><span class="slant pali">ปฺรติโยตฺสฺยามิ</span><span class="slant thai">ประติโยตสยามิ</span><span class="slant ram">พระทิโยทสยามิ</span> — จะโต้ตอบ,<span class="slant iast">pūjā-arhau</span><span class="slant pali">ปูชา-อเรฺหา</span><span class="slant thai">ปูชา-อัรเหา</span><span class="slant ram"> พูจา-อารโฮ</span> — ผู้ที่ควรเคารพบูชา,<span class="slant iast">ari-sūdana</span><span class="slant pali">อริ-สูทน</span><span class="slant thai">อะริ-สูทะนะ</span><span class="slant ram"> อริ- สูดะนะ</span> — โอ้ ผู้สังหารศัตรู
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สังหารศัตรู&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สังหาร&nbsp;&nbsp;<i>มธุ</i>&nbsp;&nbsp;ข้าจะโต้ตอบด้วยลูกศรในสนามรบกับ&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>โทฺรณ</i>&nbsp;&nbsp;ผู้ที่ควรค่าได้รับการบูชาจากข้าพเจ้าได้อย่างไร?
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สังหารศัตรู&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สังหาร&nbsp;&nbsp;<span class="slant iast">madhu</span><span class="slant pali">มธุ</span><span class="slant thai">มะธุ</span><span class="slant ram">มะดํุ</span>&nbsp;&nbsp;ข้าจะโต้ตอบด้วยลูกศรในสนามรบกับ&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">droṇa</span><span class="slant pali">โทฺรณ</span><span class="slant thai">ทโรณะ</span><span class="slant ram">โดรณะ</span>&nbsp;&nbsp;ผู้ที่ควรค่าได้รับการบูชาจากข้าพเจ้าได้อย่างไร?
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้อาวุโสที่ควรเคารพเช่น&nbsp;&nbsp;พระอัยกา&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;และพระอาจารย์&nbsp;&nbsp;<i>โทฺรณาจารฺย</i>&nbsp;&nbsp;ควร<wbr>ได้รับการเคารพบูชาอยู่เสมอ&nbsp;&nbsp;ถึงแม้ว่าท่านจะมาเพื่อสู้รบ&nbsp;&nbsp;เราไม่ควรโต้ตอบ&nbsp;&nbsp;ซึ่งเป็น<wbr>มารยาทโดยทั่วไปที่ผู้อาวุโสไม่ควรถูกก้าวร้าวแม้ด้วยคำพูด&nbsp;&nbsp;ถึงแม้บางครั้งพฤติกรรม<wbr>ของอาจารย์จะไม่ถูกต้อง&nbsp;&nbsp;แต่ไม่ควรถูกปฏิบัติตอบด้วยความก้าวร้าว&nbsp;&nbsp;แล้วจะให้<i>อรฺชุน</i>&nbsp;&nbsp;ตอบโต้ท่านเหล่านี้ได้อย่างไร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะยอมทำร้ายพระอัยกา&nbsp;&nbsp;<i>อุคฺรเสน</i>&nbsp;&nbsp;หรือ<wbr>พระอาจารย์&nbsp;&nbsp;<i>สานฺทีปนิ</i>&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;หรือไม่?&nbsp;&nbsp;เหล่านี้เป็นข้อโต้แย้งบางประการที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เสนอ<wbr>แด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  ผู้อาวุโสที่ควรเคารพเช่น&nbsp;&nbsp;พระอัยกา&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;และพระอาจารย์&nbsp;&nbsp;<span class="slant iast">droṇācārya</span><span class="slant pali">โทฺรณาจารฺย</span><span class="slant thai">ทโรณาจารยะ</span><span class="slant ram">โดรณาชารยะ</span>&nbsp;&nbsp;ควร<wbr>ได้รับการเคารพบูชาอยู่เสมอ&nbsp;&nbsp;ถึงแม้ว่าท่านจะมาเพื่อสู้รบ&nbsp;&nbsp;เราไม่ควรโต้ตอบ&nbsp;&nbsp;ซึ่งเป็น<wbr>มารยาทโดยทั่วไปที่ผู้อาวุโสไม่ควรถูกก้าวร้าวแม้ด้วยคำพูด&nbsp;&nbsp;ถึงแม้บางครั้งพฤติกรรม<wbr>ของอาจารย์จะไม่ถูกต้อง&nbsp;&nbsp;แต่ไม่ควรถูกปฏิบัติตอบด้วยความก้าวร้าว&nbsp;&nbsp;แล้วจะให้<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตอบโต้ท่านเหล่านี้ได้อย่างไร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะยอมทำร้ายพระอัยกา&nbsp;&nbsp;<span class="slant iast">ugrasena</span><span class="slant pali">อุคฺรเสน</span><span class="slant thai">อุคระเสนะ</span><span class="slant ram">อุกระเสนะ</span>&nbsp;&nbsp;หรือ<wbr>พระอาจารย์&nbsp;&nbsp;<span class="slant iast">sāndīpani</span><span class="slant pali">สานฺทีปนิ</span><span class="slant thai">สานทีปะนิ</span><span class="slant ram">สานดีพะนิ</span>&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;หรือไม่?&nbsp;&nbsp;เหล่านี้เป็นข้อโต้แย้งบางประการที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เสนอ<wbr>แด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

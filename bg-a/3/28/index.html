@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตตฺตฺว-วิตฺ ตุ มหา-พาโห</i><br /><i>คุณ-กรฺม-วิภาคโยฮ</i><br /><i>คุณา คุเณษุ วรฺตนฺต</i><br /><i>อิติ มตฺวา น สชฺชเต</i>
+<span class="slant iast">tattva-vit tu mahā-bāho<br /></span>
+<span class="slant pali">ตตฺตฺว-วิตฺ ตุ มหา-พาโห<br /></span>
+<span class="slant thai">ตัตตวะ-วิต ตุ มะหา-พาโห<br /></span>
+<span class="slant ram">ทัททวะ-วิท ทุ มะฮา-บาโฮ<br /></span>
+<span class="slant iast">guṇa-karma-vibhāgayoḥ<br /></span>
+<span class="slant pali">คุณ-กรฺม-วิภาคโยห์<br /></span>
+<span class="slant thai">คุณะ-กัรมะ-วิภาคะโยห์<br /></span>
+<span class="slant ram">กุณะ-คารมะ-วิบฺากะโยฮ<br /></span>
+<span class="slant iast">guṇā guṇeṣu vartanta<br /></span>
+<span class="slant pali">คุณา คุเณษุ วรฺตนฺต<br /></span>
+<span class="slant thai">คุณา คุเณษุ วัรตันตะ<br /></span>
+<span class="slant ram">ณา กุเณชุ วารทันทะ<br /></span>
+<span class="slant iast">iti matvā na sajjate<br /></span>
+<span class="slant pali">อิติ มตฺวา น สชฺชเต<br /></span>
+<span class="slant thai">อิติ มัตวา นะ สัชชะเต<br /></span>
+<span class="slant ram">อิทิ มัทวา นะ สัจจะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตตฺตฺว-วิตฺ</i> — ผู้รู้สัจธรรมอันสมบูรณ์, <i>ตุ</i> — แต่, <i>มหา-พาโห</i> — โอ้ นักรบผู้ยิ่งใหญ่, <i>คุณ-กรฺม</i> — งานภายใต้อิทธิพลของวัตถุ, <i>วิภาคโยฮ</i> — แตกต่างกัน, <i>คุณาฮ</i> — ประสาทสัมผัส, <i>คุเณษุ</i> — ในการสนองประสาทสัมผัส, <i>วรฺตเนฺต</i> — กำลังปฎิบัติ, <i>อิติ</i> — ดังนั้น, <i>มตฺวา</i> — ความ คิด, <i>น</i> — ไม่เคย, <i>สชฺชเต</i> — ยึดติด
+  <span class="slant iast">tattva-vit</span><span class="slant pali">ตตฺตฺว-วิตฺ</span><span class="slant thai">ตัตตวะ-วิต</span><span class="slant ram">ทัททวะ-วิท</span> — ผู้รู้สัจธรรมอันสมบูรณ์, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">mahā-bāho</span><span class="slant pali">มหา-พาโห</span><span class="slant thai">มะหา-พาโห</span><span class="slant ram">มะฮา-บาโฮ</span> — โอ้ นักรบผู้ยิ่งใหญ่, <span class="slant iast">guṇa-karma</span><span class="slant pali">คุณ-กรฺม</span><span class="slant thai">คุณะ-กัรมะ</span><span class="slant ram">กุณะ- คารมะ</span> — งานภายใต้อิทธิพลของวัตถุ, <span class="slant iast">vibhāgayoḥ</span><span class="slant pali">วิภาคโยห์</span><span class="slant thai">วิภาคะโยห์</span><span class="slant ram">วิบฺากะโยฮ</span> — แตกต่างกัน, <span class="slant iast">guṇāḥ</span><span class="slant pali">คุณาห์</span><span class="slant thai">คุณาห์</span><span class="slant ram">กุณาฮ</span> — ประสาทสัมผัส, <span class="slant iast">guṇeṣu</span><span class="slant pali">คุเณษุ</span><span class="slant thai">คุเณษุ</span><span class="slant ram">กุเณชุ</span> — ในการสนองประสาทสัมผัส, <span class="slant iast">vartante</span><span class="slant pali">วรฺตนฺเต</span><span class="slant thai">วัรตันเต</span><span class="slant ram">วารทันเท</span> — กำลังปฎิบัติ, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">matvā</span><span class="slant pali">มตฺวา</span><span class="slant thai">มัตวา</span><span class="slant ram">มัทวา</span> — ความ คิด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">sajjate</span><span class="slant pali">สชฺชเต</span><span class="slant thai">สัชชะเต</span><span class="slant ram">สัจจะเท</span> — ยึดติด
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้รู้สัจธรรมอันสมบูรณ์มีความมั่นใจในสถานภาพอันเคอะเขินของตนในการ<wbr>ที่มาคลุกคลีกับวัตถุ&nbsp;&nbsp;รู้ดีว่าตนเองเป็นละอองอณูของบุคลิกภาพสูงสุดแห่งพระเจ้า<i>กฺฤษฺณ</i>&nbsp;&nbsp;และสถานภาพของตนไม่ควรอยู่ภายในการสร้างทางวัตถุ&nbsp;&nbsp;รู้ตัวจริงของตนเอง<wbr>ว่าเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงมีความสุขเกษมสำราญนิรันดรและทรงเป็น<wbr>สัพพัญญู&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ยังรู้แจ้งอีกด้วยว่าตนเองมาติดกับดักในชีวิตที่มีแนวคิดทางวัตถุในสภาวะความเป็นอยู่ที่บริสุทธิ์เขาควรประสานกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของตนเพื่อการอุทิศเสีย<wbr>สละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้นจะปฎิบัติตนในกิจกรรมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และ<wbr>โดยธรรมชาติจะไม่ยึดติดกับกิจกรรมทางประสาทสัมผัสวัตถุซึ่งทั้งหมดเป็นเพียงสภาวะ<wbr>ชั่วคราวไม่ถาวร&nbsp;&nbsp;โดยรู้ดีว่าสภาวะวัตถุของชีวิตตนอยู่ภายใต้การควบคุมสูงสุดขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงไม่ถูกรบกวนจากผลกรรมนานัปการทางวัตถุซึ่งพิจารณาว่าเป็นพระ<wbr>เมตตาธิคุณของพระองค์&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;กล่าวว่าผู้ที่รู้สัจธรรมอันสมบูรณ์ทั้งสาม<wbr>ลักษณะ&nbsp;&nbsp;คือ&nbsp;&nbsp;<i>พฺรหฺมนฺ,ปรมาตฺมา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควนฺ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ตตฺตฺว-วิตฺ</i>&nbsp;&nbsp;เพราะว่า<wbr>เขารู้ถึงตำแหน่งอันแท้จริงของตนเองในความสัมพันธ์กับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  ผู้รู้สัจธรรมอันสมบูรณ์มีความมั่นใจในสถานภาพอันเคอะเขินของตนในการ<wbr>ที่มาคลุกคลีกับวัตถุ&nbsp;&nbsp;รู้ดีว่าตนเองเป็นละอองอณูของบุคลิกภาพสูงสุดแห่งพระเจ้า<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และสถานภาพของตนไม่ควรอยู่ภายในการสร้างทางวัตถุ&nbsp;&nbsp;รู้ตัวจริงของตนเอง<wbr>ว่าเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงมีความสุขเกษมสำราญนิรันดรและทรงเป็น<wbr>สัพพัญญู&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ยังรู้แจ้งอีกด้วยว่าตนเองมาติดกับดักในชีวิตที่มีแนวคิดทางวัตถุในสภาวะความเป็นอยู่ที่บริสุทธิ์เขาควรประสานกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของตนเพื่อการอุทิศเสีย<wbr>สละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้นจะปฎิบัติตนในกิจกรรมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และ<wbr>โดยธรรมชาติจะไม่ยึดติดกับกิจกรรมทางประสาทสัมผัสวัตถุซึ่งทั้งหมดเป็นเพียงสภาวะ<wbr>ชั่วคราวไม่ถาวร&nbsp;&nbsp;โดยรู้ดีว่าสภาวะวัตถุของชีวิตตนอยู่ภายใต้การควบคุมสูงสุดขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงไม่ถูกรบกวนจากผลกรรมนานัปการทางวัตถุซึ่งพิจารณาว่าเป็นพระ<wbr>เมตตาธิคุณของพระองค์&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;กล่าวว่าผู้ที่รู้สัจธรรมอันสมบูรณ์ทั้งสาม<wbr>ลักษณะ&nbsp;&nbsp;คือ&nbsp;&nbsp;<span class="slant iast">brahman,&nbsp;&nbsp;paramātmā</span><span class="slant pali">พฺรหฺมนฺปรมาตฺมา</span><span class="slant thai">พรัหมันปะระมาตมา</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺพะระมาทมา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavan</span><span class="slant pali">ภควนฺ</span><span class="slant thai">ภะคะวัน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">tattva-vit</span><span class="slant pali">ตตฺตฺว-วิตฺ</span><span class="slant thai">ตัตตวะ-วิต</span><span class="slant ram">ทัททวะ-วิท</span>&nbsp;&nbsp;เพราะว่า<wbr>เขารู้ถึงตำแหน่งอันแท้จริงของตนเองในความสัมพันธ์กับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

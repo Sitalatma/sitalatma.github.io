@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.47</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กรฺมณฺยฺ เอวาธิการสฺ เต</i><br /><i>มา ผเลษุ กทาจน</i><br /><i>มา กรฺม-ผล-เหตุรฺ ภูรฺ</i><br /><i>มา เต สโงฺค ′สฺตฺวฺ อกรฺมณิ</i>
+<span class="slant iast">karmaṇy evādhikāras te<br /></span>
+<span class="slant pali">กรฺมณฺยฺ เอวาธิการสฺ เต<br /></span>
+<span class="slant thai">กัรมัณย เอวาธิการัส เต<br /></span>
+<span class="slant ram">คารมะณิ เอวาดิฺคารัส เท<br /></span>
+<span class="slant iast">mā phaleṣu kadācana<br /></span>
+<span class="slant pali">มา ผเลษุ กทาจน<br /></span>
+<span class="slant thai">มา ผะเลษุ กะทาจะนะ<br /></span>
+<span class="slant ram">มา พฺะเลชุ คะดาชะนะ<br /></span>
+<span class="slant iast">mā karma-phala-hetur bhūr<br /></span>
+<span class="slant pali">มา กรฺม-ผล-เหตุรฺ ภูรฺ<br /></span>
+<span class="slant thai">มา กัรมะ-ผะละ-เหตุร ภูร<br /></span>
+<span class="slant ram">มา คารมะ-พฺะละ-เฮทุร บํูร<br /></span>
+<span class="slant iast">mā te saṅgo ’stv akarmaṇi<br /></span>
+<span class="slant pali">มา เต สงฺโค ’สฺตฺวฺ อกรฺมณิ<br /></span>
+<span class="slant thai">มา เต สังโค ’สตว อะกัรมะณิ<br /></span>
+<span class="slant ram">มา เท สังโก ´สทุ อคารมะณิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กรฺมณิ</i> — ในหน้าที่ที่กำหนดไว้, <i>เอว</i> — แน่นอน, <i>อธิการฮ</i> — ถูกต้อง, <i>เต</i> — ของเธอ, <i>มา</i> — ไม่ เคย, <i>ผเลษุ</i> — ในผล, <i>กทาจน</i> — ทุกเวลา, <i>มา</i> — ไม่เคย, <i>กรฺม-ผล</i> — ในผลของงาน, <i>เหตุฮ</i> — เหตุ, <i>ภูฮ</i> — มาเป็น, <i>มา</i> — ไม่เคย, <i>เต</i> — ของเธอ, <i>สงฺคฮ</i> — ความยึดติด, <i>อสฺตุ</i> — ควรมี, <i>อกรฺมณิ</i> — ในการไม่ทำตามหน้าที่ที่กำหนดไว้
+  <span class="slant iast">karmaṇi</span><span class="slant pali">กรฺมณิ</span><span class="slant thai">กัรมะณิ</span><span class="slant ram">คารมะณิ</span> — ในหน้าที่ที่กำหนดไว้, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">adhikāraḥ</span><span class="slant pali">อธิการห์</span><span class="slant thai">อะธิการะห์</span><span class="slant ram">อดิคาระฮ</span> — ถูกต้อง, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของเธอ, <span class="slant iast">mā</span><span class="slant pali">มา</span><span class="slant thai">มา</span><span class="slant ram">มา</span> — ไม่ เคย, <span class="slant iast">phaleṣu</span><span class="slant pali">ผเลษุ</span><span class="slant thai">ผะเลษุ</span><span class="slant ram">พฺะเลชุ</span> — ในผล, <span class="slant iast">kadācana</span><span class="slant pali">กทาจน</span><span class="slant thai">กะทาจะนะ</span><span class="slant ram">คะดาชะนะ</span> — ทุกเวลา, <span class="slant iast">mā</span><span class="slant pali">มา</span><span class="slant thai">มา</span><span class="slant ram">มา</span> — ไม่เคย, <span class="slant iast">karma-phala</span><span class="slant pali">กรฺม-ผล</span><span class="slant thai">กัรมะ-ผะละ</span><span class="slant ram">คารมะ-พฺะละ</span> — ในผลของงาน, <span class="slant iast">hetuḥ</span><span class="slant pali">เหตุห์</span><span class="slant thai">เหตุห์</span><span class="slant ram">เฮทุฮ</span> — เหตุ, <span class="slant iast">bhūḥ</span><span class="slant pali">ภูห์</span><span class="slant thai">ภูห์</span><span class="slant ram">บํูฮ</span> — มาเป็น, <span class="slant iast">mā</span><span class="slant pali">มา</span><span class="slant thai">มา</span><span class="slant ram">มา</span> — ไม่เคย, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของเธอ, <span class="slant iast">saṅgaḥ</span><span class="slant pali">สงฺคห์</span><span class="slant thai">สังคะห์</span><span class="slant ram">สังกะฮ</span> — ความยึดติด, <span class="slant iast">astu</span><span class="slant pali">อสฺตุ</span><span class="slant thai">อัสตุ</span><span class="slant ram">อัสทุ</span> — ควรมี, <span class="slant iast">akarmaṇi</span><span class="slant pali">อกรฺมณิ</span><span class="slant thai">อะกัรมะณิ</span><span class="slant ram">อคารมะณิ</span> — ในการไม่ทำตามหน้าที่ที่กำหนดไว้
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;พิจารณาได้สามประเด็นคือ&nbsp;&nbsp;หน้าที่ที่กำหนดไว้&nbsp;&nbsp;การทำงานตามอำเภอ<wbr>ใจ&nbsp;&nbsp;และการอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หน้าที่ที่กำหนดไว้คือคำสั่งที่ได้รับให้ทำกิจกรรมตามระดับแห่ง<wbr>ธรรมชาติวัตถุที่ตนได้มา&nbsp;&nbsp;งานตามอำเภอใจหมายถึงงานที่ทำไปโดยไม่ได้รับอนุญาต<wbr>จากผู้ที่เชื่อถือได้&nbsp;&nbsp;และการอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือไม่ทำตามหน้าที่ที่กำหนดไว้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมิได้<wbr>แนะนำให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่ให้ปฏิบัติตามหน้าที่ของตนที่ได้กำหนดไว้&nbsp;&nbsp;โดยไม่ยึด<wbr>ติดกับผลงาน&nbsp;&nbsp;ผู้ที่ยึดติดกับผลของงานก็เป็นต้นเหตุแห่งการทำงานเช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เขาจะ<wbr>ได้รับความสุขหรือความทุกข์จากผลกรรม
+  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;พิจารณาได้สามประเด็นคือ&nbsp;&nbsp;หน้าที่ที่กำหนดไว้&nbsp;&nbsp;การทำงานตามอำเภอ<wbr>ใจ&nbsp;&nbsp;และการอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หน้าที่ที่กำหนดไว้คือคำสั่งที่ได้รับให้ทำกิจกรรมตามระดับแห่ง<wbr>ธรรมชาติวัตถุที่ตนได้มา&nbsp;&nbsp;งานตามอำเภอใจหมายถึงงานที่ทำไปโดยไม่ได้รับอนุญาต<wbr>จากผู้ที่เชื่อถือได้&nbsp;&nbsp;และการอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือไม่ทำตามหน้าที่ที่กำหนดไว้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมิได้<wbr>แนะนำให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่ให้ปฏิบัติตามหน้าที่ของตนที่ได้กำหนดไว้&nbsp;&nbsp;โดยไม่ยึด<wbr>ติดกับผลงาน&nbsp;&nbsp;ผู้ที่ยึดติดกับผลของงานก็เป็นต้นเหตุแห่งการทำงานเช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เขาจะ<wbr>ได้รับความสุขหรือความทุกข์จากผลกรรม
   </p>
 </div>
 
@@ -85,7 +186,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ฉะนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงแนะนำ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ให้ต่อสู้ในฐานะที่เป็นหน้าที่โดยไม่ยึดติด<wbr>กับผล&nbsp;&nbsp;การอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ในสนามรบเป็นการยึดติดอีกด้านหนึ่ง&nbsp;&nbsp;การยึดติดเช่นนี้<wbr>จะไม่นำเราไปสู่หนทางแห่งความหลุดพ้น&nbsp;&nbsp;การยึดติดใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ว่าจะในเชิงบวกหรือเชิงลบ<wbr>เป็นเหตุแห่งพันธนาการ&nbsp;&nbsp;การอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นบาป&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การต่อสู้ตามหน้าที่จึงเป็นวิถีทาง<wbr>เดียวที่เป็นสิริมงคลเพื่อความหลุดพ้นของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;
+  ฉะนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงแนะนำ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ให้ต่อสู้ในฐานะที่เป็นหน้าที่โดยไม่ยึดติด<wbr>กับผล&nbsp;&nbsp;การอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ในสนามรบเป็นการยึดติดอีกด้านหนึ่ง&nbsp;&nbsp;การยึดติดเช่นนี้<wbr>จะไม่นำเราไปสู่หนทางแห่งความหลุดพ้น&nbsp;&nbsp;การยึดติดใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ว่าจะในเชิงบวกหรือเชิงลบ<wbr>เป็นเหตุแห่งพันธนาการ&nbsp;&nbsp;การอยู่เฉย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นบาป&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การต่อสู้ตามหน้าที่จึงเป็นวิถีทาง<wbr>เดียวที่เป็นสิริมงคลเพื่อความหลุดพ้นของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

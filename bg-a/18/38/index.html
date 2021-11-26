@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.38</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วิษเยนฺทฺริย-สํโยคาทฺ</i><br /><i>ยตฺ ตทฺ อเคฺร ′มฺฤโตปมมฺ</i><br /><i>ปริณาเม วิษมฺ อิว</i><br /><i>ตตฺ สุขํ ราชสํ สฺมฺฤตมฺ</i>
+<span class="slant iast">viṣayendriya-saṁyogād<br /></span>
+<span class="slant pali">วิษเยนฺทฺริย-สํโยคาทฺ<br /></span>
+<span class="slant thai">วิษะเยนทริยะ-สังโยคาท<br /></span>
+<span class="slant ram">วิชะเยนดริยะ-สัมโยกาด<br /></span>
+<span class="slant iast">yat tad agre ’mṛtopamam<br /></span>
+<span class="slant pali">ยตฺ ตทฺ อเคฺร ’มฺฤโตปมมฺ<br /></span>
+<span class="slant thai">ยัต ตัท อัคเร ’มฤโตปะมัม<br /></span>
+<span class="slant ram">ยัท ทัด อเกร ่มริโทพะมัม<br /></span>
+<span class="slant iast">pariṇāme viṣam iva<br /></span>
+<span class="slant pali">ปริณาเม วิษมฺ อิว<br /></span>
+<span class="slant thai">ปะริณาเม วิษัม อิวะ<br /></span>
+<span class="slant ram">พะริณาเม วิชัม อิวะ<br /></span>
+<span class="slant iast">tat sukhaṁ rājasaṁ smṛtam<br /></span>
+<span class="slant pali">ตตฺ สุขํ ราชสํ สฺมฺฤตมฺ<br /></span>
+<span class="slant thai">ตัต สุขัง ราชะสัง สมฤตัม<br /></span>
+<span class="slant ram">ทัท สุคัฺม ราจะสัม สมริทัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วิษย</i> — ของอายตนะภายนอก, <i>อินฺทฺริย</i> — และประสาทสัมผัส, <i>สํโยคาตฺ</i> — จากการรวม กัน, <i>ยตฺ</i> — ซึ่ง, <i>ตตฺ</i> — นั้น, <i>อเคฺร</i> — ในตอนต้น, <i>อมฺฤต-อุปมมฺ</i> — เหมือนกับน้ำทิพย์, <i>ปริณาเม</i> — ในบั้นปลาย, <i>วิษมฺ อิว</i> — เหมือนยาพิษ, <i>ตตฺ</i> — นั้น, <i>สุขมฺ</i> — ความสุข, <i>ราชสมฺ</i> — ในระดับ ตัณหา, <i>สฺมฺฤตมฺ</i> — พิจารณาว่า
+  <span class="slant iast">viṣaya</span><span class="slant pali">วิษย</span><span class="slant thai">วิษะยะ</span><span class="slant ram">วิชะยะ</span> — ของอายตนะภายนอก, <span class="slant iast">indriya</span><span class="slant pali">อินฺทฺริย</span><span class="slant thai">อินทริยะ</span><span class="slant ram">อินดริยะ</span> — และประสาทสัมผัส, <span class="slant iast">saṁyogāt</span><span class="slant pali">สํโยคาตฺ</span><span class="slant thai">สังโยคาต</span><span class="slant ram">สัมโยกาท</span> — จากการรวม กัน, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">agre</span><span class="slant pali">อเคฺร</span><span class="slant thai">อัคเร</span><span class="slant ram">อเกร</span> — ในตอนต้น, <span class="slant iast">amṛta-upamam</span><span class="slant pali">อมฺฤต-อุปมมฺ</span><span class="slant thai">อัมฤตะ-อุปะมัม</span><span class="slant ram">อมริทะ-อุพะมัม</span> — เหมือนกับน้ำทิพย์, <span class="slant iast">pariṇāme</span><span class="slant pali">ปริณาเม</span><span class="slant thai">ปะริณาเม</span><span class="slant ram">พะริณา เม</span> — ในบั้นปลาย, <span class="slant iast">viṣam iva</span><span class="slant pali">วิษมฺอิว</span><span class="slant thai">วิษัมอิวะ</span><span class="slant ram">วิชัม อิวะ</span> — เหมือนยาพิษ, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ความสุข, <span class="slant iast">rājasam</span><span class="slant pali">ราชสมฺ</span><span class="slant thai">ราชะสัม</span><span class="slant ram">ราจะสัม</span> — ในระดับ ตัณหา, <span class="slant iast">smṛtam</span><span class="slant pali">สฺมฺฤตมฺ</span><span class="slant thai">สมฤตัม</span><span class="slant ram">สมริทัม</span> — พิจารณาว่า
   </p>
 </div>
 

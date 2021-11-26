@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.21</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อมี หิ ตฺวาํ สุร-สงฺฆา วิศนฺติ</i><br /><i>เกจิทฺ ภีตาฮ ปฺราญฺชลโย คฺฤณนฺติ</i><br /><i>สฺวสฺตีตฺยฺ อุกฺตฺวา มหรฺษิ-สิทฺธ-สงฺฆาฮ</i><br /><i>สฺตุวนฺติ ตฺวาํ สฺตุติภิฮ ปุษฺกลาภิฮ</i>
+<span class="slant iast">amī hi tvāṁ sura-saṅghā viśanti<br /></span>
+<span class="slant pali">อมี หิ ตฺวำ สุร-สงฺฆา วิศนฺติ<br /></span>
+<span class="slant thai">อะมี หิ ตวาง สุระ-สังฆา วิศันติ<br /></span>
+<span class="slant ram">อมี ฮิ ทวาม สุระ-สังกฮา วิชันทิ<br /></span>
+<span class="slant iast">kecid bhītāḥ prāñjalayo gṛṇanti<br /></span>
+<span class="slant pali">เกจิทฺ ภีตาห์ ปฺราญฺชลโย คฺฤณนฺติ<br /></span>
+<span class="slant thai">เกจิท ภีตาห์ ปราญชะละโย คฤณันติ<br /></span>
+<span class="slant ram">เคชิด บีฺทาฮ พรานจะละโย กริณันทิฺ<br /></span>
+<span class="slant iast">svastīty uktvā maharṣi-siddha-saṅghāḥ<br /></span>
+<span class="slant pali">สฺวสฺตีตฺยฺ อุกฺตฺวา มหรฺษิ-สิทฺธ-สงฺฆาห์<br /></span>
+<span class="slant thai">สวัสตีตย อุกตวา มะหัรษิ-สิทธะ-สังฆาห์<br /></span>
+<span class="slant ram">สวัสทีทิ อุคทวา มะฮารชิ-สิดดฺะ-สังกฺาฮ<br /></span>
+<span class="slant iast">stuvanti tvāṁ stutibhiḥ puṣkalābhiḥ<br /></span>
+<span class="slant pali">สฺตุวนฺติ ตฺวำ สฺตุติภิห์ ปุษฺกลาภิห์<br /></span>
+<span class="slant thai">สตุวันติ ตวาง สตุติภิห์ ปุษกะลาภิห์<br /></span>
+<span class="slant ram">สทุวันทิ ทวาม สุททิบิฺฮ พุชคะลาบิฺฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อมี</i> — ทั้งหมดเหล่านั้น, <i>หิ</i> — แน่นอน,<i>ตฺวามฺ</i> — พระองค์, <i>สุร-สงฺฆาฮ</i> — เทวดากลุ่มต่าง ๆ, <i>วิศนฺติ</i> — เข้าไป, <i>เกจิตฺ</i> — บางท่าน, <i>ภีตาฮ</i> — เนื่องจากความกลัว, <i>ปฺราญฺชลยฮ</i> — ด้วยมือ ที่พนม, <i>คฺฤณนฺติ</i> — ถวายบทมนต์, <i>สฺวสฺติ</i> — ความสงบทั้งหมด, <i>อิติ</i> — ดังนั้น, <i>อุกฺตฺวา</i> — พูด, <i>มหา-ฤษิ</i> — นักปราชญ์ผู้ยิ่งใหญ่, <i>สิทฺธ-สงฺฆาฮ</i> — สิ่งมีชีวิตที่สมบูรณ์, <i>สฺตุวนฺติ</i> — ร้อง เพลงบทมนต์, <i>ตฺวามฺ</i> — แด่พระองค์, <i>สฺตุติภิฮ</i> — ด้วยบทมนต์, <i>ปุษฺกลาภิฮ</i> — บทมนต์พระ <i>เวทิจฺ</i> 
+  <span class="slant iast">amī</span><span class="slant pali">อมี</span><span class="slant thai">อะมี</span><span class="slant ram">อมี</span> — ทั้งหมดเหล่านั้น, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน,<span class="slant iast">tvām</span><span class="slant pali">ตฺวามฺ</span><span class="slant thai">ตวาม</span><span class="slant ram">ทวาม</span> — พระองค์, <span class="slant iast">sura-saṅghāḥ</span><span class="slant pali">สุร-สงฺฆาห์</span><span class="slant thai">สุระ-สังฆาห์</span><span class="slant ram">สุระ-สังกฮาฮ</span> — เทวดากลุ่มต่าง ๆ, <span class="slant iast">viśanti</span><span class="slant pali">วิศนฺติ</span><span class="slant thai">วิศันติ</span><span class="slant ram">วิชันทิ</span> — เข้าไป, <span class="slant iast">kecit</span><span class="slant pali">เกจิตฺ</span><span class="slant thai">เกจิต</span><span class="slant ram">เคชิท</span> — บางท่าน, <span class="slant iast">bhītāḥ</span><span class="slant pali">ภีตาห์</span><span class="slant thai">ภีตาห์</span><span class="slant ram">บีฺทาฮ</span> — เนื่องจากความกลัว, <span class="slant iast">prāñjalayaḥ</span><span class="slant pali">ปฺราญฺชลยห์</span><span class="slant thai">ปราญชะละยะห์</span><span class="slant ram">พรานจะละยะฮ</span> — ด้วยมือ ที่พนม, <span class="slant iast">gṛṇanti</span><span class="slant pali">คฺฤณนฺติ</span><span class="slant thai">คฤณันติ</span><span class="slant ram">กริณันทิ</span> — ถวายบทมนต์, <span class="slant iast">svasti</span><span class="slant pali">สฺวสฺติ</span><span class="slant thai">สวัสติ</span><span class="slant ram">สวัสทิ</span> — ความสงบทั้งหมด, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">uktvā</span><span class="slant pali">อุกฺตฺวา</span><span class="slant thai">อุกตวา</span><span class="slant ram">อุคทวา</span> — พูด, <span class="slant iast">mahā-ṛṣi</span><span class="slant pali">มหา-ฤษิ</span><span class="slant thai">มะหา-ฤษิ</span><span class="slant ram">มะฮา-ริชิ</span> — นักปราชญ์ผู้ยิ่งใหญ่, <span class="slant iast">siddha-saṅghāḥ</span><span class="slant pali">สิทฺธ-สงฺฆาห์</span><span class="slant thai">สิทธะ-สังฆาห์</span><span class="slant ram">สิดดะ-สังกฺาฮ</span> — สิ่งมีชีวิตที่สมบูรณ์, <span class="slant iast">stuvanti</span><span class="slant pali">สฺตุวนฺติ</span><span class="slant thai">สตุวันติ</span><span class="slant ram">สทุวันทิ</span> — ร้อง เพลงบทมนต์, <span class="slant iast">tvām</span><span class="slant pali">ตฺวามฺ</span><span class="slant thai">ตวาม</span><span class="slant ram">ทวาม</span> — แด่พระองค์, <span class="slant iast">stutibhiḥ</span><span class="slant pali">สฺตุติภิห์</span><span class="slant thai">สตุติภิห์</span><span class="slant ram">สทุทิบิฺฮ</span> — ด้วยบทมนต์, <span class="slant iast">puṣkalābhiḥ</span><span class="slant pali">ปุษฺกลาภิห์</span><span class="slant thai">ปุษกะลาภิห์</span><span class="slant ram">พุชคะลาบิฺฮ</span> — บทมนต์พระ <span class="slant iast">vedic</span><span class="slant pali">เวทิจฺ</span><span class="slant thai">เวทิจ</span><span class="slant ram">เวท</span> 
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  กองทัพเทวดาทั้งหลายศิโรราบต่อหน้าพระองค์และเสด็จเข้าไปในพระองค์&nbsp;&nbsp;บางองค์กลัวมากทรงถวายบทมนต์ด้วยมือพนม&nbsp;&nbsp;กลุ่มนักปราชญ์ผู้ยิ่งใหญ่และมนุษย์ผู้สมบูรณ์ร้องว่า&nbsp;&nbsp;“สันติภาพทั้งปวง!”&nbsp;&nbsp;ภาวนาแด่พระองค์ด้วยการร้องเพลงจากบทมนต์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;
+  กองทัพเทวดาทั้งหลายศิโรราบต่อหน้าพระองค์และเสด็จเข้าไปในพระองค์&nbsp;&nbsp;บางองค์กลัวมากทรงถวายบทมนต์ด้วยมือพนม&nbsp;&nbsp;กลุ่มนักปราชญ์ผู้ยิ่งใหญ่และมนุษย์ผู้สมบูรณ์ร้องว่า&nbsp;&nbsp;“สันติภาพทั้งปวง!”&nbsp;&nbsp;ภาวนาแด่พระองค์ด้วยการร้องเพลงจากบทมนต์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;
   </p>
 </div>
 

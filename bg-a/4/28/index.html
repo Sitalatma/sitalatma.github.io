@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ทฺรวฺย-ยชฺญาสฺ ตโป-ยชฺญา</i><br /><i>โยค-ยชฺญาสฺ ตตฺหาปเร</i><br /><i>สฺวาธฺยาย-ชฺญาน-ยชฺญาศฺ จ</i><br /><i>ยตยฮ สํศิต-วฺรตาฮ</i>
+<span class="slant iast">dravya-yajñās tapo-yajñā<br /></span>
+<span class="slant pali">ทฺรวฺย-ยชฺญาสฺ ตโป-ยชฺญา<br /></span>
+<span class="slant thai">ทรัวยะ-ยัชญาส ตะโป-ยัชญา<br /></span>
+<span class="slant ram">ดรัพยะ-ยะกยาส ทะโพ-ยะกยา<br /></span>
+<span class="slant iast">yoga-yajñās tathāpare<br /></span>
+<span class="slant pali">โยค-ยชฺญาสฺ ตถาปเร<br /></span>
+<span class="slant thai">โยคะ-ยัชญาส ตะถาปะเร<br /></span>
+<span class="slant ram">โยกะ-ยะกยาส ทะทฺาพะเรฺ<br /></span>
+<span class="slant iast">svādhyāya-jñāna-yajñāś ca<br /></span>
+<span class="slant pali">สฺวาธฺยาย-ชฺญาน-ยชฺญาศฺ จ<br /></span>
+<span class="slant thai">สวาธยายะ-ชญานะ-ยัชญาศ จะ<br /></span>
+<span class="slant ram">สวาดฮยายะ-กยานะ-ยะกยาช ชะ<br /></span>
+<span class="slant iast">yatayaḥ saṁśita-vratāḥ<br /></span>
+<span class="slant pali">ยตยห์ สํศิต-วฺรตาห์<br /></span>
+<span class="slant thai">ยะตะยะห์ สังศิตะ-วระตาห์<br /></span>
+<span class="slant ram">ยะทะยะฮ สัมชิทะ-วระทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ทฺรวฺย-ยชฺญาฮ</i> — บูชาสิ่งของของตน, <i>ตปฮ-ยชฺญาฮ</i> — บูชาในความสมถะ, <i>โยค-ยชฺญาฮ</i> — บูชาในระบบเข้าฌานทั้งแปด, <i>ตตฺหา</i> — ดังนั้น, <i>อปเร</i> — ผู้อื่น, <i>สฺวาธฺยาย</i> — บูชา ในการศึกษาคัมภีร์พระ <i>เวท</i>, <i>ชฺญาน-ยชฺญาฮ</i> — ถวายในการพัฒนาความรู้ทิพย์, <i>จ</i> — เช่นกัน, <i>ยตยฮ</i> — ผู้ได้รับแสงสว่าง, <i>สํศิต-วฺรตาฮ</i> — ปฏิญาณตนโดยเคร่งครัด
+  <span class="slant iast">dravya-yajñāḥ</span><span class="slant pali">ทฺรวฺย-ยชฺญาห์</span><span class="slant thai">ทรัวยะ-ยัชญาห์</span><span class="slant ram">ดรัพยะ-ยะกยาฮ</span> — บูชาสิ่งของของตน, <span class="slant iast">tapaḥ-yajñāḥ</span><span class="slant pali">ตปห์-ยชฺญาห์</span><span class="slant thai">ตะปะห์-ยัชญาห์</span><span class="slant ram">ทะพะฮ-ยะกยาฮ</span> — บูชาในความสมถะ, <span class="slant iast">yoga-yajñāḥ</span><span class="slant pali">โยค-ยชฺญาห์</span><span class="slant thai">โยคะ-ยัชญาห์</span><span class="slant ram">โยกะ- ยะกยาฮ</span> — บูชาในระบบเข้าฌานทั้งแปด, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — ดังนั้น, <span class="slant iast">apare</span><span class="slant pali">อปเร</span><span class="slant thai">อะปะเร</span><span class="slant ram">อพะเร</span> — ผู้อื่น, <span class="slant iast">svādhyāya</span><span class="slant pali">สฺวาธฺยาย</span><span class="slant thai">สวาธยายะ</span><span class="slant ram">สวาดฺยายะ</span> — บูชา ในการศึกษาคัมภีร์พระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">jñāna-yajñāḥ</span><span class="slant pali">ชฺญาน-ยชฺญาห์</span><span class="slant thai">ชญานะ-ยัชญาห์</span><span class="slant ram">กยานะ-ยะกยาชฮ</span> — ถวายในการพัฒนาความรู้ทิพย์, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">yatayaḥ</span><span class="slant pali">ยตยห์</span><span class="slant thai">ยะตะยะห์</span><span class="slant ram">ยะทะยะฮ</span> — ผู้ได้รับแสงสว่าง, <span class="slant iast">saṁśita-vratāḥ</span><span class="slant pali">สํศิต-วฺรตาห์</span><span class="slant thai">สังศิตะ-วระตาห์</span><span class="slant ram">สัมชิทะ-วระทาฮ</span> — ปฏิญาณตนโดยเคร่งครัด
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  จากการถือคำปฏิญาณโดยเคร่งครัด&nbsp;&nbsp;บางคนรู้แจ้งด้วยการบูชาสิ่งของของตนและบางคนปฏิบัติสมถะความเพียรอย่างเคร่งครัด&nbsp;&nbsp;ด้วยการฝึก&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;อิทธิฤทธิ์แปดวิธี&nbsp;&nbsp;หรือด้วยการศึกษาคัมภีรพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เพื่อพัฒนาความรู้ทิพย์
+  จากการถือคำปฏิญาณโดยเคร่งครัด&nbsp;&nbsp;บางคนรู้แจ้งด้วยการบูชาสิ่งของของตนและบางคนปฏิบัติสมถะความเพียรอย่างเคร่งครัด&nbsp;&nbsp;ด้วยการฝึก&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;อิทธิฤทธิ์แปดวิธี&nbsp;&nbsp;หรือด้วยการศึกษาคัมภีรพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เพื่อพัฒนาความรู้ทิพย์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การบูชาทั้งหมดนี้อาจจัดอยู่ในประเภทต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;มีบุคคลผู้บูชาสิ่งของของตน<wbr>ในรูปของการบริจาคทานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในประเทศอินเดีย&nbsp;&nbsp;กลุ่มนักธุรกิจคนรวยหรือกลุ่มผู้มี<wbr>ยศเป็นเจ้าจะเปิดสถาบันการกุศลต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ธรฺม-ศาลา,อนฺน-เกฺษตฺร,อติตฺหิ-ศาลา,อนาตฺหาลย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>วิทฺยา-ปีฐ</i>&nbsp;&nbsp;ในประเทศต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เช่นเดียวกันมีโรงพยาบาลบ้านผู้สูงอายุ&nbsp;&nbsp;และมูลนิธิการกุศลในทำนองนี้มากมายที่แจกจ่ายอาหาร&nbsp;&nbsp;การศึกษาและรักษาโรคฟรีสำหรับคนจน&nbsp;&nbsp;กิจกรรมการกุศลทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<i>ทฺรวฺยมย-ยชฺญ</i>&nbsp;&nbsp;มีบางคน&nbsp;&nbsp;เพื่อความเจริญสูงขึ้นในชีวิต&nbsp;&nbsp;หรือเพื่อส่งเสริมให้ไปสู่โลกที่สูงกว่า<wbr>ภายในจักรวาล&nbsp;&nbsp;อาสาปฏิบัติสมถะมากมาย&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>จนฺทฺรายณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>จาตุรฺมาสฺย</i>&nbsp;&nbsp;วิธี<wbr>การเหล่านี้มีเงื่อนไขคำอธิฐานที่เคร่งครัดในการใช้ชีวิตภายใต้กฎเกณฑ์ที่เข้มงวด<wbr>กวดขัน&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;ภายใต้คำปฏิญาณ&nbsp;&nbsp;<i>จาตุรฺมาสฺย</i>&nbsp;&nbsp;ผู้อาสาจะไม่โกนหนวดเป็นเวลา<wbr>สี่เดือนในหนึ่งปี&nbsp;&nbsp;(กรกฎาคม&nbsp;&nbsp;ถึง&nbsp;&nbsp;ตุลาคม)&nbsp;&nbsp;ไม่รับประทานอาหารบางชนิด&nbsp;&nbsp;ไม่รับประทาน<wbr>วันละสองมื้อ&nbsp;&nbsp;และไม่ออกไปจากบ้าน&nbsp;&nbsp;การถวายบูชาความสะดวกสบายของชีวิตเช่น<wbr>นี้เรียกว่า&nbsp;&nbsp;<i>ตโปมย-ยชฺญ</i>&nbsp;&nbsp;ยังมีบางคนปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;การเข้าฌานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;ระบบ&nbsp;&nbsp;<i>ปตญฺชลิ</i>&nbsp;&nbsp;(เพื่อกลืนเข้าไปในความเป็นอยู่แห่งสัจธรรม)&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>หฐ-โยค</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>อษฺฏางฺค-โยค</i>&nbsp;&nbsp;(เพื่อความสมบูรณ์บางอย่างโดยเฉพาะ)&nbsp;&nbsp;และบางคนเดินทางไปตาม<wbr>สถานที่ทางศักดิ์สิทธิ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของนักบุญ&nbsp;&nbsp;การปฏิบัติทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<i>โยค-ยชฺญ</i>&nbsp;&nbsp;ถวายการบูชาเพื่อความสมบูรณ์บางประการในโลกวัตถุ&nbsp;&nbsp;มีบางคนศึกษาวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;หรือปรัชญา&nbsp;&nbsp;<i>สางฺขฺย</i>&nbsp;&nbsp;ทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<i>สฺวาธฺยาย-ยชฺญ</i>&nbsp;&nbsp;หรือปฏิบัติตนถวายบูชาด้วยการศึกษา&nbsp;&nbsp;<i>โยค</i>ทั้งหมดนี้ปฏิบัติด้วยความศรัทธาในการถวายการบูชาต่างๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;และค้นหาสภาวะ<wbr>ชีวิตที่สูงกว่า&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกแตกต่างจากสิ่งเหล่านี้&nbsp;&nbsp;เพราะว่าเป็นการรับ<wbr>ใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยตรงเราไม่สามารถบรรลุถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกได้ด้วยการถวายบูชาวิธี<wbr>หนึ่งวิธีใดดังที่ได้กล่าวมาข้างต้นนี้&nbsp;&nbsp;แต่เราสามารถบรรลุได้โดยพระเมตตาธิคุณขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสาวกผู้เชื่อถือได้ของพระองค์เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็นทิพย์
+  การบูชาทั้งหมดนี้อาจจัดอยู่ในประเภทต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;มีบุคคลผู้บูชาสิ่งของของตน<wbr>ในรูปของการบริจาคทานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในประเทศอินเดีย&nbsp;&nbsp;กลุ่มนักธุรกิจคนรวยหรือกลุ่มผู้มี<wbr>ยศเป็นเจ้าจะเปิดสถาบันการกุศลต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">dharma-śālā,&nbsp;&nbsp;anna-kṣetra,&nbsp;&nbsp;atithi-śālā,&nbsp;&nbsp;anāthālaya</span><span class="slant pali">ธรฺม-ศาลาอนฺน-กฺเษตฺรอติถิ-ศาลาอนาถาลย</span><span class="slant thai">ธัรมะ-ศาลาอันนะ-กเษตระอะติถิ-ศาลาอะนาถาละยะ</span><span class="slant ram">ดฺารมะ-อันนะ-คเชทระzzz-zzz</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">vidyā-pīṭha</span><span class="slant pali">วิทฺยา-ปีฐ</span><span class="slant thai">วิทยา-ปีฐะ</span><span class="slant ram">วิดยา-zzz</span>&nbsp;&nbsp;ในประเทศต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็เช่นเดียวกันมีโรงพยาบาลบ้านผู้สูงอายุ&nbsp;&nbsp;และมูลนิธิการกุศลในทำนองนี้มากมายที่แจกจ่ายอาหาร&nbsp;&nbsp;การศึกษาและรักษาโรคฟรีสำหรับคนจน&nbsp;&nbsp;กิจกรรมการกุศลทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">dravyamaya-yajña</span><span class="slant pali">ทฺรวฺยมย-ยชฺญ</span><span class="slant thai">ทรัวยะมะยะ-ยัชญะ</span><span class="slant ram">zzz-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;มีบางคน&nbsp;&nbsp;เพื่อความเจริญสูงขึ้นในชีวิต&nbsp;&nbsp;หรือเพื่อส่งเสริมให้ไปสู่โลกที่สูงกว่า<wbr>ภายในจักรวาล&nbsp;&nbsp;อาสาปฏิบัติสมถะมากมาย&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">candrāyaṇa</span><span class="slant pali">จนฺทฺรายณ</span><span class="slant thai">จันทรายะณะ</span><span class="slant ram">ชันดรายะณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">cāturmāsya</span><span class="slant pali">จาตุรฺมาสฺย</span><span class="slant thai">จาตุรมาสยะ</span><span class="slant ram"></span>&nbsp;&nbsp;วิธี<wbr>การเหล่านี้มีเงื่อนไขคำอธิฐานที่เคร่งครัดในการใช้ชีวิตภายใต้กฎเกณฑ์ที่เข้มงวด<wbr>กวดขัน&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;ภายใต้คำปฏิญาณ&nbsp;&nbsp;<span class="slant iast">cāturmāsya</span><span class="slant pali">จาตุรฺมาสฺย</span><span class="slant thai">จาตุรมาสยะ</span><span class="slant ram"></span>&nbsp;&nbsp;ผู้อาสาจะไม่โกนหนวดเป็นเวลา<wbr>สี่เดือนในหนึ่งปี&nbsp;&nbsp;(กรกฎาคม&nbsp;&nbsp;ถึง&nbsp;&nbsp;ตุลาคม)&nbsp;&nbsp;ไม่รับประทานอาหารบางชนิด&nbsp;&nbsp;ไม่รับประทาน<wbr>วันละสองมื้อ&nbsp;&nbsp;และไม่ออกไปจากบ้าน&nbsp;&nbsp;การถวายบูชาความสะดวกสบายของชีวิตเช่น<wbr>นี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">tapomaya-yajña</span><span class="slant pali">ตโปมย-ยชฺญ</span><span class="slant thai">ตะโปมะยะ-ยัชญะ</span><span class="slant ram">zzz-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ยังมีบางคนปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;การเข้าฌานต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;ระบบ&nbsp;&nbsp;<span class="slant iast">patañjali</span><span class="slant pali">ปตญฺชลิ</span><span class="slant thai">ปะตัญชะลิ</span><span class="slant ram"></span>&nbsp;&nbsp;(เพื่อกลืนเข้าไปในความเป็นอยู่แห่งสัจธรรม)&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">haṭha-yoga</span><span class="slant pali">หฐ-โยค</span><span class="slant thai">หะฐะ-โยคะ</span><span class="slant ram">-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">aṣṭāṅga-yoga</span><span class="slant pali">อษฺฏางฺค-โยค</span><span class="slant thai">อัษฏางคะ-โยคะ</span><span class="slant ram">-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;(เพื่อความสมบูรณ์บางอย่างโดยเฉพาะ)&nbsp;&nbsp;และบางคนเดินทางไปตาม<wbr>สถานที่ทางศักดิ์สิทธิ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของนักบุญ&nbsp;&nbsp;การปฏิบัติทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">yoga-yajña</span><span class="slant pali">โยค-ยชฺญ</span><span class="slant thai">โยคะ-ยัชญะ</span><span class="slant ram">โยกะ,โยคะ,โยค-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ถวายการบูชาเพื่อความสมบูรณ์บางประการในโลกวัตถุ&nbsp;&nbsp;มีบางคนศึกษาวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;หรือปรัชญา&nbsp;&nbsp;<span class="slant iast">sāṅkhya</span><span class="slant pali">สางฺขฺย</span><span class="slant thai">สางขยะ</span><span class="slant ram">สางคฺยะ,สางคฺยะ</span>&nbsp;&nbsp;ทั้งหมดนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">svādhyāya-yajña</span><span class="slant pali">สฺวาธฺยาย-ยชฺญ</span><span class="slant thai">สวาธยายะ-ยัชญะ</span><span class="slant ram">สวาดฺยายะ-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;หรือปฏิบัติตนถวายบูชาด้วยการศึกษา&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>ทั้งหมดนี้ปฏิบัติด้วยความศรัทธาในการถวายการบูชาต่างๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;และค้นหาสภาวะ<wbr>ชีวิตที่สูงกว่า&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกแตกต่างจากสิ่งเหล่านี้&nbsp;&nbsp;เพราะว่าเป็นการรับ<wbr>ใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยตรงเราไม่สามารถบรรลุถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกได้ด้วยการถวายบูชาวิธี<wbr>หนึ่งวิธีใดดังที่ได้กล่าวมาข้างต้นนี้&nbsp;&nbsp;แต่เราสามารถบรรลุได้โดยพระเมตตาธิคุณขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสาวกผู้เชื่อถือได้ของพระองค์เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็นทิพย์
   </p>
 </div>
 

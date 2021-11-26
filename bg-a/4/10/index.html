@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.10</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วีต-ราค-ภย-โกฺรธา</i><br /><i>มนฺ-มยา มามฺ อุปาศฺริตาฮ</i><br /><i>พหโว ชฺญาน-ตปสา</i><br /><i>ปูตา มทฺ-ภาวมฺ อาคตาฮ</i>
+<span class="slant iast">vīta-rāga-bhaya-krodhā<br /></span>
+<span class="slant pali">วีต-ราค-ภย-โกฺรธา<br /></span>
+<span class="slant thai">วีตะ-ราคะ-ภะยะ-กโรธา<br /></span>
+<span class="slant ram">วีทะ-รากะ-บฺะยะ-โครดฺา<br /></span>
+<span class="slant iast">man-mayā mām upāśritāḥ<br /></span>
+<span class="slant pali">มนฺ-มยา มามฺ อุปาศฺริตาห์<br /></span>
+<span class="slant thai">มัน-มะยา มาม อุปาศริตาห์<br /></span>
+<span class="slant ram">มัน-มะยา มาม อุพาชริทาฮ<br /></span>
+<span class="slant iast">bahavo jñāna-tapasā<br /></span>
+<span class="slant pali">พหโว ชฺญาน-ตปสา<br /></span>
+<span class="slant thai">พะหะโว ชญานะ-ตะปะสา<br /></span>
+<span class="slant ram">บะฮะโว กยานะ-ทะพะสา<br /></span>
+<span class="slant iast">pūtā mad-bhāvam āgatāḥ<br /></span>
+<span class="slant pali">ปูตา มทฺ-ภาวมฺ อาคตาห์<br /></span>
+<span class="slant thai">ปูตา มัท-ภาวัม อาคะตาห์<br /></span>
+<span class="slant ram">พูทา มัด-บฺาวัม อากะทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วีต</i> — อิสระจาก,<i>ราค</i> — การยึดติด, <i>ภย</i> — ความกลัว, <i>โกฺรธาฮ</i> — และความโกรธ, <i>มตฺ-มยาฮ</i> — ในข้าอย่างสมูรณ์, <i>มามฺ</i> — ในข้า, <i>อุปาศฺริตาฮ</i> — สถิตอย่างสมบูรณ์, <i>พหวฮ</i> — มากมาย, <i>ชฺญาน</i> — แห่งความรู้, <i>ตปสา</i> — ด้วยการบำเพ็ญเพียร, <i>ปูตาฮ</i> — บริสุทธิ์, <i>มตฺ-ภาวมฺ</i> — ความรักทิพย์ต่อข้า, <i>อาคตาฮ</i> — บรรลุถึง
+  <span class="slant iast">vīta</span><span class="slant pali">วีต</span><span class="slant thai">วีตะ</span><span class="slant ram">วีทะ</span> — อิสระจาก,<span class="slant iast">rāga</span><span class="slant pali">ราค</span><span class="slant thai">ราคะ</span><span class="slant ram">รากะ</span> — การยึดติด, <span class="slant iast">bhaya</span><span class="slant pali">ภย</span><span class="slant thai">ภะยะ</span><span class="slant ram">บฺะยะ</span> — ความกลัว, <span class="slant iast">krodhāḥ</span><span class="slant pali">โกฺรธาห์</span><span class="slant thai">กโรธาห์</span><span class="slant ram">โครดฺาฮ</span> — และความโกรธ, <span class="slant iast">mat-mayāḥ</span><span class="slant pali">มตฺ-มยาห์</span><span class="slant thai">มัต-มะยาห์</span><span class="slant ram">มัทฺ-มะยา</span> — ในข้าอย่างสมูรณ์, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ในข้า, <span class="slant iast">upāśritāḥ</span><span class="slant pali">อุปาศฺริตาห์</span><span class="slant thai">อุปาศริตาห์</span><span class="slant ram">อุพาชริทาฮ</span> — สถิตอย่างสมบูรณ์, <span class="slant iast">bahavaḥ</span><span class="slant pali">พหวห์</span><span class="slant thai">พะหะวะห์</span><span class="slant ram">บะฮะวะฮ</span> — มากมาย, <span class="slant iast">jñāna</span><span class="slant pali">ชฺญาน</span><span class="slant thai">ชญานะ</span><span class="slant ram">กยานะ</span> — แห่งความรู้, <span class="slant iast">tapasā</span><span class="slant pali">ตปสา</span><span class="slant thai">ตะปะสา</span><span class="slant ram">ทะพะสา</span> — ด้วยการบำเพ็ญเพียร, <span class="slant iast">pūtāḥ</span><span class="slant pali">ปูตาห์</span><span class="slant thai">ปูตาห์</span><span class="slant ram">พูทาฮ</span> — บริสุทธิ์, <span class="slant iast">mat-bhāvam</span><span class="slant pali">มตฺ-ภาวมฺ</span><span class="slant thai">มัต-ภาวัม</span><span class="slant ram">มัท-บฺาวัม</span> — ความรักทิพย์ต่อข้า, <span class="slant iast">āgatāḥ</span><span class="slant pali">อาคตาห์</span><span class="slant thai">อาคะตาห์</span><span class="slant ram">อากะทาฮ</span> — บรรลุถึง
   </p>
 </div>
 
@@ -73,31 +174,61 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังที่ได้อธิบายก่อนหน้านี้ว่าเป็นการยากมากสำหรับผู้มีความเสน่หามาก<wbr>ทางวัตถุที่จะเข้าใจธรรมชาติของบุคลิกภาพแห่งสัจธรรมสูงสุด&nbsp;&nbsp;โดยทั่วไปผู้ยึดติดกับ<wbr>แนวคิดชีวิตทางร่างกายจะซึมซาบอยู่ในลัทธิวัตถุนิยม&nbsp;&nbsp;เกือบเป็นไปไม่ได้สำหรับคน<wbr>พวกนี้ที่จะเข้าใจว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นบุคคลได้อย่างไร&nbsp;&nbsp;นักวัตถุนิยมเช่นนี้ไม่สามารถ<wbr>แม้แต่จะจินตนาการว่ามีร่างทิพย์ที่ไม่มีวันเสื่อมสลาย&nbsp;&nbsp;เต็มไปด้วยความรู้&nbsp;&nbsp;และมีความ<wbr>ปลื้มปิติสุขชั่วกัลปวสาน&nbsp;&nbsp;ในแนวคิดทางวัตถุ&nbsp;&nbsp;ร่างกายเสื่อมสลาย&nbsp;&nbsp;เต็มไปด้วยอวิชชาและความทุกข์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ผู้คนโดยทั่วไปจะรักษาแนวคิดเช่นเดียวกับร่างกายนี้อยู่ภายในใจเมื่อได้รับข้อมูลเกี่ยวกับรูปลักษณ์ส่วนพระองค์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สำหรับนักวัตถุนิยม<wbr>ประเภทนี้&nbsp;&nbsp;ปรากฏการณ์ทางวัตถุที่ยิ่งใหญ่มโหฬารคือสิ่งสูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงพิจารณาว่า<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไร้รูปลักษณ์&nbsp;&nbsp;และเนื่องจากซึมซาบอยู่ในวัตถุมาก&nbsp;&nbsp;แนวคิดว่าจะมีบุคลิกภาพ<wbr>หลังหลุดพ้นจากโลกวัตถุแล้วทำให้เกิดความกลัว&nbsp;&nbsp;เมื่อได้รับข้อมูลว่าชีวิตทิพย์ยังเป็น<wbr>ปัจเจกบุคคลและมีบุคลิกภาพเช่นเดียวกัน&nbsp;&nbsp;รู้สึกกลัวที่จะมาเป็นบุคคลอีกครั้งหนึ่ง&nbsp;&nbsp;ดัง<wbr>นั้นโดยธรรมชาติพวกเขาชอบกลืนหายเข้าไปในความว่างเปล่าที่ไร้รูปลักษณ์มากกว่าโดยเปรียบเทียบสิ่งมีชีวิตเหมือนกับฟองน้ำในมหาสมุทรที่กลืนหายเข้าไปในมหาสมุทรนี่คือความสมบูรณ์สูงสุดแห่งชีวิตทิพย์ที่บรรลุโดยไร้ปัจเจกบุคลิกภาพ&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;เป็นระดับ<wbr>ชีวิตที่น่ากลัวแบบหนึ่ง&nbsp;&nbsp;ซึ่งขาดความรู้อย่างสมบูรณ์แห่งชีวิตทิพย์&nbsp;&nbsp;นอกจากนั้นยังมี<wbr>หลายคนที่ไม่สามารถเข้าใจชีวิตทิพย์ได้เลย&nbsp;&nbsp;พวกนี้รู้สึกอึดอัดจากหลายทฤษฎีและข้อ<wbr>ขัดแย้งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานาในการคาดคะเนทางปรัชญา&nbsp;&nbsp;ในที่สุดก็รู้สึกเบื่อหน่าย&nbsp;&nbsp;โมโห&nbsp;&nbsp;และ<wbr>สรุปอย่างโง่&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าไม่มีแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ทุกสิ่งทุกอย่างว่างเปล่า&nbsp;&nbsp;บุคคลเช่นนี้อยู่ใน<wbr>สภาวะชีวิตที่ป่วยเป็นโรค&nbsp;&nbsp;บางคนยึดติดทางวัตถุมาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ได้ให้ความสนใจกับ<wbr>ชีวิตทิพย์&nbsp;&nbsp;บางคนต้องการกลืนหายเข้าไปในแหล่งกำเนิดทิพย์สูงสุด&nbsp;&nbsp;และบางคนไม่เชื่อ<wbr>ในทุกสิ่งทุกอย่าง&nbsp;&nbsp;ด้วยความหมดหวังจึงโมโหต่อการคาดคะเนในวิถีทิพย์ทั้งหมด&nbsp;&nbsp;คน<wbr>กลุ่มสุดท้ายจะไปพึ่งยาเสพติดบางชนิด&nbsp;&nbsp;และบางครั้งเกิดภาพหลอนแต่กลับคิดว่าเป็น<wbr>จักษุทิพย์&nbsp;&nbsp;เราต้องขจัดการยึดติดในโลกวัตถุทั้งสามระดับ&nbsp;&nbsp;คือ&nbsp;&nbsp;ละเลยต่อชีวิตทิพย์กลัวต่อปัจเจกบุคลิกภาพทิพย์&nbsp;&nbsp;และแนวคิดในความว่างเปล่าที่เกิดขึ้นจากความผิด<wbr>หวังในชีวิต&nbsp;&nbsp;การที่จะได้รับอิสรภาพจากสามระดับของแนวคิดชีวิตทางวัตถุ&nbsp;&nbsp;เราต้องยึด<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นที่พึ่งโดยสมบูรณ์ด้วยการนำทางของพระอาจารย์ทิพย์ผู้เชื่อถือได้&nbsp;&nbsp;และ<wbr>ปฏิบัติตามระเบียบวินัยและหลักธรรมแห่งชีวิตอุทิศตนเสียสละ&nbsp;&nbsp;ระดับสุดท้ายของชีวิต<wbr>อุทิศตนเสียสละเรียกว่า&nbsp;&nbsp;<i>ภาว</i>&nbsp;&nbsp;หรือความรักทิพย์ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  ดังที่ได้อธิบายก่อนหน้านี้ว่าเป็นการยากมากสำหรับผู้มีความเสน่หามาก<wbr>ทางวัตถุที่จะเข้าใจธรรมชาติของบุคลิกภาพแห่งสัจธรรมสูงสุด&nbsp;&nbsp;โดยทั่วไปผู้ยึดติดกับ<wbr>แนวคิดชีวิตทางร่างกายจะซึมซาบอยู่ในลัทธิวัตถุนิยม&nbsp;&nbsp;เกือบเป็นไปไม่ได้สำหรับคน<wbr>พวกนี้ที่จะเข้าใจว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นบุคคลได้อย่างไร&nbsp;&nbsp;นักวัตถุนิยมเช่นนี้ไม่สามารถ<wbr>แม้แต่จะจินตนาการว่ามีร่างทิพย์ที่ไม่มีวันเสื่อมสลาย&nbsp;&nbsp;เต็มไปด้วยความรู้&nbsp;&nbsp;และมีความ<wbr>ปลื้มปิติสุขชั่วกัลปวสาน&nbsp;&nbsp;ในแนวคิดทางวัตถุ&nbsp;&nbsp;ร่างกายเสื่อมสลาย&nbsp;&nbsp;เต็มไปด้วยอวิชชาและความทุกข์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ผู้คนโดยทั่วไปจะรักษาแนวคิดเช่นเดียวกับร่างกายนี้อยู่ภายในใจเมื่อได้รับข้อมูลเกี่ยวกับรูปลักษณ์ส่วนพระองค์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สำหรับนักวัตถุนิยม<wbr>ประเภทนี้&nbsp;&nbsp;ปรากฏการณ์ทางวัตถุที่ยิ่งใหญ่มโหฬารคือสิ่งสูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงพิจารณาว่า<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไร้รูปลักษณ์&nbsp;&nbsp;และเนื่องจากซึมซาบอยู่ในวัตถุมาก&nbsp;&nbsp;แนวคิดว่าจะมีบุคลิกภาพ<wbr>หลังหลุดพ้นจากโลกวัตถุแล้วทำให้เกิดความกลัว&nbsp;&nbsp;เมื่อได้รับข้อมูลว่าชีวิตทิพย์ยังเป็น<wbr>ปัจเจกบุคคลและมีบุคลิกภาพเช่นเดียวกัน&nbsp;&nbsp;รู้สึกกลัวที่จะมาเป็นบุคคลอีกครั้งหนึ่ง&nbsp;&nbsp;ดัง<wbr>นั้นโดยธรรมชาติพวกเขาชอบกลืนหายเข้าไปในความว่างเปล่าที่ไร้รูปลักษณ์มากกว่าโดยเปรียบเทียบสิ่งมีชีวิตเหมือนกับฟองน้ำในมหาสมุทรที่กลืนหายเข้าไปในมหาสมุทรนี่คือความสมบูรณ์สูงสุดแห่งชีวิตทิพย์ที่บรรลุโดยไร้ปัจเจกบุคลิกภาพ&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;เป็นระดับ<wbr>ชีวิตที่น่ากลัวแบบหนึ่ง&nbsp;&nbsp;ซึ่งขาดความรู้อย่างสมบูรณ์แห่งชีวิตทิพย์&nbsp;&nbsp;นอกจากนั้นยังมี<wbr>หลายคนที่ไม่สามารถเข้าใจชีวิตทิพย์ได้เลย&nbsp;&nbsp;พวกนี้รู้สึกอึดอัดจากหลายทฤษฎีและข้อ<wbr>ขัดแย้งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานาในการคาดคะเนทางปรัชญา&nbsp;&nbsp;ในที่สุดก็รู้สึกเบื่อหน่าย&nbsp;&nbsp;โมโห&nbsp;&nbsp;และ<wbr>สรุปอย่างโง่&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าไม่มีแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ทุกสิ่งทุกอย่างว่างเปล่า&nbsp;&nbsp;บุคคลเช่นนี้อยู่ใน<wbr>สภาวะชีวิตที่ป่วยเป็นโรค&nbsp;&nbsp;บางคนยึดติดทางวัตถุมาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ได้ให้ความสนใจกับ<wbr>ชีวิตทิพย์&nbsp;&nbsp;บางคนต้องการกลืนหายเข้าไปในแหล่งกำเนิดทิพย์สูงสุด&nbsp;&nbsp;และบางคนไม่เชื่อ<wbr>ในทุกสิ่งทุกอย่าง&nbsp;&nbsp;ด้วยความหมดหวังจึงโมโหต่อการคาดคะเนในวิถีทิพย์ทั้งหมด&nbsp;&nbsp;คน<wbr>กลุ่มสุดท้ายจะไปพึ่งยาเสพติดบางชนิด&nbsp;&nbsp;และบางครั้งเกิดภาพหลอนแต่กลับคิดว่าเป็น<wbr>จักษุทิพย์&nbsp;&nbsp;เราต้องขจัดการยึดติดในโลกวัตถุทั้งสามระดับ&nbsp;&nbsp;คือ&nbsp;&nbsp;ละเลยต่อชีวิตทิพย์กลัวต่อปัจเจกบุคลิกภาพทิพย์&nbsp;&nbsp;และแนวคิดในความว่างเปล่าที่เกิดขึ้นจากความผิด<wbr>หวังในชีวิต&nbsp;&nbsp;การที่จะได้รับอิสรภาพจากสามระดับของแนวคิดชีวิตทางวัตถุ&nbsp;&nbsp;เราต้องยึด<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นที่พึ่งโดยสมบูรณ์ด้วยการนำทางของพระอาจารย์ทิพย์ผู้เชื่อถือได้&nbsp;&nbsp;และ<wbr>ปฏิบัติตามระเบียบวินัยและหลักธรรมแห่งชีวิตอุทิศตนเสียสละ&nbsp;&nbsp;ระดับสุดท้ายของชีวิต<wbr>อุทิศตนเสียสละเรียกว่า&nbsp;&nbsp;<span class="slant iast">bhāva</span><span class="slant pali">ภาว</span><span class="slant thai">ภาวะ</span><span class="slant ram">บฺาวะ</span>&nbsp;&nbsp;หรือความรักทิพย์ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ภกฺติ-รสามฺฤต-สินฺธุ</i>&nbsp;&nbsp;(1.4.15-16)&nbsp;&nbsp;ศาสตร์แห่งกาอุทิศตนเสียสละรับใช้กล่าวว่า
+  <span class="slant iast">bhakti-rasāmṛta-sindhu</span><span class="slant pali">ภกฺติ-รสามฺฤต-สินฺธุ</span><span class="slant thai">ภักติ-ระสามฤตะ-สินธุ</span><span class="slant ram">บัฺคธิ,บัคฺธิ--</span>&nbsp;&nbsp;(1.4.15-16)&nbsp;&nbsp;ศาสตร์แห่งกาอุทิศตนเสียสละรับใช้กล่าวว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อาทะอุ ศฺรทฺธา ตตฮ สาธุ-</i><br /><i>สโงฺค ′ตฺห ภชน-กฺริยา</i><br /><i>ตโต ′นรฺตฺห-นิวฺฤตฺติฮ สฺยาตฺ</i><br /><i>ตโต นิษฺฐา รุจิสฺ ตตฮ</i>
+<span class="slant iast">ādau śraddhā tataḥ sādhu-<br /></span>
+<span class="slant pali">อาเทา ศฺรทฺธา ตตห์ สาธุ-<br /></span>
+<span class="slant thai">อาเทา ศรัทธา ตะตะห์ สาธุ-<br /></span>
+<span class="slant ram">อาโด ชรัดดฺา ทะทะฮ สาดํุ-<br /></span>
+<span class="slant iast">saṅgo ’tha bhajana-kriyā<br /></span>
+<span class="slant pali">สงฺโค ’ถ ภชน-กฺริยา<br /></span>
+<span class="slant thai">สังโค ’ถะ ภะชะนะ-กริยา<br /></span>
+<span class="slant ram">สังโก ทฺะ บฺะจะนะ-คริยา<br /></span>
+<span class="slant iast">tato ’nartha-nivṛttiḥ syāt<br /></span>
+<span class="slant pali">ตโต ’นรฺถ-นิวฺฤตฺติห์ สฺยาตฺ<br /></span>
+<span class="slant thai">ตะโต ’นัรถะ-นิวฤตติห์ สยาต<br /></span>
+<span class="slant ram">ทะโท นารทฺะ-นิวริททิฮ สยาท<br /></span>
+<span class="slant iast">tato niṣṭhā rucis tataḥ<br /></span>
+<span class="slant pali">ตโต นิษฺฐา รุจิสฺ ตตห์<br /></span>
+<span class="slant thai">ตะโต นิษฐา รุจิส ตะตะห์<br /></span>
+<span class="slant ram">ทะโท นิชทฺา รุชิส ทะทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อตฺหาสกฺติสฺ ตโต ภาวสฺ</i><br /><i>ตตฮ เปฺรมาภฺยุทญฺจติ</i><br /><i>สาธกานามฺ อยํ เปฺรมฺณฮ</i><br /><i>ปฺราทุรฺภาเว ภเวตฺ กฺรมฮ</i>
+<span class="slant iast">athāsaktis tato bhāvas<br /></span>
+<span class="slant pali">อถาสกฺติสฺ ตโต ภาวสฺ<br /></span>
+<span class="slant thai">อะถาสักติส ตะโต ภาวัส<br /></span>
+<span class="slant ram">อทฺาสัคทิส ทะโท บฺาวัส<br /></span>
+<span class="slant iast">tataḥ premābhyudañcati<br /></span>
+<span class="slant pali">ตตห์ เปฺรมาภฺยุทญฺจติ<br /></span>
+<span class="slant thai">ตะตะห์ ปเรมาภยุทัญจะติ<br /></span>
+<span class="slant ram">ทะทะฮ เพรมาบฺยุดันชะทิฺ<br /></span>
+<span class="slant iast">sādhakānām ayaṁ premṇaḥ<br /></span>
+<span class="slant pali">สาธกานามฺ อยํ เปฺรมฺณห์<br /></span>
+<span class="slant thai">สาธะกานาม อะยัง ปเรมณะห์<br /></span>
+<span class="slant ram">สาดฺะคานาม อยัม เพรมณะฮ<br /></span>
+<span class="slant iast">prādurbhāve bhavet kramaḥ<br /></span>
+<span class="slant pali">ปฺราทุรฺภาเว ภเวตฺ กฺรมห์<br /></span>
+<span class="slant thai">ปราทุรภาเว ภะเวต กระมะห์<br /></span>
+<span class="slant ram">พราดูรบฺาเว บฺะเวท คระมะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ในตอนต้นเราต้องมีความปรารถนาพื้นฐานเพื่อความรู้แจ้งแห่งตนจึงจะนำเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าถึง<wbr>จุดที่จะพยายามคบหาสมาคมกับบุคคลผู้มีความเจริญในวิถีทิพย์&nbsp;&nbsp;ระดับต่อไปเราจะ<wbr>ต้องอุปสมบทโดยพระอาจารย์ทิพย์ผู้เจริญแล้ว&nbsp;&nbsp;และภายใต้คำสั่งสอนของท่าน&nbsp;&nbsp;สาวก<wbr>นวกะจึงเริ่มปฏิบัติตามขบวนการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ด้วยการปฏิบัติการอุทิศตน<wbr>เสียสละรับใช้ภายใต้คำแนะนำของพระอาจารย์ทิพย์&nbsp;&nbsp;ทำให้เราเป็นอิสระจากการยึดติด<wbr>ทางวัตถุทั้งมวล&nbsp;&nbsp;บรรลุถึงความมั่นคงในการรู้แจ้งแห่งตน&nbsp;&nbsp;และได้รับรสแห่งการสดับฟัง<wbr>เกี่ยวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้สมบูรณ์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;รสนี้จะนำเราก้าวต่อไปถึงความยึดมั่นใน<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งจะเจริญงอกงามจนถึง&nbsp;&nbsp;<i>ภาว</i>&nbsp;&nbsp;หรือระดับพื้นฐานของความรักทิพย์<wbr>แห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ความรักที่แท้จริงต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>เปฺรม</i>&nbsp;&nbsp;ซึ่งเป็นระดับสมบูรณ์<wbr>สูงสุดแห่งชีวิต”&nbsp;&nbsp;ในระดับ&nbsp;&nbsp;<i>เปฺรม</i>&nbsp;&nbsp;จะมีการปฏิบัติรับใช้ด้วยความรักทิพย์ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>เสมอ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยขบวนการแห่งการอุทิศตนเสียสละรับใช้อย่างค่อยเป็นค่อยไป&nbsp;&nbsp;ภายใต้<wbr>คำแนะนำของพระอาจารย์ทิพย์ที่เชื่อถือได้&nbsp;&nbsp;ทำให้เราสามารถบรรลุถึงระดับสูงสุดซึ่งมี<wbr>อิสระจากการยึดติดทางวัตถุทั้งปวง&nbsp;&nbsp;และเสรีภาพจากความกลัวปัจเจกบุคลิกภาพทิพย์<wbr>ของตนเอง&nbsp;&nbsp;รวมทั้งเสรีภาพจากความผิดหวังอันสืบเนื่องมาจากปรัชญาที่สูญเปล่า&nbsp;&nbsp;ใน<wbr>ที่สุดเราจะสามารถบรรลุถึงอาณาจักรแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  “ในตอนต้นเราต้องมีความปรารถนาพื้นฐานเพื่อความรู้แจ้งแห่งตนจึงจะนำเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าถึง<wbr>จุดที่จะพยายามคบหาสมาคมกับบุคคลผู้มีความเจริญในวิถีทิพย์&nbsp;&nbsp;ระดับต่อไปเราจะ<wbr>ต้องอุปสมบทโดยพระอาจารย์ทิพย์ผู้เจริญแล้ว&nbsp;&nbsp;และภายใต้คำสั่งสอนของท่าน&nbsp;&nbsp;สาวก<wbr>นวกะจึงเริ่มปฏิบัติตามขบวนการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ด้วยการปฏิบัติการอุทิศตน<wbr>เสียสละรับใช้ภายใต้คำแนะนำของพระอาจารย์ทิพย์&nbsp;&nbsp;ทำให้เราเป็นอิสระจากการยึดติด<wbr>ทางวัตถุทั้งมวล&nbsp;&nbsp;บรรลุถึงความมั่นคงในการรู้แจ้งแห่งตน&nbsp;&nbsp;และได้รับรสแห่งการสดับฟัง<wbr>เกี่ยวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้สมบูรณ์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;รสนี้จะนำเราก้าวต่อไปถึงความยึดมั่นใน<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งจะเจริญงอกงามจนถึง&nbsp;&nbsp;<span class="slant iast">bhāva</span><span class="slant pali">ภาว</span><span class="slant thai">ภาวะ</span><span class="slant ram">บฺาวะ</span>&nbsp;&nbsp;หรือระดับพื้นฐานของความรักทิพย์<wbr>แห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ความรักที่แท้จริงต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">prema</span><span class="slant pali">เปฺรม</span><span class="slant thai">ปเรมะ</span><span class="slant ram">เพรมะ</span>&nbsp;&nbsp;ซึ่งเป็นระดับสมบูรณ์<wbr>สูงสุดแห่งชีวิต”&nbsp;&nbsp;ในระดับ&nbsp;&nbsp;<span class="slant iast">prema</span><span class="slant pali">เปฺรม</span><span class="slant thai">ปเรมะ</span><span class="slant ram">เพรมะ</span>&nbsp;&nbsp;จะมีการปฏิบัติรับใช้ด้วยความรักทิพย์ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>เสมอ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยขบวนการแห่งการอุทิศตนเสียสละรับใช้อย่างค่อยเป็นค่อยไป&nbsp;&nbsp;ภายใต้<wbr>คำแนะนำของพระอาจารย์ทิพย์ที่เชื่อถือได้&nbsp;&nbsp;ทำให้เราสามารถบรรลุถึงระดับสูงสุดซึ่งมี<wbr>อิสระจากการยึดติดทางวัตถุทั้งปวง&nbsp;&nbsp;และเสรีภาพจากความกลัวปัจเจกบุคลิกภาพทิพย์<wbr>ของตนเอง&nbsp;&nbsp;รวมทั้งเสรีภาพจากความผิดหวังอันสืบเนื่องมาจากปรัชญาที่สูญเปล่า&nbsp;&nbsp;ใน<wbr>ที่สุดเราจะสามารถบรรลุถึงอาณาจักรแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

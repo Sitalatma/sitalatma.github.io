@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 17.13</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วิธิ-หีนมฺ อสฺฤษฺฏานฺนํ</i><br /><i>มนฺตฺร-หีนมฺ อทกฺษิณมฺ</i><br /><i>ศฺรทฺธา-วิรหิตํ ยชฺญํ</i><br /><i>ตามสํ ปริจกฺษเต</i>
+<span class="slant iast">vidhi-hīnam asṛṣṭānnaṁ<br /></span>
+<span class="slant pali">วิธิ-หีนมฺ อสฺฤษฺฏานฺนํ<br /></span>
+<span class="slant thai">วิธิ-หีนัม อัสฤษฏานนัง<br /></span>
+<span class="slant ram">วิดิฺ-ฮีนัม อัสริชทานนัม<br /></span>
+<span class="slant iast">mantra-hīnam adakṣiṇam<br /></span>
+<span class="slant pali">มนฺตฺร-หีนมฺ อทกฺษิณมฺ<br /></span>
+<span class="slant thai">มันตระ-หีนัม อะทักษิณัม<br /></span>
+<span class="slant ram">มันทระ-ฮีนัม อดัคชิณัม<br /></span>
+<span class="slant iast">śraddhā-virahitaṁ yajñaṁ<br /></span>
+<span class="slant pali">ศฺรทฺธา-วิรหิตํ ยชฺญํ<br /></span>
+<span class="slant thai">ศรัทธา-วิระหิตัง ยัชญัง<br /></span>
+<span class="slant ram">ชรัดดฺา-วิระฮิทัม ยะกยัม<br /></span>
+<span class="slant iast">tāmasaṁ paricakṣate<br /></span>
+<span class="slant pali">ตามสํ ปริจกฺษเต<br /></span>
+<span class="slant thai">ตามะสัง ปะริจักษะเต<br /></span>
+<span class="slant ram">ทามะสัม พะริชัคชะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วิธิ-หีนมฺ</i> — ปราศจากการชี้นำจากพระคัมภีร์, <i>อสฺฤษฺฏ-อนฺนมฺ</i> — ไม่มีการแจกจ่าย<i>ปฺรสาทมฺ</i>, <i>มนฺตฺร-หีนมฺ</i> — ไม่มีการสวดบทมนต์พระ <i>เวท</i>, <i>อทกฺษิณมฺ</i> — ไม่มีการทำบุญให้ นักบวช, <i>ศฺรทฺธา</i> — ความศรัทธา, <i>วิรหิตมฺ</i> — ปราศจาก, <i>ยชฺญมฺ</i> — การบูชา, <i>ตามสมฺ</i> — ในระดับอวิชชา, <i>ปริจกฺษเต</i> — พิจารณาว่า
+  <span class="slant iast">vidhi-hīnam</span><span class="slant pali">วิธิ-หีนมฺ</span><span class="slant thai">วิธิ-หีนัม</span><span class="slant ram">วิดิฺ-ฮีนัม</span> — ปราศจากการชี้นำจากพระคัมภีร์, <span class="slant iast">asṛṣṭa-annam</span><span class="slant pali">อสฺฤษฺฏ-อนฺนมฺ</span><span class="slant thai">อัสฤษฏะ-อันนัม</span><span class="slant ram">อัสริชทะ-อันนัม</span> — ไม่มีการแจกจ่าย<span class="slant iast">prasādam</span><span class="slant pali">ปฺรสาทมฺ</span><span class="slant thai">ประสาทัม</span><span class="slant ram">พระ- สาดัม,พระ- <wbr>สาดัม</span>, <span class="slant iast">mantra-hīnam</span><span class="slant pali">มนฺตฺร-หีนมฺ</span><span class="slant thai">มันตระ-หีนัม</span><span class="slant ram">มันทระ-ฮีนัม</span> — ไม่มีการสวดบทมนต์พระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">adakṣiṇam</span><span class="slant pali">อทกฺษิณมฺ</span><span class="slant thai">อะทักษิณัม</span><span class="slant ram">อดัคชิณัม</span> — ไม่มีการทำบุญให้ นักบวช, <span class="slant iast">śraddhā</span><span class="slant pali">ศฺรทฺธา</span><span class="slant thai">ศรัทธา</span><span class="slant ram">ชรัดดฺา</span> — ความศรัทธา, <span class="slant iast">virahitam</span><span class="slant pali">วิรหิตมฺ</span><span class="slant thai">วิระหิตัม</span><span class="slant ram">วิระฮิทัม</span> — ปราศจาก, <span class="slant iast">yajñam</span><span class="slant pali">ยชฺญมฺ</span><span class="slant thai">ยัชญัม</span><span class="slant ram">ยะกยัม</span> — การบูชา, <span class="slant iast">tāmasam</span><span class="slant pali">ตามสมฺ</span><span class="slant thai">ตามะสัม</span><span class="slant ram">ทามะสัม</span> — ในระดับอวิชชา, <span class="slant iast">paricakṣate</span><span class="slant pali">ปริจกฺษเต</span><span class="slant thai">ปะริจักษะเต</span><span class="slant ram">พะริชัคชะเท</span> — พิจารณาว่า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  การบูชาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทำไปโดยไม่คำนึงถึงคำแนะนำจากพระคัมภีร์&nbsp;&nbsp;ไม่มีการแจก&nbsp;&nbsp;<i>ปฺรสาทมฺ</i>&nbsp;&nbsp;(อาหารทิพย์)&nbsp;&nbsp;ไม่มีการสวดบทมนต์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ไม่ทำบุญให้นักบวช&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;พิจารณาว่าอยู่ในระดับอวิชชา
+  การบูชาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทำไปโดยไม่คำนึงถึงคำแนะนำจากพระคัมภีร์&nbsp;&nbsp;ไม่มีการแจก&nbsp;&nbsp;<span class="slant iast">prasādam</span><span class="slant pali">ปฺรสาทมฺ</span><span class="slant thai">ประสาทัม</span><span class="slant ram">พระ- สาดัม,พระ- <wbr>สาดัม</span>&nbsp;&nbsp;(อาหารทิพย์)&nbsp;&nbsp;ไม่มีการสวดบทมนต์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ไม่ทำบุญให้นักบวช&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;พิจารณาว่าอยู่ในระดับอวิชชา
   </p>
 </div>
 

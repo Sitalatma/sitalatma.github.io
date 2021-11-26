@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.33</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เศฺรยานฺ ทฺรวฺย-มยาทฺ ยชฺญาชฺ</i><br /><i>ชฺญาน-ยชฺญฮ ปรนฺ-ตป</i><br /><i>สรฺวํ กรฺมาขิลํ ปารฺตฺห</i><br /><i>ชฺญาเน ปริสมาปฺยเต</i>
+<span class="slant iast">śreyān dravya-mayād yajñāj<br /></span>
+<span class="slant pali">เศฺรยานฺ ทฺรวฺย-มยาทฺ ยชฺญาชฺ<br /></span>
+<span class="slant thai">ศเรยาน ทรัวยะ-มะยาท ยัชญาช<br /></span>
+<span class="slant ram">ชเรยาน ดรัพยะ-มะยาด ยะกยาจ<br /></span>
+<span class="slant iast">jñāna-yajñaḥ paran-tapa<br /></span>
+<span class="slant pali">ชฺญาน-ยชฺญห์ ปรนฺ-ตป<br /></span>
+<span class="slant thai">ชญานะ-ยัชญะห์ ปะรัน-ตะปะ<br /></span>
+<span class="slant ram">กยานะ-ยะกยะฮ พะรันทะพะ<br /></span>
+<span class="slant iast">sarvaṁ karmākhilaṁ pārtha<br /></span>
+<span class="slant pali">สรฺวํ กรฺมาขิลํ ปารฺถ<br /></span>
+<span class="slant thai">สัรวัง กัรมาขิลัง ปารถะ<br /></span>
+<span class="slant ram">สารวัม คารมาคฺิลัม พารทฺะ<br /></span>
+<span class="slant iast">jñāne parisamāpyate<br /></span>
+<span class="slant pali">ชฺญาเน ปริสมาปฺยเต<br /></span>
+<span class="slant thai">ชญาเน ปะริสะมาปยะเต<br /></span>
+<span class="slant ram">กยาเน พะริสะมาพยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เศฺรยานฺ</i> — ยิ่งใหญ่กว่า, <i>ทฺรวฺย-มยาตฺ</i> — ของความเป็นเจ้าของวัตถุ, <i>ยชฺญาตฺ</i> — กว่า การถวายการบูชา, <i>ชฺญาน-ยชฺญฮ</i> — ถวายในความรู้, <i>ปรมฺ-ตป</i> — โอ้ ผู้กำราบศัตรู, <i>สรฺวมฺ</i> — ทั้งหมด, <i>กรฺม</i> — กิจกรรม, <i>อขิลมฺ</i> — ในทั้งหมด, <i>ปารฺตฺห</i> — โอ้ โอรสของพระนาง <i>ปฺฤตฺหา</i>, <i>ชฺญาเน</i> — ในความรู้, <i>ปริสมาปฺยเต</i> — สุดท้าย
+  <span class="slant iast">śreyān</span><span class="slant pali">เศฺรยานฺ</span><span class="slant thai">ศเรยาน</span><span class="slant ram">ชเรยาน</span> — ยิ่งใหญ่กว่า, <span class="slant iast">dravya-mayāt</span><span class="slant pali">ทฺรวฺย-มยาตฺ</span><span class="slant thai">ทรัวยะ-มะยาต</span><span class="slant ram">ดรัพยะ-มะยาท</span> — ของความเป็นเจ้าของวัตถุ, <span class="slant iast">yajñāt</span><span class="slant pali">ยชฺญาตฺ</span><span class="slant thai">ยัชญาต</span><span class="slant ram">ยะกยาท</span> — กว่า การถวายการบูชา, <span class="slant iast">jñāna-yajñaḥ</span><span class="slant pali">ชฺญาน-ยชฺญห์</span><span class="slant thai">ชญานะ-ยัชญะห์</span><span class="slant ram">กยานะ-ยะกยะฮ</span> — ถวายในความรู้, <span class="slant iast">param-tapa</span><span class="slant pali">ปรมฺ-ตป</span><span class="slant thai">ปะรัม-ตะปะ</span><span class="slant ram">พะรันทะพะ</span> — โอ้ ผู้กำราบศัตรู, <span class="slant iast">sarvam</span><span class="slant pali">สรฺวมฺ</span><span class="slant thai">สัรวัม</span><span class="slant ram">สารวัม</span> — ทั้งหมด, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — กิจกรรม, <span class="slant iast">akhilam</span><span class="slant pali">อขิลมฺ</span><span class="slant thai">อะขิลัม</span><span class="slant ram">อคิฺลัม</span> — ในทั้งหมด, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้ โอรสของพระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">jñāne</span><span class="slant pali">ชฺญาเน</span><span class="slant thai">ชญาเน</span><span class="slant ram">กยาเน</span> — ในความรู้, <span class="slant iast">parisamāpyate</span><span class="slant pali">ปริสมาปฺยเต</span><span class="slant thai">ปะริสะมาปยะเต</span><span class="slant ram">พะริสะมาพยะเท</span> — สุดท้าย
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้กำราบศัตรู&nbsp;&nbsp;การบูชาปฏิบัติไปด้วยความรู้ดีกว่าถวายการบูชาด้วยเพียงสิ่งของวัตถุเท่านั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>ปฺฤตฺหา</i>&nbsp;&nbsp;ในที่สุดการถวายการบูชาของงานทั้งหมดจะมาจบลงที่ความรู้ทิพย์
+  โอ้&nbsp;&nbsp;ผู้กำราบศัตรู&nbsp;&nbsp;การบูชาปฏิบัติไปด้วยความรู้ดีกว่าถวายการบูชาด้วยเพียงสิ่งของวัตถุเท่านั้น&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>&nbsp;&nbsp;ในที่สุดการถวายการบูชาของงานทั้งหมดจะมาจบลงที่ความรู้ทิพย์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จุดมุ่งหมายของการถวายบูชาทั้งหมดเพื่อให้มาถึงระดับแห่งความรู้อัน<wbr>สมบูรณ์&nbsp;&nbsp;หลุดพ้นจากความทุกข์ทางวัตถุ&nbsp;&nbsp;และในที่สุดจะมาปฏิบัติรับใช้ทิพย์ต่อองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;ด้วยความรัก&nbsp;&nbsp;มีความเร้นลับเกี่ยวกับกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ใน<wbr>การถวายบูชาทั้งหมดนี้&nbsp;&nbsp;และเราควรทราบความเร้นลับนี้&nbsp;&nbsp;บางครั้งการถวายบูชามาใน<wbr>รูปแบบต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันตามความศรัธทาโดยเฉพาะของผู้ปฏิบัติ&nbsp;&nbsp;เมื่อความศรัทธาของเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;า<wbr>ถึงระดับแห่งความรู้ทิพย์&nbsp;&nbsp;ผู้ปฏิบัติการถวายบูชาควรพิจารณาได้ว่าเป็นผู้ที่เจริญกว่า<wbr>พวกที่เพียงแต่ถวายบูชาสิ่งของโดยไม่มีความรู้เช่นนี้&nbsp;&nbsp;ปราศจากความรู้การถวายบูชา<wbr>ยังคงอยู่ในระดับวัตถุ&nbsp;&nbsp;และไม่ได้รับผลประโยชน์ทิพย์&nbsp;&nbsp;ความรู้ที่แท้จริงคือการมาถึงจุด<wbr>สุดยอดใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งเป็นระดับสูงสุดของความรู้ทิพย์&nbsp;&nbsp;ปราศจากการพัฒนา<wbr>ความรู้&nbsp;&nbsp;การถวายบูชาเป็นเพียงกิจกรรมทางวัตถุ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เมื่อพัฒนามาถึงระดับ<wbr>ความรู้ทิพย์&nbsp;&nbsp;กิจกรรมทั้งหมดขึ้นไปสู่ระดับทิพย์&nbsp;&nbsp;มันขึ้นอยู่กับจิตสำนึกที่แตกต่างกันกิจกรรมถวายการบูชาบางครั้งเรียกว่า&nbsp;&nbsp;<i>กรฺม-กาณฺฑ</i>&nbsp;&nbsp;(กิจกรรมเพื่อผลทางวัตถุ)และบางครั้งเป็น&nbsp;&nbsp;<i>ชฺญาน-กาณฺฑ</i>&nbsp;&nbsp;(ความรู้เพื่อแสวงหาสัจธรรม)&nbsp;&nbsp;เมื่อในที่สุดมาจบลง<wbr>ที่ความรู้จะดีกว่า
+  จุดมุ่งหมายของการถวายบูชาทั้งหมดเพื่อให้มาถึงระดับแห่งความรู้อัน<wbr>สมบูรณ์&nbsp;&nbsp;หลุดพ้นจากความทุกข์ทางวัตถุ&nbsp;&nbsp;และในที่สุดจะมาปฏิบัติรับใช้ทิพย์ต่อองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;ด้วยความรัก&nbsp;&nbsp;มีความเร้นลับเกี่ยวกับกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ใน<wbr>การถวายบูชาทั้งหมดนี้&nbsp;&nbsp;และเราควรทราบความเร้นลับนี้&nbsp;&nbsp;บางครั้งการถวายบูชามาใน<wbr>รูปแบบต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันตามความศรัธทาโดยเฉพาะของผู้ปฏิบัติ&nbsp;&nbsp;เมื่อความศรัทธาของเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;า<wbr>ถึงระดับแห่งความรู้ทิพย์&nbsp;&nbsp;ผู้ปฏิบัติการถวายบูชาควรพิจารณาได้ว่าเป็นผู้ที่เจริญกว่า<wbr>พวกที่เพียงแต่ถวายบูชาสิ่งของโดยไม่มีความรู้เช่นนี้&nbsp;&nbsp;ปราศจากความรู้การถวายบูชา<wbr>ยังคงอยู่ในระดับวัตถุ&nbsp;&nbsp;และไม่ได้รับผลประโยชน์ทิพย์&nbsp;&nbsp;ความรู้ที่แท้จริงคือการมาถึงจุด<wbr>สุดยอดใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ซึ่งเป็นระดับสูงสุดของความรู้ทิพย์&nbsp;&nbsp;ปราศจากการพัฒนา<wbr>ความรู้&nbsp;&nbsp;การถวายบูชาเป็นเพียงกิจกรรมทางวัตถุ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เมื่อพัฒนามาถึงระดับ<wbr>ความรู้ทิพย์&nbsp;&nbsp;กิจกรรมทั้งหมดขึ้นไปสู่ระดับทิพย์&nbsp;&nbsp;มันขึ้นอยู่กับจิตสำนึกที่แตกต่างกันกิจกรรมถวายการบูชาบางครั้งเรียกว่า&nbsp;&nbsp;<span class="slant iast">karma-kāṇḍa</span><span class="slant pali">กรฺม-กาณฺฑ</span><span class="slant thai">กัรมะ-กาณฑะ</span><span class="slant ram">คารมะ-</span>&nbsp;&nbsp;(กิจกรรมเพื่อผลทางวัตถุ)และบางครั้งเป็น&nbsp;&nbsp;<span class="slant iast">jñāna-kāṇḍa</span><span class="slant pali">ชฺญาน-กาณฺฑ</span><span class="slant thai">ชญานะ-กาณฑะ</span><span class="slant ram">กยานะ-</span>&nbsp;&nbsp;(ความรู้เพื่อแสวงหาสัจธรรม)&nbsp;&nbsp;เมื่อในที่สุดมาจบลง<wbr>ที่ความรู้จะดีกว่า
   </p>
 </div>
 

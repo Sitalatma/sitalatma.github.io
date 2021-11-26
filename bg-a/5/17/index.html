@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.17</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตทฺ-พุทฺธยสฺ ตทฺ-อาตฺมานสฺ</i><br /><i>ตนฺ-นิษฺฐาสฺ ตตฺ-ปรายณาฮ</i><br /><i>คจฺฉนฺตฺยฺ อปุนรฺ-อาวฺฤตฺติํ</i><br /><i>ชฺญาน-นิรฺธูต-กลฺมษาฮ</i>
+<span class="slant iast">tad-buddhayas tad-ātmānas<br /></span>
+<span class="slant pali">ตทฺ-พุทฺธยสฺ ตทฺ-อาตฺมานสฺ<br /></span>
+<span class="slant thai">ตัท-พุทธะยัส ตัท-อาตมานัส<br /></span>
+<span class="slant ram">ทัด-บุดดฺะยัส ทัด-อาทมานัส<br /></span>
+<span class="slant iast">tan-niṣṭhās tat-parāyaṇāḥ<br /></span>
+<span class="slant pali">ตนฺ-นิษฺฐาสฺ ตตฺ-ปรายณาห์<br /></span>
+<span class="slant thai">ตัน-นิษฐาส ตัต-ปะรายะณาห์<br /></span>
+<span class="slant ram">ทัน-นิชทฺาส ทัท-พะรายะณาฮ<br /></span>
+<span class="slant iast">gacchanty apunar-āvṛttiṁ<br /></span>
+<span class="slant pali">คจฺฉนฺตฺยฺ อปุนรฺ-อาวฺฤตฺตึ<br /></span>
+<span class="slant thai">คัจฉันตย อะปุนัร-อาวฤตติง<br /></span>
+<span class="slant ram">กัชชฺันทิ อพุนาร-อาวริททิม<br /></span>
+<span class="slant iast">jñāna-nirdhūta-kalmaṣāḥ<br /></span>
+<span class="slant pali">ชฺญาน-นิรฺธูต-กลฺมษาห์<br /></span>
+<span class="slant thai">ชญานะ-นิรธูตะ-กัลมะษาห์<br /></span>
+<span class="slant ram">กยานะ-นิรดํูทะ-คัลมะชาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตตฺ-พุทฺธยฮ</i> — ผู้ที่ปัญญาอยู่ในองค์ภควานเสมอ, <i>ตตฺ-อาตฺมานฮ</i> — ผู้ที่จิตใจอยู่ใน องค์ภควานเสมอ, <i>ตตฺ-นิษฺฐาฮ</i> — ผู้ที่มีความศรัทธาอยู่ในองค์ภควานเท่านั้น, <i>ตตฺ-ปรายณาฮ</i> — ผู้ที่รับเอาองค์ภควานเป็นที่พึ่งโดยสมบูรณ์, <i>คจฺฉนฺติ</i> — ไป, <i>อปุนฮ-อาวฺฤตฺติมฺ</i> — สู่ ความหลุดพ้น, <i>ชฺญาน</i> — ด้วยความรู้, <i>นิรฺธูต</i> — ทำให้บริสุทธิ์, <i>กลฺมษาฮ</i> — ความแคลงใจ
+  <span class="slant iast">tat-buddhayaḥ</span><span class="slant pali">ตตฺ-พุทฺธยห์</span><span class="slant thai">ตัต-พุทธะยะห์</span><span class="slant ram">ทัท-บุดดฺะยะฮ</span> — ผู้ที่ปัญญาอยู่ในองค์ภควานเสมอ, <span class="slant iast">tat-ātmānaḥ</span><span class="slant pali">ตตฺ-อาตฺมานห์</span><span class="slant thai">ตัต-อาตมานะห์</span><span class="slant ram">ทัท-อาทมานะฮ</span> — ผู้ที่จิตใจอยู่ใน องค์ภควานเสมอ, <span class="slant iast">tat-niṣṭhāḥ</span><span class="slant pali">ตตฺ-นิษฺฐาห์</span><span class="slant thai">ตัต-นิษฐาห์</span><span class="slant ram">ทัท-นิชทฺาฮ</span> — ผู้ที่มีความศรัทธาอยู่ในองค์ภควานเท่านั้น, <span class="slant iast">tat-parāyaṇāḥ</span><span class="slant pali">ตตฺ-ปรายณาห์</span><span class="slant thai">ตัต-ปะรายะณาห์</span><span class="slant ram">ทัท-พะรา ยะณาฮ</span> — ผู้ที่รับเอาองค์ภควานเป็นที่พึ่งโดยสมบูรณ์, <span class="slant iast">gacchanti</span><span class="slant pali">คจฺฉนฺติ</span><span class="slant thai">คัจฉันติ</span><span class="slant ram">กัชชัฺนทิ</span> — ไป, <span class="slant iast">apunaḥ-āvṛttim</span><span class="slant pali">อปุนห์-อาวฺฤตฺติมฺ</span><span class="slant thai">อะปุนะห์-อาวฤตติม</span><span class="slant ram">อพุนาฮ-อาวริทิม</span> — สู่ ความหลุดพ้น, <span class="slant iast">jñāna</span><span class="slant pali">ชฺญาน</span><span class="slant thai">ชญานะ</span><span class="slant ram">กยานะ</span> — ด้วยความรู้, <span class="slant iast">nirdhūta</span><span class="slant pali">นิรฺธูต</span><span class="slant thai">นิรธูตะ</span><span class="slant ram">นิรดํูทะ</span> — ทำให้บริสุทธิ์, <span class="slant iast">kalmaṣāḥ</span><span class="slant pali">กลฺมษาห์</span><span class="slant thai">กัลมะษาห์</span><span class="slant ram">คัลมะชาฮ</span> — ความแคลงใจ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สัจธรรมทิพย์สูงสุดคือองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ทั้งเล่มมีจุดศูนย์กลางอยู่ที่การ<wbr>ประกาศว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;นั่นคือวิสัยทัศน์ของวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;<i>ปร-ตตฺตฺว</i>&nbsp;&nbsp;หมายถึงความจริงแท้ที่สูงสุด&nbsp;&nbsp;ที่ผู้ทราบว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>ทรงเป็น&nbsp;&nbsp;<i>พฺรหฺมนฺ,ปรมาตฺมา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เข้าใจ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้าคือคำสุดท้ายแห่งความสมบูรณ์ที่แท้จริง&nbsp;&nbsp;ไม่มีอะไรมากไปกว่านี้&nbsp;&nbsp;พระองค์<wbr>ตรัสว่า&nbsp;&nbsp;<i>มตฺตฮ&nbsp;&nbsp;ปรตรํ&nbsp;&nbsp;นานฺยตฺ&nbsp;&nbsp;กิญฺจิทฺ&nbsp;&nbsp;อสฺติ&nbsp;&nbsp;ธนญฺ-ชย</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้ค้ำจุน&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ที่ไร้รูปลักษณ์ไว้เช่นเดียวกัน&nbsp;&nbsp;<i>พฺรหฺมโณ&nbsp;&nbsp;หิ&nbsp;&nbsp;ปฺรติษฺฐาหมฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทาง<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นความจริงแท้ที่สูงสุด&nbsp;&nbsp;ผู้ที่จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;ความศรัทธา&nbsp;&nbsp;และที่พึ่งอยู่&nbsp;&nbsp;ใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;คือผู้ที่มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์&nbsp;&nbsp;ความเคลือบ<wbr>แคลงทั้งหมดได้ถูกชะล้างให้สะอาดอย่างไม่ต้องสงสัย&nbsp;&nbsp;และสถิตในความรู้อันสมบูรณ์ใน<wbr>ทุกสิ่งทุกอย่างที่เกี่ยวกับความเป็นทิพย์&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกสามารถเข้าใจโดย<wbr>ตลอดว่ามีสิ่งคู่&nbsp;&nbsp;(มีรูปพรรณและความเป็นปัจเจกบุคคลในขณะเดียวกัน)&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และเพียบพร้อมไปด้วยความรู้ทิพย์เช่นนี้&nbsp;&nbsp;เขาสามารถเจริญก้าวหน้าด้วยความมั่นคงบน<wbr>หนทางแห่งความหลุดพ้น
+  สัจธรรมทิพย์สูงสุดคือองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ทั้งเล่มมีจุดศูนย์กลางอยู่ที่การ<wbr>ประกาศว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;นั่นคือวิสัยทัศน์ของวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;<span class="slant iast">para-tattva</span><span class="slant pali">ปร-ตตฺตฺว</span><span class="slant thai">ปะระ-ตัตตวะ</span><span class="slant ram">พะระ-ทัทท- วะ,ทัททวะ</span>&nbsp;&nbsp;หมายถึงความจริงแท้ที่สูงสุด&nbsp;&nbsp;ที่ผู้ทราบว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>ทรงเป็น&nbsp;&nbsp;<span class="slant iast">brahman,&nbsp;&nbsp;paramātmā</span><span class="slant pali">พฺรหฺมนฺปรมาตฺมา</span><span class="slant thai">พรัหมันปะระมาตมา</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺพะระมาทมา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้าคือคำสุดท้ายแห่งความสมบูรณ์ที่แท้จริง&nbsp;&nbsp;ไม่มีอะไรมากไปกว่านี้&nbsp;&nbsp;พระองค์<wbr>ตรัสว่า&nbsp;&nbsp;<span class="slant iast">mattaḥ&nbsp;&nbsp;parataraṁ&nbsp;&nbsp;nānyat&nbsp;&nbsp;kiñcid&nbsp;&nbsp;asti&nbsp;&nbsp;dhanañ-jaya</span><span class="slant pali">มตฺตห์ปรตรํนานฺยตฺกิญฺจิทฺอสฺติธนญฺ-ชย</span><span class="slant thai">มัตตะห์ปะระตะรังนานยัตกิญจิทอัสติธะนัญ-ชะยะ</span><span class="slant ram">มัททะฮอัสทิ-จะยะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้ค้ำจุน&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ที่ไร้รูปลักษณ์ไว้เช่นเดียวกัน&nbsp;&nbsp;<span class="slant iast">brahmaṇo&nbsp;&nbsp;hi&nbsp;&nbsp;pratiṣṭhāham</span><span class="slant pali">พฺรหฺมโณหิปฺรติษฺฐาหมฺ</span><span class="slant thai">พรัหมะโณหิประติษฐาหัม</span><span class="slant ram">บระฮมะโณ ฮิ พระทิชทฺาฮัม</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทาง<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นความจริงแท้ที่สูงสุด&nbsp;&nbsp;ผู้ที่จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;ความศรัทธา&nbsp;&nbsp;และที่พึ่งอยู่&nbsp;&nbsp;ใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;คือผู้ที่มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์&nbsp;&nbsp;ความเคลือบ<wbr>แคลงทั้งหมดได้ถูกชะล้างให้สะอาดอย่างไม่ต้องสงสัย&nbsp;&nbsp;และสถิตในความรู้อันสมบูรณ์ใน<wbr>ทุกสิ่งทุกอย่างที่เกี่ยวกับความเป็นทิพย์&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกสามารถเข้าใจโดย<wbr>ตลอดว่ามีสิ่งคู่&nbsp;&nbsp;(มีรูปพรรณและความเป็นปัจเจกบุคคลในขณะเดียวกัน)&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และเพียบพร้อมไปด้วยความรู้ทิพย์เช่นนี้&nbsp;&nbsp;เขาสามารถเจริญก้าวหน้าด้วยความมั่นคงบน<wbr>หนทางแห่งความหลุดพ้น
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 13.26</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อเนฺย ตฺวฺ เอวมฺ อชานนฺตฮ</i><br /><i>ศฺรุตฺวาเนฺยภฺย อุปาสเต</i><br /><i>เต ′ปิ จาติตรนฺตฺยฺ เอว</i><br /><i>มฺฤตฺยุํ ศฺรุติ-ปรายณาฮ</i>
+<span class="slant iast">anye tv evam ajānantaḥ<br /></span>
+<span class="slant pali">อเนฺย ตฺวฺ เอวมฺ อชานนฺตห์<br /></span>
+<span class="slant thai">อันเย ตว เอวัม อะชานันตะห์<br /></span>
+<span class="slant ram">อันเย ทุ เอวัม อจานันทะฮ<br /></span>
+<span class="slant iast">śrutvānyebhya upāsate<br /></span>
+<span class="slant pali">ศฺรุตฺวาเนฺยภฺย อุปาสเต<br /></span>
+<span class="slant thai">ศรุตวานเยภยะ อุปาสะเต<br /></span>
+<span class="slant ram">ชรุทวานเยบฺยะ อุพาสะเท<br /></span>
+<span class="slant iast">te ’pi cātitaranty eva<br /></span>
+<span class="slant pali">เต ’ปิ จาติตรนฺตฺยฺ เอว<br /></span>
+<span class="slant thai">เต ’ปิ จาติตะรันตย เอวะ<br /></span>
+<span class="slant ram">เท ่พิ ชาทิทะรันทิ เอวะ<br /></span>
+<span class="slant iast">mṛtyuṁ śruti-parāyaṇāḥ<br /></span>
+<span class="slant pali">มฺฤตฺยุํ ศฺรุติ-ปรายณาห์<br /></span>
+<span class="slant thai">มฤตยุง ศรุติ-ปะรายะณาห์<br /></span>
+<span class="slant ram">มริทยุม ชุรทิ-พะรายะณาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อเนฺย</i> — ผู้อื่น, <i>ตุ</i> — แต่, <i>เอวมฺ</i> — ดังนั้น, <i>อชานนฺตฮ</i> — โดยปราศจากความรู้ทิพย์, <i>ศฺรุตฺวา</i> — ด้วย การสดับฟัง, <i>อเนฺยภฺยฮ</i> — จากผู้อื่น, <i>อุปาสเต</i> — เริ่มบูชา, <i>เต</i> — พวกเขา, <i>อปิ</i> — เช่นกัน, <i>จ</i> — และ, <i>อติตรนฺติ</i> — ข้ามพ้น,<i>เอว</i> — แน่นอน, <i>มฺฤตฺยุมฺ</i> — วิถีทางแห่งความตาย, <i>ศฺรุติ-ปรายณาฮ</i> — ชอบวิธีการสดับฟัง
+  <span class="slant iast">anye</span><span class="slant pali">อเนฺย</span><span class="slant thai">อันเย</span><span class="slant ram">อันเย</span> — ผู้อื่น, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น, <span class="slant iast">ajānantaḥ</span><span class="slant pali">อชานนฺตห์</span><span class="slant thai">อะชานันตะห์</span><span class="slant ram">อจานันทะฮ</span> — โดยปราศจากความรู้ทิพย์, <span class="slant iast">śrutvā</span><span class="slant pali">ศฺรุตฺวา</span><span class="slant thai">ศรุตวา</span><span class="slant ram">ชรุทวา</span> — ด้วย การสดับฟัง, <span class="slant iast">anyebhyaḥ</span><span class="slant pali">อเนฺยภฺยห์</span><span class="slant thai">อันเยภยะห์</span><span class="slant ram">อันเยบฺยะฮ</span> — จากผู้อื่น, <span class="slant iast">upāsate</span><span class="slant pali">อุปาสเต</span><span class="slant thai">อุปาสะเต</span><span class="slant ram">อุพาสะเท</span> — เริ่มบูชา, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">atitaranti</span><span class="slant pali">อติตรนฺติ</span><span class="slant thai">อะติตะรันติ</span><span class="slant ram">อทิทะรันทิ</span> — ข้ามพ้น,<span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">mṛtyum</span><span class="slant pali">มฺฤตฺยุมฺ</span><span class="slant thai">มฤตยุม</span><span class="slant ram">มริทยุม</span> — วิถีทางแห่งความตาย, <span class="slant iast">śruti-parāyaṇāḥ</span><span class="slant pali">ศฺรุติ-ปรายณาห์</span><span class="slant thai">ศรุติ-ปะรายะณาห์</span><span class="slant ram">ชรุทิฺ-พะรา ยะณาฮ</span> — ชอบวิธีการสดับฟัง
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้เหมาะสมกับสังคมปัจจุบันโดยเฉพาะ&nbsp;&nbsp;เพราะว่าสังคมปัจจุบันเกือบ<wbr>ไม่มีการศึกษาในเรื่องทิพย์เลย&nbsp;&nbsp;บางคนอาจดูเหมือนว่าเป็นผู้ไม่เชื่อในพระผู้เป็นเจ้าหรือ<wbr>ไม่เชื่อในนรกสวรรค์&nbsp;&nbsp;หรือไม่เชื่อในปรัชญา&nbsp;&nbsp;แต่อันที่จริงไม่มีความรู้ปรัชญา&nbsp;&nbsp;สำหรับคน<wbr>ธรรมดาทั่วไป&nbsp;&nbsp;หากผู้ใดเป็นดวงวิญญาณที่ดีก็จะมีโอกาสเจริญก้าวหน้าด้วยการสดับฟังวิธีการสดับฟังนี้สำคัญมาก&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ผู้ตรัสสอน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกในโลกปัจจุบันทรง<wbr>เน้นการสดับฟังเป็นอย่างมาก&nbsp;&nbsp;หากคนธรรมดาเพียงแต่สดับฟังจากแหล่งที่เชื่อถือได้เขาก็สามารถเจริญก้าวหน้า&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;หากสดับฟังคลื่นเสียงทิพย์&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ตาม<wbr>ที่องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงกล่าวไว้ว่ามนุษย์ทั้งหลายควรถือโอกาสในการสดับฟังจาก<wbr>จิตวิญญาณผู้รู้แจ้ง&nbsp;&nbsp;เมื่อค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เข้าใจทุกสิ่งทุกอย่าง&nbsp;&nbsp;การบูชาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะบังเกิดขึ้น<wbr>โดยไม่ต้องสงสัย&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ตรัสว่าในยุคนี้ไม่มีผู้ใดจำเป็นต้องเปลี่ยนสถานภาพของ<wbr>ตนเอง&nbsp;&nbsp;แต่เราควรยกเลิกความพยายามที่จะเข้าใจสัจธรรมด้วยเหตุผลจากการคาด<wbr>คะเน&nbsp;&nbsp;เราควรเรียนรู้และมาเป็นผู้รับใช้ของผู้ที่มีความรู้แห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หากโชคดีพอที่<wbr>ได้มาพึ่งสาวกผู้บริสุทธิ์&nbsp;&nbsp;สดับฟังจากท่านเกี่ยวกับความรู้แจ้งแห่งตน&nbsp;&nbsp;และปฏิบัติตามรอย<wbr>พระบาทของท่าน&nbsp;&nbsp;เราจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนามาสู่สถานภาพของสาวกผู้บริสุทธิ์&nbsp;&nbsp;ในโศลกนี้<wbr>ได้แนะนำวิธีการสดับฟังมากเป็นพิเศษซึ่งเหมาะสมอย่างยิ่ง&nbsp;&nbsp;ถึงแม้ว่าคนธรรมดาทั่วไป<wbr>ส่วนใหญ่จะไม่มีความสามารถเทียบเท่านักปราชญ์&nbsp;&nbsp;แต่ด้วยความศรัทธาในการสดับฟัง<wbr>จากบุคคลที่เชื่อถือได้&nbsp;&nbsp;จะช่วยเราให้ข้ามพ้นไปจากความเป็นอยู่ทางวัตถุนี้&nbsp;&nbsp;และกลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  โศลกนี้เหมาะสมกับสังคมปัจจุบันโดยเฉพาะ&nbsp;&nbsp;เพราะว่าสังคมปัจจุบันเกือบ<wbr>ไม่มีการศึกษาในเรื่องทิพย์เลย&nbsp;&nbsp;บางคนอาจดูเหมือนว่าเป็นผู้ไม่เชื่อในพระผู้เป็นเจ้าหรือ<wbr>ไม่เชื่อในนรกสวรรค์&nbsp;&nbsp;หรือไม่เชื่อในปรัชญา&nbsp;&nbsp;แต่อันที่จริงไม่มีความรู้ปรัชญา&nbsp;&nbsp;สำหรับคน<wbr>ธรรมดาทั่วไป&nbsp;&nbsp;หากผู้ใดเป็นดวงวิญญาณที่ดีก็จะมีโอกาสเจริญก้าวหน้าด้วยการสดับฟังวิธีการสดับฟังนี้สำคัญมาก&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ผู้ตรัสสอน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกในโลกปัจจุบันทรง<wbr>เน้นการสดับฟังเป็นอย่างมาก&nbsp;&nbsp;หากคนธรรมดาเพียงแต่สดับฟังจากแหล่งที่เชื่อถือได้เขาก็สามารถเจริญก้าวหน้า&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;หากสดับฟังคลื่นเสียงทิพย์&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ตาม<wbr>ที่องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงกล่าวไว้ว่ามนุษย์ทั้งหลายควรถือโอกาสในการสดับฟังจาก<wbr>จิตวิญญาณผู้รู้แจ้ง&nbsp;&nbsp;เมื่อค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เข้าใจทุกสิ่งทุกอย่าง&nbsp;&nbsp;การบูชาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะบังเกิดขึ้น<wbr>โดยไม่ต้องสงสัย&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ตรัสว่าในยุคนี้ไม่มีผู้ใดจำเป็นต้องเปลี่ยนสถานภาพของ<wbr>ตนเอง&nbsp;&nbsp;แต่เราควรยกเลิกความพยายามที่จะเข้าใจสัจธรรมด้วยเหตุผลจากการคาด<wbr>คะเน&nbsp;&nbsp;เราควรเรียนรู้และมาเป็นผู้รับใช้ของผู้ที่มีความรู้แห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หากโชคดีพอที่<wbr>ได้มาพึ่งสาวกผู้บริสุทธิ์&nbsp;&nbsp;สดับฟังจากท่านเกี่ยวกับความรู้แจ้งแห่งตน&nbsp;&nbsp;และปฏิบัติตามรอย<wbr>พระบาทของท่าน&nbsp;&nbsp;เราจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนามาสู่สถานภาพของสาวกผู้บริสุทธิ์&nbsp;&nbsp;ในโศลกนี้<wbr>ได้แนะนำวิธีการสดับฟังมากเป็นพิเศษซึ่งเหมาะสมอย่างยิ่ง&nbsp;&nbsp;ถึงแม้ว่าคนธรรมดาทั่วไป<wbr>ส่วนใหญ่จะไม่มีความสามารถเทียบเท่านักปราชญ์&nbsp;&nbsp;แต่ด้วยความศรัทธาในการสดับฟัง<wbr>จากบุคคลที่เชื่อถือได้&nbsp;&nbsp;จะช่วยเราให้ข้ามพ้นไปจากความเป็นอยู่ทางวัตถุนี้&nbsp;&nbsp;และกลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

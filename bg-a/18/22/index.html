@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.22</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยตฺ ตุ กฺฤตฺสฺน-วทฺ เอกสฺมินฺ</i><br /><i>กาเรฺย สกฺตมฺ อไหตุกมฺ</i><br /><i>อตตฺตฺวารฺตฺห-วทฺ อลฺปํ จ</i><br /><i>ตตฺ ตามสมฺ อุทาหฺฤตมฺ</i>
+<span class="slant iast">yat tu kṛtsna-vad ekasmin<br /></span>
+<span class="slant pali">ยตฺ ตุ กฺฤตฺสฺน-วทฺ เอกสฺมินฺ<br /></span>
+<span class="slant thai">ยัต ตุ กฤตสนะ-วัท เอกัสมิน<br /></span>
+<span class="slant ram">ยัท ทุ คริสนะ-วัด-เอคัสมิน<br /></span>
+<span class="slant iast">kārye saktam ahaitukam<br /></span>
+<span class="slant pali">กาเรฺย สกฺตมฺ อไหตุกมฺ<br /></span>
+<span class="slant thai">การเย สักตัม อะไหตุกัม<br /></span>
+<span class="slant ram">คารเย สัคทัม อไฮทุคัม<br /></span>
+<span class="slant iast">atattvārtha-vad alpaṁ ca<br /></span>
+<span class="slant pali">อตตฺตฺวารฺถ-วทฺ อลฺปํ จ<br /></span>
+<span class="slant thai">อะตัตตวารถะ-วัท อัลปัง จะ<br /></span>
+<span class="slant ram">อทัททวารทฺะ-วัด อัลพัม ชะ<br /></span>
+<span class="slant iast">tat tāmasam udāhṛtam<br /></span>
+<span class="slant pali">ตตฺ ตามสมฺ อุทาหฺฤตมฺ<br /></span>
+<span class="slant thai">ตัต ตามะสัม อุทาหฤตัม<br /></span>
+<span class="slant ram">ทัท ทามะสัม อุดาฮริทัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยตฺ</i> — นั้น ซึ่ง, <i>ตุ</i> — แต่, <i>กฺฤตฺสฺน-วตฺ</i> — ประหนึ่งเป็นทั้งหมด, <i>เอกสฺมินฺ</i> — ในหนึ่ง, <i>กาเรฺย</i> — งาน, <i>สกฺตมฺ</i> — ยึดติด, <i>อไหตุกมฺ</i> — ไม่มีสาเหตุ, <i>อตตฺตฺว-อรฺตฺห-วตฺ</i> — ปราศจากความรู้แห่ง ความเป็นจริง, <i>อลฺปมฺ</i> — ขาดแคลนมาก, <i>จ</i> — และ, <i>ตตฺ</i> — นั้น, <i>ตามสมฺ</i> — ในระดับแห่งความ มืด, <i>อุทาหฺฤตมฺ</i> — กล่าวว่าเป็น
+  <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — นั้น ซึ่ง, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">kṛtsna-vat</span><span class="slant pali">กฺฤตฺสฺน-วตฺ</span><span class="slant thai">กฤตสนะ-วัต</span><span class="slant ram">คริทสนะ-วัท</span> — ประหนึ่งเป็นทั้งหมด, <span class="slant iast">ekasmin</span><span class="slant pali">เอกสฺมินฺ</span><span class="slant thai">เอกัสมิน</span><span class="slant ram">เอคัสมิน</span> — ในหนึ่ง, <span class="slant iast">kārye</span><span class="slant pali">กาเรฺย</span><span class="slant thai">การเย</span><span class="slant ram">คารเย</span> — งาน, <span class="slant iast">saktam</span><span class="slant pali">สกฺตมฺ</span><span class="slant thai">สักตัม</span><span class="slant ram">สัคทัม</span> — ยึดติด, <span class="slant iast">ahaitukam</span><span class="slant pali">อไหตุกมฺ</span><span class="slant thai">อะไหตุกัม</span><span class="slant ram">อไฮทุคัม</span> — ไม่มีสาเหตุ, <span class="slant iast">atattva-artha-vat</span><span class="slant pali">อตตฺตฺว-อรฺถ-วตฺ</span><span class="slant thai">อะตัตตวะ-อัรถะ-วัต</span><span class="slant ram">อทัททวะ-อารทฺะ-วัท</span> — ปราศจากความรู้แห่ง ความเป็นจริง, <span class="slant iast">alpam</span><span class="slant pali">อลฺปมฺ</span><span class="slant thai">อัลปัม</span><span class="slant ram">อัลพัม</span> — ขาดแคลนมาก, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">tāmasam</span><span class="slant pali">ตามสมฺ</span><span class="slant thai">ตามะสัม</span><span class="slant ram">ทามะสัม</span> — ในระดับแห่งความ มืด, <span class="slant iast">udāhṛtam</span><span class="slant pali">อุทาหฺฤตมฺ</span><span class="slant thai">อุทาหฤตัม</span><span class="slant ram">อุดาฮ ริทัม</span> — กล่าวว่าเป็น
   </p>
 </div>
 

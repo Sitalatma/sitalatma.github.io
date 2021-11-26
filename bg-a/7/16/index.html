@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.16</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>จตุรฺ-วิธา ภชเนฺต มาํ</i><br /><i>ชนาฮ สุ-กฺฤติโน ′รฺชุน</i><br /><i>อาโรฺต ชิชฺญาสุรฺ อรฺตฺหารฺตฺหี</i><br /><i>ชฺญานี จ ภรตรฺษภ</i>
+<span class="slant iast">catur-vidhā bhajante māṁ<br /></span>
+<span class="slant pali">จตุรฺ-วิธา ภชนฺเต มำ<br /></span>
+<span class="slant thai">จะตุร-วิธา ภะชันเต มาง<br /></span>
+<span class="slant ram">ชะทุร-วิดฺา บฺะจันเท มาม<br /></span>
+<span class="slant iast">janāḥ su-kṛtino ’rjuna<br /></span>
+<span class="slant pali">ชนาห์ สุ-กฺฤติโน ’รฺชุน<br /></span>
+<span class="slant thai">ชะนาห์ สุ-กฤติโน ’รชุนะ<br /></span>
+<span class="slant ram">จะนาฮ สุคริทิโน ´รจุนะ<br /></span>
+<span class="slant iast">ārto jijñāsur arthārthī<br /></span>
+<span class="slant pali">อารฺโต ชิชฺญาสุรฺ อรฺถารฺถี<br /></span>
+<span class="slant thai">อารโต ชิชญาสุร อัรถารถี<br /></span>
+<span class="slant ram">อารโท จิกยาสุร อารทฺาทีฺ<br /></span>
+<span class="slant iast">jñānī ca bharatarṣabha<br /></span>
+<span class="slant pali">ชฺญานี จ ภรตรฺษภ<br /></span>
+<span class="slant thai">ชญานี จะ ภะระตัรษะภะ<br /></span>
+<span class="slant ram">กยานี ชะ บฺะระทารชะบฺะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>จตุฮ-วิธาฮ</i> — สี่ประเภท, <i>ภชเนฺต</i> — ปฏิบัติตนรับใช้,<i>มามฺ</i> — แด่ข้า, <i>ชนาฮ</i> — บุคคล, <i>สุ-กฺฤตินฮ</i> — ผู้มีบุญ, <i>อรฺชุน</i> — โอ้ <i>อรฺชุน</i>, <i>อารฺตฮ</i> — ผู้มีความทุกข์, <i>ชิชฺญาสุฮ</i> — ผู้ชอบถาม, <i>อรฺตฺห-อรฺตฺหี</i> — ผู้ปรารถนาผลกำไรทางวัตถุ, <i>ชฺญานี</i> — ผู้รู้สิ่งต่าง ๆ ตามความเป็นจริง, <i>จ</i> — เช่นกัน,<i>ภรต-ฤษภ</i> — โอ้ ผู้ยิ่งใหญ่ในบรรดาผู้สืบราชวงศ์บฺะระทะ
+  <span class="slant iast">catuḥ-vidhāḥ</span><span class="slant pali">จตุห์-วิธาห์</span><span class="slant thai">จะตุห์-วิธาห์</span><span class="slant ram">ชะทุฮ-วิดฺาฮ</span> — สี่ประเภท, <span class="slant iast">bhajante</span><span class="slant pali">ภชนฺเต</span><span class="slant thai">ภะชันเต</span><span class="slant ram">บฺะจันเท</span> — ปฏิบัติตนรับใช้,<span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">janāḥ</span><span class="slant pali">ชนาห์</span><span class="slant thai">ชะนาห์</span><span class="slant ram">จะนาฮ</span> — บุคคล, <span class="slant iast">su-kṛtinaḥ</span><span class="slant pali">สุ-กฺฤตินห์</span><span class="slant thai">สุ-กฤตินะห์</span><span class="slant ram">สุ- คริทินะฮ</span> — ผู้มีบุญ, <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> — โอ้ <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">ārtaḥ</span><span class="slant pali">อารฺตห์</span><span class="slant thai">อารตะห์</span><span class="slant ram">อารทะฮ</span> — ผู้มีความทุกข์, <span class="slant iast">jijñāsuḥ</span><span class="slant pali">ชิชฺญาสุห์</span><span class="slant thai">ชิชญาสุห์</span><span class="slant ram">จิกยาสุฮ</span> — ผู้ชอบถาม, <span class="slant iast">artha-arthī</span><span class="slant pali">อรฺถ-อรฺถี</span><span class="slant thai">อัรถะ-อัรถี</span><span class="slant ram">อารทฺะ-อารทิ</span> — ผู้ปรารถนาผลกำไรทางวัตถุ, <span class="slant iast">jñānī</span><span class="slant pali">ชฺญานี</span><span class="slant thai">ชญานี</span><span class="slant ram">กยานี</span> — ผู้รู้สิ่งต่าง ๆ ตามความเป็นจริง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน,<span class="slant iast">bharata-ṛṣabha</span><span class="slant pali">ภรต-ฤษภ</span><span class="slant thai">ภะระตะ-ฤษะภะ</span><span class="slant ram">บฺะระทา-ริชะบฺะ</span> — โอ้ ผู้ยิ่งใหญ่ในบรรดาผู้สืบราชวงศ์บฺะระทะ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้ยอดเยี่ยมในหมู่&nbsp;&nbsp;<i>ภารต</i>&nbsp;&nbsp;มนุษย์ผู้มีบุญสี่ประเภทเริ่มถวายการอุทิศตนเสียสละรับใช้ต่อข้า&nbsp;&nbsp;คือ&nbsp;&nbsp;ผู้มีความทุกข์&nbsp;&nbsp;ผู้ปรารถนาความร่ำรวย&nbsp;&nbsp;ผู้ชอบถาม&nbsp;&nbsp;และผู้แสวงหาความรู้แห่งสัจธรรม
+  โอ้&nbsp;&nbsp;ผู้ยอดเยี่ยมในหมู่&nbsp;&nbsp;<span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span>&nbsp;&nbsp;มนุษย์ผู้มีบุญสี่ประเภทเริ่มถวายการอุทิศตนเสียสละรับใช้ต่อข้า&nbsp;&nbsp;คือ&nbsp;&nbsp;ผู้มีความทุกข์&nbsp;&nbsp;ผู้ปรารถนาความร่ำรวย&nbsp;&nbsp;ผู้ชอบถาม&nbsp;&nbsp;และผู้แสวงหาความรู้แห่งสัจธรรม
   </p>
 </div>
 
@@ -73,31 +174,46 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ไม่เหมือนกับพวกสารเลว&nbsp;&nbsp;พวกนี้ปฏิบัติตามหลักธรรมที่กำหนดไว้ในพระคัมภีร์บุคคลเหล่านี้เรียกว่า&nbsp;&nbsp;<i>สุ-กฺฤตินฮ</i>&nbsp;&nbsp;หรือพวกที่เชื่อฟังหลักเกณฑ์ของพระคัมภีร์&nbsp;&nbsp;กฎศีล<wbr>ธรรม&nbsp;&nbsp;กฎสังคม&nbsp;&nbsp;และอุทิศตนเสียสละต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่มากก็น้อย&nbsp;&nbsp;มีอยู่สี่ประเภทคือพวก<wbr>ที่บางครั้งมีความทุกข์&nbsp;&nbsp;พวกที่ต้องการเงินทอง&nbsp;&nbsp;พวกที่บางครั้งชอบถาม&nbsp;&nbsp;และพวกที่บางครั้ง<wbr>แสวงหาความรู้แห่งสัจธรรม&nbsp;&nbsp;บุคคลเหล่านี้มาหาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพื่อการอุทิศตนเสียสละรับใช้<wbr>ภายใต้สภาวะที่ต่างกัน&nbsp;&nbsp;เช่นนี้ยังไม่ใช่สาวกผู้บริสุทธิ์ทีเดียวเพราะยังมีความปรารถนาบาง<wbr>ประการที่ต้องสนองตอบในการแลกเปลี่ยนกับการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;การอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์ต้องไม่มีความมุ่งหวังและไม่มีความปรารถนาเพื่อผลประโยชน์ทางวัตถุ&nbsp;&nbsp;<i>ภกฺติ-รสามฺฤต-สินฺธุ</i>&nbsp;&nbsp;(1.1.11)&nbsp;&nbsp;นิยามการอุทิศตนเสียสละที่บริสุทธิ์ไว้ดังนี้
+  ไม่เหมือนกับพวกสารเลว&nbsp;&nbsp;พวกนี้ปฏิบัติตามหลักธรรมที่กำหนดไว้ในพระคัมภีร์บุคคลเหล่านี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">su-kṛtinaḥ</span><span class="slant pali">สุ-กฺฤตินห์</span><span class="slant thai">สุ-กฤตินะห์</span><span class="slant ram">สุ- คริทินะฮ</span>&nbsp;&nbsp;หรือพวกที่เชื่อฟังหลักเกณฑ์ของพระคัมภีร์&nbsp;&nbsp;กฎศีล<wbr>ธรรม&nbsp;&nbsp;กฎสังคม&nbsp;&nbsp;และอุทิศตนเสียสละต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่มากก็น้อย&nbsp;&nbsp;มีอยู่สี่ประเภทคือพวก<wbr>ที่บางครั้งมีความทุกข์&nbsp;&nbsp;พวกที่ต้องการเงินทอง&nbsp;&nbsp;พวกที่บางครั้งชอบถาม&nbsp;&nbsp;และพวกที่บางครั้ง<wbr>แสวงหาความรู้แห่งสัจธรรม&nbsp;&nbsp;บุคคลเหล่านี้มาหาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพื่อการอุทิศตนเสียสละรับใช้<wbr>ภายใต้สภาวะที่ต่างกัน&nbsp;&nbsp;เช่นนี้ยังไม่ใช่สาวกผู้บริสุทธิ์ทีเดียวเพราะยังมีความปรารถนาบาง<wbr>ประการที่ต้องสนองตอบในการแลกเปลี่ยนกับการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;การอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์ต้องไม่มีความมุ่งหวังและไม่มีความปรารถนาเพื่อผลประโยชน์ทางวัตถุ&nbsp;&nbsp;<span class="slant iast">bhakti-rasāmṛta-sindhu</span><span class="slant pali">ภกฺติ-รสามฺฤต-สินฺธุ</span><span class="slant thai">ภักติ-ระสามฤตะ-สินธุ</span><span class="slant ram">บัฺคธิ,บัคฺธิ--</span>&nbsp;&nbsp;(1.1.11)&nbsp;&nbsp;นิยามการอุทิศตนเสียสละที่บริสุทธิ์ไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อนฺยาภิลาษิตา-ศูนฺยํ</i><br /><i>ชฺญาน-กรฺมาทฺยฺ-อนาวฺฤตมฺ</i><br /><i>อานุกเูลฺยน กฺฤษฺณานุ-</i><br /><i>ศีลนํ ภกฺติรฺ อุตฺตมา</i>
+<span class="slant iast">anyābhilāṣitā-śūnyaṁ<br /></span>
+<span class="slant pali">อนฺยาภิลาษิตา-ศูนฺยํ<br /></span>
+<span class="slant thai">อันยาภิลาษิตา-ศูนยัง<br /></span>
+<span class="slant ram">อันยาบิฺลาชิทา-ชูนยัม<br /></span>
+<span class="slant iast">jñāna-karmādy-anāvṛtam<br /></span>
+<span class="slant pali">ชฺญาน-กรฺมาทฺยฺ-อนาวฺฤตมฺ<br /></span>
+<span class="slant thai">ชญานะ-กัรมาทย-อะนาวฤตัม<br /></span>
+<span class="slant ram">กยานะ-คารมาดิ-อนาวริทัม<br /></span>
+<span class="slant iast">ānukūlyena kṛṣṇānu-<br /></span>
+<span class="slant pali">อานุกูเลฺยน กฺฤษฺณานุ-<br /></span>
+<span class="slant thai">อานุกูลเยนะ กฤษณานุ-<br /></span>
+<span class="slant ram">อานุคูลเยนะ คริชณานุ-<br /></span>
+<span class="slant iast">śīlanaṁ bhaktir uttamā<br /></span>
+<span class="slant pali">ศีลนํ ภกฺติรฺ อุตฺตมา<br /></span>
+<span class="slant thai">ศีละนัง ภักติร อุตตะมา<br /></span>
+<span class="slant ram">ชีละนัม บัฺคธิร อุททะมา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “เราควรถวายการรับใช้ทิพย์ด้วยความรักต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในเชิงบวกโดยไม่<wbr>ปรารถนาผลประโยชน์หรือผลกำไรทางวัตถุผ่านทางกิจกรรมทางวัตถุหรือผ่านทางการ<wbr>คาดคะเนทางปรัชญา&nbsp;&nbsp;เช่นนี้เรียกว่าการอุทิศตนเสียสละรับใช้ที่บริสุทธิ์”
+  “เราควรถวายการรับใช้ทิพย์ด้วยความรักต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในเชิงบวกโดยไม่<wbr>ปรารถนาผลประโยชน์หรือผลกำไรทางวัตถุผ่านทางกิจกรรมทางวัตถุหรือผ่านทางการ<wbr>คาดคะเนทางปรัชญา&nbsp;&nbsp;เช่นนี้เรียกว่าการอุทิศตนเสียสละรับใช้ที่บริสุทธิ์”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เมื่อบุคคลสี่ประเภทนี้มาหาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพื่อการอุทิศตนเสียสละรับใช้และ<wbr>บริสุทธิ์ขึ้นอย่างสมบูรณ์ด้วยการมาคบหาสมาคมกับสาวกผู้บริสุทธิ์&nbsp;&nbsp;พวกเขาจะกลาย<wbr>มาเป็นสาวกผู้บริสุทธิ์เช่นเดียวกัน&nbsp;&nbsp;สำหรับพวกสารเลว&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้เป็น<wbr>สิ่งที่ยากมาก&nbsp;&nbsp;เพราะเป็นชีวิตที่เห็นแก่ตัว&nbsp;&nbsp;ไร้วินัย&nbsp;&nbsp;และไม่มีจุดมุ่งหมายทิพย์&nbsp;&nbsp;แต่จะมีบาง<wbr>คนที่มีโอกาสมาสัมผัสกับสาวกผู้บริสุทธิ์ก็จะกลายมาเป็นสาวกผู้บริสุทธิ์ได้เช่นเดียวกัน
+  เมื่อบุคคลสี่ประเภทนี้มาหาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพื่อการอุทิศตนเสียสละรับใช้และ<wbr>บริสุทธิ์ขึ้นอย่างสมบูรณ์ด้วยการมาคบหาสมาคมกับสาวกผู้บริสุทธิ์&nbsp;&nbsp;พวกเขาจะกลาย<wbr>มาเป็นสาวกผู้บริสุทธิ์เช่นเดียวกัน&nbsp;&nbsp;สำหรับพวกสารเลว&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้เป็น<wbr>สิ่งที่ยากมาก&nbsp;&nbsp;เพราะเป็นชีวิตที่เห็นแก่ตัว&nbsp;&nbsp;ไร้วินัย&nbsp;&nbsp;และไม่มีจุดมุ่งหมายทิพย์&nbsp;&nbsp;แต่จะมีบาง<wbr>คนที่มีโอกาสมาสัมผัสกับสาวกผู้บริสุทธิ์ก็จะกลายมาเป็นสาวกผู้บริสุทธิ์ได้เช่นเดียวกัน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พวกที่มีภารกิจยุ่งยากอยู่กับกิจกรรมเพื่อผลประโยชน์ทางวัตถุเสมอ&nbsp;&nbsp;มาหาองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยความทุกข์ทางวัตถุ&nbsp;&nbsp;ขณะที่มีความทุกข์ได้มาคบหาสมาคมกับสาวกผู้บริสุทธิ์<wbr>และกลายมาเป็นสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พวกที่ไม่สมหวังก็เช่นเดียวกัน&nbsp;&nbsp;บางครั้งมาคบหา<wbr>สมาคมกับสาวกผู้บริสุทธิ์&nbsp;&nbsp;และอยากรู้เกี่ยวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในลักษณะเดียวกัน&nbsp;&nbsp;เมื่อนัก<wbr>ปราชญ์ผู้แห้งแล้งไม่สมหวังกับความรู้ในทุกสาขา&nbsp;&nbsp;บางครั้งต้องการเรียนรู้เกี่ยวกับองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะมาหาพระองค์&nbsp;&nbsp;ถวายการอุทิศตนเสียสละรับใช้และข้ามพ้นความรู้ของ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;ความรู้แห่ง&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ผู้ประทับในหัวใจของทุกคน&nbsp;&nbsp;และมาถึงแนวคิด<wbr>แห่งบุคลิกภาพแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยพระกรุณาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือสาวกผู้บริสุทธิ์&nbsp;&nbsp;โดย<wbr>สรุปคือ&nbsp;&nbsp;เมื่อผู้มีความทุกข์&nbsp;&nbsp;ผู้ชอบถาม&nbsp;&nbsp;ผู้แสวงหาความรู้&nbsp;&nbsp;และพวกที่ต้องการเงินทอง&nbsp;&nbsp;เป็น<wbr>อิสระจากความต้องการทางวัตถุทั้งปวง&nbsp;&nbsp;และเมื่อเข้าใจอย่างถ่องแท้ว่าสิ่งตอบแทนทาง<wbr>วัตถุไม่มีความสัมพันธ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับความเจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;พวกเขาก็กลายมาเป็นสาวก<wbr>ผู้บริสุทธิ์&nbsp;&nbsp;ตราบใดที่ระดับแห่งความบริสุทธิ์เช่นนี้ยังบรรลุไม่ถึง&nbsp;&nbsp;สาวกที่อยู่ในการอุทิศตน<wbr>เสียสละรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ยังเจือไปด้วยกิจกรรมเพื่อผลประโยชน์ทางวัตถุ&nbsp;&nbsp;แสวงหา<wbr>ความรู้ทางโลก&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราต้องข้ามให้พ้นทั้งหมดนี้&nbsp;&nbsp;ก่อนที่จะมาถึงระดับแห่งการอุทิศ<wbr>ตนเสียสละรับใช้ที่บริสุทธิ์
+  พวกที่มีภารกิจยุ่งยากอยู่กับกิจกรรมเพื่อผลประโยชน์ทางวัตถุเสมอ&nbsp;&nbsp;มาหาองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยความทุกข์ทางวัตถุ&nbsp;&nbsp;ขณะที่มีความทุกข์ได้มาคบหาสมาคมกับสาวกผู้บริสุทธิ์<wbr>และกลายมาเป็นสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พวกที่ไม่สมหวังก็เช่นเดียวกัน&nbsp;&nbsp;บางครั้งมาคบหา<wbr>สมาคมกับสาวกผู้บริสุทธิ์&nbsp;&nbsp;และอยากรู้เกี่ยวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในลักษณะเดียวกัน&nbsp;&nbsp;เมื่อนัก<wbr>ปราชญ์ผู้แห้งแล้งไม่สมหวังกับความรู้ในทุกสาขา&nbsp;&nbsp;บางครั้งต้องการเรียนรู้เกี่ยวกับองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะมาหาพระองค์&nbsp;&nbsp;ถวายการอุทิศตนเสียสละรับใช้และข้ามพ้นความรู้ของ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;ความรู้แห่ง&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ผู้ประทับในหัวใจของทุกคน&nbsp;&nbsp;และมาถึงแนวคิด<wbr>แห่งบุคลิกภาพแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยพระกรุณาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือสาวกผู้บริสุทธิ์&nbsp;&nbsp;โดย<wbr>สรุปคือ&nbsp;&nbsp;เมื่อผู้มีความทุกข์&nbsp;&nbsp;ผู้ชอบถาม&nbsp;&nbsp;ผู้แสวงหาความรู้&nbsp;&nbsp;และพวกที่ต้องการเงินทอง&nbsp;&nbsp;เป็น<wbr>อิสระจากความต้องการทางวัตถุทั้งปวง&nbsp;&nbsp;และเมื่อเข้าใจอย่างถ่องแท้ว่าสิ่งตอบแทนทาง<wbr>วัตถุไม่มีความสัมพันธ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;กับความเจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;พวกเขาก็กลายมาเป็นสาวก<wbr>ผู้บริสุทธิ์&nbsp;&nbsp;ตราบใดที่ระดับแห่งความบริสุทธิ์เช่นนี้ยังบรรลุไม่ถึง&nbsp;&nbsp;สาวกที่อยู่ในการอุทิศตน<wbr>เสียสละรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ยังเจือไปด้วยกิจกรรมเพื่อผลประโยชน์ทางวัตถุ&nbsp;&nbsp;แสวงหา<wbr>ความรู้ทางโลก&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราต้องข้ามให้พ้นทั้งหมดนี้&nbsp;&nbsp;ก่อนที่จะมาถึงระดับแห่งการอุทิศ<wbr>ตนเสียสละรับใช้ที่บริสุทธิ์
   </p>
 </div>
 

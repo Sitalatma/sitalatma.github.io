@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.35</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>พฺฤหตฺ-สาม ตตฺหา สามฺนาํ</i><br /><i>คายตฺรี ฉนฺทสามฺ อหมฺ</i><br /><i>มาสานาํ มารฺค-ศีโรฺษ ′หมฺ</i><br /><i>ฤตูนาํ กุสุมากรฮ</i>
+<span class="slant iast">bṛhat-sāma tathā sāmnāṁ<br /></span>
+<span class="slant pali">พฺฤหตฺ-สาม ตถา สามฺนำ<br /></span>
+<span class="slant thai">พฤหัต-สามะ ตะถา สามนาง<br /></span>
+<span class="slant ram">บริฮัท-สามะ ทะทฺา สามนาม<br /></span>
+<span class="slant iast">gāyatrī chandasām aham<br /></span>
+<span class="slant pali">คายตฺรี ฉนฺทสามฺ อหมฺ<br /></span>
+<span class="slant thai">คายัตรี ฉันทะสาม อะหัม<br /></span>
+<span class="slant ram">กายะทรี ชัฺนดะสาม อฮัม<br /></span>
+<span class="slant iast">māsānāṁ mārga-śīrṣo ’ham<br /></span>
+<span class="slant pali">มาสานำ มารฺค-ศีรฺโษ ’หมฺ<br /></span>
+<span class="slant thai">มาสานาง มารคะ-ศีรโษ ’หัม<br /></span>
+<span class="slant ram">มาสานาม มารกะ-ชีรโช<br /></span>
+<span class="slant iast">ṛtūnāṁ kusumākaraḥ<br /></span>
+<span class="slant pali">ฤตูนำ กุสุมากรห์<br /></span>
+<span class="slant thai">ฤตูนาง กุสุมากะระห์<br /></span>
+<span class="slant ram">่ฮัม ริทูนาม คุสุมาคะระฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>พฺฤหตฺ-สาม</i> — <i>พฺฤหตฺ-สาม</i>, <i>ตตฺหา</i> — เช่นกัน, <i>สามฺนามฺ</i> — ของบทเพลง <i>สาม เวท</i>, <i>คายตฺรี</i> — บทมนต์ <i>คายตฺรี</i>, <i>ฉนฺทสามฺ</i> — ของบทกวีทั้งหลาย, <i>อหมฺ</i> — ข้าเป็น, <i>มาสานามฺ</i> — ของ เดือน, <i>มารฺค-ศีรฺษฮ</i> — เดือนพฤศจิกายน-ธันวาคม, <i>อหมฺ</i> — ข้าเป็น, <i>ฤตูนามฺ</i> — ของฤดูทั้ง หลาย, <i>กุสุม-อากรฮ</i> — ฤดูใบไม้ผลิ
+  <span class="slant iast">bṛhat-sāma</span><span class="slant pali">พฺฤหตฺ-สาม</span><span class="slant thai">พฤหัต-สามะ</span><span class="slant ram">บริฮัท-สามะ</span> — <span class="slant iast">bṛhat-sāma</span><span class="slant pali">พฺฤหตฺ-สาม</span><span class="slant thai">พฤหัต-สามะ</span><span class="slant ram">บริฮัท-สามะ</span>, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เช่นกัน, <span class="slant iast">sāmnām</span><span class="slant pali">สามฺนามฺ</span><span class="slant thai">สามนาม</span><span class="slant ram">สามนาม</span> — ของบทเพลง <span class="slant iast">sāma veda</span><span class="slant pali">สามเวท</span><span class="slant thai">สามะเวทะ</span><span class="slant ram">สามะเวท</span>, <span class="slant iast">gāyatrī</span><span class="slant pali">คายตฺรี</span><span class="slant thai">คายัตรี</span><span class="slant ram">กายะทรี</span> — บทมนต์ <span class="slant iast">gāyatrī</span><span class="slant pali">คายตฺรี</span><span class="slant thai">คายัตรี</span><span class="slant ram">กายะทรี</span>, <span class="slant iast">chandasām</span><span class="slant pali">ฉนฺทสามฺ</span><span class="slant thai">ฉันทะสาม</span><span class="slant ram">ชัฺนดะสาม</span> — ของบทกวีทั้งหลาย, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้าเป็น, <span class="slant iast">māsānām</span><span class="slant pali">มาสานามฺ</span><span class="slant thai">มาสานาม</span><span class="slant ram">มาสานาม</span> — ของ เดือน, <span class="slant iast">mārga-śīrṣaḥ</span><span class="slant pali">มารฺค-ศีรฺษห์</span><span class="slant thai">มารคะ-ศีรษะห์</span><span class="slant ram">มารกะ-ชีรชะฮ</span> — เดือนพฤศจิกายน-ธันวาคม, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้าเป็น, <span class="slant iast">ṛtūnām</span><span class="slant pali">ฤตูนามฺ</span><span class="slant thai">ฤตูนาม</span><span class="slant ram">ริทูนาม</span> — ของฤดูทั้ง หลาย, <span class="slant iast">kusuma-ākaraḥ</span><span class="slant pali">กุสุม-อากรห์</span><span class="slant thai">กุสุมะ-อากะระห์</span><span class="slant ram">คุสุมะ-อาคะระฮ</span> — ฤดูใบไม้ผลิ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในบรรดาบทมนต์ใน&nbsp;&nbsp;<i>สาม</i>&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<i>พฺฤหตฺ</i>&nbsp;&nbsp;-&nbsp;&nbsp;<i>สาม</i>&nbsp;&nbsp;และในบรรดาบทกวีข้าคือ<i>คายตฺรี</i>&nbsp;&nbsp;ในบรรดาเดือนข้าคือ&nbsp;&nbsp;<i>มารฺคศีรฺษ</i>&nbsp;&nbsp;(พฤศจิกายน-ธันวาคม)&nbsp;&nbsp;และในบรรดาฤดูข้าคือฤดูใบไม้ผลิ
+  ในบรรดาบทมนต์ใน&nbsp;&nbsp;<span class="slant iast">sāma</span><span class="slant pali">สาม</span><span class="slant thai">สามะ</span><span class="slant ram">สามะ</span>&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<span class="slant iast">bṛhat</span><span class="slant pali">พฺฤหตฺ</span><span class="slant thai">พฤหัต</span><span class="slant ram">บริฮัท</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="slant iast">sāma</span><span class="slant pali">สาม</span><span class="slant thai">สามะ</span><span class="slant ram">สามะ</span>&nbsp;&nbsp;และในบรรดาบทกวีข้าคือ<span class="slant iast">gāyatrī</span><span class="slant pali">คายตฺรี</span><span class="slant thai">คายัตรี</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;ในบรรดาเดือนข้าคือ&nbsp;&nbsp;<span class="slant iast">mārgaśīrṣa</span><span class="slant pali">มารฺคศีรฺษ</span><span class="slant thai">มารคะศีรษะ</span><span class="slant ram">มารกะชีรชะ</span>&nbsp;&nbsp;(พฤศจิกายน-ธันวาคม)&nbsp;&nbsp;และในบรรดาฤดูข้าคือฤดูใบไม้ผลิ
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบายแล้วว่าในบรรดาพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดพระองค์คือ&nbsp;&nbsp;<i>สาม&nbsp;&nbsp;เวท&nbsp;&nbsp;สาม&nbsp;&nbsp;เวท</i>&nbsp;&nbsp;มีความมั่งคั่งในบทเพลงอันไพเราะเพราะพริ้งที่เทวดาต่างบรรเลง&nbsp;&nbsp;หนึ่งใน<wbr>บทเพลงเหล่านี้คือ&nbsp;&nbsp;<i>พฺฤหตฺ-สาม</i>&nbsp;&nbsp;ซึ่งมีทำนองไพเราะมากและจะร้องในเวลาเที่ยงคืน
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบายแล้วว่าในบรรดาพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดพระองค์คือ&nbsp;&nbsp;<span class="slant iast">sāma&nbsp;&nbsp;veda&nbsp;&nbsp;sāma&nbsp;&nbsp;veda</span><span class="slant pali">สามเวทสามเวท</span><span class="slant thai">สามะเวทะสามะเวทะ</span><span class="slant ram">สามะเวทสามะเวท</span>&nbsp;&nbsp;มีความมั่งคั่งในบทเพลงอันไพเราะเพราะพริ้งที่เทวดาต่างบรรเลง&nbsp;&nbsp;หนึ่งใน<wbr>บทเพลงเหล่านี้คือ&nbsp;&nbsp;<span class="slant iast">bṛhat-sāma</span><span class="slant pali">พฺฤหตฺ-สาม</span><span class="slant thai">พฤหัต-สามะ</span><span class="slant ram">บริฮัท-สามะ</span>&nbsp;&nbsp;ซึ่งมีทำนองไพเราะมากและจะร้องในเวลาเที่ยงคืน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในภาษาสันสกฤตมีลักษณะบังคับแน่นอนที่บัญญัติบทกวี&nbsp;&nbsp;สัมผัส&nbsp;&nbsp;และวรรค<wbr>ตอน&nbsp;&nbsp;ไม่ใช่เขียนตามอำเภอใจเหมือนกับบทกวีสมัยปัจจุบันส่วนมาก&nbsp;&nbsp;ในบรรดาบัญญัติ<wbr>บทกวี&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;ซึ่ง&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;ผู้มีคุณสมบัติสวดภาวนาโดดเด่นที่สุด&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;เพราะว่า&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;หมายไว้เพื่อความ<wbr>รู้แจ้งแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยเฉพาะจึงเป็นผู้แทนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>มนฺตฺร</i>&nbsp;&nbsp;นี้มีไว้สำหรับ<wbr>พวกที่มีความเจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;เมื่อประสบความสำเร็จในการสวดภาวนา&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;จะสามารถบรรลุถึงสถานภาพทิพย์แห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก่อนอื่นเขาต้อง<wbr>มีคุณสมบัติของบุคคลผู้สถิตอยู่อย่างสมบูรณ์&nbsp;&nbsp;คืออยู่ในคุณสมบัติแห่งความดีตามกฎ<wbr>แห่งธรรมชาติวัตถุเพื่อสวดภาวนา&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร,คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;มีความสำคัญ<wbr>มากในวัฒนธรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และพิจารณาว่าเป็นเสียงอวตารของ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>ทรงเป็นอุปัชฌาย์&nbsp;&nbsp;และ&nbsp;&nbsp;<i>คายตฺรี&nbsp;&nbsp;มนฺตฺร</i>&nbsp;&nbsp;ถูกส่งลงมาจากพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ในสาย&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;
+  ในภาษาสันสกฤตมีลักษณะบังคับแน่นอนที่บัญญัติบทกวี&nbsp;&nbsp;สัมผัส&nbsp;&nbsp;และวรรค<wbr>ตอน&nbsp;&nbsp;ไม่ใช่เขียนตามอำเภอใจเหมือนกับบทกวีสมัยปัจจุบันส่วนมาก&nbsp;&nbsp;ในบรรดาบัญญัติ<wbr>บทกวี&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระ</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;ซึ่ง&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;ผู้มีคุณสมบัติสวดภาวนาโดดเด่นที่สุด&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระ</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;เพราะว่า&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระ</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;หมายไว้เพื่อความ<wbr>รู้แจ้งแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยเฉพาะจึงเป็นผู้แทนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">mantra</span><span class="slant pali">มนฺตฺร</span><span class="slant thai">มันตระ</span><span class="slant ram"></span>&nbsp;&nbsp;นี้มีไว้สำหรับ<wbr>พวกที่มีความเจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;เมื่อประสบความสำเร็จในการสวดภาวนา&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระ</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;จะสามารถบรรลุถึงสถานภาพทิพย์แห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก่อนอื่นเขาต้อง<wbr>มีคุณสมบัติของบุคคลผู้สถิตอยู่อย่างสมบูรณ์&nbsp;&nbsp;คืออยู่ในคุณสมบัติแห่งความดีตามกฎ<wbr>แห่งธรรมชาติวัตถุเพื่อสวดภาวนา&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra,&nbsp;&nbsp;gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺรคายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระคายัตรีมันตระ</span><span class="slant ram">กายะทรีกายะทรี</span>&nbsp;&nbsp;มีความสำคัญ<wbr>มากในวัฒนธรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และพิจารณาว่าเป็นเสียงอวตารของ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>ทรงเป็นอุปัชฌาย์&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">gāyatrī&nbsp;&nbsp;mantra</span><span class="slant pali">คายตฺรีมนฺตฺร</span><span class="slant thai">คายัตรีมันตระ</span><span class="slant ram">กายะทรี</span>&nbsp;&nbsp;ถูกส่งลงมาจากพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ในสาย&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เดือนพฤศจิกายน-ธันวาคมพิจารณาว่าเป็นเดือนที่ดีที่สุด&nbsp;&nbsp;เพราะว่าในประเทศ<wbr>อินเดียเป็นฤดูเก็บเกี่ยว&nbsp;&nbsp;ทุกคนมีความสุขมาก&nbsp;&nbsp;แน่นอนว่าฤดูใบไม้ผลิเป็นฤดูที่คนชอบกัน<wbr>มากเพราะว่าไม่ร้อนและไม่หนาวจนเกินไป&nbsp;&nbsp;ทั้งดอกไม้และต้นไม้ก็เบ่งบานอย่างสมบูรณ์ในฤดูใบไม้ผลิมีพิธีหลายพิธีที่ระลึกถึงลีลาของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้นจึงพิจารณาว่าฤดูนี้เป็น<wbr>ฤดูที่รื่นเริงที่สุดและเป็นผู้แทนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  เดือนพฤศจิกายน-ธันวาคมพิจารณาว่าเป็นเดือนที่ดีที่สุด&nbsp;&nbsp;เพราะว่าในประเทศ<wbr>อินเดียเป็นฤดูเก็บเกี่ยว&nbsp;&nbsp;ทุกคนมีความสุขมาก&nbsp;&nbsp;แน่นอนว่าฤดูใบไม้ผลิเป็นฤดูที่คนชอบกัน<wbr>มากเพราะว่าไม่ร้อนและไม่หนาวจนเกินไป&nbsp;&nbsp;ทั้งดอกไม้และต้นไม้ก็เบ่งบานอย่างสมบูรณ์ในฤดูใบไม้ผลิมีพิธีหลายพิธีที่ระลึกถึงลีลาของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้นจึงพิจารณาว่าฤดูนี้เป็น<wbr>ฤดูที่รื่นเริงที่สุดและเป็นผู้แทนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

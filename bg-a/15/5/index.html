@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นิรฺมาน-โมหา ชิต-สงฺค-โทษา</i><br /><i>อธฺยาตฺม-นิตฺยา วินิวฺฤตฺต-กามาฮ</i><br /><i>ทฺวไนฺทฺวรฺ วิมุกฺตาฮ สุข-ทุฮข-สํไชฺญรฺ</i><br /><i>คจฺฉนฺตฺยฺ อมูฒาฮ ปทมฺ อวฺยยํ ตตฺ</i>
+<span class="slant iast">nirmāna-mohā jita-saṅga-doṣā<br /></span>
+<span class="slant pali">นิรฺมาน-โมหา ชิต-สงฺค-โทษา<br /></span>
+<span class="slant thai">นิรมานะ-โมหา ชิตะ-สังคะ-โทษา<br /></span>
+<span class="slant ram">นิรมานะ-โมฮา จิทะ-สังกะ-โดชา<br /></span>
+<span class="slant iast">adhyātma-nityā vinivṛtta-kāmāḥ<br /></span>
+<span class="slant pali">อธฺยาตฺม-นิตฺยา วินิวฺฤตฺต-กามาห์<br /></span>
+<span class="slant thai">อัธยาตมะ-นิตยา วินิวฤตตะ-กามาห์<br /></span>
+<span class="slant ram">อัดฺยาทมะ-นิทยา วินิวริททะ-คามาฮ<br /></span>
+<span class="slant iast">dvandvair vimuktāḥ sukha-duḥkha-saṁjñair<br /></span>
+<span class="slant pali">ทฺวนฺไทฺวรฺ วิมุกฺตาห์ สุข-ทุห์ข-สํชฺไญรฺ<br /></span>
+<span class="slant thai">ทวันทไวร วิมุกตาห์ สุขะ-ทุห์ขะ-สัญชไญร<br /></span>
+<span class="slant ram">ดวันดไวร วิมุคทาฮ สุคฺะ-ดุฮคฺะ-สัมกไยร<br /></span>
+<span class="slant iast">gacchanty amūḍhāḥ padam avyayaṁ tat<br /></span>
+<span class="slant pali">คจฺฉนฺตฺยฺ อมูฒาห์ ปทมฺ อวฺยยํ ตตฺ<br /></span>
+<span class="slant thai">คัจฉันตย อะมูฒาห์ ปะทัม อัวยะยัง ตัต<br /></span>
+<span class="slant ram">กัชชัฺนทิ อมูดฺาฮ พะดัม อัพยะยัม ทัทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>นิฮ</i> — ปราศจาก, <i>มาน</i> — เกียรติยศที่ผิด, <i>โมหาฮ</i> — และความหลง, <i>ชิต</i> — เอาชนะ, <i>สงฺค</i> — การคบหาสมาคม, <i>โทษาฮ</i> — ความผิด,<i>อธฺยาตฺม</i> — ในความรู้ทิพย์, <i>นิตฺยาฮ</i> — ในความ เป็นอมตะ, <i>วินิวฺฤตฺต</i> — ไม่คบหาสมาคม, <i>กามาฮ</i> — จากราคะ, <i>ทฺวไนฺทฺวฮ</i> — จากสิ่งคู่, <i>วิมุกฺตาฮ</i> — หลุดพ้น, <i>สุข-ทุฮข</i> — ความสุขและความทุกข์, <i>สํไชฺญฮ</i> — ชื่อ, <i>คจฺฉนฺติ</i> — บรรลุ, <i>อมูฒาฮ</i> — ไม่สับสน, <i>ปทมฺ</i> — สถานการณ์, <i>อวฺยยมฺ</i> — อมตะ, <i>ตตฺ</i> — นั้น
+  <span class="slant iast">niḥ</span><span class="slant pali">นิห์</span><span class="slant thai">นิห์</span><span class="slant ram">นิฮ</span> — ปราศจาก, <span class="slant iast">māna</span><span class="slant pali">มาน</span><span class="slant thai">มานะ</span><span class="slant ram">มานะ</span> — เกียรติยศที่ผิด, <span class="slant iast">mohāḥ</span><span class="slant pali">โมหาห์</span><span class="slant thai">โมหาห์</span><span class="slant ram">โมฮาฮ</span> — และความหลง, <span class="slant iast">jita</span><span class="slant pali">ชิต</span><span class="slant thai">ชิตะ</span><span class="slant ram">จิทะ</span> — เอาชนะ, <span class="slant iast">saṅga</span><span class="slant pali">สงฺค</span><span class="slant thai">สังคะ</span><span class="slant ram">สังกะ</span> — การคบหาสมาคม, <span class="slant iast">doṣāḥ</span><span class="slant pali">โทษาห์</span><span class="slant thai">โทษาห์</span><span class="slant ram">โดชาฮ</span> — ความผิด,<span class="slant iast">adhyātma</span><span class="slant pali">อธฺยาตฺม</span><span class="slant thai">อัธยาตมะ</span><span class="slant ram">อัดฺยาทมะ</span> — ในความรู้ทิพย์, <span class="slant iast">nityāḥ</span><span class="slant pali">นิตฺยาห์</span><span class="slant thai">นิตยาห์</span><span class="slant ram">นิทยาฮ</span> — ในความ เป็นอมตะ, <span class="slant iast">vinivṛtta</span><span class="slant pali">วินิวฺฤตฺต</span><span class="slant thai">วินิวฤตตะ</span><span class="slant ram">วินิวริททะ</span> — ไม่คบหาสมาคม, <span class="slant iast">kāmāḥ</span><span class="slant pali">กามาห์</span><span class="slant thai">กามาห์</span><span class="slant ram">คามาฮ</span> — จากราคะ, <span class="slant iast">dvandvaiḥ</span><span class="slant pali">ทฺวนฺไทฺวห์</span><span class="slant thai">ทวันทไวห์</span><span class="slant ram">ดวันดไวฮ</span> — จากสิ่งคู่, <span class="slant iast">vimuktāḥ</span><span class="slant pali">วิมุกฺตาห์</span><span class="slant thai">วิมุกตาห์</span><span class="slant ram">วิมุคทาฮ</span> — หลุดพ้น, <span class="slant iast">sukha-duḥkha</span><span class="slant pali">สุข-ทุห์ข</span><span class="slant thai">สุขะ-ทุห์ขะ</span><span class="slant ram">สุคฺะ-ดุฮคฺะ</span> — ความสุขและความทุกข์, <span class="slant iast">saṁjñaiḥ</span><span class="slant pali">สํชฺไญห์</span><span class="slant thai">สัญชไญห์</span><span class="slant ram">สัมกไยฮ</span> — ชื่อ, <span class="slant iast">gacchanti</span><span class="slant pali">คจฺฉนฺติ</span><span class="slant thai">คัจฉันติ</span><span class="slant ram">กัชชัฺนทิ</span> — บรรลุ, <span class="slant iast">amūḍhāḥ</span><span class="slant pali">อมูฒาห์</span><span class="slant thai">อะมูฒาห์</span><span class="slant ram">อมูดฺาฮ</span> — ไม่สับสน, <span class="slant iast">padam</span><span class="slant pali">ปทมฺ</span><span class="slant thai">ปะทัม</span><span class="slant ram">พะดัม</span> — สถานการณ์, <span class="slant iast">avyayam</span><span class="slant pali">อวฺยยมฺ</span><span class="slant thai">อัวยะยัม</span><span class="slant ram">อัพยะยัม</span> — อมตะ, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  วิธีการศิโรราบได้อธิบายไว้อย่างสวยงาม&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;เราไม่ควรหลงอยู่กับ<wbr>ความหยิ่งยะโส&nbsp;&nbsp;เนื่องจากพันธวิญญาณผยองคิดว่าตัวเองเป็นเจ้าแห่งธรรมชาติวัตถุจึงเป็นการยากมากที่จะศิโรราบต่อบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;จากการพัฒนาความ<wbr>รู้ที่แท้จริง&nbsp;&nbsp;เราควรรู้ว่าตัวเราไม่ใช่เจ้าแห่งธรรมชาติวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นเจ้าของเมื่อเป็นอิสระจากความหลงอันเนื่องมาจากความหยิ่งยะโส&nbsp;&nbsp;เราจะสามารถเริ่มวิธีการ<wbr>ศิโรราบ&nbsp;&nbsp;สำหรับผู้ที่คาดหวังเกียรติยศบางอย่างในโลกวัตถุนี้เสมอ&nbsp;&nbsp;เป็นไปไม่ได้ที่จะ<wbr>ศิโรราบต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ความหยิ่งยะโสเนื่องมาจากความหลง&nbsp;&nbsp;ถึงแม้ว่าเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าที่นี่อยู่<wbr>เพียงระยะเวลาสั้นแล้วต้องจากไป&nbsp;&nbsp;ยังมีความเห็นอย่างโง่&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าเราคือเจ้าโลก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึง<wbr>ทำให้ทุกสิ่งทุกอย่างสับสนและมีปัญหาเสมอ&nbsp;&nbsp;โลกทั้งโลกหมุนไปภายใต้ความรู้สึกเช่น<wbr>นี้&nbsp;&nbsp;ผู้คนพิจารณาว่าแผ่นดินและโลกนี้เป็นของสังคมมนุษย์&nbsp;&nbsp;และได้แบ่งที่ดินภายใต้ความ<wbr>รู้สึกผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าพวกตนเป็นเจ้าของ&nbsp;&nbsp;เราต้องออกจากความเห็นที่ผิดนี้ว่าสังคมมนุษย์เป็น<wbr>เจ้าของโลกใบนี้&nbsp;&nbsp;เมื่อเป็นอิสระจากความเห็นผิดเช่นนี้&nbsp;&nbsp;เราจึงเป็นอิสระจากการคบหา<wbr>สมาคมที่ผิดทั้งหลาย&nbsp;&nbsp;อันเนื่องมาจากความหลงผิดอยู่กับครอบครัว&nbsp;&nbsp;สังคม&nbsp;&nbsp;และประเทศ<wbr>ชาติ&nbsp;&nbsp;การคบหาสมาคมที่ผิดเหล่านี้ผูกมัดเราให้อยู่ในโลกวัตถุ&nbsp;&nbsp;หลังจากระดับนี้เราต้อง<wbr>พัฒนาความรู้ทิพย์&nbsp;&nbsp;ต้องพัฒนาความรู้ว่าอะไรเป็นของตนที่แท้จริง&nbsp;&nbsp;และอะไรไม่ใช่ของตน<wbr>ที่แท้จริง&nbsp;&nbsp;และเมื่อเข้าใจสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริงก็จะเป็นอิสระจากแนวคิดที่เป็นสิ่งคู่<wbr>ทั้งหลายเช่น&nbsp;&nbsp;ความสุขและความทุกข์&nbsp;&nbsp;ความรื่นเริงและความเจ็บปวด&nbsp;&nbsp;เราจะเปี่ยมไปด้วย<wbr>ความรู้&nbsp;&nbsp;จากนั้นจึงเป็นไปได้ที่จะศิโรราบต่อบุคลิกภาพสูงสุดแห่งพระเจ้า
+  วิธีการศิโรราบได้อธิบายไว้อย่างสวยงาม&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;เราไม่ควรหลงอยู่กับ<wbr>ความหยิ่งยะโส&nbsp;&nbsp;เนื่องจากพันธวิญญาณผยองคิดว่าตัวเองเป็นเจ้าแห่งธรรมชาติวัตถุจึงเป็นการยากมากที่จะศิโรราบต่อบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;จากการพัฒนาความ<wbr>รู้ที่แท้จริง&nbsp;&nbsp;เราควรรู้ว่าตัวเราไม่ใช่เจ้าแห่งธรรมชาติวัตถุ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นเจ้าของเมื่อเป็นอิสระจากความหลงอันเนื่องมาจากความหยิ่งยะโส&nbsp;&nbsp;เราจะสามารถเริ่มวิธีการ<wbr>ศิโรราบ&nbsp;&nbsp;สำหรับผู้ที่คาดหวังเกียรติยศบางอย่างในโลกวัตถุนี้เสมอ&nbsp;&nbsp;เป็นไปไม่ได้ที่จะ<wbr>ศิโรราบต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ความหยิ่งยะโสเนื่องมาจากความหลง&nbsp;&nbsp;ถึงแม้ว่าเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าที่นี่อยู่<wbr>เพียงระยะเวลาสั้นแล้วต้องจากไป&nbsp;&nbsp;ยังมีความเห็นอย่างโง่&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าเราคือเจ้าโลก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึง<wbr>ทำให้ทุกสิ่งทุกอย่างสับสนและมีปัญหาเสมอ&nbsp;&nbsp;โลกทั้งโลกหมุนไปภายใต้ความรู้สึกเช่น<wbr>นี้&nbsp;&nbsp;ผู้คนพิจารณาว่าแผ่นดินและโลกนี้เป็นของสังคมมนุษย์&nbsp;&nbsp;และได้แบ่งที่ดินภายใต้ความ<wbr>รู้สึกผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าพวกตนเป็นเจ้าของ&nbsp;&nbsp;เราต้องออกจากความเห็นที่ผิดนี้ว่าสังคมมนุษย์เป็น<wbr>เจ้าของโลกใบนี้&nbsp;&nbsp;เมื่อเป็นอิสระจากความเห็นผิดเช่นนี้&nbsp;&nbsp;เราจึงเป็นอิสระจากการคบหา<wbr>สมาคมที่ผิดทั้งหลาย&nbsp;&nbsp;อันเนื่องมาจากความหลงผิดอยู่กับครอบครัว&nbsp;&nbsp;สังคม&nbsp;&nbsp;และประเทศ<wbr>ชาติ&nbsp;&nbsp;การคบหาสมาคมที่ผิดเหล่านี้ผูกมัดเราให้อยู่ในโลกวัตถุ&nbsp;&nbsp;หลังจากระดับนี้เราต้อง<wbr>พัฒนาความรู้ทิพย์&nbsp;&nbsp;ต้องพัฒนาความรู้ว่าอะไรเป็นของตนที่แท้จริง&nbsp;&nbsp;และอะไรไม่ใช่ของตน<wbr>ที่แท้จริง&nbsp;&nbsp;และเมื่อเข้าใจสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริงก็จะเป็นอิสระจากแนวคิดที่เป็นสิ่งคู่<wbr>ทั้งหลายเช่น&nbsp;&nbsp;ความสุขและความทุกข์&nbsp;&nbsp;ความรื่นเริงและความเจ็บปวด&nbsp;&nbsp;เราจะเปี่ยมไปด้วย<wbr>ความรู้&nbsp;&nbsp;จากนั้นจึงเป็นไปได้ที่จะศิโรราบต่อบุคลิกภาพสูงสุดแห่งพระเจ้า
   </p>
 </div>
 

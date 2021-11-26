@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.10-11</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,20 +128,50 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อเนก-วกฺตฺร-นยนมฺ</i><br /><i>อเนกาทฺภุต-ทรฺศนมฺ</i><br /><i>อเนก-ทิวฺยาภรณํ</i><br /><i>ทิวฺยาเนโกทฺยตายุธมฺ</i>
+<span class="slant iast">aneka-vaktra-nayanam<br /></span>
+<span class="slant pali">อเนก-วกฺตฺร-นยนมฺ<br /></span>
+<span class="slant thai">อะเนกะ-วักตระ-นะยะนัม<br /></span>
+<span class="slant ram">อเนคะ-วัคทระ-นะยะนัม<br /></span>
+<span class="slant iast">anekādbhuta-darśanam<br /></span>
+<span class="slant pali">อเนกาทฺภุต-ทรฺศนมฺ<br /></span>
+<span class="slant thai">อะเนกาทภุตะ-ทัรศะนัม<br /></span>
+<span class="slant ram">อเนคาดบํุทะ-ดารชะนัม<br /></span>
+<span class="slant iast">aneka-divyābharaṇaṁ<br /></span>
+<span class="slant pali">อเนก-ทิวฺยาภรณํ<br /></span>
+<span class="slant thai">อะเนกะ-ทิวยาภะระณัง<br /></span>
+<span class="slant ram">อเนคะ-ดิพยาบฺะระณัม<br /></span>
+<span class="slant iast">divyānekodyatāyudham<br /></span>
+<span class="slant pali">ทิวฺยาเนโกทฺยตายุธมฺ<br /></span>
+<span class="slant thai">ทิวยาเนโกทยะตายุธัม<br /></span>
+<span class="slant ram"><br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ทิวฺย-มาลฺยามฺพร-ธรํ</i><br /><i>ทิวฺย-คนฺธานุเลปนมฺ</i><br /><i>สรฺวาศฺจรฺย-มยํ เทวมฺ</i><br /><i>อนนฺตํ วิศฺวโต-มุขมฺ</i>
+<span class="slant iast">divya-mālyāmbara-dharaṁ<br /></span>
+<span class="slant pali">ทิวฺย-มาลฺยามฺพร-ธรํ<br /></span>
+<span class="slant thai">ทิวยะ-มาลยามพะระ-ธะรัง<br /></span>
+<span class="slant ram">ดิพยะ-มาลยามบะระ-ดฺะรัม<br /></span>
+<span class="slant iast">divya-gandhānulepanam<br /></span>
+<span class="slant pali">ทิวฺย-คนฺธานุเลปนมฺ<br /></span>
+<span class="slant thai">ทิวยะ-คันธานุเลปะนัม<br /></span>
+<span class="slant ram">ดิพยะ-กันดฺานุเลพะนัม<br /></span>
+<span class="slant iast">sarvāścarya-mayaṁ devam<br /></span>
+<span class="slant pali">สรฺวาศฺจรฺย-มยํ เทวมฺ<br /></span>
+<span class="slant thai">สัรวาศจัรยะ-มะยัง เทวัม<br /></span>
+<span class="slant ram">สารวาชชารยะ-มะยัม เดวัม<br /></span>
+<span class="slant iast">anantaṁ viśvato-mukham<br /></span>
+<span class="slant pali">อนนฺตํ วิศฺวโต-มุขมฺ<br /></span>
+<span class="slant thai">อะนันตัง วิศวะโต-มุขัม<br /></span>
+<span class="slant ram">อนันทัม วิชวะโท-มุคัฺม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อเนก</i> — มากมาย, <i>วกฺตฺร</i> — พระโอษฐ์, <i>นยนมฺ</i> — พระเนตร, <i>อเนก</i> — มากมาย, <i>อทฺภุต</i> — น่าอัศจรรย์, <i>ทรฺศนมฺ</i> — ทัศนียภาพ, <i>อเนก</i> — มากมาย, <i>ทิวฺย</i> — ทิพย์, <i>อาภรณมฺ</i> — เครื่องประดับต่าง ๆ, <i>ทิวฺย</i> — ทิพย์, <i>อเนก</i> — มากมาย, <i>อุทฺยต</i> — ยกขึ้น, <i>อายุธมฺ</i> — อาวุธ ต่าง ๆ, <i>ทิวฺย</i> — ทิพย์, <i>มาลฺย</i> — พวงมาลัยต่าง ๆ, <i>อมฺพร</i> — อาภรณ์ต่าง ๆ, <i>ธรมฺ</i> — สวม, <i>ทิวฺย</i> — ทิพย์, <i>คนฺธ</i> — กลิ่นหอม, <i>อนุเลปนมฺ</i> — ทาด้วย, <i>สรฺว</i> — ทั้งหมด, <i>อาศฺจรฺย-มยมฺ</i> — น่าอัศจรรย์, <i>เทวมฺ</i> — ส่องแสง, <i>อนนฺตมฺ</i> — ไม่สิ้นสุด, <i>วิศฺวตฮ-มุขมฺ</i> — แผ่กระจาย ไปทั่ว
+  <span class="slant iast">aneka</span><span class="slant pali">อเนก</span><span class="slant thai">อะเนกะ</span><span class="slant ram">อเนคะ</span> — มากมาย, <span class="slant iast">vaktra</span><span class="slant pali">วกฺตฺร</span><span class="slant thai">วักตระ</span><span class="slant ram">วัคทระ</span> — พระโอษฐ์, <span class="slant iast">nayanam</span><span class="slant pali">นยนมฺ</span><span class="slant thai">นะยะนัม</span><span class="slant ram">นะยะนัม</span> — พระเนตร, <span class="slant iast">aneka</span><span class="slant pali">อเนก</span><span class="slant thai">อะเนกะ</span><span class="slant ram">อเนคะ</span> — มากมาย, <span class="slant iast">adbhuta</span><span class="slant pali">อทฺภุต</span><span class="slant thai">อัทภุตะ</span><span class="slant ram">อัดบํุทะ</span> — น่าอัศจรรย์, <span class="slant iast">darśanam</span><span class="slant pali">ทรฺศนมฺ</span><span class="slant thai">ทัรศะนัม</span><span class="slant ram">ดารชะนัม</span> — ทัศนียภาพ, <span class="slant iast">aneka</span><span class="slant pali">อเนก</span><span class="slant thai">อะเนกะ</span><span class="slant ram">อเนคะ</span> — มากมาย, <span class="slant iast">divya</span><span class="slant pali">ทิวฺย</span><span class="slant thai">ทิวยะ</span><span class="slant ram">ดิพยะ</span> — ทิพย์, <span class="slant iast">ābharaṇam</span><span class="slant pali">อาภรณมฺ</span><span class="slant thai">อาภะระณัม</span><span class="slant ram">อาบฺะระณัม</span> — เครื่องประดับต่าง ๆ, <span class="slant iast">divya</span><span class="slant pali">ทิวฺย</span><span class="slant thai">ทิวยะ</span><span class="slant ram">ดิพยะ</span> — ทิพย์, <span class="slant iast">aneka</span><span class="slant pali">อเนก</span><span class="slant thai">อะเนกะ</span><span class="slant ram">อเนคะ</span> — มากมาย, <span class="slant iast">udyata</span><span class="slant pali">อุทฺยต</span><span class="slant thai">อุทยะตะ</span><span class="slant ram">อุดยะทะ</span> — ยกขึ้น, <span class="slant iast">āyudham</span><span class="slant pali">อายุธมฺ</span><span class="slant thai">อายุธัม</span><span class="slant ram">อายุดัฺม</span> — อาวุธ ต่าง ๆ, <span class="slant iast">divya</span><span class="slant pali">ทิวฺย</span><span class="slant thai">ทิวยะ</span><span class="slant ram">ดิพยะ</span> — ทิพย์, <span class="slant iast">mālya</span><span class="slant pali">มาลฺย</span><span class="slant thai">มาลยะ</span><span class="slant ram">มาลยะ</span> — พวงมาลัยต่าง ๆ, <span class="slant iast">ambara</span><span class="slant pali">อมฺพร</span><span class="slant thai">อัมพะระ</span><span class="slant ram">อัมบะระ</span> — อาภรณ์ต่าง ๆ, <span class="slant iast">dharam</span><span class="slant pali">ธรมฺ</span><span class="slant thai">ธะรัม</span><span class="slant ram">ดฺะรัม</span> — สวม, <span class="slant iast">divya</span><span class="slant pali">ทิวฺย</span><span class="slant thai">ทิวยะ</span><span class="slant ram">ดิพยะ</span> — ทิพย์, <span class="slant iast">gandha</span><span class="slant pali">คนฺธ</span><span class="slant thai">คันธะ</span><span class="slant ram">กันดฺะ</span> — กลิ่นหอม, <span class="slant iast">anulepanam</span><span class="slant pali">อนุเลปนมฺ</span><span class="slant thai">อะนุเลปะนัม</span><span class="slant ram">อนุเลพะนัม</span> — ทาด้วย, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ทั้งหมด, <span class="slant iast">āścarya-mayam</span><span class="slant pali">อาศฺจรฺย-มยมฺ</span><span class="slant thai">อาศจัรยะ-มะยัม</span><span class="slant ram">อาชชารยะ- มะยัม</span> — น่าอัศจรรย์, <span class="slant iast">devam</span><span class="slant pali">เทวมฺ</span><span class="slant thai">เทวัม</span><span class="slant ram">เดวัม</span> — ส่องแสง, <span class="slant iast">anantam</span><span class="slant pali">อนนฺตมฺ</span><span class="slant thai">อะนันตัม</span><span class="slant ram">อนันทัม</span> — ไม่สิ้นสุด, <span class="slant iast">viśvataḥ-mukham</span><span class="slant pali">วิศฺวตห์-มุขมฺ</span><span class="slant thai">วิศวะตะห์-มุขัม</span><span class="slant ram">วิชวะทะฮ-มุคัฺม</span> — แผ่กระจาย ไปทั่ว
   </p>
 </div>
 
@@ -67,7 +183,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ทรงเห็นภายในรูปลักษณ์จักรวาลนั้นว่ามีพระโอษฐ์ไม่มีที่สิ้นสุดพระเนตรไม่มีที่สิ้นสุด&nbsp;&nbsp;ภาพอัศจรรย์ไม่มีที่สิ้นสุด&nbsp;&nbsp;รูปลักษณ์ที่ประดับไปด้วยเครื่องประดับสวรรค์มากมาย&nbsp;&nbsp;และทรงถืออาวุธทิพย์มากมาย&nbsp;&nbsp;ทรงคล้องพวกมาลัยและอาภรณ์สวรรค์มากมาย&nbsp;&nbsp;มีน้ำหอมมากมายที่ชโลมไปทั่วพระวรกายของพระองค์ทั้งหมดน่าอัศจรรย์&nbsp;&nbsp;สว่างไสว&nbsp;&nbsp;ไม่มีที่สิ้นสุด&nbsp;&nbsp;และแผ่กระจายไปทั่ว
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเห็นภายในรูปลักษณ์จักรวาลนั้นว่ามีพระโอษฐ์ไม่มีที่สิ้นสุดพระเนตรไม่มีที่สิ้นสุด&nbsp;&nbsp;ภาพอัศจรรย์ไม่มีที่สิ้นสุด&nbsp;&nbsp;รูปลักษณ์ที่ประดับไปด้วยเครื่องประดับสวรรค์มากมาย&nbsp;&nbsp;และทรงถืออาวุธทิพย์มากมาย&nbsp;&nbsp;ทรงคล้องพวกมาลัยและอาภรณ์สวรรค์มากมาย&nbsp;&nbsp;มีน้ำหอมมากมายที่ชโลมไปทั่วพระวรกายของพระองค์ทั้งหมดน่าอัศจรรย์&nbsp;&nbsp;สว่างไสว&nbsp;&nbsp;ไม่มีที่สิ้นสุด&nbsp;&nbsp;และแผ่กระจายไปทั่ว
   </p>
 </div>
 
@@ -79,7 +195,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สองโศลกนี้ได้ใช้คำว่ามากมายหลายครั้ง&nbsp;&nbsp;แสดงให้เห็นว่าไม่มีขีดจำกัดใน<wbr>จำนวนของพระหัตถ์&nbsp;&nbsp;พระโอษฐ์&nbsp;&nbsp;พระเพลา&nbsp;&nbsp;และปรากฏการณ์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงได้เห็น<wbr>ปรากฏการณ์เหล่านี้แจกจ่ายไปทั่วทั้งจักรวาล&nbsp;&nbsp;แต่ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงสามารถเห็นสิ่งเหล่านี้ขณะที่นั่งอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่เดียว&nbsp;&nbsp;ที่เป็นเช่นนี้ได้ก็เนื่องมา<wbr>จากพลังอำนาจที่ไม่สามารถมองเห็นได้ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  สองโศลกนี้ได้ใช้คำว่ามากมายหลายครั้ง&nbsp;&nbsp;แสดงให้เห็นว่าไม่มีขีดจำกัดใน<wbr>จำนวนของพระหัตถ์&nbsp;&nbsp;พระโอษฐ์&nbsp;&nbsp;พระเพลา&nbsp;&nbsp;และปรากฏการณ์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงได้เห็น<wbr>ปรากฏการณ์เหล่านี้แจกจ่ายไปทั่วทั้งจักรวาล&nbsp;&nbsp;แต่ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงสามารถเห็นสิ่งเหล่านี้ขณะที่นั่งอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่เดียว&nbsp;&nbsp;ที่เป็นเช่นนี้ได้ก็เนื่องมา<wbr>จากพลังอำนาจที่ไม่สามารถมองเห็นได้ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

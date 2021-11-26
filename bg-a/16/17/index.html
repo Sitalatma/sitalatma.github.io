@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 16.17</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อาตฺม-สมฺภาวิตาฮ สฺตพฺธา</i><br /><i>ธน-มาน-มทานฺวิตาฮ</i><br /><i>ยชเนฺต นาม-ยไชฺญสฺ เต</i><br /><i>ทเมฺภนาวิธิ-ปูรฺวกมฺ</i>
+<span class="slant iast">ātma-sambhāvitāḥ stabdhā<br /></span>
+<span class="slant pali">อาตฺม-สมฺภาวิตาห์ สฺตพฺธา<br /></span>
+<span class="slant thai">อาตมะ-สัมภาวิตาห์ สตัพธา<br /></span>
+<span class="slant ram">อาทมะ-สัมบฺาวิทาฮ สทับดฺา<br /></span>
+<span class="slant iast">dhana-māna-madānvitāḥ<br /></span>
+<span class="slant pali">ธน-มาน-มทานฺวิตาห์<br /></span>
+<span class="slant thai">ธะนะ-มานะ-มะทานวิตาห์<br /></span>
+<span class="slant ram">ดฺะนะ-มานะ-มะดานวิทาฮ<br /></span>
+<span class="slant iast">yajante nāma-yajñais te<br /></span>
+<span class="slant pali">ยชนฺเต นาม-ยชฺไญสฺ เต<br /></span>
+<span class="slant thai">ยะชันเต นามะ-ยัชไญส เต<br /></span>
+<span class="slant ram">ยะจันเท นามะ-ยะกไยส เท<br /></span>
+<span class="slant iast">dambhenāvidhi-pūrvakam<br /></span>
+<span class="slant pali">ทมฺเภนาวิธิ-ปูรฺวกมฺ<br /></span>
+<span class="slant thai">ทัมเภนาวิธิ-ปูรวะกัม<br /></span>
+<span class="slant ram">ดัมเบฺนาวิดิฺ-พูรวะคัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อาตฺม-สมฺภาวิตาฮ</i> — ความกระหยิ่มใจ, <i>สฺตพฺธาฮ</i> — ถือดี, <i>ธน-มาน</i> — ทรัพย์สมบัติ และเกียรติยศที่ผิด, <i>มท</i> — ในความหลง, <i>อนฺวิตาฮ</i> — ซึมซาบ, <i>ยชเนฺต</i> — พวกเขาทำพิธี บูชา, <i>นาม</i> — เพียงชื่อเท่านั้น, <i>ยไชฺญฮ</i> — ด้วยพิธีบูชา, <i>เต</i> — พวกเขา, <i>ทเมฺภน</i> — ด้วยความ หยิ่งยะโส, <i>อวิธิ-ปูรฺวกมฺ</i> — โดยไม่ปฏิบัติตามกฎเกณฑ์ใด ๆ
+  <span class="slant iast">ātma-sambhāvitāḥ</span><span class="slant pali">อาตฺม-สมฺภาวิตาห์</span><span class="slant thai">อาตมะ-สัมภาวิตาห์</span><span class="slant ram">อาทมะ-สัมบฺาวิทาฮ</span> — ความกระหยิ่มใจ, <span class="slant iast">stabdhāḥ</span><span class="slant pali">สฺตพฺธาห์</span><span class="slant thai">สตัพธาห์</span><span class="slant ram">สทับดฺาฮ</span> — ถือดี, <span class="slant iast">dhana-māna</span><span class="slant pali">ธน-มาน</span><span class="slant thai">ธะนะ-มานะ</span><span class="slant ram">ดฺะนะ-มานะ</span> — ทรัพย์สมบัติ และเกียรติยศที่ผิด, <span class="slant iast">mada</span><span class="slant pali">มท</span><span class="slant thai">มะทะ</span><span class="slant ram">มะดะ</span> — ในความหลง, <span class="slant iast">anvitāḥ</span><span class="slant pali">อนฺวิตาห์</span><span class="slant thai">อันวิตาห์</span><span class="slant ram">อันวิทาฮ</span> — ซึมซาบ, <span class="slant iast">yajante</span><span class="slant pali">ยชนฺเต</span><span class="slant thai">ยะชันเต</span><span class="slant ram">ยะจันเท</span> — พวกเขาทำพิธี บูชา, <span class="slant iast">nāma</span><span class="slant pali">นาม</span><span class="slant thai">นามะ</span><span class="slant ram">นามะ</span> — เพียงชื่อเท่านั้น, <span class="slant iast">yajñaiḥ</span><span class="slant pali">ยชฺไญห์</span><span class="slant thai">ยัชไญห์</span><span class="slant ram">ยะกไยฮ</span> — ด้วยพิธีบูชา, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">dambhena</span><span class="slant pali">ทมฺเภน</span><span class="slant thai">ทัมเภนะ</span><span class="slant ram">ดัมเบฺนะ</span> — ด้วยความ หยิ่งยะโส, <span class="slant iast">avidhi-pūrvakam</span><span class="slant pali">อวิธิ-ปูรฺวกมฺ</span><span class="slant thai">อะวิธิ-ปูรวะกัม</span><span class="slant ram">อวิดิฺ-พูรวะคัม</span> — โดยไม่ปฏิบัติตามกฎเกณฑ์ใด ๆ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คิดว่าตนเองเป็นทุกสิ่งทุกอย่างโดยไม่สนใจกับผู้ที่เชื่อถือได้หรือพระคัมภีร์เหล่ามารบางครั้งปฏิบัติพิธีที่สมมติว่าเป็นพิธีทางศาสนาหรือพิธีการบูชา&nbsp;&nbsp;เนื่องจากไม่<wbr>เชื่อในผู้ที่เชื่อถือได้&nbsp;&nbsp;พวกเขาถือดีมาก&nbsp;&nbsp;เป็นเช่นนี้เนื่องจากความหลงที่มีสาเหตุมาจากการ<wbr>สะสมทรัพย์สมบัติและเกียรติยศชื่อเสียงที่ผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;บางครั้งมารเหล่านี้แสดงบทเป็นนัก<wbr>เทศน์นำพาผู้คนไปในทางที่ผิด&nbsp;&nbsp;และมีชื่อเสียงในฐานะนักปฏิรูปทางศาสนา&nbsp;&nbsp;หรือในฐานะ<wbr>อวตารแห่งพระเจ้า&nbsp;&nbsp;พวกเขาอวดแสดงพิธีสังเวยบูชาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;หรือบูชาเหล่าเทวดา&nbsp;&nbsp;หรือ<wbr>ผลิตพระเจ้าของพวกตนขึ้นมา&nbsp;&nbsp;คนธรรมดาสามัญโฆษณาว่าตนเองเป็นพระเจ้า&nbsp;&nbsp;และให้<wbr>บูชาพวกตน&nbsp;&nbsp;จากการกระทำของคนโง่เขลาเหล่านี้และยังพิจารณาว่าตนเองเจริญใน<wbr>หลักธรรมแห่งศาสนา&nbsp;&nbsp;หรือในหลักธรรมแห่งความรู้ทิพย์&nbsp;&nbsp;นุ่งห่มแบบนักบวชสละโลกแต่ปฏิบัติตัวเหลวใหลนานัปการในคาบนักบวชนี้&nbsp;&nbsp;อันที่จริงมีกฎข้อห้ามมากมายสำหรับ<wbr>ผู้ที่สละโลกแล้ว&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เหล่ามารไม่สนใจต่อกฎเกณฑ์เหล่านี้&nbsp;&nbsp;คิดว่าวิถีทางใดก็แล้ว<wbr>แต่ที่ตนสามารถสร้างขึ้นมาก็เป็นวิถีทางของตนเอง&nbsp;&nbsp;เพราะไม่มีวิถีทางมาตรฐานที่จะ<wbr>ปฏิบัติตาม&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>อวิธิ-ปูรฺวกมฺ</i>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;ไม่ปฏิบัติตามกฎเกณฑ์ข้อห้ามต่าง&nbsp;&nbsp;ๆได้เน้นไว้โดยเฉพาะ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;สิ่งเหล่านี้เกิดขึ้นเสมอเนื่องจากอวิชชาและความหลง
+  คิดว่าตนเองเป็นทุกสิ่งทุกอย่างโดยไม่สนใจกับผู้ที่เชื่อถือได้หรือพระคัมภีร์เหล่ามารบางครั้งปฏิบัติพิธีที่สมมติว่าเป็นพิธีทางศาสนาหรือพิธีการบูชา&nbsp;&nbsp;เนื่องจากไม่<wbr>เชื่อในผู้ที่เชื่อถือได้&nbsp;&nbsp;พวกเขาถือดีมาก&nbsp;&nbsp;เป็นเช่นนี้เนื่องจากความหลงที่มีสาเหตุมาจากการ<wbr>สะสมทรัพย์สมบัติและเกียรติยศชื่อเสียงที่ผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;บางครั้งมารเหล่านี้แสดงบทเป็นนัก<wbr>เทศน์นำพาผู้คนไปในทางที่ผิด&nbsp;&nbsp;และมีชื่อเสียงในฐานะนักปฏิรูปทางศาสนา&nbsp;&nbsp;หรือในฐานะ<wbr>อวตารแห่งพระเจ้า&nbsp;&nbsp;พวกเขาอวดแสดงพิธีสังเวยบูชาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;หรือบูชาเหล่าเทวดา&nbsp;&nbsp;หรือ<wbr>ผลิตพระเจ้าของพวกตนขึ้นมา&nbsp;&nbsp;คนธรรมดาสามัญโฆษณาว่าตนเองเป็นพระเจ้า&nbsp;&nbsp;และให้<wbr>บูชาพวกตน&nbsp;&nbsp;จากการกระทำของคนโง่เขลาเหล่านี้และยังพิจารณาว่าตนเองเจริญใน<wbr>หลักธรรมแห่งศาสนา&nbsp;&nbsp;หรือในหลักธรรมแห่งความรู้ทิพย์&nbsp;&nbsp;นุ่งห่มแบบนักบวชสละโลกแต่ปฏิบัติตัวเหลวใหลนานัปการในคาบนักบวชนี้&nbsp;&nbsp;อันที่จริงมีกฎข้อห้ามมากมายสำหรับ<wbr>ผู้ที่สละโลกแล้ว&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เหล่ามารไม่สนใจต่อกฎเกณฑ์เหล่านี้&nbsp;&nbsp;คิดว่าวิถีทางใดก็แล้ว<wbr>แต่ที่ตนสามารถสร้างขึ้นมาก็เป็นวิถีทางของตนเอง&nbsp;&nbsp;เพราะไม่มีวิถีทางมาตรฐานที่จะ<wbr>ปฏิบัติตาม&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">avidhi-pūrvakam</span><span class="slant pali">อวิธิ-ปูรฺวกมฺ</span><span class="slant thai">อะวิธิ-ปูรวะกัม</span><span class="slant ram">อวิดิฺ-พูรวะคัม</span>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;ไม่ปฏิบัติตามกฎเกณฑ์ข้อห้ามต่าง&nbsp;&nbsp;ๆได้เน้นไว้โดยเฉพาะ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;สิ่งเหล่านี้เกิดขึ้นเสมอเนื่องจากอวิชชาและความหลง
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.22</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เย หิ สํสฺปรฺศ-ชา โภคา</i><br /><i>ทุฮข-โยนย เอว เต</i><br /><i>อาทฺยฺ-อนฺตวนฺตฮ กะเอุนฺตย</i><br /><i>น เตษุ รมเต พุธฮ</i>
+<span class="slant iast">ye hi saṁsparśa-jā bhogā<br /></span>
+<span class="slant pali">เย หิ สํสฺปรฺศ-ชา โภคา<br /></span>
+<span class="slant thai">เย หิ สังสปัรศะ-ชา โภคา<br /></span>
+<span class="slant ram">เย ฮิ สัมสพารชะ-จา โบฺกา<br /></span>
+<span class="slant iast">duḥkha-yonaya eva te<br /></span>
+<span class="slant pali">ทุห์ข-โยนย เอว เต<br /></span>
+<span class="slant thai">ทุห์ขะ-โยนะยะ เอวะ เต<br /></span>
+<span class="slant ram">ดุฮคฺะ-โยนะยะ เอวะ เท<br /></span>
+<span class="slant iast">ādy-antavantaḥ kaunteya<br /></span>
+<span class="slant pali">อาทฺยฺ-อนฺตวนฺตห์ เกานฺเตย<br /></span>
+<span class="slant thai">อาทย-อันตะวันตะห์ เกานเตยะ<br /></span>
+<span class="slant ram">อาดิ-อันทะวันทะฮ คะอุนเทยะ<br /></span>
+<span class="slant iast">na teṣu ramate budhaḥ<br /></span>
+<span class="slant pali">น เตษุ รมเต พุธห์<br /></span>
+<span class="slant thai">นะ เตษุ ระมะเต พุธะห์<br /></span>
+<span class="slant ram">นะ เทชุ ระมะเท บุดฺะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เย</i> — พวกเขา, <i>หิ</i> — แน่นอน, <i>สํสฺปรฺศ-ชาฮ</i> — ด้วยการมาสัมผัสกับประสาทสัมผัสวัตถุ, <i>โภคาฮ</i> — ความเพลิดเพลิน, <i>ทุฮข</i> — ความทุกข์, <i>โยนยฮ</i> — แหล่งกำเนิดของ, <i>เอว</i> — แน่นอน, <i>เต</i> — พวกเขาเป็น, <i>อาทิ</i> — เริ่มต้น, <i>อนฺต</i> — จบ, <i>วนฺตฮ</i> — อยู่ในอำนาจ, <i>กะเอุนฺตย</i> — โอ้ โอรสพระนาง <i>กุนฺตี</i>, <i>น</i> — ไม่เคย, <i>เตษุ</i> — ในสิ่งเหล่านั้น, <i>รมเต</i> — ชื่นชมยินดี, <i>พุธฮ</i> — บุคคลผู้มีปัญญา
+  <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — พวกเขา, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">saṁsparśa-jāḥ</span><span class="slant pali">สํสฺปรฺศ-ชาห์</span><span class="slant thai">สังสปัรศะ-ชาห์</span><span class="slant ram">สัมสพารชะ-จาฮ</span> — ด้วยการมาสัมผัสกับประสาทสัมผัสวัตถุ, <span class="slant iast">bhogāḥ</span><span class="slant pali">โภคาห์</span><span class="slant thai">โภคาห์</span><span class="slant ram">โบฺกาฮ</span> — ความเพลิดเพลิน, <span class="slant iast">duḥkha</span><span class="slant pali">ทุห์ข</span><span class="slant thai">ทุห์ขะ</span><span class="slant ram">ดุฮคฺะ</span> — ความทุกข์, <span class="slant iast">yonayaḥ</span><span class="slant pali">โยนยห์</span><span class="slant thai">โยนะยะห์</span><span class="slant ram">โยนะยะฮ</span> — แหล่งกำเนิดของ, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขาเป็น, <span class="slant iast">ādi</span><span class="slant pali">อาทิ</span><span class="slant thai">อาทิ</span><span class="slant ram">อาดิ</span> — เริ่มต้น, <span class="slant iast">anta</span><span class="slant pali">อนฺต</span><span class="slant thai">อันตะ</span><span class="slant ram">อันทะ</span> — จบ, <span class="slant iast">vantaḥ</span><span class="slant pali">วนฺตห์</span><span class="slant thai">วันตะห์</span><span class="slant ram">วันทะฮ</span> — อยู่ในอำนาจ, <span class="slant iast">kaunteya</span><span class="slant pali">เกานฺเตย</span><span class="slant thai">เกานเตยะ</span><span class="slant ram">คะอุนเทยะ</span> — โอ้ โอรสพระนาง <span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">teṣu</span><span class="slant pali">เตษุ</span><span class="slant thai">เตษุ</span><span class="slant ram">เทชุ</span> — ในสิ่งเหล่านั้น, <span class="slant iast">ramate</span><span class="slant pali">รมเต</span><span class="slant thai">ระมะเต</span><span class="slant ram">ระมะเท</span> — ชื่นชมยินดี, <span class="slant iast">budhaḥ</span><span class="slant pali">พุธห์</span><span class="slant thai">พุธะห์</span><span class="slant ram">บุดฺะฮ</span> — บุคคลผู้มีปัญญา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  บุคคลผู้มีปัญญาจะไม่ไปมีส่วนร่วมกับต้นเหตุแห่งความทุกข์&nbsp;&nbsp;อันเนื่องมาจากการไปสัมผัสกับประสาทสัมผัสวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>กุนฺตี</i>&nbsp;&nbsp;ความสุขเช่นนี้มีจุดเริ่มต้นและมีจุดจบ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คนฉลาดจะไม่ชื่นชมยินดีกับมัน
+  บุคคลผู้มีปัญญาจะไม่ไปมีส่วนร่วมกับต้นเหตุแห่งความทุกข์&nbsp;&nbsp;อันเนื่องมาจากการไปสัมผัสกับประสาทสัมผัสวัตถุ&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>&nbsp;&nbsp;ความสุขเช่นนี้มีจุดเริ่มต้นและมีจุดจบ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คนฉลาดจะไม่ชื่นชมยินดีกับมัน
   </p>
 </div>
 
@@ -73,31 +174,61 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความสุขทางประสาทสัมผัสวัตถุอันเนื่องจากการมาสัมผัสกับวัตถุซึ่งทั้งหมดเป็นสิ่ง<wbr>ชั่วคราว&nbsp;&nbsp;เพราะร่างกายเองก็เป็นสิ่งชั่วคราว&nbsp;&nbsp;ดวงวิญญาณผู้หลุดพ้นไม่สนใจสิ่งใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่<wbr>ไม่ถาวร&nbsp;&nbsp;รู้ดีถึงความปลื้มปีติแห่งความสุขทิพย์&nbsp;&nbsp;แล้วดวงวิญญาณผู้หลุดพ้นจะยอมรับ<wbr>เอาความสุขจอมปลอมได้อย่างไร?&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ปทฺม&nbsp;&nbsp;ปุราณ</i>&nbsp;&nbsp;กล่าวว่า
+  ความสุขทางประสาทสัมผัสวัตถุอันเนื่องจากการมาสัมผัสกับวัตถุซึ่งทั้งหมดเป็นสิ่ง<wbr>ชั่วคราว&nbsp;&nbsp;เพราะร่างกายเองก็เป็นสิ่งชั่วคราว&nbsp;&nbsp;ดวงวิญญาณผู้หลุดพ้นไม่สนใจสิ่งใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่<wbr>ไม่ถาวร&nbsp;&nbsp;รู้ดีถึงความปลื้มปีติแห่งความสุขทิพย์&nbsp;&nbsp;แล้วดวงวิญญาณผู้หลุดพ้นจะยอมรับ<wbr>เอาความสุขจอมปลอมได้อย่างไร?&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">padma&nbsp;&nbsp;purāṇa</span><span class="slant pali">ปทฺมปุราณ</span><span class="slant thai">ปัทมะปุราณะ</span><span class="slant ram">พุราณะ</span>&nbsp;&nbsp;กล่าวว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>รมเนฺต โยคิโน ′นเนฺต</i><br /><i>สตฺยานเนฺท จิทฺ-อาตฺมนิ</i><br /><i>อิติ ราม-ปเทนาสะอุ</i><br /><i>ปรํ พฺรหฺมาภิธียเต</i>
+<span class="slant iast">ramante yogino ’nante<br /></span>
+<span class="slant pali">รมนฺเต โยคิโน ’นนฺเต<br /></span>
+<span class="slant thai">ระมันเต โยคิโน ’นันเต<br /></span>
+<span class="slant ram">ระมันเท โยกิโน ่นันเท<br /></span>
+<span class="slant iast">satyānande cid-ātmani<br /></span>
+<span class="slant pali">สตฺยานนฺเท จิทฺ-อาตฺมนิ<br /></span>
+<span class="slant thai">สัตยานันเท จิท-อาตมะนิ<br /></span>
+<span class="slant ram">สัทยานันเด ชิด-อาทมานิ<br /></span>
+<span class="slant iast">iti rāma-padenāsau<br /></span>
+<span class="slant pali">อิติ ราม-ปเทนาเสา<br /></span>
+<span class="slant thai">อิติ รามะ-ปะเทนาเสา<br /></span>
+<span class="slant ram">อิทิ รามะ-พะเดนาโส<br /></span>
+<span class="slant iast">paraṁ brahmābhidhīyate<br /></span>
+<span class="slant pali">ปรํ พฺรหฺมาภิธียเต<br /></span>
+<span class="slant thai">ปะรัง พรัหมาภิธียะเต<br /></span>
+<span class="slant ram">พะรัม บระฮมาบิฺดีฺยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “พวก&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ได้รับความสุขทิพย์อย่างหาที่สุดมิได้จากสัจธรรมที่สมบูรณ์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สัจธรรม<wbr>ที่สมบูรณ์สูงสุดองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จึงทรงมีอีกพระนามหนึ่งว่า&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;“
+  “พวก&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ได้รับความสุขทิพย์อย่างหาที่สุดมิได้จากสัจธรรมที่สมบูรณ์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สัจธรรม<wbr>ที่สมบูรณ์สูงสุดองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จึงทรงมีอีกพระนามหนึ่งว่า&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;“
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(5.5.1)&nbsp;&nbsp;กล่าวไว้เช่นกันว่า
+  ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(5.5.1)&nbsp;&nbsp;กล่าวไว้เช่นกันว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นายํ เทโห เทห-ภาชาํ นฺฤ-โลเก</i><br /><i>กษฺฏานฺ กามานฺ อรฺหเต วิฑฺ-ภุชาํ เย</i><br /><i>ตโป ทิวฺยํ ปุตฺรกา เยน สตฺตฺวํ</i><br /><i>ศุเทฺธฺยทฺ ยสฺมาทฺ พฺรหฺม-สะอุขฺยํ ตฺวฺ อนนฺตมฺ</i>
+<span class="slant iast">nāyaṁ deho deha-bhājāṁ nṛ-loke<br /></span>
+<span class="slant pali">นายํ เทโห เทห-ภาชำ นฺฤ-โลเก<br /></span>
+<span class="slant thai">นายัง เทโห เทหะ-ภาชาง นฤ-โลเก<br /></span>
+<span class="slant ram">นายัม เดโฮ เดฮะ-บฺาจาม นริ-โลเค<br /></span>
+<span class="slant iast">kaṣṭān kāmān arhate viḍ-bhujāṁ ye<br /></span>
+<span class="slant pali">กษฺฏานฺ กามานฺ อรฺหเต วิฑฺ-ภุชำ เย<br /></span>
+<span class="slant thai">กัษฏาน กามาน อัรหะเต วิฑ-ภุชาง เย<br /></span>
+<span class="slant ram">คัชทาน คามาน อรฮะเท วิด-บํุจาม เยฺ<br /></span>
+<span class="slant iast">tapo divyaṁ putrakā yena sattvaṁ<br /></span>
+<span class="slant pali">ตโป ทิวฺยํ ปุตฺรกา เยน สตฺตฺวํ<br /></span>
+<span class="slant thai">ตะโป ทิวยัง ปุตระกา เยนะ สัตตวัง<br /></span>
+<span class="slant ram">ทะโพ ดิพยัม พุทระคา เยนะ สัททวัม<br /></span>
+<span class="slant iast">śuddhyed yasmād brahma-saukhyaṁ tv anantam<br /></span>
+<span class="slant pali">ศุทฺเธฺยทฺ ยสฺมาทฺ พฺรหฺม-เสาขฺยํ ตฺวฺ อนนฺตมฺ<br /></span>
+<span class="slant thai">ศุทธเยท ยัสมาท พรัหมะ-เสาขยัง ตว อะนันตัม<br /></span>
+<span class="slant ram">ชุดดฺเยด ยัสมาด บระฮมะ-โสคฺยัม ทุ อนันทัม<br /></span>
+
   
 </div>
 
@@ -109,7 +240,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ฉะนั้น&nbsp;&nbsp;พวกที่เป็น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;หรือนักทิพย์นิยมผู้มีปัญญาโดยแท้จริง&nbsp;&nbsp;จะไม่หลงใหลอยู่<wbr>กับความสุขทางประสาทสัมผัสอันเป็นต้นเหตุแห่งความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;ผู้ที่เสพติดกับ<wbr>ความสุขทางวัตถุมากเพียงใด&nbsp;&nbsp;เขาก็จะติดกับดักมากยิ่งขึ้นในความทุกข์ทางวัตถุ
+  ฉะนั้น&nbsp;&nbsp;พวกที่เป็น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หรือนักทิพย์นิยมผู้มีปัญญาโดยแท้จริง&nbsp;&nbsp;จะไม่หลงใหลอยู่<wbr>กับความสุขทางประสาทสัมผัสอันเป็นต้นเหตุแห่งความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;ผู้ที่เสพติดกับ<wbr>ความสุขทางวัตถุมากเพียงใด&nbsp;&nbsp;เขาก็จะติดกับดักมากยิ่งขึ้นในความทุกข์ทางวัตถุ
   </p>
 </div>
 

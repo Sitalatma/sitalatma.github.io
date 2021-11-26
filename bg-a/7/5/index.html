@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อปเรยมฺ อิตสฺ ตฺวฺ อนฺยาํ</i><br /><i>ปฺรกฺฤติํ วิทฺธิ เม ปรามฺ</i><br /><i>ชีว-ภูตาํ มหา-พาโห</i><br /><i>ยเยทํ ธารฺยเต ชคตฺ</i>
+<span class="slant iast">apareyam itas tv anyāṁ<br /></span>
+<span class="slant pali">อปเรยมฺ อิตสฺ ตฺวฺ อนฺยำ<br /></span>
+<span class="slant thai">อะปะเรยัม อิตัส ตว อันยาง<br /></span>
+<span class="slant ram">อพะเรยัม อิทัส ทุ อันยาม<br /></span>
+<span class="slant iast">prakṛtiṁ viddhi me parām<br /></span>
+<span class="slant pali">ปฺรกฺฤตึ วิทฺธิ เม ปรามฺ<br /></span>
+<span class="slant thai">ปรักฤติง วิทธิ เม ปะราม<br /></span>
+<span class="slant ram">พระคริทิม วิดดิฺ เม พะราม<br /></span>
+<span class="slant iast">jīva-bhūtāṁ mahā-bāho<br /></span>
+<span class="slant pali">ชีว-ภูตำ มหา-พาโห<br /></span>
+<span class="slant thai">ชีวะ-ภูตาง มะหา-พาโห<br /></span>
+<span class="slant ram">จีวะ-บํูทาม มะฮา-บาโฮ<br /></span>
+<span class="slant iast">yayedaṁ dhāryate jagat<br /></span>
+<span class="slant pali">ยเยทํ ธารฺยเต ชคตฺ<br /></span>
+<span class="slant thai">ยะเยทัง ธารยะเต ชะคัต<br /></span>
+<span class="slant ram">ยะเยดัม ดฺารยะเท จะกัทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อปรา</i> — ต่ำกว่า, <i>อิยมฺ</i> — นี้, <i>อิตฮ</i> — นอกจานี้, <i>ตุ</i> — แต่, <i>อนฺยามฺ</i> — อีก, <i>ปฺรกฺฤติมฺ</i> — พลังงาน, <i>วิทฺธิ</i> — เพียงแต่พยายามเข้าใจ, <i>เม</i> — ของข้า, <i>ปรามฺ</i> — สูงกว่า, <i>ชีว-ภูตามฺ</i> — ประกอบด้วย สิ่งมีชีวิต, <i>มหา-พาโห</i> — โอ้ ยอดนักรบ, <i>ยยา</i> — ผู้ซึ่ง, <i>อิทมฺ</i> — นี้, <i>ธารฺยเต</i> — ใช้ประโยชน์ หรือหาประโยชน์ส่วนตัว, <i>ชคตฺ</i> — โลกวัตถุ
+  <span class="slant iast">aparā</span><span class="slant pali">อปรา</span><span class="slant thai">อะปะรา</span><span class="slant ram">อพะรา</span> — ต่ำกว่า, <span class="slant iast">iyam</span><span class="slant pali">อิยมฺ</span><span class="slant thai">อิยัม</span><span class="slant ram">อิยัม</span> — นี้, <span class="slant iast">itaḥ</span><span class="slant pali">อิตห์</span><span class="slant thai">อิตะห์</span><span class="slant ram">อิทะฮ</span> — นอกจานี้, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">anyām</span><span class="slant pali">อนฺยามฺ</span><span class="slant thai">อันยาม</span><span class="slant ram">อันยาม</span> — อีก, <span class="slant iast">prakṛtim</span><span class="slant pali">ปฺรกฺฤติมฺ</span><span class="slant thai">ปรักฤติม</span><span class="slant ram">พระคริทิม</span> — พลังงาน, <span class="slant iast">viddhi</span><span class="slant pali">วิทฺธิ</span><span class="slant thai">วิทธิ</span><span class="slant ram">วิดดิฺ</span> — เพียงแต่พยายามเข้าใจ, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">parām</span><span class="slant pali">ปรามฺ</span><span class="slant thai">ปะราม</span><span class="slant ram">พะราม</span> — สูงกว่า, <span class="slant iast">jīva-bhūtām</span><span class="slant pali">ชีว-ภูตามฺ</span><span class="slant thai">ชีวะ-ภูตาม</span><span class="slant ram">จีวะ-บํูทาม</span> — ประกอบด้วย สิ่งมีชีวิต, <span class="slant iast">mahā-bāho</span><span class="slant pali">มหา-พาโห</span><span class="slant thai">มะหา-พาโห</span><span class="slant ram">มะฮา-บาโฮ</span> — โอ้ ยอดนักรบ, <span class="slant iast">yayā</span><span class="slant pali">ยยา</span><span class="slant thai">ยะยา</span><span class="slant ram">ยะยา</span> — ผู้ซึ่ง, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — นี้, <span class="slant iast">dhāryate</span><span class="slant pali">ธารฺยเต</span><span class="slant thai">ธารยะเต</span><span class="slant ram">ดฺารยะเท</span> — ใช้ประโยชน์ หรือหาประโยชน์ส่วนตัว, <span class="slant iast">jagat</span><span class="slant pali">ชคตฺ</span><span class="slant thai">ชะคัต</span><span class="slant ram">จะกัท</span> — โลกวัตถุ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ยอดนักรบ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;นอกจากนี้ยังมีพลังงานที่สูงกว่าของข้าซึ่งประกอบไปด้วยสิ่งมีชีวิตผู้แสวงหาทรัพยากรทางธรรมชาติวัตถุที่ต่ำกว่านี้&nbsp;&nbsp;เพื่อประโยชน์ส่วนตัว
+  โอ้&nbsp;&nbsp;ยอดนักรบ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;นอกจากนี้ยังมีพลังงานที่สูงกว่าของข้าซึ่งประกอบไปด้วยสิ่งมีชีวิตผู้แสวงหาทรัพยากรทางธรรมชาติวัตถุที่ต่ำกว่านี้&nbsp;&nbsp;เพื่อประโยชน์ส่วนตัว
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ว่าสิ่งมีชีวิตเป็นธรรมชาติหรือพลังงานที่สูง<wbr>กว่าขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พลังงานที่ต่ำกว่าคือพลังงานวัตถุซึ่งปรากฏในธาตุต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;ดินน้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;ลม&nbsp;&nbsp;อากาศ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;และอหังการ&nbsp;&nbsp;ธรรมชาติวัตถุทั้งสองรูปแบบคืออย่าง<wbr>หยาบ&nbsp;&nbsp;(ดิน&nbsp;&nbsp;ฯลฯ)&nbsp;&nbsp;และอย่างละเอียด&nbsp;&nbsp;(จิตใจ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;)&nbsp;&nbsp;เป็นผลผลิตของพลังงานเบื้องต่ำ&nbsp;&nbsp;สิ่ง<wbr>มีชีวิตผู้แสวงหาประโยชน์ส่วนตัวจากพลังงานเบื้องต่ำด้วยจุดมุ่งหมายที่แตกต่างกันเป็นพลังงานที่สูงกว่าขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และด้วยพลังงานนี้ทำให้โลกวัตถุทั้งหมดดำเนิน<wbr>ไป&nbsp;&nbsp;ปรากฏการณ์แห่งจักรวาลไม่มีอำนาจปฏิบัติการ&nbsp;&nbsp;แต่จะเคลื่อนไปด้วยพลังงานที่สูง<wbr>กว่าคือสิ่งมีชีวิต&nbsp;&nbsp;พลังงานจะถูกควบคุมโดยแหล่งกำเนิดของมันเสมอ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สิ่งมีชีวิตจึง<wbr>ถูกควบคุมเสมอโดยไม่มีความเป็นอยู่อิสระ&nbsp;&nbsp;และจะไม่มีวันมีอำนาจทัดเทียมกับองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เหมือนดังที่มนุษย์ผู้ด้อยปัญญาคิด&nbsp;&nbsp;ข้อแตกต่างระหว่างสิ่งมีชีวิตและองค์&nbsp;&nbsp;<i>ภควานฺ</i>ได้อธิบายไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(10.87.30)&nbsp;&nbsp;ดังนี้
+  ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ว่าสิ่งมีชีวิตเป็นธรรมชาติหรือพลังงานที่สูง<wbr>กว่าขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พลังงานที่ต่ำกว่าคือพลังงานวัตถุซึ่งปรากฏในธาตุต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;ดินน้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;ลม&nbsp;&nbsp;อากาศ&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;และอหังการ&nbsp;&nbsp;ธรรมชาติวัตถุทั้งสองรูปแบบคืออย่าง<wbr>หยาบ&nbsp;&nbsp;(ดิน&nbsp;&nbsp;ฯลฯ)&nbsp;&nbsp;และอย่างละเอียด&nbsp;&nbsp;(จิตใจ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;)&nbsp;&nbsp;เป็นผลผลิตของพลังงานเบื้องต่ำ&nbsp;&nbsp;สิ่ง<wbr>มีชีวิตผู้แสวงหาประโยชน์ส่วนตัวจากพลังงานเบื้องต่ำด้วยจุดมุ่งหมายที่แตกต่างกันเป็นพลังงานที่สูงกว่าขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และด้วยพลังงานนี้ทำให้โลกวัตถุทั้งหมดดำเนิน<wbr>ไป&nbsp;&nbsp;ปรากฏการณ์แห่งจักรวาลไม่มีอำนาจปฏิบัติการ&nbsp;&nbsp;แต่จะเคลื่อนไปด้วยพลังงานที่สูง<wbr>กว่าคือสิ่งมีชีวิต&nbsp;&nbsp;พลังงานจะถูกควบคุมโดยแหล่งกำเนิดของมันเสมอ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สิ่งมีชีวิตจึง<wbr>ถูกควบคุมเสมอโดยไม่มีความเป็นอยู่อิสระ&nbsp;&nbsp;และจะไม่มีวันมีอำนาจทัดเทียมกับองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เหมือนดังที่มนุษย์ผู้ด้อยปัญญาคิด&nbsp;&nbsp;ข้อแตกต่างระหว่างสิ่งมีชีวิตและองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>ได้อธิบายไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(10.87.30)&nbsp;&nbsp;ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อปริมิตา ธฺรุวาสฺ ตนุ-ภฺฤโต ยทิ สรฺว-คตาสฺ</i><br /><i>ตรฺหิ น ศาสฺยเตติ นิยโม ธฺรุว เนตรตฺหา</i><br /><i>อชนิ จ ยนฺ-มยํ ตทฺ อวิมุจฺย นิยนฺตฺฤ ภเวตฺ</i><br /><i>สมมฺ อนุชานตาํ ยทฺ อมตํ มต-ทุษฺฏตยา</i>
+<span class="slant iast">aparimitā dhruvās tanu-bhṛto yadi sarva-gatās<br /></span>
+<span class="slant pali">อปริมิตา ธฺรุวาสฺ ตนุ-ภฺฤโต ยทิ สรฺว-คตาสฺ<br /></span>
+<span class="slant thai">อะปะริมิตา ธรุวาส ตะนุ-ภฤโต ยะทิ สัรวะ-คะตาส<br /></span>
+<span class="slant ram">อพะริมิทา ดฺรุวาส ทะนุ-บฺริโท ยะดิ สารวะ -กะทาสฺ<br /></span>
+<span class="slant iast">tarhi na śāsyateti niyamo dhruva netarathā<br /></span>
+<span class="slant pali">ตรฺหิ น ศาสฺยเตติ นิยโม ธฺรุว เนตรถา<br /></span>
+<span class="slant thai">ตัรหิ นะ ศาสยะเตติ นิยะโม ธรุวะ เนตะระถา<br /></span>
+<span class="slant ram">ทารฮิ นะ ชาสยะเททิ นิยะโม ดฺรุวะ เนทะระทฺา<br /></span>
+<span class="slant iast">ajani ca yan-mayaṁ tad avimucya niyantṛ bhavet<br /></span>
+<span class="slant pali">อชนิ จ ยนฺ-มยํ ตทฺ อวิมุจฺย นิยนฺตฺฤ ภเวตฺ<br /></span>
+<span class="slant thai">อะชะนิ จะ ยัน-มะยัง ตัท อะวิมุจยะ นิยันตฤ ภะเวต<br /></span>
+<span class="slant ram">อจะนิ ชะ ยัน-มะยัม ทัด อวิมุชยะ นิยันทริ บฺะเวทฺ<br /></span>
+<span class="slant iast">samam anujānatāṁ yad amataṁ mata-duṣṭatayā<br /></span>
+<span class="slant pali">สมมฺ อนุชานตำ ยทฺ อมตํ มต-ทุษฺฏตยา<br /></span>
+<span class="slant thai">สะมัม อะนุชานะตาง ยัท อะมะตัง มะตะ-ทุษฏะตะยา<br /></span>
+<span class="slant ram">สะมัม อนุจานะทาม ยัด อมะทัม มะทะ-ดุชทะทะยา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “โอ้&nbsp;&nbsp;ผู้เป็นอมตะสูงสุด&nbsp;&nbsp;!&nbsp;&nbsp;หากสิ่งมีชีวิตผู้อยู่ในร่างเป็นอมตะและแผ่กระจายไปทั่วเหมือน<wbr>กับพระองค์&nbsp;&nbsp;พวกเขาก็จะไม่มาอยู่ภายใต้การควบคุมของพระองค์&nbsp;&nbsp;แต่ถ้าหากยอมรับ<wbr>ว่าสิ่งมีชีวิตเป็นพลังงานน้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;พวกเขาจะมาอยู่ภายใต้การควบคุมของ<wbr>พระองค์ทันที&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การหลุดพ้นที่แท้จริงจึงประกอบด้วยการที่สิ่งมีชีวิตศิโรราบและมา<wbr>อยู่ภายใต้การควบคุมขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;การศิโรราบเช่นนี้จะทำให้พวกเขามีความสุข&nbsp;&nbsp;เมื่อ<wbr>มาอยู่ในตำแหน่งเดิมแท้เช่นนี้เท่านั้นที่พวกเขาสามารถเป็นผู้ควบคุม&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มนุษย์ผู้มี<wbr>ความรู้จำกัดสนับสนุนทฤษฎีเป็นหนึ่งเดียวกันที่ว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสิ่งมีชีวิตเท่าเทียมกัน<wbr>ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;อันที่จริงพวกนี้ถูกแนวคิดอันเป็นมลทินนำพาไปในทางที่ผิด”
+  “โอ้&nbsp;&nbsp;ผู้เป็นอมตะสูงสุด&nbsp;&nbsp;!&nbsp;&nbsp;หากสิ่งมีชีวิตผู้อยู่ในร่างเป็นอมตะและแผ่กระจายไปทั่วเหมือน<wbr>กับพระองค์&nbsp;&nbsp;พวกเขาก็จะไม่มาอยู่ภายใต้การควบคุมของพระองค์&nbsp;&nbsp;แต่ถ้าหากยอมรับ<wbr>ว่าสิ่งมีชีวิตเป็นพลังงานน้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพระองค์&nbsp;&nbsp;พวกเขาจะมาอยู่ภายใต้การควบคุมของ<wbr>พระองค์ทันที&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การหลุดพ้นที่แท้จริงจึงประกอบด้วยการที่สิ่งมีชีวิตศิโรราบและมา<wbr>อยู่ภายใต้การควบคุมขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;การศิโรราบเช่นนี้จะทำให้พวกเขามีความสุข&nbsp;&nbsp;เมื่อ<wbr>มาอยู่ในตำแหน่งเดิมแท้เช่นนี้เท่านั้นที่พวกเขาสามารถเป็นผู้ควบคุม&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มนุษย์ผู้มี<wbr>ความรู้จำกัดสนับสนุนทฤษฎีเป็นหนึ่งเดียวกันที่ว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสิ่งมีชีวิตเท่าเทียมกัน<wbr>ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;อันที่จริงพวกนี้ถูกแนวคิดอันเป็นมลทินนำพาไปในทางที่ผิด”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้ควบคุมเพียงพระองค์เดียว&nbsp;&nbsp;และสิ่งมีชีวิต<wbr>ทั้งหมดถูกพระองค์ควบคุม&nbsp;&nbsp;สิ่งมีชีวิตเหล่านี้เป็นพลังงานเบื้องสูงของพระองค์&nbsp;&nbsp;เพราะ<wbr>คุณภาพแห่งความเป็นอยู่ของพวกเขาเป็นหนึ่งเดียวและเหมือนกับพระองค์&nbsp;&nbsp;แต่จะไม่มี<wbr>วันเทียบเท่ากับพระองค์ในปริมาณแห่งพลังอำนาจ&nbsp;&nbsp;ขณะที่แสวงหาประโยชน์ส่วนตัวอยู่<wbr>กับพลังงานเบื้องต่ำ&nbsp;&nbsp;(วัตถุ)&nbsp;&nbsp;ทั้งหยาบและละเอียด&nbsp;&nbsp;พลังงานเบื้องสูง&nbsp;&nbsp;(สิ่งมีชีวิต)&nbsp;&nbsp;ได้ลืม<wbr>จิตใจและปัญญาทิพย์อันแท้จริงของตนเอง&nbsp;&nbsp;การลืมเช่นนี้เนื่องมาจากอิทธิพลของวัตถุที่<wbr>มีต่อสิ่งมีชีวิต&nbsp;&nbsp;แต่เมื่อสิ่งมีชีวิตหลุดพ้นจากอิทธิพลของพลังงานแห่งความหลงทางวัตถุเขาจะบรรลุถึงระดับ&nbsp;&nbsp;<i>มุกฺติ</i>&nbsp;&nbsp;หรือความหลุดพ้น&nbsp;&nbsp;อหังการภายใต้อิทธิพลของความหลงทาง<wbr>วัตถุคิดว่า&nbsp;&nbsp;“ข้าคือวัตถุ&nbsp;&nbsp;และวัตถุที่ได้มาเป็นของข้า”&nbsp;&nbsp;ตำแหน่งอันแท้จริงสำนึกได้เมื่อเป็น<wbr>อิสระจากความคิดทางวัตถุทั้งปวง&nbsp;&nbsp;รวมทั้งแนวความคิดที่ว่าจะกลายมาเป็นหนึ่งเดียว<wbr>กับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เราอาจสรุปได้ว่า&nbsp;&nbsp;ได้ยืนยันว่าสิ่งมีชีวิตเป็น<wbr>เพียงหนึ่งในพลังงานอันหลากหลายของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และเมื่อพลังงานนี้เป็นอิสระเสรีจาก<wbr>มลทินทางวัตถุ&nbsp;&nbsp;เขาจะมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์&nbsp;&nbsp;หรือหลุดพ้นแล้ว
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้ควบคุมเพียงพระองค์เดียว&nbsp;&nbsp;และสิ่งมีชีวิต<wbr>ทั้งหมดถูกพระองค์ควบคุม&nbsp;&nbsp;สิ่งมีชีวิตเหล่านี้เป็นพลังงานเบื้องสูงของพระองค์&nbsp;&nbsp;เพราะ<wbr>คุณภาพแห่งความเป็นอยู่ของพวกเขาเป็นหนึ่งเดียวและเหมือนกับพระองค์&nbsp;&nbsp;แต่จะไม่มี<wbr>วันเทียบเท่ากับพระองค์ในปริมาณแห่งพลังอำนาจ&nbsp;&nbsp;ขณะที่แสวงหาประโยชน์ส่วนตัวอยู่<wbr>กับพลังงานเบื้องต่ำ&nbsp;&nbsp;(วัตถุ)&nbsp;&nbsp;ทั้งหยาบและละเอียด&nbsp;&nbsp;พลังงานเบื้องสูง&nbsp;&nbsp;(สิ่งมีชีวิต)&nbsp;&nbsp;ได้ลืม<wbr>จิตใจและปัญญาทิพย์อันแท้จริงของตนเอง&nbsp;&nbsp;การลืมเช่นนี้เนื่องมาจากอิทธิพลของวัตถุที่<wbr>มีต่อสิ่งมีชีวิต&nbsp;&nbsp;แต่เมื่อสิ่งมีชีวิตหลุดพ้นจากอิทธิพลของพลังงานแห่งความหลงทางวัตถุเขาจะบรรลุถึงระดับ&nbsp;&nbsp;<span class="slant iast">mukti</span><span class="slant pali">มุกฺติ</span><span class="slant thai">มุกติ</span><span class="slant ram"></span>&nbsp;&nbsp;หรือความหลุดพ้น&nbsp;&nbsp;อหังการภายใต้อิทธิพลของความหลงทาง<wbr>วัตถุคิดว่า&nbsp;&nbsp;“ข้าคือวัตถุ&nbsp;&nbsp;และวัตถุที่ได้มาเป็นของข้า”&nbsp;&nbsp;ตำแหน่งอันแท้จริงสำนึกได้เมื่อเป็น<wbr>อิสระจากความคิดทางวัตถุทั้งปวง&nbsp;&nbsp;รวมทั้งแนวความคิดที่ว่าจะกลายมาเป็นหนึ่งเดียว<wbr>กับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เราอาจสรุปได้ว่า&nbsp;&nbsp;ได้ยืนยันว่าสิ่งมีชีวิตเป็น<wbr>เพียงหนึ่งในพลังงานอันหลากหลายของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และเมื่อพลังงานนี้เป็นอิสระเสรีจาก<wbr>มลทินทางวัตถุ&nbsp;&nbsp;เขาจะมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์&nbsp;&nbsp;หรือหลุดพ้นแล้ว
   </p>
 </div>
 

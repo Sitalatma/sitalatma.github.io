@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.56</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ทุฮเขษฺวฺ อนุทฺวิคฺน-มนาฮ</i><br /><i>สุเขษุ วิคต-สฺปฺฤหฮ</i><br /><i>วีต-ราค-ภย-โกฺรธฮ</i><br /><i>สฺตฺหิต-ธีรฺ มุนิรฺ อุจฺยเต</i>
+<span class="slant iast">duḥkheṣv anudvigna-manāḥ<br /></span>
+<span class="slant pali">ทุห์เขษฺวฺ อนุทฺวิคฺน-มนาห์<br /></span>
+<span class="slant thai">ทุห์เขษว อะนุทวิคนะ-มะนาห์<br /></span>
+<span class="slant ram">ดุฮเคฺชุ อนุดวิกนะ-มะนาฮ<br /></span>
+<span class="slant iast">sukheṣu vigata-spṛhaḥ<br /></span>
+<span class="slant pali">สุเขษุ วิคต-สฺปฺฤหห์<br /></span>
+<span class="slant thai">สุเขษุ วิคะตะ-สปฤหะห์<br /></span>
+<span class="slant ram">สุเคฺชุ วิกะทะ-สพริฮะฮ<br /></span>
+<span class="slant iast">vīta-rāga-bhaya-krodhaḥ<br /></span>
+<span class="slant pali">วีต-ราค-ภย-โกฺรธห์<br /></span>
+<span class="slant thai">วีตะ-ราคะ-ภะยะ-กโรธะห์<br /></span>
+<span class="slant ram">วีทะ-รากะ-บฺะยะ-โครดฺะฮ<br /></span>
+<span class="slant iast">sthita-dhīr munir ucyate<br /></span>
+<span class="slant pali">สฺถิต-ธีรฺ มุนิรฺ อุจฺยเต<br /></span>
+<span class="slant thai">สถิตะ-ธีร มุนิร อุจยะเต<br /></span>
+<span class="slant ram">สทิทะ-ดีฺร มุนิร อุชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ทุฮเขษุ</i> — ในความทุกข์สามคำรบ, <i>อนุทฺวิคฺน-มนาฮ</i> — ไม่มีความวุ่นวายภายในใจ, <i>สุเขษุ</i> — ในความสุข, <i>วิคต-สฺปฺฤหฮ</i> — ไม่มีความสนใจ, <i>วีต</i> — เป็นอิสระจาก, <i>ราค</i> — ความยึด ติด, <i>ภย</i> — ความกลัว, <i>โกฺรธฮ</i> — และความโกรธ, <i>สฺตฺหิต-ธีฮ</i> — ผู้ที่มีจิตใจมั่นคง, <i>มุนิฮ</i> — นักปราชญ์, <i>อุจฺยเต</i> — เรียกว่า
+  <span class="slant iast">duḥkheṣu</span><span class="slant pali">ทุห์เขษุ</span><span class="slant thai">ทุห์เขษุ</span><span class="slant ram">ดุฮเคฺชุ</span> — ในความทุกข์สามคำรบ, <span class="slant iast">anudvigna-manāḥ</span><span class="slant pali">อนุทฺวิคฺน-มนาห์</span><span class="slant thai">อะนุทวิคนะ-มะนาห์</span><span class="slant ram">อนุดวิกนะ-มะนาฮ</span> — ไม่มีความวุ่นวายภายในใจ, <span class="slant iast">sukheṣu</span><span class="slant pali">สุเขษุ</span><span class="slant thai">สุเขษุ</span><span class="slant ram">สุเคฺชุ</span> — ในความสุข, <span class="slant iast">vigata-spṛhaḥ</span><span class="slant pali">วิคต-สฺปฺฤหห์</span><span class="slant thai">วิคะตะ-สปฤหะห์</span><span class="slant ram">วิกะทะ-สพริฮะฮ</span> — ไม่มีความสนใจ, <span class="slant iast">vīta</span><span class="slant pali">วีต</span><span class="slant thai">วีตะ</span><span class="slant ram">วีทะ</span> — เป็นอิสระจาก, <span class="slant iast">rāga</span><span class="slant pali">ราค</span><span class="slant thai">ราคะ</span><span class="slant ram">รากะ</span> — ความยึด ติด, <span class="slant iast">bhaya</span><span class="slant pali">ภย</span><span class="slant thai">ภะยะ</span><span class="slant ram">บฺะยะ</span> — ความกลัว, <span class="slant iast">krodhaḥ</span><span class="slant pali">โกฺรธห์</span><span class="slant thai">กโรธะห์</span><span class="slant ram">โครดฺะฮ</span> — และความโกรธ, <span class="slant iast">sthita-dhīḥ</span><span class="slant pali">สฺถิต-ธีห์</span><span class="slant thai">สถิตะ-ธีห์</span><span class="slant ram">สทิทะ-ดีฮ</span> — ผู้ที่มีจิตใจมั่นคง, <span class="slant iast">muniḥ</span><span class="slant pali">มุนิห์</span><span class="slant thai">มุนิห์</span><span class="slant ram">มุนิฮ</span> — นักปราชญ์, <span class="slant iast">ucyate</span><span class="slant pali">อุจฺยเต</span><span class="slant thai">อุจยะเต</span><span class="slant ram">อุชยะเท</span> — เรียกว่า
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;หมายถึงผู้ที่สามารถรบกวนจิตใจตนเองด้วยวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากการคาด<wbr>คะเนทางจิตโดยไม่มีข้อสรุปอย่างแท้จริง&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;ทุกรูปมีมุมมองที่แตกต่างกันหากไม่มีมุมมองที่ต่างจาก&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;อื่นจะเรียกว่าเป็น&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;ไม่ได้&nbsp;&nbsp;ตามคำนิยาม&nbsp;&nbsp;<i>นาสาวฺ&nbsp;&nbsp;ฤษิรฺ&nbsp;&nbsp;ยสฺย&nbsp;&nbsp;มตํ&nbsp;&nbsp;น&nbsp;&nbsp;ภินฺนมฺ&nbsp;&nbsp;(มหาภารต,วน-ปรฺว</i>&nbsp;&nbsp;313.117)&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>สฺตฺหิต-ธีรฺ&nbsp;&nbsp;มุนิ</i>&nbsp;&nbsp;ที่องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;แตกต่างจาก&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;ทั่วไป&nbsp;&nbsp;<i>สฺตฺหิต-ธีรฺ&nbsp;&nbsp;มุนิ</i>&nbsp;&nbsp;อยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเสมอ<wbr>เพราะได้เสร็จสิ้นจากภารกิจการคาดคะเนสร้างสรรค์ทั้งปวง&nbsp;&nbsp;ท่านได้ชื่อว่า&nbsp;&nbsp;<i>ปฺรศานฺต-นิฮเศษ-มโน-รตฺหานฺตร&nbsp;&nbsp;(โสฺตตฺร-รตฺน</i>&nbsp;&nbsp;43)&nbsp;&nbsp;หรือผู้ที่ข้ามพ้นระดับแห่งการ<wbr>คาดคะเนทางจิตใจ&nbsp;&nbsp;และได้ผลสรุปว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>วาสุเทว</i>&nbsp;&nbsp;คือทุกสิ่งทุกอย่าง(<i>วาสุเทวฮ&nbsp;&nbsp;สรฺวมฺ&nbsp;&nbsp;อิติ&nbsp;&nbsp;ส&nbsp;&nbsp;มหาตฺมา&nbsp;&nbsp;สุ-ทุรฺลภฮ)</i>&nbsp;&nbsp;ท่านได้ชื่อว่า&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;ผู้มีจิตใจมั่นคงผู้ที่มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์เช่นนี้จะไม่ถูกรบกวนจากการรุกรานของความทุกข์<wbr>สามคำรบ&nbsp;&nbsp;เพราะท่านน้อมรับความทุกข์ทั้งหมดว่าเป็นพระเมตตาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ<wbr>คิดว่าตนเองควรได้รับทุกข์ทรมานมากกว่านี้อันเนื่องมาจากกรรมเก่า&nbsp;&nbsp;และยังเห็นอีกว่า<wbr>ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ที่ทำให้ความทุกข์ได้รับการลดโทษจนถึงขีดต่ำสุดลักษณะเดียวกัน&nbsp;&nbsp;เมื่อได้รับความสุขท่านจะส่งมอบให้แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และคิดว่าตนเอง<wbr>ไม่ควรค่ากับความสุขนี้&nbsp;&nbsp;สำนึกว่าด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้นท่าน<wbr>จึงได้มาอยู่ในสภาวะที่สะดวกสบายเช่นนี้&nbsp;&nbsp;และทำให้สามารถปฏิบัติรับใช้พระองค์ได้ดี<wbr>ยิ่งขึ้น&nbsp;&nbsp;สำหรับการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ท่านจะมีความกล้าหาญและตื่นตัวเสมอ&nbsp;&nbsp;โดยไม่มี<wbr>อิทธิพลของการยึดติดหรือการไม่ยึดติดใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;มาครอบงำ&nbsp;&nbsp;การยึดติดหมายถึงยอมรับเอา<wbr>บางสิ่งเพื่อสนองประสาทสัมผัสและการไม่ยึดติดคือปราศจากการยึดติดกับการสนอง<wbr>ประสาทสัมผัสเช่นนี้&nbsp;&nbsp;แต่ผู้ที่ตั้งมั่นใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจะไม่มีทั้งการยึดติดและการไม่ยึด<wbr>ติดเพราะท่านได้อุทิศชีวิตเพื่อการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่มีความโกรธเลย<wbr>แม้ว่าความพยายามจะไม่ประสบผลสำเร็จ&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจะมีความมั่นใจ<wbr>อยู่เสมอไม่ว่าจะสำเร็จหรือล้มเหลว
+  คำว่า&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;หมายถึงผู้ที่สามารถรบกวนจิตใจตนเองด้วยวิธีต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จากการคาด<wbr>คะเนทางจิตโดยไม่มีข้อสรุปอย่างแท้จริง&nbsp;&nbsp;กล่าวไว้ว่า&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;ทุกรูปมีมุมมองที่แตกต่างกันหากไม่มีมุมมองที่ต่างจาก&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;อื่นจะเรียกว่าเป็น&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;ไม่ได้&nbsp;&nbsp;ตามคำนิยาม&nbsp;&nbsp;<span class="slant iast">nāsāv&nbsp;&nbsp;ṛṣir&nbsp;&nbsp;yasya&nbsp;&nbsp;mataṁ&nbsp;&nbsp;na&nbsp;&nbsp;bhinnam&nbsp;&nbsp;(mahābhārata,&nbsp;&nbsp;vana-parva</span><span class="slant pali">นาสาวฺฤษิรฺยสฺยมตํนภินฺนมฺมหาภารตวน-ปรฺว</span><span class="slant thai">นาสาวฤษิรยัสยะมะตังนะภินนัมมะหาภาระตะวะนะ-ปัรวะ</span><span class="slant ram">zzzzzzยัสยะนะzzzมหาภารตะzzz-</span>&nbsp;&nbsp;313.117)&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">sthita-dhīr&nbsp;&nbsp;muni</span><span class="slant pali">สฺถิต-ธีรฺมุนิ</span><span class="slant thai">สถิตะ-ธีรมุนิ</span><span class="slant ram">-มุนิ</span>&nbsp;&nbsp;ที่องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;แตกต่างจาก&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;ทั่วไป&nbsp;&nbsp;<span class="slant iast">sthita-dhīr&nbsp;&nbsp;muni</span><span class="slant pali">สฺถิต-ธีรฺมุนิ</span><span class="slant thai">สถิตะ-ธีรมุนิ</span><span class="slant ram">-มุนิ</span>&nbsp;&nbsp;อยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเสมอ<wbr>เพราะได้เสร็จสิ้นจากภารกิจการคาดคะเนสร้างสรรค์ทั้งปวง&nbsp;&nbsp;ท่านได้ชื่อว่า&nbsp;&nbsp;<span class="slant iast">praśānta-niḥśeṣa-mano-rathāntara&nbsp;&nbsp;(stotra-ratna</span><span class="slant pali">ปฺรศานฺต-นิห์เศษ-มโน-รถานฺตรโสฺตตฺร-รตฺน</span><span class="slant thai">ประศานตะ-นิห์เศษะ-มะโน-ระถานตะระสโตตระ-รัตนะ</span><span class="slant ram">พระชานทะ-zzz--zzz-</span>&nbsp;&nbsp;43)&nbsp;&nbsp;หรือผู้ที่ข้ามพ้นระดับแห่งการ<wbr>คาดคะเนทางจิตใจ&nbsp;&nbsp;และได้ผลสรุปว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">vāsudeva</span><span class="slant pali">วาสุเทว</span><span class="slant thai">วาสุเทวะ</span><span class="slant ram">วาสุเดวะ</span>&nbsp;&nbsp;คือทุกสิ่งทุกอย่าง(<span class="slant iast">vāsudevaḥ&nbsp;&nbsp;sarvam&nbsp;&nbsp;iti&nbsp;&nbsp;sa&nbsp;&nbsp;mahātmā&nbsp;&nbsp;su-durlabhaḥ)</span><span class="slant pali">วาสุเทวห์สรฺวมฺอิติสมหาตฺมาสุ-ทุรฺลภห์)</span><span class="slant thai">วาสุเทวะห์สัรวัมอิติสะมะหาตมาสุ-ทุรละภะห์)</span><span class="slant ram">วาสุเดวะฮสารวัมอิทิสะ-)</span>&nbsp;&nbsp;ท่านได้ชื่อว่า&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;ผู้มีจิตใจมั่นคงผู้ที่มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์เช่นนี้จะไม่ถูกรบกวนจากการรุกรานของความทุกข์<wbr>สามคำรบ&nbsp;&nbsp;เพราะท่านน้อมรับความทุกข์ทั้งหมดว่าเป็นพระเมตตาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ<wbr>คิดว่าตนเองควรได้รับทุกข์ทรมานมากกว่านี้อันเนื่องมาจากกรรมเก่า&nbsp;&nbsp;และยังเห็นอีกว่า<wbr>ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ที่ทำให้ความทุกข์ได้รับการลดโทษจนถึงขีดต่ำสุดลักษณะเดียวกัน&nbsp;&nbsp;เมื่อได้รับความสุขท่านจะส่งมอบให้แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และคิดว่าตนเอง<wbr>ไม่ควรค่ากับความสุขนี้&nbsp;&nbsp;สำนึกว่าด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้นท่าน<wbr>จึงได้มาอยู่ในสภาวะที่สะดวกสบายเช่นนี้&nbsp;&nbsp;และทำให้สามารถปฏิบัติรับใช้พระองค์ได้ดี<wbr>ยิ่งขึ้น&nbsp;&nbsp;สำหรับการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ท่านจะมีความกล้าหาญและตื่นตัวเสมอ&nbsp;&nbsp;โดยไม่มี<wbr>อิทธิพลของการยึดติดหรือการไม่ยึดติดใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;มาครอบงำ&nbsp;&nbsp;การยึดติดหมายถึงยอมรับเอา<wbr>บางสิ่งเพื่อสนองประสาทสัมผัสและการไม่ยึดติดคือปราศจากการยึดติดกับการสนอง<wbr>ประสาทสัมผัสเช่นนี้&nbsp;&nbsp;แต่ผู้ที่ตั้งมั่นใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจะไม่มีทั้งการยึดติดและการไม่ยึด<wbr>ติดเพราะท่านได้อุทิศชีวิตเพื่อการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่มีความโกรธเลย<wbr>แม้ว่าความพยายามจะไม่ประสบผลสำเร็จ&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจะมีความมั่นใจ<wbr>อยู่เสมอไม่ว่าจะสำเร็จหรือล้มเหลว
   </p>
 </div>
 

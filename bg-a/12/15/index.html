@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 12.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยสฺมานฺ โนทฺวิชเต โลโก</i><br /><i>โลกานฺ โนทฺวิชเต จ ยฮ</i><br /><i>หรฺษามรฺษ-ภโยเทฺวไครฺ</i><br /><i>มุโกฺต ยฮ ส จ เม ปฺริยฮ</i>
+<span class="slant iast">yasmān nodvijate loko<br /></span>
+<span class="slant pali">ยสฺมานฺ โนทฺวิชเต โลโก<br /></span>
+<span class="slant thai">ยัสมาน โนทวิชะเต โลโก<br /></span>
+<span class="slant ram">ยัสมาน โนดวิจะเท โลโค<br /></span>
+<span class="slant iast">lokān nodvijate ca yaḥ<br /></span>
+<span class="slant pali">โลกานฺ โนทฺวิชเต จ ยห์<br /></span>
+<span class="slant thai">โลกาน โนทวิชะเต จะ ยะห์<br /></span>
+<span class="slant ram">โลคาน โนดวิจะเท ชะ ยะฮ<br /></span>
+<span class="slant iast">harṣāmarṣa-bhayodvegair<br /></span>
+<span class="slant pali">หรฺษามรฺษ-ภโยเทฺวไครฺ<br /></span>
+<span class="slant thai">หัรษามัรษะ-ภะโยทเวไคร<br /></span>
+<span class="slant ram">ฮารชามารชะ-บฺะโยดเวไกร<br /></span>
+<span class="slant iast">mukto yaḥ sa ca me priyaḥ<br /></span>
+<span class="slant pali">มุกฺโต ยห์ ส จ เม ปฺริยห์<br /></span>
+<span class="slant thai">มุกโต ยะห์ สะ จะ เม ปริยะห์<br /></span>
+<span class="slant ram">มุคโท ยะฮ สะ ชะ เม พริยะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยสฺมาตฺ</i> — จากผู้ซึ่ง, <i>น</i> — ไม่เคย, <i>อุทฺวิชเต</i> — ร้อนใจ, <i>โลกฮ</i> — ผู้คน, <i>โลกาตฺ</i> — จากผู้คน, <i>น</i> — ไม่เคย, <i>อุทฺวิชเต</i> — กระวนกระวายใจ, <i>จ</i> — เช่นกัน, <i>ยฮ</i> — ผู้ใดซึ่ง, <i>หรฺษ</i> — จากความ สุข, <i>อมรฺษ</i> — ความทุกข์, <i>ภย</i> — ความกลัว, <i>อุเทฺวไคฮ</i> — และความวิตกกังวล, <i>มุกฺตฮ</i> — เป็นอิสระ, <i>ยฮ</i> — ผู้ซึ่ง,<i>สฮ</i> — ผู้ใด, <i>จ</i> — เช่นกัน, <i>เม</i> — แด่ข้า, <i>ปฺริยฮ</i> — เป็นที่รักยิ่ง
+  <span class="slant iast">yasmāt</span><span class="slant pali">ยสฺมาตฺ</span><span class="slant thai">ยัสมาต</span><span class="slant ram">ยัสมาท</span> — จากผู้ซึ่ง, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">udvijate</span><span class="slant pali">อุทฺวิชเต</span><span class="slant thai">อุทวิชะเต</span><span class="slant ram">อุดวิจะเท</span> — ร้อนใจ, <span class="slant iast">lokaḥ</span><span class="slant pali">โลกห์</span><span class="slant thai">โลกะห์</span><span class="slant ram">โลคะฮ</span> — ผู้คน, <span class="slant iast">lokāt</span><span class="slant pali">โลกาตฺ</span><span class="slant thai">โลกาต</span><span class="slant ram">โลคาท</span> — จากผู้คน, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">udvijate</span><span class="slant pali">อุทฺวิชเต</span><span class="slant thai">อุทวิชะเต</span><span class="slant ram">อุดวิจะเท</span> — กระวนกระวายใจ, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ใดซึ่ง, <span class="slant iast">harṣa</span><span class="slant pali">หรฺษ</span><span class="slant thai">หัรษะ</span><span class="slant ram">ฮารชะ</span> — จากความ สุข, <span class="slant iast">amarṣa</span><span class="slant pali">อมรฺษ</span><span class="slant thai">อะมัรษะ</span><span class="slant ram">อมารชะ</span> — ความทุกข์, <span class="slant iast">bhaya</span><span class="slant pali">ภย</span><span class="slant thai">ภะยะ</span><span class="slant ram">บฺะยะ</span> — ความกลัว, <span class="slant iast">udvegaiḥ</span><span class="slant pali">อุเทฺวไคห์</span><span class="slant thai">อุทเวไคห์</span><span class="slant ram">อุดเวไกฮ</span> — และความวิตกกังวล, <span class="slant iast">muktaḥ</span><span class="slant pali">มุกฺตห์</span><span class="slant thai">มุกตะห์</span><span class="slant ram">มุคทะฮ</span> — เป็นอิสระ, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง,<span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — ผู้ใด, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — แด่ข้า, <span class="slant iast">priyaḥ</span><span class="slant pali">ปฺริยห์</span><span class="slant thai">ปริยะห์</span><span class="slant ram">พริยะฮ</span> — เป็นที่รักยิ่ง
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คุณลักษณะบางประการของสาวกได้อธิบายต่อไปอีกคือ&nbsp;&nbsp;ไม่มีผู้ใดสามารถ<wbr>ทำให้ท่านตกอยู่ในความยากลำบาก&nbsp;&nbsp;วิตกกังวล&nbsp;&nbsp;กลัว&nbsp;&nbsp;หรือไม่พึงพอใจ&nbsp;&nbsp;เนื่องจากสาวก<wbr>มีความกรุณาต่อทุกคน&nbsp;&nbsp;จึงไม่ทำสิ่งใดที่จะทำให้ผู้อื่นมีความวิตกกังวล&nbsp;&nbsp;ในขณะเดียวกัน<wbr>หากผู้อื่นพยายามทำให้สาวกวิตกกังวล&nbsp;&nbsp;ท่านจะไม่เร่าร้อนใจด้วยพระกรุณาธิคุณของ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้ท่านปฏิบัติจนไม่ได้รับความวุ่นวายใจจากสิ่งรบกวนภายนอก&nbsp;&nbsp;อันที่<wbr>จริง&nbsp;&nbsp;เนื่องจากสาวกเพลินอยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเสมอ&nbsp;&nbsp;และปฏิบัติการอุทิศตนเสียสละ<wbr>รับใช้&nbsp;&nbsp;สถานการณ์ทางวัตถุเช่นนี้ไม่ทำให้ท่านหวั่นไหว&nbsp;&nbsp;โดยทั่วไปนักวัตถุนิยมจะมีความ<wbr>สุขมากเมื่อได้รับบางสิ่งบางอย่างที่มาสนองประสาทสัมผัส&nbsp;&nbsp;สนองร่างกาย&nbsp;&nbsp;และเมื่อเห็น<wbr>ว่าคนอื่นได้รับบางสิ่งบางอย่างเพื่อสนองประสาทสัมผัส&nbsp;&nbsp;แต่ตนเองไม่ได้รับ&nbsp;&nbsp;จะเสียใจ<wbr>และอิจฉาริษยา&nbsp;&nbsp;เมื่อคาดว่าศัตรูจะมาแก้แค้นก็จะอยู่ในความกลัว&nbsp;&nbsp;และเมื่อไม่สามารถ<wbr>ทำบางอย่างให้ประสบผลสำเร็จก็จะเศร้าสลด&nbsp;&nbsp;สาวกผู้เป็นทิพย์อยู่เหนือสิ่งรบกวนทั้ง<wbr>หลายเหล่านี้เสมอเป็นที่รักยิ่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  คุณลักษณะบางประการของสาวกได้อธิบายต่อไปอีกคือ&nbsp;&nbsp;ไม่มีผู้ใดสามารถ<wbr>ทำให้ท่านตกอยู่ในความยากลำบาก&nbsp;&nbsp;วิตกกังวล&nbsp;&nbsp;กลัว&nbsp;&nbsp;หรือไม่พึงพอใจ&nbsp;&nbsp;เนื่องจากสาวก<wbr>มีความกรุณาต่อทุกคน&nbsp;&nbsp;จึงไม่ทำสิ่งใดที่จะทำให้ผู้อื่นมีความวิตกกังวล&nbsp;&nbsp;ในขณะเดียวกัน<wbr>หากผู้อื่นพยายามทำให้สาวกวิตกกังวล&nbsp;&nbsp;ท่านจะไม่เร่าร้อนใจด้วยพระกรุณาธิคุณของ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้ท่านปฏิบัติจนไม่ได้รับความวุ่นวายใจจากสิ่งรบกวนภายนอก&nbsp;&nbsp;อันที่<wbr>จริง&nbsp;&nbsp;เนื่องจากสาวกเพลินอยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเสมอ&nbsp;&nbsp;และปฏิบัติการอุทิศตนเสียสละ<wbr>รับใช้&nbsp;&nbsp;สถานการณ์ทางวัตถุเช่นนี้ไม่ทำให้ท่านหวั่นไหว&nbsp;&nbsp;โดยทั่วไปนักวัตถุนิยมจะมีความ<wbr>สุขมากเมื่อได้รับบางสิ่งบางอย่างที่มาสนองประสาทสัมผัส&nbsp;&nbsp;สนองร่างกาย&nbsp;&nbsp;และเมื่อเห็น<wbr>ว่าคนอื่นได้รับบางสิ่งบางอย่างเพื่อสนองประสาทสัมผัส&nbsp;&nbsp;แต่ตนเองไม่ได้รับ&nbsp;&nbsp;จะเสียใจ<wbr>และอิจฉาริษยา&nbsp;&nbsp;เมื่อคาดว่าศัตรูจะมาแก้แค้นก็จะอยู่ในความกลัว&nbsp;&nbsp;และเมื่อไม่สามารถ<wbr>ทำบางอย่างให้ประสบผลสำเร็จก็จะเศร้าสลด&nbsp;&nbsp;สาวกผู้เป็นทิพย์อยู่เหนือสิ่งรบกวนทั้ง<wbr>หลายเหล่านี้เสมอเป็นที่รักยิ่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

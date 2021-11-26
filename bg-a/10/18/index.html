@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.18</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วิสฺตเรณาตฺมโน โยคํ</i><br /><i>วิภูติํ จ ชนารฺทน</i><br /><i>ภูยฮ กตฺหย ตฺฤปฺติรฺ หิ</i><br /><i>ศฺฤณฺวโต นาสฺติ เม ′มฺฤตมฺ</i>
+<span class="slant iast">vistareṇātmano yogaṁ<br /></span>
+<span class="slant pali">วิสฺตเรณาตฺมโน โยคํ<br /></span>
+<span class="slant thai">วิสตะเรณาตมะโน โยคัง<br /></span>
+<span class="slant ram">วิสทะเรณาทมะโน โยกัม<br /></span>
+<span class="slant iast">vibhūtiṁ ca janārdana<br /></span>
+<span class="slant pali">วิภูตึ จ ชนารฺทน<br /></span>
+<span class="slant thai">วิภูติง จะ ชะนารทะนะ<br /></span>
+<span class="slant ram">วิบํูทิม ชะ จะนารดะนะ<br /></span>
+<span class="slant iast">bhūyaḥ kathaya tṛptir hi<br /></span>
+<span class="slant pali">ภูยห์ กถย ตฺฤปฺติรฺ หิ<br /></span>
+<span class="slant thai">ภูยะห์ กะถะยะ ตฤปติร หิ<br /></span>
+<span class="slant ram">บํูยะฮ คะทฺะยะ ทริพทิร ฮิ ชริณวะโท นาสทิ เม<br /></span>
+<span class="slant iast">śṛṇvato nāsti me ’mṛtam<br /></span>
+<span class="slant pali">ศฺฤณฺวโต นาสฺติ เม ’มฺฤตมฺ<br /></span>
+<span class="slant thai">ศฤณวะโต นาสติ เม ’มฤตัม<br /></span>
+<span class="slant ram">่มริทิม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วิสฺตเรณ</i> — ในรายละเอียด, <i>อาตฺมนฮ</i> — ของพระองค์, <i>โยคมฺ</i> — พลังอินธิฤทธิ์, <i>วิภูติมฺ</i> — ความมั่งคั่ง, <i>จ</i> — เช่นกัน, <i>ชน-อรฺทน</i> — โอ้ ผู้สังหารคนไร้ศรัทธาในองค์ภควาน, <i>ภูยฮ</i> — อีกครั้งหนึ่ง, <i>กตฺหย</i> — อธิบาย, <i>ตฺฤปฺติฮ</i> — พึงพอใจ, <i>หิ</i> — แน่นอน, <i>ศฺฤณฺวตฮ</i> — การสดับฟัง, <i>น อสฺติ</i> — ไม่มี, <i>เม</i> — ของข้า, <i>อมฺฤตมฺ</i> — น้ำทิพย์
+  <span class="slant iast">vistareṇa</span><span class="slant pali">วิสฺตเรณ</span><span class="slant thai">วิสตะเรณะ</span><span class="slant ram">วิสทะเรณะ</span> — ในรายละเอียด, <span class="slant iast">ātmanaḥ</span><span class="slant pali">อาตฺมนห์</span><span class="slant thai">อาตมะนะห์</span><span class="slant ram">อาทมะนะฮ</span> — ของพระองค์, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — พลังอินธิฤทธิ์, <span class="slant iast">vibhūtim</span><span class="slant pali">วิภูติมฺ</span><span class="slant thai">วิภูติม</span><span class="slant ram">วิบํูทิม</span> — ความมั่งคั่ง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">jana-ardana</span><span class="slant pali">ชน-อรฺทน</span><span class="slant thai">ชะนะ-อัรทะนะ</span><span class="slant ram">จะนะ-อารดะนะ</span> — โอ้ ผู้สังหารคนไร้ศรัทธาในองค์ภควาน, <span class="slant iast">bhūyaḥ</span><span class="slant pali">ภูยห์</span><span class="slant thai">ภูยะห์</span><span class="slant ram">บํูยะฮ</span> — อีกครั้งหนึ่ง, <span class="slant iast">kathaya</span><span class="slant pali">กถย</span><span class="slant thai">กะถะยะ</span><span class="slant ram">คะ ทฺะยะ</span> — อธิบาย, <span class="slant iast">tṛptiḥ</span><span class="slant pali">ตฺฤปฺติห์</span><span class="slant thai">ตฤปติห์</span><span class="slant ram">ทริพทิฮ</span> — พึงพอใจ, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">śṛṇvataḥ</span><span class="slant pali">ศฺฤณฺวตห์</span><span class="slant thai">ศฤณวะตะห์</span><span class="slant ram">ชริณวะทะฮ</span> — การสดับฟัง, <span class="slant iast">na asti</span><span class="slant pali">นอสฺติ</span><span class="slant thai">นะอัสติ</span><span class="slant ram">นะ อัสทิ</span> — ไม่มี, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">amṛtam</span><span class="slant pali">อมฺฤตมฺ</span><span class="slant thai">อัมฤตัม</span><span class="slant ram">อมริทัม</span> — น้ำทิพย์
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;<i>ชนารฺทน</i>&nbsp;&nbsp;ได้โปรดอธิบายพลังทิพย์แห่งความมั่งคั่งของพระองค์อีกครั้งหนึ่งโดยละเอียด&nbsp;&nbsp;ข้าไม่เคยรู้สึกเพียงพอในการสดับฟังเกี่ยวกับพระองค์&nbsp;&nbsp;เพราะเมื่อได้สดับฟังมากยิ่งขึ้น&nbsp;&nbsp;ข้าพเจ้ายิ่งอยากได้รับรสน้ำทิพย์จากคำดำรัสของพระองค์มากยิ่งขึ้น
+  โอ้&nbsp;&nbsp;<span class="slant iast">janārdana</span><span class="slant pali">ชนารฺทน</span><span class="slant thai">ชะนารทะนะ</span><span class="slant ram">จะนารดะนะ,จะนรดะนะ</span>&nbsp;&nbsp;ได้โปรดอธิบายพลังทิพย์แห่งความมั่งคั่งของพระองค์อีกครั้งหนึ่งโดยละเอียด&nbsp;&nbsp;ข้าไม่เคยรู้สึกเพียงพอในการสดับฟังเกี่ยวกับพระองค์&nbsp;&nbsp;เพราะเมื่อได้สดับฟังมากยิ่งขึ้น&nbsp;&nbsp;ข้าพเจ้ายิ่งอยากได้รับรสน้ำทิพย์จากคำดำรัสของพระองค์มากยิ่งขึ้น
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ข้อความในทำนองเดียวกันนี้&nbsp;&nbsp;<i>ฤษิ</i>&nbsp;&nbsp;แห่ง&nbsp;&nbsp;<i>ไนมิษารณฺย</i>&nbsp;&nbsp;ซึ่งนำโดย&nbsp;&nbsp;<i>ศะอุนก</i>&nbsp;&nbsp;กล่าว<wbr>แก่&nbsp;&nbsp;<i>สูต</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;ดังนี้
+  ข้อความในทำนองเดียวกันนี้&nbsp;&nbsp;<span class="slant iast">ṛṣi</span><span class="slant pali">ฤษิ</span><span class="slant thai">ฤษิ</span><span class="slant ram"></span>&nbsp;&nbsp;แห่ง&nbsp;&nbsp;<span class="slant iast">naimiṣāraṇya</span><span class="slant pali">ไนมิษารณฺย</span><span class="slant thai">ไนมิษารัณยะ</span><span class="slant ram">ไนมิชารัณยะ</span>&nbsp;&nbsp;ซึ่งนำโดย&nbsp;&nbsp;<span class="slant iast">śaunaka</span><span class="slant pali">เศานก</span><span class="slant thai">เศานะกะ</span><span class="slant ram">โชนะคะ</span>&nbsp;&nbsp;กล่าว<wbr>แก่&nbsp;&nbsp;<span class="slant iast">sūta</span><span class="slant pali">สูต</span><span class="slant thai">สูตะ</span><span class="slant ram">สูทะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วยํ ตุ น วิตฺฤปฺยาม</i><br /><i>อุตฺตม-โศฺลก-วิกฺรเม</i><br /><i>ยจฺ ฉฺฤณฺวตาํ รส-ชฺญานาํ</i><br /><i>สฺวาทุ สฺวาทุ ปเท ปเท</i>
+<span class="slant iast">vayaṁ tu na vitṛpyāma<br /></span>
+<span class="slant pali">วยํ ตุ น วิตฺฤปฺยาม<br /></span>
+<span class="slant thai">วะยัง ตุ นะ วิตฤปยามะ<br /></span>
+<span class="slant ram">วะยัม ทุ นะ วิทริพยามะ<br /></span>
+<span class="slant iast">uttama-śloka-vikrame<br /></span>
+<span class="slant pali">อุตฺตม-โศฺลก-วิกฺรเม<br /></span>
+<span class="slant thai">อุตตะมะ-ศโลกะ-วิกระเม<br /></span>
+<span class="slant ram">อุทะมะ-ชโลคะ-วิคระเม<br /></span>
+<span class="slant iast">yac chṛṇvatāṁ rasa-jñānāṁ<br /></span>
+<span class="slant pali">ยจฺ ฉฺฤณฺวตำ รส-ชฺญานำ<br /></span>
+<span class="slant thai">ยัจ ฉฤณวะตาง ระสะ-ชญานาง<br /></span>
+<span class="slant ram">ยัช ชฺริณวะทาม ระสะ-กยานาม<br /></span>
+<span class="slant iast">svādu svādu pade pade<br /></span>
+<span class="slant pali">สฺวาทุ สฺวาทุ ปเท ปเท<br /></span>
+<span class="slant thai">สวาทุ สวาทุ ปะเท ปะเท<br /></span>
+<span class="slant ram">สวาดุ สวาดุ พะเด พะเดฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “บุคคลจะไม่มีวันเพียงพอแม้สดับฟังลีลาทิพย์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ที่ทรงได้รับการสรรเสริญ&nbsp;&nbsp;ด้วยบทมนต์อันยอดเยี่ยมอยู่ตลอดเวลา&nbsp;&nbsp;พวกที่เข้าไปในความสัมพันธ์ทิพย์กับ<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะได้รับรสในการพรรณนาลีลาของพระองค์อยู่ตลอดเวลา”&nbsp;&nbsp;(<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;1.1.19)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงสนใจในการสดับฟังเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;โดยเฉพาะที่ว่าพระองค์<wbr>ทรงเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ที่แผ่กระจายไปทั่วได้อย่างไร
+  “บุคคลจะไม่มีวันเพียงพอแม้สดับฟังลีลาทิพย์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ที่ทรงได้รับการสรรเสริญ&nbsp;&nbsp;ด้วยบทมนต์อันยอดเยี่ยมอยู่ตลอดเวลา&nbsp;&nbsp;พวกที่เข้าไปในความสัมพันธ์ทิพย์กับ<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะได้รับรสในการพรรณนาลีลาของพระองค์อยู่ตลอดเวลา”&nbsp;&nbsp;(<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;1.1.19)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงสนใจในการสดับฟังเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;โดยเฉพาะที่ว่าพระองค์<wbr>ทรงเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ที่แผ่กระจายไปทั่วได้อย่างไร
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สำหรับ&nbsp;&nbsp;<i>อมฺฤตมฺ</i>&nbsp;&nbsp;หรือน้ำทิพย์&nbsp;&nbsp;คำพรรณนาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;หรือข้อความใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เกี่ยว<wbr>กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เหมือนกับน้ำทิพย์&nbsp;&nbsp;และน้ำทิพย์นี้สำเหนียกได้ด้วยประสบการณ์จากการ<wbr>ปฏิบัติ&nbsp;&nbsp;เรื่องราวสมัยปัจจุบัน&nbsp;&nbsp;นวนิยาย&nbsp;&nbsp;และประวัติศาสตร์&nbsp;&nbsp;ไม่เหมือนกับลีลาทิพย์ของ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพราะว่าเราจะรู้สึกเบื่อในการฟังเรื่องราวทางโลก&nbsp;&nbsp;แต่เราไม่มีวันเบื่อที่จะสดับ<wbr>ฟังเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยเหตุนี้เท่านั้นที่ประวัติศาสตร์ทั่วทั้งจักรวาลพรั่งพร้อมไปด้วย<wbr>เรื่องอ้างอิงต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เกี่ยวกับลีลาแห่งอวตารขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ปุราณ</i>&nbsp;&nbsp;เป็นประวัติศาสตร์<wbr>ในยุคอดีตที่สัมพันธ์กับลีลาของอวตารอันหลากหลายขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรื่องราวที่<wbr>อ่านยังคงความสดใหม่อยู่เสมอแม้จะอ่านซ้ำแล้วซ้ำอีก
+  สำหรับ&nbsp;&nbsp;<span class="slant iast">amṛtam</span><span class="slant pali">อมฺฤตมฺ</span><span class="slant thai">อัมฤตัม</span><span class="slant ram">อมริทัม</span>&nbsp;&nbsp;หรือน้ำทิพย์&nbsp;&nbsp;คำพรรณนาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;หรือข้อความใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เกี่ยว<wbr>กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เหมือนกับน้ำทิพย์&nbsp;&nbsp;และน้ำทิพย์นี้สำเหนียกได้ด้วยประสบการณ์จากการ<wbr>ปฏิบัติ&nbsp;&nbsp;เรื่องราวสมัยปัจจุบัน&nbsp;&nbsp;นวนิยาย&nbsp;&nbsp;และประวัติศาสตร์&nbsp;&nbsp;ไม่เหมือนกับลีลาทิพย์ของ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพราะว่าเราจะรู้สึกเบื่อในการฟังเรื่องราวทางโลก&nbsp;&nbsp;แต่เราไม่มีวันเบื่อที่จะสดับ<wbr>ฟังเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยเหตุนี้เท่านั้นที่ประวัติศาสตร์ทั่วทั้งจักรวาลพรั่งพร้อมไปด้วย<wbr>เรื่องอ้างอิงต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เกี่ยวกับลีลาแห่งอวตารขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">purāṇa</span><span class="slant pali">ปุราณ</span><span class="slant thai">ปุราณะ</span><span class="slant ram">พุราณะ</span>&nbsp;&nbsp;เป็นประวัติศาสตร์<wbr>ในยุคอดีตที่สัมพันธ์กับลีลาของอวตารอันหลากหลายขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรื่องราวที่<wbr>อ่านยังคงความสดใหม่อยู่เสมอแม้จะอ่านซ้ำแล้วซ้ำอีก
   </p>
 </div>
 

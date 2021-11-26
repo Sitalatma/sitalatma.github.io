@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.26</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อศฺวตฺตฺหฮ สรฺว-วฺฤกฺษาณาํ</i><br /><i>เทวรฺษีณาํ จ นารทฮ</i><br /><i>คนฺธรฺวาณาํ จิตฺรรตฺหฮ</i><br /><i>สิทฺธานาํ กปิโล มุนิฮ</i>
+<span class="slant iast">aśvatthaḥ sarva-vṛkṣāṇāṁ<br /></span>
+<span class="slant pali">อศฺวตฺถห์ สรฺว-วฺฤกฺษาณำ<br /></span>
+<span class="slant thai">อัศวัตถะห์ สัรวะ-วฤกษาณาง<br /></span>
+<span class="slant ram">อัชวัททฺะฮ สารวะ-วริคชานาม<br /></span>
+<span class="slant iast">devarṣīṇāṁ ca nāradaḥ<br /></span>
+<span class="slant pali">เทวรฺษีณำ จ นารทห์<br /></span>
+<span class="slant thai">เทวัรษีณาง จะ นาระทะห์<br /></span>
+<span class="slant ram">เดวารชีณาม ชะ นาระดะฮ<br /></span>
+<span class="slant iast">gandharvāṇāṁ citrarathaḥ<br /></span>
+<span class="slant pali">คนฺธรฺวาณำ จิตฺรรถห์<br /></span>
+<span class="slant thai">คันธัรวาณาง จิตระระถะห์<br /></span>
+<span class="slant ram">กันดฺารวาณาม ชิทระระทฺะ<br /></span>
+<span class="slant iast">siddhānāṁ kapilo muniḥ<br /></span>
+<span class="slant pali">สิทฺธานำ กปิโล มุนิห์<br /></span>
+<span class="slant thai">สิทธานาง กะปิโล มุนิห์<br /></span>
+<span class="slant ram">สิดดฺานาม คะพิโล มุนิฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อศฺวตฺตฺหฮ</i> — ต้นไทร, <i>สรฺว-วฺฤกฺษาณามฺ</i> — ของต้นไม้ทั้งหลาย, <i>เทว-ฤษีณามฺ</i> — ของนัก ปราชญ์ทั้งหลายในหมู่เทวดา, <i>จ</i> — และ, <i>นารทฮ</i> — <i>นารท</i>, <i>คนฺธรฺวาณามฺ</i> — ของ ประชากรแห่งดาวเคราะห์กันดฺารวะ, <i>จิตฺรรตฺหฮ</i> — <i>จิตฺรรตฺห</i>,<i>สิทฺธานามฺ</i> — ของพวกที่มี ความสมบูรณ์ทั้งหลาย,<i>กปิลฮ มุนิฮ</i> — <i>กปิล</i> มุนิ
+  <span class="slant iast">aśvatthaḥ</span><span class="slant pali">อศฺวตฺถห์</span><span class="slant thai">อัศวัตถะห์</span><span class="slant ram">อัชวัททฺะฮ</span> — ต้นไทร, <span class="slant iast">sarva-vṛkṣāṇām</span><span class="slant pali">สรฺว-วฺฤกฺษาณามฺ</span><span class="slant thai">สัรวะ-วฤกษาณาม</span><span class="slant ram">สารวะ-วริคชาณาม</span> — ของต้นไม้ทั้งหลาย, <span class="slant iast">deva-ṛṣīṇām</span><span class="slant pali">เทว-ฤษีณามฺ</span><span class="slant thai">เทวะ-ฤษีณาม</span><span class="slant ram">เดวะ-ริชีณาม</span> — ของนัก ปราชญ์ทั้งหลายในหมู่เทวดา, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">nāradaḥ</span><span class="slant pali">นารทห์</span><span class="slant thai">นาระทะห์</span><span class="slant ram">นาระดะฮ</span> — <span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>, <span class="slant iast">gandharvāṇām</span><span class="slant pali">คนฺธรฺวาณามฺ</span><span class="slant thai">คันธัรวาณาม</span><span class="slant ram">กันดฺารวาณาม</span> — ของ ประชากรแห่งดาวเคราะห์กันดฺารวะ, <span class="slant iast">citrarathaḥ</span><span class="slant pali">จิตฺรรถห์</span><span class="slant thai">จิตระระถะห์</span><span class="slant ram">ชิทระระทฺะ</span> — <span class="slant iast">citraratha</span><span class="slant pali">จิตฺรรถ</span><span class="slant thai">จิตระระถะ</span><span class="slant ram">ชิทระระทฺะ</span>,<span class="slant iast">siddhānām</span><span class="slant pali">สิทฺธานามฺ</span><span class="slant thai">สิทธานาม</span><span class="slant ram"> สิดดฺานาม</span> — ของพวกที่มี ความสมบูรณ์ทั้งหลาย,<span class="slant iast">kapilaḥ muniḥ</span><span class="slant pali">กปิลห์มุนิห์</span><span class="slant thai">กะปิละห์มุนิห์</span><span class="slant ram"> คะพิละฮ มุนิฮ</span> — <span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span> มุนิ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในบรรดาต้นไม้ทั้งหลายข้าคือต้นไทร&nbsp;&nbsp;และบรรดานักปราชญ์ในหมู่เทวดาข้าคือ<i>นารท</i>&nbsp;&nbsp;ในบรรดา&nbsp;&nbsp;<i>คนฺธรฺว</i>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<i>จิตฺรรตฺห</i>&nbsp;&nbsp;และในบรรดามนุษย์ผู้สมบูรณ์ข้าคือนักปราชญ์&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;
+  ในบรรดาต้นไม้ทั้งหลายข้าคือต้นไทร&nbsp;&nbsp;และบรรดานักปราชญ์ในหมู่เทวดาข้าคือ<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ในบรรดา&nbsp;&nbsp;<span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span>&nbsp;&nbsp;ข้าคือ&nbsp;&nbsp;<span class="slant iast">citraratha</span><span class="slant pali">จิตฺรรถ</span><span class="slant thai">จิตระระถะ</span><span class="slant ram">ชิทระระทฺะ</span>&nbsp;&nbsp;และในบรรดามนุษย์ผู้สมบูรณ์ข้าคือนักปราชญ์&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ต้นไทร&nbsp;&nbsp;<i>(อศฺวตฺตฺห)</i>&nbsp;&nbsp;เป็นหนึ่งในจำนวนต้นไม้ที่สูงที่สุดและสวยงามมากที่สุดผู้คนในประเทศอินเดียบ่อยครั้งที่บูชาต้นไทร&nbsp;&nbsp;เสมือนหนึ่งในพิธีทำวัตรประจำวันตอน<wbr>เช้าในหมู่เทวดา&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;พิจารณาว่าเป็นสาวกผู้ยิ่งใหญ่ที่สุดในจักรวาลและได้รับการ<wbr>บูชา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงเป็นผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในฐานะที่เป็นสาวก&nbsp;&nbsp;โลก&nbsp;&nbsp;<i>คนฺธรฺว</i>&nbsp;&nbsp;เต็มไป<wbr>ด้วยสิ่งมีชีวิตที่ร้องเพลงได้ไพเราะมาก&nbsp;&nbsp;นักร้องที่ยอดเยี่ยมที่สุดในบรรดานักร้องเหล่านี้คือ&nbsp;&nbsp;<i>จิตฺรรตฺห</i>&nbsp;&nbsp;ในหมู่สิ่งมีชีวิตที่สมบูรณ์&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;บุตรของ&nbsp;&nbsp;<i>เทวหูติ</i>&nbsp;&nbsp;เป็นผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พิจารณาว่าเป็นอวตารของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ปรัชญาของท่านได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ต่อมามี&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;อีกรูปหนึ่งที่มีชื่อเสียง&nbsp;&nbsp;แต่ปรัชญาของ<i>กปิล</i>&nbsp;&nbsp;รูปนี้ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมีข้อแตกต่างอย่างมหาศาลระหว่าง&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;ทั้งสองรูปนี้
+  ต้นไทร&nbsp;&nbsp;<span class="slant iast">(aśvattha)</span><span class="slant pali">(อศฺวตฺถ)</span><span class="slant thai">(อัศวัตถะ)</span><span class="slant ram">(zzz)</span>&nbsp;&nbsp;เป็นหนึ่งในจำนวนต้นไม้ที่สูงที่สุดและสวยงามมากที่สุดผู้คนในประเทศอินเดียบ่อยครั้งที่บูชาต้นไทร&nbsp;&nbsp;เสมือนหนึ่งในพิธีทำวัตรประจำวันตอน<wbr>เช้าในหมู่เทวดา&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;พิจารณาว่าเป็นสาวกผู้ยิ่งใหญ่ที่สุดในจักรวาลและได้รับการ<wbr>บูชา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงเป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในฐานะที่เป็นสาวก&nbsp;&nbsp;โลก&nbsp;&nbsp;<span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span>&nbsp;&nbsp;เต็มไป<wbr>ด้วยสิ่งมีชีวิตที่ร้องเพลงได้ไพเราะมาก&nbsp;&nbsp;นักร้องที่ยอดเยี่ยมที่สุดในบรรดานักร้องเหล่านี้คือ&nbsp;&nbsp;<span class="slant iast">citraratha</span><span class="slant pali">จิตฺรรถ</span><span class="slant thai">จิตระระถะ</span><span class="slant ram">ชิทระระทฺะ</span>&nbsp;&nbsp;ในหมู่สิ่งมีชีวิตที่สมบูรณ์&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;บุตรของ&nbsp;&nbsp;<span class="slant iast">devahūti</span><span class="slant pali">เทวหูติ</span><span class="slant thai">เทวะหูติ</span><span class="slant ram">เดวะฮูทิ</span>&nbsp;&nbsp;เป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พิจารณาว่าเป็นอวตารของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ปรัชญาของท่านได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ต่อมามี&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;อีกรูปหนึ่งที่มีชื่อเสียง&nbsp;&nbsp;แต่ปรัชญาของ<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;รูปนี้ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมีข้อแตกต่างอย่างมหาศาลระหว่าง&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;ทั้งสองรูปนี้
   </p>
 </div>
 

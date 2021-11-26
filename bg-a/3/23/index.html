@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.23</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทิ หฺยฺ อหํ น วเรฺตยํ</i><br /><i>ชาตุ กรฺมณฺยฺ อตนฺทฺริตฮ</i><br /><i>มม วรฺตฺมานุวรฺตเนฺต</i><br /><i>มนุษฺยาฮ ปารฺตฺห สรฺวศฮ</i>
+<span class="slant iast">yadi hy ahaṁ na varteyaṁ<br /></span>
+<span class="slant pali">ยทิ หฺยฺ อหํ น วรฺเตยํ<br /></span>
+<span class="slant thai">ยะทิ หย อะหัง นะ วัรเตยัง<br /></span>
+<span class="slant ram">ยะดิ ฮิ อฮัม นะ วารเทยัม<br /></span>
+<span class="slant iast">jātu karmaṇy atandritaḥ<br /></span>
+<span class="slant pali">ชาตุ กรฺมณฺยฺ อตนฺทฺริตห์<br /></span>
+<span class="slant thai">ชาตุ กัรมัณย อะตันทริตะห์<br /></span>
+<span class="slant ram">จาทุ คารมะณิ อทันดริทะฮ<br /></span>
+<span class="slant iast">mama vartmānuvartante<br /></span>
+<span class="slant pali">มม วรฺตฺมานุวรฺตนฺเต<br /></span>
+<span class="slant thai">มะมะ วัรตมานุวัรตันเต<br /></span>
+<span class="slant ram">มะมะ วารทมานุวารทันเท<br /></span>
+<span class="slant iast">manuṣyāḥ pārtha sarvaśaḥ<br /></span>
+<span class="slant pali">มนุษฺยาห์ ปารฺถ สรฺวศห์<br /></span>
+<span class="slant thai">มะนุษยาห์ ปารถะ สัรวะศะห์<br /></span>
+<span class="slant ram">มะนุชยาฮ พารทฺะ สารวะชะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยทิ</i> — ถ้าหาก, <i>หิ</i> — แน่นอน, <i>อหมฺ</i> — ข้า, <i>น</i> — ไม่, <i>วเรฺตยมฺ</i> — ปฎิบัติ, <i>ชาตุ</i> — เคย, <i>กรฺมณิ</i> — ในการปฎิบัติหน้าที่ที่กำหนดไว้, <i>อตนฺทฺริตฮ</i> — ด้วยความระมัดระวังอย่างยิ่ง, <i>มม</i> — ของข้า, <i>วรฺตฺม</i> — วิถีทาง, <i>อนุวรฺตเนฺต</i> — จะปฎิบัติตาม, <i>มนุษฺยาฮ</i> — มนุษย์ทั้งหลาย, <i>ปารฺตฺห</i> — โอ้ โอรสพระนาง <i>ปฺฤตฺหา</i>, <i>สรฺวศฮ</i> — ในทั้งหมด
+  <span class="slant iast">yadi</span><span class="slant pali">ยทิ</span><span class="slant thai">ยะทิ</span><span class="slant ram">ยะดิ</span> — ถ้าหาก, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">varteyam</span><span class="slant pali">วรฺเตยมฺ</span><span class="slant thai">วัรเตยัม</span><span class="slant ram">วารเทยัม</span> — ปฎิบัติ, <span class="slant iast">jātu</span><span class="slant pali">ชาตุ</span><span class="slant thai">ชาตุ</span><span class="slant ram">จาทุ</span> — เคย, <span class="slant iast">karmaṇi</span><span class="slant pali">กรฺมณิ</span><span class="slant thai">กัรมะณิ</span><span class="slant ram">คารมะณิ</span> — ในการปฎิบัติหน้าที่ที่กำหนดไว้, <span class="slant iast">atandritaḥ</span><span class="slant pali">อตนฺทฺริตห์</span><span class="slant thai">อะตันทริตะห์</span><span class="slant ram">อทันดริทะฮ</span> — ด้วยความระมัดระวังอย่างยิ่ง, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า, <span class="slant iast">vartma</span><span class="slant pali">วรฺตฺม</span><span class="slant thai">วัรตมะ</span><span class="slant ram">วารทมะ</span> — วิถีทาง, <span class="slant iast">anuvartante</span><span class="slant pali">อนุวรฺตนฺเต</span><span class="slant thai">อะนุวัรตันเต</span><span class="slant ram">อนุวารทันเท</span> — จะปฎิบัติตาม, <span class="slant iast">manuṣyāḥ</span><span class="slant pali">มนุษฺยาห์</span><span class="slant thai">มะนุษยาห์</span><span class="slant ram">มะนุชยาฮ</span> — มนุษย์ทั้งหลาย, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้ โอรสพระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">sarvaśaḥ</span><span class="slant pali">สรฺวศห์</span><span class="slant thai">สัรวะศะห์</span><span class="slant ram">สารวะชะฮ</span> — ในทั้งหมด
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ถ้าหากข้าไม่ปฎิบัติหน้าที่ที่กำหนดไว้อย่างระมัดระวังแล้วไซร้&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>ปารฺตฺห</i>&nbsp;&nbsp;ทุกคนจะปฎิบัติตามแนวทางของข้าอย่างแน่นอน
+  ถ้าหากข้าไม่ปฎิบัติหน้าที่ที่กำหนดไว้อย่างระมัดระวังแล้วไซร้&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span>&nbsp;&nbsp;ทุกคนจะปฎิบัติตามแนวทางของข้าอย่างแน่นอน
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เพื่อรักษาสมดุลแห่งความสงบของสังคมให้เจริญก้าวหน้าในชีวิตทิพย์จึงมี<wbr>ขนบธรรมเนียมประเพณีของครอบครัวที่มีอารยธรรม&nbsp;&nbsp;แม้ว่ากฎเกณฑ์เหล่านี้มีไว้สำหรับ<wbr>พันธวิญญาณไม่ใช่สำหรับองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แต่เนื่องจากเสด็จลงมาเพื่อสถาปนาหลัก<wbr>ศาสนา&nbsp;&nbsp;พระองค์จึงทรงปฎิบัติหน้าที่ตามกฎเกณฑ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่กำหนดไว้ให้เป็นแบบอย่างเพื่อคนธรรมดาสามัญทั่วไปจะได้เจริญรอยตามพระบาทของพระองค์&nbsp;&nbsp;เนื่องจากทรง<wbr>เป็นผู้ที่เชื่อถือได้มากที่สุด&nbsp;&nbsp;จาก&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;เราเข้าใจว่าองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงปฎิบัติ<wbr>หน้าที่ทางศาสนาทั้งหมดทั้งในบ้านและนอกบ้านตามที่ได้กำหนดไว้สำหรับชีวิตคฤหัสถ์
+  เพื่อรักษาสมดุลแห่งความสงบของสังคมให้เจริญก้าวหน้าในชีวิตทิพย์จึงมี<wbr>ขนบธรรมเนียมประเพณีของครอบครัวที่มีอารยธรรม&nbsp;&nbsp;แม้ว่ากฎเกณฑ์เหล่านี้มีไว้สำหรับ<wbr>พันธวิญญาณไม่ใช่สำหรับองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แต่เนื่องจากเสด็จลงมาเพื่อสถาปนาหลัก<wbr>ศาสนา&nbsp;&nbsp;พระองค์จึงทรงปฎิบัติหน้าที่ตามกฎเกณฑ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่กำหนดไว้ให้เป็นแบบอย่างเพื่อคนธรรมดาสามัญทั่วไปจะได้เจริญรอยตามพระบาทของพระองค์&nbsp;&nbsp;เนื่องจากทรง<wbr>เป็นผู้ที่เชื่อถือได้มากที่สุด&nbsp;&nbsp;จาก&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;เราเข้าใจว่าองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงปฎิบัติ<wbr>หน้าที่ทางศาสนาทั้งหมดทั้งในบ้านและนอกบ้านตามที่ได้กำหนดไว้สำหรับชีวิตคฤหัสถ์
   </p>
 </div>
 

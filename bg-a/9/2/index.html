@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.2</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ราช-วิทฺยา ราช-คุหฺยํ</i><br /><i>ปวิตฺรมฺ อิทมฺ อุตฺตมมฺ</i><br /><i>ปฺรตฺยกฺษาวคมํ ธรฺมฺยํ</i><br /><i>สุ-สุขํ กรฺตุมฺ อวฺยยมฺ</i>
+<span class="slant iast">rāja-vidyā rāja-guhyaṁ<br /></span>
+<span class="slant pali">ราช-วิทฺยา ราช-คุหฺยํ<br /></span>
+<span class="slant thai">ราชะ-วิทยา ราชะ-คุหยัง<br /></span>
+<span class="slant ram">ราจะ-วิดยา ราจะ-กุฮยัม<br /></span>
+<span class="slant iast">pavitram idam uttamam<br /></span>
+<span class="slant pali">ปวิตฺรมฺ อิทมฺ อุตฺตมมฺ<br /></span>
+<span class="slant thai">ปะวิตรัม อิทัม อุตตะมัม<br /></span>
+<span class="slant ram">พะวิทรัม อิดัม อุททะมัม<br /></span>
+<span class="slant iast">pratyakṣāvagamaṁ dharmyaṁ<br /></span>
+<span class="slant pali">ปฺรตฺยกฺษาวคมํ ธรฺมฺยํ<br /></span>
+<span class="slant thai">ปรัตยักษาวะคะมัง ธัรมยัง<br /></span>
+<span class="slant ram">พรัทยัคชาวะกะมัม ดฺารมยัม<br /></span>
+<span class="slant iast">su-sukhaṁ kartum avyayam<br /></span>
+<span class="slant pali">สุ-สุขํ กรฺตุมฺ อวฺยยมฺ<br /></span>
+<span class="slant thai">สุ-สุขัง กัรตุม อัวยะยัม<br /></span>
+<span class="slant ram">สุ-สุคัฺม คารทุม อัพยะยัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ราช-วิทฺยา</i> — ราชาแห่งการศึกษา, <i>ราช-คุหฺยมฺ</i> — เจ้าแห่งความรู้ที่ลับเฉพาะ, <i>ปวิตฺรมฺ</i> — บริสุทธิ์ที่สุด, <i>อิทมฺ</i> — นี้, <i>อุตฺตมมฺ</i> — ทิพย์, <i>ปฺรตฺยกฺษ</i> — ด้วยประสบการณ์โดยตรง, <i>อวคมมฺ</i> — เข้าใจ, <i>ธรฺมฺยมฺ</i> — หลักศาสนา, <i>สุ-สุขมฺ</i> — มีความสุขมาก, <i>กรฺตุมฺ</i> — ปฏิบัติ, <i>อวฺยยมฺ</i> — เป็นอมตะ
+  <span class="slant iast">rāja-vidyā</span><span class="slant pali">ราช-วิทฺยา</span><span class="slant thai">ราชะ-วิทยา</span><span class="slant ram">ราจะ-วิดยา</span> — ราชาแห่งการศึกษา, <span class="slant iast">rāja-guhyam</span><span class="slant pali">ราช-คุหฺยมฺ</span><span class="slant thai">ราชะ-คุหยัม</span><span class="slant ram">ราจะ-กุฮยัม</span> — เจ้าแห่งความรู้ที่ลับเฉพาะ, <span class="slant iast">pavitram</span><span class="slant pali">ปวิตฺรมฺ</span><span class="slant thai">ปะวิตรัม</span><span class="slant ram">พะวิทรัม</span> — บริสุทธิ์ที่สุด, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — นี้, <span class="slant iast">uttamam</span><span class="slant pali">อุตฺตมมฺ</span><span class="slant thai">อุตตะมัม</span><span class="slant ram">อุททะ มัม</span> — ทิพย์, <span class="slant iast">pratyakṣa</span><span class="slant pali">ปฺรตฺยกฺษ</span><span class="slant thai">ปรัตยักษะ</span><span class="slant ram">พรัทยัคชะ</span> — ด้วยประสบการณ์โดยตรง, <span class="slant iast">avagamam</span><span class="slant pali">อวคมมฺ</span><span class="slant thai">อะวะคะมัม</span><span class="slant ram">อวะกะมัม</span> — เข้าใจ, <span class="slant iast">dharmyam</span><span class="slant pali">ธรฺมฺยมฺ</span><span class="slant thai">ธัรมยัม</span><span class="slant ram">ดฺารมยัม</span> — หลักศาสนา, <span class="slant iast">su-sukham</span><span class="slant pali">สุ-สุขมฺ</span><span class="slant thai">สุ-สุขัม</span><span class="slant ram">สุ-สุคัฺม</span> — มีความสุขมาก, <span class="slant iast">kartum</span><span class="slant pali">กรฺตุมฺ</span><span class="slant thai">กัรตุม</span><span class="slant ram">คารทุม</span> — ปฏิบัติ, <span class="slant iast">avyayam</span><span class="slant pali">อวฺยยมฺ</span><span class="slant thai">อัวยะยัม</span><span class="slant ram">อัพยะยัม</span> — เป็นอมตะ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ภควทฺ-คีตา</i>&nbsp;&nbsp;บทนี้เรียกว่าราชาแห่งการศึกษา&nbsp;&nbsp;เนื่องจากเป็นเนื้อหาสาระของ<wbr>หลักคำสอนและปรัชญาทั้งหมดที่อธิบายไว้ก่อนหน้านี้&nbsp;&nbsp;ในหมู่นักปราชญ์คนสำคัญๆของประเทศอินเดียมี&nbsp;&nbsp;โกทะมะ&nbsp;&nbsp;คะณาดะ&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ยาชฺญวลฺกฺย</i>&nbsp;&nbsp;ชาณดิลยะ&nbsp;&nbsp;และไวชวานะระ&nbsp;&nbsp;และในที่สุดมี&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;ผู้เขียน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ขาดแคลน<wbr>ความรู้ทางด้านปรัชญาหรือความรู้ทิพย์&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าบทที่เก้านี้เป็นราชา<wbr>แห่งความรู้ทั้งหลายเหล่านี้&nbsp;&nbsp;เนื้อหาสาระของความรู้ทั้งหลายที่ได้รับจากการศึกษา<wbr>คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และปรัชญาอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นความลับสุด&nbsp;&nbsp;เพราะว่าความรู้ที่เป็นความลับหรือ<wbr>ความรู้ทิพย์เกี่ยวเนื่องกับการเข้าใจข้อแตกต่างระหว่างดวงวิญญาณและร่างกาย&nbsp;&nbsp;ราชา<wbr>แห่งความรู้ที่ลับทั้งหลายมาจบลงที่การอุทิศตนเสียสละรับใช้
+  <span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;บทนี้เรียกว่าราชาแห่งการศึกษา&nbsp;&nbsp;เนื่องจากเป็นเนื้อหาสาระของ<wbr>หลักคำสอนและปรัชญาทั้งหมดที่อธิบายไว้ก่อนหน้านี้&nbsp;&nbsp;ในหมู่นักปราชญ์คนสำคัญๆของประเทศอินเดียมี&nbsp;&nbsp;โกทะมะ&nbsp;&nbsp;คะณาดะ&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">yājñavalkya</span><span class="slant pali">ยาชฺญวลฺกฺย</span><span class="slant thai">ยาชญะวัลกยะ</span><span class="slant ram">ยากยะวัลคยะ</span>&nbsp;&nbsp;ชาณดิลยะ&nbsp;&nbsp;และไวชวานะระ&nbsp;&nbsp;และในที่สุดมี&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;ผู้เขียน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่ขาดแคลน<wbr>ความรู้ทางด้านปรัชญาหรือความรู้ทิพย์&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าบทที่เก้านี้เป็นราชา<wbr>แห่งความรู้ทั้งหลายเหล่านี้&nbsp;&nbsp;เนื้อหาสาระของความรู้ทั้งหลายที่ได้รับจากการศึกษา<wbr>คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และปรัชญาอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นความลับสุด&nbsp;&nbsp;เพราะว่าความรู้ที่เป็นความลับหรือ<wbr>ความรู้ทิพย์เกี่ยวเนื่องกับการเข้าใจข้อแตกต่างระหว่างดวงวิญญาณและร่างกาย&nbsp;&nbsp;ราชา<wbr>แห่งความรู้ที่ลับทั้งหลายมาจบลงที่การอุทิศตนเสียสละรับใช้
   </p>
 </div>
 
@@ -85,91 +186,136 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  หนังสือ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;โดยเฉพาะจากบทที่สองเป็นต้นมาได้เน้นถึงความสำคัญ<wbr>ของดวงวิญญาณ&nbsp;&nbsp;ตอนต้นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าร่างกายนี้เสื่อมสลายและวิญญาณไม่<wbr>เสื่อมสลาย&nbsp;&nbsp;(<i>อนฺตวนฺต&nbsp;&nbsp;อิเม&nbsp;&nbsp;เทหา&nbsp;&nbsp;นิตฺยโสฺยกฺตาฮ&nbsp;&nbsp;ศรีริณฮ</i>&nbsp;&nbsp;)&nbsp;&nbsp;นี่คือส่วนลับแห่งความรู้หากเพียงแต่รู้ว่าดวงวิญญาณแตกต่างจากร่างกาย&nbsp;&nbsp;โดยธรรมชาติดวงวิญญาณจะไม่มี<wbr>การเปลี่ยนรูป&nbsp;&nbsp;ไม่มีวันถูกทำลาย&nbsp;&nbsp;และเป็นอมตะ&nbsp;&nbsp;เช่นนี้มิได้ให้ข้อมูลในเชิงบวก&nbsp;&nbsp;บางครั้ง<wbr>บุคคลลืมความรู้สึกว่าดวงวิญญาณแตกต่างจากร่างกายเมื่อร่างกายจบสิ้นลง&nbsp;&nbsp;หรือเมื่อ<wbr>หลุดพ้นจากร่างกายไปแล้วดวงวิญญาณจะอยู่ในความว่างเปล่าและกลายมาเป็นผู้ไม่มี<wbr>บุคลิกภาพ&nbsp;&nbsp;แต่ความจริงหาเป็นเช่นนั้นไม่&nbsp;&nbsp;เป็นไปได้อย่างไรที่ดวงวิญญาณซึ่งมีความ<wbr>ตื่นตัวมากภายในร่างกายนี้&nbsp;&nbsp;จะไม่มีความตื่นตัวหลังจากหลุดพ้นไปจากร่างกายนี้แล้วหากดวงวิญญาณเป็นอมตะจะต้องตื่นตัวอยู่ตลอดเวลา&nbsp;&nbsp;ตื่นตัวนิรันดร&nbsp;&nbsp;กิจกรรมต่าง&nbsp;&nbsp;ๆของเขาในอาณาจักรทิพย์เป็นความรู้ทิพย์ที่ลับที่สุด&nbsp;&nbsp;กิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้ของดวง<wbr>วิญญาณแสดงไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่ารวมมาเป็นราชาแห่งความรู้ทั้งหลาย&nbsp;&nbsp;เป็นส่วนลับที่สุดของ<wbr>วิชาความรู้ทั้งหมด
+  หนังสือ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;โดยเฉพาะจากบทที่สองเป็นต้นมาได้เน้นถึงความสำคัญ<wbr>ของดวงวิญญาณ&nbsp;&nbsp;ตอนต้นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าร่างกายนี้เสื่อมสลายและวิญญาณไม่<wbr>เสื่อมสลาย&nbsp;&nbsp;(<span class="slant iast">antavanta&nbsp;&nbsp;ime&nbsp;&nbsp;dehā&nbsp;&nbsp;nityasyoktāḥ&nbsp;&nbsp;śarīriṇaḥ</span><span class="slant pali">อนฺตวนฺตอิเมเทหานิตฺยโสฺยกฺตาห์ศรีริณห์</span><span class="slant thai">อันตะวันตะอิเมเทหานิตยัสโยกตาห์ศะรีริณะห์</span><span class="slant ram"> อิเมชะรีริณะฮ</span>&nbsp;&nbsp;)&nbsp;&nbsp;นี่คือส่วนลับแห่งความรู้หากเพียงแต่รู้ว่าดวงวิญญาณแตกต่างจากร่างกาย&nbsp;&nbsp;โดยธรรมชาติดวงวิญญาณจะไม่มี<wbr>การเปลี่ยนรูป&nbsp;&nbsp;ไม่มีวันถูกทำลาย&nbsp;&nbsp;และเป็นอมตะ&nbsp;&nbsp;เช่นนี้มิได้ให้ข้อมูลในเชิงบวก&nbsp;&nbsp;บางครั้ง<wbr>บุคคลลืมความรู้สึกว่าดวงวิญญาณแตกต่างจากร่างกายเมื่อร่างกายจบสิ้นลง&nbsp;&nbsp;หรือเมื่อ<wbr>หลุดพ้นจากร่างกายไปแล้วดวงวิญญาณจะอยู่ในความว่างเปล่าและกลายมาเป็นผู้ไม่มี<wbr>บุคลิกภาพ&nbsp;&nbsp;แต่ความจริงหาเป็นเช่นนั้นไม่&nbsp;&nbsp;เป็นไปได้อย่างไรที่ดวงวิญญาณซึ่งมีความ<wbr>ตื่นตัวมากภายในร่างกายนี้&nbsp;&nbsp;จะไม่มีความตื่นตัวหลังจากหลุดพ้นไปจากร่างกายนี้แล้วหากดวงวิญญาณเป็นอมตะจะต้องตื่นตัวอยู่ตลอดเวลา&nbsp;&nbsp;ตื่นตัวนิรันดร&nbsp;&nbsp;กิจกรรมต่าง&nbsp;&nbsp;ๆของเขาในอาณาจักรทิพย์เป็นความรู้ทิพย์ที่ลับที่สุด&nbsp;&nbsp;กิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้ของดวง<wbr>วิญญาณแสดงไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่ารวมมาเป็นราชาแห่งความรู้ทั้งหลาย&nbsp;&nbsp;เป็นส่วนลับที่สุดของ<wbr>วิชาความรู้ทั้งหมด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความรู้นี้เป็นรูปแบบที่บริสุทธิ์ที่สุด&nbsp;&nbsp;กิจกรรมทั้งหลายดังที่ได้อธิบายไว้<wbr>ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>ปทฺม&nbsp;&nbsp;ปุราณ</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;กิจกรรมบาปของมนุษย์ได้ถูกวิเคราะห์<wbr>ไว้&nbsp;&nbsp;และปรากฏออกมาเป็นผลแห่งความบาปซ้ำซาก&nbsp;&nbsp;พวกที่ปฏิบัติกิจกรรมเพื่อผล<wbr>ทางวัตถุจะถูกพันธนาการอยู่ในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;และก่อร่างมาเป็นผลบาปต่าง&nbsp;&nbsp;ๆตัวอย่างเช่น&nbsp;&nbsp;เมื่อเราหว่านเมล็ดพันธุ์ของต้นไม้ชนิดหนึ่ง&nbsp;&nbsp;ต้นไม้จะไม่เจริญเติบโตขึ้นมาใน<wbr>ทันทีทันใดแต่จะต้องใช้เวลา&nbsp;&nbsp;ก่อนอื่นเป็นต้นเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นหน่อ&nbsp;&nbsp;จากนั้นก็มาในรูปของต้นไม้มีดอก&nbsp;&nbsp;มีผล&nbsp;&nbsp;และเมื่อสมบูรณ์บุคคลผู้หว่านเมล็ดพันธุ์ของต้นไม้ก็จะได้รับความสุขจาก<wbr>ดอกไม้และผลไม้เหล่านั้น&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;มนุษย์ทำบาปก็เหมือนกับการหว่านเมล็ด<wbr>พันธุ์ที่ต้องใช้เวลากว่าจะบังเกิดผล&nbsp;&nbsp;หรือปรากฏออกมา&nbsp;&nbsp;ความบาปมีอยู่หลายระดับการทำบาปอาจยุติลงภายในปัจเจกบุคคล&nbsp;&nbsp;แต่ผลบาปนั้นยังจะต้องได้รับ&nbsp;&nbsp;มีความบาป<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ซึ่งอยู่ในรูปของเมล็ดพันธุ์&nbsp;&nbsp;มีความบาปที่ปรากฏออกมาและให้ผลแก่เรา&nbsp;&nbsp;ซึ่งมาใน<wbr>รูปของความทุกข์และความเจ็บปวด
+  ความรู้นี้เป็นรูปแบบที่บริสุทธิ์ที่สุด&nbsp;&nbsp;กิจกรรมทั้งหลายดังที่ได้อธิบายไว้<wbr>ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">padma&nbsp;&nbsp;purāṇa</span><span class="slant pali">ปทฺมปุราณ</span><span class="slant thai">ปัทมะปุราณะ</span><span class="slant ram">พุราณะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;กิจกรรมบาปของมนุษย์ได้ถูกวิเคราะห์<wbr>ไว้&nbsp;&nbsp;และปรากฏออกมาเป็นผลแห่งความบาปซ้ำซาก&nbsp;&nbsp;พวกที่ปฏิบัติกิจกรรมเพื่อผล<wbr>ทางวัตถุจะถูกพันธนาการอยู่ในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;และก่อร่างมาเป็นผลบาปต่าง&nbsp;&nbsp;ๆตัวอย่างเช่น&nbsp;&nbsp;เมื่อเราหว่านเมล็ดพันธุ์ของต้นไม้ชนิดหนึ่ง&nbsp;&nbsp;ต้นไม้จะไม่เจริญเติบโตขึ้นมาใน<wbr>ทันทีทันใดแต่จะต้องใช้เวลา&nbsp;&nbsp;ก่อนอื่นเป็นต้นเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นหน่อ&nbsp;&nbsp;จากนั้นก็มาในรูปของต้นไม้มีดอก&nbsp;&nbsp;มีผล&nbsp;&nbsp;และเมื่อสมบูรณ์บุคคลผู้หว่านเมล็ดพันธุ์ของต้นไม้ก็จะได้รับความสุขจาก<wbr>ดอกไม้และผลไม้เหล่านั้น&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;มนุษย์ทำบาปก็เหมือนกับการหว่านเมล็ด<wbr>พันธุ์ที่ต้องใช้เวลากว่าจะบังเกิดผล&nbsp;&nbsp;หรือปรากฏออกมา&nbsp;&nbsp;ความบาปมีอยู่หลายระดับการทำบาปอาจยุติลงภายในปัจเจกบุคคล&nbsp;&nbsp;แต่ผลบาปนั้นยังจะต้องได้รับ&nbsp;&nbsp;มีความบาป<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ซึ่งอยู่ในรูปของเมล็ดพันธุ์&nbsp;&nbsp;มีความบาปที่ปรากฏออกมาและให้ผลแก่เรา&nbsp;&nbsp;ซึ่งมาใน<wbr>รูปของความทุกข์และความเจ็บปวด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังที่ได้อธิบายไว้ในโศลกที่ยี่สิบแปดของบทที่เจ็ด&nbsp;&nbsp;บุคคลที่จบสิ้นกับผลบาปทั้ง<wbr>ปวง&nbsp;&nbsp;และทำแต่กิจกรรมบุญอย่างสมบูรณ์&nbsp;&nbsp;เป็นอิสระจากสิ่งคู่ในโลกวัตถุนี้ปฏิบัติในการ<wbr>อุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;พวกที่ปฏิบัติการอุทิศตนเสียสละ<wbr>รับใช้แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จริง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นผู้ที่ได้รับอิสรภาพจากผลบาปทั้งปวงเรียบร้อยแล้ว&nbsp;&nbsp;คำ<wbr>กล่าวเช่นนี้ได้ยืนยันไว้ใน&nbsp;&nbsp;<i>ปทฺม&nbsp;&nbsp;ปุราณ</i>&nbsp;&nbsp;ดังนี้
-  </p>
-</div>
-
-<div class="r r-lang-en r-verse-text">
-  
-  <i>อปฺรารพฺธ-ผลํ ปาปํ</i><br /><i>กูฏํ พีชํ ผโลนฺมุขมฺ</i><br /><i>กฺรเมไณว ปฺรลีเยต</i><br /><i>วิษฺณุ-ภกฺติ-รตาตฺมนามฺ</i>
-  
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  สำหรับพวกที่ปฏิบัติการอุทิศตนเสียสละรับใช้แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผลบาปทั้งหลายไม่ว่าจะ<wbr>ปรากฏออกมาแล้ว&nbsp;&nbsp;ที่เก็บอยู่ในคลัง&nbsp;&nbsp;หรือในรูปของเมล็ดพันธุ์จะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;สลายไป&nbsp;&nbsp;ดังนั้นอำนาจที่ทำให้บริสุทธิ์จากการอุทิศตนเสียสละรับใช้นั้นมีพลังมาก&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ปวิตฺรมฺ&nbsp;&nbsp;อุตฺตมมฺ</i>&nbsp;&nbsp;บริสุทธิ์ที่สุด&nbsp;&nbsp;<i>อุตฺตม</i>&nbsp;&nbsp;หมายถึงทิพย์&nbsp;&nbsp;<i>ตม</i>&nbsp;&nbsp;หมายถึงโลกวัตถุนี้หรือความมืดและ&nbsp;&nbsp;<i>อุตฺตม</i>&nbsp;&nbsp;หมายถึงสิ่งที่เป็นทิพย์เหนือกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;กิจกรรมในการอุทิศ<wbr>ตนเสียสละไม่ถือว่าเป็นวัตถุ&nbsp;&nbsp;ถึงแม้ว่าบางครั้งจะปรากฏว่าสาวกปฏิบัติตนเหมือนกับ<wbr>คนธรรมดาทั่วไป&nbsp;&nbsp;ผู้ที่สามารถเห็นและคุ้นเคยกับการอุทิศตนเสียสละรับใช้จะทราบว่ากิจกรรมเหล่านี้มิใช่เป็นวัตถุ&nbsp;&nbsp;กิจกรรมเหล่านี้ทั้งหมดเป็นทิพย์&nbsp;&nbsp;เป็นการอุทิศตนเสียสละ<wbr>ซึ่งไม่มีมลทินจากระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติวัตถุ
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ได้กล่าวไว้ว่าการปฏิบัติอุทิศตนเสียสละรับใช้มีความสมบูรณ์จนกระทั่งเรา<wbr>สามารถสำเหนียกถึงผลลัพธ์โดยตรง&nbsp;&nbsp;ผลลัพธ์โดยตรงนี้สำเหนียกได้อย่างแท้จริงและ<wbr>พวกเราได้รับประสบการณ์จากการปฏิบัติว่า&nbsp;&nbsp;ผู้ใดที่สวดภาวนาพระนามอันศักดิ์สิทธิ์<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;(ฮเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร)&nbsp;&nbsp;โดยปราศจากอาบัติ&nbsp;&nbsp;จะรู้สึกว่ามีความสุขทิพย์&nbsp;&nbsp;และมี<wbr>ความบริสุทธิ์ขึ้นอย่างรวดเร็วจากมลทินทางวัตถุทั้งปวง&nbsp;&nbsp;เราเห็นเช่นนี้จริง&nbsp;&nbsp;นอกเหนือไป<wbr>จากนั้น&nbsp;&nbsp;หากผู้ใดปฏิบัติไม่เพียงแค่สดับฟัง&nbsp;&nbsp;แต่ยังพยายามเผยแพร่สาส์นแห่งการอุทิศตน<wbr>เสียสละรับใช้นี้ด้วย&nbsp;&nbsp;หรือหากตัวเราเองช่วยในกิจกรรมเพื่อเผยแพร่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จะ<wbr>รู้สึกว่าเราค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;ความเจริญก้าวหน้าในชีวิตทิพย์นี้มิได้ขึ้นอยู่<wbr>กับการศึกษาหรือคุณสมบัติใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในอดีต&nbsp;&nbsp;เนื่องจากเป็นวิธีการที่มีความบริสุทธิ์ในตัวเองเพียงแต่ได้ปฏิบัติเท่านั้นเราจะกลายเป็นผู้บริสุทธิ์
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;(3.2.26)&nbsp;&nbsp;ได้อธิบายไว้เช่นกันดังนี้&nbsp;&nbsp;<i>ปฺรกาศศฺ&nbsp;&nbsp;จ&nbsp;&nbsp;กรฺมณฺยฺ&nbsp;&nbsp;อภฺยาสาตฺ</i>&nbsp;&nbsp;“การอุทิศตนเสียสละรับใช้มีพลังอำนาจมาก&nbsp;&nbsp;เพียงแต่ปฏิบัติในกิจกรรมแห่งการ<wbr>อุทิศตนเสียสละรับใช้&nbsp;&nbsp;เราจะได้รับแสงสว่างโดยไม่ต้องสงสัย”&nbsp;&nbsp;ตัวอย่างในเชิงปฏิบัติเช่นนี้<wbr>พบได้ในอดีตชาติของ&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ในชาตินั้นเป็นบุตรของคนรับใช้&nbsp;&nbsp;ท่านไม่มีการศึกษา&nbsp;&nbsp;ไม่ได้<wbr>เกิดในตระกูลสูง&nbsp;&nbsp;แต่เมื่อมารดาของท่านปฏิบัติรับใช้สาวกผู้ยิ่งใหญ่&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ร่วมรับใช้ด้วยบางครั้งเมื่อมารดาไม่อยู่ท่านก็รับใช้สาวกผู้ยิ่งใหญ่ด้วยตนเอง&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;กล่าวว่า
+  ดังที่ได้อธิบายไว้ในโศลกที่ยี่สิบแปดของบทที่เจ็ด&nbsp;&nbsp;บุคคลที่จบสิ้นกับผลบาปทั้ง<wbr>ปวง&nbsp;&nbsp;และทำแต่กิจกรรมบุญอย่างสมบูรณ์&nbsp;&nbsp;เป็นอิสระจากสิ่งคู่ในโลกวัตถุนี้ปฏิบัติในการ<wbr>อุทิศตนเสียสละรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;พวกที่ปฏิบัติการอุทิศตนเสียสละ<wbr>รับใช้แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จริง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เป็นผู้ที่ได้รับอิสรภาพจากผลบาปทั้งปวงเรียบร้อยแล้ว&nbsp;&nbsp;คำ<wbr>กล่าวเช่นนี้ได้ยืนยันไว้ใน&nbsp;&nbsp;<span class="slant iast">padma&nbsp;&nbsp;purāṇa</span><span class="slant pali">ปทฺมปุราณ</span><span class="slant thai">ปัทมะปุราณะ</span><span class="slant ram">พุราณะ</span>&nbsp;&nbsp;ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อุจฺฉิษฺฏ-เลปานฺ อนุโมทิโต ทฺวิไชฮ</i><br /><i>สกฺฤตฺ สฺม ภุเญฺช ตทฺ-อปาสฺต-กิลฺพิษฮ</i><br /><i>เอวํ ปฺรวฺฤตฺตสฺย วิศุทฺธ-เจตสสฺ</i><br /><i>ตทฺ-ธรฺม เอวาตฺม-รุจิฮ ปฺรชายเต</i>
+<span class="slant iast">aprārabdha-phalaṁ pāpaṁ<br /></span>
+<span class="slant pali">อปฺรารพฺธ-ผลํ ปาปํ<br /></span>
+<span class="slant thai">อัปรารัพธะ-ผะลัง ปาปัง<br /></span>
+<span class="slant ram">อัพรารับดฺะ-พฺะลัม พาพัม<br /></span>
+<span class="slant iast">kūṭaṁ bījaṁ phalonmukham<br /></span>
+<span class="slant pali">กูฏํ พีชํ ผโลนฺมุขมฺ<br /></span>
+<span class="slant thai">กูฏัง พีชัง ผะโลนมุขัม<br /></span>
+<span class="slant ram">คูทัม บีจัม พฺะโลนมุคัฺม<br /></span>
+<span class="slant iast">krameṇaiva pralīyeta<br /></span>
+<span class="slant pali">กฺรเมไณว ปฺรลีเยต<br /></span>
+<span class="slant thai">กระเมไณวะ ประลีเยตะ<br /></span>
+<span class="slant ram">คระเม ไณวะ พระลีเยทะ<br /></span>
+<span class="slant iast">viṣṇu-bhakti-ratātmanām<br /></span>
+<span class="slant pali">วิษฺณุ-ภกฺติ-รตาตฺมนามฺ<br /></span>
+<span class="slant thai">วิษณุ-ภักติ-ระตาตมะนาม<br /></span>
+<span class="slant ram">วิชณุ-บัฺคธิ-ระทาทมะนาม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้จาก&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(1.5.25)&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;อธิบายถึงชาติอดีตให้ศิษย์&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;ฟังโดยกล่าวว่า&nbsp;&nbsp;ระหว่างที่ปฏิบัติตนเป็นเด็กรับใช้สาวกผู้บริสุทธิ์เป็นเวลาสี่เดือน&nbsp;&nbsp;ขณะที่มาพัก<wbr>อาศัยอยู่&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ได้คบหาสมาคมกับสาวกผู้บริสุทธิ์อย่างใกล้ชิด&nbsp;&nbsp;บางครั้งนักปราชญ์เหล่า<wbr>นั้นเหลืออาหารไว้ในจานและเด็กน้อยที่เป็นผู้ล้างจานปรารถนาจะลิ้มรสอาหารที่เหลือ&nbsp;&nbsp;จึง<wbr>ขออนุญาตจากสาวกผู้ยิ่งใหญ่&nbsp;&nbsp;เมื่อได้รับอนุญาต&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ก็รับประทานอาหารนั้น&nbsp;&nbsp;ต่อมานา<wbr>ระดะได้หลุดพ้นจากผลบาปทั้งปวง&nbsp;&nbsp;ขณะที่รับประทานไปเรื่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หัวใจค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;บริสุทธิ์ขึ้น<wbr>เหมือนกับนักปราชญ์เหล่านั้น&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่ดื่มด่ำอยู่กับรสแห่งการอุทิศตนเสียสละรับ<wbr>ใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยการสดับฟังและสวดภาวนาอย่างไม่รู้จักหยุดหย่อน&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ค่อยๆพัฒนารสชาติเช่นนี้&nbsp;&nbsp;และกล่าวดังนี้
+  สำหรับพวกที่ปฏิบัติการอุทิศตนเสียสละรับใช้แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผลบาปทั้งหลายไม่ว่าจะ<wbr>ปรากฏออกมาแล้ว&nbsp;&nbsp;ที่เก็บอยู่ในคลัง&nbsp;&nbsp;หรือในรูปของเมล็ดพันธุ์จะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;สลายไป&nbsp;&nbsp;ดังนั้นอำนาจที่ทำให้บริสุทธิ์จากการอุทิศตนเสียสละรับใช้นั้นมีพลังมาก&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">pavitram&nbsp;&nbsp;uttamam</span><span class="slant pali">ปวิตฺรมฺอุตฺตมมฺ</span><span class="slant thai">ปะวิตรัมอุตตะมัม</span><span class="slant ram">พะวิทรัมอุททะ มัม</span>&nbsp;&nbsp;บริสุทธิ์ที่สุด&nbsp;&nbsp;<span class="slant iast">uttama</span><span class="slant pali">อุตฺตม</span><span class="slant thai">อุตตะมะ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายถึงทิพย์&nbsp;&nbsp;<span class="slant iast">tama</span><span class="slant pali">ตม</span><span class="slant thai">ตะมะ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายถึงโลกวัตถุนี้หรือความมืดและ&nbsp;&nbsp;<span class="slant iast">uttama</span><span class="slant pali">อุตฺตม</span><span class="slant thai">อุตตะมะ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายถึงสิ่งที่เป็นทิพย์เหนือกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;กิจกรรมในการอุทิศ<wbr>ตนเสียสละไม่ถือว่าเป็นวัตถุ&nbsp;&nbsp;ถึงแม้ว่าบางครั้งจะปรากฏว่าสาวกปฏิบัติตนเหมือนกับ<wbr>คนธรรมดาทั่วไป&nbsp;&nbsp;ผู้ที่สามารถเห็นและคุ้นเคยกับการอุทิศตนเสียสละรับใช้จะทราบว่ากิจกรรมเหล่านี้มิใช่เป็นวัตถุ&nbsp;&nbsp;กิจกรรมเหล่านี้ทั้งหมดเป็นทิพย์&nbsp;&nbsp;เป็นการอุทิศตนเสียสละ<wbr>ซึ่งไม่มีมลทินจากระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติวัตถุ
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  ได้กล่าวไว้ว่าการปฏิบัติอุทิศตนเสียสละรับใช้มีความสมบูรณ์จนกระทั่งเรา<wbr>สามารถสำเหนียกถึงผลลัพธ์โดยตรง&nbsp;&nbsp;ผลลัพธ์โดยตรงนี้สำเหนียกได้อย่างแท้จริงและ<wbr>พวกเราได้รับประสบการณ์จากการปฏิบัติว่า&nbsp;&nbsp;ผู้ใดที่สวดภาวนาพระนามอันศักดิ์สิทธิ์<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;(ฮเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร)&nbsp;&nbsp;โดยปราศจากอาบัติ&nbsp;&nbsp;จะรู้สึกว่ามีความสุขทิพย์&nbsp;&nbsp;และมี<wbr>ความบริสุทธิ์ขึ้นอย่างรวดเร็วจากมลทินทางวัตถุทั้งปวง&nbsp;&nbsp;เราเห็นเช่นนี้จริง&nbsp;&nbsp;นอกเหนือไป<wbr>จากนั้น&nbsp;&nbsp;หากผู้ใดปฏิบัติไม่เพียงแค่สดับฟัง&nbsp;&nbsp;แต่ยังพยายามเผยแพร่สาส์นแห่งการอุทิศตน<wbr>เสียสละรับใช้นี้ด้วย&nbsp;&nbsp;หรือหากตัวเราเองช่วยในกิจกรรมเพื่อเผยแพร่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จะ<wbr>รู้สึกว่าเราค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เจริญก้าวหน้าในวิถีทิพย์&nbsp;&nbsp;ความเจริญก้าวหน้าในชีวิตทิพย์นี้มิได้ขึ้นอยู่<wbr>กับการศึกษาหรือคุณสมบัติใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในอดีต&nbsp;&nbsp;เนื่องจากเป็นวิธีการที่มีความบริสุทธิ์ในตัวเองเพียงแต่ได้ปฏิบัติเท่านั้นเราจะกลายเป็นผู้บริสุทธิ์
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  ใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;(3.2.26)&nbsp;&nbsp;ได้อธิบายไว้เช่นกันดังนี้&nbsp;&nbsp;<span class="slant iast">prakāśaś&nbsp;&nbsp;ca&nbsp;&nbsp;karmaṇy&nbsp;&nbsp;abhyāsāt</span><span class="slant pali">ปฺรกาศศฺจกรฺมณฺยฺอภฺยาสาตฺ</span><span class="slant thai">ประกาศัศจะกัรมัณยอัภยาสาต</span><span class="slant ram">zzzชะอับฺยาสาท</span>&nbsp;&nbsp;“การอุทิศตนเสียสละรับใช้มีพลังอำนาจมาก&nbsp;&nbsp;เพียงแต่ปฏิบัติในกิจกรรมแห่งการ<wbr>อุทิศตนเสียสละรับใช้&nbsp;&nbsp;เราจะได้รับแสงสว่างโดยไม่ต้องสงสัย”&nbsp;&nbsp;ตัวอย่างในเชิงปฏิบัติเช่นนี้<wbr>พบได้ในอดีตชาติของ&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ในชาตินั้นเป็นบุตรของคนรับใช้&nbsp;&nbsp;ท่านไม่มีการศึกษา&nbsp;&nbsp;ไม่ได้<wbr>เกิดในตระกูลสูง&nbsp;&nbsp;แต่เมื่อมารดาของท่านปฏิบัติรับใช้สาวกผู้ยิ่งใหญ่&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ร่วมรับใช้ด้วยบางครั้งเมื่อมารดาไม่อยู่ท่านก็รับใช้สาวกผู้ยิ่งใหญ่ด้วยตนเอง&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;กล่าวว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
+<span class="slant iast">ucchiṣṭa-lepān anumodito dvijaiḥ<br /></span>
+<span class="slant pali">อุจฺฉิษฺฏ-เลปานฺ อนุโมทิโต ทฺวิไชห์<br /></span>
+<span class="slant thai">อุจฉิษฏะ-เลปาน อะนุโมทิโต ทวิไชห์<br /></span>
+<span class="slant ram">อุชชิฺชทะ-เลพาน อนุโมดิโท ดวิไจฮ<br /></span>
+<span class="slant iast">sakṛt sma bhuñje tad-apāsta-kilbiṣaḥ<br /></span>
+<span class="slant pali">สกฺฤตฺ สฺม ภุญฺเช ตทฺ-อปาสฺต-กิลฺพิษห์<br /></span>
+<span class="slant thai">สักฤต สมะ ภุญเช ตัท-อะปาสตะ-กิลพิษะห์<br /></span>
+<span class="slant ram">สะคริท สมะ บํุนเจ ทัด-อพาสทะ-คิลบิชะฮ<br /></span>
+<span class="slant iast">evaṁ pravṛttasya viśuddha-cetasas<br /></span>
+<span class="slant pali">เอวํ ปฺรวฺฤตฺตสฺย วิศุทฺธ-เจตสสฺ<br /></span>
+<span class="slant thai">เอวัง ปรัวฤตตัสยะ วิศุทธะ-เจตะสัส<br /></span>
+<span class="slant ram">เอวัม พระวริททัสยะ วิชุดดฺะ-เชทะสัส<br /></span>
+<span class="slant iast">tad-dharma evātma-ruciḥ prajāyate<br /></span>
+<span class="slant pali">ตทฺ-ธรฺม เอวาตฺม-รุจิห์ ปฺรชายเต<br /></span>
+<span class="slant thai">ตัท-ธัรมะ เอวาตมะ-รุจิห์ ประชายะเต<br /></span>
+<span class="slant ram">ทัด-ดฺารมะ เอวาทมะ-รุชิฮ พระจายะเท<br /></span>
+
   
-  <i>ตตฺรานฺวฺ-อหํ กฺฤษฺณ-กตฺหาฮ ปฺรคายตามฺ</i><br /><i>อนุคฺรเหณาศฺฤณวํ มโน-หราฮ</i><br /><i>ตาฮ ศฺรทฺธยา เม ′นุ-ปทํ วิศฺฤณฺวตฮ</i><br /><i>ปฺริยศฺรวสฺยฺ องฺค มมาภวทฺ รุจิฮ</i>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  โศลกนี้จาก&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(1.5.25)&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;อธิบายถึงชาติอดีตให้ศิษย์&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;ฟังโดยกล่าวว่า&nbsp;&nbsp;ระหว่างที่ปฏิบัติตนเป็นเด็กรับใช้สาวกผู้บริสุทธิ์เป็นเวลาสี่เดือน&nbsp;&nbsp;ขณะที่มาพัก<wbr>อาศัยอยู่&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ได้คบหาสมาคมกับสาวกผู้บริสุทธิ์อย่างใกล้ชิด&nbsp;&nbsp;บางครั้งนักปราชญ์เหล่า<wbr>นั้นเหลืออาหารไว้ในจานและเด็กน้อยที่เป็นผู้ล้างจานปรารถนาจะลิ้มรสอาหารที่เหลือ&nbsp;&nbsp;จึง<wbr>ขออนุญาตจากสาวกผู้ยิ่งใหญ่&nbsp;&nbsp;เมื่อได้รับอนุญาต&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ก็รับประทานอาหารนั้น&nbsp;&nbsp;ต่อมานา<wbr>ระดะได้หลุดพ้นจากผลบาปทั้งปวง&nbsp;&nbsp;ขณะที่รับประทานไปเรื่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หัวใจค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;บริสุทธิ์ขึ้น<wbr>เหมือนกับนักปราชญ์เหล่านั้น&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่ดื่มด่ำอยู่กับรสแห่งการอุทิศตนเสียสละรับ<wbr>ใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยการสดับฟังและสวดภาวนาอย่างไม่รู้จักหยุดหย่อน&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ค่อยๆพัฒนารสชาติเช่นนี้&nbsp;&nbsp;และกล่าวดังนี้
+  </p>
+</div>
+
+<div class="r r-lang-en r-verse-text">
+<span class="slant iast">tatrānv-ahaṁ kṛṣṇa-kathāḥ pragāyatām<br /></span>
+<span class="slant pali">ตตฺรานฺวฺ-อหํ กฺฤษฺณ-กถาห์ ปฺรคายตามฺ<br /></span>
+<span class="slant thai">ตัตรานว-อะหัง กฤษณะ-กะถาห์ ประคายะตาม<br /></span>
+<span class="slant ram">ทะทรานวะฮัม คริชณะ-คะทฺาฮ พระกายะทาม<br /></span>
+<span class="slant iast">anugraheṇāśṛṇavaṁ mano-harāḥ<br /></span>
+<span class="slant pali">อนุคฺรเหณาศฺฤณวํ มโน-หราห์<br /></span>
+<span class="slant thai">อะนุคระเหณาศฤณะวัง มะโน-หะราห์<br /></span>
+<span class="slant ram">อนุกระเฮณาชริณะวัม มะโนฮะราฮ<br /></span>
+<span class="slant iast">tāḥ śraddhayā me ’nu-padaṁ viśṛṇvataḥ<br /></span>
+<span class="slant pali">ตาห์ ศฺรทฺธยา เม ’นุ-ปทํ วิศฺฤณฺวตห์<br /></span>
+<span class="slant thai">ตาห์ ศรัทธะยา เม ’นุ-ปะทัง วิศฤณวะตะห์<br /></span>
+<span class="slant ram">ทาฮ ชรัดดฺะยา เม นุพะดัม วิชริณวะทะฮ<br /></span>
+<span class="slant iast">priyaśravasy aṅga mamābhavad ruciḥ<br /></span>
+<span class="slant pali">ปฺริยศฺรวสฺยฺ องฺค มมาภวทฺ รุจิห์<br /></span>
+<span class="slant thai">ปริยัศระวัสย อังคะ มะมาภะวัท รุจิห์<br /></span>
+<span class="slant ram">พริยัชระวะสิ อังกะ มะมาบฺะวัด รุชิฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จากการคบหาสมาคมกับเหล่านักปราชญ์&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ได้รับรสในการสดับฟังและสวดภาวนา<wbr>พระบารมีขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และได้พัฒนาความปรารถนาอย่างยิ่งใหญ่ในการอุทิศตนเสีย<wbr>สละรับใช้&nbsp;&nbsp;ดังที่ได้อธิบายไว้ใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<i>ปฺรกาศศฺ&nbsp;&nbsp;จ&nbsp;&nbsp;กรฺมณฺยฺ&nbsp;&nbsp;อภฺยาสาตฺ</i>&nbsp;&nbsp;หาก<wbr>ผู้ใดเพียงแต่ปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ทุกสิ่งทุกอย่างจะถูกเปิดเผยขึ้นโดยปริยายและเขาจะสามารถเข้าใจ&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<i>ปฺรตฺยกฺษ</i>&nbsp;&nbsp;หรือสำเหนียกโดยตรง
+  จากการคบหาสมาคมกับเหล่านักปราชญ์&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ได้รับรสในการสดับฟังและสวดภาวนา<wbr>พระบารมีขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และได้พัฒนาความปรารถนาอย่างยิ่งใหญ่ในการอุทิศตนเสีย<wbr>สละรับใช้&nbsp;&nbsp;ดังที่ได้อธิบายไว้ใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<span class="slant iast">prakāśaś&nbsp;&nbsp;ca&nbsp;&nbsp;karmaṇy&nbsp;&nbsp;abhyāsāt</span><span class="slant pali">ปฺรกาศศฺจกรฺมณฺยฺอภฺยาสาตฺ</span><span class="slant thai">ประกาศัศจะกัรมัณยอัภยาสาต</span><span class="slant ram">zzzชะอับฺยาสาท</span>&nbsp;&nbsp;หาก<wbr>ผู้ใดเพียงแต่ปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ทุกสิ่งทุกอย่างจะถูกเปิดเผยขึ้นโดยปริยายและเขาจะสามารถเข้าใจ&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">pratyakṣa</span><span class="slant pali">ปฺรตฺยกฺษ</span><span class="slant thai">ปรัตยักษะ</span><span class="slant ram">พรัทยัคชะ</span>&nbsp;&nbsp;หรือสำเหนียกโดยตรง
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ธรฺมฺยมฺ</i>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;“วิถีทางแห่งศาสนา”&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;เป็นบุตร<wbr>ของคนรับใช้&nbsp;&nbsp;ไม่มีโอกาสไปโรงเรียน&nbsp;&nbsp;ท่านเพียงแต่ช่วยมารดา&nbsp;&nbsp;ด้วยความโชคดีที่มารดา<wbr>ถวายการรับใช้ต่อเหล่าสาวก&nbsp;&nbsp;เด็กน้อย&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;จึงได้รับโอกาสนี้&nbsp;&nbsp;จาการคบสมาคมนี้<wbr>ทำให้บรรลุถึงจุดมุ่งหมายสูงสุดของศาสนาทั้งหลาย&nbsp;&nbsp;จุดมุ่งหมายสูงสุดของศาสนา<wbr>ทั้งหมดคือการอุทิศเสียสละรับใช้ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ&nbsp;&nbsp;(ส&nbsp;&nbsp;ไว&nbsp;&nbsp;ปุํสาํ&nbsp;&nbsp;ปโร&nbsp;&nbsp;ธโรฺม&nbsp;&nbsp;ยโต&nbsp;&nbsp;ภกฺติรฺ&nbsp;&nbsp;อโธกฺษเช)</i>&nbsp;&nbsp;ผู้มีศาสนาโดยทั่วไปไม่รู้ว่าความสมบูรณ์สูงสุด<wbr>ของศาสนาคือบรรลุถึงการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลกสุดท้ายของ<wbr>บทที่แปดว่า&nbsp;&nbsp;<i>(เวเทษุ&nbsp;&nbsp;ยเชฺญษุ&nbsp;&nbsp;ตปฮสุ&nbsp;&nbsp;ไจว)</i>&nbsp;&nbsp;ความรู้พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;โดยทั่วไปจำเป็นต้องรู้แจ้ง<wbr>ตนเอง&nbsp;&nbsp;แต่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ถึงแม้ว่า&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;ไม่เคยไปโรงเรียนของพระอาจารย์ทิพย์&nbsp;&nbsp;และไม่ได้รับ<wbr>การศึกษาในหลักธรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ท่านได้รับผลประโยชน์สูงสุดในการศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;วิธีการนี้มีพลังอำนาจมากแม้จะไม่ได้ปฏิบัติตามวิธีการทางศาสนาอย่างสม่ำเสมอ&nbsp;&nbsp;ท่าน<wbr>ยังสามารถเจริญก้าวหน้าไปสู่ความสมบูรณ์สูงสุด&nbsp;&nbsp;เช่นนี้เป็นไปได้อย่างไร?&nbsp;&nbsp;วรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;<i>อาจารฺยวานฺ&nbsp;&nbsp;ปุรุโษ&nbsp;&nbsp;เวท</i>&nbsp;&nbsp;ผู้ที่คบหาสมาคมกับ&nbsp;&nbsp;<i>อาจารฺย</i>&nbsp;&nbsp;ผู้ยิ่งใหญ่ถึงแม้จะไม่ได้รับการศึกษาหรือไม่เคยศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เขาก็สามารถคุ้น<wbr>เคยกับความรู้ทั้งหมดเท่าที่จำเป็นเพื่อความรู้แจ้ง
+  คำว่า&nbsp;&nbsp;<span class="slant iast">dharmyam</span><span class="slant pali">ธรฺมฺยมฺ</span><span class="slant thai">ธัรมยัม</span><span class="slant ram">ดฺารมยัม</span>&nbsp;&nbsp;หมายความว่า&nbsp;&nbsp;“วิถีทางแห่งศาสนา”&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;เป็นบุตร<wbr>ของคนรับใช้&nbsp;&nbsp;ไม่มีโอกาสไปโรงเรียน&nbsp;&nbsp;ท่านเพียงแต่ช่วยมารดา&nbsp;&nbsp;ด้วยความโชคดีที่มารดา<wbr>ถวายการรับใช้ต่อเหล่าสาวก&nbsp;&nbsp;เด็กน้อย&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;จึงได้รับโอกาสนี้&nbsp;&nbsp;จาการคบสมาคมนี้<wbr>ทำให้บรรลุถึงจุดมุ่งหมายสูงสุดของศาสนาทั้งหลาย&nbsp;&nbsp;จุดมุ่งหมายสูงสุดของศาสนา<wbr>ทั้งหมดคือการอุทิศเสียสละรับใช้ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam&nbsp;&nbsp;(sa&nbsp;&nbsp;vai&nbsp;&nbsp;puṁsāṁ&nbsp;&nbsp;paro&nbsp;&nbsp;dharmo&nbsp;&nbsp;yato&nbsp;&nbsp;bhaktir&nbsp;&nbsp;adhokṣaje)</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺสไวปุํสำปโรธรฺโมยโตภกฺติรฺอโธกฺษเช)</span><span class="slant thai">ศรีมัท-ภาคะวะตัมสะไวปุงสางปะโรธัรโมยะโตภักติรอะโธกษะเช)</span><span class="slant ram">ชรีมัด-สะzzz)</span>&nbsp;&nbsp;ผู้มีศาสนาโดยทั่วไปไม่รู้ว่าความสมบูรณ์สูงสุด<wbr>ของศาสนาคือบรรลุถึงการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลกสุดท้ายของ<wbr>บทที่แปดว่า&nbsp;&nbsp;<span class="slant iast">(vedeṣu&nbsp;&nbsp;yajñeṣu&nbsp;&nbsp;tapaḥsu&nbsp;&nbsp;caiva)</span><span class="slant pali">(เวเทษุยชฺเญษุตปห์สุไจว)</span><span class="slant thai">(เวเทษุยัชเญษุตะปะห์สุไจวะ)</span><span class="slant ram">(เวเดชุยะกเยชุทะพะฮสุ)</span>&nbsp;&nbsp;ความรู้พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;โดยทั่วไปจำเป็นต้องรู้แจ้ง<wbr>ตนเอง&nbsp;&nbsp;แต่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ถึงแม้ว่า&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;ไม่เคยไปโรงเรียนของพระอาจารย์ทิพย์&nbsp;&nbsp;และไม่ได้รับ<wbr>การศึกษาในหลักธรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ท่านได้รับผลประโยชน์สูงสุดในการศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;วิธีการนี้มีพลังอำนาจมากแม้จะไม่ได้ปฏิบัติตามวิธีการทางศาสนาอย่างสม่ำเสมอ&nbsp;&nbsp;ท่าน<wbr>ยังสามารถเจริญก้าวหน้าไปสู่ความสมบูรณ์สูงสุด&nbsp;&nbsp;เช่นนี้เป็นไปได้อย่างไร?&nbsp;&nbsp;วรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่า&nbsp;&nbsp;<span class="slant iast">ācāryavān&nbsp;&nbsp;puruṣo&nbsp;&nbsp;veda</span><span class="slant pali">อาจารฺยวานฺปุรุโษเวท</span><span class="slant thai">อาจารยะวานปุรุโษเวทะ</span><span class="slant ram">zzzเวท</span>&nbsp;&nbsp;ผู้ที่คบหาสมาคมกับ&nbsp;&nbsp;<span class="slant iast">ācārya</span><span class="slant pali">อาจารฺย</span><span class="slant thai">อาจารยะ</span><span class="slant ram"></span>&nbsp;&nbsp;ผู้ยิ่งใหญ่ถึงแม้จะไม่ได้รับการศึกษาหรือไม่เคยศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เขาก็สามารถคุ้น<wbr>เคยกับความรู้ทั้งหมดเท่าที่จำเป็นเพื่อความรู้แจ้ง
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  วิธีแห่งการอุทิศตนเสียสละรับใช้เป็นวิธีที่มีความสุขมาก&nbsp;&nbsp;<i>(สุ-สุขมฺ)</i>&nbsp;&nbsp;เพราะเหตุ<wbr>ใด?&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ประกอบด้วย&nbsp;&nbsp;<i>ศฺรวณํ&nbsp;&nbsp;กีรฺตนํ&nbsp;&nbsp;วิโษฺณฮ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรา<wbr>เพียงแต่สดับฟังและสวดภาวนาพระบารมีขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือว่าไปสดับฟังปรัชญา<wbr>เกี่ยวกับความรู้ทิพย์ที่&nbsp;&nbsp;<i>อาจารฺย</i>&nbsp;&nbsp;ผู้เชื่อถือได้เป็นผู้ให้&nbsp;&nbsp;เพียงแต่นั่งลงเราสามารถเรียนรู้จากนั้นก็รับประทานอาหารอันเอร็ดอร่อยที่เหลือจากการถวายให้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;ใน<wbr>ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ระดับแห่งการอุทิศตนเสียสละรับใช้เป็นที่น่ารื่นรมย์&nbsp;&nbsp;เราสามารถปฏิบัติการอุทิศ<wbr>ตนเสียสละรับใช้แม้อยู่ในสภาวะที่ยากจนที่สุด&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;<i>ปตฺรํ&nbsp;&nbsp;ปุษฺปํ&nbsp;&nbsp;ผลํ&nbsp;&nbsp;โตยมฺ</i>&nbsp;&nbsp;พระองค์ทรงพร้อมที่จะรับการถวายทุกสิ่งทุกอย่างจากสาวกไม่ว่าจะเป็นอะไรแม้แต่ใบไม้&nbsp;&nbsp;ดอกไม้&nbsp;&nbsp;ผลไม้เพียงเล็กน้อย&nbsp;&nbsp;หรือน้ำเพียงนิดเดียวซึ่งมีอยู่ดาษดื่นทั่วไปใน<wbr>ส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของโลก&nbsp;&nbsp;สิ่งเหล่านี้ใครก็สามารถถวายให้ได้ไม่ว่าจะอยู่ในสภาวะสังคมเช่น<wbr>ไร&nbsp;&nbsp;พระองค์จะทรงรับไว้หากถวายด้วยใจรัก&nbsp;&nbsp;มีตัวอย่างมากมายในประวัติศาสตร์ว่าเพียงแต่ลิ้มรสใบทุละสีที่ถวายให้พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;นักปราชญ์<wbr>ผู้ยิ่งใหญ่&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>สนตฺ</i>&nbsp;&nbsp;-&nbsp;&nbsp;<i>กุมาร</i>&nbsp;&nbsp;ได้กลายมาเป็นสาวกผู้ยิ่งใหญ่&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;วิธีการอุทิศตน<wbr>เสียสละเป็นสิ่งที่ดีมาก&nbsp;&nbsp;และปฏิบัติได้ด้วยอารมณ์ที่มีความสุข&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะรับเฉพาะ<wbr>ความรักที่ถวายให้พระองค์พร้อมกับเครื่องถวาย
+  วิธีแห่งการอุทิศตนเสียสละรับใช้เป็นวิธีที่มีความสุขมาก&nbsp;&nbsp;<span class="slant iast">(su-sukham)</span><span class="slant pali">(สุ-สุขมฺ)</span><span class="slant thai">(สุ-สุขัม)</span><span class="slant ram">(-สุคัฺม)</span>&nbsp;&nbsp;เพราะเหตุ<wbr>ใด?&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ประกอบด้วย&nbsp;&nbsp;<span class="slant iast">śravaṇaṁ&nbsp;&nbsp;kīrtanaṁ&nbsp;&nbsp;viṣṇoḥ</span><span class="slant pali">ศฺรวณํกีรฺตนํวิษฺโณห์</span><span class="slant thai">ศระวะณังกีรตะนังวิษโณห์</span><span class="slant ram">ชระวะณัม คีรทะนัม วิชโณฮ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรา<wbr>เพียงแต่สดับฟังและสวดภาวนาพระบารมีขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือว่าไปสดับฟังปรัชญา<wbr>เกี่ยวกับความรู้ทิพย์ที่&nbsp;&nbsp;<span class="slant iast">ācārya</span><span class="slant pali">อาจารฺย</span><span class="slant thai">อาจารยะ</span><span class="slant ram"></span>&nbsp;&nbsp;ผู้เชื่อถือได้เป็นผู้ให้&nbsp;&nbsp;เพียงแต่นั่งลงเราสามารถเรียนรู้จากนั้นก็รับประทานอาหารอันเอร็ดอร่อยที่เหลือจากการถวายให้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;ใน<wbr>ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ระดับแห่งการอุทิศตนเสียสละรับใช้เป็นที่น่ารื่นรมย์&nbsp;&nbsp;เราสามารถปฏิบัติการอุทิศ<wbr>ตนเสียสละรับใช้แม้อยู่ในสภาวะที่ยากจนที่สุด&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;<span class="slant iast">patraṁ&nbsp;&nbsp;puṣpaṁ&nbsp;&nbsp;phalaṁ&nbsp;&nbsp;toyam</span><span class="slant pali">ปตฺรํปุษฺปํผลํโตยมฺ</span><span class="slant thai">ปัตรังปุษปังผะลังโตยัม</span><span class="slant ram">โทยัม</span>&nbsp;&nbsp;พระองค์ทรงพร้อมที่จะรับการถวายทุกสิ่งทุกอย่างจากสาวกไม่ว่าจะเป็นอะไรแม้แต่ใบไม้&nbsp;&nbsp;ดอกไม้&nbsp;&nbsp;ผลไม้เพียงเล็กน้อย&nbsp;&nbsp;หรือน้ำเพียงนิดเดียวซึ่งมีอยู่ดาษดื่นทั่วไปใน<wbr>ส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของโลก&nbsp;&nbsp;สิ่งเหล่านี้ใครก็สามารถถวายให้ได้ไม่ว่าจะอยู่ในสภาวะสังคมเช่น<wbr>ไร&nbsp;&nbsp;พระองค์จะทรงรับไว้หากถวายด้วยใจรัก&nbsp;&nbsp;มีตัวอย่างมากมายในประวัติศาสตร์ว่าเพียงแต่ลิ้มรสใบทุละสีที่ถวายให้พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;นักปราชญ์<wbr>ผู้ยิ่งใหญ่&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">sanat</span><span class="slant pali">สนตฺ</span><span class="slant thai">สะนัต</span><span class="slant ram">สะนัท</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="slant iast">kumāra</span><span class="slant pali">กุมาร</span><span class="slant thai">กุมาระ</span><span class="slant ram">คุมาระ</span>&nbsp;&nbsp;ได้กลายมาเป็นสาวกผู้ยิ่งใหญ่&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;วิธีการอุทิศตน<wbr>เสียสละเป็นสิ่งที่ดีมาก&nbsp;&nbsp;และปฏิบัติได้ด้วยอารมณ์ที่มีความสุข&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะรับเฉพาะ<wbr>ความรักที่ถวายให้พระองค์พร้อมกับเครื่องถวาย
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้เช่นนี้มีอยู่ชั่วกัลปวสานซึ่งไม่<wbr>เหมือนกับที่นักปราชญ์&nbsp;&nbsp;<i>มายาวาที</i>&nbsp;&nbsp;อ้าง&nbsp;&nbsp;แม้ว่าบางครั้งพวกนี้รับเอาสิ่งที่สมมติว่าเป็นการ<wbr>อุทิศตนเสียสละรับใช้มาปฏิบัติ&nbsp;&nbsp;แต่แนวความคิดคือตราบเท่าที่ยังไม่หลุดพ้นต้องอุทิศ<wbr>ตนเสียสละรับใช้ต่อไป&nbsp;&nbsp;เมื่อในที่สุดหลุดพ้นแล้วพวกเขา&nbsp;&nbsp;“จะกลายมาเป็นหนึ่งเดียวกับ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;”&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ชั่วครั้งชั่วคราวเช่นนี้ไม่ถือว่าเป็นการอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ที่แท้จริงจะทำอย่างต่อเนื่องแม้หลังจากได้<wbr>รับความหลุดพ้นแล้ว&nbsp;&nbsp;เมื่อสาวกไปยังดาวเคราะห์ทิพย์ในอาณาจักรขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก็ยัง<wbr>ปฏิบัติการรับใช้พระองค์อยู่ที่นั่น&nbsp;&nbsp;โดยมิบังอาจที่จะกลายมาเป็นหนึ่งเดียวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้เช่นนี้มีอยู่ชั่วกัลปวสานซึ่งไม่<wbr>เหมือนกับที่นักปราชญ์&nbsp;&nbsp;<span class="slant iast">māyāvādī</span><span class="slant pali">มายาวาที</span><span class="slant thai">มายาวาที</span><span class="slant ram">มายาวาดี</span>&nbsp;&nbsp;อ้าง&nbsp;&nbsp;แม้ว่าบางครั้งพวกนี้รับเอาสิ่งที่สมมติว่าเป็นการ<wbr>อุทิศตนเสียสละรับใช้มาปฏิบัติ&nbsp;&nbsp;แต่แนวความคิดคือตราบเท่าที่ยังไม่หลุดพ้นต้องอุทิศ<wbr>ตนเสียสละรับใช้ต่อไป&nbsp;&nbsp;เมื่อในที่สุดหลุดพ้นแล้วพวกเขา&nbsp;&nbsp;“จะกลายมาเป็นหนึ่งเดียวกับ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;”&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ชั่วครั้งชั่วคราวเช่นนี้ไม่ถือว่าเป็นการอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ที่แท้จริงจะทำอย่างต่อเนื่องแม้หลังจากได้<wbr>รับความหลุดพ้นแล้ว&nbsp;&nbsp;เมื่อสาวกไปยังดาวเคราะห์ทิพย์ในอาณาจักรขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก็ยัง<wbr>ปฏิบัติการรับใช้พระองค์อยู่ที่นั่น&nbsp;&nbsp;โดยมิบังอาจที่จะกลายมาเป็นหนึ่งเดียวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังจะได้เห็นใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ที่แท้จริงเริ่มต้น<wbr>หลังจากหลุดพ้นแล้ว&nbsp;&nbsp;หลังจากหลุดพ้นและสถิตในตำแหน่ง&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<i>(พฺรหฺม-ภูต)</i>&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้จึงเริ่มต้นขึ้น&nbsp;&nbsp;<i>(สมฮ&nbsp;&nbsp;สเรฺวษุ&nbsp;&nbsp;ภูเตษุ&nbsp;&nbsp;มทฺ-ภกฺติํ&nbsp;&nbsp;ลภเต&nbsp;&nbsp;ปรามฺ)</i>&nbsp;&nbsp;ไม่มีผู้ใดสามารถเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้ด้วยการปฏิบัติ&nbsp;&nbsp;<i>กรฺม-โยค,ชฺญาน-โยค,อษฺฏางฺค-โยค</i>&nbsp;&nbsp;หรือปฏิบัต&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;โดยเอกเทศ&nbsp;&nbsp;จากวิธี<wbr>&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ต่างๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;อาจเจริญขึ้นเล็กน้อยไปสู่&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;หากมาไม่ถึงระดับแห่งการ<wbr>อุทิศตนเสียสละรับใช้&nbsp;&nbsp;เขาจะไม่สามารถเข้าใจว่าบุคลิกภาพแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คืออะไรใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ได้ยืนยันไว้ว่า&nbsp;&nbsp;เมื่อได้รับความบริสุทธิ์จากการปฏิบัติตามวิธี<wbr>แห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;โดยเฉพาะจากการสดับฟัง&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จากดวงวิญญาณผู้รู้แจ้ง&nbsp;&nbsp;จึงสามารถเข้าใจศาสตร์แห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือ<wbr>ศาสตร์แห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>เอวํ&nbsp;&nbsp;ปฺรสนฺน-มนโส&nbsp;&nbsp;ภควทฺ-ภกฺติ-โยคตฮ</i>&nbsp;&nbsp;เมื่อ<wbr>หัวใจบริสุทธิ์ขึ้นจากสิ่งไร้สาระทั้งหลาย&nbsp;&nbsp;ผู้นั้นจึงสามารถเข้าใจว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คืออะไรดังนั้น&nbsp;&nbsp;วิธีแห่งการอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็นราชาหรือเจ้าแห่ง<wbr>การศึกษาทั้งปวง&nbsp;&nbsp;เป็นราชาแห่งความรู้ที่เป็นความลับทั้งหมด&nbsp;&nbsp;เป็นรูปแบบของศาสนา<wbr>ที่บริสุทธิ์ที่สุด&nbsp;&nbsp;และสามารถปฏิบัติได้ด้วยความรื่นเริงโดยไม่ยากลำบาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรา<wbr>จึงควรรับมาปฏิบัติ
+  ดังจะได้เห็นใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ที่แท้จริงเริ่มต้น<wbr>หลังจากหลุดพ้นแล้ว&nbsp;&nbsp;หลังจากหลุดพ้นและสถิตในตำแหน่ง&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<span class="slant iast">(brahma-bhūta)</span><span class="slant pali">(พฺรหฺม-ภูต)</span><span class="slant thai">(พรัหมะ-ภูตะ)</span><span class="slant ram">(บระฮมะ-บํูทะ)</span>&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้จึงเริ่มต้นขึ้น&nbsp;&nbsp;<span class="slant iast">(samaḥ&nbsp;&nbsp;sarveṣu&nbsp;&nbsp;bhūteṣu&nbsp;&nbsp;mad-bhaktiṁ&nbsp;&nbsp;labhate&nbsp;&nbsp;parām)</span><span class="slant pali">(สมห์สเรฺวษุภูเตษุมทฺ-ภกฺตึลภเตปรามฺ)</span><span class="slant thai">(สะมะห์สัรเวษุภูเตษุมัท-ภักติงละภะเตปะราม)</span><span class="slant ram">(สะมะฮสารเวชุบํูเทชุมัด-ละบะ เทพะราม)</span>&nbsp;&nbsp;ไม่มีผู้ใดสามารถเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้ด้วยการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">karma-yoga,&nbsp;&nbsp;jñāna-yoga,&nbsp;&nbsp;aṣṭāṅga-yoga</span><span class="slant pali">กรฺม-โยคชฺญาน-โยคอษฺฏางฺค-โยค</span><span class="slant thai">กัรมะ-โยคะชญานะ-โยคะอัษฏางคะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ,โยคะ,โยคกยานะ-โยกะ,โยคะ,โยค-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หรือปฏิบัต&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;โดยเอกเทศ&nbsp;&nbsp;จากวิธี<wbr>&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ต่างๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;อาจเจริญขึ้นเล็กน้อยไปสู่&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;หากมาไม่ถึงระดับแห่งการ<wbr>อุทิศตนเสียสละรับใช้&nbsp;&nbsp;เขาจะไม่สามารถเข้าใจว่าบุคลิกภาพแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คืออะไรใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ได้ยืนยันไว้ว่า&nbsp;&nbsp;เมื่อได้รับความบริสุทธิ์จากการปฏิบัติตามวิธี<wbr>แห่งการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;โดยเฉพาะจากการสดับฟัง&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จากดวงวิญญาณผู้รู้แจ้ง&nbsp;&nbsp;จึงสามารถเข้าใจศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือ<wbr>ศาสตร์แห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">evaṁ&nbsp;&nbsp;prasanna-manaso&nbsp;&nbsp;bhagavad-bhakti-yogataḥ</span><span class="slant pali">เอวํปฺรสนฺน-มนโสภควทฺ-ภกฺติ-โยคตห์</span><span class="slant thai">เอวังประสันนะ-มะนะโสภะคะวัท-ภักติ-โยคะตะห์</span><span class="slant ram">-บฺะกะวัด-บัฺคธิ,บัคฺธิ-</span>&nbsp;&nbsp;เมื่อ<wbr>หัวใจบริสุทธิ์ขึ้นจากสิ่งไร้สาระทั้งหลาย&nbsp;&nbsp;ผู้นั้นจึงสามารถเข้าใจว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คืออะไรดังนั้น&nbsp;&nbsp;วิธีแห่งการอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็นราชาหรือเจ้าแห่ง<wbr>การศึกษาทั้งปวง&nbsp;&nbsp;เป็นราชาแห่งความรู้ที่เป็นความลับทั้งหมด&nbsp;&nbsp;เป็นรูปแบบของศาสนา<wbr>ที่บริสุทธิ์ที่สุด&nbsp;&nbsp;และสามารถปฏิบัติได้ด้วยความรื่นเริงโดยไม่ยากลำบาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เรา<wbr>จึงควรรับมาปฏิบัติ
   </p>
 </div>
 

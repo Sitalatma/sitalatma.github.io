@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.9</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปุโณฺย คนฺธฮ ปฺฤตฺหิวฺยาํ จ</i><br /><i>เตชศฺ จาสฺมิ วิภาวสะอุ</i><br /><i>ชีวนํ สรฺว-ภูเตษุ</i><br /><i>ตปศฺ จาสฺมิ ตปสฺวิษุ</i>
+<span class="slant iast">puṇyo gandhaḥ pṛthivyāṁ ca<br /></span>
+<span class="slant pali">ปุโณฺย คนฺธห์ ปฺฤถิวฺยำ จ<br /></span>
+<span class="slant thai">ปุณโย คันธะห์ ปฤถิวยาง จะ<br /></span>
+<span class="slant ram">พุณโย กันดฺะฮ พริทิฺพยาม ชะ<br /></span>
+<span class="slant iast">tejaś cāsmi vibhāvasau<br /></span>
+<span class="slant pali">เตชศฺ จาสฺมิ วิภาวเสา<br /></span>
+<span class="slant thai">เตชัศ จาสมิ วิภาวะเสา<br /></span>
+<span class="slant ram">เทจัช ชาสมิ วิบฺาวะโสฺ<br /></span>
+<span class="slant iast">jīvanaṁ sarva-bhūteṣu<br /></span>
+<span class="slant pali">ชีวนํ สรฺว-ภูเตษุ<br /></span>
+<span class="slant thai">ชีวะนัง สัรวะ-ภูเตษุ<br /></span>
+<span class="slant ram">จีวะนัม สารวะ-บํูเทชุ<br /></span>
+<span class="slant iast">tapaś cāsmi tapasviṣu<br /></span>
+<span class="slant pali">ตปศฺ จาสฺมิ ตปสฺวิษุ<br /></span>
+<span class="slant thai">ตะปัศ จาสมิ ตะปัสวิษุ<br /></span>
+<span class="slant ram">ทะพัช ชาสมิ ทะพัสวิชฺุ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปุณฺยฮ</i> — เดิมแท้, <i>คนฺธฮ</i> — กลิ่น, <i>ปฺฤตฺหิวฺยามฺ</i> — ในดิน, <i>จ</i> — เช่นกัน,<i>เตชฮ</i> — ความร้อน, <i>จ</i> — เช่นกัน,<i>อสฺมิ</i> — ข้าเป็น, <i>วิภาวสะอุ</i> — ในไฟ, <i>ชีวนมฺ</i> — ชีวิต, <i>สรฺว</i> — ในทั้งหมด, <i>ภูเตษุ</i> — สิ่งมี ชีวิต, <i>ตปฮ</i> — การบำเพ็ญเพียร, <i>จ</i> — เช่นกัน, <i>อสฺมิ</i> — ข้าเป็น, <i>ตปสฺวิษุ</i> — ในพวกที่ปฏิบัติ การบำเพ็ญเพียร
+  <span class="slant iast">puṇyaḥ</span><span class="slant pali">ปุณฺยห์</span><span class="slant thai">ปุณยะห์</span><span class="slant ram">พุณยะฮ</span> — เดิมแท้, <span class="slant iast">gandhaḥ</span><span class="slant pali">คนฺธห์</span><span class="slant thai">คันธะห์</span><span class="slant ram">กันดฺะฮ</span> — กลิ่น, <span class="slant iast">pṛthivyām</span><span class="slant pali">ปฺฤถิวฺยามฺ</span><span class="slant thai">ปฤถิวยาม</span><span class="slant ram">พริทิฺพยาม</span> — ในดิน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน,<span class="slant iast">tejaḥ</span><span class="slant pali">เตชห์</span><span class="slant thai">เตชะห์</span><span class="slant ram">เทจะฮ</span> — ความร้อน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน,<span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">vibhāvasau</span><span class="slant pali">วิภาวเสา</span><span class="slant thai">วิภาวะเสา</span><span class="slant ram">วิบฺาวะโส</span> — ในไฟ, <span class="slant iast">jīvanam</span><span class="slant pali">ชีวนมฺ</span><span class="slant thai">ชีวะนัม</span><span class="slant ram">จีวะนัม</span> — ชีวิต, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ในทั้งหมด, <span class="slant iast">bhūteṣu</span><span class="slant pali">ภูเตษุ</span><span class="slant thai">ภูเตษุ</span><span class="slant ram">บํูเทชุ</span> — สิ่งมี ชีวิต, <span class="slant iast">tapaḥ</span><span class="slant pali">ตปห์</span><span class="slant thai">ตะปะห์</span><span class="slant ram">ทะพะฮ</span> — การบำเพ็ญเพียร, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">tapasviṣu</span><span class="slant pali">ตปสฺวิษุ</span><span class="slant thai">ตะปัสวิษุ</span><span class="slant ram">ทะพัสวิชุ</span> — ในพวกที่ปฏิบัติ การบำเพ็ญเพียร
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ปุณฺย</i>&nbsp;&nbsp;หมายความว่าสิ่งที่ไม่เน่าเปื่อย&nbsp;&nbsp;<i>ปุณฺย</i>&nbsp;&nbsp;เป็นสิ่งเดิมแท้&nbsp;&nbsp;ทุกสิ่งทุกอย่าง<wbr>ในโลกวัตถุนี้มีเชื้อกลิ่นหรือกลิ่นหอมโดยเฉพาะของมัน&nbsp;&nbsp;ดังเช่นเชื้อกลิ่นหอมในดอกไม้<wbr>หรือในดิน&nbsp;&nbsp;ในน้ำ&nbsp;&nbsp;ในไฟ&nbsp;&nbsp;ในลม&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;เชื้อกลิ่นที่บริสุทธิ์หรือกลิ่นเดิมแท้ที่ซึมซาบอยู่ในทุก<wbr>สิ่งทุกอย่างคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ทุกสิ่งทุกอย่างมีรสเดิมแท้โดยเฉพาะของมันรสนี้สามารถถูกเปลี่ยนแปลงได้ด้วยการผสมกับสารเคมี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทุกสิ่งทุกอย่างในสภาพ<wbr>เดิมแท้จะมีกลิ่น&nbsp;&nbsp;มีความหอม&nbsp;&nbsp;และมีรสของมัน&nbsp;&nbsp;<i>วิภาวสุ</i>&nbsp;&nbsp;หมายถึงไฟ&nbsp;&nbsp;หากปราศจากไฟโรงงานอุตสาหกรรมจะดำเนินงานไม่ได้&nbsp;&nbsp;และเราไม่สามารถปรุงอาหารได้เช่นกัน&nbsp;&nbsp;ฯลฯไฟนั้นคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ความร้อนในไฟก็คือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตามหลักเวชศาสตร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ท้อง<wbr>ผูกเนื่องมาจากอุณหภูมิในท้องต่ำ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แม้แต่การย่อยอาหารไฟยังเป็นสิ่งจำเป็นใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเราทราบดีว่าดิน&nbsp;&nbsp;น้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;ลม&nbsp;&nbsp;และสารที่มีฤทธิ์ทุกชนิด&nbsp;&nbsp;เคมีทั้งหมด&nbsp;&nbsp;และ<wbr>ธาตุวัตถุทั้งหมดเนื่องมาจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อายุขัยของชีวิตมนุษย์ก็เนื่องมาจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่น<wbr>เดียวกัน&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทำให้มนุษย์มีอายุยืนหรือายุสั้นได้&nbsp;&nbsp;ฉะนั้น<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงปรากฏอยู่ทุกหนทุกแห่ง
+  <span class="slant iast">puṇya</span><span class="slant pali">ปุณฺย</span><span class="slant thai">ปุณยะ</span><span class="slant ram">พุณยะ</span>&nbsp;&nbsp;หมายความว่าสิ่งที่ไม่เน่าเปื่อย&nbsp;&nbsp;<span class="slant iast">puṇya</span><span class="slant pali">ปุณฺย</span><span class="slant thai">ปุณยะ</span><span class="slant ram">พุณยะ</span>&nbsp;&nbsp;เป็นสิ่งเดิมแท้&nbsp;&nbsp;ทุกสิ่งทุกอย่าง<wbr>ในโลกวัตถุนี้มีเชื้อกลิ่นหรือกลิ่นหอมโดยเฉพาะของมัน&nbsp;&nbsp;ดังเช่นเชื้อกลิ่นหอมในดอกไม้<wbr>หรือในดิน&nbsp;&nbsp;ในน้ำ&nbsp;&nbsp;ในไฟ&nbsp;&nbsp;ในลม&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;เชื้อกลิ่นที่บริสุทธิ์หรือกลิ่นเดิมแท้ที่ซึมซาบอยู่ในทุก<wbr>สิ่งทุกอย่างคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ทุกสิ่งทุกอย่างมีรสเดิมแท้โดยเฉพาะของมันรสนี้สามารถถูกเปลี่ยนแปลงได้ด้วยการผสมกับสารเคมี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ทุกสิ่งทุกอย่างในสภาพ<wbr>เดิมแท้จะมีกลิ่น&nbsp;&nbsp;มีความหอม&nbsp;&nbsp;และมีรสของมัน&nbsp;&nbsp;<span class="slant iast">vibhāvasu</span><span class="slant pali">วิภาวสุ</span><span class="slant thai">วิภาวะสุ</span><span class="slant ram">วิบฺาวะสุ</span>&nbsp;&nbsp;หมายถึงไฟ&nbsp;&nbsp;หากปราศจากไฟโรงงานอุตสาหกรรมจะดำเนินงานไม่ได้&nbsp;&nbsp;และเราไม่สามารถปรุงอาหารได้เช่นกัน&nbsp;&nbsp;ฯลฯไฟนั้นคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ความร้อนในไฟก็คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตามหลักเวชศาสตร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ท้อง<wbr>ผูกเนื่องมาจากอุณหภูมิในท้องต่ำ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แม้แต่การย่อยอาหารไฟยังเป็นสิ่งจำเป็นใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเราทราบดีว่าดิน&nbsp;&nbsp;น้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;ลม&nbsp;&nbsp;และสารที่มีฤทธิ์ทุกชนิด&nbsp;&nbsp;เคมีทั้งหมด&nbsp;&nbsp;และ<wbr>ธาตุวัตถุทั้งหมดเนื่องมาจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อายุขัยของชีวิตมนุษย์ก็เนื่องมาจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่น<wbr>เดียวกัน&nbsp;&nbsp;ด้วยพระกรุณาธิคุณของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทำให้มนุษย์มีอายุยืนหรือายุสั้นได้&nbsp;&nbsp;ฉะนั้น<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงปรากฏอยู่ทุกหนทุกแห่ง
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.42</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อินฺทฺริยาณิ ปราณฺยฺ อาหุรฺ</i><br /><i>อินฺทฺริเยภฺยฮ ปรํ มนฮ</i><br /><i>มนสสฺ ตุ ปรา พุทฺธิรฺ</i><br /><i>โย พุเทฺธฮ ปรตสฺ ตุ สฮ</i>
+<span class="slant iast">indriyāṇi parāṇy āhur<br /></span>
+<span class="slant pali">อินฺทฺริยาณิ ปราณฺยฺ อาหุรฺ<br /></span>
+<span class="slant thai">อินทริยาณิ ปะราณย อาหุร<br /></span>
+<span class="slant ram">อินดริยาณิ พะราณิ อาฮุร<br /></span>
+<span class="slant iast">indriyebhyaḥ paraṁ manaḥ<br /></span>
+<span class="slant pali">อินฺทฺริเยภฺยห์ ปรํ มนห์<br /></span>
+<span class="slant thai">อินทริเยภยะห์ ปะรัง มะนะห์<br /></span>
+<span class="slant ram">อินดริเยบฺยะฮ พะรัม มะนะฮ<br /></span>
+<span class="slant iast">manasas tu parā buddhir<br /></span>
+<span class="slant pali">มนสสฺ ตุ ปรา พุทฺธิรฺ<br /></span>
+<span class="slant thai">มะนะสัส ตุ ปะรา พุทธิร<br /></span>
+<span class="slant ram">มะนะสัส ทุ พะรา บุดดฺิร<br /></span>
+<span class="slant iast">yo buddheḥ paratas tu saḥ<br /></span>
+<span class="slant pali">โย พุทฺเธห์ ปรตสฺ ตุ สห์<br /></span>
+<span class="slant thai">โย พุทเธห์ ปะระตัส ตุ สะห์<br /></span>
+<span class="slant ram">โย บุดเดฺฮ พะระทัส ทุ สะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อินฺทฺริยาณิ</i> — ประสาทสัมผัส, <i>ปราณิ</i> — สูงกว่า, <i>อาหุฮ</i> — ได้กล่าวไว้, <i>อินฺทฺริเยภฺยฮ</i> — มากกว่าประสาทสัมผัส, <i>ปรมฺ</i> — เหนือกว่า, <i>มนฮ</i> — จิตใจ, <i>มนสฮ</i> — มากกว่าจิตใจ, <i>ตุ</i> — เช่นเดียวกัน, <i>ปรา</i> — เหนือกว่า, <i>พุทฺธิฮ</i> — ปัญญา, <i>ยฮ</i> — ใคร, <i>พุเทฺธฮ</i> — มากกว่าปัญญา, <i>ปรตฮ</i> — เหนือกว่า, <i>ตุ</i> — แต่, <i>สฮ</i> — เขา
+  <span class="slant iast">indriyāṇi</span><span class="slant pali">อินฺทฺริยาณิ</span><span class="slant thai">อินทริยาณิ</span><span class="slant ram">อินดริยาณิ</span> — ประสาทสัมผัส, <span class="slant iast">parāṇi</span><span class="slant pali">ปราณิ</span><span class="slant thai">ปะราณิ</span><span class="slant ram">พะราณิ</span> — สูงกว่า, <span class="slant iast">āhuḥ</span><span class="slant pali">อาหุห์</span><span class="slant thai">อาหุห์</span><span class="slant ram">อาฮุร</span> — ได้กล่าวไว้, <span class="slant iast">indriyebhyaḥ</span><span class="slant pali">อินฺทฺริเยภฺยห์</span><span class="slant thai">อินทริเยภยะห์</span><span class="slant ram">อินดริเยบฺยะฮ</span> — มากกว่าประสาทสัมผัส, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — เหนือกว่า, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — จิตใจ, <span class="slant iast">manasaḥ</span><span class="slant pali">มนสห์</span><span class="slant thai">มะนะสะห์</span><span class="slant ram">มะนะสะฮ</span> — มากกว่าจิตใจ, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — เช่นเดียวกัน, <span class="slant iast">parā</span><span class="slant pali">ปรา</span><span class="slant thai">ปะรา</span><span class="slant ram">พะรา</span> — เหนือกว่า, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ใคร, <span class="slant iast">buddheḥ</span><span class="slant pali">พุทฺเธห์</span><span class="slant thai">พุทเธห์</span><span class="slant ram">บุดเดฺฮ</span> — มากกว่าปัญญา, <span class="slant iast">parataḥ</span><span class="slant pali">ปรตห์</span><span class="slant thai">ปะระตะห์</span><span class="slant ram">พะระทะฮ</span> — เหนือกว่า, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ประสาทสัมผัสเป็นทางออกให้กิจกรรมของราคะ&nbsp;&nbsp;ราคะสงบนิ่งอยู่ภายใน<wbr>ร่างกายแต่ได้รับการระบายออกผ่านทางประสาทสัมผัส&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประสาทสัมผัสจึง<wbr>เหนือกว่าร่างกายทั้งร่าง&nbsp;&nbsp;ทางออกเหล่านี้ไม่ได้ใช้เมื่อมีจิตสำนึกที่สูงกว่าหรือมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกดวงวิญญาณจะเชื่อมสัมพันธ์โดยตรงกับบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ลำดับชั้นตามหน้าที่ของร่างกายจะมาจบลงที่องค์อภิวิญญาณกิจกรรมของร่างกายหมายถึงหน้าที่ของประสาทสัมผัส&nbsp;&nbsp;และการหยุดประสาทสัมผัส<wbr>หมายถึงการหยุดทำงานของร่างกายทั้งหมด&nbsp;&nbsp;แต่เนื่องจากจิตใจไม่เคยหยุดนิ่ง&nbsp;&nbsp;ถึง<wbr>แม้ว่าร่างกายอาจจะนิ่งสงบและพักผ่อนแต่จิตใจยังคงทำงานต่อไป&nbsp;&nbsp;ดังเช่นขณะที่เรา<wbr>ฝัน&nbsp;&nbsp;แต่เหนือไปกว่าจิตใจคือการตัดสินใจของปัญญา&nbsp;&nbsp;และเหนือไปกว่าปัญญาคือดวง<wbr>วิญญาณ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ถ้าหากดวงวิญญาณปฏิบัติงานกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ตามธรรมชาติ<wbr>ส่วนที่รองลงมาทั้งหมด&nbsp;&nbsp;เช่น&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และประสาทสัมผัสก็จะร่วมปฏิบัติงานโดย<wbr>ปริยาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;มีข้อความคล้าย&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันซึ่งกล่าวไว้ว่า&nbsp;&nbsp;อายตนะภายนอก<wbr>เพื่อสนองประสาทสัมผัสเหนือกว่าประสาทสัมผัส&nbsp;&nbsp;และจิตใจเหนือกว่าอายตนะภายนอกฉะนั้น&nbsp;&nbsp;หากจิตใจปฏิบัติงานโดยตรงในการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อยู่เสมอจะไม่เปิดโอกาสให้<wbr>ประสาทสัมผัสถูกใช้ไปในทางอื่น&nbsp;&nbsp;ท่าทีของจิตใจเช่นนี้ได้อธิบายไว้แล้ว&nbsp;&nbsp;<i>ปรํ&nbsp;&nbsp;ทฺฤษฺฏฺวา&nbsp;&nbsp;นิวรฺตเต</i>&nbsp;&nbsp;หากจิตใจถูกใช้ไปในการรับใช้ทิพย์แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะไม่เปิดโอกาสให้มันไป<wbr>รับใช้นิสัยที่ต่ำกว่า&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;ได้อธิบายดวงวิญญาณว่า&nbsp;&nbsp;<i>มหานฺ</i>&nbsp;&nbsp;หรือยิ่งใหญ่ดังนั้นดวงวิญญาณอยู่เหนือสิ่งอื่นใดทั้งหมด&nbsp;&nbsp;เช่น&nbsp;&nbsp;อายตนะภายนอก&nbsp;&nbsp;อายตนะภายในหรือ<wbr>ประสาทสัมผัส&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การเข้าใจสถานภาพพื้นฐานอันแท้จริงโดยตรง<wbr>ของดวงวิญญาณคือคำตอบของปัญหาทั้งปวง
+  ประสาทสัมผัสเป็นทางออกให้กิจกรรมของราคะ&nbsp;&nbsp;ราคะสงบนิ่งอยู่ภายใน<wbr>ร่างกายแต่ได้รับการระบายออกผ่านทางประสาทสัมผัส&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประสาทสัมผัสจึง<wbr>เหนือกว่าร่างกายทั้งร่าง&nbsp;&nbsp;ทางออกเหล่านี้ไม่ได้ใช้เมื่อมีจิตสำนึกที่สูงกว่าหรือมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกดวงวิญญาณจะเชื่อมสัมพันธ์โดยตรงกับบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ลำดับชั้นตามหน้าที่ของร่างกายจะมาจบลงที่องค์อภิวิญญาณกิจกรรมของร่างกายหมายถึงหน้าที่ของประสาทสัมผัส&nbsp;&nbsp;และการหยุดประสาทสัมผัส<wbr>หมายถึงการหยุดทำงานของร่างกายทั้งหมด&nbsp;&nbsp;แต่เนื่องจากจิตใจไม่เคยหยุดนิ่ง&nbsp;&nbsp;ถึง<wbr>แม้ว่าร่างกายอาจจะนิ่งสงบและพักผ่อนแต่จิตใจยังคงทำงานต่อไป&nbsp;&nbsp;ดังเช่นขณะที่เรา<wbr>ฝัน&nbsp;&nbsp;แต่เหนือไปกว่าจิตใจคือการตัดสินใจของปัญญา&nbsp;&nbsp;และเหนือไปกว่าปัญญาคือดวง<wbr>วิญญาณ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ถ้าหากดวงวิญญาณปฏิบัติงานกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;ตามธรรมชาติ<wbr>ส่วนที่รองลงมาทั้งหมด&nbsp;&nbsp;เช่น&nbsp;&nbsp;ปัญญา&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และประสาทสัมผัสก็จะร่วมปฏิบัติงานโดย<wbr>ปริยาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;มีข้อความคล้าย&nbsp;&nbsp;ๆ&nbsp;&nbsp;กันซึ่งกล่าวไว้ว่า&nbsp;&nbsp;อายตนะภายนอก<wbr>เพื่อสนองประสาทสัมผัสเหนือกว่าประสาทสัมผัส&nbsp;&nbsp;และจิตใจเหนือกว่าอายตนะภายนอกฉะนั้น&nbsp;&nbsp;หากจิตใจปฏิบัติงานโดยตรงในการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อยู่เสมอจะไม่เปิดโอกาสให้<wbr>ประสาทสัมผัสถูกใช้ไปในทางอื่น&nbsp;&nbsp;ท่าทีของจิตใจเช่นนี้ได้อธิบายไว้แล้ว&nbsp;&nbsp;<span class="slant iast">paraṁ&nbsp;&nbsp;dṛṣṭvā&nbsp;&nbsp;nivartate</span><span class="slant pali">ปรํทฺฤษฺฏฺวานิวรฺตเต</span><span class="slant thai">ปะรังทฤษฏวานิวัรตะเต</span><span class="slant ram">พะรัม ดริชทวา นิวารทะเท</span>&nbsp;&nbsp;หากจิตใจถูกใช้ไปในการรับใช้ทิพย์แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะไม่เปิดโอกาสให้มันไป<wbr>รับใช้นิสัยที่ต่ำกว่า&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;ได้อธิบายดวงวิญญาณว่า&nbsp;&nbsp;<span class="slant iast">mahān</span><span class="slant pali">มหานฺ</span><span class="slant thai">มะหาน</span><span class="slant ram">มะฮาน</span>&nbsp;&nbsp;หรือยิ่งใหญ่ดังนั้นดวงวิญญาณอยู่เหนือสิ่งอื่นใดทั้งหมด&nbsp;&nbsp;เช่น&nbsp;&nbsp;อายตนะภายนอก&nbsp;&nbsp;อายตนะภายในหรือ<wbr>ประสาทสัมผัส&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และปัญญา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การเข้าใจสถานภาพพื้นฐานอันแท้จริงโดยตรง<wbr>ของดวงวิญญาณคือคำตอบของปัญหาทั้งปวง
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ด้วยสติปัญญาเราจะต้องค้นหาสถานภาพพื้นฐานอันแท้จริงของดวงวิญญาณ<wbr>และให้จิตใจทำงานใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอยู่เสมอซึ่งจะแก้ไขปัญหาทั้งหมด&nbsp;&nbsp;ผู้ปฏิบัติเริ่ม<wbr>แรกจะได้รับคำแนะนำให้อยู่ห่างจากอายตนะภายนอก&nbsp;&nbsp;นอกจากนี้ยังต้องฝึกจิตใจให้<wbr>เข้มแข็งด้วยการใช้สติปัญญา&nbsp;&nbsp;และด้วยสติปัญญาเราใช้จิตใจของเราปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;จากการศิโรราบอย่างสมบูรณ์แด่บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;จิตใจจะเข้ม<wbr>แข็งขึ้นโดยปริยาย&nbsp;&nbsp;ถึงแม้ว่าประสาทสัมผัสจะร้ายกาจมากเหมือนกับงูพิษ&nbsp;&nbsp;แต่จะกลาย<wbr>มาเป็นงูพิษที่ปราศจากเขี้ยว&nbsp;&nbsp;แม้ว่าดวงวิญญาณเป็นนายของปัญญา&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;รวมทั้ง<wbr>ประสาทสัมผัส&nbsp;&nbsp;ถึงกระนั้นดวงวิญญาณจะยังต้องได้รับการฝึกฝนให้เข้มแข็งด้วยการมา<wbr>คบหาสมาคมกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;จะมีโอกาสตกต่ำลงอันเนื่องมา<wbr>จากจิตใจที่หวั่นไหว
+  ด้วยสติปัญญาเราจะต้องค้นหาสถานภาพพื้นฐานอันแท้จริงของดวงวิญญาณ<wbr>และให้จิตใจทำงานใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอยู่เสมอซึ่งจะแก้ไขปัญหาทั้งหมด&nbsp;&nbsp;ผู้ปฏิบัติเริ่ม<wbr>แรกจะได้รับคำแนะนำให้อยู่ห่างจากอายตนะภายนอก&nbsp;&nbsp;นอกจากนี้ยังต้องฝึกจิตใจให้<wbr>เข้มแข็งด้วยการใช้สติปัญญา&nbsp;&nbsp;และด้วยสติปัญญาเราใช้จิตใจของเราปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;จากการศิโรราบอย่างสมบูรณ์แด่บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;จิตใจจะเข้ม<wbr>แข็งขึ้นโดยปริยาย&nbsp;&nbsp;ถึงแม้ว่าประสาทสัมผัสจะร้ายกาจมากเหมือนกับงูพิษ&nbsp;&nbsp;แต่จะกลาย<wbr>มาเป็นงูพิษที่ปราศจากเขี้ยว&nbsp;&nbsp;แม้ว่าดวงวิญญาณเป็นนายของปัญญา&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;รวมทั้ง<wbr>ประสาทสัมผัส&nbsp;&nbsp;ถึงกระนั้นดวงวิญญาณจะยังต้องได้รับการฝึกฝนให้เข้มแข็งด้วยการมา<wbr>คบหาสมาคมกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;จะมีโอกาสตกต่ำลงอันเนื่องมา<wbr>จากจิตใจที่หวั่นไหว
   </p>
 </div>
 

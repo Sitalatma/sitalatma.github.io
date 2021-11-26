@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยุญฺชนฺนฺ เอวํ สทาตฺมานํ</i><br /><i>โยคี นิยต-มานสฮ</i><br /><i>ศานฺติํ นิรฺวาณ-ปรมาํ</i><br /><i>มตฺ-สํสฺตฺหามฺ อธิคจฺฉติ</i>
+<span class="slant iast">yuñjann evaṁ sadātmānaṁ<br /></span>
+<span class="slant pali">ยุญฺชนฺนฺ เอวํ สทาตฺมานํ<br /></span>
+<span class="slant thai">ยุญชันน เอวัง สะทาตมานัง<br /></span>
+<span class="slant ram">ยุนจันน เอวัม สะดาทมานัม<br /></span>
+<span class="slant iast">yogī niyata-mānasaḥ<br /></span>
+<span class="slant pali">โยคี นิยต-มานสห์<br /></span>
+<span class="slant thai">โยคี นิยะตะ-มานะสะห์<br /></span>
+<span class="slant ram">โยกี นิยะทะ-มานะสะฮ<br /></span>
+<span class="slant iast">śāntiṁ nirvāṇa-paramāṁ<br /></span>
+<span class="slant pali">ศานฺตึ นิรฺวาณ-ปรมำ<br /></span>
+<span class="slant thai">ศานติง นิรวาณะ-ปะระมาง<br /></span>
+<span class="slant ram">ชานทิม นิรวารณะ-พะระมาม<br /></span>
+<span class="slant iast">mat-saṁsthām adhigacchati<br /></span>
+<span class="slant pali">มตฺ-สํสฺถามฺ อธิคจฺฉติ<br /></span>
+<span class="slant thai">มัต-สังสถาม อะธิคัจฉะติ<br /></span>
+<span class="slant ram">มัท-สัมสทฺาม อดิฺกัชชฺะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยุญฺชนฺ</i> — ปฏิบัติ, <i>เอวมฺ</i> — ดังที่ได้กล่าวมาแล้ว, <i>สทา</i> — อยู่เสมอ, <i>อาตฺมานมฺ</i> — ร่างกายจิตใจ และวิญญาณ, <i>โยคี</i> — นักทิพย์นิยมผู้มีฤทธิ์, <i>นิยต-มานสฮ</i> — ด้วยจิตใจที่ประมาณได้, <i>ศานฺติมฺ</i> — ความสงบ, <i>นิรฺวาณ-ปรมามฺ</i> — หยุดความเป็นอยู่ทางวัตถุ, <i>มตฺ-สํสฺตฺหามฺ</i> — ท้องฟ้าทิพย์ (อาณาจักรแห่งองค์ภควาน), <i>อธิคจฺฉติ</i> — บรรลุ
+  <span class="slant iast">yuñjan</span><span class="slant pali">ยุญฺชนฺ</span><span class="slant thai">ยุญชัน</span><span class="slant ram">ยุนจัน</span> — ปฏิบัติ, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังที่ได้กล่าวมาแล้ว, <span class="slant iast">sadā</span><span class="slant pali">สทา</span><span class="slant thai">สะทา</span><span class="slant ram">สะดา</span> — อยู่เสมอ, <span class="slant iast">ātmānam</span><span class="slant pali">อาตฺมานมฺ</span><span class="slant thai">อาตมานัม</span><span class="slant ram">อาทมานัม</span> — ร่างกายจิตใจ และวิญญาณ, <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span> — นักทิพย์นิยมผู้มีฤทธิ์, <span class="slant iast">niyata-mānasaḥ</span><span class="slant pali">นิยต-มานสห์</span><span class="slant thai">นิยะตะ-มานะสะห์</span><span class="slant ram">นิยะทะ-มานะสะฮ</span> — ด้วยจิตใจที่ประมาณได้, <span class="slant iast">śāntim</span><span class="slant pali">ศานฺติมฺ</span><span class="slant thai">ศานติม</span><span class="slant ram">ชานทิม</span> — ความสงบ, <span class="slant iast">nirvāṇa-paramām</span><span class="slant pali">นิรฺวาณ-ปรมามฺ</span><span class="slant thai">นิรวาณะ-ปะระมาม</span><span class="slant ram">นิวาณะ-พะระมาม</span> — หยุดความเป็นอยู่ทางวัตถุ, <span class="slant iast">mat-saṁsthām</span><span class="slant pali">มตฺ-สํสฺถามฺ</span><span class="slant thai">มัต-สังสถาม</span><span class="slant ram">มัท-สัมสทฺาม</span> — ท้องฟ้าทิพย์ (อาณาจักรแห่งองค์ภควาน), <span class="slant iast">adhigacchati</span><span class="slant pali">อธิคจฺฉติ</span><span class="slant thai">อะธิคัจฉะติ</span><span class="slant ram">อดิฺกัชชฺะทิ</span> — บรรลุ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  จากการฝึกปฏิบัติการควบคุมร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และกิจกรรมอยู่เสมอ&nbsp;&nbsp;นักทิพย์นิยมผู้มีฤทธิ์สามารถประมาณจิตใจของตนเองได้&nbsp;&nbsp;และบรรลุถึงอาณาจักรแห่งองค์ภควาน&nbsp;&nbsp;(หรือพระตำหนักของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ด้วยการยุติความเป็นอยู่ทางวัตถุ
+  จากการฝึกปฏิบัติการควบคุมร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และกิจกรรมอยู่เสมอ&nbsp;&nbsp;นักทิพย์นิยมผู้มีฤทธิ์สามารถประมาณจิตใจของตนเองได้&nbsp;&nbsp;และบรรลุถึงอาณาจักรแห่งองค์ภควาน&nbsp;&nbsp;(หรือพระตำหนักของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ด้วยการยุติความเป็นอยู่ทางวัตถุ
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จุดมุ่งหมายสูงสุดในการฝึกปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ได้อธิบายอย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;การ<wbr>ฝึกปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;มิใช่เพื่อบรรลุผลประโยชน์ทางวัตถุใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่เพื่อให้สามารถหยุดความ<wbr>เป็นอยู่ทางวัตถุทั้งปวง&nbsp;&nbsp;ผู้ที่แสวงหาการพัฒนาสุขภาพหรือมุ่งหวังความสมบูรณ์ทาง<wbr>วัตถุไม่ใช่&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ตาม&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;การหยุดความเป็นอยู่ทางวัตถุก็มิใช่การนำให้เข้าไปสู่“ความว่างเปล่า”&nbsp;&nbsp;ซึ่งเป็นเพียงความเร้นลับเท่านั้น&nbsp;&nbsp;ไม่มีความว่างเปล่า&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่ใด&nbsp;&nbsp;ภายใน<wbr>การสร้างขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่การหยุดความเป็นอยู่ทางวัตถุจะนำให้เข้าไปสู่ท้องฟ้า<wbr>ทิพย์พระตำหนักขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระตำหนักขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้อธิบายไว้อย่างชัดเจน<wbr>ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เช่นกันว่าเป็นสถานที่ที่ไม่จำเป็นต้องมีดวงอาทิตย์&nbsp;&nbsp;ดวงจันทร์&nbsp;&nbsp;หรือไฟฟ้าดาวเคราะห์ทั้งหลายในอาณาจักรทิพย์มีรัศมีในตัวเอง&nbsp;&nbsp;เหมือนดวงอาทิตย์ในท้องฟ้า<wbr>วัตถุ&nbsp;&nbsp;อาณาจักรขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะอยู่ทุกหนทุกแห่ง&nbsp;&nbsp;แต่ท้องฟ้าทิพย์และดาวเคราะห์ที่<wbr>นั่นเรียกว่า&nbsp;&nbsp;<i>ปรํ&nbsp;&nbsp;ธาม</i>&nbsp;&nbsp;หรือที่พำนักพักพิงที่สูงกว่า
+  จุดมุ่งหมายสูงสุดในการฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ได้อธิบายอย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;การ<wbr>ฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;มิใช่เพื่อบรรลุผลประโยชน์ทางวัตถุใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่เพื่อให้สามารถหยุดความ<wbr>เป็นอยู่ทางวัตถุทั้งปวง&nbsp;&nbsp;ผู้ที่แสวงหาการพัฒนาสุขภาพหรือมุ่งหวังความสมบูรณ์ทาง<wbr>วัตถุไม่ใช่&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ตาม&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;การหยุดความเป็นอยู่ทางวัตถุก็มิใช่การนำให้เข้าไปสู่“ความว่างเปล่า”&nbsp;&nbsp;ซึ่งเป็นเพียงความเร้นลับเท่านั้น&nbsp;&nbsp;ไม่มีความว่างเปล่า&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่ใด&nbsp;&nbsp;ภายใน<wbr>การสร้างขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่การหยุดความเป็นอยู่ทางวัตถุจะนำให้เข้าไปสู่ท้องฟ้า<wbr>ทิพย์พระตำหนักขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระตำหนักขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้อธิบายไว้อย่างชัดเจน<wbr>ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เช่นกันว่าเป็นสถานที่ที่ไม่จำเป็นต้องมีดวงอาทิตย์&nbsp;&nbsp;ดวงจันทร์&nbsp;&nbsp;หรือไฟฟ้าดาวเคราะห์ทั้งหลายในอาณาจักรทิพย์มีรัศมีในตัวเอง&nbsp;&nbsp;เหมือนดวงอาทิตย์ในท้องฟ้า<wbr>วัตถุ&nbsp;&nbsp;อาณาจักรขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะอยู่ทุกหนทุกแห่ง&nbsp;&nbsp;แต่ท้องฟ้าทิพย์และดาวเคราะห์ที่<wbr>นั่นเรียกว่า&nbsp;&nbsp;<span class="slant iast">paraṁ&nbsp;&nbsp;dhāma</span><span class="slant pali">ปรํธาม</span><span class="slant thai">ปะรังธามะ</span><span class="slant ram">ดฺามะ</span>&nbsp;&nbsp;หรือที่พำนักพักพิงที่สูงกว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>โยค</i>&nbsp;&nbsp;ผู้สำเร็จเข้าใจองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อย่างสมบูรณ์ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่<wbr>นี้โดยองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เองว่า&nbsp;&nbsp;(<i>มตฺ-จิตฺตฮ,มตฺ-ปรฮ,มตฺ-สฺตฺหานมฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;เขาสามารถได้รับ<wbr>ความสงบอย่างแท้จริงและในที่สุดสามารถบรรลุถึงพระตำหนักสูงสุดขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;มีนามว่า&nbsp;&nbsp;<i>โคโลก&nbsp;&nbsp;วฺฤนฺทาวน</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.37&nbsp;&nbsp;)ได้กล่าวไว้<wbr>อย่างชัดเจนว่า&nbsp;&nbsp;<i>โคโลก&nbsp;&nbsp;เอว&nbsp;&nbsp;นิวสตฺยฺ&nbsp;&nbsp;อขิลาตฺม-ภูตฮ</i>&nbsp;&nbsp;ถึงแม้ว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรง<wbr>ประทับอยู่ที่พระตำหนัก&nbsp;&nbsp;<i>ส&nbsp;&nbsp;ไว&nbsp;&nbsp;มนฮ&nbsp;&nbsp;กฺฤษฺณ-ปทารวินฺทโยฮ</i>&nbsp;&nbsp;ของพระองค์อยู่เสมอ&nbsp;&nbsp;แต่พระองค์ทรงเป็น&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ที่แผ่กระจายไปทั่ว&nbsp;&nbsp;และทรงเป็น&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ผู้ทรงประทับอยู่ในทุกร่างเช่นกันด้วย<wbr>พลังงานทิพย์ที่สูงกว่าของพระองค์&nbsp;&nbsp;ไม่มีใครสามารถบรรลุถึงท้องฟ้าทิพย์&nbsp;&nbsp;(<i>ไวกุณฺฐ</i>&nbsp;&nbsp;)หรือเข้าไปในพระตำหนักอมตะของพระองค์&nbsp;&nbsp;(<i>โคโลก&nbsp;&nbsp;วฺฤนฺทาวน</i>&nbsp;&nbsp;)&nbsp;&nbsp;ได้&nbsp;&nbsp;โดยปราศจาก<wbr>ความเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และอวตารในรูป&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;ของพระองค์อย่างถูกต้อง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บุคคลผู้ทำ<wbr>งานใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่สมบูรณ์&nbsp;&nbsp;เพราะว่าจิตใจของเขาซึบซาบอยู่ในกิจ<wbr>กรรมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;(<i>ส&nbsp;&nbsp;ไว&nbsp;&nbsp;มนฮ&nbsp;&nbsp;กฺฤษฺณ-ปทารวินฺทโยฮ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;3.8&nbsp;&nbsp;)&nbsp;&nbsp;เราได้เรียนรู้เช่นกันว่า&nbsp;&nbsp;<i>ตมฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;วิทิตฺวาติ&nbsp;&nbsp;มฺฤตฺยุมฺ&nbsp;&nbsp;เอติ</i>&nbsp;&nbsp;“เขาสามารถข้ามพ้นวิถีแห่งการเกิดและการตายด้วยการเข้าใจบุคลิกภาพสูงสุดแห่ง<wbr>พระเจ้า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้น”&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;ความสมบูรณ์ของระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;คือบรรลุถึง<wbr>เสรีภาพจากความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;ไม่ใช่&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;กล&nbsp;&nbsp;หรือการแสดงท่ากายกรรมเพื่อหลอก<wbr>ลวงประชาชนผู้พาซื่อ
+  <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ผู้สำเร็จเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อย่างสมบูรณ์ได้กล่าวไว้อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่<wbr>นี้โดยองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เองว่า&nbsp;&nbsp;(<span class="slant iast">mat-cittaḥ,&nbsp;&nbsp;mat-paraḥ,&nbsp;&nbsp;mat-sthānam</span><span class="slant pali">มตฺ-จิตฺตห์มตฺ-ปรห์มตฺ-สฺถานมฺ</span><span class="slant thai">มัต-จิตตะห์มัต-ปะระห์มัต-สถานัม</span><span class="slant ram">มัท-ชิทะฮมัท-พะระฮมัท-สทฺานัม</span>&nbsp;&nbsp;)&nbsp;&nbsp;เขาสามารถได้รับ<wbr>ความสงบอย่างแท้จริงและในที่สุดสามารถบรรลุถึงพระตำหนักสูงสุดขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;มีนามว่า&nbsp;&nbsp;<span class="slant iast">goloka&nbsp;&nbsp;vṛndāvana</span><span class="slant pali">โคโลกวฺฤนฺทาวน</span><span class="slant thai">โคโลกะวฤนทาวะนะ</span><span class="slant ram">โกโลคะวรินดาวะนะ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.37&nbsp;&nbsp;)ได้กล่าวไว้<wbr>อย่างชัดเจนว่า&nbsp;&nbsp;<span class="slant iast">goloka&nbsp;&nbsp;eva&nbsp;&nbsp;nivasaty&nbsp;&nbsp;akhilātma-bhūtaḥ</span><span class="slant pali">โคโลกเอวนิวสตฺยฺอขิลาตฺม-ภูตห์</span><span class="slant thai">โคโลกะเอวะนิวะสัตยอะขิลาตมะ-ภูตะห์</span><span class="slant ram">โกโลคะเอวะ-</span>&nbsp;&nbsp;ถึงแม้ว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรง<wbr>ประทับอยู่ที่พระตำหนัก&nbsp;&nbsp;<span class="slant iast">sa&nbsp;&nbsp;vai&nbsp;&nbsp;manaḥ&nbsp;&nbsp;kṛṣṇa-padāravindayoḥ</span><span class="slant pali">สไวมนห์กฺฤษฺณ-ปทารวินฺทโยห์</span><span class="slant thai">สะไวมะนะห์กฤษณะ-ปะทาระวินทะโยห์</span><span class="slant ram">สะมะนะฮคริชณะ-zzz</span>&nbsp;&nbsp;ของพระองค์อยู่เสมอ&nbsp;&nbsp;แต่พระองค์ทรงเป็น&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ที่แผ่กระจายไปทั่ว&nbsp;&nbsp;และทรงเป็น&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ผู้ทรงประทับอยู่ในทุกร่างเช่นกันด้วย<wbr>พลังงานทิพย์ที่สูงกว่าของพระองค์&nbsp;&nbsp;ไม่มีใครสามารถบรรลุถึงท้องฟ้าทิพย์&nbsp;&nbsp;(<span class="slant iast">vaikuṇṭha</span><span class="slant pali">ไวกุณฺฐ</span><span class="slant thai">ไวกุณฐะ</span><span class="slant ram">ไวคุณทธฺะ</span>&nbsp;&nbsp;)หรือเข้าไปในพระตำหนักอมตะของพระองค์&nbsp;&nbsp;(<span class="slant iast">goloka&nbsp;&nbsp;vṛndāvana</span><span class="slant pali">โคโลกวฺฤนฺทาวน</span><span class="slant thai">โคโลกะวฤนทาวะนะ</span><span class="slant ram">โกโลคะวรินดาวะนะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ได้&nbsp;&nbsp;โดยปราศจาก<wbr>ความเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และอวตารในรูป&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;ของพระองค์อย่างถูกต้อง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บุคคลผู้ทำ<wbr>งานใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่สมบูรณ์&nbsp;&nbsp;เพราะว่าจิตใจของเขาซึบซาบอยู่ในกิจ<wbr>กรรมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;(<span class="slant iast">sa&nbsp;&nbsp;vai&nbsp;&nbsp;manaḥ&nbsp;&nbsp;kṛṣṇa-padāravindayoḥ</span><span class="slant pali">สไวมนห์กฺฤษฺณ-ปทารวินฺทโยห์</span><span class="slant thai">สะไวมะนะห์กฤษณะ-ปะทาระวินทะโยห์</span><span class="slant ram">สะมะนะฮคริชณะ-zzz</span>&nbsp;&nbsp;)&nbsp;&nbsp;ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;3.8&nbsp;&nbsp;)&nbsp;&nbsp;เราได้เรียนรู้เช่นกันว่า&nbsp;&nbsp;<span class="slant iast">tam&nbsp;&nbsp;eva&nbsp;&nbsp;viditvāti&nbsp;&nbsp;mṛtyum&nbsp;&nbsp;eti</span><span class="slant pali">ตมฺเอววิทิตฺวาติมฺฤตฺยุมฺเอติ</span><span class="slant thai">ตัมเอวะวิทิตวาติมฤตยุมเอติ</span><span class="slant ram">ทัม เอวะ วิดิทวาทิ มริทยุม เอทิ</span>&nbsp;&nbsp;“เขาสามารถข้ามพ้นวิถีแห่งการเกิดและการตายด้วยการเข้าใจบุคลิกภาพสูงสุดแห่ง<wbr>พระเจ้า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้น”&nbsp;&nbsp;หรืออีกนัยหนึ่ง&nbsp;&nbsp;ความสมบูรณ์ของระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;คือบรรลุถึง<wbr>เสรีภาพจากความเป็นอยู่ทางวัตถุ&nbsp;&nbsp;ไม่ใช่&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;กล&nbsp;&nbsp;หรือการแสดงท่ากายกรรมเพื่อหลอก<wbr>ลวงประชาชนผู้พาซื่อ
   </p>
 </div>
 

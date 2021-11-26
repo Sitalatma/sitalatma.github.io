@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.8</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อหํ สรฺวสฺย ปฺรภโว</i><br /><i>มตฺตฮ สรฺวํ ปฺรวรฺตเต</i><br /><i>อิติ มตฺวา ภชเนฺต มาํ</i><br /><i>พุธา ภาว-สมนฺวิตาฮ</i>
+<span class="slant iast">ahaṁ sarvasya prabhavo<br /></span>
+<span class="slant pali">อหํ สรฺวสฺย ปฺรภโว<br /></span>
+<span class="slant thai">อะหัง สัรวัสยะ ประภะโว<br /></span>
+<span class="slant ram">อฮัม สารวัสยะ พระบฺะโว<br /></span>
+<span class="slant iast">mattaḥ sarvaṁ pravartate<br /></span>
+<span class="slant pali">มตฺตห์ สรฺวํ ปฺรวรฺตเต<br /></span>
+<span class="slant thai">มัตตะห์ สัรวัง ประวัรตะเต<br /></span>
+<span class="slant ram">มัททะฮ สารวัม พระวารทะเท<br /></span>
+<span class="slant iast">iti matvā bhajante māṁ<br /></span>
+<span class="slant pali">อิติ มตฺวา ภชนฺเต มำ<br /></span>
+<span class="slant thai">อิติ มัตวา ภะชันเต มาง<br /></span>
+<span class="slant ram">อิทิ มัทวา บฺะจันเท มาม<br /></span>
+<span class="slant iast">budhā bhāva-samanvitāḥ<br /></span>
+<span class="slant pali">พุธา ภาว-สมนฺวิตาห์<br /></span>
+<span class="slant thai">พุธา ภาวะ-สะมันวิตาห์<br /></span>
+<span class="slant ram">บุดฺา บฺาวะ-สะมันวิทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อหมฺ</i> — ข้า, <i>สรฺวสฺย</i> — ทั้งหมด, <i>ปฺรภวฮ</i> — แหล่งกำเนิดของแหล่งกำเนิด, <i>มตฺตฮ</i> — จาก ข้า, <i>สรฺวมฺ</i> — ทุกสิ่งทุกอย่าง, <i>ปฺรวรฺตเต</i> — ออกมา, <i>อิติ</i> — ดั้งนั้น, <i>มตฺวา</i> — รู้, <i>ภชเนฺต</i> — มา อุทิศตนเสียสละ, <i>มามฺ</i> — แด่ข้า, <i>พุธาฮ</i> — ผู้รู้, <i>ภาว-สมนฺวิตาฮ</i> — ด้วยความตั้งใจอย่างยิ่ง
+  <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">sarvasya</span><span class="slant pali">สรฺวสฺย</span><span class="slant thai">สัรวัสยะ</span><span class="slant ram">สารวัสยะ</span> — ทั้งหมด, <span class="slant iast">prabhavaḥ</span><span class="slant pali">ปฺรภวห์</span><span class="slant thai">ประภะวะห์</span><span class="slant ram">พระบฺะวะฮ</span> — แหล่งกำเนิดของแหล่งกำเนิด, <span class="slant iast">mattaḥ</span><span class="slant pali">มตฺตห์</span><span class="slant thai">มัตตะห์</span><span class="slant ram">มัททะฮ</span> — จาก ข้า, <span class="slant iast">sarvam</span><span class="slant pali">สรฺวมฺ</span><span class="slant thai">สัรวัม</span><span class="slant ram">สารวัม</span> — ทุกสิ่งทุกอย่าง, <span class="slant iast">pravartate</span><span class="slant pali">ปฺรวรฺตเต</span><span class="slant thai">ประวัรตะเต</span><span class="slant ram">พระวารทะเท</span> — ออกมา, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดั้งนั้น, <span class="slant iast">matvā</span><span class="slant pali">มตฺวา</span><span class="slant thai">มัตวา</span><span class="slant ram">มัทวา</span> — รู้, <span class="slant iast">bhajante</span><span class="slant pali">ภชนฺเต</span><span class="slant thai">ภะชันเต</span><span class="slant ram">บฺะจันเท</span> — มา อุทิศตนเสียสละ, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">budhāḥ</span><span class="slant pali">พุธาห์</span><span class="slant thai">พุธาห์</span><span class="slant ram">บุดฺาฮ</span> — ผู้รู้, <span class="slant iast">bhāva-samanvitāḥ</span><span class="slant pali">ภาว-สมนฺวิตาห์</span><span class="slant thai">ภาวะ-สะมันวิตาห์</span><span class="slant ram">บฺาวะ-สะมันวิทาฮ</span> — ด้วยความตั้งใจอย่างยิ่ง
   </p>
 </div>
 
@@ -73,49 +174,79 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  นักวิชาการผู้คงแก่เรียนศึกษาคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;และได้รับข้อมูล<wbr>จากผู้ที่เชื่อถือได้&nbsp;&nbsp;เช่น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;และรู้ว่าจะนำคำสอนเหล่านี้ไปใช้อย่างไรเพื่อให้<wbr>เข้าใจว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างทั้งในโลกวัตถุและโลกทิพย์เพราะเมื่อรู้เช่นนี้โดยสมบูรณ์จึงจะตั้งมั่นอย่างแน่วแน่ในการอุทิศตนเสียสละรับใช้ต่อ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยไม่เบี่ยงเบนอันเนื่องมาจากคำบรรยายที่เหลวไหลหรือจากคนโง่เขลา<wbr>ใดๆ&nbsp;&nbsp;วรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหมดยอมรับว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือแหล่งกำเนิดของพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พระ<wbr>&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;และเทวดาทั้งหลาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>อตฺหรฺว&nbsp;&nbsp;เวท&nbsp;&nbsp;(โคปาล-ตาปนี&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;1.24)&nbsp;&nbsp;กล่าว<wbr>ไว้ว่า&nbsp;&nbsp;<i>โย&nbsp;&nbsp;พฺรหฺมาณํ&nbsp;&nbsp;วิทธาติ&nbsp;&nbsp;ปูรฺวํ&nbsp;&nbsp;โย&nbsp;&nbsp;ไว&nbsp;&nbsp;เวทาํศฺ&nbsp;&nbsp;จ&nbsp;&nbsp;คาปยติ&nbsp;&nbsp;สฺม&nbsp;&nbsp;กฺฤษฺณฮ</i>&nbsp;&nbsp;“&nbsp;&nbsp;ในตอนต้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงสอนความรู้พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;แก่พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ผู้ซึ่งในอดีตได้เผยแพร่ความรู้<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;นี้”&nbsp;&nbsp;และ&nbsp;&nbsp;<i>นารายณ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(1)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>อตฺห&nbsp;&nbsp;ปุรุโษ&nbsp;&nbsp;ห&nbsp;&nbsp;ไว&nbsp;&nbsp;นารายโณ&nbsp;&nbsp;′กามยต&nbsp;&nbsp;ปฺรชาฮ&nbsp;&nbsp;สฺฤเชเยติ</i>&nbsp;&nbsp;“จากนั้นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;ทรงปรารถนาจะสร้าง<wbr>สิ่งมีชีวิต”&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;กล่าวต่อไปว่า&nbsp;&nbsp;<i>นารายณาทฺ&nbsp;&nbsp;พฺรหฺมา&nbsp;&nbsp;ชายเต,นารายณาทฺ&nbsp;&nbsp;ปฺรชาปติฮ&nbsp;&nbsp;ปฺรชายเต,นารายณาทฺ&nbsp;&nbsp;อิโนฺทฺร&nbsp;&nbsp;ชายเต,นารายณาทฺ&nbsp;&nbsp;อษฺฏะอุ&nbsp;&nbsp;วสโว&nbsp;&nbsp;ชายเนฺต,นารายณาทฺ&nbsp;&nbsp;เอกาทศ&nbsp;&nbsp;รุทฺรา&nbsp;&nbsp;ชายเนฺต,นารายณาทฺ&nbsp;&nbsp;ทฺวาทศาทิตฺยาฮ</i>&nbsp;&nbsp;“จากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;ผู้อาวุโสสูงสุดต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ประสูติ<wbr>เช่นกัน&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;<i>วสุ</i>&nbsp;&nbsp;ทั้งแปดองค์ประสูติจากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;<i>รุทฺร</i>&nbsp;&nbsp;ทั้งสิบเอ็ดองค์ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;<i>อาทิตฺย</i>&nbsp;&nbsp;สิบสององค์<wbr>ประสูติ”&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;องค์นี้ทรงเป็นภาคแบ่งแยกของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  นักวิชาการผู้คงแก่เรียนศึกษาคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;อย่างสมบูรณ์&nbsp;&nbsp;และได้รับข้อมูล<wbr>จากผู้ที่เชื่อถือได้&nbsp;&nbsp;เช่น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;และรู้ว่าจะนำคำสอนเหล่านี้ไปใช้อย่างไรเพื่อให้<wbr>เข้าใจว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างทั้งในโลกวัตถุและโลกทิพย์เพราะเมื่อรู้เช่นนี้โดยสมบูรณ์จึงจะตั้งมั่นอย่างแน่วแน่ในการอุทิศตนเสียสละรับใช้ต่อ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยไม่เบี่ยงเบนอันเนื่องมาจากคำบรรยายที่เหลวไหลหรือจากคนโง่เขลา<wbr>ใดๆ&nbsp;&nbsp;วรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหมดยอมรับว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือแหล่งกำเนิดของพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พระ<wbr>&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;และเทวดาทั้งหลาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">atharva&nbsp;&nbsp;veda&nbsp;&nbsp;(gopāla-tāpanī&nbsp;&nbsp;upaniṣad</span><span class="slant pali">อถรฺวเวทโคปาล-ตาปนีอุปนิษทฺ</span><span class="slant thai">อะถัรวะเวทะโคปาละ-ตาปะนีอุปะนิษัท</span><span class="slant ram">เวทโกพาละ-</span>&nbsp;&nbsp;1.24)&nbsp;&nbsp;กล่าว<wbr>ไว้ว่า&nbsp;&nbsp;<span class="slant iast">yo&nbsp;&nbsp;brahmāṇaṁ&nbsp;&nbsp;vidadhāti&nbsp;&nbsp;pūrvaṁ&nbsp;&nbsp;yo&nbsp;&nbsp;vai&nbsp;&nbsp;vedāṁś&nbsp;&nbsp;ca&nbsp;&nbsp;gāpayati&nbsp;&nbsp;sma&nbsp;&nbsp;kṛṣṇaḥ</span><span class="slant pali">โยพฺรหฺมาณํวิทธาติปูรฺวํโยไวเวทำศฺจคาปยติสฺมกฺฤษฺณห์</span><span class="slant thai">โยพรัหมาณังวิทะธาติปูรวังโยไวเวทางศจะคาปะยะติสมะกฤษณะห์</span><span class="slant ram">zzzzzzชะzzzคริชณะฮ</span>&nbsp;&nbsp;“&nbsp;&nbsp;ในตอนต้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงสอนความรู้พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;แก่พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ผู้ซึ่งในอดีตได้เผยแพร่ความรู้<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;นี้”&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa&nbsp;&nbsp;upaniṣad</span><span class="slant pali">นารายณอุปนิษทฺ</span><span class="slant thai">นารายะณะอุปะนิษัท</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;(1)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">atha&nbsp;&nbsp;puruṣo&nbsp;&nbsp;ha&nbsp;&nbsp;vai&nbsp;&nbsp;nārāyaṇo&nbsp;&nbsp;’kāmayata&nbsp;&nbsp;prajāḥ&nbsp;&nbsp;sṛjeyeti</span><span class="slant pali">อถปุรุโษหไวนารายโณกามยตปฺรชาห์สฺฤเชเยติ</span><span class="slant thai">อะถะปุรุโษหะไวนารายะโณกามะยะตะประชาห์สฤเชเยติ</span><span class="slant ram">อทฺะฮะzzzzzzพระจาฮzzz</span>&nbsp;&nbsp;“จากนั้นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;ทรงปรารถนาจะสร้าง<wbr>สิ่งมีชีวิต”&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;กล่าวต่อไปว่า&nbsp;&nbsp;<span class="slant iast">nārāyaṇād&nbsp;&nbsp;brahmā&nbsp;&nbsp;jāyate,&nbsp;&nbsp;nārāyaṇād&nbsp;&nbsp;prajāpatiḥ&nbsp;&nbsp;prajāyate,&nbsp;&nbsp;nārāyaṇād&nbsp;&nbsp;indro&nbsp;&nbsp;jāyate,&nbsp;&nbsp;nārāyaṇād&nbsp;&nbsp;aṣṭau&nbsp;&nbsp;vasavo&nbsp;&nbsp;jāyante,&nbsp;&nbsp;nārāyaṇād&nbsp;&nbsp;ekādaśa&nbsp;&nbsp;rudrā&nbsp;&nbsp;jāyante,&nbsp;&nbsp;nārāyaṇād&nbsp;&nbsp;dvādaśādityāḥ</span><span class="slant pali">นารายณาทฺพฺรหฺมาชายเตนารายณาทฺปฺรชาปติห์ปฺรชายเตนารายณาทฺอินฺโทฺรชายเตนารายณาทฺอษฺเฏาวสโวชายนฺเตนารายณาทฺเอกาทศรุทฺราชายนฺเตนารายณาทฺทฺวาทศาทิตฺยาห์</span><span class="slant thai">นารายะณาทพรัหมาชายะเตนารายะณาทประชาปะติห์ประชายะเตนารายะณาทอินทโรชายะเตนารายะณาทอัษเฏาวะสะโวชายันเตนารายะณาทเอกาทะศะรุทราชายันเตนารายะณาททวาทะศาทิตยาห์</span><span class="slant ram">พรหมจายะเทพระจาพะทิฮzzzจายะเทzzzจายันเทzzzzzzจายันเทzzz</span>&nbsp;&nbsp;“จากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;ผู้อาวุโสสูงสุดต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ประสูติ<wbr>เช่นกัน&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;<span class="slant iast">vasu</span><span class="slant pali">วสุ</span><span class="slant thai">วะสุ</span><span class="slant ram">วะสุ</span>&nbsp;&nbsp;ทั้งแปดองค์ประสูติจากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;<span class="slant iast">rudra</span><span class="slant pali">รุทฺร</span><span class="slant thai">รุทระ</span><span class="slant ram">รุดระ</span>&nbsp;&nbsp;ทั้งสิบเอ็ดองค์ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;<span class="slant iast">āditya</span><span class="slant pali">อาทิตฺย</span><span class="slant thai">อาทิตยะ</span><span class="slant ram">อาดิทยะ</span>&nbsp;&nbsp;สิบสององค์<wbr>ประสูติ”&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;องค์นี้ทรงเป็นภาคแบ่งแยกของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้ในพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เล่มเดียวกันว่า&nbsp;&nbsp;<i>พฺรหฺมโณฺย&nbsp;&nbsp;เทวกี-ปุตฺรฮ</i>&nbsp;&nbsp;“&nbsp;&nbsp;<i>กฺฤษฺณ</i>บุตรของพระนาง&nbsp;&nbsp;<i>เทวกี</i>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;”&nbsp;&nbsp;(<i>นารายณ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;4)&nbsp;&nbsp;จากนั้นได้กล่าวต่อ<wbr>ไปว่า&nbsp;&nbsp;<i>เอโก&nbsp;&nbsp;ไว&nbsp;&nbsp;นารายณ&nbsp;&nbsp;อาสีนฺ&nbsp;&nbsp;น&nbsp;&nbsp;พฺรหฺมา&nbsp;&nbsp;เนศาโน&nbsp;&nbsp;นาโป&nbsp;&nbsp;นาคฺนิ-โสมะอุ&nbsp;&nbsp;เนเม&nbsp;&nbsp;ทฺยาวฺ-อาปฺฤตฺหิวี&nbsp;&nbsp;น&nbsp;&nbsp;นกฺษตฺราณิ&nbsp;&nbsp;น&nbsp;&nbsp;สูรฺยฮ</i>&nbsp;&nbsp;“ในตอนต้นของการสร้างมีเพียงองค์<i>ภควานฺ</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;ไม่มีพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ไม่มีพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ไม่มีน้ำ&nbsp;&nbsp;ไม่มีไฟ&nbsp;&nbsp;ไม่มีดวงจันทร์&nbsp;&nbsp;ไม่มี<wbr>ดวงดาวในท้องฟ้า&nbsp;&nbsp;ไม่มีดวงอาทิตย์”&nbsp;&nbsp;(<i>มหา&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;1)&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>มหา&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;กล่าวไว้เช่น<wbr>กันว่า&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ประสูติจากพระนาลาฎ&nbsp;&nbsp;(หน้าผาก)&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;กล่าว<wbr>ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงสร้างพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ควรได้รับการบูชา
+  ได้กล่าวไว้ในพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เล่มเดียวกันว่า&nbsp;&nbsp;<span class="slant iast">brahmaṇyo&nbsp;&nbsp;devakī-putraḥ</span><span class="slant pali">พฺรหฺมโณฺยเทวกี-ปุตฺรห์</span><span class="slant thai">พรัหมัณโยเทวะกี-ปุตระห์</span><span class="slant ram">zzzเดวะคี-</span>&nbsp;&nbsp;“&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>บุตรของพระนาง&nbsp;&nbsp;<span class="slant iast">devakī</span><span class="slant pali">เทวกี</span><span class="slant thai">เทวะกี</span><span class="slant ram">เดวะคี</span>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;”&nbsp;&nbsp;(<span class="slant iast">nārāyaṇa&nbsp;&nbsp;upaniṣad</span><span class="slant pali">นารายณอุปนิษทฺ</span><span class="slant thai">นารายะณะอุปะนิษัท</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;4)&nbsp;&nbsp;จากนั้นได้กล่าวต่อ<wbr>ไปว่า&nbsp;&nbsp;<span class="slant iast">eko&nbsp;&nbsp;vai&nbsp;&nbsp;nārāyaṇa&nbsp;&nbsp;āsīn&nbsp;&nbsp;na&nbsp;&nbsp;brahmā&nbsp;&nbsp;neśāno&nbsp;&nbsp;nāpo&nbsp;&nbsp;nāgni-somau&nbsp;&nbsp;neme&nbsp;&nbsp;dyāv-āpṛthivī&nbsp;&nbsp;na&nbsp;&nbsp;nakṣatrāṇi&nbsp;&nbsp;na&nbsp;&nbsp;sūryaḥ</span><span class="slant pali">เอโกไวนารายณอาสีนฺนพฺรหฺมาเนศาโนนาโปนาคฺนิ-โสเมาเนเมทฺยาวฺ-อาปฺฤถิวีนนกฺษตฺราณินสูรฺยห์</span><span class="slant thai">เอโกไวนารายะณะอาสีนนะพรัหมาเนศาโนนาโปนาคนิ-โสเมาเนเมทยาว-อาปฤถิวีนะนักษัตราณินะสูรยะห์</span><span class="slant ram">นารายะณะzzzนะพรหมzzzzzzzzz-zzz-zzzนะzzzนะสูรยะฮ</span>&nbsp;&nbsp;“ในตอนต้นของการสร้างมีเพียงองค์<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;ไม่มีพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ไม่มีพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ไม่มีน้ำ&nbsp;&nbsp;ไม่มีไฟ&nbsp;&nbsp;ไม่มีดวงจันทร์&nbsp;&nbsp;ไม่มี<wbr>ดวงดาวในท้องฟ้า&nbsp;&nbsp;ไม่มีดวงอาทิตย์”&nbsp;&nbsp;(<span class="slant iast">mahā&nbsp;&nbsp;upaniṣad</span><span class="slant pali">มหาอุปนิษทฺ</span><span class="slant thai">มะหาอุปะนิษัท</span><span class="slant ram">มะฮา</span>&nbsp;&nbsp;1)&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">mahā&nbsp;&nbsp;upaniṣad</span><span class="slant pali">มหาอุปนิษทฺ</span><span class="slant thai">มะหาอุปะนิษัท</span><span class="slant ram">มะฮา</span>&nbsp;&nbsp;กล่าวไว้เช่น<wbr>กันว่า&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ประสูติจากพระนาลาฎ&nbsp;&nbsp;(หน้าผาก)&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;กล่าว<wbr>ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงสร้างพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ควรได้รับการบูชา
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>โมกฺษ-ธรฺม</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสว่า
-  </p>
-</div>
-
-<div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรชาปติํ จ รุทฺรํ จาปฺยฺ</i><br /><i>อหมฺ เอว สฺฤชามิ ไว</i><br /><i>ตะอุ หิ มาํ น วิชานีโต</i><br /><i>มม มายา-วิโมหิตะอุ</i>
-  
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  “ข้าเป็นผู้ให้กำเนิดบรรดาผู้อาวุโสสูงสุด&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;และองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ถึงแม้ว่าพวกเขาไม่รู้ว่าข้า<wbr>เป็นผู้ให้กำเนิด&nbsp;&nbsp;เพราะว่าหลงผิดอยู่ในพลังงานแห่งความหลงของข้า”&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>วราห&nbsp;&nbsp;ปุราณ</i>&nbsp;&nbsp;ได้กล่าวไว้เช่นกันว่า
+  ใน&nbsp;&nbsp;<span class="slant iast">mokṣa-dharma</span><span class="slant pali">โมกฺษ-ธรฺม</span><span class="slant thai">โมกษะ-ธัรมะ</span><span class="slant ram">โมคชะ-ดฺารมะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นารายณฮ ปโร เทวสฺ</i><br /><i>ตสฺมาชฺ ชาตศฺ จตุรฺมุขฮ</i><br /><i>ตสฺมาทฺ รุโทฺร ′ภวทฺ เทวฮ</i><br /><i>ส จ สรฺว-ชฺญตาํ คตฮ</i>
+<span class="slant iast">prajāpatiṁ ca rudraṁ cāpy<br /></span>
+<span class="slant pali">ปฺรชาปตึ จ รุทฺรํ จาปฺยฺ<br /></span>
+<span class="slant thai">ประชาปะติง จะ รุทรัง จาปย<br /></span>
+<span class="slant ram">พระจาพะทิม ชะ รุดรัม ชาพิ<br /></span>
+<span class="slant iast">aham eva sṛjāmi vai<br /></span>
+<span class="slant pali">อหมฺ เอว สฺฤชามิ ไว<br /></span>
+<span class="slant thai">อะหัม เอวะ สฤชามิ ไว<br /></span>
+<span class="slant ram">อฮัม เอวะ สริจามิ ไวฺ<br /></span>
+<span class="slant iast">tau hi māṁ na vijānīto<br /></span>
+<span class="slant pali">เตา หิ มำ น วิชานีโต<br /></span>
+<span class="slant thai">เตา หิ มาง นะ วิชานีโต<br /></span>
+<span class="slant ram">โท ฮิ มาม นะ วิจานีโท<br /></span>
+<span class="slant iast">mama māyā-vimohitau<br /></span>
+<span class="slant pali">มม มายา-วิโมหิเตา<br /></span>
+<span class="slant thai">มะมะ มายา-วิโมหิเตา<br /></span>
+<span class="slant ram">มะมะ มายา-วิโมฮิโทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “พระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จากพระองค์พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>ประสูติ”
+  “ข้าเป็นผู้ให้กำเนิดบรรดาผู้อาวุโสสูงสุด&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;และองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ถึงแม้ว่าพวกเขาไม่รู้ว่าข้า<wbr>เป็นผู้ให้กำเนิด&nbsp;&nbsp;เพราะว่าหลงผิดอยู่ในพลังงานแห่งความหลงของข้า”&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">varāha&nbsp;&nbsp;purāṇa</span><span class="slant pali">วราหปุราณ</span><span class="slant thai">วะราหะปุราณะ</span><span class="slant ram">วะราฮะพุราณะ</span>&nbsp;&nbsp;ได้กล่าวไว้เช่นกันว่า
+  </p>
+</div>
+
+<div class="r r-lang-en r-verse-text">
+<span class="slant iast">nārāyaṇaḥ paro devas<br /></span>
+<span class="slant pali">นารายณห์ ปโร เทวสฺ<br /></span>
+<span class="slant thai">นารายะณะห์ ปะโร เทวัส<br /></span>
+<span class="slant ram">นารายะณะฮ พะโร เดวัส<br /></span>
+<span class="slant iast">tasmāj jātaś caturmukhaḥ<br /></span>
+<span class="slant pali">ตสฺมาชฺ ชาตศฺ จตุรฺมุขห์<br /></span>
+<span class="slant thai">ตัสมาช ชาตัศ จะตุรมุขะห์<br /></span>
+<span class="slant ram">ทัสมาจ จาทัช ชะทุรมุคฺะฮ<br /></span>
+<span class="slant iast">tasmād rudro ’bhavad devaḥ<br /></span>
+<span class="slant pali">ตสฺมาทฺ รุโทฺร ’ภวทฺ เทวห์<br /></span>
+<span class="slant thai">ตัสมาท รุทโร ’ภะวัท เทวะห์<br /></span>
+<span class="slant ram">ทัสมาด รุโดร ่บฺะวัด เดวะฮ สะ<br /></span>
+<span class="slant iast">sa ca sarva-jñatāṁ gataḥ<br /></span>
+<span class="slant pali">ส จ สรฺว-ชฺญตำ คตห์<br /></span>
+<span class="slant thai">สะ จะ สัรวะ-ชญะตาง คะตะห์<br /></span>
+<span class="slant ram">ชะ สารวะ-กยะทาม กะทะฮ<br /></span>
+
+  
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  “พระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จากพระองค์พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ประสูติ&nbsp;&nbsp;จากพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>ประสูติ”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของการให้กำเนิดทั้งหมด&nbsp;&nbsp;พระองค์ทรงถูก<wbr>เรียกว่าเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างที่มีประสิทธิภาพสูงสุด&nbsp;&nbsp;ทรงตรัสว่า&nbsp;&nbsp;“เพราะ<wbr>ว่าทุกสิ่งทุกอย่างกำเนิดมาจากข้า&nbsp;&nbsp;ข้าคือแหล่งกำเนิดเดิมแท้ของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทุก<wbr>สิ่งทุกอย่างอยู่ภายใต้ข้า&nbsp;&nbsp;ไม่มีผู้ใดอยู่เหนือข้า”&nbsp;&nbsp;ไม่มีผู้ควบคุมสูงสุดอื่นใดนอกจาก<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้เข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้จากพระอาจารย์ทิพย์ที่เชื่อถือได้และจากการอ้างอิงของ<wbr>วรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;จะใช้พลังงานของเขาทั้งหมดใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและกลายมาเป็น<wbr>ผู้รู้อย่างแท้จริง&nbsp;&nbsp;เมื่อเปรียบเทียบกับบุคคลเช่นนี้บุคคลอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดผู้ไม่รู้จัก&nbsp;&nbsp;<i>กฺฤษฺณ</i>อย่างถูกต้องเป็นคนโง่เขลา&nbsp;&nbsp;คนโง่เขลาเท่านั้นที่พิจารณาว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นมนุษย์<wbr>ธรรมดา&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไม่ควรสับสนกับคนโง่เขลาเหล่านี้&nbsp;&nbsp;แต่ควรหลีกเลี่ยง<wbr>คำบรรยายและการตีความ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ที่เชื่อถือไม่ได้ทั้งหมด&nbsp;&nbsp;และเดินหน้าต่อไปใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วยความมุ่งมั่นอย่างแน่วแน่
+  องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของการให้กำเนิดทั้งหมด&nbsp;&nbsp;พระองค์ทรงถูก<wbr>เรียกว่าเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างที่มีประสิทธิภาพสูงสุด&nbsp;&nbsp;ทรงตรัสว่า&nbsp;&nbsp;“เพราะ<wbr>ว่าทุกสิ่งทุกอย่างกำเนิดมาจากข้า&nbsp;&nbsp;ข้าคือแหล่งกำเนิดเดิมแท้ของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทุก<wbr>สิ่งทุกอย่างอยู่ภายใต้ข้า&nbsp;&nbsp;ไม่มีผู้ใดอยู่เหนือข้า”&nbsp;&nbsp;ไม่มีผู้ควบคุมสูงสุดอื่นใดนอกจาก<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้เข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้จากพระอาจารย์ทิพย์ที่เชื่อถือได้และจากการอ้างอิงของ<wbr>วรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;จะใช้พลังงานของเขาทั้งหมดใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและกลายมาเป็น<wbr>ผู้รู้อย่างแท้จริง&nbsp;&nbsp;เมื่อเปรียบเทียบกับบุคคลเช่นนี้บุคคลอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดผู้ไม่รู้จัก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>อย่างถูกต้องเป็นคนโง่เขลา&nbsp;&nbsp;คนโง่เขลาเท่านั้นที่พิจารณาว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นมนุษย์<wbr>ธรรมดา&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไม่ควรสับสนกับคนโง่เขลาเหล่านี้&nbsp;&nbsp;แต่ควรหลีกเลี่ยง<wbr>คำบรรยายและการตีความ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ที่เชื่อถือไม่ได้ทั้งหมด&nbsp;&nbsp;และเดินหน้าต่อไปใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วยความมุ่งมั่นอย่างแน่วแน่
   </p>
 </div>
 

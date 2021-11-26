@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.55</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มตฺ-กรฺม-กฺฤนฺ มตฺ-ปรโม</i><br /><i>มทฺ-ภกฺตฮ สงฺค-วรฺชิตฮ</i><br /><i>นิไรฺวรฮ สรฺว-ภูเตษุ</i><br /><i>ยฮ ส มามฺ เอติ ปาณฺฑว</i>
+<span class="slant iast">mat-karma-kṛn mat-paramo<br /></span>
+<span class="slant pali">มตฺ-กรฺม-กฺฤนฺ มตฺ-ปรโม<br /></span>
+<span class="slant thai">มัต-กัรมะ-กฤน มัต-ปะระโม<br /></span>
+<span class="slant ram">มัท-คารมะ-คริน มัท-พะระโม<br /></span>
+<span class="slant iast">mad-bhaktaḥ saṅga-varjitaḥ<br /></span>
+<span class="slant pali">มทฺ-ภกฺตห์ สงฺค-วรฺชิตห์<br /></span>
+<span class="slant thai">มัท-ภักตะห์ สังคะ-วัรชิตะห์<br /></span>
+<span class="slant ram">มัด-บัฺคธะฮ สังกะ-วารจิทะฮ<br /></span>
+<span class="slant iast">nirvairaḥ sarva-bhūteṣu<br /></span>
+<span class="slant pali">นิไรฺวรห์ สรฺว-ภูเตษุ<br /></span>
+<span class="slant thai">นิรไวระห์ สัรวะ-ภูเตษุ<br /></span>
+<span class="slant ram">นิรไวระฮ สารวะ-บํูเทชุ<br /></span>
+<span class="slant iast">yaḥ sa mām eti pāṇḍava<br /></span>
+<span class="slant pali">ยห์ ส มามฺ เอติ ปาณฺฑว<br /></span>
+<span class="slant thai">ยะห์ สะ มาม เอติ ปาณฑะวะ<br /></span>
+<span class="slant ram">ยะฮ สะ มาม เอทิ พาณดะวะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>มตฺ-กรฺม-กฺฤตฺ</i> — ปฏิบัติการทำงานให้ข้า, <i>มตฺ-ปรมฮ</i> — พิจารณาว่าข้าคือผู้สูงสุด, <i>มตฺ-ภกฺตฮ</i> — ปฏิบัติการอุทิศตนเสียสละรับใช้แด่ข้า, <i>สงฺค-วรฺชิตฮ</i> — เป็นอิสระจาก มลทินแห่งกิจกรรมทางวัตถุและการคาดคะเนทางจิต, <i>นิไรฺวรฮ</i> — ปราศจากศัตรู, <i>สรฺว-ภูเตษุ</i> — ในบรรดาสิ่งมีชีวิตทั้งหลาย, <i>ยฮ</i> — ผู้ซึ่ง, <i>สฮ</i> — เขา, <i>มามฺ</i> — แต่ข้า, <i>เอติ</i> — มา, <i>ปาณฺฑว</i> — โอ้ โอรสพาณดุ
+  <span class="slant iast">mat-karma-kṛt</span><span class="slant pali">มตฺ-กรฺม-กฺฤตฺ</span><span class="slant thai">มัต-กัรมะ-กฤต</span><span class="slant ram">มัท-คารมะ-คริท</span> — ปฏิบัติการทำงานให้ข้า, <span class="slant iast">mat-paramaḥ</span><span class="slant pali">มตฺ-ปรมห์</span><span class="slant thai">มัต-ปะระมะห์</span><span class="slant ram">มัท-พะระมะฮ</span> — พิจารณาว่าข้าคือผู้สูงสุด, <span class="slant iast">mat-bhaktaḥ</span><span class="slant pali">มตฺ-ภกฺตห์</span><span class="slant thai">มัต-ภักตะห์</span><span class="slant ram">มัท-บัฺคธะฮ</span> — ปฏิบัติการอุทิศตนเสียสละรับใช้แด่ข้า, <span class="slant iast">saṅga-varjitaḥ</span><span class="slant pali">สงฺค-วรฺชิตห์</span><span class="slant thai">สังคะ-วัรชิตะห์</span><span class="slant ram">สังกะ-วารจิทะฮ</span> — เป็นอิสระจาก มลทินแห่งกิจกรรมทางวัตถุและการคาดคะเนทางจิต, <span class="slant iast">nirvairaḥ</span><span class="slant pali">นิไรฺวรห์</span><span class="slant thai">นิรไวระห์</span><span class="slant ram">นิรไวระฮ</span> — ปราศจากศัตรู, <span class="slant iast">sarva-bhūteṣu</span><span class="slant pali">สรฺว-ภูเตษุ</span><span class="slant thai">สัรวะ-ภูเตษุ</span><span class="slant ram">สารวะ-บํูเทชุ</span> — ในบรรดาสิ่งมีชีวิตทั้งหลาย, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แต่ข้า, <span class="slant iast">eti</span><span class="slant pali">เอติ</span><span class="slant thai">เอติ</span><span class="slant ram">เอทิ</span> — มา, <span class="slant iast">pāṇḍava</span><span class="slant pali">ปาณฺฑว</span><span class="slant thai">ปาณฑะวะ</span><span class="slant ram">พาณดะวะ</span> — โอ้ โอรสพาณดุ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;ผู้ปฏิบัติในการอุทิศตนเสียสละรับใช้ข้าด้วยความบริสุทธิ์ใจ&nbsp;&nbsp;เป็นอิสระจากมลทินแห่งกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และการคาดคะเนทางจิต&nbsp;&nbsp;ผู้ที่ทำงานให้แก่ข้า&nbsp;&nbsp;มีข้าเป็นจุดมุ่งหมายสูงสุดในชีวิต&nbsp;&nbsp;และเป็นมิตรกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตแน่นอนว่าเขาจะมาหาข้า
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;ผู้ปฏิบัติในการอุทิศตนเสียสละรับใช้ข้าด้วยความบริสุทธิ์ใจ&nbsp;&nbsp;เป็นอิสระจากมลทินแห่งกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และการคาดคะเนทางจิต&nbsp;&nbsp;ผู้ที่ทำงานให้แก่ข้า&nbsp;&nbsp;มีข้าเป็นจุดมุ่งหมายสูงสุดในชีวิต&nbsp;&nbsp;และเป็นมิตรกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตแน่นอนว่าเขาจะมาหาข้า
   </p>
 </div>
 
@@ -73,67 +174,97 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ผู้ใดปรารถนาที่จะเข้าพบบุคคลสูงสุดแห่งบุคลิกภาพของพระผู้เป็นเจ้าทั้งปวง<wbr>ที่&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;ในท้องฟ้าทิพย์&nbsp;&nbsp;และเชื่อมสัมพันธ์อย่างใกล้ชิดสนิทสนมกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ต้องรับเอาสูตรนี้ไปปฏิบัติดังที่พระองค์ตรัส&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;โศลกนี้พิจารณว่าเป็นเนื้อหา<wbr>สาระสำคัญของ&nbsp;&nbsp;<i>ภควทฺ-คีตา,ภควทฺ-คีตา</i>&nbsp;&nbsp;เป็นหนังสือที่นำทางให้พันธวิญญาณผู้<wbr>ปฏิบัติอยู่ในโลกวัตถุด้วยจุดมุ่งหมายที่จะเป็นเจ้าแห่งธรรมชาติ&nbsp;&nbsp;และไม่รู้ถึงชีวิตทิพย์อัน<wbr>แท้จริง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;มีไว้เพื่อแสดงให้เห็นว่าเราสามารถเข้าใจความเป็นอยู่ทิพย์&nbsp;&nbsp;และ<wbr>ความสัมพันธ์นิรันดรของเรากับบุคลิกภาพสูงสุดได้อย่างไร&nbsp;&nbsp;และสอนให้เรากลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้อย่างไร&nbsp;&nbsp;โศลกนี้อธิบายอย่างชัดเจนถึงวิธีการที่เราสามารถ<wbr>ประสบผลสำเร็จในกิจกรรมทิพย์หรือการอุทิศตนเสียสละรับใช้
+  ผู้ใดปรารถนาที่จะเข้าพบบุคคลสูงสุดแห่งบุคลิกภาพของพระผู้เป็นเจ้าทั้งปวง<wbr>ที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;ในท้องฟ้าทิพย์&nbsp;&nbsp;และเชื่อมสัมพันธ์อย่างใกล้ชิดสนิทสนมกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ต้องรับเอาสูตรนี้ไปปฏิบัติดังที่พระองค์ตรัส&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;โศลกนี้พิจารณว่าเป็นเนื้อหา<wbr>สาระสำคัญของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā,&nbsp;&nbsp;bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตาภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตาภะคะวัท-คีตา</span><span class="slant ram">บฺะกะวัด-คีตาบฺะกะวัด-คีตา</span>&nbsp;&nbsp;เป็นหนังสือที่นำทางให้พันธวิญญาณผู้<wbr>ปฏิบัติอยู่ในโลกวัตถุด้วยจุดมุ่งหมายที่จะเป็นเจ้าแห่งธรรมชาติ&nbsp;&nbsp;และไม่รู้ถึงชีวิตทิพย์อัน<wbr>แท้จริง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;มีไว้เพื่อแสดงให้เห็นว่าเราสามารถเข้าใจความเป็นอยู่ทิพย์&nbsp;&nbsp;และ<wbr>ความสัมพันธ์นิรันดรของเรากับบุคลิกภาพสูงสุดได้อย่างไร&nbsp;&nbsp;และสอนให้เรากลับคืนสู่<wbr>เหย้าคืนสู่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้อย่างไร&nbsp;&nbsp;โศลกนี้อธิบายอย่างชัดเจนถึงวิธีการที่เราสามารถ<wbr>ประสบผลสำเร็จในกิจกรรมทิพย์หรือการอุทิศตนเสียสละรับใช้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สำหรับงาน&nbsp;&nbsp;เราควรถ่ายโอนพลังงานทั้งหมดไปยังกิจกรรมเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกดังที่กล่าวไว้ใน&nbsp;&nbsp;<i>ภกฺติ-รสามฺฤต-สินฺธุ</i>&nbsp;&nbsp;(1.2.255)
-  </p>
-</div>
-
-<div class="r r-lang-en r-verse-text">
-  
-  <i>อนาสกฺตสฺย วิษยานฺ</i><br /><i>ยตฺหารฺหมฺ อุปยุญฺชตฮ</i><br /><i>นิรฺพนฺธฮ กฺฤษฺณ-สมฺพเนฺธ</i><br /><i>ยุกฺตํ ไวราคฺยมฺ อุจฺยเต</i>
-  
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ไม่มีผู้ใดควรทำงานอื่นใดนอกจากงานที่สัมพันธ์กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;-คาร&nbsp;&nbsp;มะ&nbsp;&nbsp;เราอาจปฏิบัติกิจกรรมมากมาย&nbsp;&nbsp;แต่ไม่ควรยึดติดกับผลงานของตน&nbsp;&nbsp;ผลของ<wbr>งานควรทำไปเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;เราอาจทำธุรกิจแต่ควรเปลี่ยนกิจกรรมนั้นมา<wbr>เป็น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องทำธุรกิจเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นเจ้าของธุรกิจดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ควรได้รับความสุขกับผลกำไรของธุรกิจ&nbsp;&nbsp;หากนักธุรกิจเป็นเจ้าของเงิน<wbr>เป็นจำนวนแสนๆ&nbsp;&nbsp;ล้าน&nbsp;&nbsp;ๆ&nbsp;&nbsp;บาท&nbsp;&nbsp;และหากเราต้องถวายทั้งหมดนี้แด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราสามารถ<wbr>กระทำได้นี่คืองานเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แทนที่จะก่อสร้างอาคารสูง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อสนองประสาทสัมผัส<wbr>ของตนเอง&nbsp;&nbsp;เราสามารถก่อสร้างวัดอันวิจิตรตระการตาเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อัญเชิญพระปฏิ<wbr>มาของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และบริหารจัดการเพื่อการรับใช้ต่อพระปฏิมาดังที่ได้กำหนดไว้ในหนังสือ<wbr>แห่งการอุทิศตนเสียสละรับใช้ที่เชื่อถือได้&nbsp;&nbsp;ทั้งหมดนี้คือ&nbsp;&nbsp;<i>กฺฤษฺณ-กรฺม</i>&nbsp;&nbsp;เราไม่ควรยึด<wbr>ติดกับผลงานของตน&nbsp;&nbsp;แต่ผลงานควรถวายให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และควรรับเอา&nbsp;&nbsp;<i>ปฺรสาทมฺ</i>&nbsp;&nbsp;หรือ<wbr>ส่วนที่เหลือจากการถวายให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;หากผู้ใดก่อสร้างอาคารใหญ่&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และอัญเชิญพระปฏิมาของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มาประทับ&nbsp;&nbsp;ผู้นั้นจะไม่ถูกห้ามให้มาอยู่ในอาคาร&nbsp;&nbsp;แต่<wbr>ต้องเข้าใจว่าเจ้าของอาคารคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;หาก<wbr>ไม่สามารถสร้างวัดเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราสามารถทำความสะอาดวัดให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;นั่นก็เป็น<i>กฺฤษฺณ</i>&nbsp;&nbsp;-&nbsp;&nbsp;<i>กรฺม</i>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;หากมีที่ดินเราสามารถทำสวน&nbsp;&nbsp;ในประเทศอินเดียอย่าง<wbr>น้อยคนจนจะมีที่ดินหนึ่งแปลง&nbsp;&nbsp;สามารถใช้ประโยชน์ในผืนดินนั้นเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยการ<wbr>ปลูกไม้ดอกเพื่อถวายให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เราสามารถปลูกต้น&nbsp;&nbsp;<i>ตุลสี</i>&nbsp;&nbsp;เพราะว่าใบ&nbsp;&nbsp;<i>ตุลสี</i>&nbsp;&nbsp;มีความ<wbr>สำคัญมาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแนะนำไว้ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<i>ปตฺรํ&nbsp;&nbsp;ปุษฺปํ&nbsp;&nbsp;ผลํ&nbsp;&nbsp;โตยมฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงปรารถนาให้เราถวายใบไม้&nbsp;&nbsp;ดอกไม้&nbsp;&nbsp;ผลไม้&nbsp;&nbsp;หรือน้ำเพียงเล็กน้อยแด่พระองค์และจาก<wbr>การถวายเช่นนี้พระองค์จะทรงพอพระทัย&nbsp;&nbsp;ใบไม้นี้หมายถึงใบ&nbsp;&nbsp;<i>ตุลสี</i>&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;ดังนั้นเราสามารถปลูกต้น&nbsp;&nbsp;<i>ตุลสี</i>&nbsp;&nbsp;และรดน้ำ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;แม้แต่คนที่ยากจนที่สุดสามารถปฏิบัติการ<wbr>รับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;นี่คือตัวอย่างบางประการว่าเราสามารถปฏิบัติในการทำงานเพื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>ได้อย่างไร
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  คำว่า&nbsp;&nbsp;<i>มตฺ-ปรมฮ</i>&nbsp;&nbsp;หมายถึงผู้พิจารณาว่า&nbsp;&nbsp;การได้มาอยู่ใกล้ชิดกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>ที่พระตำหนักสูงสุดของพระองค์เป็นความสมบูรณ์สูงสุดของชีวิต&nbsp;&nbsp;บุคคลเช่นนี้ไม่<wbr>ปรารถนาพัฒนาไปยังดาวเคราะห์ที่สูงกว่าเช่น&nbsp;&nbsp;ดวงจันทร์&nbsp;&nbsp;ดวงอาทิตย์&nbsp;&nbsp;หรือโลกสวรรค์หรือแม้แต่โลกที่สูงสุดของจักรวาลนี้คือ&nbsp;&nbsp;<i>พฺรหฺมโลก</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;โลก&nbsp;&nbsp;เขาไม่หลงใหล<wbr>อยู่กับสิ่งเหล่านี้&nbsp;&nbsp;แต่ยึดมั่นเพียงที่จะย้ายไปยังท้องฟ้าทิพย์เท่านั้น&nbsp;&nbsp;และแม้ในท้องฟ้าทิพย์เขาก็ไม่พึงพอใจที่จะกลืนเข้าไปในรัศมี&nbsp;&nbsp;<i>พฺรหฺม-โชฺยติรฺ</i>&nbsp;&nbsp;อันเจิดจรัส&nbsp;&nbsp;เพราะปรารถนา<wbr>ที่จะเข้าไปในโลกทิพย์สูงสุดชื่อว่า&nbsp;&nbsp;<i>กฺฤษฺณโลก,โคโลก&nbsp;&nbsp;วฺฤนฺทาวน</i>&nbsp;&nbsp;ซึ่งตนเองมี<wbr>ความรู้ที่สมบูรณ์เกี่ยวกับโลกนี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่สนใจโลกอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังที่ได้แสดงไว้ด้วยคำว่า&nbsp;&nbsp;<i>มทฺ-ภกฺตฮ</i>&nbsp;&nbsp;เขาจะปฏิบัติอย่างเต็มที่ในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;โดยเฉพาะในเก้าวิธี<wbr>แห่งการปฏิบัติอุทิศตนเสียสละเช่น&nbsp;&nbsp;การสดับฟัง&nbsp;&nbsp;การสวดภาวนา&nbsp;&nbsp;การระลึกถึง&nbsp;&nbsp;การบูชาการรับใช้พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;การถวายบทมนต์&nbsp;&nbsp;การปฏิบัติตามคำสั่ง<wbr>ของพระองค์&nbsp;&nbsp;การเป็นมิตรกับพระองค์&nbsp;&nbsp;และการศิโรราบทุกสิ่งทุกอย่างแด่พระองค์&nbsp;&nbsp;เขา<wbr>สามารถปฏิบัติในกระบวนการอุทิศตนเสียสละทั้งเก้าวิธีนี้หรือแปด&nbsp;&nbsp;หรือเจ็ด&nbsp;&nbsp;หรืออย่าง<wbr>น้อยหนึ่ง&nbsp;&nbsp;วิธี&nbsp;&nbsp;เช่นนี้จะทำให้ชีวิตเขาสมบูรณ์อย่างแน่นอน
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  คำว่า&nbsp;&nbsp;<i>สงฺค-วรฺชิตฮ</i>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ชีวิตไม่ควรไปคบหาสมาคมกับ<wbr>บุคคลผู้ต่อต้าน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่เพียงแต่ผู้ที่ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้นที่ต่อต้าน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แม้แต่พวกที่ยึดติดกับกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และพวกที่คาดคะเนทางจิตก็เป็นผู้ต่อ<wbr>ต้าน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ในรูปแบบที่บริสุทธิ์ได้อธิบายไว้ใน&nbsp;&nbsp;<i>ภกฺติ-รสามฺฤต-สินฺธุ</i>&nbsp;&nbsp;(1.1.11)&nbsp;&nbsp;ดังนี้
+  สำหรับงาน&nbsp;&nbsp;เราควรถ่ายโอนพลังงานทั้งหมดไปยังกิจกรรมเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกดังที่กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">bhakti-rasāmṛta-sindhu</span><span class="slant pali">ภกฺติ-รสามฺฤต-สินฺธุ</span><span class="slant thai">ภักติ-ระสามฤตะ-สินธุ</span><span class="slant ram">บัฺคธิ,บัคฺธิ--</span>&nbsp;&nbsp;(1.2.255)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อนฺยาภิลาษิตา-ศูนฺยํ</i><br /><i>ชฺญาน-กรฺมาทฺยฺ-อนาวฺฤตมฺ</i><br /><i>อานุกเูลฺยน กฺฤษฺณานุ-</i><br /><i>ศีลนํ ภกฺติรฺ อุตฺตมา</i>
+<span class="slant iast">anāsaktasya viṣayān<br /></span>
+<span class="slant pali">อนาสกฺตสฺย วิษยานฺ<br /></span>
+<span class="slant thai">อะนาสักตัสยะ วิษะยาน<br /></span>
+<span class="slant ram">อนาสัคทัสยะ วิชะยาน<br /></span>
+<span class="slant iast">yathārham upayuñjataḥ<br /></span>
+<span class="slant pali">ยถารฺหมฺ อุปยุญฺชตห์<br /></span>
+<span class="slant thai">ยะถารหัม อุปะยุญชะตะห์<br /></span>
+<span class="slant ram">ยะทฺารฮัม อุพะยุนจะทะฮ<br /></span>
+<span class="slant iast">nirbandhaḥ kṛṣṇa-sambandhe<br /></span>
+<span class="slant pali">นิรฺพนฺธห์ กฺฤษฺณ-สมฺพนฺเธ<br /></span>
+<span class="slant thai">นิรพันธะห์ กฤษณะ-สัมพันเธ<br /></span>
+<span class="slant ram">นิรบันดฺะฮ คริชณะ-สัมบันเดฺ<br /></span>
+<span class="slant iast">yuktaṁ vairāgyam ucyate<br /></span>
+<span class="slant pali">ยุกฺตํ ไวราคฺยมฺ อุจฺยเต<br /></span>
+<span class="slant thai">ยุกตัง ไวราคยัม อุจยะเต<br /></span>
+<span class="slant ram">ยุคทัม ไวรากยัม อุชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้&nbsp;&nbsp;<i>ศฺรีล</i>&nbsp;&nbsp;<i>รูป</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;หากผู้ใดปรารถนาการอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;ต้องเป็นอิสระจากมลทินทางวัตถุทั้งหมด&nbsp;&nbsp;และต้องเป็นอิสระจาก<wbr>การคบหาสมาคมกับบุคคลผู้ยึดติดอยู่กับกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และยึดติดอยู่กับการ<wbr>คาดคะเนทางจิต&nbsp;&nbsp;เมื่อเป็นอิสระจากการคบหาสมาคมที่ไม่พึงปรารถนา&nbsp;&nbsp;และจากมลทิน<wbr>แห่งความปรารถนาทางวัตถุเช่นนี้&nbsp;&nbsp;เขาจะพัฒนาความรู้แห่งองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยความชื่น<wbr>ชอบ&nbsp;&nbsp;เช่นนี้เรียกว่าการอุทิศตนเสียสละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;<i>อานุกูลฺยสฺย&nbsp;&nbsp;สงฺกลฺปฮ&nbsp;&nbsp;ปฺราติกูลฺยสฺย&nbsp;&nbsp;วรฺชนมฺ(หริ-ภกฺติ-วิลาส</i>&nbsp;&nbsp;11.676)&nbsp;&nbsp;เขาควรคิดถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และปฏิบัติเพื่อ<wbr>พระองค์ด้วยความชื่นชอบไม่ใช่ในเชิงลบ&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;เป็นศัตรูของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จากจุดเริ่มต้น<wbr>แห่งการประสูติของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;ได้วางแผนมากมายหลายวิธีที่จะสังหารพระองค์และ<wbr>เนื่องจากล้มเหลวทุกครั้ง&nbsp;&nbsp;เขาจึงคิดถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อยู่ตลอดเวลา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ขณะที่ทำงาน&nbsp;&nbsp;ขณะ<wbr>ที่รับประทานอาหาร&nbsp;&nbsp;และขณะที่นอนอยู่&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;จะมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกตลอดเวลาในทุก&nbsp;&nbsp;ๆด้าน&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเช่นนี้ไม่เป็นที่ชื่นชอบ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ถึงแม้ว่า&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;จะคิด<wbr>ถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;วันละยี่สิบสี่ชั่วโมง&nbsp;&nbsp;แต่ถือว่าเป็นมารและในที่สุดก็ถูก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สังหาร&nbsp;&nbsp;แน่นอน<wbr>ว่าผู้ใดที่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สังหารจะบรรลุถึงความหลุดพ้นทันที&nbsp;&nbsp;แต่นั่นไม่ใช่จุดมุ่งหมายของสาวก<wbr>ผู้บริสุทธิ์&nbsp;&nbsp;สาวกผู้บริสุทธิ์ไม่ต้องการแม้แต่ความหลุดพ้น&nbsp;&nbsp;ท่านไม่ต้องการแม้แต่จะโอน<wbr>ย้ายไปยังโลกที่สูงที่สุด&nbsp;&nbsp;<i>โคโลก&nbsp;&nbsp;วฺฤนฺทาวน</i>&nbsp;&nbsp;จุดมุ่งหมายเดียวของท่านคือ&nbsp;&nbsp;ไม่ว่าจะอยู่<wbr>ที่ใดก็ขอให้ได้รับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  ไม่มีผู้ใดควรทำงานอื่นใดนอกจากงานที่สัมพันธ์กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;-คาร&nbsp;&nbsp;มะ&nbsp;&nbsp;เราอาจปฏิบัติกิจกรรมมากมาย&nbsp;&nbsp;แต่ไม่ควรยึดติดกับผลงานของตน&nbsp;&nbsp;ผลของ<wbr>งานควรทำไปเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;เราอาจทำธุรกิจแต่ควรเปลี่ยนกิจกรรมนั้นมา<wbr>เป็น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องทำธุรกิจเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นเจ้าของธุรกิจดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ควรได้รับความสุขกับผลกำไรของธุรกิจ&nbsp;&nbsp;หากนักธุรกิจเป็นเจ้าของเงิน<wbr>เป็นจำนวนแสนๆ&nbsp;&nbsp;ล้าน&nbsp;&nbsp;ๆ&nbsp;&nbsp;บาท&nbsp;&nbsp;และหากเราต้องถวายทั้งหมดนี้แด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราสามารถ<wbr>กระทำได้นี่คืองานเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แทนที่จะก่อสร้างอาคารสูง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อสนองประสาทสัมผัส<wbr>ของตนเอง&nbsp;&nbsp;เราสามารถก่อสร้างวัดอันวิจิตรตระการตาเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อัญเชิญพระปฏิ<wbr>มาของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และบริหารจัดการเพื่อการรับใช้ต่อพระปฏิมาดังที่ได้กำหนดไว้ในหนังสือ<wbr>แห่งการอุทิศตนเสียสละรับใช้ที่เชื่อถือได้&nbsp;&nbsp;ทั้งหมดนี้คือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa-karma</span><span class="slant pali">กฺฤษฺณ-กรฺม</span><span class="slant thai">กฤษณะ-กัรมะ</span><span class="slant ram">คริชณะ-คารมะ</span>&nbsp;&nbsp;เราไม่ควรยึด<wbr>ติดกับผลงานของตน&nbsp;&nbsp;แต่ผลงานควรถวายให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และควรรับเอา&nbsp;&nbsp;<span class="slant iast">prasādam</span><span class="slant pali">ปฺรสาทมฺ</span><span class="slant thai">ประสาทัม</span><span class="slant ram">พระ- สาดัม,พระ- <wbr>สาดัม</span>&nbsp;&nbsp;หรือ<wbr>ส่วนที่เหลือจากการถวายให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แล้ว&nbsp;&nbsp;หากผู้ใดก่อสร้างอาคารใหญ่&nbsp;&nbsp;ๆ&nbsp;&nbsp;เพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และอัญเชิญพระปฏิมาของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มาประทับ&nbsp;&nbsp;ผู้นั้นจะไม่ถูกห้ามให้มาอยู่ในอาคาร&nbsp;&nbsp;แต่<wbr>ต้องเข้าใจว่าเจ้าของอาคารคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;หาก<wbr>ไม่สามารถสร้างวัดเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราสามารถทำความสะอาดวัดให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;นั่นก็เป็น<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span>&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;หากมีที่ดินเราสามารถทำสวน&nbsp;&nbsp;ในประเทศอินเดียอย่าง<wbr>น้อยคนจนจะมีที่ดินหนึ่งแปลง&nbsp;&nbsp;สามารถใช้ประโยชน์ในผืนดินนั้นเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยการ<wbr>ปลูกไม้ดอกเพื่อถวายให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เราสามารถปลูกต้น&nbsp;&nbsp;<span class="slant iast">tulasī</span><span class="slant pali">ตุลสี</span><span class="slant thai">ตุละสี</span><span class="slant ram">ทุละสี</span>&nbsp;&nbsp;เพราะว่าใบ&nbsp;&nbsp;<span class="slant iast">tulasī</span><span class="slant pali">ตุลสี</span><span class="slant thai">ตุละสี</span><span class="slant ram">ทุละสี</span>&nbsp;&nbsp;มีความ<wbr>สำคัญมาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแนะนำไว้ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<span class="slant iast">patraṁ&nbsp;&nbsp;puṣpaṁ&nbsp;&nbsp;phalaṁ&nbsp;&nbsp;toyam</span><span class="slant pali">ปตฺรํปุษฺปํผลํโตยมฺ</span><span class="slant thai">ปัตรังปุษปังผะลังโตยัม</span><span class="slant ram">โทยัม</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงปรารถนาให้เราถวายใบไม้&nbsp;&nbsp;ดอกไม้&nbsp;&nbsp;ผลไม้&nbsp;&nbsp;หรือน้ำเพียงเล็กน้อยแด่พระองค์และจาก<wbr>การถวายเช่นนี้พระองค์จะทรงพอพระทัย&nbsp;&nbsp;ใบไม้นี้หมายถึงใบ&nbsp;&nbsp;<span class="slant iast">tulasī</span><span class="slant pali">ตุลสี</span><span class="slant thai">ตุละสี</span><span class="slant ram">ทุละสี</span>&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;ดังนั้นเราสามารถปลูกต้น&nbsp;&nbsp;<span class="slant iast">tulasī</span><span class="slant pali">ตุลสี</span><span class="slant thai">ตุละสี</span><span class="slant ram">ทุละสี</span>&nbsp;&nbsp;และรดน้ำ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;แม้แต่คนที่ยากจนที่สุดสามารถปฏิบัติการ<wbr>รับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;นี่คือตัวอย่างบางประการว่าเราสามารถปฏิบัติในการทำงานเพื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ได้อย่างไร
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สาวกของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นมิตรกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;ท่านไม่มี<wbr>ศัตรู&nbsp;&nbsp;<i>(นิไรฺวรฮ)</i>&nbsp;&nbsp;เป็นเช่นนี้ได้อย่างไร?&nbsp;&nbsp;สาวกสถิตใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกทราบว่า&nbsp;&nbsp;การอุทิศ<wbr>ตนเสียสละรับใช้แด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้นที่สามารถปลดเปลื้องบุคคลจากปัญหาทั้งหลายทั้ง<wbr>ปวงของชีวิต&nbsp;&nbsp;ท่านมีประสบการณ์โดยตรงเช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงปรารถนาจะแนะนำระบบ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกนี้แด่สังคมมนุษย์&nbsp;&nbsp;มีตัวอย่างในประวัติสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มากมาย<wbr>ที่เสี่ยงชีวิตเพื่อเผยแพร่พระเจ้าจิตสำนึก&nbsp;&nbsp;ตัวอย่างที่น่าชื่นชมคือ&nbsp;&nbsp;พระเยซู&nbsp;&nbsp;คริสต์&nbsp;&nbsp;ทรง<wbr>ถูกพวกที่ไม่ใช่สาวกตรึงไว้บนไม้กางเขน&nbsp;&nbsp;แต่พระองค์ทรงยอมสละชีวิตเพื่อเผยแพร่<wbr>พระเจ้าจิตสำนึก&nbsp;&nbsp;แน่นอนว่าเป็นเพียงผิวเผินเท่านั้นที่เข้าใจว่าพระองค์ทรงถูกสังหารที่ประเทศอินเดียมีตัวอย่างมากมายในทำนองเดียวกันนี้&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ฐากุร&nbsp;&nbsp;หริทาส</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ปฺรหฺลาท&nbsp;&nbsp;มหาราช</i>&nbsp;&nbsp;ทำไมจึงเสี่ยงเช่นนี้?&nbsp;&nbsp;เพราะพวกท่านปรารถนาที่จะเผยแพร่<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกซึ่งเป็นงานที่ยาก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกรู้ว่า&nbsp;&nbsp;หากมนุษย์ได้รับความ<wbr>ทุกข์ก็เนื่องจากพวกเขาลืมความสัมพันธ์นิรันดรกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประโยชน์สูงสุดที่<wbr>สามารถให้แก่สังคมมนุษย์คือปลดเปลื้องเพื่อนบ้านจากปัญหาทางวัตถุทั้งหลายทั้งปวงด้วยวิธีนี้ที่สาวกผู้บริสุทธิ์ปฏิบัติในการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;บัดนี้เราสามารถจินตานาการ<wbr>ได้ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงมีพระเมตตาเพียงไรต่อพวกที่ปฏิบัติตนรับใช้พระองค์&nbsp;&nbsp;ยอมเสี่ยงทุกสิ่ง<wbr>ทุกอย่างเพื่อพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แน่นอนว่าบุคคลเช่นนี้ต้องบรรลุถึงโลกสูงสุดหลังจากออก<wbr>จากร่างนี้ไป
+  คำว่า&nbsp;&nbsp;<span class="slant iast">mat-paramaḥ</span><span class="slant pali">มตฺ-ปรมห์</span><span class="slant thai">มัต-ปะระมะห์</span><span class="slant ram">มัท-พะระมะฮ</span>&nbsp;&nbsp;หมายถึงผู้พิจารณาว่า&nbsp;&nbsp;การได้มาอยู่ใกล้ชิดกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ที่พระตำหนักสูงสุดของพระองค์เป็นความสมบูรณ์สูงสุดของชีวิต&nbsp;&nbsp;บุคคลเช่นนี้ไม่<wbr>ปรารถนาพัฒนาไปยังดาวเคราะห์ที่สูงกว่าเช่น&nbsp;&nbsp;ดวงจันทร์&nbsp;&nbsp;ดวงอาทิตย์&nbsp;&nbsp;หรือโลกสวรรค์หรือแม้แต่โลกที่สูงสุดของจักรวาลนี้คือ&nbsp;&nbsp;<span class="slant iast">brahmaloka</span><span class="slant pali">พฺรหฺมโลก</span><span class="slant thai">พรัหมะโลกะ</span><span class="slant ram">บระฮมะโลคะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;โลก&nbsp;&nbsp;เขาไม่หลงใหล<wbr>อยู่กับสิ่งเหล่านี้&nbsp;&nbsp;แต่ยึดมั่นเพียงที่จะย้ายไปยังท้องฟ้าทิพย์เท่านั้น&nbsp;&nbsp;และแม้ในท้องฟ้าทิพย์เขาก็ไม่พึงพอใจที่จะกลืนเข้าไปในรัศมี&nbsp;&nbsp;<span class="slant iast">brahma-jyotir</span><span class="slant pali">พฺรหฺม-โชฺยติรฺ</span><span class="slant thai">พรัหมะ-ชโยติร</span><span class="slant ram">บระฮมะจโยทิ</span>&nbsp;&nbsp;อันเจิดจรัส&nbsp;&nbsp;เพราะปรารถนา<wbr>ที่จะเข้าไปในโลกทิพย์สูงสุดชื่อว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka,&nbsp;&nbsp;goloka&nbsp;&nbsp;vṛndāvana</span><span class="slant pali">กฺฤษฺณโลกโคโลกวฺฤนฺทาวน</span><span class="slant thai">กฤษณะโลกะโคโลกะวฤนทาวะนะ</span><span class="slant ram">คริชณะโลคะโกโลคะวรินดาวะนะ</span>&nbsp;&nbsp;ซึ่งตนเองมี<wbr>ความรู้ที่สมบูรณ์เกี่ยวกับโลกนี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่สนใจโลกอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังที่ได้แสดงไว้ด้วยคำว่า&nbsp;&nbsp;<span class="slant iast">mad-bhaktaḥ</span><span class="slant pali">มทฺ-ภกฺตห์</span><span class="slant thai">มัท-ภักตะห์</span><span class="slant ram">มัด-บัฺคธะฮ</span>&nbsp;&nbsp;เขาจะปฏิบัติอย่างเต็มที่ในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;โดยเฉพาะในเก้าวิธี<wbr>แห่งการปฏิบัติอุทิศตนเสียสละเช่น&nbsp;&nbsp;การสดับฟัง&nbsp;&nbsp;การสวดภาวนา&nbsp;&nbsp;การระลึกถึง&nbsp;&nbsp;การบูชาการรับใช้พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;การถวายบทมนต์&nbsp;&nbsp;การปฏิบัติตามคำสั่ง<wbr>ของพระองค์&nbsp;&nbsp;การเป็นมิตรกับพระองค์&nbsp;&nbsp;และการศิโรราบทุกสิ่งทุกอย่างแด่พระองค์&nbsp;&nbsp;เขา<wbr>สามารถปฏิบัติในกระบวนการอุทิศตนเสียสละทั้งเก้าวิธีนี้หรือแปด&nbsp;&nbsp;หรือเจ็ด&nbsp;&nbsp;หรืออย่าง<wbr>น้อยหนึ่ง&nbsp;&nbsp;วิธี&nbsp;&nbsp;เช่นนี้จะทำให้ชีวิตเขาสมบูรณ์อย่างแน่นอน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โดยสรุป&nbsp;&nbsp;รูปลักษณ์จักรวาลของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ซึ่งเป็นปรากฏการณ์ไม่ถาวรและ<wbr>รูปลักษณ์แห่งกาลเวลาที่กลืนกินทุกสิ่งทุกอย่าง&nbsp;&nbsp;และแม้แต่รูปลักษณ์แห่งพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;สี่กร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้แสดงให้เห็นทั้งหมด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของ<wbr>ปรากฏการณ์ทั้งหลายเหล่านี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงมิใช่เป็นปรากฏการณ์ของ&nbsp;&nbsp;<i>วิศฺว-รูป</i>&nbsp;&nbsp;องค์<wbr>เดิม&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของรูปลักษณ์ทั้งหมด&nbsp;&nbsp;มีพระ<wbr>&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เป็นร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;แต่สำหรับสาวกไม่มีรูปลักษณ์ใดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ที่จะมีความ<wbr>สำคัญนอกจากรูปลักษณ์เดิมสองกร&nbsp;&nbsp;<i>ศฺยามสุนฺทร</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ได้กล่าว<wbr>ไว้ว่า&nbsp;&nbsp;พวกที่ยึดมั่นอยู่กับรูปลักษณ์&nbsp;&nbsp;<i>ศฺยามสุนฺทร</i>&nbsp;&nbsp;แห่งองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยความรัก&nbsp;&nbsp;และ<wbr>ด้วยการอุทิศตนเสียสละ&nbsp;&nbsp;จะสามารถเห็นพระองค์เสมอภายในหัวใจและสามารถเห็นทุก<wbr>สิ่งทุกอย่าง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรเข้าใจว่าคำอธิบายของบทที่สิบเอ็ดนี้คือ&nbsp;&nbsp;รูปลักษณ์แห่งองค์<wbr>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นเนื้อหาสาระสำคัญและสูงที่สุด
+  คำว่า&nbsp;&nbsp;<span class="slant iast">saṅga-varjitaḥ</span><span class="slant pali">สงฺค-วรฺชิตห์</span><span class="slant thai">สังคะ-วัรชิตะห์</span><span class="slant ram">สังกะ-วารจิทะฮ</span>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ชีวิตไม่ควรไปคบหาสมาคมกับ<wbr>บุคคลผู้ต่อต้าน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่เพียงแต่ผู้ที่ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้นที่ต่อต้าน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แม้แต่พวกที่ยึดติดกับกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และพวกที่คาดคะเนทางจิตก็เป็นผู้ต่อ<wbr>ต้าน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ในรูปแบบที่บริสุทธิ์ได้อธิบายไว้ใน&nbsp;&nbsp;<span class="slant iast">bhakti-rasāmṛta-sindhu</span><span class="slant pali">ภกฺติ-รสามฺฤต-สินฺธุ</span><span class="slant thai">ภักติ-ระสามฤตะ-สินธุ</span><span class="slant ram">บัฺคธิ,บัคฺธิ--</span>&nbsp;&nbsp;(1.1.11)&nbsp;&nbsp;ดังนี้
+  </p>
+</div>
+
+<div class="r r-lang-en r-verse-text">
+<span class="slant iast">anyābhilāṣitā-śūnyaṁ<br /></span>
+<span class="slant pali">อนฺยาภิลาษิตา-ศูนฺยํ<br /></span>
+<span class="slant thai">อันยาภิลาษิตา-ศูนยัง<br /></span>
+<span class="slant ram">อันยาบิฺลาชิทา-ชูนยัม<br /></span>
+<span class="slant iast">jñāna-karmādy-anāvṛtam<br /></span>
+<span class="slant pali">ชฺญาน-กรฺมาทฺยฺ-อนาวฺฤตมฺ<br /></span>
+<span class="slant thai">ชญานะ-กัรมาทย-อะนาวฤตัม<br /></span>
+<span class="slant ram">กยานะ-คารมาดิ-อนาวริทัม<br /></span>
+<span class="slant iast">ānukūlyena kṛṣṇānu-<br /></span>
+<span class="slant pali">อานุกูเลฺยน กฺฤษฺณานุ-<br /></span>
+<span class="slant thai">อานุกูลเยนะ กฤษณานุ-<br /></span>
+<span class="slant ram">อานุคูลเยนะ คริชณานุ-<br /></span>
+<span class="slant iast">śīlanaṁ bhaktir uttamā<br /></span>
+<span class="slant pali">ศีลนํ ภกฺติรฺ อุตฺตมา<br /></span>
+<span class="slant thai">ศีละนัง ภักติร อุตตะมา<br /></span>
+<span class="slant ram">ชีละนัม บัฺคธิร อุททะมา<br /></span>
+
+  
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  โศลกนี้&nbsp;&nbsp;<span class="slant iast">śrīla</span><span class="slant pali">ศฺรีล</span><span class="slant thai">ศรีละ</span><span class="slant ram">ชรีละ</span>&nbsp;&nbsp;<span class="slant iast">rūpa</span><span class="slant pali">รูป</span><span class="slant thai">รูปะ</span><span class="slant ram">รูพะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;หากผู้ใดปรารถนาการอุทิศตนเสีย<wbr>สละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;ต้องเป็นอิสระจากมลทินทางวัตถุทั้งหมด&nbsp;&nbsp;และต้องเป็นอิสระจาก<wbr>การคบหาสมาคมกับบุคคลผู้ยึดติดอยู่กับกิจกรรมเพื่อผลทางวัตถุ&nbsp;&nbsp;และยึดติดอยู่กับการ<wbr>คาดคะเนทางจิต&nbsp;&nbsp;เมื่อเป็นอิสระจากการคบหาสมาคมที่ไม่พึงปรารถนา&nbsp;&nbsp;และจากมลทิน<wbr>แห่งความปรารถนาทางวัตถุเช่นนี้&nbsp;&nbsp;เขาจะพัฒนาความรู้แห่งองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยความชื่น<wbr>ชอบ&nbsp;&nbsp;เช่นนี้เรียกว่าการอุทิศตนเสียสละรับใช้ที่บริสุทธิ์&nbsp;&nbsp;<span class="slant iast">ānukūlyasya&nbsp;&nbsp;saṅkalpaḥ&nbsp;&nbsp;prātikūlyasya&nbsp;&nbsp;varjanam(hari-bhakti-vilāsa</span><span class="slant pali">อานุกูลฺยสฺยสงฺกลฺปห์ปฺราติกูลฺยสฺยวรฺชนมฺ(หริ-ภกฺติ-วิลาส</span><span class="slant thai">อานุกูลยัสยะสังกัลปะห์ปราติกูลยัสยะวัรชะนัม(หะริ-ภักติ-วิลาสะ</span><span class="slant ram">สังคัลพะฮ(-บัฺคธิ,บัคฺธิ-</span>&nbsp;&nbsp;11.676)&nbsp;&nbsp;เขาควรคิดถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และปฏิบัติเพื่อ<wbr>พระองค์ด้วยความชื่นชอบไม่ใช่ในเชิงลบ&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;เป็นศัตรูของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จากจุดเริ่มต้น<wbr>แห่งการประสูติของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;ได้วางแผนมากมายหลายวิธีที่จะสังหารพระองค์และ<wbr>เนื่องจากล้มเหลวทุกครั้ง&nbsp;&nbsp;เขาจึงคิดถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อยู่ตลอดเวลา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ขณะที่ทำงาน&nbsp;&nbsp;ขณะ<wbr>ที่รับประทานอาหาร&nbsp;&nbsp;และขณะที่นอนอยู่&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;จะมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกตลอดเวลาในทุก&nbsp;&nbsp;ๆด้าน&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเช่นนี้ไม่เป็นที่ชื่นชอบ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ถึงแม้ว่า&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;จะคิด<wbr>ถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;วันละยี่สิบสี่ชั่วโมง&nbsp;&nbsp;แต่ถือว่าเป็นมารและในที่สุดก็ถูก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สังหาร&nbsp;&nbsp;แน่นอน<wbr>ว่าผู้ใดที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สังหารจะบรรลุถึงความหลุดพ้นทันที&nbsp;&nbsp;แต่นั่นไม่ใช่จุดมุ่งหมายของสาวก<wbr>ผู้บริสุทธิ์&nbsp;&nbsp;สาวกผู้บริสุทธิ์ไม่ต้องการแม้แต่ความหลุดพ้น&nbsp;&nbsp;ท่านไม่ต้องการแม้แต่จะโอน<wbr>ย้ายไปยังโลกที่สูงที่สุด&nbsp;&nbsp;<span class="slant iast">goloka&nbsp;&nbsp;vṛndāvana</span><span class="slant pali">โคโลกวฺฤนฺทาวน</span><span class="slant thai">โคโลกะวฤนทาวะนะ</span><span class="slant ram">โกโลคะวรินดาวะนะ</span>&nbsp;&nbsp;จุดมุ่งหมายเดียวของท่านคือ&nbsp;&nbsp;ไม่ว่าจะอยู่<wbr>ที่ใดก็ขอให้ได้รับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  สาวกของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นมิตรกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;ท่านไม่มี<wbr>ศัตรู&nbsp;&nbsp;<span class="slant iast">(nirvairaḥ)</span><span class="slant pali">(นิไรฺวรห์)</span><span class="slant thai">(นิรไวระห์)</span><span class="slant ram">(นิรไวระฮ)</span>&nbsp;&nbsp;เป็นเช่นนี้ได้อย่างไร?&nbsp;&nbsp;สาวกสถิตใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกทราบว่า&nbsp;&nbsp;การอุทิศ<wbr>ตนเสียสละรับใช้แด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้นที่สามารถปลดเปลื้องบุคคลจากปัญหาทั้งหลายทั้ง<wbr>ปวงของชีวิต&nbsp;&nbsp;ท่านมีประสบการณ์โดยตรงเช่นกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงปรารถนาจะแนะนำระบบ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกนี้แด่สังคมมนุษย์&nbsp;&nbsp;มีตัวอย่างในประวัติสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มากมาย<wbr>ที่เสี่ยงชีวิตเพื่อเผยแพร่พระเจ้าจิตสำนึก&nbsp;&nbsp;ตัวอย่างที่น่าชื่นชมคือ&nbsp;&nbsp;พระเยซู&nbsp;&nbsp;คริสต์&nbsp;&nbsp;ทรง<wbr>ถูกพวกที่ไม่ใช่สาวกตรึงไว้บนไม้กางเขน&nbsp;&nbsp;แต่พระองค์ทรงยอมสละชีวิตเพื่อเผยแพร่<wbr>พระเจ้าจิตสำนึก&nbsp;&nbsp;แน่นอนว่าเป็นเพียงผิวเผินเท่านั้นที่เข้าใจว่าพระองค์ทรงถูกสังหารที่ประเทศอินเดียมีตัวอย่างมากมายในทำนองเดียวกันนี้&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">ṭhākura&nbsp;&nbsp;haridāsa</span><span class="slant pali">ฐากุรหริทาส</span><span class="slant thai">ฐากุระหะริทาสะ</span><span class="slant ram">ทฺาคุระฮะริดาสะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">prahlāda&nbsp;&nbsp;mahārāja</span><span class="slant pali">ปฺรหฺลาทมหาราช</span><span class="slant thai">ปรัหลาทะมะหาราชะ</span><span class="slant ram">พระฮลาดะมะฮาราจะ</span>&nbsp;&nbsp;ทำไมจึงเสี่ยงเช่นนี้?&nbsp;&nbsp;เพราะพวกท่านปรารถนาที่จะเผยแพร่<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกซึ่งเป็นงานที่ยาก&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกรู้ว่า&nbsp;&nbsp;หากมนุษย์ได้รับความ<wbr>ทุกข์ก็เนื่องจากพวกเขาลืมความสัมพันธ์นิรันดรกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ประโยชน์สูงสุดที่<wbr>สามารถให้แก่สังคมมนุษย์คือปลดเปลื้องเพื่อนบ้านจากปัญหาทางวัตถุทั้งหลายทั้งปวงด้วยวิธีนี้ที่สาวกผู้บริสุทธิ์ปฏิบัติในการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;บัดนี้เราสามารถจินตานาการ<wbr>ได้ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงมีพระเมตตาเพียงไรต่อพวกที่ปฏิบัติตนรับใช้พระองค์&nbsp;&nbsp;ยอมเสี่ยงทุกสิ่ง<wbr>ทุกอย่างเพื่อพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แน่นอนว่าบุคคลเช่นนี้ต้องบรรลุถึงโลกสูงสุดหลังจากออก<wbr>จากร่างนี้ไป
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  โดยสรุป&nbsp;&nbsp;รูปลักษณ์จักรวาลของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ซึ่งเป็นปรากฏการณ์ไม่ถาวรและ<wbr>รูปลักษณ์แห่งกาลเวลาที่กลืนกินทุกสิ่งทุกอย่าง&nbsp;&nbsp;และแม้แต่รูปลักษณ์แห่งพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;สี่กร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้แสดงให้เห็นทั้งหมด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของ<wbr>ปรากฏการณ์ทั้งหลายเหล่านี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงมิใช่เป็นปรากฏการณ์ของ&nbsp;&nbsp;<span class="slant iast">viśva-rūpa</span><span class="slant pali">วิศฺว-รูป</span><span class="slant thai">วิศวะ-รูปะ</span><span class="slant ram">วิชวะ-รูพะ</span>&nbsp;&nbsp;องค์<wbr>เดิม&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของรูปลักษณ์ทั้งหมด&nbsp;&nbsp;มีพระ<wbr>&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เป็นร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;แต่สำหรับสาวกไม่มีรูปลักษณ์ใดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ที่จะมีความ<wbr>สำคัญนอกจากรูปลักษณ์เดิมสองกร&nbsp;&nbsp;<span class="slant iast">śyāmasundara</span><span class="slant pali">ศฺยามสุนฺทร</span><span class="slant thai">ศยามะสุนทะระ</span><span class="slant ram">ชยามะสุนดะระ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ได้กล่าว<wbr>ไว้ว่า&nbsp;&nbsp;พวกที่ยึดมั่นอยู่กับรูปลักษณ์&nbsp;&nbsp;<span class="slant iast">śyāmasundara</span><span class="slant pali">ศฺยามสุนฺทร</span><span class="slant thai">ศยามะสุนทะระ</span><span class="slant ram">ชยามะสุนดะระ</span>&nbsp;&nbsp;แห่งองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยความรัก&nbsp;&nbsp;และ<wbr>ด้วยการอุทิศตนเสียสละ&nbsp;&nbsp;จะสามารถเห็นพระองค์เสมอภายในหัวใจและสามารถเห็นทุก<wbr>สิ่งทุกอย่าง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราควรเข้าใจว่าคำอธิบายของบทที่สิบเอ็ดนี้คือ&nbsp;&nbsp;รูปลักษณ์แห่งองค์<wbr>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นเนื้อหาสาระสำคัญและสูงที่สุด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph-thus-ends">
   <p>
-  <em>ดังนั้น ได้จบคำอธิบายโดย  <i>ภกฺติเวทนฺต</i>  บทที่สิบเอ็ดของหนังสือ   <i>ศฺรีมทฺ ภควทฺ-คีตา</i>  ในหัวข้อเรื่องรูปลักษณ์จักรวาล </em>
+  <em>ดังนั้น ได้จบคำอธิบายโดย  <span class="slant iast">bhaktivedanta</span><span class="slant pali">ภกฺติเวทนฺต</span><span class="slant thai">ภักติเวทันตะ</span><span class="slant ram">บัฺคธิเวดันธะ</span>  บทที่สิบเอ็ดของหนังสือ   <span class="slant iast">śrīmad bhagavad-gītā</span><span class="slant pali">ศฺรีมทฺภควทฺ-คีตา</span><span class="slant thai">ศรีมัทภะคะวัท-คีตา</span><span class="slant ram">ชรีมัด บฺะกะวัด-คีตา</span>  ในหัวข้อเรื่องรูปลักษณ์จักรวาล </em>
   </p>
 </div>
 

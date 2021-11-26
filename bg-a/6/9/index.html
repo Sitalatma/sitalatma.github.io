@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.9</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สุหฺฤนฺ-มิตฺรารฺยฺ-อุทาสีน-</i><br /><i>มธฺยสฺตฺห-เทฺวษฺย-พนฺธุษุ</i><br /><i>สาธุษฺวฺ อปิ จ ปาเปษุ</i><br /><i>สม-พุทฺธิรฺ วิศิษฺยเต</i>
+<span class="slant iast">suhṛn-mitrāry-udāsīna-<br /></span>
+<span class="slant pali">สุหฺฤนฺ-มิตฺรารฺยฺ-อุทาสีน-<br /></span>
+<span class="slant thai">สุหฤน-มิตรารย-อุทาสีนะ-<br /></span>
+<span class="slant ram">สุฮริน-มิทราริ อุดาสีนะ-<br /></span>
+<span class="slant iast">madhyastha-dveṣya-bandhuṣu<br /></span>
+<span class="slant pali">มธฺยสฺถ-เทฺวษฺย-พนฺธุษุ<br /></span>
+<span class="slant thai">มัธยัสถะ-ทเวษยะ-พันธุษุ<br /></span>
+<span class="slant ram">มัดฮยัสทฺะ-ดเวชยะ-บันดํุชฺุ<br /></span>
+<span class="slant iast">sādhuṣv api ca pāpeṣu<br /></span>
+<span class="slant pali">สาธุษฺวฺ อปิ จ ปาเปษุ<br /></span>
+<span class="slant thai">สาธุษว อะปิ จะ ปาเปษุ<br /></span>
+<span class="slant ram">สาดํุชุ อพิ ชะ พาเพชุ<br /></span>
+<span class="slant iast">sama-buddhir viśiṣyate<br /></span>
+<span class="slant pali">สม-พุทฺธิรฺ วิศิษฺยเต<br /></span>
+<span class="slant thai">สะมะ-พุทธิร วิศิษยะเต<br /></span>
+<span class="slant ram">สะมะ-บุดดิฺร วิชิชยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สุ-หฺฤตฺ</i> — แด่ผู้ปรารถนาดีโดยธรรมชาติ, <i>มิตฺร</i> — ผู้มีบุญคุณด้วยความรัก, <i>อริ</i> — ศัตรู, <i>อุทาสีน</i> — เป็นกลางระหว่างคู่ปรปักษ์, <i>มธฺย-สฺตฺห</i> — ผู้ปรองดองระหว่างคู่ปรปักษ์, <i>เทฺวษฺย</i> — ผู้อิจฉา, <i>พนฺธุษุ</i> — และญาติหรือผู้ปรารถนาดี, <i>สาธุษุ</i> — แด่นักบุญ, <i>อปิ</i> — รวมทั้ง, <i>จ</i> — และ, <i>ปาเปษุ</i> — แด่คนบาป, <i>สม-พุทฺธิฮ</i> — มีปัญญาเสมอภาค, <i>วิศิษฺยเต</i> — สูงขึ้นไปอีก
+  <span class="slant iast">su-hṛt</span><span class="slant pali">สุ-หฺฤตฺ</span><span class="slant thai">สุ-หฤต</span><span class="slant ram">สุ-ฮริท</span> — แด่ผู้ปรารถนาดีโดยธรรมชาติ, <span class="slant iast">mitra</span><span class="slant pali">มิตฺร</span><span class="slant thai">มิตระ</span><span class="slant ram">มิทระ</span> — ผู้มีบุญคุณด้วยความรัก, <span class="slant iast">ari</span><span class="slant pali">อริ</span><span class="slant thai">อะริ</span><span class="slant ram">อริ</span> — ศัตรู, <span class="slant iast">udāsīna</span><span class="slant pali">อุทาสีน</span><span class="slant thai">อุทาสีนะ</span><span class="slant ram">อุดา สีนะ</span> — เป็นกลางระหว่างคู่ปรปักษ์, <span class="slant iast">madhya-stha</span><span class="slant pali">มธฺย-สฺถ</span><span class="slant thai">มัธยะ-สถะ</span><span class="slant ram">มัดฮยัสทฺะ</span> — ผู้ปรองดองระหว่างคู่ปรปักษ์, <span class="slant iast">dveṣya</span><span class="slant pali">เทฺวษฺย</span><span class="slant thai">ทเวษยะ</span><span class="slant ram">ดเวชยะ</span> — ผู้อิจฉา, <span class="slant iast">bandhuṣu</span><span class="slant pali">พนฺธุษุ</span><span class="slant thai">พันธุษุ</span><span class="slant ram">บันดํุชุ</span> — และญาติหรือผู้ปรารถนาดี, <span class="slant iast">sādhuṣu</span><span class="slant pali">สาธุษุ</span><span class="slant thai">สาธุษุ</span><span class="slant ram">สาดํุชุ</span> — แด่นักบุญ, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — รวมทั้ง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">pāpeṣu</span><span class="slant pali">ปาเปษุ</span><span class="slant thai">ปาเปษุ</span><span class="slant ram">พาเพชุ</span> — แด่คนบาป, <span class="slant iast">sama-buddhiḥ</span><span class="slant pali">สม-พุทฺธิห์</span><span class="slant thai">สะมะ-พุทธิห์</span><span class="slant ram">สะมะ-บุดดิฺฮ</span> — มีปัญญาเสมอภาค, <span class="slant iast">viśiṣyate</span><span class="slant pali">วิศิษฺยเต</span><span class="slant thai">วิศิษยะเต</span><span class="slant ram">วิชิชยะเท</span> — สูงขึ้นไปอีก
   </p>
 </div>
 

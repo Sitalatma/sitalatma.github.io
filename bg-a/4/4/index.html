@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.4</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>อปรํ ภวโต ชนฺม</i><br /><i>ปรํ ชนฺม วิวสฺวตฮ</i><br /><i>กตฺหมฺ เอตทฺ วิชานียาํ</i><br /><i>ตฺวมฺ อาทะอุ โปฺรกฺตวานฺ อิติ</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">aparaṁ bhavato janma<br /></span>
+<span class="slant pali">อปรํ ภวโต ชนฺม<br /></span>
+<span class="slant thai">อะปะรัง ภะวะโต ชันมะ<br /></span>
+<span class="slant ram">อะพะรัม บฺะวะโท จันมะ<br /></span>
+<span class="slant iast">paraṁ janma vivasvataḥ<br /></span>
+<span class="slant pali">ปรํ ชนฺม วิวสฺวตห์<br /></span>
+<span class="slant thai">ปะรัง ชันมะ วิวัสวะตะห์<br /></span>
+<span class="slant ram">พะรัม จันมะ วิวัสวะทะฮ<br /></span>
+<span class="slant iast">katham etad vijānīyāṁ<br /></span>
+<span class="slant pali">กถมฺ เอตทฺ วิชานียำ<br /></span>
+<span class="slant thai">กะถัม เอตัท วิชานียาง<br /></span>
+<span class="slant ram">คะทฺัม เอทัด วิจานียาม<br /></span>
+<span class="slant iast">tvam ādau proktavān iti<br /></span>
+<span class="slant pali">ตฺวมฺ อาเทา โปฺรกฺตวานฺ อิติ<br /></span>
+<span class="slant thai">ตวัม อาเทา ปโรกตะวาน อิติ<br /></span>
+<span class="slant ram">ทวัม อาโด โพรคทะวาน อิทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัส, <i>อปรมฺ</i> — อ่อนวัยกว่า, <i>ภวตฮ</i> — ของท่าน, <i>ชนฺม</i> — เกิด, <i>ปรมฺ</i> — อาวุโสกว่า, <i>ชนฺม</i> — เกิด,<i>วิวสฺวตฮ</i> — แห่งองค์สุริยเทพ, <i>กตฺหมฺ</i> — อย่างไร, <i>เอตตฺ</i> — นี้, <i>วิชานียามฺ</i> — ข้าพเจ้าจะเข้าใจ, <i>ตฺวมฺ</i> — ท่าน, <i>อาทะอุ</i> — ในตอนต้น, <i>โปฺรกฺตวานฺ</i> — สอน, <i>อิติ</i> — ดังนั้น
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัส, <span class="slant iast">aparam</span><span class="slant pali">อปรมฺ</span><span class="slant thai">อะปะรัม</span><span class="slant ram">อพะรัม</span> — อ่อนวัยกว่า, <span class="slant iast">bhavataḥ</span><span class="slant pali">ภวตห์</span><span class="slant thai">ภะวะตะห์</span><span class="slant ram">บฺะวะทะฮ</span> — ของท่าน, <span class="slant iast">janma</span><span class="slant pali">ชนฺม</span><span class="slant thai">ชันมะ</span><span class="slant ram">จันมะ</span> — เกิด, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — อาวุโสกว่า, <span class="slant iast">janma</span><span class="slant pali">ชนฺม</span><span class="slant thai">ชันมะ</span><span class="slant ram">จันมะ</span> — เกิด,<span class="slant iast">vivasvataḥ</span><span class="slant pali">วิวสฺวตห์</span><span class="slant thai">วิวัสวะตะห์</span><span class="slant ram"> วิวัสวะทะฮ</span> — แห่งองค์สุริยเทพ, <span class="slant iast">katham</span><span class="slant pali">กถมฺ</span><span class="slant thai">กะถัม</span><span class="slant ram">คะทัฺม</span> — อย่างไร, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">vijānīyām</span><span class="slant pali">วิชานียามฺ</span><span class="slant thai">วิชานียาม</span><span class="slant ram">วิจานียาม</span> — ข้าพเจ้าจะเข้าใจ, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — ท่าน, <span class="slant iast">ādau</span><span class="slant pali">อาเทา</span><span class="slant thai">อาเทา</span><span class="slant ram">อาโด</span> — ในตอนต้น, <span class="slant iast">proktavān</span><span class="slant pali">โปฺรกฺตวานฺ</span><span class="slant thai">ปโรกตะวาน</span><span class="slant ram">โพรคทะวาน</span> — สอน, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;สุริยเทพ&nbsp;&nbsp;<i>วิวสฺวานฺ</i>&nbsp;&nbsp;ทรงเป็นผู้อาวุโสกว่าและประสูติก่อนพระองค์ข้าพเจ้าจะทราบได้อย่างไรว่าในตอนแรกพระองค์ทรงสอนศาสตร์นี้แก่สุริยเทพ
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;สุริยเทพ&nbsp;&nbsp;<span class="slant iast">vivasvān</span><span class="slant pali">วิวสฺวานฺ</span><span class="slant thai">วิวัสวาน</span><span class="slant ram">วิวัสวาน</span>&nbsp;&nbsp;ทรงเป็นผู้อาวุโสกว่าและประสูติก่อนพระองค์ข้าพเจ้าจะทราบได้อย่างไรว่าในตอนแรกพระองค์ทรงสอนศาสตร์นี้แก่สุริยเทพ
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ทรงได้รับการยอมรับว่าเป็นสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จะทรงไม่เชื่อ<wbr>ในคำดำรัสของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้อย่างไร?&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมิได้ถามคำถามนี้เพื่อพระองค์<wbr>เอง&nbsp;&nbsp;แต่ทรงถามเพื่อผู้ที่ไม่เชื่อในบุคลิกภาพสูงสุดแห่งพระเจ้าหรือเพื่อหมู่มารผู้ไม่ชอบ<wbr>ความคิดที่ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ควรได้รับการยอมรับว่าทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า<i>อรฺชุน</i>&nbsp;&nbsp;ทรงถามคำถามนี้เพื่อพวกมารเท่านั้น&nbsp;&nbsp;ประหนึ่งว่าไม่ทราบเกี่ยวกับบุคลิกภาพ<wbr>แห่งพระเจ้าหรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังจะมีหลักฐานในบทที่สิบ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงทราบเป็นอย่างดีว่า<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างและทรงเป็นคำสุดท้ายในความเป็นทิพย์&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงปรากฏพระวรกายเป็น<wbr>โอรสของพระนาง&nbsp;&nbsp;<i>เทวกี</i>&nbsp;&nbsp;บนโลกนี้&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะทรงรักษาความเป็นบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;บุคคลแรกผู้ทรงความเป็นอมตะได้อย่างไร&nbsp;&nbsp;เป็นสิ่งที่สามัญชนทั่วไปเข้าใจ<wbr>ได้ยากมาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อทำให้จุดนี้กระจ่างขึ้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงตั้งคำถามต่อหน้าพระพักตร์<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพื่อให้พระองค์ตรัสเยี่ยงผู้ที่เชื่อถือได้และเป็นที่ยอมรับกันทั่วสากลโลกว่า<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้มีอำนาจเชื่อถือได้สูงสุด&nbsp;&nbsp;ไม่เพียงแต่ปัจจุบันนี้เท่านั้น&nbsp;&nbsp;แต่เป็นที่ยอมรับ<wbr>มาตั้งแต่โบราณกาล&nbsp;&nbsp;มีแต่พวกมารเท่านั้นที่ปฏิเสธพระองค์&nbsp;&nbsp;อย่างไรก็ดีเนื่องจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงเป็นผู้มีอำนาจเชื่อถือได้ที่ยอมรับกันโดยทั่วไป&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงตั้งคำถามนี้ต่อหน้า<wbr>พระองค์เพื่อให้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงอธิบายถึงตัวพระองค์เองโดยไม่ต้องให้พวกมารมาพรรณนาแล้วพยายามบิดเบือน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไปในทางที่พวกมารและสาวกของตนต้องการเข้าใจ&nbsp;&nbsp;มี<wbr>ความจำเป็นที่ทุกคนควรทราบศาสตร์แห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพื่อประโยชน์แห่งตน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เมื่อ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสเกี่ยวกับตัวพระองค์เองจึงเป็นสิริมงคลแด่โลกทั้งหลายสำหรับพวกมารคำ<wbr>อธิบายของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้อาจดูแปลก&nbsp;&nbsp;เพราะว่ามารชอบศึกษาเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จากมุม<wbr>มองของตนเอง&nbsp;&nbsp;แต่สาวกยินดีต้อนรับพระดำรัสของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยหัวใจ&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรง<wbr>เป็นผู้ตรัสเอง&nbsp;&nbsp;สาวกจะเคารพบูชาพระดำรัสที่เชื่อถือได้ของพระองค์เสมอ&nbsp;&nbsp;เพราะสาวก<wbr>มีความกระตือรือร้นที่จะทราบเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ให้มากยิ่งขึ้น&nbsp;&nbsp;ผู้ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คิด<wbr>ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นมนุษย์ธรรมดา&nbsp;&nbsp;ด้วยวิธีนี้อาจรู้ว่าพระองค์ทรงเหนือมนุษย์เป็น&nbsp;&nbsp;<i>สจฺ-จิทฺ-อานนฺท-วิคฺรห</i>&nbsp;&nbsp;รูปลักษณ์อมตะแห่งความสุขเกษมสำราญและความรู้&nbsp;&nbsp;ทรงเป็น<wbr>ทิพย์อยู่เหนือการครอบงำของสามลักษณะแห่งธรรมชาติวัตถุ&nbsp;&nbsp;และทรงอยู่เหนืออิทธิพล<wbr>ของเวลาและอวกาศ&nbsp;&nbsp;สาวกของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงอยู่เหนือความเข้าใจผิดทั้งปวง<wbr>อย่างไร้ข้อกังขาเกี่ยวกับสภาวะความเป็นทิพย์ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงตั้งคำถามนี้ต่อ<wbr>หน้าพระพักตร์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เป็นเพียงความพยายามของสาวกเพื่อท้าทายท่าทีของผู้<wbr>ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ที่คิดว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นมนุษย์ธรรมดาผู้อยู่ภายใต้อำนาจของสาม<wbr>ระดับแห่งธรรมชาติวัตถุ
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงได้รับการยอมรับว่าเป็นสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จะทรงไม่เชื่อ<wbr>ในคำดำรัสของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้อย่างไร?&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมิได้ถามคำถามนี้เพื่อพระองค์<wbr>เอง&nbsp;&nbsp;แต่ทรงถามเพื่อผู้ที่ไม่เชื่อในบุคลิกภาพสูงสุดแห่งพระเจ้าหรือเพื่อหมู่มารผู้ไม่ชอบ<wbr>ความคิดที่ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ควรได้รับการยอมรับว่าทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถามคำถามนี้เพื่อพวกมารเท่านั้น&nbsp;&nbsp;ประหนึ่งว่าไม่ทราบเกี่ยวกับบุคลิกภาพ<wbr>แห่งพระเจ้าหรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังจะมีหลักฐานในบทที่สิบ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงทราบเป็นอย่างดีว่า<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่างและทรงเป็นคำสุดท้ายในความเป็นทิพย์&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงปรากฏพระวรกายเป็น<wbr>โอรสของพระนาง&nbsp;&nbsp;<span class="slant iast">devakī</span><span class="slant pali">เทวกี</span><span class="slant thai">เทวะกี</span><span class="slant ram">เดวะคี</span>&nbsp;&nbsp;บนโลกนี้&nbsp;&nbsp;แล้ว&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะทรงรักษาความเป็นบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้า&nbsp;&nbsp;บุคคลแรกผู้ทรงความเป็นอมตะได้อย่างไร&nbsp;&nbsp;เป็นสิ่งที่สามัญชนทั่วไปเข้าใจ<wbr>ได้ยากมาก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพื่อทำให้จุดนี้กระจ่างขึ้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงตั้งคำถามต่อหน้าพระพักตร์<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพื่อให้พระองค์ตรัสเยี่ยงผู้ที่เชื่อถือได้และเป็นที่ยอมรับกันทั่วสากลโลกว่า<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้มีอำนาจเชื่อถือได้สูงสุด&nbsp;&nbsp;ไม่เพียงแต่ปัจจุบันนี้เท่านั้น&nbsp;&nbsp;แต่เป็นที่ยอมรับ<wbr>มาตั้งแต่โบราณกาล&nbsp;&nbsp;มีแต่พวกมารเท่านั้นที่ปฏิเสธพระองค์&nbsp;&nbsp;อย่างไรก็ดีเนื่องจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงเป็นผู้มีอำนาจเชื่อถือได้ที่ยอมรับกันโดยทั่วไป&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงตั้งคำถามนี้ต่อหน้า<wbr>พระองค์เพื่อให้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงอธิบายถึงตัวพระองค์เองโดยไม่ต้องให้พวกมารมาพรรณนาแล้วพยายามบิดเบือน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไปในทางที่พวกมารและสาวกของตนต้องการเข้าใจ&nbsp;&nbsp;มี<wbr>ความจำเป็นที่ทุกคนควรทราบศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพื่อประโยชน์แห่งตน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เมื่อ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสเกี่ยวกับตัวพระองค์เองจึงเป็นสิริมงคลแด่โลกทั้งหลายสำหรับพวกมารคำ<wbr>อธิบายของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้อาจดูแปลก&nbsp;&nbsp;เพราะว่ามารชอบศึกษาเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จากมุม<wbr>มองของตนเอง&nbsp;&nbsp;แต่สาวกยินดีต้อนรับพระดำรัสของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยหัวใจ&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรง<wbr>เป็นผู้ตรัสเอง&nbsp;&nbsp;สาวกจะเคารพบูชาพระดำรัสที่เชื่อถือได้ของพระองค์เสมอ&nbsp;&nbsp;เพราะสาวก<wbr>มีความกระตือรือร้นที่จะทราบเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ให้มากยิ่งขึ้น&nbsp;&nbsp;ผู้ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คิด<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นมนุษย์ธรรมดา&nbsp;&nbsp;ด้วยวิธีนี้อาจรู้ว่าพระองค์ทรงเหนือมนุษย์เป็น&nbsp;&nbsp;<span class="slant iast">sac-cid-ānanda-vigraha</span><span class="slant pali">สจฺ-จิทฺ-อานนฺท-วิคฺรห</span><span class="slant thai">สัจ-จิท-อานันทะ-วิคระหะ</span><span class="slant ram">---</span>&nbsp;&nbsp;รูปลักษณ์อมตะแห่งความสุขเกษมสำราญและความรู้&nbsp;&nbsp;ทรงเป็น<wbr>ทิพย์อยู่เหนือการครอบงำของสามลักษณะแห่งธรรมชาติวัตถุ&nbsp;&nbsp;และทรงอยู่เหนืออิทธิพล<wbr>ของเวลาและอวกาศ&nbsp;&nbsp;สาวกของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงอยู่เหนือความเข้าใจผิดทั้งปวง<wbr>อย่างไร้ข้อกังขาเกี่ยวกับสภาวะความเป็นทิพย์ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงตั้งคำถามนี้ต่อ<wbr>หน้าพระพักตร์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เป็นเพียงความพยายามของสาวกเพื่อท้าทายท่าทีของผู้<wbr>ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ที่คิดว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นมนุษย์ธรรมดาผู้อยู่ภายใต้อำนาจของสาม<wbr>ระดับแห่งธรรมชาติวัตถุ
   </p>
 </div>
 

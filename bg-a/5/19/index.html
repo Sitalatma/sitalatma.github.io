@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.19</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อิไหว ไตรฺ ชิตฮ สโรฺค</i><br /><i>เยษาํ สาเมฺย สฺตฺหิตํ มนฮ</i><br /><i>นิโรฺทษํ หิ สมํ พฺรหฺม</i><br /><i>ตสฺมาทฺ พฺรหฺมณิ เต สฺตฺหิตาฮ</i>
+<span class="slant iast">ihaiva tair jitaḥ sargo<br /></span>
+<span class="slant pali">อิไหว ไตรฺ ชิตห์ สรฺโค<br /></span>
+<span class="slant thai">อิไหวะ ไตร ชิตะห์ สัรโค<br /></span>
+<span class="slant ram">อิไฮวะ ไทร จิทะฮ สารโก<br /></span>
+<span class="slant iast">yeṣāṁ sāmye sthitaṁ manaḥ<br /></span>
+<span class="slant pali">เยษำ สาเมฺย สฺถิตํ มนห์<br /></span>
+<span class="slant thai">เยษาง สามเย สถิตัง มะนะห์<br /></span>
+<span class="slant ram">เยชาม สามเย สทิฺทัม มะนะฮ<br /></span>
+<span class="slant iast">nirdoṣaṁ hi samaṁ brahma<br /></span>
+<span class="slant pali">นิรฺโทษํ หิ สมํ พฺรหฺม<br /></span>
+<span class="slant thai">นิรโทษัง หิ สะมัง พรัหมะ<br /></span>
+<span class="slant ram">นิรโดชัม ฮิ สะมัม บระฮมะ<br /></span>
+<span class="slant iast">tasmād brahmaṇi te sthitāḥ<br /></span>
+<span class="slant pali">ตสฺมาทฺ พฺรหฺมณิ เต สฺถิตาห์<br /></span>
+<span class="slant thai">ตัสมาท พรัหมะณิ เต สถิตาห์<br /></span>
+<span class="slant ram">ทัสมาด บระฮมะณิ เท สทิฺทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อิห</i> — ในชีวิตนี้, <i>เอว</i> — แน่นอน, <i>ไตฮ</i> — โดยพวกเขา, <i>ชิตฮ</i> — ชัยชนะ, <i>สรฺคฮ</i> — การเกิดและ ตาย, <i>เยษามฺ</i> — ผู้ซึ่ง, <i>สาเมฺย</i> — ในความสงบใจ, <i>สฺตฺหิตมฺ</i> — สถิต, <i>มนฮ</i> — จิตใจ, <i>นิโรฺทษมฺ</i> — ไม่มีมลทิน, <i>หิ</i> — แน่นอน, <i>สมมฺ</i> — ในความสงบใจ, <i>พฺรหฺม</i> — เหมือนองค์ภควาน, <i>ตสฺมาตฺ</i> — ดังนั้น, <i>พฺรหฺมณิ</i> — ในองค์ภควาน, <i>เต</i> — พวกเขา, <i>สฺตฺหิตาฮ</i> — สถิต
+  <span class="slant iast">iha</span><span class="slant pali">อิห</span><span class="slant thai">อิหะ</span><span class="slant ram">อิฮะ</span> — ในชีวิตนี้, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">taiḥ</span><span class="slant pali">ไตห์</span><span class="slant thai">ไตห์</span><span class="slant ram">ไทฮ</span> — โดยพวกเขา, <span class="slant iast">jitaḥ</span><span class="slant pali">ชิตห์</span><span class="slant thai">ชิตะห์</span><span class="slant ram">จิทะฮ</span> — ชัยชนะ, <span class="slant iast">sargaḥ</span><span class="slant pali">สรฺคห์</span><span class="slant thai">สัรคะห์</span><span class="slant ram">สารกะฮ</span> — การเกิดและ ตาย, <span class="slant iast">yeṣām</span><span class="slant pali">เยษามฺ</span><span class="slant thai">เยษาม</span><span class="slant ram">เยชาม</span> — ผู้ซึ่ง, <span class="slant iast">sāmye</span><span class="slant pali">สาเมฺย</span><span class="slant thai">สามเย</span><span class="slant ram">สามเย</span> — ในความสงบใจ, <span class="slant iast">sthitam</span><span class="slant pali">สฺถิตมฺ</span><span class="slant thai">สถิตัม</span><span class="slant ram">สทิฺทัม</span> — สถิต, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — จิตใจ, <span class="slant iast">nirdoṣam</span><span class="slant pali">นิรฺโทษมฺ</span><span class="slant thai">นิรโทษัม</span><span class="slant ram">นิรโดชัม</span> — ไม่มีมลทิน, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">samam</span><span class="slant pali">สมมฺ</span><span class="slant thai">สะมัม</span><span class="slant ram">สะมัม</span> — ในความสงบใจ, <span class="slant iast">brahma</span><span class="slant pali">พฺรหฺม</span><span class="slant thai">พรัหมะ</span><span class="slant ram">บระฮมะ</span> — เหมือนองค์ภควาน, <span class="slant iast">tasmāt</span><span class="slant pali">ตสฺมาตฺ</span><span class="slant thai">ตัสมาต</span><span class="slant ram">ทัสมาท</span> — ดังนั้น, <span class="slant iast">brahmaṇi</span><span class="slant pali">พฺรหฺมณิ</span><span class="slant thai">พรัหมะณิ</span><span class="slant ram">บระฮมะณิ</span> — ในองค์ภควาน, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">sthitāḥ</span><span class="slant pali">สฺถิตาห์</span><span class="slant thai">สถิตาห์</span><span class="slant ram">สทิฺทาฮ</span> — สถิต
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  พวกที่จิตใจสถิตในความมั่นคงและสงบ&nbsp;&nbsp;เป็นผู้ที่ได้รับชัยชนะจากสภาวะแห่งการเกิดและการตายแล้ว&nbsp;&nbsp;พวกนี้ไม่มีมลทินเหมือน&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เท่ากับสถิตใน<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;เรียบร้อยแล้ว
+  พวกที่จิตใจสถิตในความมั่นคงและสงบ&nbsp;&nbsp;เป็นผู้ที่ได้รับชัยชนะจากสภาวะแห่งการเกิดและการตายแล้ว&nbsp;&nbsp;พวกนี้ไม่มีมลทินเหมือน&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เท่ากับสถิตใน<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;เรียบร้อยแล้ว
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความสงบของจิตใจที่ได้กล่าวข้างต้นนี้เป็นเครื่องหมายของความรู้แจ้งแห่ง<wbr>ตน&nbsp;&nbsp;บุคคลที่บรรลุถึงระดับนี้อย่างแท้จริงควรได้รับการพิจารณาว่าเป็นผู้ที่ได้รับชัยชนะ<wbr>สภาวะทางวัตถุแล้ว&nbsp;&nbsp;โดยเฉพาะการเกิดและการตาย&nbsp;&nbsp;ตราบใดที่แสดงตัวกับร่างกายนี้<wbr>พิจารณาได้ว่าเขาคือพันธวิญญาณ&nbsp;&nbsp;แต่ในทันทีที่พัฒนามาถึงระดับแห่งความสงบด้วย<wbr>การรู้แจ้งตนเอง&nbsp;&nbsp;เขาเป็นอิสระจากพันธชีวิต&nbsp;&nbsp;หรืออีกนัยหนึ่งเขาไม่ต้องเกิดในโลกวัตถุ<wbr>นี้อีกต่อไป&nbsp;&nbsp;แต่สามารถบรรลุถึงอาณาจักรทิพย์หลังจากตายไป&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงไม่มี<wbr>มลทินเพราะทรงปราศจากความยึดติดหรือความเกลียดชัง&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;เมื่อสิ่ง<wbr>มีชีวิตปราศจากความยึดติดหรือความเกลียดชัง&nbsp;&nbsp;ตัวเขาก็ไร้มลทินได้เช่นเดียวกัน&nbsp;&nbsp;และมี<wbr>สิทธิ์บรรลุถึงอาณาจักรทิพย์&nbsp;&nbsp;บุคคลเช่นนี้พิจารณาได้ว่าเป็นผู้หลุดพ้นแล้ว&nbsp;&nbsp;และลักษณะ<wbr>อาการเป็นเช่นไรจะได้อธิบายต่อไป
+  ความสงบของจิตใจที่ได้กล่าวข้างต้นนี้เป็นเครื่องหมายของความรู้แจ้งแห่ง<wbr>ตน&nbsp;&nbsp;บุคคลที่บรรลุถึงระดับนี้อย่างแท้จริงควรได้รับการพิจารณาว่าเป็นผู้ที่ได้รับชัยชนะ<wbr>สภาวะทางวัตถุแล้ว&nbsp;&nbsp;โดยเฉพาะการเกิดและการตาย&nbsp;&nbsp;ตราบใดที่แสดงตัวกับร่างกายนี้<wbr>พิจารณาได้ว่าเขาคือพันธวิญญาณ&nbsp;&nbsp;แต่ในทันทีที่พัฒนามาถึงระดับแห่งความสงบด้วย<wbr>การรู้แจ้งตนเอง&nbsp;&nbsp;เขาเป็นอิสระจากพันธชีวิต&nbsp;&nbsp;หรืออีกนัยหนึ่งเขาไม่ต้องเกิดในโลกวัตถุ<wbr>นี้อีกต่อไป&nbsp;&nbsp;แต่สามารถบรรลุถึงอาณาจักรทิพย์หลังจากตายไป&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงไม่มี<wbr>มลทินเพราะทรงปราศจากความยึดติดหรือความเกลียดชัง&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;เมื่อสิ่ง<wbr>มีชีวิตปราศจากความยึดติดหรือความเกลียดชัง&nbsp;&nbsp;ตัวเขาก็ไร้มลทินได้เช่นเดียวกัน&nbsp;&nbsp;และมี<wbr>สิทธิ์บรรลุถึงอาณาจักรทิพย์&nbsp;&nbsp;บุคคลเช่นนี้พิจารณาได้ว่าเป็นผู้หลุดพ้นแล้ว&nbsp;&nbsp;และลักษณะ<wbr>อาการเป็นเช่นไรจะได้อธิบายต่อไป
   </p>
 </div>
 

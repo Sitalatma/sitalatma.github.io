@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตตฮ ส วิสฺมยาวิโษฺฏ</i><br /><i>หฺฤษฺฏ-โรมา ธนญฺ-ชยฮ</i><br /><i>ปฺรณมฺย ศิรสา เทวํ</i><br /><i>กฺฤตาญฺชลิรฺ อภาษต</i>
+<span class="slant iast">tataḥ sa vismayāviṣṭo<br /></span>
+<span class="slant pali">ตตห์ ส วิสฺมยาวิษฺโฏ<br /></span>
+<span class="slant thai">ตะตะห์ สะ วิสมะยาวิษโฏ<br /></span>
+<span class="slant ram">ทะทะฮ สะ วิสมะยาวิชโท<br /></span>
+<span class="slant iast">hṛṣṭa-romā dhanañ-jayaḥ<br /></span>
+<span class="slant pali">หฺฤษฺฏ-โรมา ธนญฺ-ชยห์<br /></span>
+<span class="slant thai">หฤษฏะ-โรมา ธะนัญ-ชะยะห์<br /></span>
+<span class="slant ram">อริชทะ-โรมา ดฺะนันจะยะฮ<br /></span>
+<span class="slant iast">praṇamya śirasā devaṁ<br /></span>
+<span class="slant pali">ปฺรณมฺย ศิรสา เทวํ<br /></span>
+<span class="slant thai">ประณัมยะ ศิระสา เทวัง<br /></span>
+<span class="slant ram">พระณัมยะ ชิระสา เดวัม<br /></span>
+<span class="slant iast">kṛtāñjalir abhāṣata<br /></span>
+<span class="slant pali">กฺฤตาญฺชลิรฺ อภาษต<br /></span>
+<span class="slant thai">กฤตาญชะลิร อะภาษะตะ<br /></span>
+<span class="slant ram">คริทานจะลิร อบฺาชะทะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตตฮ</i> — หลังจากนั้น, <i>สฮ</i> — เขา, <i>วิสฺมย-อาวิษฺฏฮ</i> — ปลาบปลื้มด้วยความอัศจรรย์ใจ, <i>หฺฤษฺฏ-โรมา</i> — ขนบนผิวหนังลุกชันเนื่องจากความปลื้มปีติสุขอย่างใหญ่หลวง, <i>ธนมฺ-ชยฮ</i> — <i>อรฺชุน</i>, <i>ปฺรณมฺย</i> — ถวายความเคารพ, <i>ศิรสา</i> — ด้วยศรีษะ, <i>เทวมฺ</i> — แด่องค์ ภควาน, <i>กฺฤต-อญฺชลิฮ</i> — ด้วยสองมือพนม, <i>อภาษต</i> — เริ่มตรัส
+  <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — หลังจากนั้น, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">vismaya-āviṣṭaḥ</span><span class="slant pali">วิสฺมย-อาวิษฺฏห์</span><span class="slant thai">วิสมะยะ-อาวิษฏะห์</span><span class="slant ram">วิสมะยะ-อาวิชทะฮ</span> — ปลาบปลื้มด้วยความอัศจรรย์ใจ, <span class="slant iast">hṛṣṭa-romā</span><span class="slant pali">หฺฤษฺฏ-โรมา</span><span class="slant thai">หฤษฏะ-โรมา</span><span class="slant ram">ฮริชทะ-โรมา</span> — ขนบนผิวหนังลุกชันเนื่องจากความปลื้มปีติสุขอย่างใหญ่หลวง, <span class="slant iast">dhanam-jayaḥ</span><span class="slant pali">ธนมฺ-ชยห์</span><span class="slant thai">ธะนัม-ชะยะห์</span><span class="slant ram">ดฺะนัน- จะยะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">praṇamya</span><span class="slant pali">ปฺรณมฺย</span><span class="slant thai">ประณัมยะ</span><span class="slant ram">พระณัมยะ</span> — ถวายความเคารพ, <span class="slant iast">śirasā</span><span class="slant pali">ศิรสา</span><span class="slant thai">ศิระสา</span><span class="slant ram">ชิระสา</span> — ด้วยศรีษะ, <span class="slant iast">devam</span><span class="slant pali">เทวมฺ</span><span class="slant thai">เทวัม</span><span class="slant ram">เดวัม</span> — แด่องค์ ภควาน, <span class="slant iast">kṛta-añjaliḥ</span><span class="slant pali">กฺฤต-อญฺชลิห์</span><span class="slant thai">กฤตะ-อัญชะลิห์</span><span class="slant ram">คริทะ-อันจะลิฮ</span> — ด้วยสองมือพนม, <span class="slant iast">abhāṣata</span><span class="slant pali">อภาษต</span><span class="slant thai">อะภาษะตะ</span><span class="slant ram">อบฺาชะทะ</span> — เริ่มตรัส
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  จากนั้น&nbsp;&nbsp;ด้วยความสับสนและอัศจรรย์ใจ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ขนลุกตั้งชันทรงก้มศีรษะแสดงความเคารพด้วยสองมือพนม&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเริ่มถวายบทมนต์แด่องค์ภควาน
+  จากนั้น&nbsp;&nbsp;ด้วยความสับสนและอัศจรรย์ใจ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ขนลุกตั้งชันทรงก้มศีรษะแสดงความเคารพด้วยสองมือพนม&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเริ่มถวายบทมนต์แด่องค์ภควาน
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เมื่อจักษุทิพย์เปิดเผยขึ้น&nbsp;&nbsp;ความสัมพันธ์ระหว่าง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ได้เปลี่ยน<wbr>ไปทันที&nbsp;&nbsp;ก่อนหน้านี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมีความสัมพันธ์กันในฐานะเพื่อน&nbsp;&nbsp;แต่&nbsp;&nbsp;ณบัดนี้&nbsp;&nbsp;หลังจากได้เปิดเผยรูปลักษณ์จักรวาลแล้ว&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงแสดงความเคารพด้วย<wbr>ความเคารพบูชาอย่างยิ่ง&nbsp;&nbsp;และด้วยสองมือพนม&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงถวายบทมนต์แด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สรรเสริญรูปลักษณ์จักรวาล&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความสัมพันธ์ของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;กลายมาเป็นความน่า<wbr>อัศจรรย์มากกว่าความเป็นเพื่อน&nbsp;&nbsp;เหล่าสาวกผู้ยิ่งใหญ่เห็น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในฐานะที่เป็นแหล่ง<wbr>กำเนิดของความสัมพันธ์ทั้งหลายทั้งปวง&nbsp;&nbsp;ในพระคัมภีร์ได้กล่าวถึงความสัมพันธ์พื้น<wbr>ฐานสิบสองประเภท&nbsp;&nbsp;และทั้งหมดนี้มีอยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;พระองค์ทรงเป็น<wbr>มหาสมุทรแห่งความสัมพันธ์ทั้งหลายที่แลกเปลี่ยนกันระหว่างสองชีวิต&nbsp;&nbsp;ระหว่างเทวดาหรือระหว่างองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสาวกของพระองค์
+  เมื่อจักษุทิพย์เปิดเผยขึ้น&nbsp;&nbsp;ความสัมพันธ์ระหว่าง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ได้เปลี่ยน<wbr>ไปทันที&nbsp;&nbsp;ก่อนหน้านี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมีความสัมพันธ์กันในฐานะเพื่อน&nbsp;&nbsp;แต่&nbsp;&nbsp;ณบัดนี้&nbsp;&nbsp;หลังจากได้เปิดเผยรูปลักษณ์จักรวาลแล้ว&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงแสดงความเคารพด้วย<wbr>ความเคารพบูชาอย่างยิ่ง&nbsp;&nbsp;และด้วยสองมือพนม&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถวายบทมนต์แด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สรรเสริญรูปลักษณ์จักรวาล&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ความสัมพันธ์ของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;กลายมาเป็นความน่า<wbr>อัศจรรย์มากกว่าความเป็นเพื่อน&nbsp;&nbsp;เหล่าสาวกผู้ยิ่งใหญ่เห็น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในฐานะที่เป็นแหล่ง<wbr>กำเนิดของความสัมพันธ์ทั้งหลายทั้งปวง&nbsp;&nbsp;ในพระคัมภีร์ได้กล่าวถึงความสัมพันธ์พื้น<wbr>ฐานสิบสองประเภท&nbsp;&nbsp;และทั้งหมดนี้มีอยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;พระองค์ทรงเป็น<wbr>มหาสมุทรแห่งความสัมพันธ์ทั้งหลายที่แลกเปลี่ยนกันระหว่างสองชีวิต&nbsp;&nbsp;ระหว่างเทวดาหรือระหว่างองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสาวกของพระองค์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงได้รับแรงดลใจด้วยความสัมพันธ์แห่งความอัศจรรย์&nbsp;&nbsp;และ<wbr>ภายในความอัศจรรย์นั้น&nbsp;&nbsp;ถึงแม้โดยธรรมชาติ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นผู้ที่มีความสุขุม&nbsp;&nbsp;สงบและเงียบมาก&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ได้กลายมาเป็นผู้ที่มีความปลื้มปีติสุข&nbsp;&nbsp;ขนลุกตั้งชัน&nbsp;&nbsp;และ<wbr>ทรงเริ่มถวายความเคารพแด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ด้วยมือทั้งสองพนม&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรง<wbr>มิได้กลัว&nbsp;&nbsp;แต่ได้รับผลกระทบจากความอัศจรรย์ของพระองค์&nbsp;&nbsp;สภาพแวดล้อมในขณะนั้น<wbr>คือความอัศจรรย์&nbsp;&nbsp;ธรรมชาติความสัมพันธ์แห่งความรักฉันเพื่อนท่วมท้นไปด้วยความ<wbr>อัศจรรย์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จึงทรงแสดงออกมาเช่นนี้
+  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงได้รับแรงดลใจด้วยความสัมพันธ์แห่งความอัศจรรย์&nbsp;&nbsp;และ<wbr>ภายในความอัศจรรย์นั้น&nbsp;&nbsp;ถึงแม้โดยธรรมชาติ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นผู้ที่มีความสุขุม&nbsp;&nbsp;สงบและเงียบมาก&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ได้กลายมาเป็นผู้ที่มีความปลื้มปีติสุข&nbsp;&nbsp;ขนลุกตั้งชัน&nbsp;&nbsp;และ<wbr>ทรงเริ่มถวายความเคารพแด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ด้วยมือทั้งสองพนม&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรง<wbr>มิได้กลัว&nbsp;&nbsp;แต่ได้รับผลกระทบจากความอัศจรรย์ของพระองค์&nbsp;&nbsp;สภาพแวดล้อมในขณะนั้น<wbr>คือความอัศจรรย์&nbsp;&nbsp;ธรรมชาติความสัมพันธ์แห่งความรักฉันเพื่อนท่วมท้นไปด้วยความ<wbr>อัศจรรย์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จึงทรงแสดงออกมาเช่นนี้
   </p>
 </div>
 

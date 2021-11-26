@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.10</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สห-ยชฺญาฮ ปฺรชาฮ สฺฤษฺฏฺวา</i><br /><i>ปุโรวาจ ปฺรชาปติฮ</i><br /><i>อเนน ปฺรสวิษฺยธฺวมฺ</i><br /><i>เอษ โว ′สฺตฺวฺ อิษฺฏ-กาม-ธุกฺ</i>
+<span class="slant iast">saha-yajñāḥ prajāḥ sṛṣṭvā<br /></span>
+<span class="slant pali">สห-ยชฺญาห์ ปฺรชาห์ สฺฤษฺฏฺวา<br /></span>
+<span class="slant thai">สะหะ-ยัชญาห์ ประชาห์ สฤษฏวา<br /></span>
+<span class="slant ram">สะฮะ-ยะกยาฮ พระจาฮ สริชทวา<br /></span>
+<span class="slant iast">purovāca prajāpatiḥ<br /></span>
+<span class="slant pali">ปุโรวาจ ปฺรชาปติห์<br /></span>
+<span class="slant thai">ปุโรวาจะ ประชาปะติห์<br /></span>
+<span class="slant ram">พุโรวาชะ พระจาพะทิฮ<br /></span>
+<span class="slant iast">anena prasaviṣyadhvam<br /></span>
+<span class="slant pali">อเนน ปฺรสวิษฺยธฺวมฺ<br /></span>
+<span class="slant thai">อะเนนะ ประสะวิษยัธวัม<br /></span>
+<span class="slant ram">อเนนะ พระสะวิชยัดฺวัม<br /></span>
+<span class="slant iast">eṣa vo ’stv iṣṭa-kāma-dhuk<br /></span>
+<span class="slant pali">เอษ โว ’สฺตฺวฺ อิษฺฏ-กาม-ธุกฺ<br /></span>
+<span class="slant thai">เอษะ โว ’สตว อิษฏะ-กามะ-ธุก<br /></span>
+<span class="slant ram">เอชะ โว 'สทุ อิชทะ-คามะ-ดํุคฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สห</i> — พร้อมกับ, <i>ยชฺญาฮ</i> — การบูชา, <i>ปฺรชาฮ</i> — ชั่วอายุคน, <i>สฺฤษฺฏฺวา</i> — การสร้าง, <i>ปุรา</i> — โบราณกาล, <i>อุวาจ</i> — กล่าว, <i>ปฺรชา-ปติฮ</i> — พระผู้เป็นเจ้าแห่งสรรพสัตว์, <i>อเนน</i> — ด้วย วิธีนี้, <i>ปฺรสวิษฺยธฺวมฺ</i> — จงเจริญรุ่งเรืองมากยิ่งขึ้น, <i>เอษฮ</i> — นี้, <i>วฮ</i> — ของท่าน, <i>อสฺตุ</i> — อนุญาตให้เป็น, <i>อิษฺฏ</i> — ของสิ่งที่ปรารถนาทั้งหมด, <i>กาม-ธุกฺ</i> — ผู้ให้
+  <span class="slant iast">saha</span><span class="slant pali">สห</span><span class="slant thai">สะหะ</span><span class="slant ram">สะฮะ</span> — พร้อมกับ, <span class="slant iast">yajñāḥ</span><span class="slant pali">ยชฺญาห์</span><span class="slant thai">ยัชญาห์</span><span class="slant ram">ยะกยาฮ</span> — การบูชา, <span class="slant iast">prajāḥ</span><span class="slant pali">ปฺรชาห์</span><span class="slant thai">ประชาห์</span><span class="slant ram">พระจาฮ</span> — ชั่วอายุคน, <span class="slant iast">sṛṣṭvā</span><span class="slant pali">สฺฤษฺฏฺวา</span><span class="slant thai">สฤษฏวา</span><span class="slant ram">สริชทวา</span> — การสร้าง, <span class="slant iast">purā</span><span class="slant pali">ปุรา</span><span class="slant thai">ปุรา</span><span class="slant ram">พุรา</span> — โบราณกาล, <span class="slant iast">uvāca</span><span class="slant pali">อุวาจ</span><span class="slant thai">อุวาจะ</span><span class="slant ram">อุวาชะ</span> — กล่าว, <span class="slant iast">prajā-patiḥ</span><span class="slant pali">ปฺรชา-ปติห์</span><span class="slant thai">ประชา-ปะติห์</span><span class="slant ram">พระจา-พะทิฮ</span> — พระผู้เป็นเจ้าแห่งสรรพสัตว์, <span class="slant iast">anena</span><span class="slant pali">อเนน</span><span class="slant thai">อะเนนะ</span><span class="slant ram">อเนนะ</span> — ด้วย วิธีนี้, <span class="slant iast">prasaviṣyadhvam</span><span class="slant pali">ปฺรสวิษฺยธฺวมฺ</span><span class="slant thai">ประสะวิษยัธวัม</span><span class="slant ram">พระสะวิชยัดฺวัม</span> — จงเจริญรุ่งเรืองมากยิ่งขึ้น, <span class="slant iast">eṣaḥ</span><span class="slant pali">เอษห์</span><span class="slant thai">เอษะห์</span><span class="slant ram">เอชะฮ</span> — นี้, <span class="slant iast">vaḥ</span><span class="slant pali">วห์</span><span class="slant thai">วะห์</span><span class="slant ram">วะฮ</span> — ของท่าน, <span class="slant iast">astu</span><span class="slant pali">อสฺตุ</span><span class="slant thai">อัสตุ</span><span class="slant ram">อัสทุ</span> — อนุญาตให้เป็น, <span class="slant iast">iṣṭa</span><span class="slant pali">อิษฺฏ</span><span class="slant thai">อิษฏะ</span><span class="slant ram">อิชทะ</span> — ของสิ่งที่ปรารถนาทั้งหมด, <span class="slant iast">kāma-dhuk</span><span class="slant pali">กาม-ธุกฺ</span><span class="slant thai">กามะ-ธุก</span><span class="slant ram">คามะ-ดํุค</span> — ผู้ให้
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในตอนเริ่มต้นของการสร้าง&nbsp;&nbsp;พระผู้เป็นเจ้าแห่งสรรพสัตว์ทรงส่งประชากรมนุษย์และเทวดา&nbsp;&nbsp;พร้อมทั้งพิธีการบูชาพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;และทรงให้พรด้วยการตรัสว่า&nbsp;&nbsp;“พวกเธอจงมีความสุขด้วย&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;(การบูชา)&nbsp;&nbsp;นี้&nbsp;&nbsp;เพราะการปฎิบัติเช่นนี้จะส่งผลทุกสิ่งที่เธอปรารถนา&nbsp;&nbsp;เพื่อให้ชีวิตอยู่อย่างมีความสุขและได้รับอิสรภาพหลุดพ้น”
+  ในตอนเริ่มต้นของการสร้าง&nbsp;&nbsp;พระผู้เป็นเจ้าแห่งสรรพสัตว์ทรงส่งประชากรมนุษย์และเทวดา&nbsp;&nbsp;พร้อมทั้งพิธีการบูชาพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;และทรงให้พรด้วยการตรัสว่า&nbsp;&nbsp;“พวกเธอจงมีความสุขด้วย&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;(การบูชา)&nbsp;&nbsp;นี้&nbsp;&nbsp;เพราะการปฎิบัติเช่นนี้จะส่งผลทุกสิ่งที่เธอปรารถนา&nbsp;&nbsp;เพื่อให้ชีวิตอยู่อย่างมีความสุขและได้รับอิสรภาพหลุดพ้น”
   </p>
 </div>
 
@@ -73,31 +174,61 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พระผู้เป็นเจ้าแห่งสรรพสัตว์ทั้งหลาย&nbsp;&nbsp;(พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ทรงสร้างโลกวัตถุ&nbsp;&nbsp;เพื่อ<wbr>เสนอให้พันธวิญญาณได้มีโอกาสกลับคืนสู่เหย้าคืนสู่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหลาย<wbr>ภายในการสร้างโลกวัตถุอยู่ภายใต้สภาวะของธรรมชาติวัตถุ&nbsp;&nbsp;เพราะลืมความสัมพันธ์<wbr>กับพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;หลักการพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;มีไว้เพื่อช่วยเรา<wbr>ให้เข้าใจความสัมพันธ์นิรันดรนี้&nbsp;&nbsp;ดังที่กล่าวไว้ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา:เวไทศฺ&nbsp;&nbsp;จ&nbsp;&nbsp;สไรฺวรฺ&nbsp;&nbsp;อหมฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;เวทฺยฮ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าจุดมุ่งหมายของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;คือเพื่อให้เข้าใจพระองค์บทสวดมนต์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้กล่าวว่า&nbsp;&nbsp;<i>ปติํ&nbsp;&nbsp;วิศฺวสฺยาเตฺมศฺวรมฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระผู้เป็นเจ้าของ<wbr>มวลชีวิตคือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(2.4.20)<i>ศฺรีล</i>&nbsp;&nbsp;<i>ศุกเทว</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;อธิบายถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<i>ปติ</i>&nbsp;&nbsp;ในหลายรูปแบบ
+  พระผู้เป็นเจ้าแห่งสรรพสัตว์ทั้งหลาย&nbsp;&nbsp;(พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ทรงสร้างโลกวัตถุ&nbsp;&nbsp;เพื่อ<wbr>เสนอให้พันธวิญญาณได้มีโอกาสกลับคืนสู่เหย้าคืนสู่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สิ่งมีชีวิตทั้งหลาย<wbr>ภายในการสร้างโลกวัตถุอยู่ภายใต้สภาวะของธรรมชาติวัตถุ&nbsp;&nbsp;เพราะลืมความสัมพันธ์<wbr>กับพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;หลักการพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;มีไว้เพื่อช่วยเรา<wbr>ให้เข้าใจความสัมพันธ์นิรันดรนี้&nbsp;&nbsp;ดังที่กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā:&nbsp;&nbsp;vedaiś&nbsp;&nbsp;ca&nbsp;&nbsp;sarvair&nbsp;&nbsp;aham&nbsp;&nbsp;eva&nbsp;&nbsp;vedyaḥ</span><span class="slant pali">ภควทฺ-คีตาเวไทศฺจสไรฺวรฺอหมฺเอวเวทฺยห์</span><span class="slant thai">ภะคะวัท-คีตาเวไทศจะสัรไวรอะหัมเอวะเวทยะห์</span><span class="slant ram">บฺะกะวัด-คีตาชะอฮัมเอวะเวดยะฮ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าจุดมุ่งหมายของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;คือเพื่อให้เข้าใจพระองค์บทสวดมนต์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้กล่าวว่า&nbsp;&nbsp;<span class="slant iast">patiṁ&nbsp;&nbsp;viśvasyātmeśvaram</span><span class="slant pali">ปตึวิศฺวสฺยาตฺเมศฺวรมฺ</span><span class="slant thai">ปะติงวิศวัสยาตเมศวะรัม</span><span class="slant ram">พะทิม วิชวัสยาทเมชวะรัม</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระผู้เป็นเจ้าของ<wbr>มวลชีวิตคือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(2.4.20)<span class="slant iast">śrīla</span><span class="slant pali">ศฺรีล</span><span class="slant thai">ศรีละ</span><span class="slant ram">ชรีละ</span>&nbsp;&nbsp;<span class="slant iast">śukadeva</span><span class="slant pali">ศุกเทว</span><span class="slant thai">ศุกะเทวะ</span><span class="slant ram">ชุคะเดวะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;อธิบายถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<span class="slant iast">pati</span><span class="slant pali">ปติ</span><span class="slant thai">ปะติ</span><span class="slant ram"></span>&nbsp;&nbsp;ในหลายรูปแบบ
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺริยฮ ปติรฺ ยชฺญ-ปติฮ ปฺรชา-ปติรฺ</i><br /><i>ธิยาํ ปติรฺ โลก-ปติรฺ ธรา-ปติฮ</i><br /><i>ปติรฺ คติศฺ จานฺธก-วฺฤษฺณิ-สาตฺวตาํ</i><br /><i>ปฺรสีทตาํ เม ภควานฺ สตาํ ปติฮ</i>
+<span class="slant iast">śriyaḥ patir yajña-patiḥ prajā-patir<br /></span>
+<span class="slant pali">ศฺริยห์ ปติรฺ ยชฺญ-ปติห์ ปฺรชา-ปติรฺ<br /></span>
+<span class="slant thai">ศริยะห์ ปะติร ยัชญะ-ปะติห์ ประชา-ปะติร<br /></span>
+<span class="slant ram">ชรียะฮ พะทิร ยะกยะ-พะทิฮ พระจา-พระทิร<br /></span>
+<span class="slant iast">dhiyāṁ patir loka-patir dharā-patiḥ<br /></span>
+<span class="slant pali">ธิยำ ปติรฺ โลก-ปติรฺ ธรา-ปติห์<br /></span>
+<span class="slant thai">ธิยาง ปะติร โลกะ-ปะติร ธะรา-ปะติห์<br /></span>
+<span class="slant ram">ดฺิยาม พะทิร โลคะ-พะทิร ดฺะรา-พะทิฮ<br /></span>
+<span class="slant iast">patir gatiś cāndhaka-vṛṣṇi-sātvatāṁ<br /></span>
+<span class="slant pali">ปติรฺ คติศฺ จานฺธก-วฺฤษฺณิ-สาตฺวตำ<br /></span>
+<span class="slant thai">ปะติร คะติศ จานธะกะ-วฤษณิ-สาตวะตาง<br /></span>
+<span class="slant ram">พะทิร กะทิช ชานดฺะคะ-วริชณิ-สาทวะทาม<br /></span>
+<span class="slant iast">prasīdatāṁ me bhagavān satāṁ patiḥ<br /></span>
+<span class="slant pali">ปฺรสีทตำ เม ภควานฺ สตำ ปติห์<br /></span>
+<span class="slant thai">ประสีทะตาง เม ภะคะวาน สะตาง ปะติห์<br /></span>
+<span class="slant ram">พระสีดะทาม เม บฺะกะวาน สะทาม พะทิฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ปฺรชา-ปติ</i>&nbsp;&nbsp;คือพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;พระองค์ทรงเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ของมวลชีวิต&nbsp;&nbsp;เป็น<wbr>เจ้าแห่งโลกทั้งหมด&nbsp;&nbsp;เป็นเจ้าแห่งความสง่างามทั้งหมด&nbsp;&nbsp;และเป็นผู้ปกป้องทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนพระองค์ทรงสร้างโลกวัตถุนี้เพื่อเปิดโอกาสให้ดวงวิญญาณที่อยู่ในสภาวะ&nbsp;&nbsp;ได้เรียน<wbr>รู้การปฎิบัติ&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;(การบูชา)&nbsp;&nbsp;เพื่อให้พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;ทรงพอพระทัย&nbsp;&nbsp;เพื่อให้เราขณะที่อยู่<wbr>ในโลกวัตถุนี้ได้สามารถใช้ชีวิตอยู่อย่างสะดวกสบายโดยไม่มีความวิตกกังวล&nbsp;&nbsp;และ<wbr>หลังจากร่างกายวัตถุปัจจุบันนี้เสร็จสิ้นลงเราจะสามารถบรรลุถึงอาณาจักรแห่งองค์<i>ภควานฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;นี่คือโครงการทั้งหมดสำหรับพันธวิญญาณ&nbsp;&nbsp;ด้วยการปฎิบัติ&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;พันธ<wbr>วิญญาณจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและมีคุณธรรมในทุกแง่ทุกมุม&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคนี้คัมภีร์<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;แนะนำ&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;(การร้องเพลงภาวนาพระนามขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ระบบ<wbr>ทิพย์นี้องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงแนะนำไว้เพื่อการขนส่งมวลมนุษย์ในยุคนี้&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไปด้วยกันได้เป็นอย่างดี&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(11.5.32)&nbsp;&nbsp;ได้กล่าวถึง<wbr>องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ในรูปของผู้ปฎิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;(องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;)&nbsp;&nbsp;สัมพันธ์กับ&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;เป็นพิเศษไว้ดังนี้
+  <span class="slant iast">prajā-pati</span><span class="slant pali">ปฺรชา-ปติ</span><span class="slant thai">ประชา-ปะติ</span><span class="slant ram">-</span>&nbsp;&nbsp;คือพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;พระองค์ทรงเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ของมวลชีวิต&nbsp;&nbsp;เป็น<wbr>เจ้าแห่งโลกทั้งหมด&nbsp;&nbsp;เป็นเจ้าแห่งความสง่างามทั้งหมด&nbsp;&nbsp;และเป็นผู้ปกป้องทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนพระองค์ทรงสร้างโลกวัตถุนี้เพื่อเปิดโอกาสให้ดวงวิญญาณที่อยู่ในสภาวะ&nbsp;&nbsp;ได้เรียน<wbr>รู้การปฎิบัติ&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;(การบูชา)&nbsp;&nbsp;เพื่อให้พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;ทรงพอพระทัย&nbsp;&nbsp;เพื่อให้เราขณะที่อยู่<wbr>ในโลกวัตถุนี้ได้สามารถใช้ชีวิตอยู่อย่างสะดวกสบายโดยไม่มีความวิตกกังวล&nbsp;&nbsp;และ<wbr>หลังจากร่างกายวัตถุปัจจุบันนี้เสร็จสิ้นลงเราจะสามารถบรรลุถึงอาณาจักรแห่งองค์<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;นี่คือโครงการทั้งหมดสำหรับพันธวิญญาณ&nbsp;&nbsp;ด้วยการปฎิบัติ&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;พันธ<wbr>วิญญาณจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและมีคุณธรรมในทุกแง่ทุกมุม&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคนี้คัมภีร์<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;แนะนำ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;(การร้องเพลงภาวนาพระนามขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;)&nbsp;&nbsp;ระบบ<wbr>ทิพย์นี้องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงแนะนำไว้เพื่อการขนส่งมวลมนุษย์ในยุคนี้&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไปด้วยกันได้เป็นอย่างดี&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(11.5.32)&nbsp;&nbsp;ได้กล่าวถึง<wbr>องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ในรูปของผู้ปฎิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;(องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;สัมพันธ์กับ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;เป็นพิเศษไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กฺฤษฺณ-วรฺณํ ตฺวิษากฺฤษฺณํ</i><br /><i>สาโงฺคปางฺคาสฺตฺร-ปารฺษทมฺ</i><br /><i>ยไชฺญฮ สงฺกีรฺตน-ปฺราไยรฺ</i><br /><i>ยชนฺติ หิ สุ-เมธสฮ</i>
+<span class="slant iast">kṛṣṇa-varṇaṁ tviṣākṛṣṇaṁ<br /></span>
+<span class="slant pali">กฺฤษฺณ-วรฺณํ ตฺวิษากฺฤษฺณํ<br /></span>
+<span class="slant thai">กฤษณะ-วัรณัง ตวิษากฤษณัง<br /></span>
+<span class="slant ram">คริชณะ-วารณัม ทวิชาคริชณัม<br /></span>
+<span class="slant iast">sāṅgopāṅgāstra-pārṣadam<br /></span>
+<span class="slant pali">สางฺโคปางฺคาสฺตฺร-ปารฺษทมฺ<br /></span>
+<span class="slant thai">สางโคปางคาสตระ-ปารษะทัม<br /></span>
+<span class="slant ram">สางโกพางกาสทระ-พารชะดัม<br /></span>
+<span class="slant iast">yajñaiḥ saṅkīrtana-prāyair<br /></span>
+<span class="slant pali">ยชฺไญห์ สงฺกีรฺตน-ปฺราไยรฺ<br /></span>
+<span class="slant thai">ยัชไญห์ สังกีรตะนะ-ปราไยร<br /></span>
+<span class="slant ram">ยะกไยฮ สังคีรทะนะ-พราไยร<br /></span>
+<span class="slant iast">yajanti hi su-medhasaḥ<br /></span>
+<span class="slant pali">ยชนฺติ หิ สุ-เมธสห์<br /></span>
+<span class="slant thai">ยะชันติ หิ สุ-เมธะสะห์<br /></span>
+<span class="slant ram">ยะจันทิ ฮิ สุ-เมดฺะสะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคนี้&nbsp;&nbsp;บุคคลผู้มีสติปัญญาเพียงพอจะบูชาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงมีพระสหายร่วม<wbr>ปฏิบัติ&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;”&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่ได้อธิบายไว้ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ปฎิบัติ<wbr>ได้ยากลำบากมากใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคนี้&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;นี้&nbsp;&nbsp;ทั้งง่ายและประเสริฐด้วย<wbr>ประการทั้งปวง&nbsp;&nbsp;ดังที่ได้แนะนำไว้เช่นเดียวกันใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(9.14)
+  “ใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคนี้&nbsp;&nbsp;บุคคลผู้มีสติปัญญาเพียงพอจะบูชาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงมีพระสหายร่วม<wbr>ปฏิบัติ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;”&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่ได้อธิบายไว้ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ปฎิบัติ<wbr>ได้ยากลำบากมากใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคนี้&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;นี้&nbsp;&nbsp;ทั้งง่ายและประเสริฐด้วย<wbr>ประการทั้งปวง&nbsp;&nbsp;ดังที่ได้แนะนำไว้เช่นเดียวกันใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(9.14)
   </p>
 </div>
 

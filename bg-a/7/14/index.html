@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ไทวี หฺยฺ เอษา คุณ-มยี</i><br /><i>มม มายา ทุรตฺยยา</i><br /><i>มามฺ เอว เย ปฺรปทฺยเนฺต</i><br /><i>มายามฺ เอตาํ ตรนฺติ เต</i>
+<span class="slant iast">daivī hy eṣā guṇa-mayī<br /></span>
+<span class="slant pali">ไทวี หฺยฺ เอษา คุณ-มยี<br /></span>
+<span class="slant thai">ไทวี หย เอษา คุณะ-มะยี<br /></span>
+<span class="slant ram">ไดวี ฮิ เอชา กุณะ-มะยี<br /></span>
+<span class="slant iast">mama māyā duratyayā<br /></span>
+<span class="slant pali">มม มายา ทุรตฺยยา<br /></span>
+<span class="slant thai">มะมะ มายา ทุรัตยะยา<br /></span>
+<span class="slant ram">มะมะ มายา ดุรัทยะยา<br /></span>
+<span class="slant iast">mām eva ye prapadyante<br /></span>
+<span class="slant pali">มามฺ เอว เย ปฺรปทฺยนฺเต<br /></span>
+<span class="slant thai">มาม เอวะ เย ประปัทยันเต<br /></span>
+<span class="slant ram">มาม เอวะ เย พระพัดยันเท<br /></span>
+<span class="slant iast">māyām etāṁ taranti te<br /></span>
+<span class="slant pali">มายามฺ เอตำ ตรนฺติ เต<br /></span>
+<span class="slant thai">มายาม เอตาง ตะรันติ เต<br /></span>
+<span class="slant ram">มายาม เอทาม ทะรันทิ เท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ไทวี</i> — ทิพย์, <i>หิ</i> — แน่นอน, <i>เอษา</i> — นี้,<i>คุณ-มยี</i> — ประกอบด้วยสามระดับแห่งธรรมชาติวัตถุ, <i>มม</i> — ของข้า,<i>มายา</i> — พลังงาน, <i>ทุรตฺยยา</i> — ข้ามพ้นได้ยากมาก, <i>มามฺ</i> — แด่ข้า, <i>เอว</i> — แน่นอน, <i>เย</i> — พวกซึ่ง, <i>ปฺรปทฺยเนฺต</i> — ศิโรราบ,<i>มายามฺ เอตามฺ</i> — พลังงานแห่งความหลงนี้, <i>ตรนฺติ</i> — ชัยชนะ, <i>เต</i> — พวกเขา
+  <span class="slant iast">daivī</span><span class="slant pali">ไทวี</span><span class="slant thai">ไทวี</span><span class="slant ram">ไดวี</span> — ทิพย์, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">eṣā</span><span class="slant pali">เอษา</span><span class="slant thai">เอษา</span><span class="slant ram">เอชา</span> — นี้,<span class="slant iast">guṇa-mayī</span><span class="slant pali">คุณ-มยี</span><span class="slant thai">คุณะ-มะยี</span><span class="slant ram">กุณะ-มะยี</span> — ประกอบด้วยสามระดับแห่งธรรมชาติวัตถุ, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า,<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span> — พลังงาน, <span class="slant iast">duratyayā</span><span class="slant pali">ทุรตฺยยา</span><span class="slant thai">ทุรัตยะยา</span><span class="slant ram">ดุรัทยะยา</span> — ข้ามพ้นได้ยากมาก, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — พวกซึ่ง, <span class="slant iast">prapadyante</span><span class="slant pali">ปฺรปทฺยนฺเต</span><span class="slant thai">ประปัทยันเต</span><span class="slant ram">พระ พัดยันเท</span> — ศิโรราบ,<span class="slant iast">māyām etām</span><span class="slant pali">มายามฺเอตามฺ</span><span class="slant thai">มายามเอตาม</span><span class="slant ram"> มายาม เอทาม</span> — พลังงานแห่งความหลงนี้, <span class="slant iast">taranti</span><span class="slant pali">ตรนฺติ</span><span class="slant thai">ตะรันติ</span><span class="slant ram">ทะรันทิ</span> — ชัยชนะ, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีพลังงานมากมายและพลังงานทั้งหมดนี้เป็นทิพย์&nbsp;&nbsp;สิ่งมีชีวิต<wbr>เป็นส่วนหนึ่งของพลังงานของพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นทิพย์&nbsp;&nbsp;แต่เนื่องจากมาสัมผัสกับ<wbr>พลังงานวัตถุ&nbsp;&nbsp;พลังงานเบื้องสูงเดิมแท้ของพวกเขาจึงถูกปกคลุม&nbsp;&nbsp;จากการถูกปกคลุม<wbr>ด้วยพลังงานวัตถุจึงทำให้ไม่สามารถเอาชนะอิทธิพลของมันได้&nbsp;&nbsp;ดังที่ได้กล่าวมาแล้ว<wbr>ว่าทั้งธรรมชาติวัตถุและธรรมชาติทิพย์ที่ออกมาจากบุคลิกภาพสูงสุดแห่งพระเจ้าเป็น<wbr>อมตะ&nbsp;&nbsp;สิ่งมีชีวิตอยู่ในธรรมชาติอมตะที่สูงกว่าขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่เนื่องมาจากมลทินแห่ง<wbr>ธรรมชาติวัตถุที่ต่ำกว่า&nbsp;&nbsp;ความหลงของพวกเขาจึงเป็นอมตะเช่นเดียวกัน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สภาวะ<wbr>ของดวงวิญญาณจึงถูกเรียกว่า&nbsp;&nbsp;<i>นิตฺย-พทฺธ</i>&nbsp;&nbsp;หรืออยู่ในสภาวะอมตะ&nbsp;&nbsp;ไม่มีผู้ใดสามารถ<wbr>ย้อนรอยประวัติศาสตร์ว่าตนเองมาอยู่ในสภาวะนี้วันที่เท่าไรในประวัติศาสตร์ทางวัตถุด้วยเหตุนี้การที่จะหลุดพ้นจากเงื้อมมือของธรรมชาติวัตถุจึงเป็นสิ่งที่ยากมาก&nbsp;&nbsp;แม้ว่า<wbr>ธรรมชาติวัตถุเป็นพลังงานที่ต่ำกว่าเพราะว่าในที่สุดพลังงานวัตถุที่ถูกกำกับโดยความ<wbr>ปรารถนาสูงสุดขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ซึ่งสิ่งมีชีวิตไม่สามารถเอาชนะได้&nbsp;&nbsp;คำจำกัดความของ<wbr>ธรรมชาติวัตถุที่ต่ำกว่าได้ให้ไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ว่าเป็นธรรมชาติทิพย์เนื่องจากการเชื่อมสัมพันธ์<wbr>และการเคลื่อนไหวทิพย์จากความปรารถนาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ธรรมชาติวัตถุแม้จะต่ำ<wbr>กว่า&nbsp;&nbsp;แต่ถูกกำกับด้วยความปรารถนาทิพย์&nbsp;&nbsp;ปฏิบัติตนอย่างน่าอัศจรรย์ในการสร้างและ<wbr>การทำลายของปรากฏการณ์แห่งจักรวาล&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้ยืนยันไว้ดังนี้&nbsp;&nbsp;<i>มายาํ&nbsp;&nbsp;ตุ&nbsp;&nbsp;ปฺรกฺฤติํ&nbsp;&nbsp;วิทฺยานฺ&nbsp;&nbsp;มายินํ&nbsp;&nbsp;ตุ&nbsp;&nbsp;มเหศฺวรมฺ</i>&nbsp;&nbsp;“แม้ว่า&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;(ความหลง)&nbsp;&nbsp;จะผิดหรือไม่ถาวรเบื้องหลังฉากของ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;คือนัก&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;กลสูงสุดองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงเป็น&nbsp;&nbsp;<i>มเหศฺวร</i>&nbsp;&nbsp;หรือผู้<wbr>ควบคุมสูงสุด”&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ&nbsp;&nbsp;4.10)</i>&nbsp;&nbsp;
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีพลังงานมากมายและพลังงานทั้งหมดนี้เป็นทิพย์&nbsp;&nbsp;สิ่งมีชีวิต<wbr>เป็นส่วนหนึ่งของพลังงานของพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นทิพย์&nbsp;&nbsp;แต่เนื่องจากมาสัมผัสกับ<wbr>พลังงานวัตถุ&nbsp;&nbsp;พลังงานเบื้องสูงเดิมแท้ของพวกเขาจึงถูกปกคลุม&nbsp;&nbsp;จากการถูกปกคลุม<wbr>ด้วยพลังงานวัตถุจึงทำให้ไม่สามารถเอาชนะอิทธิพลของมันได้&nbsp;&nbsp;ดังที่ได้กล่าวมาแล้ว<wbr>ว่าทั้งธรรมชาติวัตถุและธรรมชาติทิพย์ที่ออกมาจากบุคลิกภาพสูงสุดแห่งพระเจ้าเป็น<wbr>อมตะ&nbsp;&nbsp;สิ่งมีชีวิตอยู่ในธรรมชาติอมตะที่สูงกว่าขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่เนื่องมาจากมลทินแห่ง<wbr>ธรรมชาติวัตถุที่ต่ำกว่า&nbsp;&nbsp;ความหลงของพวกเขาจึงเป็นอมตะเช่นเดียวกัน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สภาวะ<wbr>ของดวงวิญญาณจึงถูกเรียกว่า&nbsp;&nbsp;<span class="slant iast">nitya-baddha</span><span class="slant pali">นิตฺย-พทฺธ</span><span class="slant thai">นิตยะ-พัทธะ</span><span class="slant ram">นิทยะ-zzz</span>&nbsp;&nbsp;หรืออยู่ในสภาวะอมตะ&nbsp;&nbsp;ไม่มีผู้ใดสามารถ<wbr>ย้อนรอยประวัติศาสตร์ว่าตนเองมาอยู่ในสภาวะนี้วันที่เท่าไรในประวัติศาสตร์ทางวัตถุด้วยเหตุนี้การที่จะหลุดพ้นจากเงื้อมมือของธรรมชาติวัตถุจึงเป็นสิ่งที่ยากมาก&nbsp;&nbsp;แม้ว่า<wbr>ธรรมชาติวัตถุเป็นพลังงานที่ต่ำกว่าเพราะว่าในที่สุดพลังงานวัตถุที่ถูกกำกับโดยความ<wbr>ปรารถนาสูงสุดขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ซึ่งสิ่งมีชีวิตไม่สามารถเอาชนะได้&nbsp;&nbsp;คำจำกัดความของ<wbr>ธรรมชาติวัตถุที่ต่ำกว่าได้ให้ไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ว่าเป็นธรรมชาติทิพย์เนื่องจากการเชื่อมสัมพันธ์<wbr>และการเคลื่อนไหวทิพย์จากความปรารถนาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ธรรมชาติวัตถุแม้จะต่ำ<wbr>กว่า&nbsp;&nbsp;แต่ถูกกำกับด้วยความปรารถนาทิพย์&nbsp;&nbsp;ปฏิบัติตนอย่างน่าอัศจรรย์ในการสร้างและ<wbr>การทำลายของปรากฏการณ์แห่งจักรวาล&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้ยืนยันไว้ดังนี้&nbsp;&nbsp;<span class="slant iast">māyāṁ&nbsp;&nbsp;tu&nbsp;&nbsp;prakṛtiṁ&nbsp;&nbsp;vidyān&nbsp;&nbsp;māyinaṁ&nbsp;&nbsp;tu&nbsp;&nbsp;maheśvaram</span><span class="slant pali">มายำตุปฺรกฺฤตึวิทฺยานฺมายินํตุมเหศฺวรมฺ</span><span class="slant thai">มายางตุปรักฤติงวิทยานมายินังตุมะเหศวะรัม</span><span class="slant ram">zzzทุzzzzzzทุ</span>&nbsp;&nbsp;“แม้ว่า&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;(ความหลง)&nbsp;&nbsp;จะผิดหรือไม่ถาวรเบื้องหลังฉากของ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;คือนัก&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;กลสูงสุดองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงเป็น&nbsp;&nbsp;<span class="slant iast">maheśvara</span><span class="slant pali">มเหศฺวร</span><span class="slant thai">มะเหศวะระ</span><span class="slant ram">มะเฮชวะระ</span>&nbsp;&nbsp;หรือผู้<wbr>ควบคุมสูงสุด”&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad&nbsp;&nbsp;4.10)</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ๔ฯ๑๐)</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท๔ฯ๑๐)</span><span class="slant ram">4.10)</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  อีกความหมายหนึ่งของ&nbsp;&nbsp;<i>คุณ</i>&nbsp;&nbsp;คือเชือก&nbsp;&nbsp;เข้าใจว่าพันธวิญญาณถูกมัดอย่างแน่น<wbr>หนาด้วยเชือกแห่งความหลง&nbsp;&nbsp;คนที่ถูกมัดมือมัดเท้าไม่สามารถช่วยตนเองเป็นอิสระได้จำต้องให้คนที่เป็นอิสระช่วย&nbsp;&nbsp;เพราะว่าคนถูกมัดไม่สามารถช่วยคนถูกมัดได้&nbsp;&nbsp;คนที่มาช่วย<wbr>จะต้องเป็นอิสรเสรี&nbsp;&nbsp;ไม่ถูกมัด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือพระอาจารย์ทิพย์ผู้แทนของพระองค์<wbr>ที่เชื่อถือได้เท่านั้น&nbsp;&nbsp;จึงสามารถปลดแอกพันธวิญญาณได้&nbsp;&nbsp;ปราศจากการช่วยเหลือจาก<wbr>ระดับสูงเช่นนี้&nbsp;&nbsp;เราไม่สามารถเป็นอิสระจากพันธนาการแห่งธรรมชาติวัตถุ&nbsp;&nbsp;การอุทิศ<wbr>ตนเสียสละรับใช้หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกสามารถช่วยเราให้ได้รับเสรีภาพเช่นนี้&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงเป็นเจ้าแห่งพลังงานแห่งความหลง&nbsp;&nbsp;ทรงสามารถสั่งพลังงานที่ข้ามพ้นไม่ได้นี้ให้<wbr>ปลดเปลื้องพันธวิญญาณ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงสั่งให้ปลดปล่อยดวงวิญญาณที่ศิโรราบด้วยพระ<wbr>เมตตาอันหาที่สุดมิได้&nbsp;&nbsp;และจากความรักที่มีต่อสิ่งมีชีวิตดุจบิดารักบุตร&nbsp;&nbsp;ซึ่งเดิมทีเป็น<wbr>บุตรที่รักของพระองค์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การศิโรราบต่อพระบาทรูปดอกบัวของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จึงเป็นวิถี<wbr>ทางเดียวที่จะทำให้เราเป็นอิสระจากเงื้อมมือของธรรมชาติวัตถุอันเหนี่ยวแน่นนี้
+  อีกความหมายหนึ่งของ&nbsp;&nbsp;<span class="slant iast">guṇa</span><span class="slant pali">คุณ</span><span class="slant thai">คุณะ</span><span class="slant ram">กุณะ</span>&nbsp;&nbsp;คือเชือก&nbsp;&nbsp;เข้าใจว่าพันธวิญญาณถูกมัดอย่างแน่น<wbr>หนาด้วยเชือกแห่งความหลง&nbsp;&nbsp;คนที่ถูกมัดมือมัดเท้าไม่สามารถช่วยตนเองเป็นอิสระได้จำต้องให้คนที่เป็นอิสระช่วย&nbsp;&nbsp;เพราะว่าคนถูกมัดไม่สามารถช่วยคนถูกมัดได้&nbsp;&nbsp;คนที่มาช่วย<wbr>จะต้องเป็นอิสรเสรี&nbsp;&nbsp;ไม่ถูกมัด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือพระอาจารย์ทิพย์ผู้แทนของพระองค์<wbr>ที่เชื่อถือได้เท่านั้น&nbsp;&nbsp;จึงสามารถปลดแอกพันธวิญญาณได้&nbsp;&nbsp;ปราศจากการช่วยเหลือจาก<wbr>ระดับสูงเช่นนี้&nbsp;&nbsp;เราไม่สามารถเป็นอิสระจากพันธนาการแห่งธรรมชาติวัตถุ&nbsp;&nbsp;การอุทิศ<wbr>ตนเสียสละรับใช้หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกสามารถช่วยเราให้ได้รับเสรีภาพเช่นนี้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงเป็นเจ้าแห่งพลังงานแห่งความหลง&nbsp;&nbsp;ทรงสามารถสั่งพลังงานที่ข้ามพ้นไม่ได้นี้ให้<wbr>ปลดเปลื้องพันธวิญญาณ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงสั่งให้ปลดปล่อยดวงวิญญาณที่ศิโรราบด้วยพระ<wbr>เมตตาอันหาที่สุดมิได้&nbsp;&nbsp;และจากความรักที่มีต่อสิ่งมีชีวิตดุจบิดารักบุตร&nbsp;&nbsp;ซึ่งเดิมทีเป็น<wbr>บุตรที่รักของพระองค์&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การศิโรราบต่อพระบาทรูปดอกบัวของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จึงเป็นวิถี<wbr>ทางเดียวที่จะทำให้เราเป็นอิสระจากเงื้อมมือของธรรมชาติวัตถุอันเหนี่ยวแน่นนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>มามฺ&nbsp;&nbsp;เอว</i>&nbsp;&nbsp;มีความสำคัญเช่นเดียวกัน&nbsp;&nbsp;<i>มามฺ</i>&nbsp;&nbsp;หมายความว่าแด่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;(&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;)&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ไม่ใช่แด่พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ถึงแม้ว่าพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;จะ<wbr>มีความเจริญมากจนเกือบถึงระดับของพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เป็นไปไม่ได้ที่อวตารแห่ง&nbsp;&nbsp;<i>รโช-คุณ</i>&nbsp;&nbsp;(ตัณหา)&nbsp;&nbsp;และ<i>ตโม-คุณ</i>&nbsp;&nbsp;(อวิชชา)&nbsp;&nbsp;จะปลดเปลื้องพันธวิญญาณจากเงื้อมมือของ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;อีก<wbr>นัยหนึ่ง&nbsp;&nbsp;ทั้งพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ก็ยังอยู่ภายใต้อิทธิพลของ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เท่านั้นที่ทรง<wbr>เป็นเจ้านายของ&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เพียงองค์เดียวเท่านั้นที่ทรงสามารถปลดเปลื้อง<wbr>พันธวิญญาณ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;3.8)&nbsp;&nbsp;ยืนยันเช่นนี้ในวลี&nbsp;&nbsp;<i>ตมฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;วิทิตฺวา</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;“อิสรภาพเป็นไปได้จากการเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้น”&nbsp;&nbsp;แม้พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ทรงยืนยันว่าความหลุดพ้นสามารถบรรลุได้ด้วยพระเมตตาของพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;<i>มุกฺติ-ปฺรทาตา&nbsp;&nbsp;สเรฺวษาํ&nbsp;&nbsp;วิษฺณุรฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;น&nbsp;&nbsp;สํศยฮ</i>&nbsp;&nbsp;“ไม่มีข้อสงสัยเลยว่าพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;ทรงเป็นผู้<wbr>ให้ความหลุดพ้นสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต”
+  คำว่า&nbsp;&nbsp;<span class="slant iast">mām&nbsp;&nbsp;eva</span><span class="slant pali">มามฺเอว</span><span class="slant thai">มามเอวะ</span><span class="slant ram">มามเอวะ</span>&nbsp;&nbsp;มีความสำคัญเช่นเดียวกัน&nbsp;&nbsp;<span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span>&nbsp;&nbsp;หมายความว่าแด่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;)&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ไม่ใช่แด่พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ถึงแม้ว่าพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;จะ<wbr>มีความเจริญมากจนเกือบถึงระดับของพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เป็นไปไม่ได้ที่อวตารแห่ง&nbsp;&nbsp;<span class="slant iast">rajo-guṇa</span><span class="slant pali">รโช-คุณ</span><span class="slant thai">ระโช-คุณะ</span><span class="slant ram">-กุณะ</span>&nbsp;&nbsp;(ตัณหา)&nbsp;&nbsp;และ<span class="slant iast">tamo-guṇa</span><span class="slant pali">ตโม-คุณ</span><span class="slant thai">ตะโม-คุณะ</span><span class="slant ram">-กุณะ</span>&nbsp;&nbsp;(อวิชชา)&nbsp;&nbsp;จะปลดเปลื้องพันธวิญญาณจากเงื้อมมือของ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;อีก<wbr>นัยหนึ่ง&nbsp;&nbsp;ทั้งพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ก็ยังอยู่ภายใต้อิทธิพลของ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เท่านั้นที่ทรง<wbr>เป็นเจ้านายของ&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เพียงองค์เดียวเท่านั้นที่ทรงสามารถปลดเปลื้อง<wbr>พันธวิญญาณ&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;3.8)&nbsp;&nbsp;ยืนยันเช่นนี้ในวลี&nbsp;&nbsp;<span class="slant iast">tam&nbsp;&nbsp;eva&nbsp;&nbsp;viditvā</span><span class="slant pali">ตมฺเอววิทิตฺวา</span><span class="slant thai">ตัมเอวะวิทิตวา</span><span class="slant ram">ทัมเอวะวิดิทวา</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;“อิสรภาพเป็นไปได้จากการเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้น”&nbsp;&nbsp;แม้พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ทรงยืนยันว่าความหลุดพ้นสามารถบรรลุได้ด้วยพระเมตตาของพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;<span class="slant iast">mukti-pradātā&nbsp;&nbsp;sarveṣāṁ&nbsp;&nbsp;viṣṇur&nbsp;&nbsp;eva&nbsp;&nbsp;na&nbsp;&nbsp;saṁśayaḥ</span><span class="slant pali">มุกฺติ-ปฺรทาตาสเรฺวษำวิษฺณุรฺเอวนสํศยห์</span><span class="slant thai">มุกติ-ประทาตาสัรเวษางวิษณุรเอวะนะสังศะยะห์</span><span class="slant ram">-zzzเอวะนะสัมชะยะฮ</span>&nbsp;&nbsp;“ไม่มีข้อสงสัยเลยว่าพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;ทรงเป็นผู้<wbr>ให้ความหลุดพ้นสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต”
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.4</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นิศฺจยํ ศฺฤณุ เม ตตฺร</i><br /><i>ตฺยาเค ภรต-สตฺตม</i><br /><i>ตฺยาโค หิ ปุรุษ-วฺยาฆฺร</i><br /><i>ตฺริ-วิธฮ สมฺปฺรกีรฺติตฮ</i>
+<span class="slant iast">niścayaṁ śṛṇu me tatra<br /></span>
+<span class="slant pali">นิศฺจยํ ศฺฤณุ เม ตตฺร<br /></span>
+<span class="slant thai">นิศจะยัง ศฤณุ เม ตัตระ<br /></span>
+<span class="slant ram">นิชชะยัม ชริณุ เม ทะทระ<br /></span>
+<span class="slant iast">tyāge bharata-sattama<br /></span>
+<span class="slant pali">ตฺยาเค ภรต-สตฺตม<br /></span>
+<span class="slant thai">ตยาเค ภะระตะ-สัตตะมะ<br /></span>
+<span class="slant ram">ทยาเก บฺะระทะ-สัททะมะ<br /></span>
+<span class="slant iast">tyāgo hi puruṣa-vyāghra<br /></span>
+<span class="slant pali">ตฺยาโค หิ ปุรุษ-วฺยาฆฺร<br /></span>
+<span class="slant thai">ตยาโค หิ ปุรุษะ-วยาฆระ<br /></span>
+<span class="slant ram">ทยาโก ฮิ พุรุชะ-วิยากฮระ<br /></span>
+<span class="slant iast">tri-vidhaḥ samprakīrtitaḥ<br /></span>
+<span class="slant pali">ตฺริ-วิธห์ สมฺปฺรกีรฺติตห์<br /></span>
+<span class="slant thai">ตริ-วิธะห์ สัมประกีรติตะห์<br /></span>
+<span class="slant ram">ทริ-วิดฺะฮ สัมพระคีรทิทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>นิศฺจยมฺ</i> — แน่นอน, <i>ศฺฤณุ</i> — สดับฟัง, <i>เม</i> — จากข้า, <i>ตตฺร</i> — ณ ที่นี้, <i>ตฺยาเค</i> — ในเรื่องของการ เสียสละ, <i>ภรต-สตฺ-ตม</i> — โอ้ ผู้ยอดเยี่ยมแห่งราชวงศ์ <i>ภารต</i>, <i>ตฺยาคฮ</i> — การเสีย สละ, <i>หิ</i> — แน่นอน, <i>ปุรุษ-วฺยาฆฺร</i> — โอ้ เสือในหมู่มนุษย์, <i>ตฺริ-วิธฮ</i> — ของสามประเภท, <i>สมฺปฺรกีรฺติตฮ</i> — ประกาศ
+  <span class="slant iast">niścayam</span><span class="slant pali">นิศฺจยมฺ</span><span class="slant thai">นิศจะยัม</span><span class="slant ram">นิชชะยัม</span> — แน่นอน, <span class="slant iast">śṛṇu</span><span class="slant pali">ศฺฤณุ</span><span class="slant thai">ศฤณุ</span><span class="slant ram">ชริณุ</span> — สดับฟัง, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — จากข้า, <span class="slant iast">tatra</span><span class="slant pali">ตตฺร</span><span class="slant thai">ตัตระ</span><span class="slant ram">ทะทระ</span> — ณ ที่นี้, <span class="slant iast">tyāge</span><span class="slant pali">ตฺยาเค</span><span class="slant thai">ตยาเค</span><span class="slant ram">ทยาเก</span> — ในเรื่องของการ เสียสละ, <span class="slant iast">bharata-sat-tama</span><span class="slant pali">ภรต-สตฺ-ตม</span><span class="slant thai">ภะระตะ-สัต-ตะมะ</span><span class="slant ram">บฺะระทะ-สัท-ทะมะ</span> — โอ้ ผู้ยอดเยี่ยมแห่งราชวงศ์ <span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span>, <span class="slant iast">tyāgaḥ</span><span class="slant pali">ตฺยาคห์</span><span class="slant thai">ตยาคะห์</span><span class="slant ram">ทยากะฮ</span> — การเสีย สละ, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">puruṣa-vyāghra</span><span class="slant pali">ปุรุษ-วฺยาฆฺร</span><span class="slant thai">ปุรุษะ-วยาฆระ</span><span class="slant ram">พุรุชะ-วิยากฺระ</span> — โอ้ เสือในหมู่มนุษย์, <span class="slant iast">tri-vidhaḥ</span><span class="slant pali">ตฺริ-วิธห์</span><span class="slant thai">ตริ-วิธะห์</span><span class="slant ram">ทริ-วิดฺะฮ</span> — ของสามประเภท, <span class="slant iast">samprakīrtitaḥ</span><span class="slant pali">สมฺปฺรกีรฺติตห์</span><span class="slant thai">สัมประกีรติตะห์</span><span class="slant ram">สัมพระคีรทิทะฮ</span> — ประกาศ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้ยอดเยี่ยมที่สุดในหมู่&nbsp;&nbsp;<i>ภารต</i>&nbsp;&nbsp;บัดนี้จงฟังคำตัดสินของข้าเกี่ยวกับการเสียสละ&nbsp;&nbsp;โอ้&nbsp;&nbsp;เสือในหมู่มนุษย์&nbsp;&nbsp;ในพระคัมภีร์ได้กล่าวว่าการเสียสละมีอยู่สามประเภท
+  โอ้&nbsp;&nbsp;ผู้ยอดเยี่ยมที่สุดในหมู่&nbsp;&nbsp;<span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span>&nbsp;&nbsp;บัดนี้จงฟังคำตัดสินของข้าเกี่ยวกับการเสียสละ&nbsp;&nbsp;โอ้&nbsp;&nbsp;เสือในหมู่มนุษย์&nbsp;&nbsp;ในพระคัมภีร์ได้กล่าวว่าการเสียสละมีอยู่สามประเภท
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ถึงแม้มีความคิดเห็นที่แตกต่างกันเกี่ยวกับการเสียสละ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงให้คำตัดสินซึ่งควรถือว่าเป็นคำตัดสินสุดท้าย&nbsp;&nbsp;อันที่<wbr>จริงคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เป็นกฎหมายที่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นผู้ให้&nbsp;&nbsp;บัดนี้ทรงปรากฏด้วยพระองค์<wbr>เองและคำดำรัสขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ถือว่าเป็นข้อยุติ&nbsp;&nbsp;พระองค์ตรัสว่าวิธีการเสียสละควร<wbr>พิจารณาในความสัมพันธ์กับสามระดับแห่งธรรมชาติวัตถุที่ปฏิบัติกันอยู่
+  ถึงแม้มีความคิดเห็นที่แตกต่างกันเกี่ยวกับการเสียสละ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงให้คำตัดสินซึ่งควรถือว่าเป็นคำตัดสินสุดท้าย&nbsp;&nbsp;อันที่<wbr>จริงคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เป็นกฎหมายที่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นผู้ให้&nbsp;&nbsp;บัดนี้ทรงปรากฏด้วยพระองค์<wbr>เองและคำดำรัสขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ถือว่าเป็นข้อยุติ&nbsp;&nbsp;พระองค์ตรัสว่าวิธีการเสียสละควร<wbr>พิจารณาในความสัมพันธ์กับสามระดับแห่งธรรมชาติวัตถุที่ปฏิบัติกันอยู่
   </p>
 </div>
 

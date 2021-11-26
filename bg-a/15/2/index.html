@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.2</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อธศฺ โจรฺธฺวํ ปฺรสฺฤตาสฺ ตสฺย ศาขา</i><br /><i>คุณ-ปฺรวฺฤทฺธา วิษย-ปฺรวาลาฮ</i><br /><i>อธศฺ จ มูลานฺยฺ อนุสนฺตตานิ</i><br /><i>กรฺมานุพนฺธีนิ มนุษฺย-โลเก</i>
+<span class="slant iast">adhaś cordhvaṁ prasṛtās tasya śākhā<br /></span>
+<span class="slant pali">อธศฺ โจรฺธฺวํ ปฺรสฺฤตาสฺ ตสฺย ศาขา<br /></span>
+<span class="slant thai">อะธัศ โจรธวัง ปรัสฤตาส ตัสยะ ศาขา<br /></span>
+<span class="slant ram">อดัฺช โชรดฺวัม พระสริทาส ทัสยะ ชาคฺา<br /></span>
+<span class="slant iast">guṇa-pravṛddhā viṣaya-pravālāḥ<br /></span>
+<span class="slant pali">คุณ-ปฺรวฺฤทฺธา วิษย-ปฺรวาลาห์<br /></span>
+<span class="slant thai">คุณะ-ปรัวฤทธา วิษะยะ-ประวาลาห์<br /></span>
+<span class="slant ram">กุณะ-พระวริดดฺา วิชะยะ-พระวาลาฮ<br /></span>
+<span class="slant iast">adhaś ca mūlāny anusantatāni<br /></span>
+<span class="slant pali">อธศฺ จ มูลานฺยฺ อนุสนฺตตานิ<br /></span>
+<span class="slant thai">อะธัศ จะ มูลานย อะนุสันตะตานิ<br /></span>
+<span class="slant ram">อดัฺช ชะ มูลานิ อนุสันทะทานิ<br /></span>
+<span class="slant iast">karmānubandhīni manuṣya-loke<br /></span>
+<span class="slant pali">กรฺมานุพนฺธีนิ มนุษฺย-โลเก<br /></span>
+<span class="slant thai">กัรมานุพันธีนิ มะนุษยะ-โลเก<br /></span>
+<span class="slant ram">คารมานุบันดีฺนิ มะนุชยะ-โลเคฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อธฮ</i> — ลงข้างล่าง, <i>จ</i> — และ, <i>อูรฺธฺวมฺ</i> — ขึ้นข้างบน, <i>ปฺรสฺฤตาฮ</i> — ขยายออก, <i>ตสฺย</i> — ของ มัน, <i>ศาขาฮ</i> — แยกแขนง, <i>คุณ</i> — โดยระดับต่าง ๆ ของธรรมชาติวัตถุ, <i>ปฺรวฺฤทฺธาฮ</i> — พัฒนา, <i>วิษย</i> — อาตยนะภายนอก, <i>ปฺรวาลาฮ</i> — กิ่งก้าน, <i>อธฮ</i> — ลงข้างล่าง, <i>จ</i> — และ, <i>มูลานิ</i> — ราก, <i>อนุสนฺตตานิ</i> — ขยาย, <i>กรฺม</i> — งาน, <i>อนุพนฺธีนิ</i> — ผูกมัด, <i>มนุษฺย-โลเก</i> — ใน โลกของสังคมมนุษย์
+  <span class="slant iast">adhaḥ</span><span class="slant pali">อธห์</span><span class="slant thai">อะธะห์</span><span class="slant ram">อดฺะฮ</span> — ลงข้างล่าง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">ūrdhvam</span><span class="slant pali">อูรฺธฺวมฺ</span><span class="slant thai">อูรธวัม</span><span class="slant ram">อูรดฺวัม</span> — ขึ้นข้างบน, <span class="slant iast">prasṛtāḥ</span><span class="slant pali">ปฺรสฺฤตาห์</span><span class="slant thai">ปรัสฤตาห์</span><span class="slant ram">พระสริทาฮ</span> — ขยายออก, <span class="slant iast">tasya</span><span class="slant pali">ตสฺย</span><span class="slant thai">ตัสยะ</span><span class="slant ram">ทัสยะ</span> — ของ มัน, <span class="slant iast">śākhāḥ</span><span class="slant pali">ศาขาห์</span><span class="slant thai">ศาขาห์</span><span class="slant ram">ชา คฺาฮ</span> — แยกแขนง, <span class="slant iast">guṇa</span><span class="slant pali">คุณ</span><span class="slant thai">คุณะ</span><span class="slant ram">กุณะ</span> — โดยระดับต่าง ๆ ของธรรมชาติวัตถุ, <span class="slant iast">pravṛddhāḥ</span><span class="slant pali">ปฺรวฺฤทฺธาห์</span><span class="slant thai">ปรัวฤทธาห์</span><span class="slant ram">พระวริดดฺาฮ</span> — พัฒนา, <span class="slant iast">viṣaya</span><span class="slant pali">วิษย</span><span class="slant thai">วิษะยะ</span><span class="slant ram">วิชะยะ</span> — อาตยนะภายนอก, <span class="slant iast">pravālāḥ</span><span class="slant pali">ปฺรวาลาห์</span><span class="slant thai">ประวาลาห์</span><span class="slant ram">พระวาลาฮ</span> — กิ่งก้าน, <span class="slant iast">adhaḥ</span><span class="slant pali">อธห์</span><span class="slant thai">อะธะห์</span><span class="slant ram">อดฺะฮ</span> — ลงข้างล่าง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">mūlāni</span><span class="slant pali">มูลานิ</span><span class="slant thai">มูลานิ</span><span class="slant ram">มูลานิ</span> — ราก, <span class="slant iast">anusantatāni</span><span class="slant pali">อนุสนฺตตานิ</span><span class="slant thai">อะนุสันตะตานิ</span><span class="slant ram">อนุสันทะทานิ</span> — ขยาย, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">anubandhīni</span><span class="slant pali">อนุพนฺธีนิ</span><span class="slant thai">อะนุพันธีนิ</span><span class="slant ram">อนุบันดีฺนิ</span> — ผูกมัด, <span class="slant iast">manuṣya-loke</span><span class="slant pali">มนุษฺย-โลเก</span><span class="slant thai">มะนุษยะ-โลเก</span><span class="slant ram">มะนุชยะ-โลเค</span> — ใน โลกของสังคมมนุษย์
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้อธิบายถึงต้นไทรนี้ต่อไปอีกว่ามีสาขาแยกแขนงออกไปทุกทิศทาง&nbsp;&nbsp;ในส่วน<wbr>ล่างมีปรากฏการณ์อันหลากหลายของสิ่งมีชีวิตเช่น&nbsp;&nbsp;มนุษย์&nbsp;&nbsp;สัตว์&nbsp;&nbsp;ม้า&nbsp;&nbsp;วัว&nbsp;&nbsp;สุนัข&nbsp;&nbsp;แมว&nbsp;&nbsp;ฯลฯชีวิตเหล่านี้สถิตในส่วนล่าง&nbsp;&nbsp;ขณะที่ส่วนบนเป็นรูปของสิ่งมีชีวิตที่สูงกว่า&nbsp;&nbsp;เช่น&nbsp;&nbsp;เทวดา&nbsp;&nbsp;<i>คนฺธรฺว</i>&nbsp;&nbsp;และเผ่าพันธุ์ชีวิตอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่สูงกว่ามากมาย&nbsp;&nbsp;เหมือนกับต้นไม้ที่ได้รับการบำรุงเลี้ยง<wbr>จากน้ำ&nbsp;&nbsp;ต้นไม้นี้ก็ได้รับการบำรุงเลี้ยงจากสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;บางครั้งเราพบ<wbr>ว่าที่ดินผืนนี้แห้งแล้งเนื่องจากมีน้ำไม่เพียงพอ&nbsp;&nbsp;และบางครั้งเราพบว่าที่ดินอีกผืนหนึ่งมี<wbr>ความเขียวชอุ่มมาก&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;สถานที่ที่ระดับแห่งธรรมชาติวัตถุใดมีอัตราส่วน<wbr>ในปริมาณมากกว่า&nbsp;&nbsp;เผ่าพันธุ์ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในระดับนั้นก็ปรากฏ
+  ได้อธิบายถึงต้นไทรนี้ต่อไปอีกว่ามีสาขาแยกแขนงออกไปทุกทิศทาง&nbsp;&nbsp;ในส่วน<wbr>ล่างมีปรากฏการณ์อันหลากหลายของสิ่งมีชีวิตเช่น&nbsp;&nbsp;มนุษย์&nbsp;&nbsp;สัตว์&nbsp;&nbsp;ม้า&nbsp;&nbsp;วัว&nbsp;&nbsp;สุนัข&nbsp;&nbsp;แมว&nbsp;&nbsp;ฯลฯชีวิตเหล่านี้สถิตในส่วนล่าง&nbsp;&nbsp;ขณะที่ส่วนบนเป็นรูปของสิ่งมีชีวิตที่สูงกว่า&nbsp;&nbsp;เช่น&nbsp;&nbsp;เทวดา&nbsp;&nbsp;<span class="slant iast">gandharva</span><span class="slant pali">คนฺธรฺว</span><span class="slant thai">คันธัรวะ</span><span class="slant ram">กัน<wbr>ดฺฺารวะ</span>&nbsp;&nbsp;และเผ่าพันธุ์ชีวิตอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่สูงกว่ามากมาย&nbsp;&nbsp;เหมือนกับต้นไม้ที่ได้รับการบำรุงเลี้ยง<wbr>จากน้ำ&nbsp;&nbsp;ต้นไม้นี้ก็ได้รับการบำรุงเลี้ยงจากสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;บางครั้งเราพบ<wbr>ว่าที่ดินผืนนี้แห้งแล้งเนื่องจากมีน้ำไม่เพียงพอ&nbsp;&nbsp;และบางครั้งเราพบว่าที่ดินอีกผืนหนึ่งมี<wbr>ความเขียวชอุ่มมาก&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;สถานที่ที่ระดับแห่งธรรมชาติวัตถุใดมีอัตราส่วน<wbr>ในปริมาณมากกว่า&nbsp;&nbsp;เผ่าพันธุ์ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในระดับนั้นก็ปรากฏ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  กิ่งก้านของต้นไม้พิจารณาว่าเป็นอายตนะภายนอก&nbsp;&nbsp;จากการพัฒนาระดับ<wbr>ต่างๆ&nbsp;&nbsp;แห่งธรรมชาติ&nbsp;&nbsp;เราพัฒนาประสาทสัมผัสต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และจากประสาทสัมผัสเราได้รับ<wbr>ความสุขอันหลากหลายจากอายตนะภายนอก&nbsp;&nbsp;ยอดของสาขาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือประสาทสัมผัสเช่น&nbsp;&nbsp;หู&nbsp;&nbsp;จมูก&nbsp;&nbsp;ตา&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ซึ่งยึดติดอยู่กับความเพลิดเพลินกับอายตนะภายนอก&nbsp;&nbsp;กิ่งก้านคือ<wbr>อายตนะภายนอก&nbsp;&nbsp;เช่น&nbsp;&nbsp;เสียง&nbsp;&nbsp;รูป&nbsp;&nbsp;สัมผัส&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;รากรองคือความยึดติดและความเกลียดชัง<wbr>ซึ่งเป็นผลพลอยได้ของความทุกข์และความสุขทางประสาทสัมผัสอันหลากหลาย&nbsp;&nbsp;แนว<wbr>โน้มที่จะเป็นคนใจบุญหรือเป็นคนใจบาปพิจารณาว่าพัฒนาจากรากรองเหล่านี้ซึ่งแผ่<wbr>ขยายไปทุกทิศทาง&nbsp;&nbsp;รากอันแท้จริงมาจาก&nbsp;&nbsp;<i>พฺรหฺมโลก</i>&nbsp;&nbsp;และรากอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;อยู่ในระบบดาว<wbr>เคราะห์มนุษย์&nbsp;&nbsp;หลังจากรื่นเริงกับผลบุญที่ได้ไปอยู่ในระบบดาวเคราะห์ที่สูงกว่าแล้ว&nbsp;&nbsp;เขา<wbr>จะตกลงมาในโลกนี้และสร้างกรรมหรือกิจกรรมเพื่อผลทางวัตถุต่อไป&nbsp;&nbsp;เพื่อความเจริญ<wbr>ก้าวหน้าทางวัตถุ&nbsp;&nbsp;ดาวเคราะห์ของมนุษย์นี้พิจารณาว่าเป็นสนามแห่งกิจกรรม
+  กิ่งก้านของต้นไม้พิจารณาว่าเป็นอายตนะภายนอก&nbsp;&nbsp;จากการพัฒนาระดับ<wbr>ต่างๆ&nbsp;&nbsp;แห่งธรรมชาติ&nbsp;&nbsp;เราพัฒนาประสาทสัมผัสต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;และจากประสาทสัมผัสเราได้รับ<wbr>ความสุขอันหลากหลายจากอายตนะภายนอก&nbsp;&nbsp;ยอดของสาขาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือประสาทสัมผัสเช่น&nbsp;&nbsp;หู&nbsp;&nbsp;จมูก&nbsp;&nbsp;ตา&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ซึ่งยึดติดอยู่กับความเพลิดเพลินกับอายตนะภายนอก&nbsp;&nbsp;กิ่งก้านคือ<wbr>อายตนะภายนอก&nbsp;&nbsp;เช่น&nbsp;&nbsp;เสียง&nbsp;&nbsp;รูป&nbsp;&nbsp;สัมผัส&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;รากรองคือความยึดติดและความเกลียดชัง<wbr>ซึ่งเป็นผลพลอยได้ของความทุกข์และความสุขทางประสาทสัมผัสอันหลากหลาย&nbsp;&nbsp;แนว<wbr>โน้มที่จะเป็นคนใจบุญหรือเป็นคนใจบาปพิจารณาว่าพัฒนาจากรากรองเหล่านี้ซึ่งแผ่<wbr>ขยายไปทุกทิศทาง&nbsp;&nbsp;รากอันแท้จริงมาจาก&nbsp;&nbsp;<span class="slant iast">brahmaloka</span><span class="slant pali">พฺรหฺมโลก</span><span class="slant thai">พรัหมะโลกะ</span><span class="slant ram">บระฮมะโลคะ</span>&nbsp;&nbsp;และรากอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;อยู่ในระบบดาว<wbr>เคราะห์มนุษย์&nbsp;&nbsp;หลังจากรื่นเริงกับผลบุญที่ได้ไปอยู่ในระบบดาวเคราะห์ที่สูงกว่าแล้ว&nbsp;&nbsp;เขา<wbr>จะตกลงมาในโลกนี้และสร้างกรรมหรือกิจกรรมเพื่อผลทางวัตถุต่อไป&nbsp;&nbsp;เพื่อความเจริญ<wbr>ก้าวหน้าทางวัตถุ&nbsp;&nbsp;ดาวเคราะห์ของมนุษย์นี้พิจารณาว่าเป็นสนามแห่งกิจกรรม
   </p>
 </div>
 

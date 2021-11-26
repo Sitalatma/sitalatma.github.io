@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.37</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กสฺมาจฺ จ เต น นเมรนฺ มหาตฺมนฺ</i><br /><i>ครียเส พฺรหฺมโณ ′ปฺยฺ อาทิ-กเรฺตฺร</i><br /><i>อนนฺต เทเวศ ชคนฺ-นิวาส</i><br /><i>ตฺวมฺ อกฺษรํ สทฺ-อสตฺ ตตฺ ปรํ ยตฺ</i>
+<span class="slant iast">kasmāc ca te na nameran mahātman<br /></span>
+<span class="slant pali">กสฺมาจฺ จ เต น นเมรนฺ มหาตฺมนฺ<br /></span>
+<span class="slant thai">กัสมาจ จะ เต นะ นะเมรัน มะหาตมัน<br /></span>
+<span class="slant ram">คัสมาช ชะ เท นะ นะเมรัน มะฮาทมัน<br /></span>
+<span class="slant iast">garīyase brahmaṇo ’py ādi-kartre<br /></span>
+<span class="slant pali">ครียเส พฺรหฺมโณ ’ปฺยฺ อาทิ-กรฺเตฺร<br /></span>
+<span class="slant thai">คะรียะเส พรัหมะโณ ’ปย อาทิ-กัรตเร<br /></span>
+<span class="slant ram">กะรียะเส บระฮมะโณ ่พิ อาดิ-คารเทรฺ<br /></span>
+<span class="slant iast">ananta deveśa jagan-nivāsa<br /></span>
+<span class="slant pali">อนนฺต เทเวศ ชคนฺ-นิวาส<br /></span>
+<span class="slant thai">อะนันตะ เทเวศะ ชะคัน-นิวาสะ<br /></span>
+<span class="slant ram">อนันทะ เดเวชะ จะกัน-นิวาสะ<br /></span>
+<span class="slant iast">tvam akṣaraṁ sad-asat tat paraṁ yat<br /></span>
+<span class="slant pali">ตฺวมฺ อกฺษรํ สทฺ-อสตฺ ตตฺ ปรํ ยตฺ<br /></span>
+<span class="slant thai">ตวัม อักษะรัง สัท-อะสัต ตัต ปะรัง ยัต<br /></span>
+<span class="slant ram">ทวัม อัคชะรัม สัด-อสัท ทัท พะรัม ยัทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กสฺมาตฺ</i> — ทำไม, <i>จ</i> — เช่นกัน,<i>เต</i> — แด่พระองค์, <i>น</i> — ไม่, <i>นเมรนฺ</i> — พวกเขาควรถวาย ความเคารพอย่างเหมาะสม, <i>มหา-อาตฺมนฺ</i> — โอ้ ผู้ยิ่งใหญ่, <i>ครียเส</i> — ผู้ที่ดีกว่า, <i>พฺรหฺมณฮ</i> — กว่าพระ <i>พฺรหฺมา</i>, <i>อปิ</i> — ถึงแม้ว่า, <i>อาทิ-กเรฺตฺร</i> — แด่ผู้สร้างสูงสุด, <i>อนนฺต</i> — โอ้ ผู้ไม่มีที่สิ้นสุด, <i>เทว-อีศ</i> — โอ้ พระผู้เป็นเจ้าของปวงเทวดา, <i>ชคตฺ-นิวาส</i> — โอ้ ที่พัก พิงของจักรวาล, <i>ตฺวมฺ</i> — พระองค์ทรงเป็น, <i>อกฺษรมฺ</i> — ผู้ไม่มีวันถูกทำลาย, <i>สตฺ-อสตฺ</i> — เหตุ และผล, <i>ตตฺ ปรมฺ</i> — ทิพย์, <i>ยตฺ</i> — เพราะว่า
+  <span class="slant iast">kasmāt</span><span class="slant pali">กสฺมาตฺ</span><span class="slant thai">กัสมาต</span><span class="slant ram">คัสมาท</span> — ทำไม, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน,<span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — แด่พระองค์, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">nameran</span><span class="slant pali">นเมรนฺ</span><span class="slant thai">นะเมรัน</span><span class="slant ram">นะเมรัน</span> — พวกเขาควรถวาย ความเคารพอย่างเหมาะสม, <span class="slant iast">mahā-ātman</span><span class="slant pali">มหา-อาตฺมนฺ</span><span class="slant thai">มะหา-อาตมัน</span><span class="slant ram">มะฮา-อาทมัน</span> — โอ้ ผู้ยิ่งใหญ่, <span class="slant iast">garīyase</span><span class="slant pali">ครียเส</span><span class="slant thai">คะรียะเส</span><span class="slant ram">กะรียะเส</span> — ผู้ที่ดีกว่า, <span class="slant iast">brahmaṇaḥ</span><span class="slant pali">พฺรหฺมณห์</span><span class="slant thai">พรัหมะณะห์</span><span class="slant ram">บระฮมะณะฮ</span> — กว่าพระ <span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — ถึงแม้ว่า, <span class="slant iast">ādi-kartre</span><span class="slant pali">อาทิ-กรฺเตฺร</span><span class="slant thai">อาทิ-กัรตเร</span><span class="slant ram">อาดิ-คารเทร</span> — แด่ผู้สร้างสูงสุด, <span class="slant iast">ananta</span><span class="slant pali">อนนฺต</span><span class="slant thai">อะนันตะ</span><span class="slant ram">อนันทะ</span> — โอ้ ผู้ไม่มีที่สิ้นสุด, <span class="slant iast">deva-īśa</span><span class="slant pali">เทว-อีศ</span><span class="slant thai">เทวะ-อีศะ</span><span class="slant ram">เดวะ-อีชะ</span> — โอ้ พระผู้เป็นเจ้าของปวงเทวดา, <span class="slant iast">jagat-nivāsa</span><span class="slant pali">ชคตฺ-นิวาส</span><span class="slant thai">ชะคัต-นิวาสะ</span><span class="slant ram">จะกัท-นิวาสะ</span> — โอ้ ที่พัก พิงของจักรวาล, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — พระองค์ทรงเป็น, <span class="slant iast">akṣaram</span><span class="slant pali">อกฺษรมฺ</span><span class="slant thai">อักษะรัม</span><span class="slant ram">อัคชะรัม</span> — ผู้ไม่มีวันถูกทำลาย, <span class="slant iast">sat-asat</span><span class="slant pali">สตฺ-อสตฺ</span><span class="slant thai">สัต-อะสัต</span><span class="slant ram">สัท-อสัท</span> — เหตุ และผล, <span class="slant iast">tat param</span><span class="slant pali">ตตฺปรมฺ</span><span class="slant thai">ตัตปะรัม</span><span class="slant ram">ทัท พะรัม</span> — ทิพย์, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — เพราะว่า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้ยิ่งใหญ่&nbsp;&nbsp;ยิ่งใหญ่กว่าแม้แต่พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พระองค์ทรงเป็นผู้สร้างองค์แรก&nbsp;&nbsp;แล้วเหตุไฉนพวกเขาจึงไม่ถวายความเคารพแด่พระองค์?&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้ไร้ขีดจำกัด&nbsp;&nbsp;พระผู้เป็นเจ้าของปวงเทวดา&nbsp;&nbsp;ที่พักพิงของจักรวาล!&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดที่อยู่ยงคงกระพัน&nbsp;&nbsp;แหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;เป็นทิพย์เหนือปรากฏการณ์ทางวัตถุนี้
+  โอ้&nbsp;&nbsp;ผู้ยิ่งใหญ่&nbsp;&nbsp;ยิ่งใหญ่กว่าแม้แต่พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พระองค์ทรงเป็นผู้สร้างองค์แรก&nbsp;&nbsp;แล้วเหตุไฉนพวกเขาจึงไม่ถวายความเคารพแด่พระองค์?&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้ไร้ขีดจำกัด&nbsp;&nbsp;พระผู้เป็นเจ้าของปวงเทวดา&nbsp;&nbsp;ที่พักพิงของจักรวาล!&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดที่อยู่ยงคงกระพัน&nbsp;&nbsp;แหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;เป็นทิพย์เหนือปรากฏการณ์ทางวัตถุนี้
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จากการถวายความเคารพนี้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงแสดงให้เห็นว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นที่<wbr>เคารพบูชาสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;พระองค์ทรงแผ่กระจายไปทั่วและทรงเป็นวิญญาณของ<wbr>ทุกดวงวิญญาณ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเรียก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<i>มหาตฺมา</i>&nbsp;&nbsp;ซึ่งหมายความว่าพระองค์<wbr>ทรงมีใจกว้างขวางและไม่มีขีดจำกัด&nbsp;&nbsp;<i>อนนฺต</i>&nbsp;&nbsp;แสดงว่าไม่มีสิ่งใดที่ไม่ถูกปกคลุมด้วย<wbr>อิทธิพลและพลังงานขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>เทเวศ</i>&nbsp;&nbsp;หมายความว่าพระองค์ทรงเป็น<wbr>ผู้ควบคุมและอยู่เหนือเทวดาทั้งหลาย&nbsp;&nbsp;พระองค์ทรงเป็นที่พักพิงของจักรวาลทั้งหมด<i>อรฺชุน</i>&nbsp;&nbsp;ทรงคิดเช่นกันว่า&nbsp;&nbsp;เป็นการเหมาะสมที่สิ่งมีชีวิตผู้สมบูรณ์และเทวดาผู้มีอำนาจ<wbr>ทั้งหลายควรถวายความเคารพแด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพราะว่าไม่มีผู้ใดยิ่งใหญ่ไปกว่าพระองค์<i>อรฺชุน</i>&nbsp;&nbsp;ทรงกล่าวโดยเฉพาะว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงยิ่งใหญ่กว่าพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรง<wbr>เป็นผู้สร้างพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ทรงถือกำเนิดมาจากก้านดอกบัวที่เจริญเติบโตมา<wbr>จากพระนาภีของ&nbsp;&nbsp;<i>คโรฺภทก-ศายี&nbsp;&nbsp;วิษฺณุ</i>&nbsp;&nbsp;ผู้ทรงเป็นภาคที่แบ่งแยกอันสมบูรณ์ของ<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;(กำเนิดมาจากพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;)&nbsp;&nbsp;และเทวดาองค์อื่นๆ&nbsp;&nbsp;ทั้งหลายต้องถวายความเคารพแด่&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ว่าพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;และเทวดาองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่คล้ายกันนี้เคารพบูชาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>อกฺษรมฺ</i>&nbsp;&nbsp;มีความสำคัญมากเพราะว่าการสร้างทางวัตถุนี้จะหนีไม่พ้นการทำลาย&nbsp;&nbsp;แต่<wbr>พระองค์ทรงอยู่เหนือการสร้างทางวัตถุ&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวงเมื่อเป็นเช่นนี้&nbsp;&nbsp;ทรงเหนือกว่าพันธวิญญาณทั้งหลายภายในธรรมชาติวัตถุนี้&nbsp;&nbsp;รวมทั้ง<wbr>ปรากฏการณ์ทางจักรวาลวัตถุเอง&nbsp;&nbsp;ดังนั้นพระองค์ทรงเป็นผู้ยิ่งใหญ่สูงสุด
+  จากการถวายความเคารพนี้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงแสดงให้เห็นว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นที่<wbr>เคารพบูชาสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;พระองค์ทรงแผ่กระจายไปทั่วและทรงเป็นวิญญาณของ<wbr>ทุกดวงวิญญาณ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเรียก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<span class="slant iast">mahātmā</span><span class="slant pali">มหาตฺมา</span><span class="slant thai">มะหาตมา</span><span class="slant ram"></span>&nbsp;&nbsp;ซึ่งหมายความว่าพระองค์<wbr>ทรงมีใจกว้างขวางและไม่มีขีดจำกัด&nbsp;&nbsp;<span class="slant iast">ananta</span><span class="slant pali">อนนฺต</span><span class="slant thai">อะนันตะ</span><span class="slant ram">อนันทะ</span>&nbsp;&nbsp;แสดงว่าไม่มีสิ่งใดที่ไม่ถูกปกคลุมด้วย<wbr>อิทธิพลและพลังงานขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">deveśa</span><span class="slant pali">เทเวศ</span><span class="slant thai">เทเวศะ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายความว่าพระองค์ทรงเป็น<wbr>ผู้ควบคุมและอยู่เหนือเทวดาทั้งหลาย&nbsp;&nbsp;พระองค์ทรงเป็นที่พักพิงของจักรวาลทั้งหมด<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงคิดเช่นกันว่า&nbsp;&nbsp;เป็นการเหมาะสมที่สิ่งมีชีวิตผู้สมบูรณ์และเทวดาผู้มีอำนาจ<wbr>ทั้งหลายควรถวายความเคารพแด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพราะว่าไม่มีผู้ใดยิ่งใหญ่ไปกว่าพระองค์<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงกล่าวโดยเฉพาะว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงยิ่งใหญ่กว่าพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;เพราะ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรง<wbr>เป็นผู้สร้างพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ทรงถือกำเนิดมาจากก้านดอกบัวที่เจริญเติบโตมา<wbr>จากพระนาภีของ&nbsp;&nbsp;<span class="slant iast">garbhodaka-śāyī&nbsp;&nbsp;viṣṇu</span><span class="slant pali">ครฺโภทก-ศายีวิษฺณุ</span><span class="slant thai">คัรโภทะกะ-ศายีวิษณุ</span><span class="slant ram">การโบฺดะค-ชายีวิชณุ</span>&nbsp;&nbsp;ผู้ทรงเป็นภาคที่แบ่งแยกอันสมบูรณ์ของ<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;(กำเนิดมาจากพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;)&nbsp;&nbsp;และเทวดาองค์อื่นๆ&nbsp;&nbsp;ทั้งหลายต้องถวายความเคารพแด่&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ว่าพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;และเทวดาองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่คล้ายกันนี้เคารพบูชาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">akṣaram</span><span class="slant pali">อกฺษรมฺ</span><span class="slant thai">อักษะรัม</span><span class="slant ram">อัคชะรัม</span>&nbsp;&nbsp;มีความสำคัญมากเพราะว่าการสร้างทางวัตถุนี้จะหนีไม่พ้นการทำลาย&nbsp;&nbsp;แต่<wbr>พระองค์ทรงอยู่เหนือการสร้างทางวัตถุ&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวงเมื่อเป็นเช่นนี้&nbsp;&nbsp;ทรงเหนือกว่าพันธวิญญาณทั้งหลายภายในธรรมชาติวัตถุนี้&nbsp;&nbsp;รวมทั้ง<wbr>ปรากฏการณ์ทางจักรวาลวัตถุเอง&nbsp;&nbsp;ดังนั้นพระองค์ทรงเป็นผู้ยิ่งใหญ่สูงสุด
   </p>
 </div>
 

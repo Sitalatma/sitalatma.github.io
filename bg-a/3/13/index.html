@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.13</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยชฺญ-ศิษฺฏาศินฮ สโนฺต</i><br /><i>มุจฺยเนฺต สรฺว-กิลฺพิไษฮ</i><br /><i>ภุญฺชเต เต ตฺวฺ อฆํ ปาปา</i><br /><i>เย ปจนฺตฺยฺ อาตฺม-การณาตฺ</i>
+<span class="slant iast">yajña-śiṣṭāśinaḥ santo<br /></span>
+<span class="slant pali">ยชฺญ-ศิษฺฏาศินห์ สนฺโต<br /></span>
+<span class="slant thai">ยัชญะ-ศิษฏาศินะห์ สันโต<br /></span>
+<span class="slant ram">ยะกยะ-ชิชทาชินะฮ สันโท<br /></span>
+<span class="slant iast">mucyante sarva-kilbiṣaiḥ<br /></span>
+<span class="slant pali">มุจฺยนฺเต สรฺว-กิลฺพิไษห์<br /></span>
+<span class="slant thai">มุจยันเต สัรวะ-กิลพิไษห์<br /></span>
+<span class="slant ram">มุชยันเท สารวะ-คิลบิไชฮ<br /></span>
+<span class="slant iast">bhuñjate te tv aghaṁ pāpā<br /></span>
+<span class="slant pali">ภุญฺชเต เต ตฺวฺ อฆํ ปาปา<br /></span>
+<span class="slant thai">ภุญชะเต เต ตว อะฆัง ปาปา<br /></span>
+<span class="slant ram">บุนจะเท เท ทุ อกฺัม พาพา<br /></span>
+<span class="slant iast">ye pacanty ātma-kāraṇāt<br /></span>
+<span class="slant pali">เย ปจนฺตฺยฺ อาตฺม-การณาตฺ<br /></span>
+<span class="slant thai">เย ปะจันตย อาตมะ-การะณาต<br /></span>
+<span class="slant ram">เย พะชันทิ อาทมะ-คาระณาทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยชฺญ-ศิษฺฏ</i> — อาหารที่รับประทานหลังจากการปฎิบัติ <i>ยชฺญ</i>, <i>อศินฮ</i> — ผู้รับประทาน, <i>สนฺตฮ</i> — สาวก, <i>มุจฺยเนฺต</i> — ได้รับการปลดเปลื้อง, <i>สรฺว</i> — ทุกชนิด, <i>กิลฺพิไษฮ</i> — จากความ บาป, <i>ภุญฺชเต</i> — ความสุข, <i>เต</i> — พวกเขา, <i>ตุ</i> — แต่, <i>อฆมฺ</i> — บาปที่เศร้าโศก, <i>ปาปาฮ</i> — ผู้ ทำบาป, <i>เย</i> — ผู้ซึ่ง, <i>ปจนฺติ</i> — ปรุงอาหาร, <i>อาตฺม-การณาตฺ</i> — เพื่อความสุขทางประสาท สัมผัส
+  <span class="slant iast">yajña-śiṣṭa</span><span class="slant pali">ยชฺญ-ศิษฺฏ</span><span class="slant thai">ยัชญะ-ศิษฏะ</span><span class="slant ram">ยะกยะ-ชิชทะ</span> — อาหารที่รับประทานหลังจากการปฎิบัติ <span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>, <span class="slant iast">aśinaḥ</span><span class="slant pali">อศินห์</span><span class="slant thai">อะศินะห์</span><span class="slant ram">อชินะฮ</span> — ผู้รับประทาน, <span class="slant iast">santaḥ</span><span class="slant pali">สนฺตห์</span><span class="slant thai">สันตะห์</span><span class="slant ram">สันทะฮ</span> — สาวก, <span class="slant iast">mucyante</span><span class="slant pali">มุจฺยนฺเต</span><span class="slant thai">มุจยันเต</span><span class="slant ram">มุชยันเท</span> — ได้รับการปลดเปลื้อง, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ทุกชนิด, <span class="slant iast">kilbiṣaiḥ</span><span class="slant pali">กิลฺพิไษห์</span><span class="slant thai">กิลพิไษห์</span><span class="slant ram">คิลบิไชฮ</span> — จากความ บาป, <span class="slant iast">bhuñjate</span><span class="slant pali">ภุญฺชเต</span><span class="slant thai">ภุญชะเต</span><span class="slant ram">บุนจะเท</span> — ความสุข, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — พวกเขา, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">agham</span><span class="slant pali">อฆมฺ</span><span class="slant thai">อะฆัม</span><span class="slant ram">อกฺัม</span> — บาปที่เศร้าโศก, <span class="slant iast">pāpāḥ</span><span class="slant pali">ปาปาห์</span><span class="slant thai">ปาปาห์</span><span class="slant ram">พาพาฮ</span> — ผู้ ทำบาป, <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — ผู้ซึ่ง, <span class="slant iast">pacanti</span><span class="slant pali">ปจนฺติ</span><span class="slant thai">ปะจันติ</span><span class="slant ram">พะชันทิ</span> — ปรุงอาหาร, <span class="slant iast">ātma-kāraṇāt</span><span class="slant pali">อาตฺม-การณาตฺ</span><span class="slant thai">อาตมะ-การะณาต</span><span class="slant ram">อาทมะ</span> — เพื่อความสุขทางประสาท สัมผัส
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือบุคคลที่อยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเรียกว่า&nbsp;&nbsp;<i>สนฺต</i>&nbsp;&nbsp;พวก<wbr>ท่านอยู่ในความรักกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.38):&nbsp;&nbsp;<i>เปฺรมาญฺชน-จฺฉุริต-ภกฺติ-วิโลจเนน&nbsp;&nbsp;สนฺตฮ&nbsp;&nbsp;สไทว&nbsp;&nbsp;หฺฤทเยษุ&nbsp;&nbsp;วิโลกยนฺติ,สนฺต</i>&nbsp;&nbsp;อยู่ในความรักอย่างแน่นแฟ้นกับบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;(ผู้<wbr>ให้ความสุขทั้งปวง)&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<i>มุกุนฺท</i>&nbsp;&nbsp;(ผู้ให้อิสรภาพ)&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;(ผู้มีเสน่ห์สูงสุด)อยู่เสมอ&nbsp;&nbsp;ไม่สามารถรับเอาสิ่งใดที่ไม่ได้ถวายให้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก่อน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สาวกเหล่านี้<wbr>ปฎิบัติ&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;ในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งการอุทิศตนเสียสละรับใช้อยู่เสมอ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ศฺรวณมฺ,กีรฺตนมฺ,สฺมรณมฺ,อรฺจนมฺ</i>&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และการปฎิบัติ&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;เหล่านี้จะคุ้มครองท่าน<wbr>ให้อยู่ห่างจากมลทินแห่งการคบหาสมาคมที่เป็นบาปในโลกวัตถุทุกชนิด&nbsp;&nbsp;ผู้ที่ปรุงอาหาร<wbr>เพื่อตนเองหรือเพื่อสนองประสาทสัมผัสแห่งตนไม่เพียงแต่เป็นขโมยเท่านั้น&nbsp;&nbsp;หากแต่ยัง<wbr>เป็นผู้ที่รับประทานเอาความบาปทุกชนิดเข้าไปด้วย&nbsp;&nbsp;เป็นทั้งขโมยและคนบาปจะมีความ<wbr>สุขได้อย่างไรมันเป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เพื่อให้ประชากรมีความสุขในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้านจึงต้องได้<wbr>รับการสอนให้ปฎิบัติวิธีการง่าย&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือ&nbsp;&nbsp;<i>สงฺกีรฺตน-ยชฺญ</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่าง<wbr>สมบูรณ์&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;จะไม่มีความสงบหรือความสุขในโลกนี้
+  สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือบุคคลที่อยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเรียกว่า&nbsp;&nbsp;<span class="slant iast">santa</span><span class="slant pali">สนฺต</span><span class="slant thai">สันตะ</span><span class="slant ram"></span>&nbsp;&nbsp;พวก<wbr>ท่านอยู่ในความรักกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.38):&nbsp;&nbsp;<span class="slant iast">premāñjana-cchurita-bhakti-vilocanena&nbsp;&nbsp;santaḥ&nbsp;&nbsp;sadaiva&nbsp;&nbsp;hṛdayeṣu&nbsp;&nbsp;vilokayanti,&nbsp;&nbsp;santa</span><span class="slant pali">เปฺรมาญฺชน-จฺฉุริต-ภกฺติ-วิโลจเนนสนฺตห์สไทวหฺฤทเยษุวิโลกยนฺติสนฺต</span><span class="slant thai">ปเรมาญชะนะ-จฉุริตะ-ภักติ-วิโลจะเนนะสันตะห์สะไทวะหฤทะเยษุวิโลกะยันติสันตะ</span><span class="slant ram">--บัฺคธิ,บัคฺธิ-สันทะฮ</span>&nbsp;&nbsp;อยู่ในความรักอย่างแน่นแฟ้นกับบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;(ผู้<wbr>ให้ความสุขทั้งปวง)&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<span class="slant iast">mukunda</span><span class="slant pali">มุกุนฺท</span><span class="slant thai">มุกุนทะ</span><span class="slant ram">มุคุนดะ</span>&nbsp;&nbsp;(ผู้ให้อิสรภาพ)&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;(ผู้มีเสน่ห์สูงสุด)อยู่เสมอ&nbsp;&nbsp;ไม่สามารถรับเอาสิ่งใดที่ไม่ได้ถวายให้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก่อน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;สาวกเหล่านี้<wbr>ปฎิบัติ&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งการอุทิศตนเสียสละรับใช้อยู่เสมอ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">śravaṇam,&nbsp;&nbsp;kīrtanam,&nbsp;&nbsp;smaraṇam,&nbsp;&nbsp;arcanam</span><span class="slant pali">ศฺรวณมฺกีรฺตนมฺสฺมรณมฺอรฺจนมฺ</span><span class="slant thai">ศระวะณัมกีรตะนัมสมะระณัมอัรจะนัม</span><span class="slant ram">zzzzzz</span>&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และการปฎิบัติ&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;เหล่านี้จะคุ้มครองท่าน<wbr>ให้อยู่ห่างจากมลทินแห่งการคบหาสมาคมที่เป็นบาปในโลกวัตถุทุกชนิด&nbsp;&nbsp;ผู้ที่ปรุงอาหาร<wbr>เพื่อตนเองหรือเพื่อสนองประสาทสัมผัสแห่งตนไม่เพียงแต่เป็นขโมยเท่านั้น&nbsp;&nbsp;หากแต่ยัง<wbr>เป็นผู้ที่รับประทานเอาความบาปทุกชนิดเข้าไปด้วย&nbsp;&nbsp;เป็นทั้งขโมยและคนบาปจะมีความ<wbr>สุขได้อย่างไรมันเป็นไปไม่ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เพื่อให้ประชากรมีความสุขในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้านจึงต้องได้<wbr>รับการสอนให้ปฎิบัติวิธีการง่าย&nbsp;&nbsp;ๆ&nbsp;&nbsp;คือ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana-yajña</span><span class="slant pali">สงฺกีรฺตน-ยชฺญ</span><span class="slant thai">สังกีรตะนะ-ยัชญะ</span><span class="slant ram">-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่าง<wbr>สมบูรณ์&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;จะไม่มีความสงบหรือความสุขในโลกนี้
   </p>
 </div>
 

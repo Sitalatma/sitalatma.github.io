@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.11</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เตษามฺ เอวานุกมฺปารฺตฺหมฺ</i><br /><i>อหมฺ อชฺญาน-ชํ ตมฮ</i><br /><i>นาศยามฺยฺ อาตฺม-ภาว-โสฺตฺห</i><br /><i>ชฺญาน-ทีเปน ภาสฺวตา</i>
+<span class="slant iast">teṣām evānukampārtham<br /></span>
+<span class="slant pali">เตษามฺ เอวานุกมฺปารฺถมฺ<br /></span>
+<span class="slant thai">เตษาม เอวานุกัมปารถัม<br /></span>
+<span class="slant ram">เทชาม เอวานุคัมพารทัฺม<br /></span>
+<span class="slant iast">aham ajñāna-jaṁ tamaḥ<br /></span>
+<span class="slant pali">อหมฺ อชฺญาน-ชํ ตมห์<br /></span>
+<span class="slant thai">อะหัม อัชญานะ-ชัง ตะมะห์<br /></span>
+<span class="slant ram">อฮัม อกยานะ-จัม ทะมะฮ<br /></span>
+<span class="slant iast">nāśayāmy ātma-bhāva-stho<br /></span>
+<span class="slant pali">นาศยามฺยฺ อาตฺม-ภาว-โสฺถ<br /></span>
+<span class="slant thai">นาศะยามย อาตมะ-ภาวะ-สโถ<br /></span>
+<span class="slant ram">นาชะยามิ อาทมะ-บฺาวะ-สโทฺ<br /></span>
+<span class="slant iast">jñāna-dīpena bhāsvatā<br /></span>
+<span class="slant pali">ชฺญาน-ทีเปน ภาสฺวตา<br /></span>
+<span class="slant thai">ชญานะ-ทีเปนะ ภาสวะตา<br /></span>
+<span class="slant ram">กยานะ-ดีเพนะ บฺาสวะทา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>เตษามฺ</i> — สำหรับพวกเขา, <i>เอว</i> — แน่นอน, <i>อนุกมฺปา-อรฺตฺหมฺ</i> — เพื่อแสดงพระเมตตาธิคุณ พิเศษ, <i>อหมฺ</i> — ข้า, <i>อชฺญาน-ชมฺ</i> — เนื่องจากอวิชชา, <i>ตมฮ</i> — ความมืด, <i>นาศยามิ</i> — ปัดเป่า, <i>อาตฺม-ภาว</i> — ภายในหัวใจของพวกเขา, <i>สฺตฺหฮ</i> — สถิต, <i>ชฺญาน</i> — ของความรู้, <i>ทีเปน</i> — ด้วย ตะเกียง, <i>ภาสฺวตา</i> — สว่างไสว
+  <span class="slant iast">teṣām</span><span class="slant pali">เตษามฺ</span><span class="slant thai">เตษาม</span><span class="slant ram"> เทชาม</span> — สำหรับพวกเขา, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">anukampā-artham</span><span class="slant pali">อนุกมฺปา-อรฺถมฺ</span><span class="slant thai">อะนุกัมปา-อัรถัม</span><span class="slant ram">อนุคัมพา-อารทัฺม</span> — เพื่อแสดงพระเมตตาธิคุณ พิเศษ, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">ajñāna-jam</span><span class="slant pali">อชฺญาน-ชมฺ</span><span class="slant thai">อัชญานะ-ชัม</span><span class="slant ram">อกยานะ-จัม</span> — เนื่องจากอวิชชา, <span class="slant iast">tamaḥ</span><span class="slant pali">ตมห์</span><span class="slant thai">ตะมะห์</span><span class="slant ram">ทะมะฮ</span> — ความมืด, <span class="slant iast">nāśayāmi</span><span class="slant pali">นาศยามิ</span><span class="slant thai">นาศะยามิ</span><span class="slant ram">นาชะยามิ</span> — ปัดเป่า, <span class="slant iast">ātma-bhāva</span><span class="slant pali">อาตฺม-ภาว</span><span class="slant thai">อาตมะ-ภาวะ</span><span class="slant ram">อาทมะ-บฺาวะ</span> — ภายในหัวใจของพวกเขา, <span class="slant iast">sthaḥ</span><span class="slant pali">สฺถห์</span><span class="slant thai">สถะห์</span><span class="slant ram">สทฺะฮ</span> — สถิต, <span class="slant iast">jñāna</span><span class="slant pali">ชฺญาน</span><span class="slant thai">ชญานะ</span><span class="slant ram">กยานะ</span> — ของความรู้, <span class="slant iast">dīpena</span><span class="slant pali">ทีเปน</span><span class="slant thai">ทีเปนะ</span><span class="slant ram">ดีเพนะ</span> — ด้วย ตะเกียง, <span class="slant iast">bhāsvatā</span><span class="slant pali">ภาสฺวตา</span><span class="slant thai">ภาสวะตา</span><span class="slant ram">บฺาสะวะทา</span> — สว่างไสว
   </p>
 </div>
 
@@ -73,25 +174,25 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เมื่อองค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงประทับอยู่ที่&nbsp;&nbsp;เบนะเรส&nbsp;&nbsp;เผยแพร่การสวดภาวนา&nbsp;&nbsp;ฮะเร<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;คนเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ติดตามพระองค์&nbsp;&nbsp;<i>ปฺรกาศานนฺท</i>&nbsp;&nbsp;<i>สรสฺวตี</i>&nbsp;&nbsp;นักวิชาการ<wbr>ผู้คงแก่เรียนและมีอิทธิพลมากที่&nbsp;&nbsp;เบนะเรส&nbsp;&nbsp;ในขณะนั้น&nbsp;&nbsp;เยาะเย้ย&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ว่าเป็นคนเจ้า<wbr>อารมณ์&nbsp;&nbsp;บางครั้งพวกนักปราชญ์วิจารณ์สาวก&nbsp;&nbsp;เพราะคิดว่าสาวกส่วนใหญ่อยู่ในความ<wbr>มืดแห่งอวิชชา&nbsp;&nbsp;และเป็นคนเจ้าอารมณ์&nbsp;&nbsp;ไม่เดียงสากับปรัชญา&nbsp;&nbsp;อันที่จริงไม่เป็นเช่นนั้น&nbsp;&nbsp;มี<wbr>นักวิชาการผู้คงแก่เรียนหลายท่านที่เสนอปรัชญาแห่งการอุทิศตนเสียสละ&nbsp;&nbsp;แต่ถึงแม้ว่า<wbr>สาวกไม่ฉวยประโยชน์จากวรรณกรรมเหล่านี้หรือจากพระอาจารย์ทิพย์&nbsp;&nbsp;หากมีความ<wbr>จริงใจในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะทรงช่วยจากภายในหัวใจ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;สาวก<wbr>ผู้มีความจริงใจปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเป็นไปไม่ได้ที่จะไม่มีความรู้&nbsp;&nbsp;คุณสมบัติเพียง<wbr>ประการเดียวก็คือ&nbsp;&nbsp;ต้องปฏิบัติการอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างเต็มที่
+  เมื่อองค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงประทับอยู่ที่&nbsp;&nbsp;เบนะเรส&nbsp;&nbsp;เผยแพร่การสวดภาวนา&nbsp;&nbsp;ฮะเร<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;คนเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;ติดตามพระองค์&nbsp;&nbsp;<span class="slant iast">prakāśānanda</span><span class="slant pali">ปฺรกาศานนฺท</span><span class="slant thai">ประกาศานันทะ</span><span class="slant ram">พระคาชานันดะ</span>&nbsp;&nbsp;<span class="slant iast">sarasvatī</span><span class="slant pali">สรสฺวตี</span><span class="slant thai">สะรัสวะตี</span><span class="slant ram">สะรัสวะที</span>&nbsp;&nbsp;นักวิชาการ<wbr>ผู้คงแก่เรียนและมีอิทธิพลมากที่&nbsp;&nbsp;เบนะเรส&nbsp;&nbsp;ในขณะนั้น&nbsp;&nbsp;เยาะเย้ย&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ว่าเป็นคนเจ้า<wbr>อารมณ์&nbsp;&nbsp;บางครั้งพวกนักปราชญ์วิจารณ์สาวก&nbsp;&nbsp;เพราะคิดว่าสาวกส่วนใหญ่อยู่ในความ<wbr>มืดแห่งอวิชชา&nbsp;&nbsp;และเป็นคนเจ้าอารมณ์&nbsp;&nbsp;ไม่เดียงสากับปรัชญา&nbsp;&nbsp;อันที่จริงไม่เป็นเช่นนั้น&nbsp;&nbsp;มี<wbr>นักวิชาการผู้คงแก่เรียนหลายท่านที่เสนอปรัชญาแห่งการอุทิศตนเสียสละ&nbsp;&nbsp;แต่ถึงแม้ว่า<wbr>สาวกไม่ฉวยประโยชน์จากวรรณกรรมเหล่านี้หรือจากพระอาจารย์ทิพย์&nbsp;&nbsp;หากมีความ<wbr>จริงใจในการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะทรงช่วยจากภายในหัวใจ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;สาวก<wbr>ผู้มีความจริงใจปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเป็นไปไม่ได้ที่จะไม่มีความรู้&nbsp;&nbsp;คุณสมบัติเพียง<wbr>ประการเดียวก็คือ&nbsp;&nbsp;ต้องปฏิบัติการอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างเต็มที่
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พวกนักปราชญ์สมัยปัจจุบันคิดว่าหากไม่สามารถแยกแยะ&nbsp;&nbsp;จะไม่สามารถมี<wbr>ความรู้ที่บริสุทธิ์&nbsp;&nbsp;สำหรับพวกนี้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงให้คำตอบดังนี้&nbsp;&nbsp;พวกที่ปฏิบัติการอุทิศตน<wbr>เสียสละรับใช้อย่างบริสุทธิ์&nbsp;&nbsp;ถึงแม้ว่าไม่มีการศึกษาเพียงพอและไม่มีความรู้ในหลักธรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เพียงพอ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะทรงช่วย&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลกนี้
+  พวกนักปราชญ์สมัยปัจจุบันคิดว่าหากไม่สามารถแยกแยะ&nbsp;&nbsp;จะไม่สามารถมี<wbr>ความรู้ที่บริสุทธิ์&nbsp;&nbsp;สำหรับพวกนี้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงให้คำตอบดังนี้&nbsp;&nbsp;พวกที่ปฏิบัติการอุทิศตน<wbr>เสียสละรับใช้อย่างบริสุทธิ์&nbsp;&nbsp;ถึงแม้ว่าไม่มีการศึกษาเพียงพอและไม่มีความรู้ในหลักธรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เพียงพอ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะทรงช่วย&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในโศลกนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พระองค์ตรัสต่อ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;โดยพื้นฐาน&nbsp;&nbsp;เป็นไปไม่ได้ที่จะเข้าใจสัจธรรมสูงสุด<wbr>บุคลิกภาพแห่งพระเจ้าด้วยการคาดคะเน&nbsp;&nbsp;เพราะว่าสัจธรรมสูงสุดนั้นยิ่งใหญ่มากจน<wbr>เป็นไปไม่ได้ที่จะเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือบรรลุถึงพระองค์ด้วยความพยายามทางจิตใจ&nbsp;&nbsp;มนุษย์<wbr>สามารถคาดคะเนเป็นเวลาหลายต่อหลายล้านปี&nbsp;&nbsp;หากไม่อุทิศตนเสียสละและหากไม่มา<wbr>เป็นที่รักของสัจธรรมสูงสุด&nbsp;&nbsp;จะไม่มีวันเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;หรือสัจธรรมสูงสุดได้&nbsp;&nbsp;ด้วยการอุทิศ<wbr>ตนเสียสละรับใช้เท่านั้นที่สัจธรรมสูงสุด&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะทรงชื่นชมยินดีและด้วยพลังอำนาจ<wbr>ที่มองไม่เห็นของพระองค์&nbsp;&nbsp;จะทรงเปิดเผยพระวรกายที่ดวงใจของสาวกผู้บริสุทธิ์&nbsp;&nbsp;สาวกผู้<wbr>บริสุทธิ์มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อยู่ภายในหัวใจเสมอและจากการปรากฏของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ซึ่งเหมือนกับดวง<wbr>อาทิตย์&nbsp;&nbsp;ความมืดแห่งอวิชชาจะถูกขจัดไปในทันที&nbsp;&nbsp;นี่คือพระเมตตาธิคุณพิเศษที่&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงมีให้แก่สาวกผู้บริสุทธิ์
+  พระองค์ตรัสต่อ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;โดยพื้นฐาน&nbsp;&nbsp;เป็นไปไม่ได้ที่จะเข้าใจสัจธรรมสูงสุด<wbr>บุคลิกภาพแห่งพระเจ้าด้วยการคาดคะเน&nbsp;&nbsp;เพราะว่าสัจธรรมสูงสุดนั้นยิ่งใหญ่มากจน<wbr>เป็นไปไม่ได้ที่จะเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือบรรลุถึงพระองค์ด้วยความพยายามทางจิตใจ&nbsp;&nbsp;มนุษย์<wbr>สามารถคาดคะเนเป็นเวลาหลายต่อหลายล้านปี&nbsp;&nbsp;หากไม่อุทิศตนเสียสละและหากไม่มา<wbr>เป็นที่รักของสัจธรรมสูงสุด&nbsp;&nbsp;จะไม่มีวันเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;หรือสัจธรรมสูงสุดได้&nbsp;&nbsp;ด้วยการอุทิศ<wbr>ตนเสียสละรับใช้เท่านั้นที่สัจธรรมสูงสุด&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะทรงชื่นชมยินดีและด้วยพลังอำนาจ<wbr>ที่มองไม่เห็นของพระองค์&nbsp;&nbsp;จะทรงเปิดเผยพระวรกายที่ดวงใจของสาวกผู้บริสุทธิ์&nbsp;&nbsp;สาวกผู้<wbr>บริสุทธิ์มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อยู่ภายในหัวใจเสมอและจากการปรากฏของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ซึ่งเหมือนกับดวง<wbr>อาทิตย์&nbsp;&nbsp;ความมืดแห่งอวิชชาจะถูกขจัดไปในทันที&nbsp;&nbsp;นี่คือพระเมตตาธิคุณพิเศษที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงมีให้แก่สาวกผู้บริสุทธิ์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เนื่องมาจากมลภาวะแห่งการมาคบหาสมาคมทางวัตถุเป็นเวลาหลายต่อ<wbr>หลายล้านชาติ&nbsp;&nbsp;หัวใจของเราถูกปกคลุมไปด้วยฝุ่นแห่งวัตถุนิยมอยู่เสมอ&nbsp;&nbsp;แต่เมื่อมา<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้และสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ฝุ่นจะถูกปัดให้<wbr>สะอาดอย่างรวดเร็ว&nbsp;&nbsp;แล้วเราจะเจริญก้าวหน้ามาสู่ระดับแห่งความรู้ที่บริสุทธิ์&nbsp;&nbsp;จุดมุ่ง<wbr>หมายสูงสุดคือพระ&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;สามารถบรรลุได้ด้วยการสวดภาวนาและการอุทิศตนเสียสละ<wbr>รับใช้เท่านั้น&nbsp;&nbsp;ไม่ใช่ด้วยการคาดคะเนทางจิตใจหรือด้วยการโต้เถียง&nbsp;&nbsp;สาวกผู้บริสุทธิ์ไม่<wbr>ต้องวิตกกังวลเกี่ยวกับสิ่งจำเป็นทางวัตถุในชีวิต&nbsp;&nbsp;ไม่จำเป็นต้องกังวลเพราะเมื่อความ<wbr>มืดถูกขจัดออกไปจากหัวใจแล้ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงยินดีกับการอุทิศตนเสียสละรับใช้<wbr>ของสาวกด้วยความรัก&nbsp;&nbsp;พระองค์จะทรงจัดสรรทุกสิ่งทุกอย่างให้โดยปริยาย&nbsp;&nbsp;นี่คือสาระ<wbr>สำคัญของคำสอนใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จากการศึกษา&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เราจะกลายมาเป็นดวง<wbr>วิญญาณผู้ศิโรราบโดยดุษฎีต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และปฏิบัติการอุทิศตนเสียสละรับใช้ด้วยใจ<wbr>บริสุทธิ์&nbsp;&nbsp;เมื่อพระองค์ทรงเข้ามาควบคุม&nbsp;&nbsp;เราจะเป็นอิสระจากความพยายามทางวัตถุทั้ง<wbr>ปวงโดยสมบูรณ์
+  เนื่องมาจากมลภาวะแห่งการมาคบหาสมาคมทางวัตถุเป็นเวลาหลายต่อ<wbr>หลายล้านชาติ&nbsp;&nbsp;หัวใจของเราถูกปกคลุมไปด้วยฝุ่นแห่งวัตถุนิยมอยู่เสมอ&nbsp;&nbsp;แต่เมื่อมา<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้และสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;ฝุ่นจะถูกปัดให้<wbr>สะอาดอย่างรวดเร็ว&nbsp;&nbsp;แล้วเราจะเจริญก้าวหน้ามาสู่ระดับแห่งความรู้ที่บริสุทธิ์&nbsp;&nbsp;จุดมุ่ง<wbr>หมายสูงสุดคือพระ&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;สามารถบรรลุได้ด้วยการสวดภาวนาและการอุทิศตนเสียสละ<wbr>รับใช้เท่านั้น&nbsp;&nbsp;ไม่ใช่ด้วยการคาดคะเนทางจิตใจหรือด้วยการโต้เถียง&nbsp;&nbsp;สาวกผู้บริสุทธิ์ไม่<wbr>ต้องวิตกกังวลเกี่ยวกับสิ่งจำเป็นทางวัตถุในชีวิต&nbsp;&nbsp;ไม่จำเป็นต้องกังวลเพราะเมื่อความ<wbr>มืดถูกขจัดออกไปจากหัวใจแล้ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงยินดีกับการอุทิศตนเสียสละรับใช้<wbr>ของสาวกด้วยความรัก&nbsp;&nbsp;พระองค์จะทรงจัดสรรทุกสิ่งทุกอย่างให้โดยปริยาย&nbsp;&nbsp;นี่คือสาระ<wbr>สำคัญของคำสอนใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จากการศึกษา&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เราจะกลายมาเป็นดวง<wbr>วิญญาณผู้ศิโรราบโดยดุษฎีต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และปฏิบัติการอุทิศตนเสียสละรับใช้ด้วยใจ<wbr>บริสุทธิ์&nbsp;&nbsp;เมื่อพระองค์ทรงเข้ามาควบคุม&nbsp;&nbsp;เราจะเป็นอิสระจากความพยายามทางวัตถุทั้ง<wbr>ปวงโดยสมบูรณ์
   </p>
 </div>
 

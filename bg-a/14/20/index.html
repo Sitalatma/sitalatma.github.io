@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 14.20</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>คุณานฺ เอตานฺ อตีตฺย ตฺรีนฺ</i><br /><i>เทหี เทห-สมุทฺภวานฺ</i><br /><i>ชนฺม-มฺฤตฺยุ-ชรา-ทุฮไขรฺ</i><br /><i>วิมุโกฺต ′มฺฤตมฺ อศฺนุเต</i>
+<span class="slant iast">guṇān etān atītya trīn<br /></span>
+<span class="slant pali">คุณานฺ เอตานฺ อตีตฺย ตฺรีนฺ<br /></span>
+<span class="slant thai">คุณาน เอตาน อะตีตยะ ตรีน<br /></span>
+<span class="slant ram">กุณาน เอทาน อทีทยะ ทรีน<br /></span>
+<span class="slant iast">dehī deha-samudbhavān<br /></span>
+<span class="slant pali">เทหี เทห-สมุทฺภวานฺ<br /></span>
+<span class="slant thai">เทหี เทหะ-สะมุทภะวาน<br /></span>
+<span class="slant ram">เดฮี เดฮะ-สะมุดบฺะวาน<br /></span>
+<span class="slant iast">janma-mṛtyu-jarā-duḥkhair<br /></span>
+<span class="slant pali">ชนฺม-มฺฤตฺยุ-ชรา-ทุห์ไขรฺ<br /></span>
+<span class="slant thai">ชันมะ-มฤตยุ-ชะรา-ทุห์ไขร<br /></span>
+<span class="slant ram">จันมะ-มริทยุ-จะรา-ดุฮไคฺร<br /></span>
+<span class="slant iast">vimukto ’mṛtam aśnute<br /></span>
+<span class="slant pali">วิมุกฺโต ’มฺฤตมฺ อศฺนุเต<br /></span>
+<span class="slant thai">วิมุกโต ’มฤตัม อัศนุเต<br /></span>
+<span class="slant ram">วิมุคโท ่มริทัม อัชนุเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>คุณานฺ</i> — คุณสมบัติ, <i>เอตานฺ</i> — ทั้งหมดนี้, <i>อตีตฺย</i> — ข้ามพ้น, <i>ตฺรีนฺ</i> — สาม, <i>เทหี</i> — ร่างกาย, <i>เทห</i> — ร่างกาย, <i>สมุทฺภวานฺ</i> — ผลิตจาก, <i>ชนฺม</i> — แห่งการเกิด, <i>มฺฤตฺยุ</i> — การตาย, <i>ชรา</i> — และความชรา, <i>ทุฮไขฮ</i> — ความทุกข์, <i>วิมุกฺตฮ</i> — เป็นอิสระจาก, <i>อมฺฤตมฺ</i> — น้ำทิพย์, <i>อศฺนุเต</i> — เขามีความสุข
+  <span class="slant iast">guṇān</span><span class="slant pali">คุณานฺ</span><span class="slant thai">คุณาน</span><span class="slant ram">กุณาน</span> — คุณสมบัติ, <span class="slant iast">etān</span><span class="slant pali">เอตานฺ</span><span class="slant thai">เอตาน</span><span class="slant ram">เอทาน</span> — ทั้งหมดนี้, <span class="slant iast">atītya</span><span class="slant pali">อตีตฺย</span><span class="slant thai">อะตีตยะ</span><span class="slant ram">อทีทยะ</span> — ข้ามพ้น, <span class="slant iast">trīn</span><span class="slant pali">ตฺรีนฺ</span><span class="slant thai">ตรีน</span><span class="slant ram">ทรีน</span> — สาม, <span class="slant iast">dehī</span><span class="slant pali">เทหี</span><span class="slant thai">เทหี</span><span class="slant ram">เดฮี</span> — ร่างกาย, <span class="slant iast">deha</span><span class="slant pali">เทห</span><span class="slant thai">เทหะ</span><span class="slant ram">เดฮะ</span> — ร่างกาย, <span class="slant iast">samudbhavān</span><span class="slant pali">สมุทฺภวานฺ</span><span class="slant thai">สะมุทภะวาน</span><span class="slant ram">สะมุดบฺะวาน</span> — ผลิตจาก, <span class="slant iast">janma</span><span class="slant pali">ชนฺม</span><span class="slant thai">ชันมะ</span><span class="slant ram">จันมะ</span> — แห่งการเกิด, <span class="slant iast">mṛtyu</span><span class="slant pali">มฺฤตฺยุ</span><span class="slant thai">มฤตยุ</span><span class="slant ram">มริทยุ</span> — การตาย, <span class="slant iast">jarā</span><span class="slant pali">ชรา</span><span class="slant thai">ชะรา</span><span class="slant ram">จะ รา</span> — และความชรา, <span class="slant iast">duḥkhaiḥ</span><span class="slant pali">ทุห์ไขห์</span><span class="slant thai">ทุห์ไขห์</span><span class="slant ram">ดุฮไคฺรฮ</span> — ความทุกข์, <span class="slant iast">vimuktaḥ</span><span class="slant pali">วิมุกฺตห์</span><span class="slant thai">วิมุกตะห์</span><span class="slant ram">วิมุคทะฮ</span> — เป็นอิสระจาก, <span class="slant iast">amṛtam</span><span class="slant pali">อมฺฤตมฺ</span><span class="slant thai">อัมฤตัม</span><span class="slant ram">อมริทัม</span> — น้ำทิพย์, <span class="slant iast">aśnute</span><span class="slant pali">อศฺนุเต</span><span class="slant thai">อัศนุเต</span><span class="slant ram">อัชนุเท</span> — เขามีความสุข
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เราจะอยู่ในสถานภาพทิพย์ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์ได้อย่างไร&nbsp;&nbsp;แม้<wbr>ขณะอยู่ในร่างกายนี้&nbsp;&nbsp;โศลกนี้ได้อธิบายคำสันสฤต&nbsp;&nbsp;<i>เทหี</i>&nbsp;&nbsp;ซึ่งหมายถึง&nbsp;&nbsp;“ร่างกาย”&nbsp;&nbsp;จาก<wbr>ความเจริญก้าวหน้าในความรู้ทิพย์&nbsp;&nbsp;ถึงแม้ว่าอยู่ภายในร่างกายวัตถุนี้เราจะสามารถ<wbr>เป็นอิสระจากอิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ&nbsp;&nbsp;รื่นเริงกับความสุขแห่งชีวิตทิพย์<wbr>และหลังจากออกไปจากร่างกายนี้ก็จะไปยังท้องฟ้าทิพย์อย่างแน่นอน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แม้อยู่ใน<wbr>ร่างกายนี้&nbsp;&nbsp;เราก็สามารถรื่นเริงกับความสุขทิพย์ได้&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้<wbr>ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เป็นสัญลักษณ์แห่งความหลุดพ้นจากพันธนาการทางวัตถุ&nbsp;&nbsp;ประเด็น<wbr>นี้จะอธิบายในบทที่สิบแปด&nbsp;&nbsp;เมื่อเป็นอิสระจากอิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ<wbr>วัตถุแล้ว&nbsp;&nbsp;เราจะเข้าถึงการอุทิศตนเสียสละรับใช้
+  เราจะอยู่ในสถานภาพทิพย์ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์ได้อย่างไร&nbsp;&nbsp;แม้<wbr>ขณะอยู่ในร่างกายนี้&nbsp;&nbsp;โศลกนี้ได้อธิบายคำสันสฤต&nbsp;&nbsp;<span class="slant iast">dehī</span><span class="slant pali">เทหี</span><span class="slant thai">เทหี</span><span class="slant ram">เดฮี</span>&nbsp;&nbsp;ซึ่งหมายถึง&nbsp;&nbsp;“ร่างกาย”&nbsp;&nbsp;จาก<wbr>ความเจริญก้าวหน้าในความรู้ทิพย์&nbsp;&nbsp;ถึงแม้ว่าอยู่ภายในร่างกายวัตถุนี้เราจะสามารถ<wbr>เป็นอิสระจากอิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ&nbsp;&nbsp;รื่นเริงกับความสุขแห่งชีวิตทิพย์<wbr>และหลังจากออกไปจากร่างกายนี้ก็จะไปยังท้องฟ้าทิพย์อย่างแน่นอน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;แม้อยู่ใน<wbr>ร่างกายนี้&nbsp;&nbsp;เราก็สามารถรื่นเริงกับความสุขทิพย์ได้&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้<wbr>ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เป็นสัญลักษณ์แห่งความหลุดพ้นจากพันธนาการทางวัตถุ&nbsp;&nbsp;ประเด็น<wbr>นี้จะอธิบายในบทที่สิบแปด&nbsp;&nbsp;เมื่อเป็นอิสระจากอิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ<wbr>วัตถุแล้ว&nbsp;&nbsp;เราจะเข้าถึงการอุทิศตนเสียสละรับใช้
   </p>
 </div>
 

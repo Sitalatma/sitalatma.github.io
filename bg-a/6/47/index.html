@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.47</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โยคินามฺ อปิ สเรฺวษาํ</i><br /><i>มทฺ-คเตนานฺตรฺ-อาตฺมนา</i><br /><i>ศฺรทฺธาวานฺ ภชเต โย มาํ</i><br /><i>ส เม ยุกฺต-ตโม มตฮ</i>
+<span class="slant iast">yoginām api sarveṣāṁ<br /></span>
+<span class="slant pali">โยคินามฺ อปิ สเรฺวษำ<br /></span>
+<span class="slant thai">โยคินาม อะปิ สัรเวษาง<br /></span>
+<span class="slant ram">โยกินาม อพิ สารเวชาม<br /></span>
+<span class="slant iast">mad-gatenāntar-ātmanā<br /></span>
+<span class="slant pali">มทฺ-คเตนานฺตรฺ-อาตฺมนา<br /></span>
+<span class="slant thai">มัท-คะเตนานตัร-อาตมะนา<br /></span>
+<span class="slant ram">มัด-กะเทนานทาร-อาทมะนา<br /></span>
+<span class="slant iast">śraddhāvān bhajate yo māṁ<br /></span>
+<span class="slant pali">ศฺรทฺธาวานฺ ภชเต โย มำ<br /></span>
+<span class="slant thai">ศรัทธาวาน ภะชะเต โย มาง<br /></span>
+<span class="slant ram">ชรัดดฺาวาน บฺะจะเท โย มาม<br /></span>
+<span class="slant iast">sa me yukta-tamo mataḥ<br /></span>
+<span class="slant pali">ส เม ยุกฺต-ตโม มตห์<br /></span>
+<span class="slant thai">สะ เม ยุกตะ-ตะโม มะตะห์<br /></span>
+<span class="slant ram">สะ เม ยุคทะทะโม มะทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>โยคินามฺ</i> — ของ <i>โยคี</i>, <i>อปิ</i> — เช่นกัน, <i>สเรฺวษามฺ</i> — ทุกชนิด, <i>มตฺ-คเตน</i> — มีข้าเป็นสรณะ, ระลึกถึงข้าอยู่เสมอ, <i>อนฺตฮ-อาตฺมนา</i> — ภายในตัวเขา, <i>ศฺรทฺธา-วานฺ</i> — เปี่ยมไปด้วย ศรัทธา, <i>ภชเต</i> — ปฏิบัติรับใช้ด้วยความรักทิพย์, <i>ยฮ</i> — ผู้ซึ่ง, <i>มามฺ</i> — แด่ข้า (องค์ภควาน), <i>สฮ</i> — เขา, <i>เม</i> — โดยข้า, <i>ยุกฺต-ตมฮ</i> — <i>โยคี</i> ผู้ยิ่งใหญ่ที่สุด, <i>มตฮ</i> — พิจารณาว่า
+  <span class="slant iast">yoginām</span><span class="slant pali">โยคินามฺ</span><span class="slant thai">โยคินาม</span><span class="slant ram">โยกินาม</span> — ของ <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">sarveṣām</span><span class="slant pali">สเรฺวษามฺ</span><span class="slant thai">สัรเวษาม</span><span class="slant ram">สารเวชาม</span> — ทุกชนิด, <span class="slant iast">mat-gatena</span><span class="slant pali">มตฺ-คเตน</span><span class="slant thai">มัต-คะเตนะ</span><span class="slant ram">มัท-กะเทนะ</span> — มีข้าเป็นสรณะ, ระลึกถึงข้าอยู่เสมอ, <span class="slant iast">antaḥ-ātmanā</span><span class="slant pali">อนฺตห์-อาตฺมนา</span><span class="slant thai">อันตะห์-อาตมะนา</span><span class="slant ram">อันทะฮ-อาทมะนา</span> — ภายในตัวเขา, <span class="slant iast">śraddhā-vān</span><span class="slant pali">ศฺรทฺธา-วานฺ</span><span class="slant thai">ศรัทธา-วาน</span><span class="slant ram">ชรัดดฺา-วาน</span> — เปี่ยมไปด้วย ศรัทธา, <span class="slant iast">bhajate</span><span class="slant pali">ภชเต</span><span class="slant thai">ภะชะเต</span><span class="slant ram">บฺะจะเท</span> — ปฏิบัติรับใช้ด้วยความรักทิพย์, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า (องค์ภควาน), <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — โดยข้า, <span class="slant iast">yukta-tamaḥ</span><span class="slant pali">ยุกฺต-ตมห์</span><span class="slant thai">ยุกตะ-ตะมะห์</span><span class="slant ram">ยุคทะ-ทะมะฮ</span> — <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span> ผู้ยิ่งใหญ่ที่สุด, <span class="slant iast">mataḥ</span><span class="slant pali">มตห์</span><span class="slant thai">มะตะห์</span><span class="slant ram">มะทะฮ</span> — พิจารณาว่า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในบรรดา&nbsp;&nbsp;<i>โยคี</i>&nbsp;&nbsp;ทั้งหลาย&nbsp;&nbsp;ผู้ที่เปี่ยมไปด้วยความศรัทธา&nbsp;&nbsp;มีข้าเป็นสรณะอยู่เสมอระลึกถึงข้าอยู่ภายใน&nbsp;&nbsp;ปฏิบัติรับใช้ข้าด้วยความรักทิพย์&nbsp;&nbsp;<i>โยคี</i>&nbsp;&nbsp;ผู้นี้อยู่ร่วมกับข้าใน<i>โยค</i>&nbsp;&nbsp;อย่างใกล้ชิดที่สุด&nbsp;&nbsp;และเป็นบุคคลสูงสุด&nbsp;&nbsp;นี่คือความคิดเห็นของข้า
+  ในบรรดา&nbsp;&nbsp;<span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ทั้งหลาย&nbsp;&nbsp;ผู้ที่เปี่ยมไปด้วยความศรัทธา&nbsp;&nbsp;มีข้าเป็นสรณะอยู่เสมอระลึกถึงข้าอยู่ภายใน&nbsp;&nbsp;ปฏิบัติรับใช้ข้าด้วยความรักทิพย์&nbsp;&nbsp;<span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ผู้นี้อยู่ร่วมกับข้าใน<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;อย่างใกล้ชิดที่สุด&nbsp;&nbsp;และเป็นบุคคลสูงสุด&nbsp;&nbsp;นี่คือความคิดเห็นของข้า
   </p>
 </div>
 
@@ -73,73 +174,103 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ภชเต</i>&nbsp;&nbsp;มีความสำคัญ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>ภชเต</i>&nbsp;&nbsp;มีรากศัพท์มาจากคำกริยา&nbsp;&nbsp;<i>ภชฺ</i>&nbsp;&nbsp;ซึ่งใช้คำนี้เมื่อมีความจำเป็นในการรับใช้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;“บูชา”&nbsp;&nbsp;ไม่สามารถใช้ในความหมาย<wbr>เดียวกันกับคำว่า&nbsp;&nbsp;<i>ภชฺ</i>&nbsp;&nbsp;ได้&nbsp;&nbsp;บูชาหมายความถึงการเคารพ&nbsp;&nbsp;หรือแสดงความนับถือและ<wbr>ให้เกียรติต่อผู้ที่ทรงเกียรติ&nbsp;&nbsp;แต่การรับใช้ด้วยความรักและศรัทธาหมายถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>เท่านั้น&nbsp;&nbsp;เราอาจหลีกเลี่ยงการบูชาผู้ที่เคารพนับถือหรือเทวดาได้&nbsp;&nbsp;แล้วจะถูกเรียกว่าเป็น<wbr>คนไม่มีมารยาท&nbsp;&nbsp;แต่เราไม่สามารถหลีกเลี่ยงการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้โดยไม่ถูกตำหนิ<wbr>อย่างรุนแรง&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้นทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตมีไว้เพื่อรับใช้<wbr>พระองค์ตามสถานภาพพื้นฐานของตนเอง&nbsp;&nbsp;หากไม่ทำเช่นนี้จะทำให้ตกต่ำลง&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;(11.5.3&nbsp;&nbsp;)&nbsp;&nbsp;ได้ยืนยันไว้ดังต่อไปนี้
+  คำว่า&nbsp;&nbsp;<span class="slant iast">bhajate</span><span class="slant pali">ภชเต</span><span class="slant thai">ภะชะเต</span><span class="slant ram">บฺะจะเท</span>&nbsp;&nbsp;มีความสำคัญ&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">bhajate</span><span class="slant pali">ภชเต</span><span class="slant thai">ภะชะเต</span><span class="slant ram">บฺะจะเท</span>&nbsp;&nbsp;มีรากศัพท์มาจากคำกริยา&nbsp;&nbsp;<span class="slant iast">bhaj</span><span class="slant pali">ภชฺ</span><span class="slant thai">ภัช</span><span class="slant ram">บัฺจ</span>&nbsp;&nbsp;ซึ่งใช้คำนี้เมื่อมีความจำเป็นในการรับใช้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;“บูชา”&nbsp;&nbsp;ไม่สามารถใช้ในความหมาย<wbr>เดียวกันกับคำว่า&nbsp;&nbsp;<span class="slant iast">bhaj</span><span class="slant pali">ภชฺ</span><span class="slant thai">ภัช</span><span class="slant ram">บัฺจ</span>&nbsp;&nbsp;ได้&nbsp;&nbsp;บูชาหมายความถึงการเคารพ&nbsp;&nbsp;หรือแสดงความนับถือและ<wbr>ให้เกียรติต่อผู้ที่ทรงเกียรติ&nbsp;&nbsp;แต่การรับใช้ด้วยความรักและศรัทธาหมายถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>เท่านั้น&nbsp;&nbsp;เราอาจหลีกเลี่ยงการบูชาผู้ที่เคารพนับถือหรือเทวดาได้&nbsp;&nbsp;แล้วจะถูกเรียกว่าเป็น<wbr>คนไม่มีมารยาท&nbsp;&nbsp;แต่เราไม่สามารถหลีกเลี่ยงการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้โดยไม่ถูกตำหนิ<wbr>อย่างรุนแรง&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้นทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตมีไว้เพื่อรับใช้<wbr>พระองค์ตามสถานภาพพื้นฐานของตนเอง&nbsp;&nbsp;หากไม่ทำเช่นนี้จะทำให้ตกต่ำลง&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;(11.5.3&nbsp;&nbsp;)&nbsp;&nbsp;ได้ยืนยันไว้ดังต่อไปนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
+<span class="slant iast">ya eṣāṁ puruṣaṁ sākṣād<br /></span>
+<span class="slant pali">ย เอษำ ปุรุษํ สากฺษาทฺ<br /></span>
+<span class="slant thai">ยะ เอษาง ปุรุษัง สากษาท<br /></span>
+<span class="slant ram">ยะ เอชาม พุรุชัม สาคชาด<br /></span>
+<span class="slant iast">ātma-prabhavam īśvaram<br /></span>
+<span class="slant pali">อาตฺม-ปฺรภวมฺ อีศฺวรมฺ<br /></span>
+<span class="slant thai">อาตมะ-ประภะวัม อีศวะรัม<br /></span>
+<span class="slant ram">อาทมะ-พระบฺะวัม อีชวะรัม<br /></span>
+<span class="slant iast">na bhajanty avajānanti<br /></span>
+<span class="slant pali">น ภชนฺตฺยฺ อวชานนฺติ<br /></span>
+<span class="slant thai">นะ ภะชันตย อะวะชานันติ<br /></span>
+<span class="slant ram">นะ บฺะจันทิ อวะจานันทิ<br /></span>
+<span class="slant iast">sthānād bhraṣṭāḥ patanty adhaḥ<br /></span>
+<span class="slant pali">สฺถานาทฺ ภฺรษฺฏาห์ ปตนฺตฺยฺ อธห์<br /></span>
+<span class="slant thai">สถานาท ภรัษฏาห์ ปะตันตย อะธะห์<br /></span>
+<span class="slant ram">สทฺานาด บฺรัชทาฮ พะทันทิ อดฺะฮ<br /></span>
+
   
-  <i>ย เอษาํ ปุรุษํ สากฺษาทฺ</i><br /><i>อาตฺม-ปฺรภวมฺ อีศฺวรมฺ</i><br /><i>น ภชนฺตฺยฺ อวชานนฺติ</i><br /><i>สฺตฺหานาทฺ ภฺรษฺฏาฮ ปตนฺตฺยฺ อธฮ</i>
-  
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ผู้ใดที่ไม่ปฏิบัติรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิดของมวลชีวิต&nbsp;&nbsp;และละเลยหน้าที่<wbr>ของตน&nbsp;&nbsp;จะตกลงต่ำจากสถานภาพพื้นฐานของตนอย่างแน่นอน”
+  “ผู้ใดที่ไม่ปฏิบัติรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิดของมวลชีวิต&nbsp;&nbsp;และละเลยหน้าที่<wbr>ของตน&nbsp;&nbsp;จะตกลงต่ำจากสถานภาพพื้นฐานของตนอย่างแน่นอน”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในโศลกนี้คำว่า&nbsp;&nbsp;<i>ภชนฺติ</i>&nbsp;&nbsp;ได้นำมาใช้เช่นเดียวกัน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>ภชนฺติ</i>&nbsp;&nbsp;ใช้ได้<wbr>เฉพาะกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ในขณะที่คำว่า&nbsp;&nbsp;“บูชา”&nbsp;&nbsp;สามารถใช้ได้กับเทวดาหรือสิ่งมี<wbr>ชีวิตธรรมดาทั่วไป&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>อวชานนฺติ</i>&nbsp;&nbsp;ที่ใช้ในโศลกของ&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;นี้ก็พบใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;<i>อวชานนฺติ&nbsp;&nbsp;มาํ&nbsp;&nbsp;มูฒาฮ</i>&nbsp;&nbsp;“&nbsp;&nbsp;คนโง่และเลวท&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;เท่านั้นที่เย้ยหยัน<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;”&nbsp;&nbsp;พวกคนโง่เช่นนี้เขียนคำอธิบาย&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ด้วยตัวเองโดย<wbr>ปราศจากท่าทีแห่งการรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกนี้ไม่สามารถแยกได้อย่างถูกต้อง<wbr>ระหว่างคำว่า&nbsp;&nbsp;<i>ภชนฺติ</i>&nbsp;&nbsp;และคำว่า&nbsp;&nbsp;“บูชา”
+  ในโศลกนี้คำว่า&nbsp;&nbsp;<span class="slant iast">bhajanti</span><span class="slant pali">ภชนฺติ</span><span class="slant thai">ภะชันติ</span><span class="slant ram">บฺะจันทิ</span>&nbsp;&nbsp;ได้นำมาใช้เช่นเดียวกัน&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">bhajanti</span><span class="slant pali">ภชนฺติ</span><span class="slant thai">ภะชันติ</span><span class="slant ram">บฺะจันทิ</span>&nbsp;&nbsp;ใช้ได้<wbr>เฉพาะกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ในขณะที่คำว่า&nbsp;&nbsp;“บูชา”&nbsp;&nbsp;สามารถใช้ได้กับเทวดาหรือสิ่งมี<wbr>ชีวิตธรรมดาทั่วไป&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">avajānanti</span><span class="slant pali">อวชานนฺติ</span><span class="slant thai">อะวะชานันติ</span><span class="slant ram">อวะจานันทิ</span>&nbsp;&nbsp;ที่ใช้ในโศลกของ&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;นี้ก็พบใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;เช่นกัน&nbsp;&nbsp;<span class="slant iast">avajānanti&nbsp;&nbsp;māṁ&nbsp;&nbsp;mūḍhāḥ</span><span class="slant pali">อวชานนฺติมำมูฒาห์</span><span class="slant thai">อะวะชานันติมางมูฒาห์</span><span class="slant ram">อวะจานันทิมามมูดฺาฮ</span>&nbsp;&nbsp;“&nbsp;&nbsp;คนโง่และเลวท&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;เท่านั้นที่เย้ยหยัน<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;”&nbsp;&nbsp;พวกคนโง่เช่นนี้เขียนคำอธิบาย&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ด้วยตัวเองโดย<wbr>ปราศจากท่าทีแห่งการรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พวกนี้ไม่สามารถแยกได้อย่างถูกต้อง<wbr>ระหว่างคำว่า&nbsp;&nbsp;<span class="slant iast">bhajanti</span><span class="slant pali">ภชนฺติ</span><span class="slant thai">ภะชันติ</span><span class="slant ram">บฺะจันทิ</span>&nbsp;&nbsp;และคำว่า&nbsp;&nbsp;“บูชา”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การฝึกปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ทั้งหลายมาถึงจุดสุดยอดที่&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;รูปแบบอื่น<wbr>ทั้งหลายเป็นเพียงวิถีทางเพื่อให้มาถึงจุด&nbsp;&nbsp;<i>ภกฺติ</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;หมาย<wbr>ถึง<i>ภกฺติ-โยค</i>&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;รูปแบบอื่นทั้งหมดเป็นขั้นบันไดเพื่อให้มาถึงจุดหมายปลายทาง<wbr>แห่ง<i>ภกฺติ-โยค</i>&nbsp;&nbsp;นี้&nbsp;&nbsp;จากการเริ่มต้นของ&nbsp;&nbsp;<i>กรฺม-โยค</i>&nbsp;&nbsp;มาจนจบลงที่&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;เป็น<wbr>หนทางอันยาวไกลเพื่อความรู้แจ้งแห่งตน&nbsp;&nbsp;<i>กรฺม-โยค</i>&nbsp;&nbsp;โดยปราศจากผลทางวัตถุเป็น<wbr>จุดเริ่มต้นแห่งวิถีทางนี้&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<i>กรฺม-โยค</i>&nbsp;&nbsp;พัฒนาความรู้&nbsp;&nbsp;และการเสียสละระดับนี้เรียก<wbr>ว่า&nbsp;&nbsp;<i>ชฺญาน-โยค</i>&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<i>ชฺญาน-โยค</i>&nbsp;&nbsp;พัฒนาการทำสมาธิที่อภิวิญญาณ&nbsp;&nbsp;ด้วยวิธีการทาง<wbr>สรีระร่างกายต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;และตั้งสมาธิจิตอยู่ที่พระองค์เรียกว่า&nbsp;&nbsp;<i>อษฺฏางฺค-โยค</i>&nbsp;&nbsp;เมื่อ<wbr>ข้ามพ้น&nbsp;&nbsp;<i>อษฺฏางฺค-โยค</i>&nbsp;&nbsp;และมาถึงจุดแห่งบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;ซึ่งเป็นจุดสุดยอด&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;เป็นจุดมุ่งหมายสูงสุด&nbsp;&nbsp;แต่<wbr>เพื่อเป็นการวิเคราะห์&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;อย่างละเอียดถี่ถ้วนเราต้องเข้าใจ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้ฉะนั้น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่เจริญก้าวหน้าจะอยู่บนวิถีทางแห่งความโชคดีนิรันดรอย่างแท้จริง&nbsp;&nbsp;ผู้ที่ยึด<wbr>ติดอยู่กับจุดหนึ่งจุดใดโดยเฉพาะ&nbsp;&nbsp;และไม่สร้างความเจริญก้าวหน้าขึ้นไปอีกมีชื่อเรียกเฉพาะนั้น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่า&nbsp;&nbsp;<i>กรฺม-โยคี,ชฺญาน-โยคี</i>&nbsp;&nbsp;,&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>ธฺยาน-โยคี,ราช-โยคี,หฐ-โยคี</i>&nbsp;&nbsp;,ฯลฯ&nbsp;&nbsp;หากผู้ใดโชคดีพอที่มาถึงจุดแห่ง&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;เข้าใจได้ว่าได้ข้ามพ้น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้ง<wbr>หลาย&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็นระดับสูงสุดแห่ง&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;เฉกเช่นเมื่อเราพูดถึง&nbsp;&nbsp;<i>หิมาลย</i>&nbsp;&nbsp;เราหมายถึงเทือกเขาที่สูงที่สุดในโลก&nbsp;&nbsp;ภูเขา&nbsp;&nbsp;<i>หิมาลย</i>&nbsp;&nbsp;ที่มียอดสูงสุดจึงพิจารณา<wbr>ว่าเป็นจุดสุดยอด
+  การฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ทั้งหลายมาถึงจุดสุดยอดที่&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;รูปแบบอื่น<wbr>ทั้งหลายเป็นเพียงวิถีทางเพื่อให้มาถึงจุด&nbsp;&nbsp;<span class="slant iast">bhakti</span><span class="slant pali">ภกฺติ</span><span class="slant thai">ภักติ</span><span class="slant ram">บัฺคธิ,บัคฺธิ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หมาย<wbr>ถึง<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;รูปแบบอื่นทั้งหมดเป็นขั้นบันไดเพื่อให้มาถึงจุดหมายปลายทาง<wbr>แห่ง<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;นี้&nbsp;&nbsp;จากการเริ่มต้นของ&nbsp;&nbsp;<span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>&nbsp;&nbsp;มาจนจบลงที่&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;เป็น<wbr>หนทางอันยาวไกลเพื่อความรู้แจ้งแห่งตน&nbsp;&nbsp;<span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>&nbsp;&nbsp;โดยปราศจากผลทางวัตถุเป็น<wbr>จุดเริ่มต้นแห่งวิถีทางนี้&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<span class="slant iast">karma-yoga</span><span class="slant pali">กรฺม-โยค</span><span class="slant thai">กัรมะ-โยคะ</span><span class="slant ram">คารมะ-โยกะ</span>&nbsp;&nbsp;พัฒนาความรู้&nbsp;&nbsp;และการเสียสละระดับนี้เรียก<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">jñāna-yoga</span><span class="slant pali">ชฺญาน-โยค</span><span class="slant thai">ชญานะ-โยคะ</span><span class="slant ram">กยานะ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<span class="slant iast">jñāna-yoga</span><span class="slant pali">ชฺญาน-โยค</span><span class="slant thai">ชญานะ-โยคะ</span><span class="slant ram">กยานะ-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;พัฒนาการทำสมาธิที่อภิวิญญาณ&nbsp;&nbsp;ด้วยวิธีการทาง<wbr>สรีระร่างกายต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;และตั้งสมาธิจิตอยู่ที่พระองค์เรียกว่า&nbsp;&nbsp;<span class="slant iast">aṣṭāṅga-yoga</span><span class="slant pali">อษฺฏางฺค-โยค</span><span class="slant thai">อัษฏางคะ-โยคะ</span><span class="slant ram">-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;เมื่อ<wbr>ข้ามพ้น&nbsp;&nbsp;<span class="slant iast">aṣṭāṅga-yoga</span><span class="slant pali">อษฺฏางฺค-โยค</span><span class="slant thai">อัษฏางคะ-โยคะ</span><span class="slant ram">-โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;และมาถึงจุดแห่งบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;ซึ่งเป็นจุดสุดยอด&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;เป็นจุดมุ่งหมายสูงสุด&nbsp;&nbsp;แต่<wbr>เพื่อเป็นการวิเคราะห์&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;อย่างละเอียดถี่ถ้วนเราต้องเข้าใจ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้ฉะนั้น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่เจริญก้าวหน้าจะอยู่บนวิถีทางแห่งความโชคดีนิรันดรอย่างแท้จริง&nbsp;&nbsp;ผู้ที่ยึด<wbr>ติดอยู่กับจุดหนึ่งจุดใดโดยเฉพาะ&nbsp;&nbsp;และไม่สร้างความเจริญก้าวหน้าขึ้นไปอีกมีชื่อเรียกเฉพาะนั้น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่า&nbsp;&nbsp;<span class="slant iast">karma-yogī,&nbsp;&nbsp;jñāna-yogī</span><span class="slant pali">กรฺม-โยคีชฺญาน-โยคี</span><span class="slant thai">กัรมะ-โยคีชญานะ-โยคี</span><span class="slant ram">คารมะ-โยคีกยานะ-โยคี</span>&nbsp;&nbsp;,&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">dhyāna-yogī,&nbsp;&nbsp;rāja-yogī,&nbsp;&nbsp;haṭha-yogī</span><span class="slant pali">ธฺยาน-โยคีราช-โยคีหฐ-โยคี</span><span class="slant thai">ธยานะ-โยคีราชะ-โยคีหะฐะ-โยคี</span><span class="slant ram">-โยคี-โยคี-โยคี</span>&nbsp;&nbsp;,ฯลฯ&nbsp;&nbsp;หากผู้ใดโชคดีพอที่มาถึงจุดแห่ง&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;เข้าใจได้ว่าได้ข้ามพ้น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้ง<wbr>หลาย&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็นระดับสูงสุดแห่ง&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;เฉกเช่นเมื่อเราพูดถึง&nbsp;&nbsp;<span class="slant iast">himālaya</span><span class="slant pali">หิมาลย</span><span class="slant thai">หิมาละยะ</span><span class="slant ram">หิมาลัย</span>&nbsp;&nbsp;เราหมายถึงเทือกเขาที่สูงที่สุดในโลก&nbsp;&nbsp;ภูเขา&nbsp;&nbsp;<span class="slant iast">himālaya</span><span class="slant pali">หิมาลย</span><span class="slant thai">หิมาละยะ</span><span class="slant ram">หิมาลัย</span>&nbsp;&nbsp;ที่มียอดสูงสุดจึงพิจารณา<wbr>ว่าเป็นจุดสุดยอด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ด้วยโชคอันมหาศาลที่เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกบนหนทางแห่ง&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;และสถิตอย่างดีตามคำแนะนำของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่ดีเลิศตั้งสมาธิอยู่ที่ี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ทรง<wbr>มีพระนามว่า<i>ศฺยามสุนฺทร</i>&nbsp;&nbsp;ผู้ทรงมีสีสันสวยงามดั่งก้อนเมฆ&nbsp;&nbsp;พระพักตร์คล้ายรูป<wbr>ดอกบัว&nbsp;&nbsp;มีรัศมีเจิดจรัสดั่งดวงอาทิตย์&nbsp;&nbsp;มีพระอาภรณ์สว่างไสวไปด้วยอัญมณี&nbsp;&nbsp;และมีพระ<wbr>วรกายประดับด้วยมาลัยดอกไม้&nbsp;&nbsp;รัศมีอันงดงามของพระองค์เจิดจรัสไปทั่วทุกสารทิศ<wbr>มีชื่อว่า&nbsp;&nbsp;<i>พฺรหฺม-โชฺยติรฺ</i>&nbsp;&nbsp;พระองค์ทรงอวตารมาในรูปลักษณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;<i>นฺฤสิํห</i>&nbsp;&nbsp;<i>วราห</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;พระองค์เสด็จลงมาเยี่ยงมนุษย์&nbsp;&nbsp;ทรง<wbr>เป็นโอรสของพระนาง&nbsp;&nbsp;<i>ยโศทา</i>&nbsp;&nbsp;และมีพระนามว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>วาสุเทว</i>&nbsp;&nbsp;พระองค์<wbr>ทรงเป็นโอรส&nbsp;&nbsp;เป็นพระสวามี&nbsp;&nbsp;เป็นพระสหายและเป็นพระอาจารย์ที่สมบูรณ์&nbsp;&nbsp;และพระ<wbr>องค์ยังเปี่ยมไปด้วยความมั่งคั่งและคุณสมบัติทิพย์ทั้งหลาย&nbsp;&nbsp;หากผู้ใดรักษาจิตสำนึก<wbr>อย่างเต็มเปี่ยมเกี่ยวกับลักษณะเหล่านี้ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะได้ชื่อว่าเป็น&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่สูงสุด
+  ด้วยโชคอันมหาศาลที่เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกบนหนทางแห่ง&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;และสถิตอย่างดีตามคำแนะนำของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่ดีเลิศตั้งสมาธิอยู่ที่ี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ทรง<wbr>มีพระนามว่า<span class="slant iast">śyāmasundara</span><span class="slant pali">ศฺยามสุนฺทร</span><span class="slant thai">ศยามะสุนทะระ</span><span class="slant ram">ชยามะสุนดะระ</span>&nbsp;&nbsp;ผู้ทรงมีสีสันสวยงามดั่งก้อนเมฆ&nbsp;&nbsp;พระพักตร์คล้ายรูป<wbr>ดอกบัว&nbsp;&nbsp;มีรัศมีเจิดจรัสดั่งดวงอาทิตย์&nbsp;&nbsp;มีพระอาภรณ์สว่างไสวไปด้วยอัญมณี&nbsp;&nbsp;และมีพระ<wbr>วรกายประดับด้วยมาลัยดอกไม้&nbsp;&nbsp;รัศมีอันงดงามของพระองค์เจิดจรัสไปทั่วทุกสารทิศ<wbr>มีชื่อว่า&nbsp;&nbsp;<span class="slant iast">brahma-jyotir</span><span class="slant pali">พฺรหฺม-โชฺยติรฺ</span><span class="slant thai">พรัหมะ-ชโยติร</span><span class="slant ram">บระฮมะจโยทิ</span>&nbsp;&nbsp;พระองค์ทรงอวตารมาในรูปลักษณ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;<span class="slant iast">nṛsiṁha</span><span class="slant pali">นฺฤสึห</span><span class="slant thai">นฤสิงหะ</span><span class="slant ram">นริสิมฮะ</span>&nbsp;&nbsp;<span class="slant iast">varāha</span><span class="slant pali">วราห</span><span class="slant thai">วะราหะ</span><span class="slant ram">วะราฮะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;พระองค์เสด็จลงมาเยี่ยงมนุษย์&nbsp;&nbsp;ทรง<wbr>เป็นโอรสของพระนาง&nbsp;&nbsp;<span class="slant iast">yaśodā</span><span class="slant pali">ยโศทา</span><span class="slant thai">ยะโศทา</span><span class="slant ram">ยะโชดา</span>&nbsp;&nbsp;และมีพระนามว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">vāsudeva</span><span class="slant pali">วาสุเทว</span><span class="slant thai">วาสุเทวะ</span><span class="slant ram">วาสุเดวะ</span>&nbsp;&nbsp;พระองค์<wbr>ทรงเป็นโอรส&nbsp;&nbsp;เป็นพระสวามี&nbsp;&nbsp;เป็นพระสหายและเป็นพระอาจารย์ที่สมบูรณ์&nbsp;&nbsp;และพระ<wbr>องค์ยังเปี่ยมไปด้วยความมั่งคั่งและคุณสมบัติทิพย์ทั้งหลาย&nbsp;&nbsp;หากผู้ใดรักษาจิตสำนึก<wbr>อย่างเต็มเปี่ยมเกี่ยวกับลักษณะเหล่านี้ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะได้ชื่อว่าเป็น&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่สูงสุด
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ระดับแห่งความสมบูรณ์สูงสุดใน&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;นี้สามารถบรรลุได้ด้วย&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ดังที่ได้ยืนยันไว้ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ทั้งหลายว่า
+  ระดับแห่งความสมบูรณ์สูงสุดใน&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;นี้สามารถบรรลุได้ด้วย&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;ดังที่ได้ยืนยันไว้ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ทั้งหลายว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยสฺย เทเว ปรา ภกฺติรฺ</i><br /><i>ยตฺหา เทเว ตตฺหา คุระอุ</i><br /><i>ตไสฺยเต กตฺหิตา หฺยฺ อรฺตฺหาฮ</i><br /><i>ปฺรกาศเนฺต มหาตฺมนฮ</i>
+<span class="slant iast">yasya deve parā bhaktir<br /></span>
+<span class="slant pali">ยสฺย เทเว ปรา ภกฺติรฺ<br /></span>
+<span class="slant thai">ยัสยะ เทเว ปะรา ภักติร<br /></span>
+<span class="slant ram">ยัสยะ เดเว พะรา บัฺคธิร<br /></span>
+<span class="slant iast">yathā deve tathā gurau<br /></span>
+<span class="slant pali">ยถา เทเว ตถา คุเรา<br /></span>
+<span class="slant thai">ยะถา เทเว ตะถา คุเรา<br /></span>
+<span class="slant ram">ยะทฺา เดเว ทะทฺา กุโรฺ<br /></span>
+<span class="slant iast">tasyaite kathitā hy arthāḥ<br /></span>
+<span class="slant pali">ตไสฺยเต กถิตา หฺยฺ อรฺถาห์<br /></span>
+<span class="slant thai">ตัสไยเต กะถิตา หย อัรถาห์<br /></span>
+<span class="slant ram">ทัสไยเท คะทิฺทา ฮิ อารทฺาฮ<br /></span>
+<span class="slant iast">prakāśante mahātmanaḥ<br /></span>
+<span class="slant pali">ปฺรกาศนฺเต มหาตฺมนห์<br /></span>
+<span class="slant thai">ประกาศันเต มะหาตมะนะห์<br /></span>
+<span class="slant ram">พระคาชันเท มะฮาทมะนะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ดวงวิญญาณผู้ยิ่งใหญ่ที่มีความศรัทธาอย่างเปี่ยมล้นทั้งในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และพระ<wbr>อาจารย์ทิพย์เท่านั้น&nbsp;&nbsp;ที่สาระสำคัญทั้งหลายแห่งความรู้พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;จะถูกเปิดเผยโดย<wbr>ปริยาย”&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;6.23&nbsp;&nbsp;)
+  “ดวงวิญญาณผู้ยิ่งใหญ่ที่มีความศรัทธาอย่างเปี่ยมล้นทั้งในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และพระ<wbr>อาจารย์ทิพย์เท่านั้น&nbsp;&nbsp;ที่สาระสำคัญทั้งหลายแห่งความรู้พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;จะถูกเปิดเผยโดย<wbr>ปริยาย”&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;6.23&nbsp;&nbsp;)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ภกฺติรฺ&nbsp;&nbsp;อสฺย&nbsp;&nbsp;ภชนํ&nbsp;&nbsp;ตทฺ&nbsp;&nbsp;อิหามโุตฺรปาธิ-ไนราเสฺยนามุษฺมินฺ&nbsp;&nbsp;มนฮ-กลฺปนมฺ,เอตทฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;ไนษฺกรฺมฺยมฺ&nbsp;&nbsp;“ภกฺติ</i>&nbsp;&nbsp;หมายถึงการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ซึ่งมีอิสระเสรีจากความปรารถนาเพื่อผลกำไรทางวัตถุ&nbsp;&nbsp;ไม่ว่าในชาตินี้หรือในชาติหน้าปราศจากซึ่งแนวโน้มเช่นนี้&nbsp;&nbsp;เขาควรให้จิตใจซึมซาบอย่างบริบูรณ์ในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นั่นคือ<wbr>จุดมุ่งหมายของ&nbsp;&nbsp;<i>ไนษฺกรฺมฺย</i>&nbsp;&nbsp;”&nbsp;&nbsp;(<i>โคปาล-ตาปนี&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;1.15&nbsp;&nbsp;)
+  <span class="slant iast">bhaktir&nbsp;&nbsp;asya&nbsp;&nbsp;bhajanaṁ&nbsp;&nbsp;tad&nbsp;&nbsp;ihāmutropādhi-nairāsyenāmuṣmin&nbsp;&nbsp;manaḥ-kalpanam,&nbsp;&nbsp;etad&nbsp;&nbsp;eva&nbsp;&nbsp;naiṣkarmyam&nbsp;&nbsp;“bhakti</span><span class="slant pali">ภกฺติรฺอสฺยภชนํตทฺอิหามุโตฺรปาธิ-ไนราเสฺยนามุษฺมินฺมนห์-กลฺปนมฺเอตทฺเอวไนษฺกรฺมฺยมฺภกฺติ</span><span class="slant thai">ภักติรอัสยะภะชะนังตัทอิหามุตโรปาธิ-ไนราสเยนามุษมินมะนะห์-กัลปะนัมเอตัทเอวะไนษกัรมยัมภักติ</span><span class="slant ram">อัสยะzzzzzz-zzzมะนะฮ-zzzเอวะไนชคาร- มยัมบัฺคธิ,บัคฺธิ</span>&nbsp;&nbsp;หมายถึงการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ซึ่งมีอิสระเสรีจากความปรารถนาเพื่อผลกำไรทางวัตถุ&nbsp;&nbsp;ไม่ว่าในชาตินี้หรือในชาติหน้าปราศจากซึ่งแนวโน้มเช่นนี้&nbsp;&nbsp;เขาควรให้จิตใจซึมซาบอย่างบริบูรณ์ในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นั่นคือ<wbr>จุดมุ่งหมายของ&nbsp;&nbsp;<span class="slant iast">naiṣkarmya</span><span class="slant pali">ไนษฺกรฺมฺย</span><span class="slant thai">ไนษกัรมยะ</span><span class="slant ram"></span>&nbsp;&nbsp;”&nbsp;&nbsp;(<span class="slant iast">gopāla-tāpanī&nbsp;&nbsp;upaniṣad</span><span class="slant pali">โคปาล-ตาปนีอุปนิษทฺ</span><span class="slant thai">โคปาละ-ตาปะนีอุปะนิษัท</span><span class="slant ram">โกพาละ-</span>&nbsp;&nbsp;1.15&nbsp;&nbsp;)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เหล่านี้คือวิถีทางบางประการในการปฏิบัติ&nbsp;&nbsp;<i>ภกฺติ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกซึ่งเป็น<wbr>ระดับสมบูรณ์สูงสุดแห่งระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;
+  เหล่านี้คือวิถีทางบางประการในการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">bhakti</span><span class="slant pali">ภกฺติ</span><span class="slant thai">ภักติ</span><span class="slant ram">บัฺคธิ,บัคฺธิ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกซึ่งเป็น<wbr>ระดับสมบูรณ์สูงสุดแห่งระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph-thus-ends">
   <p>
-  <em>ดังนั้น ได้จบคำอธิบายโดย <i>ภกฺติเวทนฺต</i>  บทที่หกของหนังสือ   <i>ศฺรีมทฺ ภควทฺ-คีตา</i>  ในหัวข้อเรื่อง <i>ธฺยาน-โยค</i>  </em>
+  <em>ดังนั้น ได้จบคำอธิบายโดย <span class="slant iast">bhaktivedanta</span><span class="slant pali">ภกฺติเวทนฺต</span><span class="slant thai">ภักติเวทันตะ</span><span class="slant ram">บัฺคธิเวดันธะ</span>  บทที่หกของหนังสือ   <span class="slant iast">śrīmad bhagavad-gītā</span><span class="slant pali">ศฺรีมทฺภควทฺ-คีตา</span><span class="slant thai">ศรีมัทภะคะวัท-คีตา</span><span class="slant ram">ชรีมัด บฺะกะวัด-คีตา</span>  ในหัวข้อเรื่อง <span class="slant iast">dhyāna-yoga</span><span class="slant pali">ธฺยาน-โยค</span><span class="slant thai">ธยานะ-โยคะ</span><span class="slant ram">ดฺยานะ-โยกะ</span>  </em>
   </p>
 </div>
 

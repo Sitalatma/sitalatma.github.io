@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.6</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น ไจตทฺ วิทฺมฮ กตรนฺ โน ครีโย</i><br /><i>ยทฺ วา ชเยม ยทิ วา โน ชเยยุฮ</i><br /><i>ยานฺ เอว หตฺวา น ชิชีวิษามสฺ</i><br /><i>เต ′วสฺตฺหิตาฮ ปฺรมุเข ธารฺตราษฺฏฺราฮ</i>
+<span class="slant iast">na caitad vidmaḥ kataran no garīyo<br /></span>
+<span class="slant pali">น ไจตทฺ วิทฺมห์ กตรนฺ โน ครีโย<br /></span>
+<span class="slant thai">นะ ไจตัท วิทมะห์ กะตะรัน โน คะรีโย<br /></span>
+<span class="slant ram">นะ ไชทัด วิดมะฮ คะทะรัน โน กะรีโย<br /></span>
+<span class="slant iast">yad vā jayema yadi vā no jayeyuḥ<br /></span>
+<span class="slant pali">ยทฺ วา ชเยม ยทิ วา โน ชเยยุห์<br /></span>
+<span class="slant thai">ยัท วา ชะเยมะ ยะทิ วา โน ชะเยยุห์<br /></span>
+<span class="slant ram">ยัด วา จะเยมะ ยะดิ วา โน จะยะยุฮ<br /></span>
+<span class="slant iast">yān eva hatvā na jijīviṣāmas<br /></span>
+<span class="slant pali">ยานฺ เอว หตฺวา น ชิชีวิษามสฺ<br /></span>
+<span class="slant thai">ยาน เอวะ หัตวา นะ ชิชีวิษามัส<br /></span>
+<span class="slant ram">ยาน เอวะ ฮัทวา นะ จิจีวิชามัส<br /></span>
+<span class="slant iast">te ’vasthitāḥ pramukhe dhārtarāṣṭrāḥ<br /></span>
+<span class="slant pali">เต ’วสฺถิตาห์ ปฺรมุเข ธารฺตราษฺฏฺราห์<br /></span>
+<span class="slant thai">เต ’วัสถิตาห์ ประมุเข ธารตะราษฏราห์<br /></span>
+<span class="slant ram">เท ´วัสทิทาฮ พระมุเคฺ ดฺารทะราชทราฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่, <i>จ</i> — เช่นกัน, <i>เอตตฺ</i> — นี้, <i>วิทฺมฮ</i> — เรารู้, <i>กตรตฺ</i> — ซึ่ง, <i>นฮ</i> — สำหรับเรา, <i>ครียฮ</i> — ดีกว่า, <i>ยตฺ วา</i> — หรือไม่, <i>ชเยม</i> — เราอาจมีชัย, <i>ยทิ</i> — ถ้า, <i>วา</i> — หรือ, <i>นฮ</i> — เรา, <i>ชเยยุฮ</i> — พวกเขามีชัย, <i>ยานฺ</i> — เขาเหล่านั้น, <i>เอว</i> — แน่นอน, <i>หตฺวา</i> — ด้วยการสังหาร, <i>น</i> — ไม่เคย, <i>ชิชีวิษามฮ</i> — เราต้องการที่จะมีชีวิตอยู่, <i>เต</i> — ทั้งหมด, <i>อวสฺตฺหิตาฮ</i> — สถิตอยู่, <i>ปฺรมุเข</i> — ข้างหน้า, <i>ธารฺตราษฺฏฺราฮ</i> — โอรสของดฺริทะราชทระ
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">vidmaḥ</span><span class="slant pali">วิทฺมห์</span><span class="slant thai">วิทมะห์</span><span class="slant ram">วิดมะฮ</span> — เรารู้, <span class="slant iast">katarat</span><span class="slant pali">กตรตฺ</span><span class="slant thai">กะตะรัต</span><span class="slant ram">คะทะรัท</span> — ซึ่ง, <span class="slant iast">naḥ</span><span class="slant pali">นห์</span><span class="slant thai">นะห์</span><span class="slant ram">นะฮ</span> — สำหรับเรา, <span class="slant iast">garīyaḥ</span><span class="slant pali">ครียห์</span><span class="slant thai">คะรียะห์</span><span class="slant ram">กะรียะฮ</span> — ดีกว่า, <span class="slant iast">yat vā</span><span class="slant pali">ยตฺวา</span><span class="slant thai">ยัตวา</span><span class="slant ram">ยัท วา</span> — หรือไม่, <span class="slant iast">jayema</span><span class="slant pali">ชเยม</span><span class="slant thai">ชะเยมะ</span><span class="slant ram">จะเยมะ</span> — เราอาจมีชัย, <span class="slant iast">yadi</span><span class="slant pali">ยทิ</span><span class="slant thai">ยะทิ</span><span class="slant ram">ยะดิ</span> — ถ้า, <span class="slant iast">vā</span><span class="slant pali">วา</span><span class="slant thai">วา</span><span class="slant ram">วา</span> — หรือ, <span class="slant iast">naḥ</span><span class="slant pali">นห์</span><span class="slant thai">นะห์</span><span class="slant ram">นะฮ</span> — เรา, <span class="slant iast">jayeyuḥ</span><span class="slant pali">ชเยยุห์</span><span class="slant thai">ชะเยยุห์</span><span class="slant ram">จะเยยุฮ</span> — พวกเขามีชัย, <span class="slant iast">yān</span><span class="slant pali">ยานฺ</span><span class="slant thai">ยาน</span><span class="slant ram">ยาน</span> — เขาเหล่านั้น, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">hatvā</span><span class="slant pali">หตฺวา</span><span class="slant thai">หัตวา</span><span class="slant ram">ฮัทวา</span> — ด้วยการสังหาร, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">jijīviṣāmaḥ</span><span class="slant pali">ชิชีวิษามห์</span><span class="slant thai">ชิชีวิษามะห์</span><span class="slant ram">จิจีวิชามะฮ</span> — เราต้องการที่จะมีชีวิตอยู่, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ทั้งหมด, <span class="slant iast">avasthitāḥ</span><span class="slant pali">อวสฺถิตาห์</span><span class="slant thai">อะวัสถิตาห์</span><span class="slant ram">อวัสทิฺทาฮ</span> — สถิตอยู่, <span class="slant iast">pramukhe</span><span class="slant pali">ปฺรมุเข</span><span class="slant thai">ประมุเข</span><span class="slant ram">พระมุเคฺ</span> — ข้างหน้า, <span class="slant iast">dhārtarāṣṭrāḥ</span><span class="slant pali">ธารฺตราษฺฏฺราห์</span><span class="slant thai">ธารตะราษฏราห์</span><span class="slant ram">ดฺารทะราชทราฮ</span> — โอรสของดฺริทะราชทระ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เราไม่ทราบว่าสิ่งไหนดีกว่ากัน&nbsp;&nbsp;เอาชนะพวกเขาหรือให้พวกเขามีชัย&nbsp;&nbsp;หากสังหารเหล่าโอรสของ&nbsp;&nbsp;<i>ธฺฤตราษฺฏฺร</i>&nbsp;&nbsp;เราก็ไม่ควรมีชีวิตอยู่เช่นกัน&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;พวกเขามายืนอยู่ต่อหน้าเราในสมรภูมินี้แล้ว
+  เราไม่ทราบว่าสิ่งไหนดีกว่ากัน&nbsp;&nbsp;เอาชนะพวกเขาหรือให้พวกเขามีชัย&nbsp;&nbsp;หากสังหารเหล่าโอรสของ&nbsp;&nbsp;<span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>&nbsp;&nbsp;เราก็ไม่ควรมีชีวิตอยู่เช่นกัน&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;พวกเขามายืนอยู่ต่อหน้าเราในสมรภูมินี้แล้ว
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ทรงไม่ทราบว่าควรจะรบและเสี่ยงในการเบียดเบียนผู้อื่นโดยไม่<wbr>จำเป็นหรือไม่&nbsp;&nbsp;ถึงแม้การทำศึกสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;จะเป็นหน้าที่ของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;หรือควรจะหลีกเลี่ยง<wbr>การรบและไปใช้ชีวิตอยู่ด้วยการภิกขาจาร&nbsp;&nbsp;หากไม่ได้รับชัยชนะการภิกขาจารก็เป็น<wbr>หนทางเดียวที่จะประทังชีวิตอยู่&nbsp;&nbsp;และชัยชนะก็มิใช่เป็นสิ่งแน่นอนเพราะฝ่ายหนึ่งฝ่ายใด<wbr>อาจมีชัยได้&nbsp;&nbsp;แม้ชัยชนะกำลังรออยู่&nbsp;&nbsp;(การกระทำเช่นนี้สมเหตุผล)&nbsp;&nbsp;หากเหล่าโอรสของ<i>ธฺฤตราษฺฏฺร</i>&nbsp;&nbsp;ตายในสนามรบก็เป็นการยากลำบากมากที่จะมีชีวิตอยู่โดยปราศจาก<wbr>พวกเขา&nbsp;&nbsp;สถานการณ์เช่นนี้เปรียบเสมือนกับการพ่ายแพ้อีกอย่างหนึ่ง&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรง<wbr>พิจารณาอย่างรอบคอบ&nbsp;&nbsp;เช่นนี้พิสูจน์ให้เห็นอย่างชัดเจนว่าไม่เพียงเป็นสาวกผู้ยิ่งใหญ่<wbr>ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;แต่ยังมีความรู้แจ้งอย่างสูง&nbsp;&nbsp;ทรงสามารถควบคุมจิตใจและ<wbr>ประสาทสัมผัสของตนเองได้อย่างสมบูรณ์&nbsp;&nbsp;ความปรารถนาที่จะมีชีวิตอยู่ด้วยการ<wbr>ภิกขาจาร&nbsp;&nbsp;แม้กำเนิดในตระกูล&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;เป็นข้อบ่งชี้อีกอย่างหนึ่งที่แสดงให้เห็นว่าอารจุ<wbr>นะทรงไม่ยึดติดและเป็นผู้มีคุณธรรมอย่างแท้จริง&nbsp;&nbsp;ด้วยคุณสมบัติเหล่านี้บวกกับความ<wbr>ศรัทธาที่มีต่อคำดำรัสของ&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;(พระอาจารย์ทิพย์)&nbsp;&nbsp;จึงสรุปได้ว่า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมี<wbr>ความเหมาะสมเพื่อการหลุดพ้น&nbsp;&nbsp;นอกจากเราสามารถควบคุมประสาทสัมผัสได้ทั้งหมดมิฉะนั้น&nbsp;&nbsp;จะไม่มีโอกาสเจริญขึ้นมาสู่ระดับแห่งความรู้&nbsp;&nbsp;หากไม่มีความรู้และการอุทิศตน<wbr>เสียสละ&nbsp;&nbsp;เราจะไม่มีโอกาสได้รับความหลุดพ้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงมีคุณสมบัติทั้งหมดเหล่านี้<wbr>ซึ่งสำคัญกว่าคุณสมบัติอันยิ่งใหญ่ในความสัมพันธ์ทางวัตถุ
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงไม่ทราบว่าควรจะรบและเสี่ยงในการเบียดเบียนผู้อื่นโดยไม่<wbr>จำเป็นหรือไม่&nbsp;&nbsp;ถึงแม้การทำศึกสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;จะเป็นหน้าที่ของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;หรือควรจะหลีกเลี่ยง<wbr>การรบและไปใช้ชีวิตอยู่ด้วยการภิกขาจาร&nbsp;&nbsp;หากไม่ได้รับชัยชนะการภิกขาจารก็เป็น<wbr>หนทางเดียวที่จะประทังชีวิตอยู่&nbsp;&nbsp;และชัยชนะก็มิใช่เป็นสิ่งแน่นอนเพราะฝ่ายหนึ่งฝ่ายใด<wbr>อาจมีชัยได้&nbsp;&nbsp;แม้ชัยชนะกำลังรออยู่&nbsp;&nbsp;(การกระทำเช่นนี้สมเหตุผล)&nbsp;&nbsp;หากเหล่าโอรสของ<span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>&nbsp;&nbsp;ตายในสนามรบก็เป็นการยากลำบากมากที่จะมีชีวิตอยู่โดยปราศจาก<wbr>พวกเขา&nbsp;&nbsp;สถานการณ์เช่นนี้เปรียบเสมือนกับการพ่ายแพ้อีกอย่างหนึ่ง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรง<wbr>พิจารณาอย่างรอบคอบ&nbsp;&nbsp;เช่นนี้พิสูจน์ให้เห็นอย่างชัดเจนว่าไม่เพียงเป็นสาวกผู้ยิ่งใหญ่<wbr>ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้น&nbsp;&nbsp;แต่ยังมีความรู้แจ้งอย่างสูง&nbsp;&nbsp;ทรงสามารถควบคุมจิตใจและ<wbr>ประสาทสัมผัสของตนเองได้อย่างสมบูรณ์&nbsp;&nbsp;ความปรารถนาที่จะมีชีวิตอยู่ด้วยการ<wbr>ภิกขาจาร&nbsp;&nbsp;แม้กำเนิดในตระกูล&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;เป็นข้อบ่งชี้อีกอย่างหนึ่งที่แสดงให้เห็นว่าอารจุ<wbr>นะทรงไม่ยึดติดและเป็นผู้มีคุณธรรมอย่างแท้จริง&nbsp;&nbsp;ด้วยคุณสมบัติเหล่านี้บวกกับความ<wbr>ศรัทธาที่มีต่อคำดำรัสของ&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;(พระอาจารย์ทิพย์)&nbsp;&nbsp;จึงสรุปได้ว่า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมี<wbr>ความเหมาะสมเพื่อการหลุดพ้น&nbsp;&nbsp;นอกจากเราสามารถควบคุมประสาทสัมผัสได้ทั้งหมดมิฉะนั้น&nbsp;&nbsp;จะไม่มีโอกาสเจริญขึ้นมาสู่ระดับแห่งความรู้&nbsp;&nbsp;หากไม่มีความรู้และการอุทิศตน<wbr>เสียสละ&nbsp;&nbsp;เราจะไม่มีโอกาสได้รับความหลุดพ้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงมีคุณสมบัติทั้งหมดเหล่านี้<wbr>ซึ่งสำคัญกว่าคุณสมบัติอันยิ่งใหญ่ในความสัมพันธ์ทางวัตถุ
   </p>
 </div>
 

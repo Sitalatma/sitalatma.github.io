@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.40</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นมฮ ปุรสฺตาทฺ อตฺห ปฺฤษฺฐตสฺ เต</i><br /><i>นโม ′สฺตุ เต สรฺวต เอว สรฺว</i><br /><i>อนนฺต-วีรฺยามิต-วิกฺรมสฺ ตฺวํ</i><br /><i>สรฺวํ สมาโปฺนษิ ตโต ′สิ สรฺวฮ</i>
+<span class="slant iast">namaḥ purastād atha pṛṣṭhatas te<br /></span>
+<span class="slant pali">นมห์ ปุรสฺตาทฺ อถ ปฺฤษฺฐตสฺ เต<br /></span>
+<span class="slant thai">นะมะห์ ปุรัสตาท อะถะ ปฤษฐะตัส เต<br /></span>
+<span class="slant ram">นะมะฮ พุรัสทาด อทฺะ พริชทฺะทัส เท<br /></span>
+<span class="slant iast">namo ’stu te sarvata eva sarva<br /></span>
+<span class="slant pali">นโม ’สฺตุ เต สรฺวต เอว สรฺว<br /></span>
+<span class="slant thai">นะโม ’สตุ เต สัรวะตะ เอวะ สัรวะ<br /></span>
+<span class="slant ram">นะโม ่สทุ เท สารวะทะ เอวะ สารวะ<br /></span>
+<span class="slant iast">ananta-vīryāmita-vikramas tvaṁ<br /></span>
+<span class="slant pali">อนนฺต-วีรฺยามิต-วิกฺรมสฺ ตฺวํ<br /></span>
+<span class="slant thai">อะนันตะ-วีรยามิตะ-วิกระมัส ตวัง<br /></span>
+<span class="slant ram">อนันทะ-วีรยามิทะ-วิคระมัส ทวัม<br /></span>
+<span class="slant iast">sarvaṁ samāpnoṣi tato ’si sarvaḥ<br /></span>
+<span class="slant pali">สรฺวํ สมาปฺโนษิ ตโต ’สิ สรฺวห์<br /></span>
+<span class="slant thai">สัรวัง สะมาปโนษิ ตะโต ’สิ สัรวะห์<br /></span>
+<span class="slant ram">สารวัม สะมาพโนชิ ทะโท ่สิ สารวะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>นมฮ</i> — ถวายความเคารพ, <i>ปุรสฺตาตฺ</i> — จากด้านหน้า, <i>อตฺห</i> — เช่นกัน, <i>ปฺฤษฺฐตฮ</i> — จาก ด้านหลัง, <i>เต</i> — แด่พระองค์, <i>นมฮ อสฺตุ</i> — ข้าพเจ้าถวายความเคารพ, <i>เต</i> — แด่พระองค์, <i>สรฺวตฮ</i> — จากทุก ๆ ด้าน, <i>เอว</i> — แน่นอน, <i>สรฺว</i> — เพราะว่าพระองค์ทรงเป็นทุกสิ่ง ทุกอย่าง, <i>อนนฺต-วีรฺย</i> — พลังที่ไร้ขอบเขต, <i>อมิต-วิกฺรมฮ</i> — และอำนาจที่ไร้ขอบเขต, <i>ตฺวมฺ</i> — พระองค์, <i>สรฺวมฺ</i> — ทุกสิ่งทุกอย่าง, <i>สมาโปฺนษิ</i> — พระองค์ทรงปกคลุม, <i>ตตฮ</i> — ดังนั้น, <i>อสิ</i> — พระองค์ทรงเป็น, <i>สรฺวฮ</i> — ทุกสิ่งทุกอย่าง
+  <span class="slant iast">namaḥ</span><span class="slant pali">นมห์</span><span class="slant thai">นะมะห์</span><span class="slant ram">นะมะฮ</span> — ถวายความเคารพ, <span class="slant iast">purastāt</span><span class="slant pali">ปุรสฺตาตฺ</span><span class="slant thai">ปุรัสตาต</span><span class="slant ram">พุรัสทาท</span> — จากด้านหน้า, <span class="slant iast">atha</span><span class="slant pali">อถ</span><span class="slant thai">อะถะ</span><span class="slant ram">อทฺะ</span> — เช่นกัน, <span class="slant iast">pṛṣṭhataḥ</span><span class="slant pali">ปฺฤษฺฐตห์</span><span class="slant thai">ปฤษฐะตะห์</span><span class="slant ram">พริชทฺะทะฮ</span> — จาก ด้านหลัง, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — แด่พระองค์, <span class="slant iast">namaḥ astu</span><span class="slant pali">นมห์อสฺตุ</span><span class="slant thai">นะมะห์อัสตุ</span><span class="slant ram">นะมะฮ อัสทุ</span> — ข้าพเจ้าถวายความเคารพ, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — แด่พระองค์, <span class="slant iast">sarvataḥ</span><span class="slant pali">สรฺวตห์</span><span class="slant thai">สัรวะตะห์</span><span class="slant ram">สารวะทะฮ</span> — จากทุก ๆ ด้าน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — เพราะว่าพระองค์ทรงเป็นทุกสิ่ง ทุกอย่าง, <span class="slant iast">ananta-vīrya</span><span class="slant pali">อนนฺต-วีรฺย</span><span class="slant thai">อะนันตะ-วีรยะ</span><span class="slant ram">อนันทะ-วีรยะ</span> — พลังที่ไร้ขอบเขต, <span class="slant iast">amita-vikramaḥ</span><span class="slant pali">อมิต-วิกฺรมห์</span><span class="slant thai">อะมิตะ-วิกระมะห์</span><span class="slant ram">อมิทะ-วิคระมะฮ</span> — และอำนาจที่ไร้ขอบเขต, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — พระองค์, <span class="slant iast">sarvam</span><span class="slant pali">สรฺวมฺ</span><span class="slant thai">สัรวัม</span><span class="slant ram">สารวัม</span> — ทุกสิ่งทุกอย่าง, <span class="slant iast">samāpnoṣi</span><span class="slant pali">สมาปฺโนษิ</span><span class="slant thai">สะมาปโนษิ</span><span class="slant ram">สะมาพโนชิ</span> — พระองค์ทรงปกคลุม, <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — ดังนั้น, <span class="slant iast">asi</span><span class="slant pali">อสิ</span><span class="slant thai">อะสิ</span><span class="slant ram">อสิ</span> — พระองค์ทรงเป็น, <span class="slant iast">sarvaḥ</span><span class="slant pali">สรฺวห์</span><span class="slant thai">สัรวะห์</span><span class="slant ram">สารวะฮ</span> — ทุกสิ่งทุกอย่าง
   </p>
 </div>
 
@@ -73,19 +174,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ด้วยความรักอันปลาบปลื้มที่มีต่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;สหาย&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงถวายความ<wbr>เคารพจากทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;โดยยอมรับว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นเจ้าของพลังและอำนาจทั้งหมดและทรงยิ่งใหญ่กว่านักรบผู้ยิ่งใหญ่ทั้งหลายที่มาชุมนุมกันที่สมรภูมิ&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<i>วิษฺณุ&nbsp;&nbsp;ปุราณ</i>&nbsp;&nbsp;(1.9.69)&nbsp;&nbsp;ดังนี้
+  ด้วยความรักอันปลาบปลื้มที่มีต่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;สหาย&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถวายความ<wbr>เคารพจากทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้าน&nbsp;&nbsp;โดยยอมรับว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นเจ้าของพลังและอำนาจทั้งหมดและทรงยิ่งใหญ่กว่านักรบผู้ยิ่งใหญ่ทั้งหลายที่มาชุมนุมกันที่สมรภูมิ&nbsp;&nbsp;ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">viṣṇu&nbsp;&nbsp;purāṇa</span><span class="slant pali">วิษฺณุปุราณ</span><span class="slant thai">วิษณุปุราณะ</span><span class="slant ram">วิชณุพุราณะ</span>&nbsp;&nbsp;(1.9.69)&nbsp;&nbsp;ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โย ′ยํ ตวาคโต เทว</i><br /><i>สมีปํ เทวตา-คณฮ</i><br /><i>ส ตฺวมฺ เอว ชคตฺ-สฺรษฺฏา</i><br /><i>ยตฮ สรฺว-คโต ภวานฺ</i>
+<span class="slant iast">yo ’yaṁ tavāgato deva<br /></span>
+<span class="slant pali">โย ’ยํ ตวาคโต เทว<br /></span>
+<span class="slant thai">โย ’ยัง ตะวาคะโต เทวะ<br /></span>
+<span class="slant ram">โย ่ยัม ทะวากะโท เดวะ<br /></span>
+<span class="slant iast">samīpaṁ devatā-gaṇaḥ<br /></span>
+<span class="slant pali">สมีปํ เทวตา-คณห์<br /></span>
+<span class="slant thai">สะมีปัง เทวะตา-คะณะห์<br /></span>
+<span class="slant ram">สะมีพัม เดวะทา-กะณะฮ<br /></span>
+<span class="slant iast">sa tvam eva jagat-sraṣṭā<br /></span>
+<span class="slant pali">ส ตฺวมฺ เอว ชคตฺ-สฺรษฺฏา<br /></span>
+<span class="slant thai">สะ ตวัม เอวะ ชะคัต-สรัษฏา<br /></span>
+<span class="slant ram">สะ ทวัม เอวะ จะกัท-สรัชทา<br /></span>
+<span class="slant iast">yataḥ sarva-gato bhavān<br /></span>
+<span class="slant pali">ยตห์ สรฺว-คโต ภวานฺ<br /></span>
+<span class="slant thai">ยะตะห์ สัรวะ-คะโต ภะวาน<br /></span>
+<span class="slant ram">ยะทะฮ สารวะ-กะโท บฺะวาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “โอ้&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระองค์ทรงเป็นผู้สร้างทุกชีวิตที่มาอยู่ต่อหน้าพระองค์&nbsp;&nbsp;แม้แต่เทวดา”
+  “โอ้&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระองค์ทรงเป็นผู้สร้างทุกชีวิตที่มาอยู่ต่อหน้าพระองค์&nbsp;&nbsp;แม้แต่เทวดา”
   </p>
 </div>
 

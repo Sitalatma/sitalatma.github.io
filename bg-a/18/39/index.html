@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.39</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทฺ อเคฺร จานุพเนฺธ จ</i><br /><i>สุขํ โมหนมฺ อาตฺมนฮ</i><br /><i>นิทฺราลสฺย-ปฺรมาโทตฺตฺหํ</i><br /><i>ตตฺ ตามสมฺ อุทาหฺฤตมฺ</i>
+<span class="slant iast">yad agre cānubandhe ca<br /></span>
+<span class="slant pali">ยทฺ อเคฺร จานุพนฺเธ จ<br /></span>
+<span class="slant thai">ยัท อัคเร จานุพันเธ จะ<br /></span>
+<span class="slant ram">ยัด อเกร ชานุบันเดฺ ชะ<br /></span>
+<span class="slant iast">sukhaṁ mohanam ātmanaḥ<br /></span>
+<span class="slant pali">สุขํ โมหนมฺ อาตฺมนห์<br /></span>
+<span class="slant thai">สุขัง โมหะนัม อาตมะนะห์<br /></span>
+<span class="slant ram">สุคัฺม โมฮะนัม อาทมะนะฮ<br /></span>
+<span class="slant iast">nidrālasya-pramādotthaṁ<br /></span>
+<span class="slant pali">นิทฺราลสฺย-ปฺรมาโทตฺถํ<br /></span>
+<span class="slant thai">นิทราลัสยะ-ประมาโทตถัง<br /></span>
+<span class="slant ram">นิดราลัสยะ-พระมาโดททัฺม<br /></span>
+<span class="slant iast">tat tāmasam udāhṛtam<br /></span>
+<span class="slant pali">ตตฺ ตามสมฺ อุทาหฺฤตมฺ<br /></span>
+<span class="slant thai">ตัต ตามะสัม อุทาหฤตัม<br /></span>
+<span class="slant ram">ทัท ทามะสัม อุดาฮริทัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยตฺ</i> — ซึ่ง, <i>อเคฺร</i> — ในตอนต้น, <i>จ</i> — เช่นกัน, <i>อนุพเนฺธ</i> — ในบั้นปลาย, <i>จ</i> — เช่นกัน, <i>สุขมฺ</i> — ความ สุข, <i>โมหนมฺ</i> — ความหลง, <i>อาตฺมนฮ</i> — ของตน, <i>นิทฺรา</i> — การนอน, <i>อาลสฺย</i> — เกียจคร้าน, <i>ปฺรมาท</i> — และความหลง, <i>อุตฺตฺหมฺ</i> — ผลิตจาก, <i>ตตฺ</i> — นั้น, <i>ตามสมฺ</i> — ในระดับอวิชชา, <i>อุทาหฺฤตมฺ</i> — กล่าวว่าเป็น
+  <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">agre</span><span class="slant pali">อเคฺร</span><span class="slant thai">อัคเร</span><span class="slant ram">อเกร</span> — ในตอนต้น, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">anubandhe</span><span class="slant pali">อนุพนฺเธ</span><span class="slant thai">อะนุพันเธ</span><span class="slant ram">อนุบันเดฺ</span> — ในบั้นปลาย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ความ สุข, <span class="slant iast">mohanam</span><span class="slant pali">โมหนมฺ</span><span class="slant thai">โมหะนัม</span><span class="slant ram">โมฮะนัม</span> — ความหลง, <span class="slant iast">ātmanaḥ</span><span class="slant pali">อาตฺมนห์</span><span class="slant thai">อาตมะนะห์</span><span class="slant ram">อาทมะนะฮ</span> — ของตน, <span class="slant iast">nidrā</span><span class="slant pali">นิทฺรา</span><span class="slant thai">นิทรา</span><span class="slant ram">นิดรา</span> — การนอน, <span class="slant iast">ālasya</span><span class="slant pali">อาลสฺย</span><span class="slant thai">อาลัสยะ</span><span class="slant ram">อาสัสยะ</span> — เกียจคร้าน, <span class="slant iast">pramāda</span><span class="slant pali">ปฺรมาท</span><span class="slant thai">ประมาทะ</span><span class="slant ram">พระมาดะ</span> — และความหลง, <span class="slant iast">uttham</span><span class="slant pali">อุตฺถมฺ</span><span class="slant thai">อุตถัม</span><span class="slant ram">อุททัฺม</span> — ผลิตจาก, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">tāmasam</span><span class="slant pali">ตามสมฺ</span><span class="slant thai">ตามะสัม</span><span class="slant ram">ทามะสัม</span> — ในระดับอวิชชา, <span class="slant iast">udāhṛtam</span><span class="slant pali">อุทาหฺฤตมฺ</span><span class="slant thai">อุทาหฤตัม</span><span class="slant ram">อุดาฮ ริทัม</span> — กล่าวว่าเป็น
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.8</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นิยตํ กุรุ กรฺม ตฺวํ</i><br /><i>กรฺม ชฺยาโย หฺยฺ อกรฺมณฮ</i><br /><i>ศรีร-ยาตฺราปิ จ เต</i><br /><i>น ปฺรสิเธฺยทฺ อกรฺมณฮ</i>
+<span class="slant iast">niyataṁ kuru karma tvaṁ<br /></span>
+<span class="slant pali">นิยตํ กุรุ กรฺม ตฺวํ<br /></span>
+<span class="slant thai">นิยะตัง กุรุ กัรมะ ตวัง<br /></span>
+<span class="slant ram">นิยะทัม คุรุ คารมะ ทวัม<br /></span>
+<span class="slant iast">karma jyāyo hy akarmaṇaḥ<br /></span>
+<span class="slant pali">กรฺม ชฺยาโย หฺยฺ อกรฺมณห์<br /></span>
+<span class="slant thai">กัรมะ ชยาโย หย อะกัรมะณะห์<br /></span>
+<span class="slant ram">คารมะ จยาโย ฮิ อคารมะณะฮ<br /></span>
+<span class="slant iast">śarīra-yātrāpi ca te<br /></span>
+<span class="slant pali">ศรีร-ยาตฺราปิ จ เต<br /></span>
+<span class="slant thai">ศะรีระ-ยาตราปิ จะ เต<br /></span>
+<span class="slant ram">ชะรีระ-ยาทราพิ ชะ เท<br /></span>
+<span class="slant iast">na prasidhyed akarmaṇaḥ<br /></span>
+<span class="slant pali">น ปฺรสิเธฺยทฺ อกรฺมณห์<br /></span>
+<span class="slant thai">นะ ประสิธเยท อะกัรมะณะห์<br /></span>
+<span class="slant ram">นะ พระสิดดฺเยด อคารมะณะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>นิยตมฺ</i> — กำหนด, <i>กุรุ</i> — ทำ, <i>กรฺม</i> — หน้าที่, <i>ตฺวมฺ</i> — ท่าน, <i>กรฺม</i> — งาน, <i>ชฺยายฮ</i> — ดีกว่า, <i>หิ</i> — แนน่นอน, <i>อกรฺมณฮ</i> — ดีกว่าไม่ทำงาน, <i>ศรีร</i> — ร่างกาย, <i>ยาตฺรา</i> — รักษา, <i>อปิ</i> — แม้, <i>จ</i> — เช่นกัน, <i>เต</i> — ของท่าน, <i>น</i> — ไม่เคย, <i>ปฺรสิเธฺยตฺ</i> — มีผล, <i>อกรฺมณฮ</i> — ไม่ทำงาน
+  <span class="slant iast">niyatam</span><span class="slant pali">นิยตมฺ</span><span class="slant thai">นิยะตัม</span><span class="slant ram">นิยะทัม</span> — กำหนด, <span class="slant iast">kuru</span><span class="slant pali">กุรุ</span><span class="slant thai">กุรุ</span><span class="slant ram">คุรุ</span> — ทำ, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — หน้าที่, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — ท่าน, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">jyāyaḥ</span><span class="slant pali">ชฺยายห์</span><span class="slant thai">ชยายะห์</span><span class="slant ram">จยายะฮ</span> — ดีกว่า, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แนน่นอน, <span class="slant iast">akarmaṇaḥ</span><span class="slant pali">อกรฺมณห์</span><span class="slant thai">อะกัรมะณะห์</span><span class="slant ram">อคารมะณะฮ</span> — ดีกว่าไม่ทำงาน, <span class="slant iast">śarīra</span><span class="slant pali">ศรีร</span><span class="slant thai">ศะรีระ</span><span class="slant ram">ชะรีระ</span> — ร่างกาย, <span class="slant iast">yātrā</span><span class="slant pali">ยาตฺรา</span><span class="slant thai">ยาตรา</span><span class="slant ram">ยาทรา</span> — รักษา, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แม้, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของท่าน, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">prasidhyet</span><span class="slant pali">ปฺรสิเธฺยตฺ</span><span class="slant thai">ประสิธเยต</span><span class="slant ram">พระสิดดฺเยท</span> — มีผล, <span class="slant iast">akarmaṇaḥ</span><span class="slant pali">อกรฺมณห์</span><span class="slant thai">อะกัรมะณะห์</span><span class="slant ram">อคารมะณะฮ</span> — ไม่ทำงาน
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีนักปฎิบัติสมาธิจอมปลอมมากมายที่อวดอ้างตนอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าตนเองอยู่ใน<wbr>ตระกูลสูง&nbsp;&nbsp;และมีบุคคลผู้มีอาชีพสูงอวดอ้างอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าตนเองได้เสียสละทุกสิ่งทุก<wbr>อย่างเพื่อเห็นแก่ความเจริญก้าวหน้าในชีวิตทิพย์&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไม่ปรารถนาให้<i>อรฺชุน</i>&nbsp;&nbsp;มาเป็นผู้เสแสร้ง&nbsp;&nbsp;แต่พระองค์ทรงปรารถนาให้มาปฏิบัติหน้าที่ที่กำหนดไว้<wbr>สำหรับ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นคฤหัสถ์และเป็นขุนพล&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นการดีที่จะดำรง<wbr>รักษาตำแหน่งนี้ไว้&nbsp;&nbsp;และปฎิบัติหน้าที่ทางศาสนาที่กำหนดไว้สำหรับ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ในฐานะ<wbr>คฤหัสถ์กิจกรรมเช่นนี้จะชะล้างจิตใจของบุคคลทางโลกให้ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;สะอาดขึ้น&nbsp;&nbsp;และมี<wbr>อิสระจากมลทินทางวัตถุ&nbsp;&nbsp;สิ่งที่อ้างว่าเป็นการเสียสละที่ทำไปเพื่อหาเลี้ยงชีพ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>หรือแม้แต่พระคัมภีร์ของศาสนาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็ไม่เห็นด้วย&nbsp;&nbsp;แต่ว่าเราจะต้องทำงานบางอย่างเพื่อ<wbr>ดำรงรักษาร่างกายและดวงวิญญาณนี้ให้อยู่ด้วยกัน&nbsp;&nbsp;จึงไม่ควรยกเลิกงานตามอำเภอใจ<wbr>โดยไม่มีการชะล้างนิสัยทางวัตถุให้บริสุทธิ์ขึ้น&nbsp;&nbsp;ไม่ว่าใครที่อยู่ในโลกวัตถุจะต้องมีนิสัยที่<wbr>ไม่บริสุทธิ์&nbsp;&nbsp;อยากเป็นเจ้าเหนือธรรมชาติวัตถุหรืออยากสนองประสาทสัมผัสของตนเอง<wbr>อย่างแน่นอน&nbsp;&nbsp;นิสัยที่ไม่ดีเช่นนี้ต้องทำให้บริสุทธิ์ขึ้นด้วยการปฎิบัติตามหน้าที่ที่กำหนดไว้หากไม่ทำเช่นนี้เราไม่ควรพยายามอวดอ้างว่าเป็นนักทิพย์นิยมที่ยกเลิกกิจการงานและ<wbr>ยังชีพอยู่ด้วยค่าใช้จ่ายของคนอื่น
+  มีนักปฎิบัติสมาธิจอมปลอมมากมายที่อวดอ้างตนอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าตนเองอยู่ใน<wbr>ตระกูลสูง&nbsp;&nbsp;และมีบุคคลผู้มีอาชีพสูงอวดอ้างอย่างผิด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ว่าตนเองได้เสียสละทุกสิ่งทุก<wbr>อย่างเพื่อเห็นแก่ความเจริญก้าวหน้าในชีวิตทิพย์&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไม่ปรารถนาให้<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;มาเป็นผู้เสแสร้ง&nbsp;&nbsp;แต่พระองค์ทรงปรารถนาให้มาปฏิบัติหน้าที่ที่กำหนดไว้<wbr>สำหรับ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นคฤหัสถ์และเป็นขุนพล&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นการดีที่จะดำรง<wbr>รักษาตำแหน่งนี้ไว้&nbsp;&nbsp;และปฎิบัติหน้าที่ทางศาสนาที่กำหนดไว้สำหรับ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ในฐานะ<wbr>คฤหัสถ์กิจกรรมเช่นนี้จะชะล้างจิตใจของบุคคลทางโลกให้ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;สะอาดขึ้น&nbsp;&nbsp;และมี<wbr>อิสระจากมลทินทางวัตถุ&nbsp;&nbsp;สิ่งที่อ้างว่าเป็นการเสียสละที่ทำไปเพื่อหาเลี้ยงชีพ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>หรือแม้แต่พระคัมภีร์ของศาสนาใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็ไม่เห็นด้วย&nbsp;&nbsp;แต่ว่าเราจะต้องทำงานบางอย่างเพื่อ<wbr>ดำรงรักษาร่างกายและดวงวิญญาณนี้ให้อยู่ด้วยกัน&nbsp;&nbsp;จึงไม่ควรยกเลิกงานตามอำเภอใจ<wbr>โดยไม่มีการชะล้างนิสัยทางวัตถุให้บริสุทธิ์ขึ้น&nbsp;&nbsp;ไม่ว่าใครที่อยู่ในโลกวัตถุจะต้องมีนิสัยที่<wbr>ไม่บริสุทธิ์&nbsp;&nbsp;อยากเป็นเจ้าเหนือธรรมชาติวัตถุหรืออยากสนองประสาทสัมผัสของตนเอง<wbr>อย่างแน่นอน&nbsp;&nbsp;นิสัยที่ไม่ดีเช่นนี้ต้องทำให้บริสุทธิ์ขึ้นด้วยการปฎิบัติตามหน้าที่ที่กำหนดไว้หากไม่ทำเช่นนี้เราไม่ควรพยายามอวดอ้างว่าเป็นนักทิพย์นิยมที่ยกเลิกกิจการงานและ<wbr>ยังชีพอยู่ด้วยค่าใช้จ่ายของคนอื่น
   </p>
 </div>
 

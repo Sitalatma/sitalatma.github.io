@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.2</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรี-ภควานฺ อุวาจ</i><br /><i>กุตสฺ ตฺวา กศฺมลมฺ อิทํ</i><br /><i>วิษเม สมุปสฺตฺหิตมฺ</i><br /><i>อนารฺย-ชุษฺฏมฺ อสฺวรฺคฺยมฺ</i><br /><i>อกีรฺติ-กรมฺ อรฺชุน</i>
+<span class="slant iast">śrī-bhagavān uvāca<br /></span>
+<span class="slant pali">ศฺรี-ภควานฺ อุวาจ<br /></span>
+<span class="slant thai">ศรี-ภะคะวาน อุวาจะ<br /></span>
+<span class="slant ram">ชรี-บฺะกะวาน อุวาชะ<br /></span>
+<span class="slant iast">kutas tvā kaśmalam idaṁ<br /></span>
+<span class="slant pali">กุตสฺ ตฺวา กศฺมลมฺ อิทํ<br /></span>
+<span class="slant thai">กุตัส ตวา กัศมะลัม อิทัง<br /></span>
+<span class="slant ram">คุทัส ทวา คัชมะลัม อิดัม<br /></span>
+<span class="slant iast">viṣame samupasthitam<br /></span>
+<span class="slant pali">วิษเม สมุปสฺถิตมฺ<br /></span>
+<span class="slant thai">วิษะเม สะมุปัสถิตัม<br /></span>
+<span class="slant ram">วิชะเม สะมุพัสทิทัม<br /></span>
+<span class="slant iast">anārya-juṣṭam asvargyam<br /></span>
+<span class="slant pali">อนารฺย-ชุษฺฏมฺ อสฺวรฺคฺยมฺ<br /></span>
+<span class="slant thai">อะนารยะ-ชุษฏัม อัสวัรคยัม<br /></span>
+<span class="slant ram">อนารยะ-จุชทัม อัสวารกยัม<br /></span>
+<span class="slant iast">akīrti-karam arjuna<br /></span>
+<span class="slant pali">อกีรฺติ-กรมฺ อรฺชุน<br /></span>
+<span class="slant thai">อะกีรติ-กะรัม อัรชุนะ<br /></span>
+<span class="slant ram">อคีรทิ-คะรัม อารจุนะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรี-ภควานฺ อุวาจ</i> — บุคลิกภาพสูงสุดแห่งพระเจ้าตรัสว่า, <i>กุตฮ</i> — จากที่ใด, <i>ตฺวา</i> — ถึงท่าน, <i>กศฺมลมฺ</i> — ความสกปรก, <i>อิทมฺ</i> — ความเศร้าโศกเสียใจนี้, <i>วิษเม</i> — ในชั่วโมง ฉุกเฉินนี้, <i>สมุปสฺตฺหิตมฺ</i> — มาถึง, <i>อนารฺย</i> — ผู้ที่ไม่รู้คุณค่าของชีวิต, <i>ชุษฺฏมฺ</i> — ปฏิบัติโดย, <i>อสฺวรฺคฺยมฺ</i> — จะไม่นำเราไปสู่โลกที่สูงกว่า, <i>อกีรฺติ</i> — เสียชื่อเสียง, <i>กรมฺ</i> — เป็นต้นเหตุ ของ, <i>อรฺชุน</i> — โอ้ อารจุนะ
+  <span class="slant iast">śrī-bhagavān uvāca</span><span class="slant pali">ศฺรี-ภควานฺอุวาจ</span><span class="slant thai">ศรี-ภะคะวานอุวาจะ</span><span class="slant ram">ชรี-บฺะกะวาน อุวาชะ</span> — บุคลิกภาพสูงสุดแห่งพระเจ้าตรัสว่า, <span class="slant iast">kutaḥ</span><span class="slant pali">กุตห์</span><span class="slant thai">กุตะห์</span><span class="slant ram">คุทะฮ</span> — จากที่ใด, <span class="slant iast">tvā</span><span class="slant pali">ตฺวา</span><span class="slant thai">ตวา</span><span class="slant ram">ทวา</span> — ถึงท่าน, <span class="slant iast">kaśmalam</span><span class="slant pali">กศฺมลมฺ</span><span class="slant thai">กัศมะลัม</span><span class="slant ram">คัชมะลัม</span> — ความสกปรก, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — ความเศร้าโศกเสียใจนี้, <span class="slant iast">viṣame</span><span class="slant pali">วิษเม</span><span class="slant thai">วิษะเม</span><span class="slant ram">วิชะเม</span> — ในชั่วโมง ฉุกเฉินนี้, <span class="slant iast">samupasthitam</span><span class="slant pali">สมุปสฺถิตมฺ</span><span class="slant thai">สะมุปัสถิตัม</span><span class="slant ram">สะมุพัสทิทัม</span> — มาถึง, <span class="slant iast">anārya</span><span class="slant pali">อนารฺย</span><span class="slant thai">อะนารยะ</span><span class="slant ram">อนารยะ</span> — ผู้ที่ไม่รู้คุณค่าของชีวิต, <span class="slant iast">juṣṭam</span><span class="slant pali">ชุษฺฏมฺ</span><span class="slant thai">ชุษฏัม</span><span class="slant ram">จุชทัม</span> — ปฏิบัติโดย, <span class="slant iast">asvargyam</span><span class="slant pali">อสฺวรฺคฺยมฺ</span><span class="slant thai">อัสวัรคยัม</span><span class="slant ram">อัสวารกยัม</span> — จะไม่นำเราไปสู่โลกที่สูงกว่า, <span class="slant iast">akīrti</span><span class="slant pali">อกีรฺติ</span><span class="slant thai">อะกีรติ</span><span class="slant ram">อคีรทิ</span> — เสียชื่อเสียง, <span class="slant iast">karam</span><span class="slant pali">กรมฺ</span><span class="slant thai">กะรัม</span><span class="slant ram">คะลัม</span> — เป็นต้นเหตุ ของ, <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> — โอ้ อารจุนะ
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  บุคลิกภาพสูงสุดแห่งพระเจ้าตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;มลทินเหล่านี้เกิดขึ้นได้อย่างไร?&nbsp;&nbsp;มันไม่เหมาะสำหรับผู้ที่รู้คุณค่าแห่งชีวิต&nbsp;&nbsp;เพราะจะไม่นำพาเธอไปสู่โลกที่สูงกว่า&nbsp;&nbsp;แต่จะทำให้เสื่อมเสียชื่อเสียง
+  บุคลิกภาพสูงสุดแห่งพระเจ้าตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ที่รัก&nbsp;&nbsp;มลทินเหล่านี้เกิดขึ้นได้อย่างไร?&nbsp;&nbsp;มันไม่เหมาะสำหรับผู้ที่รู้คุณค่าแห่งชีวิต&nbsp;&nbsp;เพราะจะไม่นำพาเธอไปสู่โลกที่สูงกว่า&nbsp;&nbsp;แต่จะทำให้เสื่อมเสียชื่อเสียง
   </p>
 </div>
 
@@ -73,73 +178,118 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>กฺฤษฺณ</i>&nbsp;&nbsp;และบุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นบุคคลเดียวกัน&nbsp;&nbsp;ดังนั้นใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ทั้งเล่มทรงเรียกพระองค์ว่า&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นสัจธรรมสูงสุด&nbsp;&nbsp;การ<wbr>รู้แจ้งสัจธรรมอันสมบูรณ์เข้าใจได้ในสามระดับคือ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;หรือดวงวิญญาณอันไร้รูป<wbr>ลักษณ์ที่แผ่กระจายอยู่ทั่วไป&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;หรือพระผู้เป็นเจ้าผู้ทรงประทับอยู่ภายใน<wbr>หัวใจของมวลชีวิต&nbsp;&nbsp;และองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(1.2.11)&nbsp;&nbsp;ได้อธิบายแนวคิดแห่งสัจธรรมที่สมบูรณ์ไว้ดังนี้
+  <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และบุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นบุคคลเดียวกัน&nbsp;&nbsp;ดังนั้นใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ทั้งเล่มทรงเรียกพระองค์ว่า&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นสัจธรรมสูงสุด&nbsp;&nbsp;การ<wbr>รู้แจ้งสัจธรรมอันสมบูรณ์เข้าใจได้ในสามระดับคือ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;หรือดวงวิญญาณอันไร้รูป<wbr>ลักษณ์ที่แผ่กระจายอยู่ทั่วไป&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;หรือพระผู้เป็นเจ้าผู้ทรงประทับอยู่ภายใน<wbr>หัวใจของมวลชีวิต&nbsp;&nbsp;และองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือบุคลิกภาพสูงสุดแห่งพระเจ้าองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(1.2.11)&nbsp;&nbsp;ได้อธิบายแนวคิดแห่งสัจธรรมที่สมบูรณ์ไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วทนฺติ ตตฺ ตตฺตฺว-วิทสฺ</i><br /><i>ตตฺตฺวํ ยชฺ ชฺญานมฺ อทฺวยมฺ</i><br /><i>พฺรเหฺมติ ปรมาเตฺมติ</i><br /><i>ภควานฺ อิติ ศพฺทฺยเต</i>
+<span class="slant iast">vadanti tat tattva-vidas<br /></span>
+<span class="slant pali">วทนฺติ ตตฺ ตตฺตฺว-วิทสฺ<br /></span>
+<span class="slant thai">วะทันติ ตัต ตัตตวะ-วิทัส<br /></span>
+<span class="slant ram">วะดันทิ ทัท ทัททวะ-วิดัส<br /></span>
+<span class="slant iast">tattvaṁ yaj jñānam advayam<br /></span>
+<span class="slant pali">ตตฺตฺวํ ยชฺ ชฺญานมฺ อทฺวยมฺ<br /></span>
+<span class="slant thai">ตัตตวัง ยัช ชญานัม อัทวะยัม<br /></span>
+<span class="slant ram">ทัททวัม ยัจ กยานัม อัดวะยัม<br /></span>
+<span class="slant iast">brahmeti paramātmeti<br /></span>
+<span class="slant pali">พฺรเหฺมติ ปรมาตฺเมติ<br /></span>
+<span class="slant thai">พรัหเมติ ปะระมาตเมติ<br /></span>
+<span class="slant ram">บระฮเมทิ พะระมาทเมทิ<br /></span>
+<span class="slant iast">bhagavān iti śabdyate<br /></span>
+<span class="slant pali">ภควานฺ อิติ ศพฺทฺยเต<br /></span>
+<span class="slant thai">ภะคะวาน อิติ ศัพทยะเต<br /></span>
+<span class="slant ram">บฺะกะวาน อิทิ ชับดยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ผู้รู้แจ้งสัจธรรมที่สมบูรณ์จะเข้าใจได้ในสามระดับซึ่งมีความคล้ายคลึงกันคือ&nbsp;&nbsp;<i>พฺรหฺมนฺ&nbsp;&nbsp;ปรมาตฺมา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;”
+  “ผู้รู้แจ้งสัจธรรมที่สมบูรณ์จะเข้าใจได้ในสามระดับซึ่งมีความคล้ายคลึงกันคือ&nbsp;&nbsp;<span class="slant iast">brahman&nbsp;&nbsp;paramātmā</span><span class="slant pali">พฺรหฺมนฺปรมาตฺมา</span><span class="slant thai">พรัหมันปะระมาตมา</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺพะระมาทมา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สามระดับทิพย์นี้เปรียบเทียบได้กับดวงอาทิตย์ที่แบ่งออกเป็นสามส่วน&nbsp;&nbsp;คือแสงอาทิตย์&nbsp;&nbsp;ผิวอาทิตย์&nbsp;&nbsp;และดวงอาทิตย์&nbsp;&nbsp;ผู้ที่ศึกษาเฉพาะแสงอาทิตย์เปรียบได้กับ<wbr>นักศึกษาชั้นประถม&nbsp;&nbsp;ผู้ที่เข้าใจผิวของดวงอาทิตย์อยู่ในระดับที่สูงกว่า&nbsp;&nbsp;และผู้ที่สามารถ<wbr>เข้าไปอยู่ในดวงอาทิตย์ได้เป็นผู้รู้สูงสุด&nbsp;&nbsp;นักศึกษาทั่วไปที่พอใจกับการเข้าใจเฉพาะแสง<wbr>อาทิตย์ซึ่งสาดส่องรัศมีไปทั่วจักรวาลอย่างเจิดจรัสซึ่งเป็นธรรมชาติที่ไร้รูปลักษณ์เปรียบเทียบได้กับผู้รู้แจ้งเฉพาะในส่วนของ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;แห่งสัจธรรมที่สมบูรณ์โดยส่วน<wbr>เดียว&nbsp;&nbsp;นักศึกษาขั้นสูงกว่านี้จะทราบถึงผิวของดวงอาทิตย์ซึ่งเปรียบเทียบได้กับความรู้<wbr>ในส่วนของ&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ของสัจธรรมที่สมบูรณ์&nbsp;&nbsp;และนักศึกษาผู้ที่สามารถเข้าไปถึงใจ<wbr>กลางดวงอาทิตย์เปรียบเทียบได้กับผู้รู้แจ้งรูปลักษณ์แห่งสัจธรรมที่สมบูรณ์สูงสุด&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;<i>ภกฺต</i>&nbsp;&nbsp;หรือนักทิพย์นิยมผู้รู้แจ้งในส่วนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แห่งสัจธรรมที่สมบูรณ์&nbsp;&nbsp;ถือว่า<wbr>เป็นนักทิพย์นิยมชั้นสูงสุด&nbsp;&nbsp;ถึงแม้ว่านักศึกษาทั้งหมดจะศึกษาในวิชาเดียวกันคือวิชาแห่ง<wbr>สัจธรรมที่สมบูรณ์&nbsp;&nbsp;แสงอาทิตย์&nbsp;&nbsp;ผิวของดวงอาทิตย์&nbsp;&nbsp;และกิจกรรมภายในดวงอาทิตย์เป็น<wbr>สิ่งที่ไม่สามารถแยกออกจากกันได้&nbsp;&nbsp;แต่นักศึกษาทั้งสามกลุ่มก็มิได้อยู่ในระดับเดียวกัน
+  สามระดับทิพย์นี้เปรียบเทียบได้กับดวงอาทิตย์ที่แบ่งออกเป็นสามส่วน&nbsp;&nbsp;คือแสงอาทิตย์&nbsp;&nbsp;ผิวอาทิตย์&nbsp;&nbsp;และดวงอาทิตย์&nbsp;&nbsp;ผู้ที่ศึกษาเฉพาะแสงอาทิตย์เปรียบได้กับ<wbr>นักศึกษาชั้นประถม&nbsp;&nbsp;ผู้ที่เข้าใจผิวของดวงอาทิตย์อยู่ในระดับที่สูงกว่า&nbsp;&nbsp;และผู้ที่สามารถ<wbr>เข้าไปอยู่ในดวงอาทิตย์ได้เป็นผู้รู้สูงสุด&nbsp;&nbsp;นักศึกษาทั่วไปที่พอใจกับการเข้าใจเฉพาะแสง<wbr>อาทิตย์ซึ่งสาดส่องรัศมีไปทั่วจักรวาลอย่างเจิดจรัสซึ่งเป็นธรรมชาติที่ไร้รูปลักษณ์เปรียบเทียบได้กับผู้รู้แจ้งเฉพาะในส่วนของ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;แห่งสัจธรรมที่สมบูรณ์โดยส่วน<wbr>เดียว&nbsp;&nbsp;นักศึกษาขั้นสูงกว่านี้จะทราบถึงผิวของดวงอาทิตย์ซึ่งเปรียบเทียบได้กับความรู้<wbr>ในส่วนของ&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ของสัจธรรมที่สมบูรณ์&nbsp;&nbsp;และนักศึกษาผู้ที่สามารถเข้าไปถึงใจ<wbr>กลางดวงอาทิตย์เปรียบเทียบได้กับผู้รู้แจ้งรูปลักษณ์แห่งสัจธรรมที่สมบูรณ์สูงสุด&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;<span class="slant iast">bhakta</span><span class="slant pali">ภกฺต</span><span class="slant thai">ภักตะ</span><span class="slant ram"></span>&nbsp;&nbsp;หรือนักทิพย์นิยมผู้รู้แจ้งในส่วนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แห่งสัจธรรมที่สมบูรณ์&nbsp;&nbsp;ถือว่า<wbr>เป็นนักทิพย์นิยมชั้นสูงสุด&nbsp;&nbsp;ถึงแม้ว่านักศึกษาทั้งหมดจะศึกษาในวิชาเดียวกันคือวิชาแห่ง<wbr>สัจธรรมที่สมบูรณ์&nbsp;&nbsp;แสงอาทิตย์&nbsp;&nbsp;ผิวของดวงอาทิตย์&nbsp;&nbsp;และกิจกรรมภายในดวงอาทิตย์เป็น<wbr>สิ่งที่ไม่สามารถแยกออกจากกันได้&nbsp;&nbsp;แต่นักศึกษาทั้งสามกลุ่มก็มิได้อยู่ในระดับเดียวกัน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>ปราศร</i>&nbsp;&nbsp;<i>มุนิ</i>&nbsp;&nbsp;ผู้ที่เชื่อถือได้และเป็นพระบิดาของ&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;ทรงอธิบายคำ<wbr>สันสกฤต&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ว่าหมายถึงบุคลิกภาพสูงสุดผู้ทรงเป็นเจ้าของแห่งความร่ำรวย<wbr>ทั้งหมด&nbsp;&nbsp;พลังอำนาจทั้งหมด&nbsp;&nbsp;ชื่อเสียงทั้งหมด&nbsp;&nbsp;ความสง่างามทั้งหมด&nbsp;&nbsp;วิชาความรู้ทั้งหมด<wbr>และความเสียสละทั้งหมด&nbsp;&nbsp;ผู้มีคุณสมบัติทั้งหมดนี้ได้ชื่อว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มีมนุษย์หลาย<wbr>คนที่ร่ำรวยมาก&nbsp;&nbsp;มีอำนาจมาก&nbsp;&nbsp;มีความสง่างามมาก&nbsp;&nbsp;มีชื่อเสียงมาก&nbsp;&nbsp;มีความรู้มาก&nbsp;&nbsp;และ<wbr>ไม่ยึดติด&nbsp;&nbsp;แต่ไม่มีใครที่สามารถอ้างได้ว่าตนเองเป็นเจ้าของแห่งความร่ำรวยทั้งหมดพลังอำนาจทั้งหมด&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพียงพระองค์เดียวเท่านั้นที่สามารถตรัสเช่น<wbr>นี้&nbsp;&nbsp;เพราะว่าพระองค์ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ไม่มีสิ่งมีชีวิตใดรวมทั้งพระ<wbr>&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<i>นารายณ</i>&nbsp;&nbsp;ที่จะสามารถเป็นเจ้าแห่งความมั่งคั่งอย่างสมบูรณ์<wbr>เท่ากับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้นพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ทรงสรุปในหนังสือ&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ไม่มีผู้ใดเสมอเหมือนและไม่มีผู้ใดยิ่งใหญ่ไปกว่า<wbr>พระองค์ทรงเป็นพระผู้เป็นเจ้าองค์แรกหรือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ที่ทราบกันในอีกพระนามหนึ่ง<wbr>ว่า&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิดสูงสุดของแหล่งกำเนิดทั้งปวง
+  <span class="slant iast">parāśara</span><span class="slant pali">ปราศร</span><span class="slant thai">ปะราศะระ</span><span class="slant ram">พะราชะระ</span>&nbsp;&nbsp;<span class="slant iast">muni</span><span class="slant pali">มุนิ</span><span class="slant thai">มุนิ</span><span class="slant ram">มุนิ</span>&nbsp;&nbsp;ผู้ที่เชื่อถือได้และเป็นพระบิดาของ&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;ทรงอธิบายคำ<wbr>สันสกฤต&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ว่าหมายถึงบุคลิกภาพสูงสุดผู้ทรงเป็นเจ้าของแห่งความร่ำรวย<wbr>ทั้งหมด&nbsp;&nbsp;พลังอำนาจทั้งหมด&nbsp;&nbsp;ชื่อเสียงทั้งหมด&nbsp;&nbsp;ความสง่างามทั้งหมด&nbsp;&nbsp;วิชาความรู้ทั้งหมด<wbr>และความเสียสละทั้งหมด&nbsp;&nbsp;ผู้มีคุณสมบัติทั้งหมดนี้ได้ชื่อว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มีมนุษย์หลาย<wbr>คนที่ร่ำรวยมาก&nbsp;&nbsp;มีอำนาจมาก&nbsp;&nbsp;มีความสง่างามมาก&nbsp;&nbsp;มีชื่อเสียงมาก&nbsp;&nbsp;มีความรู้มาก&nbsp;&nbsp;และ<wbr>ไม่ยึดติด&nbsp;&nbsp;แต่ไม่มีใครที่สามารถอ้างได้ว่าตนเองเป็นเจ้าของแห่งความร่ำรวยทั้งหมดพลังอำนาจทั้งหมด&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพียงพระองค์เดียวเท่านั้นที่สามารถตรัสเช่น<wbr>นี้&nbsp;&nbsp;เพราะว่าพระองค์ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ไม่มีสิ่งมีชีวิตใดรวมทั้งพระ<wbr>&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;หรือพระ&nbsp;&nbsp;<span class="slant iast">nārāyaṇa</span><span class="slant pali">นารายณ</span><span class="slant thai">นารายะณะ</span><span class="slant ram">นารายะณะ</span>&nbsp;&nbsp;ที่จะสามารถเป็นเจ้าแห่งความมั่งคั่งอย่างสมบูรณ์<wbr>เท่ากับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้นพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ทรงสรุปในหนังสือ&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ไม่มีผู้ใดเสมอเหมือนและไม่มีผู้ใดยิ่งใหญ่ไปกว่า<wbr>พระองค์ทรงเป็นพระผู้เป็นเจ้าองค์แรกหรือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ที่ทราบกันในอีกพระนามหนึ่ง<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;ผู้ทรงเป็นแหล่งกำเนิดสูงสุดของแหล่งกำเนิดทั้งปวง
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อีศฺวรฮ ปรมฮ กฺฤษฺณฮ</i><br /><i>สจฺ-จิทฺ-อานนฺท-วิคฺรหฮ</i><br /><i>อนาทิรฺ อาทิรฺ โควินฺทฮ</i><br /><i>สรฺว-การณ-การณมฺ</i>
+<span class="slant iast">īśvaraḥ paramaḥ kṛṣṇaḥ<br /></span>
+<span class="slant pali">อีศฺวรห์ ปรมห์ กฺฤษฺณห์<br /></span>
+<span class="slant thai">อีศวะระห์ ปะระมะห์ กฤษณะห์<br /></span>
+<span class="slant ram">อีชวะระฮ พะระมะฮ คริชณะฮ<br /></span>
+<span class="slant iast">sac-cid-ānanda-vigrahaḥ<br /></span>
+<span class="slant pali">สจฺ-จิทฺ-อานนฺท-วิคฺรหห์<br /></span>
+<span class="slant thai">สัจ-จิท-อานันทะ-วิคระหะห์<br /></span>
+<span class="slant ram">สัช-ชิด-อานันดะ-วิกระฮะฮ<br /></span>
+<span class="slant iast">anādir ādir govindaḥ<br /></span>
+<span class="slant pali">อนาทิรฺ อาทิรฺ โควินฺทห์<br /></span>
+<span class="slant thai">อะนาทิร อาทิร โควินทะห์<br /></span>
+<span class="slant ram">อนาดิร อาดิร โกวินดะฮ<br /></span>
+<span class="slant iast">sarva-kāraṇa-kāraṇam<br /></span>
+<span class="slant pali">สรฺว-การณ-การณมฺ<br /></span>
+<span class="slant thai">สัรวะ-การะณะ-การะณัม<br /></span>
+<span class="slant ram">สารวะ-คาระณา-คาระณัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “มีบุคลิกภาพมากมายผู้เป็นเจ้าของคุณสมบัติแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็น<wbr>บุคลิกภาพที่สูงสุด&nbsp;&nbsp;เพราะว่าไม่มีผู้ใดเลอเลิศไปกว่า&nbsp;&nbsp;พระวรกายของพระองค์ทรงเป็น<wbr>อมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความรู้&nbsp;&nbsp;และความสุขเกษมสำราญ&nbsp;&nbsp;พระองค์ทรงเป็น&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์แรก&nbsp;&nbsp;และทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง”&nbsp;&nbsp;(<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;5.1)
+  “มีบุคลิกภาพมากมายผู้เป็นเจ้าของคุณสมบัติแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็น<wbr>บุคลิกภาพที่สูงสุด&nbsp;&nbsp;เพราะว่าไม่มีผู้ใดเลอเลิศไปกว่า&nbsp;&nbsp;พระวรกายของพระองค์ทรงเป็น<wbr>อมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความรู้&nbsp;&nbsp;และความสุขเกษมสำราญ&nbsp;&nbsp;พระองค์ทรงเป็น&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์แรก&nbsp;&nbsp;และทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง”&nbsp;&nbsp;(<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;5.1)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีพระนามของบุคลิกภาพสูงสุดแห่งพระเจ้ามากมาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;เช่น<wbr>กัน&nbsp;&nbsp;แต่ได้อธิบายไว้ว่า&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นองค์แรกของบุคลิกภาพแห่งพระเจ้า&nbsp;&nbsp;และจาก<i>กฺฤษฺณ</i>&nbsp;&nbsp;จึงมีอวตารแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;มากมายที่ทรงแบ่งภาคออกมา
+  มีพระนามของบุคลิกภาพสูงสุดแห่งพระเจ้ามากมาย&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;เช่น<wbr>กัน&nbsp;&nbsp;แต่ได้อธิบายไว้ว่า&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นองค์แรกของบุคลิกภาพแห่งพระเจ้า&nbsp;&nbsp;และจาก<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จึงมีอวตารแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;มากมายที่ทรงแบ่งภาคออกมา
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เอเต จาํศ-กลาฮ ปุํสฮ</i><br /><i>กฺฤษฺณสฺ ตุ ภควานฺ สฺวยมฺ</i><br /><i>อินฺทฺราริ-วฺยากุลํ โลกํ</i><br /><i>มฺฤฑยนฺติ ยุเค ยุเค</i>
+<span class="slant iast">ete cāṁśa-kalāḥ puṁsaḥ<br /></span>
+<span class="slant pali">เอเต จำศ-กลาห์ ปุํสห์<br /></span>
+<span class="slant thai">เอเต จางศะ-กะลาห์ ปุงสะห์<br /></span>
+<span class="slant ram">เอเท ชามชะ-คะลาฮ พุมสะฮ<br /></span>
+<span class="slant iast">kṛṣṇas tu bhagavān svayam<br /></span>
+<span class="slant pali">กฺฤษฺณสฺ ตุ ภควานฺ สฺวยมฺ<br /></span>
+<span class="slant thai">กฤษณัส ตุ ภะคะวาน สวะยัม<br /></span>
+<span class="slant ram">คริชณัส ทะ บฺะะกะวาน สวะยัม<br /></span>
+<span class="slant iast">indrāri-vyākulaṁ lokaṁ<br /></span>
+<span class="slant pali">อินฺทฺราริ-วฺยากุลํ โลกํ<br /></span>
+<span class="slant thai">อินทราริ-วยากุลัง โลกัง<br /></span>
+<span class="slant ram">อินดราริ-วิยาคุลัม โลคัม<br /></span>
+<span class="slant iast">mṛḍayanti yuge yuge<br /></span>
+<span class="slant pali">มฺฤฑยนฺติ ยุเค ยุเค<br /></span>
+<span class="slant thai">มฤฑะยันติ ยุเค ยุเค<br /></span>
+<span class="slant ram">มริดฺะยันทิ ยุเก ยุเกฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “รายพระนามของอวตารแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทั้งหมดที่เสนอไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;เป็นภาคที่แบ่ง<wbr>แยกมาจากพระองค์&nbsp;&nbsp;หรือส่วนของภาคที่แบ่งแยกมาจากพระองค์&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็น<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้าเอง”&nbsp;&nbsp;(<i>ภาควต</i>&nbsp;&nbsp;1.3.28&nbsp;&nbsp;)
+  “รายพระนามของอวตารแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทั้งหมดที่เสนอไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;เป็นภาคที่แบ่ง<wbr>แยกมาจากพระองค์&nbsp;&nbsp;หรือส่วนของภาคที่แบ่งแยกมาจากพระองค์&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็น<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้าเอง”&nbsp;&nbsp;(<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;1.3.28&nbsp;&nbsp;)
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ฉะนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้าองค์แรก&nbsp;&nbsp;ทรงเป็นสัจธรรม<wbr>ที่สมบูรณ์&nbsp;&nbsp;และทรงเป็นแหล่งกำเนิดของทั้ง&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ที่ไร้รูปลักษณ์
+  ฉะนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้าองค์แรก&nbsp;&nbsp;ทรงเป็นสัจธรรม<wbr>ที่สมบูรณ์&nbsp;&nbsp;และทรงเป็นแหล่งกำเนิดของทั้ง&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ที่ไร้รูปลักษณ์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ต่อหน้าพระพักตร์ของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ความเศร้าโศกเสียใจของ<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ที่ทรงมีต่อบรรดาสังคญาติเป็นสิ่งที่ไม่น่าจะเกิดขึ้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงแสดง<wbr>ความสนเท่ห์พระฤทัยด้วยคำดำรัสว่า&nbsp;&nbsp;<i>กุตฮ</i>&nbsp;&nbsp;“มาจากไหน”&nbsp;&nbsp;มลทินนี้ไม่ควรเกิดขึ้นกับ<wbr>ผู้ที่อยู่ในชนชั้นที่มีอารยธรรมซึ่งได้ชื่อว่าเป็นชาว&nbsp;&nbsp;<i>อารฺยนฺ</i>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>อารฺยนฺ</i>&nbsp;&nbsp;ใช้กับผู้ที่ทราบ<wbr>ถึงคุณค่าแห่งชีวิต&nbsp;&nbsp;และมีอารยธรรมอยู่บนฐานความรู้แจ้งแห่งดวงวิญญาณ&nbsp;&nbsp;ผู้ที่มีแนว<wbr>ความคิดทางวัตถุเป็นแกนนำจะไม่ทราบจุดมุ่งหมายของชีวิตว่าเราควรรู้แจ้งถึงสัจธรรม<wbr>ที่สมบูรณ์คือองค์&nbsp;&nbsp;<i>วิษฺณุ</i>&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และจะถูกลักษณะภายนอกของโลกวัตถุยั่วยวนดังนั้นจึงไม่ทราบว่าความหลุดพ้นคืออะไร&nbsp;&nbsp;ผู้ที่ไม่มีความรู้เกี่ยวกับความหลุดพ้นจาก<wbr>พันธนาการทางวัตถุเรียกว่าอนารยชน&nbsp;&nbsp;ถึงแม้ว่า&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;แต่พระองค์ทรง<wbr>หลีกเลี่ยงหน้าที่ทั้งหมดด้วยการปฏิเสธที่จะสู้รบ&nbsp;&nbsp;การกระทำด้วยความขลาดกลัวเช่นนี้<wbr>เหมาะสำหรับอนารยชน&nbsp;&nbsp;การบ่ายเบี่ยงจากหน้าที่เช่นนี้จะไม่ช่วยให้เราเจริญก้าวหน้าใน<wbr>ชีวิตทิพย์&nbsp;&nbsp;และไม่เปิดโอกาสให้เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีชื่อเสียงที่ดีงามในโลกนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไม่เห็น<wbr>ด้วยกับสิ่งที่เรียกว่า&nbsp;&nbsp;ความเมตตาสงสารของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ที่ทรงมีต่อสังคญาติ
+  ต่อหน้าพระพักตร์ของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ความเศร้าโศกเสียใจของ<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ที่ทรงมีต่อบรรดาสังคญาติเป็นสิ่งที่ไม่น่าจะเกิดขึ้น&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงแสดง<wbr>ความสนเท่ห์พระฤทัยด้วยคำดำรัสว่า&nbsp;&nbsp;<span class="slant iast">kutaḥ</span><span class="slant pali">กุตห์</span><span class="slant thai">กุตะห์</span><span class="slant ram">คุทะฮ</span>&nbsp;&nbsp;“มาจากไหน”&nbsp;&nbsp;มลทินนี้ไม่ควรเกิดขึ้นกับ<wbr>ผู้ที่อยู่ในชนชั้นที่มีอารยธรรมซึ่งได้ชื่อว่าเป็นชาว&nbsp;&nbsp;<span class="slant iast">āryan</span><span class="slant pali">อารฺยนฺ</span><span class="slant thai">อารยัน</span><span class="slant ram">อารยัน</span>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">āryan</span><span class="slant pali">อารฺยนฺ</span><span class="slant thai">อารยัน</span><span class="slant ram">อารยัน</span>&nbsp;&nbsp;ใช้กับผู้ที่ทราบ<wbr>ถึงคุณค่าแห่งชีวิต&nbsp;&nbsp;และมีอารยธรรมอยู่บนฐานความรู้แจ้งแห่งดวงวิญญาณ&nbsp;&nbsp;ผู้ที่มีแนว<wbr>ความคิดทางวัตถุเป็นแกนนำจะไม่ทราบจุดมุ่งหมายของชีวิตว่าเราควรรู้แจ้งถึงสัจธรรม<wbr>ที่สมบูรณ์คือองค์&nbsp;&nbsp;<span class="slant iast">viṣṇu</span><span class="slant pali">วิษฺณุ</span><span class="slant thai">วิษณุ</span><span class="slant ram">วิชณุ</span>&nbsp;&nbsp;หรือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และจะถูกลักษณะภายนอกของโลกวัตถุยั่วยวนดังนั้นจึงไม่ทราบว่าความหลุดพ้นคืออะไร&nbsp;&nbsp;ผู้ที่ไม่มีความรู้เกี่ยวกับความหลุดพ้นจาก<wbr>พันธนาการทางวัตถุเรียกว่าอนารยชน&nbsp;&nbsp;ถึงแม้ว่า&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;แต่พระองค์ทรง<wbr>หลีกเลี่ยงหน้าที่ทั้งหมดด้วยการปฏิเสธที่จะสู้รบ&nbsp;&nbsp;การกระทำด้วยความขลาดกลัวเช่นนี้<wbr>เหมาะสำหรับอนารยชน&nbsp;&nbsp;การบ่ายเบี่ยงจากหน้าที่เช่นนี้จะไม่ช่วยให้เราเจริญก้าวหน้าใน<wbr>ชีวิตทิพย์&nbsp;&nbsp;และไม่เปิดโอกาสให้เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีชื่อเสียงที่ดีงามในโลกนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไม่เห็น<wbr>ด้วยกับสิ่งที่เรียกว่า&nbsp;&nbsp;ความเมตตาสงสารของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ที่ทรงมีต่อสังคญาติ
   </p>
 </div>
 

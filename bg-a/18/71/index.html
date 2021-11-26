@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.71</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรทฺธาวานฺ อนสูยศฺ จ</i><br /><i>ศฺฤณุยาทฺ อปิ โย นรฮ</i><br /><i>โส ′ปิ มุกฺตฮ ศุภาฦ โลกานฺ</i><br /><i>ปฺราปฺนุยาตฺ ปุณฺย-กรฺมณามฺ</i>
+<span class="slant iast">śraddhāvān anasūyaś ca<br /></span>
+<span class="slant pali">ศฺรทฺธาวานฺ อนสูยศฺ จ<br /></span>
+<span class="slant thai">ศรัทธาวาน อะนะสูยัศ จะ<br /></span>
+<span class="slant ram">ชรัดดฺาวาน อนะสูยัช ชะ<br /></span>
+<span class="slant iast">śṛṇuyād api yo naraḥ<br /></span>
+<span class="slant pali">ศฺฤณุยาทฺ อปิ โย นรห์<br /></span>
+<span class="slant thai">ศฤณุยาท อะปิ โย นะระห์<br /></span>
+<span class="slant ram">ชริณุยาด อพิ โย นะระฮ<br /></span>
+<span class="slant iast">so ’pi muktaḥ śubhāḻ lokān<br /></span>
+<span class="slant pali">โส ’ปิ มุกฺตห์ ศุภาฬฺ โลกานฺ<br /></span>
+<span class="slant thai">โส ’ปิ มุกตะห์ ศุภาฬ โลกาน<br /></span>
+<span class="slant ram">โส ่พิ มุคทะฮ ชูบฺาล โลคาน<br /></span>
+<span class="slant iast">prāpnuyāt puṇya-karmaṇām<br /></span>
+<span class="slant pali">ปฺราปฺนุยาตฺ ปุณฺย-กรฺมณามฺ<br /></span>
+<span class="slant thai">ปราปนุยาต ปุณยะ-กัรมะณาม<br /></span>
+<span class="slant ram">พราพนุยาท พุณยะ-คารมะณาม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรทฺธา-วานฺ</i> — ศรัทธา, <i>อนสูยฮ</i> — ไม่อิจฉาริษยา, <i>จ</i> — และ, <i>ศฺฤณุยาตฺ</i> — สดับฟัง, <i>อปิ</i> — แน่นอน, <i>ยฮ</i> — เขา, <i>นรฮ</i> — มนุษย์, <i>สฮ</i> — เขา, <i>อปิ</i> — เช่นกัน, <i>มุกฺตฮ</i> — หลุดพ้น, <i>ศุภานฺ</i> — เป็นมงคล, <i>โลกานฺ</i> — โลก, <i>ปฺราปฺนุยาตฺ</i> — เขาบรรลุ, <i>ปุณฺย-กรฺมณามฺ</i> — แห่งบุญ
+  <span class="slant iast">śraddhā-vān</span><span class="slant pali">ศฺรทฺธา-วานฺ</span><span class="slant thai">ศรัทธา-วาน</span><span class="slant ram">ชรัดดฺา-วาน</span> — ศรัทธา, <span class="slant iast">anasūyaḥ</span><span class="slant pali">อนสูยห์</span><span class="slant thai">อะนะสูยะห์</span><span class="slant ram">อนะสูยะฮ</span> — ไม่อิจฉาริษยา, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">śṛṇuyāt</span><span class="slant pali">ศฺฤณุยาตฺ</span><span class="slant thai">ศฤณุยาต</span><span class="slant ram">ชริณุยาท</span> — สดับฟัง, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แน่นอน, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — เขา, <span class="slant iast">naraḥ</span><span class="slant pali">นรห์</span><span class="slant thai">นะระห์</span><span class="slant ram">นะระฮ</span> — มนุษย์, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">muktaḥ</span><span class="slant pali">มุกฺตห์</span><span class="slant thai">มุกตะห์</span><span class="slant ram">มุคทะฮ</span> — หลุดพ้น, <span class="slant iast">śubhān</span><span class="slant pali">ศุภานฺ</span><span class="slant thai">ศุภาน</span><span class="slant ram">ชุบฺาน</span> — เป็นมงคล, <span class="slant iast">lokān</span><span class="slant pali">โลกานฺ</span><span class="slant thai">โลกาน</span><span class="slant ram">โลคาน</span> — โลก, <span class="slant iast">prāpnuyāt</span><span class="slant pali">ปฺราปฺนุยาตฺ</span><span class="slant thai">ปราปนุยาต</span><span class="slant ram">พราพนุยาท</span> — เขาบรรลุ, <span class="slant iast">puṇya-karmaṇām</span><span class="slant pali">ปุณฺย-กรฺมณามฺ</span><span class="slant thai">ปุณยะ-กัรมะณาม</span><span class="slant ram">พุณยะ-คารมะณาม</span> — แห่งบุญ
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกที่หกสิบเจ็ดของบทนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงห้ามไว้อย่างชัดเจนว่าไม่ควรสอน&nbsp;&nbsp;แก่พวกที่อิจฉาริษยาพระองค์&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;มีไว้สำหรับสาวกเท่านั้น&nbsp;&nbsp;แต่<wbr>บางครั้งสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เปิดชั้นเรียน&nbsp;&nbsp;และในชั้นเรียนไม่ใช่ว่านักศึกษาทุกคนเป็น<wbr>สาวก&nbsp;&nbsp;คำถามคือแล้วทำไมจึงเปิดชั้นเรียน?&nbsp;&nbsp;อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าถึงแม้ว่าไม่ใช่ทุกคนเป็น<wbr>สาวก&nbsp;&nbsp;แต่มีหลายคนที่ไม่อิจฉาริษยา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และมีความศรัทธาพระองค์ในฐานะที่เป็น<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;หากบุคคลเหล่านี้สดับฟังเกี่ยวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จากสาวก<wbr>ผู้ที่เชื่อถือได้&nbsp;&nbsp;ผลก็คือพวกเขาจะเป็นอิสระจากผลบาปทั้งปวงทันที&nbsp;&nbsp;และหลังจากนั้นจะ<wbr>บรรลุถึงระบบดาวเคราะห์ที่คนมีคุณธรรมทั้งหลายอาศัยอยู่&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพียงแต่สดับฟัง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;แม้บุคคลผู้ไม่พยายามเป็นสาวกผู้บริสุทธิ์จะบรรลุถึงผลแห่งกิจกรรมที่มี<wbr>คุณธรรม&nbsp;&nbsp;ดังนั้นสาวกผู้บริสุทธิ์ของพระองค์เปิดโอกาสให้ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนเป็นอิสระจากผล<wbr>บาปทั้งหมดและมาเป็นสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  โศลกที่หกสิบเจ็ดของบทนี้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงห้ามไว้อย่างชัดเจนว่าไม่ควรสอน&nbsp;&nbsp;แก่พวกที่อิจฉาริษยาพระองค์&nbsp;&nbsp;อีกนัยหนึ่ง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;มีไว้สำหรับสาวกเท่านั้น&nbsp;&nbsp;แต่<wbr>บางครั้งสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เปิดชั้นเรียน&nbsp;&nbsp;และในชั้นเรียนไม่ใช่ว่านักศึกษาทุกคนเป็น<wbr>สาวก&nbsp;&nbsp;คำถามคือแล้วทำไมจึงเปิดชั้นเรียน?&nbsp;&nbsp;อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าถึงแม้ว่าไม่ใช่ทุกคนเป็น<wbr>สาวก&nbsp;&nbsp;แต่มีหลายคนที่ไม่อิจฉาริษยา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และมีความศรัทธาพระองค์ในฐานะที่เป็น<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;หากบุคคลเหล่านี้สดับฟังเกี่ยวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จากสาวก<wbr>ผู้ที่เชื่อถือได้&nbsp;&nbsp;ผลก็คือพวกเขาจะเป็นอิสระจากผลบาปทั้งปวงทันที&nbsp;&nbsp;และหลังจากนั้นจะ<wbr>บรรลุถึงระบบดาวเคราะห์ที่คนมีคุณธรรมทั้งหลายอาศัยอยู่&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เพียงแต่สดับฟัง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;แม้บุคคลผู้ไม่พยายามเป็นสาวกผู้บริสุทธิ์จะบรรลุถึงผลแห่งกิจกรรมที่มี<wbr>คุณธรรม&nbsp;&nbsp;ดังนั้นสาวกผู้บริสุทธิ์ของพระองค์เปิดโอกาสให้ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนเป็นอิสระจากผล<wbr>บาปทั้งหมดและมาเป็นสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โดยทั่วไปผู้ที่เป็นอิสระจากผลบาป&nbsp;&nbsp;พวกที่มีคุณธรรมจะปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกได้โดยง่ายดาย&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>ปุณฺย-กรฺมณามฺ</i>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ซึ่งหมายถึง<wbr>การปฏิบัติพิธีบูชาที่ยิ่งใหญ่เช่น&nbsp;&nbsp;<i>อศฺวเมธ-ยชฺญ</i>&nbsp;&nbsp;ที่ได้กล่าวไว้ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;พวกที่มีคุณธรรมปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;แต่ยังไม่บริสุทธิ์ทีเดียวสามารถบรรลุ<wbr>ถึงระบบดาวเคราะห์ของดาวเหนือหรือ&nbsp;&nbsp;<i>ธฺรุวโลก</i>&nbsp;&nbsp;ที่&nbsp;&nbsp;<i>ธฺรุว&nbsp;&nbsp;มหาราช</i>&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่<wbr>ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงประทับอยู่&nbsp;&nbsp;และทรงมีดาวเคราะห์พิเศษเรียกว่าดาวเหนือ
+  โดยทั่วไปผู้ที่เป็นอิสระจากผลบาป&nbsp;&nbsp;พวกที่มีคุณธรรมจะปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกได้โดยง่ายดาย&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">puṇya-karmaṇām</span><span class="slant pali">ปุณฺย-กรฺมณามฺ</span><span class="slant thai">ปุณยะ-กัรมะณาม</span><span class="slant ram">พุณยะ-คารมะณาม</span>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;ซึ่งหมายถึง<wbr>การปฏิบัติพิธีบูชาที่ยิ่งใหญ่เช่น&nbsp;&nbsp;<span class="slant iast">aśvamedha-yajña</span><span class="slant pali">อศฺวเมธ-ยชฺญ</span><span class="slant thai">อัศวะเมธะ-ยัชญะ</span><span class="slant ram">zzz-ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ที่ได้กล่าวไว้ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;พวกที่มีคุณธรรมปฏิบัติการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;แต่ยังไม่บริสุทธิ์ทีเดียวสามารถบรรลุ<wbr>ถึงระบบดาวเคราะห์ของดาวเหนือหรือ&nbsp;&nbsp;<span class="slant iast">dhruvaloka</span><span class="slant pali">ธฺรุวโลก</span><span class="slant thai">ธรุวะโลกะ</span><span class="slant ram">ดฺรุวะโลคะ</span>&nbsp;&nbsp;ที่&nbsp;&nbsp;<span class="slant iast">dhruva&nbsp;&nbsp;mahārāja</span><span class="slant pali">ธฺรุวมหาราช</span><span class="slant thai">ธรุวะมะหาราชะ</span><span class="slant ram">ดฺรุวะมะฮาราจะ</span>&nbsp;&nbsp;สาวกผู้ยิ่งใหญ่<wbr>ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงประทับอยู่&nbsp;&nbsp;และทรงมีดาวเคราะห์พิเศษเรียกว่าดาวเหนือ
   </p>
 </div>
 

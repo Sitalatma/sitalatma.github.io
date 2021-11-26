@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 14.18</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อูรฺธฺวํ คจฺฉนฺติ สตฺตฺว-สฺตฺหา</i><br /><i>มเธฺย ติษฺฐนฺติ ราชสาฮ</i><br /><i>ชฆนฺย-คุณ-วฺฤตฺติ-สฺตฺหา</i><br /><i>อโธ คจฺฉนฺติ ตามสาฮ</i>
+<span class="slant iast">ūrdhvaṁ gacchanti sattva-sthā<br /></span>
+<span class="slant pali">อูรฺธฺวํ คจฺฉนฺติ สตฺตฺว-สฺถา<br /></span>
+<span class="slant thai">อูรธวัง คัจฉันติ สัตตวะ-สถา<br /></span>
+<span class="slant ram">อูรดฺวัม กัชชัฺนทิ สัททวะ-สทฺา<br /></span>
+<span class="slant iast">madhye tiṣṭhanti rājasāḥ<br /></span>
+<span class="slant pali">มเธฺย ติษฺฐนฺติ ราชสาห์<br /></span>
+<span class="slant thai">มัธเย ติษฐันติ ราชะสาห์<br /></span>
+<span class="slant ram">มัดฺเย ทิชทัฺนทิ ราจะสาฮ<br /></span>
+<span class="slant iast">jaghanya-guṇa-vṛtti-sthā<br /></span>
+<span class="slant pali">ชฆนฺย-คุณ-วฺฤตฺติ-สฺถา<br /></span>
+<span class="slant thai">ชะฆันยะ-คุณะ-วฤตติ-สถา<br /></span>
+<span class="slant ram">จะกัฺนยะ-กุณะ-วริททิ-สทฺา<br /></span>
+<span class="slant iast">adho gacchanti tāmasāḥ<br /></span>
+<span class="slant pali">อโธ คจฺฉนฺติ ตามสาห์<br /></span>
+<span class="slant thai">อะโธ คัจฉันติ ตามะสาห์<br /></span>
+<span class="slant ram">อโดฺ กัชชัฺนทิ ทามะสาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อูรฺธฺวมฺ</i> — ขึ้นไป, <i>คจฺฉนฺติ</i> — ไป, <i>สตฺตฺว-สฺตฺหาฮ</i> — พวกที่สถิตในระดับความดี, <i>มเธฺย</i> — ตรง กลาง, <i>ติษฺฐนฺติ</i> — อาศัย, <i>ราชสาฮ</i> — พวกสถิตในระดับตัณหา, <i>ชฆนฺย</i> — น่ารังเกียจ, <i>คุณ</i> — คุณสมบัติ, <i>วฺฤตฺติ-สฺตฺหาฮ</i> — อาชีพของเขา, <i>อธฮ</i> — ตกต่ำ, <i>คจฺฉนฺติ</i> — ไป, <i>ตามสาฮ</i> — บุคคลในระดับอวิชชา
+  <span class="slant iast">ūrdhvam</span><span class="slant pali">อูรฺธฺวมฺ</span><span class="slant thai">อูรธวัม</span><span class="slant ram">อูรดฺวัม</span> — ขึ้นไป, <span class="slant iast">gacchanti</span><span class="slant pali">คจฺฉนฺติ</span><span class="slant thai">คัจฉันติ</span><span class="slant ram">กัชชัฺนทิ</span> — ไป, <span class="slant iast">sattva-sthāḥ</span><span class="slant pali">สตฺตฺว-สฺถาห์</span><span class="slant thai">สัตตวะ-สถาห์</span><span class="slant ram">สัททวะ-สทฺาฮ</span> — พวกที่สถิตในระดับความดี, <span class="slant iast">madhye</span><span class="slant pali">มเธฺย</span><span class="slant thai">มัธเย</span><span class="slant ram">มัดฺเย</span> — ตรง กลาง, <span class="slant iast">tiṣṭhanti</span><span class="slant pali">ติษฺฐนฺติ</span><span class="slant thai">ติษฐันติ</span><span class="slant ram">ทัชทัฺนทิ</span> — อาศัย, <span class="slant iast">rājasāḥ</span><span class="slant pali">ราชสาห์</span><span class="slant thai">ราชะสาห์</span><span class="slant ram">ราจะสาฮ</span> — พวกสถิตในระดับตัณหา, <span class="slant iast">jaghanya</span><span class="slant pali">ชฆนฺย</span><span class="slant thai">ชะฆันยะ</span><span class="slant ram">จะกัฺนยะ</span> — น่ารังเกียจ, <span class="slant iast">guṇa</span><span class="slant pali">คุณ</span><span class="slant thai">คุณะ</span><span class="slant ram">กุณะ</span> — คุณสมบัติ, <span class="slant iast">vṛtti-sthāḥ</span><span class="slant pali">วฺฤตฺติ-สฺถาห์</span><span class="slant thai">วฤตติ-สถาห์</span><span class="slant ram">วริททิ-สทฺาฮ</span> — อาชีพของเขา, <span class="slant iast">adhaḥ</span><span class="slant pali">อธห์</span><span class="slant thai">อะธะห์</span><span class="slant ram">อดฺะฮ</span> — ตกต่ำ, <span class="slant iast">gacchanti</span><span class="slant pali">คจฺฉนฺติ</span><span class="slant thai">คัจฉันติ</span><span class="slant ram">กัชชัฺนทิ</span> — ไป, <span class="slant iast">tāmasāḥ</span><span class="slant pali">ตามสาห์</span><span class="slant thai">ตามะสาห์</span><span class="slant ram">ทามะสาฮ</span> — บุคคลในระดับอวิชชา
   </p>
 </div>
 
@@ -73,25 +174,25 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โศลกนี้ผลกรรมของสามระดับแห่งธรรมชาติกำหนดไว้ชัดเจนยิ่งขึ้น&nbsp;&nbsp;มีระบบ<wbr>ดาวเคราะห์ที่สูงกว่าประกอบไปด้วยโลกสวรรค์ที่ประชากรมีการพัฒนาสูงมาก&nbsp;&nbsp;ตาม<wbr>ระดับการพัฒนาในระดับความดีสิ่งมีชีวิตสามารถย้ายไปยังโลกต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในระบบนี้&nbsp;&nbsp;ดาว<wbr>เคราะห์ที่สูงสุดคือ&nbsp;&nbsp;<i>สตฺยโลก</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>พฺรหฺมโลก</i>&nbsp;&nbsp;สถานที่ที่พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;ซึ่งเป็นบุคคล<wbr>แรกของจักรวาลนี้ประทับอยู่&nbsp;&nbsp;ได้เห็นแล้วว่าเราคำนวณสภาวะอันน่าอัศจรรย์ของชีวิต&nbsp;&nbsp;<i>พฺรหฺมโลก</i>&nbsp;&nbsp;ได้ลำบากมาก&nbsp;&nbsp;แต่สภาวะสูงสุดของชีวิตในระดับความดีสามารถนำเราไป<wbr>ถึงที่นั่น
+  โศลกนี้ผลกรรมของสามระดับแห่งธรรมชาติกำหนดไว้ชัดเจนยิ่งขึ้น&nbsp;&nbsp;มีระบบ<wbr>ดาวเคราะห์ที่สูงกว่าประกอบไปด้วยโลกสวรรค์ที่ประชากรมีการพัฒนาสูงมาก&nbsp;&nbsp;ตาม<wbr>ระดับการพัฒนาในระดับความดีสิ่งมีชีวิตสามารถย้ายไปยังโลกต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในระบบนี้&nbsp;&nbsp;ดาว<wbr>เคราะห์ที่สูงสุดคือ&nbsp;&nbsp;<span class="slant iast">satyaloka</span><span class="slant pali">สตฺยโลก</span><span class="slant thai">สัตยะโลกะ</span><span class="slant ram">สัทยะโลคะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">brahmaloka</span><span class="slant pali">พฺรหฺมโลก</span><span class="slant thai">พรัหมะโลกะ</span><span class="slant ram">บระฮมะโลคะ</span>&nbsp;&nbsp;สถานที่ที่พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;ซึ่งเป็นบุคคล<wbr>แรกของจักรวาลนี้ประทับอยู่&nbsp;&nbsp;ได้เห็นแล้วว่าเราคำนวณสภาวะอันน่าอัศจรรย์ของชีวิต&nbsp;&nbsp;<span class="slant iast">brahmaloka</span><span class="slant pali">พฺรหฺมโลก</span><span class="slant thai">พรัหมะโลกะ</span><span class="slant ram">บระฮมะโลคะ</span>&nbsp;&nbsp;ได้ลำบากมาก&nbsp;&nbsp;แต่สภาวะสูงสุดของชีวิตในระดับความดีสามารถนำเราไป<wbr>ถึงที่นั่น
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ระดับตัณหาเป็นการผสมผสานอยู่ตรงกลางระหว่างระดับความดีและอวิชชาบุคคลจะไม่บริสุทธิ์เสมอไป&nbsp;&nbsp;แม้หากบริสุทธิ์ในระดับตัณหา&nbsp;&nbsp;เขาก็ยังคงอยู่ในโลกนี้เป็น<wbr>&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;หรือเป็นเศรษฐี&nbsp;&nbsp;แต่เนื่องจากมีการผสมผสานกัน&nbsp;&nbsp;จึงอาจตกลงต่ำได้&nbsp;&nbsp;ผู้คนในโลก<wbr>นี้ที่อยู่ในระดับตัณหาหรืออวิชชา&nbsp;&nbsp;ไม่สามารถบังคับเครื่องจักรกลให้ไปถึงดาวเคราะห์ที่<wbr>สูงกว่าได้&nbsp;&nbsp;ในระดับตัณหามีโอกาสที่จะกลายมาเป็นคนบ้าคลั่งในชาติหน้าได้เหมือนกัน
+  ระดับตัณหาเป็นการผสมผสานอยู่ตรงกลางระหว่างระดับความดีและอวิชชาบุคคลจะไม่บริสุทธิ์เสมอไป&nbsp;&nbsp;แม้หากบริสุทธิ์ในระดับตัณหา&nbsp;&nbsp;เขาก็ยังคงอยู่ในโลกนี้เป็น<wbr>&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;หรือเป็นเศรษฐี&nbsp;&nbsp;แต่เนื่องจากมีการผสมผสานกัน&nbsp;&nbsp;จึงอาจตกลงต่ำได้&nbsp;&nbsp;ผู้คนในโลก<wbr>นี้ที่อยู่ในระดับตัณหาหรืออวิชชา&nbsp;&nbsp;ไม่สามารถบังคับเครื่องจักรกลให้ไปถึงดาวเคราะห์ที่<wbr>สูงกว่าได้&nbsp;&nbsp;ในระดับตัณหามีโอกาสที่จะกลายมาเป็นคนบ้าคลั่งในชาติหน้าได้เหมือนกัน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คุณสมบัติต่ำสุดคือระดับอวิชชา&nbsp;&nbsp;อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าน่ารังเกียจ&nbsp;&nbsp;ผลของการ<wbr>พัฒนาอวิชชามีความเสี่ยงมาก&nbsp;&nbsp;เป็นคุณสมบัติต่ำสุดในธรรมชาติวัตถุ&nbsp;&nbsp;ที่ต่ำกว่าระดับ<wbr>มนุษย์มีอยู่แปดล้านเผ่าพันธุ์ของชีวิต&nbsp;&nbsp;เช่น&nbsp;&nbsp;นก&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;สัตว์เลื้อยคลาน&nbsp;&nbsp;ต้นไม้&nbsp;&nbsp;ฯลฯเมื่อพัฒนาระดับอวิชชาผู้คนถูกนำให้ลงไปสู่สภาวะอันน่ารังเกียจเหล่านี้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>ตามสาฮ</i>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;<i>ตามสาฮ</i>&nbsp;&nbsp;แสดงให้เห็นว่า&nbsp;&nbsp;พวกที่อยู่ในระดับอวิชชาอย่างต่อ<wbr>เนื่องโดยไม่เจริญขึ้นมาสู่ระดับที่สูงกว่า&nbsp;&nbsp;อนาคตของพวกนี้มืดมนมาก
+  คุณสมบัติต่ำสุดคือระดับอวิชชา&nbsp;&nbsp;อธิบาย&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าน่ารังเกียจ&nbsp;&nbsp;ผลของการ<wbr>พัฒนาอวิชชามีความเสี่ยงมาก&nbsp;&nbsp;เป็นคุณสมบัติต่ำสุดในธรรมชาติวัตถุ&nbsp;&nbsp;ที่ต่ำกว่าระดับ<wbr>มนุษย์มีอยู่แปดล้านเผ่าพันธุ์ของชีวิต&nbsp;&nbsp;เช่น&nbsp;&nbsp;นก&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;สัตว์เลื้อยคลาน&nbsp;&nbsp;ต้นไม้&nbsp;&nbsp;ฯลฯเมื่อพัฒนาระดับอวิชชาผู้คนถูกนำให้ลงไปสู่สภาวะอันน่ารังเกียจเหล่านี้&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">tāmasāḥ</span><span class="slant pali">ตามสาห์</span><span class="slant thai">ตามะสาห์</span><span class="slant ram">ทามะสาฮ</span>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;<span class="slant iast">tāmasāḥ</span><span class="slant pali">ตามสาห์</span><span class="slant thai">ตามะสาห์</span><span class="slant ram">ทามะสาฮ</span>&nbsp;&nbsp;แสดงให้เห็นว่า&nbsp;&nbsp;พวกที่อยู่ในระดับอวิชชาอย่างต่อ<wbr>เนื่องโดยไม่เจริญขึ้นมาสู่ระดับที่สูงกว่า&nbsp;&nbsp;อนาคตของพวกนี้มืดมนมาก
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สำหรับมนุษย์ผู้อยู่ในระดับอวิชชาและตัณหามีโอกาสที่จะพัฒนามาสู่ระดับ<wbr>ความดี&nbsp;&nbsp;ระบบที่จะพัฒนาเช่นนี้เรียกว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;แต่ผู้ที่ไม่ฉวยประโยชน์จาก<wbr>โอกาสนี้แน่นอนว่าจะอยู่ในระดับที่ต่ำกว่าต่อเนื่องกันไป
+  สำหรับมนุษย์ผู้อยู่ในระดับอวิชชาและตัณหามีโอกาสที่จะพัฒนามาสู่ระดับ<wbr>ความดี&nbsp;&nbsp;ระบบที่จะพัฒนาเช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;แต่ผู้ที่ไม่ฉวยประโยชน์จาก<wbr>โอกาสนี้แน่นอนว่าจะอยู่ในระดับที่ต่ำกว่าต่อเนื่องกันไป
   </p>
 </div>
 

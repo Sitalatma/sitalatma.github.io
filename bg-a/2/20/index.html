@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.20</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น ชายเต มฺริยเต วา กทาจินฺ</i><br /><i>นายํ ภูตฺวา ภวิตา วา น ภูยฮ</i><br /><i>อโช นิตฺยฮ ศาศฺวโต ′ยํ ปุราโณ</i><br /><i>น หนฺยเต หนฺยมาเน ศรีเร</i>
+<span class="slant iast">na jāyate mriyate vā kadācin<br /></span>
+<span class="slant pali">น ชายเต มฺริยเต วา กทาจินฺ<br /></span>
+<span class="slant thai">นะ ชายะเต มริยะเต วา กะทาจิน<br /></span>
+<span class="slant ram">นะ จายะเท มริยะเท วา คะดาชิน<br /></span>
+<span class="slant iast">nāyaṁ bhūtvā bhavitā vā na bhūyaḥ<br /></span>
+<span class="slant pali">นายํ ภูตฺวา ภวิตา วา น ภูยห์<br /></span>
+<span class="slant thai">นายัง ภูตวา ภะวิตา วา นะ ภูยะห์<br /></span>
+<span class="slant ram">นายัม บํูทวา บฺะวิทา วา นะ บํูยะฮ<br /></span>
+<span class="slant iast">ajo nityaḥ śāśvato ’yaṁ purāṇo<br /></span>
+<span class="slant pali">อโช นิตฺยห์ ศาศฺวโต ’ยํ ปุราโณ<br /></span>
+<span class="slant thai">อะโช นิตยะห์ ศาศวะโต ’ยัง ปุราโณ<br /></span>
+<span class="slant ram">อโจ นิทยะฮ ชาชวะโท ´ยัม พุราโณ<br /></span>
+<span class="slant iast">na hanyate hanyamāne śarīre<br /></span>
+<span class="slant pali">น หนฺยเต หนฺยมาเน ศรีเร<br /></span>
+<span class="slant thai">นะ หันยะเต หันยะมาเน ศะรีเร<br /></span>
+<span class="slant ram">นะ ฮันยะเท ฮันยะมาเน ชะรีเรฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่เคย, <i>ชายเต</i> — เกิด, <i>มฺริยเต</i> — ตาย, <i>วา</i> — ไม่, <i>กทาจิตฺ</i> — ไม่ว่าเวลาใด (อดีต ปัจจุบัน หรืออนาคต), <i>น</i> — ไม่เคย, <i>อยมฺ</i> — นี้, <i>ภูตฺวา</i> — ได้มาเป็นอยู่, <i>ภวิตา</i> — จะมาเป็นอยู่, <i>วา</i> — หรือ, <i>น</i> — ไม่, <i>ภูยฮ</i> — หรือกลับมาเป็นอยู่อีกครั้งหนึ่ง, <i>อชฮ</i> — ไม่เกิด, <i>นิตฺยฮ</i> — อมตะ, <i>ศาศฺวตฮ</i> — ถาวร, <i>อยมฺ</i> — นี้, <i>ปุราณฮ</i> — เก่าแก่ที่สุด, <i>น</i> — ไม่เคย, <i>หนฺยเต</i> — ถูกสังหาร, <i>หนฺยมาเน</i> — ถูกสังหาร, <i>ศรีเร</i> — ร่างกาย
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">jāyate</span><span class="slant pali">ชายเต</span><span class="slant thai">ชายะเต</span><span class="slant ram">จายะเท</span> — เกิด, <span class="slant iast">mriyate</span><span class="slant pali">มฺริยเต</span><span class="slant thai">มริยะเต</span><span class="slant ram">มริยะเท</span> — ตาย, <span class="slant iast">vā</span><span class="slant pali">วา</span><span class="slant thai">วา</span><span class="slant ram">วา</span> — ไม่, <span class="slant iast">kadācit</span><span class="slant pali">กทาจิตฺ</span><span class="slant thai">กะทาจิต</span><span class="slant ram">คะดาชิท</span> — ไม่ว่าเวลาใด (อดีต ปัจจุบัน หรืออนาคต), <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">ayam</span><span class="slant pali">อยมฺ</span><span class="slant thai">อะยัม</span><span class="slant ram">อยัม</span> — นี้, <span class="slant iast">bhūtvā</span><span class="slant pali">ภูตฺวา</span><span class="slant thai">ภูตวา</span><span class="slant ram">บํูทวา</span> — ได้มาเป็นอยู่, <span class="slant iast">bhavitā</span><span class="slant pali">ภวิตา</span><span class="slant thai">ภะวิตา</span><span class="slant ram">บฺะวิทา</span> — จะมาเป็นอยู่, <span class="slant iast">vā</span><span class="slant pali">วา</span><span class="slant thai">วา</span><span class="slant ram">วา</span> — หรือ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">bhūyaḥ</span><span class="slant pali">ภูยห์</span><span class="slant thai">ภูยะห์</span><span class="slant ram">บํูยะฮ</span> — หรือกลับมาเป็นอยู่อีกครั้งหนึ่ง, <span class="slant iast">ajaḥ</span><span class="slant pali">อชห์</span><span class="slant thai">อะชะห์</span><span class="slant ram">อจะฮ</span> — ไม่เกิด, <span class="slant iast">nityaḥ</span><span class="slant pali">นิตฺยห์</span><span class="slant thai">นิตยะห์</span><span class="slant ram"> นิทยะฮ</span> — อมตะ, <span class="slant iast">śāśvataḥ</span><span class="slant pali">ศาศฺวตห์</span><span class="slant thai">ศาศวะตะห์</span><span class="slant ram">ชาชวะ ทะฮ</span> — ถาวร, <span class="slant iast">ayam</span><span class="slant pali">อยมฺ</span><span class="slant thai">อะยัม</span><span class="slant ram">อยัม</span> — นี้, <span class="slant iast">purāṇaḥ</span><span class="slant pali">ปุราณห์</span><span class="slant thai">ปุราณะห์</span><span class="slant ram">พุราณะฮ</span> — เก่าแก่ที่สุด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">hanyate</span><span class="slant pali">หนฺยเต</span><span class="slant thai">หันยะเต</span><span class="slant ram">ฮันยะเท</span> — ถูกสังหาร, <span class="slant iast">hanyamāne</span><span class="slant pali">หนฺยมาเน</span><span class="slant thai">หันยะมาเน</span><span class="slant ram">ฮันยะ มาเน</span> — ถูกสังหาร, <span class="slant iast">śarīre</span><span class="slant pali">ศรีเร</span><span class="slant thai">ศะรีเร</span><span class="slant ram">ชะรีเร</span> — ร่างกาย
   </p>
 </div>
 
@@ -73,49 +174,79 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โดยคุณภาพอนุวิญญาณซึ่งเป็นละอองอณูของอภิวิญญาณสูงสุดเป็นหนึ่ง<wbr>เดียวกับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่มีการเปลี่ยนแปลงเหมือนกับร่างกาย&nbsp;&nbsp;บางครั้งดวงวิญญาณเรียก<wbr>ว่าอมตะหรือ&nbsp;&nbsp;<i>กูฏ-สฺตฺห</i>&nbsp;&nbsp;ร่างกายมีการเปลี่ยนแปลงหกขั้นตอน&nbsp;&nbsp;มีการเกิดจากครรภ์<wbr>มารดา&nbsp;&nbsp;คงอยู่ระยะหนึ่ง&nbsp;&nbsp;เจริญเติบโต&nbsp;&nbsp;สืบพันธุ์&nbsp;&nbsp;ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หดตัวลง&nbsp;&nbsp;และในที่สุดก็สูญสลาย<wbr>ไป&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ดวงวิญญาณไม่ต้องผ่านขั้นตอนการเปลี่ยนแปลงเช่นนี้&nbsp;&nbsp;ดวงวิญญาณ<wbr>ไม่ต้องเกิด&nbsp;&nbsp;แต่เพราะว่าดวงวิญญาณรับเอาร่างวัตถุ&nbsp;&nbsp;ร่างกายจึงเกิด&nbsp;&nbsp;ดวงวิญญาณ<wbr>มิได้เกิดที่นี่และดวงวิญญาณไม่เคยตาย&nbsp;&nbsp;อะไรที่มีการเกิดย่อมมีการตาย&nbsp;&nbsp;เป็นเพราะว่า<wbr>ดวงวิญญาณไม่มีการเกิด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงไม่มีอดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;หรืออนาคต&nbsp;&nbsp;ดวงวิญญาณเป็น<wbr>อมตะ&nbsp;&nbsp;คงอยู่เสมอ&nbsp;&nbsp;และเป็นสิ่งดั้งเดิม&nbsp;&nbsp;หมายความว่าไม่มีประวัติศาสตร์ที่บ่งชี้การมาอยู่<wbr>ของดวงวิญญาณ&nbsp;&nbsp;จากความรู้สึกทางร่างกายเราจึงค้นหาประวัติการเกิด&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของดวง<wbr>วิญญาณ&nbsp;&nbsp;ดวงวิญญาณไม่มีการแก่เหมือนกับร่างกาย&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จะเห็นได้ว่าบุคคลผู้สูงอายุ<wbr>ยังรู้สึกว่าตนเองมีสปิริตเหมือนตอนเป็นเด็กหรือวัยรุ่น&nbsp;&nbsp;การเปลี่ยนแปลงของ<wbr>ร่างกายไม่มีผลกระทบต่อดวงวิญญาณ&nbsp;&nbsp;ดวงวิญญาณไม่เสื่อมโทรมเหมือนต้นไม้หรือสิ่ง<wbr>ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นวัตถุ&nbsp;&nbsp;ดวงวิญญาณไม่มีการสืบพันธุ์&nbsp;&nbsp;ผลผลิตของร่างกาย&nbsp;&nbsp;เช่น&nbsp;&nbsp;บุตร&nbsp;&nbsp;ธิดา&nbsp;&nbsp;ก็<wbr>เป็นปัจเจกวิญญาณแต่ละดวงเช่นกัน&nbsp;&nbsp;แต่เนื่องมาจากร่างกายวัตถุพวกเขาจึงปรากฏว่า<wbr>เป็น&nbsp;&nbsp;บุตร&nbsp;&nbsp;ธิดา&nbsp;&nbsp;ของชายคนนั้น&nbsp;&nbsp;ร่างกายเจริญเติบโตได้เพราะมีดวงวิญญาณอยู่&nbsp;&nbsp;แต่ดวง<wbr>วิญญาณไม่มีทั้งเชื้อสายหรือการเปลี่ยนแปลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ดวงวิญญาณจึงเป็นอิสระจากการ<wbr>เปลี่ยนแปลงทั้งหกขั้นตอนของร่างกาย
+  โดยคุณภาพอนุวิญญาณซึ่งเป็นละอองอณูของอภิวิญญาณสูงสุดเป็นหนึ่ง<wbr>เดียวกับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่มีการเปลี่ยนแปลงเหมือนกับร่างกาย&nbsp;&nbsp;บางครั้งดวงวิญญาณเรียก<wbr>ว่าอมตะหรือ&nbsp;&nbsp;<span class="slant iast">kūṭa-stha</span><span class="slant pali">กูฏ-สฺถ</span><span class="slant thai">กูฏะ-สถะ</span><span class="slant ram">-</span>&nbsp;&nbsp;ร่างกายมีการเปลี่ยนแปลงหกขั้นตอน&nbsp;&nbsp;มีการเกิดจากครรภ์<wbr>มารดา&nbsp;&nbsp;คงอยู่ระยะหนึ่ง&nbsp;&nbsp;เจริญเติบโต&nbsp;&nbsp;สืบพันธุ์&nbsp;&nbsp;ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;หดตัวลง&nbsp;&nbsp;และในที่สุดก็สูญสลาย<wbr>ไป&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ดวงวิญญาณไม่ต้องผ่านขั้นตอนการเปลี่ยนแปลงเช่นนี้&nbsp;&nbsp;ดวงวิญญาณ<wbr>ไม่ต้องเกิด&nbsp;&nbsp;แต่เพราะว่าดวงวิญญาณรับเอาร่างวัตถุ&nbsp;&nbsp;ร่างกายจึงเกิด&nbsp;&nbsp;ดวงวิญญาณ<wbr>มิได้เกิดที่นี่และดวงวิญญาณไม่เคยตาย&nbsp;&nbsp;อะไรที่มีการเกิดย่อมมีการตาย&nbsp;&nbsp;เป็นเพราะว่า<wbr>ดวงวิญญาณไม่มีการเกิด&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงไม่มีอดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;หรืออนาคต&nbsp;&nbsp;ดวงวิญญาณเป็น<wbr>อมตะ&nbsp;&nbsp;คงอยู่เสมอ&nbsp;&nbsp;และเป็นสิ่งดั้งเดิม&nbsp;&nbsp;หมายความว่าไม่มีประวัติศาสตร์ที่บ่งชี้การมาอยู่<wbr>ของดวงวิญญาณ&nbsp;&nbsp;จากความรู้สึกทางร่างกายเราจึงค้นหาประวัติการเกิด&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;ของดวง<wbr>วิญญาณ&nbsp;&nbsp;ดวงวิญญาณไม่มีการแก่เหมือนกับร่างกาย&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จะเห็นได้ว่าบุคคลผู้สูงอายุ<wbr>ยังรู้สึกว่าตนเองมีสปิริตเหมือนตอนเป็นเด็กหรือวัยรุ่น&nbsp;&nbsp;การเปลี่ยนแปลงของ<wbr>ร่างกายไม่มีผลกระทบต่อดวงวิญญาณ&nbsp;&nbsp;ดวงวิญญาณไม่เสื่อมโทรมเหมือนต้นไม้หรือสิ่ง<wbr>ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เป็นวัตถุ&nbsp;&nbsp;ดวงวิญญาณไม่มีการสืบพันธุ์&nbsp;&nbsp;ผลผลิตของร่างกาย&nbsp;&nbsp;เช่น&nbsp;&nbsp;บุตร&nbsp;&nbsp;ธิดา&nbsp;&nbsp;ก็<wbr>เป็นปัจเจกวิญญาณแต่ละดวงเช่นกัน&nbsp;&nbsp;แต่เนื่องมาจากร่างกายวัตถุพวกเขาจึงปรากฏว่า<wbr>เป็น&nbsp;&nbsp;บุตร&nbsp;&nbsp;ธิดา&nbsp;&nbsp;ของชายคนนั้น&nbsp;&nbsp;ร่างกายเจริญเติบโตได้เพราะมีดวงวิญญาณอยู่&nbsp;&nbsp;แต่ดวง<wbr>วิญญาณไม่มีทั้งเชื้อสายหรือการเปลี่ยนแปลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ดวงวิญญาณจึงเป็นอิสระจากการ<wbr>เปลี่ยนแปลงทั้งหกขั้นตอนของร่างกาย
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(1.2.18)&nbsp;&nbsp;เราพบข้อความ&nbsp;&nbsp;คล้ายกันนี้
-  </p>
-</div>
-
-<div class="r r-lang-en r-verse-text">
-  
-  <i>น ชายเต มฺริยเต วา วิปศฺจินฺ</i><br /><i>นายํ กุตศฺจินฺ น พภูว กศฺจิตฺ</i><br /><i>อโช นิตฺยฮ ศาศฺวโต ′ยํ ปุราโณ</i><br /><i>น หนฺยเต หนฺยมาเน ศรีเร</i>
-  
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ความหมายและคำอธิบายของโศลกนี้เหมือนกับ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;แต่ในโศลกนี้มีคำพิเศษคำ<wbr>หนึ่ง&nbsp;&nbsp;<i>วิปศฺจิตฺ</i>&nbsp;&nbsp;ซึ่งหมายความว่ารู้หรือด้วยความรู้
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  ดวงวิญญาณเต็มไปด้วยความรู้หรือเต็มไปด้วยจิตสำนึกอยู่เสมอ&nbsp;&nbsp;ดังนั้น<wbr>จิตสำนึกจึงเป็นลักษณะอาการของดวงวิญญาณ&nbsp;&nbsp;แม้ว่าเราไม่พบดวงวิญญาณในหัวใจที่<wbr>เขาสถิตอยู่&nbsp;&nbsp;แต่เราเข้าใจได้ว่าดวงวิญญาณมีอยู่เพราะเ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีจิตสำนึก&nbsp;&nbsp;บางครั้งเราไม่เห็น<wbr>ดวงอาทิตย์บนท้องฟ้าเพราะก้อนเมฆมาบดบังหรือด้วยเหตุผลอื่น&nbsp;&nbsp;แต่แสงอาทิตย์จะมี<wbr>อยู่เสมอ&nbsp;&nbsp;และทำให้เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ั่นใจได้ว่าเป็นเวลากลางวัน&nbsp;&nbsp;ทันทีที่มีแสงเพียงเล็กน้อยบนท้องฟ้า<wbr>ในตอนเช้าเราเข้าใจว่าดวงอาทิตย์อยู่บนท้องฟ้า&nbsp;&nbsp;ในลักษณะเดียวกันเพราะว่ามีจิตสำนึก<wbr>อยู่ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ร่าง&nbsp;&nbsp;ไม่ว่าคนหรือสัตว์เราจึงเข้าใจได้ว่ามีดวงวิญญาณสถิตอยู่&nbsp;&nbsp;อย่างไรก็ดีจิตสำนึกของดวงวิญญาณนี้แตกต่างจากจิตสำนึกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพราะว่าจิตสำนึก<wbr>ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นสัพพัญญู&nbsp;&nbsp;รู้ไปหมดทั้งในอดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;จิตสำนึก<wbr>ของปัจเจกวิญญาณมีแนวโน้มที่จะหลงลืม&nbsp;&nbsp;เมื่อหลงลืมธรรมชาติอันแท้จริงของตนเองเขาได้รับการศึกษาและความรู้แจ้งจากบทเรียนที่สูงกว่าของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แต่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงไม่<wbr>เหมือนกับดวงวิญญาณผู้หลงลืม&nbsp;&nbsp;หากเป็นเช่นนี้คำสอนของพระองค์ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;จะ<wbr>ไร้คุณค่า
-  </p>
-</div>
-
-<div class="r r-lang-en r-paragraph">
-  <p>
-  มีดวงวิญญาณอยู่สองประเภทคือ&nbsp;&nbsp;อนุวิญญาณ&nbsp;&nbsp;(<i>อณุ-อาตฺมา</i>&nbsp;&nbsp;)&nbsp;&nbsp;และ<wbr>อภิวิญญาณ&nbsp;&nbsp;(<i>วิภุ-อาตฺมา</i>&nbsp;&nbsp;)&nbsp;&nbsp;ได้ยืนยันไว้ใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(1.2.20)&nbsp;&nbsp;เช่นกันว่า
+  ใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(1.2.18)&nbsp;&nbsp;เราพบข้อความ&nbsp;&nbsp;คล้ายกันนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อโณรฺ อณียานฺ มหโต มหียานฺ</i><br /><i>อาตฺมาสฺย ชโนฺตรฺ นิหิโต คุหายามฺ</i><br /><i>ตมฺ อกฺรตุฮ ปศฺยติ วีต-โศโก</i><br /><i>ธาตุฮ ปฺรสาทานฺ มหิมานมฺ อาตฺมนฮ</i>
+<span class="slant iast">na jāyate mriyate vā vipaścin<br /></span>
+<span class="slant pali">น ชายเต มฺริยเต วา วิปศฺจินฺ<br /></span>
+<span class="slant thai">นะ ชายะเต มริยะเต วา วิปัศจิน<br /></span>
+<span class="slant ram">นะ จายะเท มริยะเท วา วิพัชชิน<br /></span>
+<span class="slant iast">nāyaṁ kutaścin na babhūva kaścit<br /></span>
+<span class="slant pali">นายํ กุตศฺจินฺ น พภูว กศฺจิตฺ<br /></span>
+<span class="slant thai">นายัง กุตัศจิน นะ พะภูวะ กัศจิต<br /></span>
+<span class="slant ram">นายัม คุทัชชิน นะ บะบํูวะ คัชชิทฺ<br /></span>
+<span class="slant iast">ajo nityaḥ śāśvato ’yaṁ purāṇo<br /></span>
+<span class="slant pali">อโช นิตฺยห์ ศาศฺวโต ’ยํ ปุราโณ<br /></span>
+<span class="slant thai">อะโช นิตยะห์ ศาศวะโต ’ยัง ปุราโณ<br /></span>
+<span class="slant ram">อโจ นิทยะฮ ชาชวะโท ´ยัม พุราโณ<br /></span>
+<span class="slant iast">na hanyate hanyamāne śarīre<br /></span>
+<span class="slant pali">น หนฺยเต หนฺยมาเน ศรีเร<br /></span>
+<span class="slant thai">นะ หันยะเต หันยะมาเน ศะรีเร<br /></span>
+<span class="slant ram">นะ ฮันยะเท ฮันยะมาเน ชะรีเรฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ทั้งอภิวิญญาณ&nbsp;&nbsp;(<i>ปรมาตฺมา</i>&nbsp;&nbsp;)&nbsp;&nbsp;และอนุวิญญาณ&nbsp;&nbsp;(<i>ชีวาตฺมา</i>&nbsp;&nbsp;)&nbsp;&nbsp;สถิตอยู่บนต้นไม้แห่ง<wbr>ร่างกายเดียวกัน&nbsp;&nbsp;ภายในหัวใจดวงเดียวกันของสิ่งมีชีวิต&nbsp;&nbsp;ผู้ที่เป็นอิสระจากความต้องการ<wbr>ทางวัตถุและความเศร้าโศกทั้งหมดเท่านั้นจึงจะสามารถเข้าใจถึงความเลิศเลอของ<wbr>ดวงวิญญาณ&nbsp;&nbsp;ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;”&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของอภิวิญญาณด้วยเช่นกัน&nbsp;&nbsp;ดังจะเปิดเผยในบทต่อ&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไป&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นอนุวิญญาณที่<wbr>หลงลืมธรรมชาติอันแท้จริงของตนเอง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงจำเป็นต้องได้รับแสงสว่างจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>หรือจากผู้แทนที่เชื่อถือได้ของพระองค์&nbsp;&nbsp;(พระอาจารย์ทิพย์)
+  ความหมายและคำอธิบายของโศลกนี้เหมือนกับ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;แต่ในโศลกนี้มีคำพิเศษคำ<wbr>หนึ่ง&nbsp;&nbsp;<span class="slant iast">vipaścit</span><span class="slant pali">วิปศฺจิตฺ</span><span class="slant thai">วิปัศจิต</span><span class="slant ram"></span>&nbsp;&nbsp;ซึ่งหมายความว่ารู้หรือด้วยความรู้
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  ดวงวิญญาณเต็มไปด้วยความรู้หรือเต็มไปด้วยจิตสำนึกอยู่เสมอ&nbsp;&nbsp;ดังนั้น<wbr>จิตสำนึกจึงเป็นลักษณะอาการของดวงวิญญาณ&nbsp;&nbsp;แม้ว่าเราไม่พบดวงวิญญาณในหัวใจที่<wbr>เขาสถิตอยู่&nbsp;&nbsp;แต่เราเข้าใจได้ว่าดวงวิญญาณมีอยู่เพราะเ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีจิตสำนึก&nbsp;&nbsp;บางครั้งเราไม่เห็น<wbr>ดวงอาทิตย์บนท้องฟ้าเพราะก้อนเมฆมาบดบังหรือด้วยเหตุผลอื่น&nbsp;&nbsp;แต่แสงอาทิตย์จะมี<wbr>อยู่เสมอ&nbsp;&nbsp;และทำให้เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ั่นใจได้ว่าเป็นเวลากลางวัน&nbsp;&nbsp;ทันทีที่มีแสงเพียงเล็กน้อยบนท้องฟ้า<wbr>ในตอนเช้าเราเข้าใจว่าดวงอาทิตย์อยู่บนท้องฟ้า&nbsp;&nbsp;ในลักษณะเดียวกันเพราะว่ามีจิตสำนึก<wbr>อยู่ในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ร่าง&nbsp;&nbsp;ไม่ว่าคนหรือสัตว์เราจึงเข้าใจได้ว่ามีดวงวิญญาณสถิตอยู่&nbsp;&nbsp;อย่างไรก็ดีจิตสำนึกของดวงวิญญาณนี้แตกต่างจากจิตสำนึกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพราะว่าจิตสำนึก<wbr>ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นสัพพัญญู&nbsp;&nbsp;รู้ไปหมดทั้งในอดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;จิตสำนึก<wbr>ของปัจเจกวิญญาณมีแนวโน้มที่จะหลงลืม&nbsp;&nbsp;เมื่อหลงลืมธรรมชาติอันแท้จริงของตนเองเขาได้รับการศึกษาและความรู้แจ้งจากบทเรียนที่สูงกว่าของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แต่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงไม่<wbr>เหมือนกับดวงวิญญาณผู้หลงลืม&nbsp;&nbsp;หากเป็นเช่นนี้คำสอนของพระองค์ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;จะ<wbr>ไร้คุณค่า
+  </p>
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  มีดวงวิญญาณอยู่สองประเภทคือ&nbsp;&nbsp;อนุวิญญาณ&nbsp;&nbsp;(<span class="slant iast">aṇu-ātmā</span><span class="slant pali">อณุ-อาตฺมา</span><span class="slant thai">อะณุ-อาตมา</span><span class="slant ram">-อาทมา</span>&nbsp;&nbsp;)&nbsp;&nbsp;และ<wbr>อภิวิญญาณ&nbsp;&nbsp;(<span class="slant iast">vibhu-ātmā</span><span class="slant pali">วิภุ-อาตฺมา</span><span class="slant thai">วิภุ-อาตมา</span><span class="slant ram">-อาทมา</span>&nbsp;&nbsp;)&nbsp;&nbsp;ได้ยืนยันไว้ใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(1.2.20)&nbsp;&nbsp;เช่นกันว่า
+  </p>
+</div>
+
+<div class="r r-lang-en r-verse-text">
+<span class="slant iast">aṇor aṇīyān mahato mahīyān<br /></span>
+<span class="slant pali">อโณรฺ อณียานฺ มหโต มหียานฺ<br /></span>
+<span class="slant thai">อะโณร อะณียาน มะหะโต มะหียาน<br /></span>
+<span class="slant ram">อโนร อนียาน มะฮะโท มะฮียาน<br /></span>
+<span class="slant iast">ātmāsya jantor nihito guhāyām<br /></span>
+<span class="slant pali">อาตฺมาสฺย ชนฺโตรฺ นิหิโต คุหายามฺ<br /></span>
+<span class="slant thai">อาตมาสยะ ชันโตร นิหิโต คุหายาม<br /></span>
+<span class="slant ram">อาทมาสยะ จันโทร นิฮิโท กุฮายาม<br /></span>
+<span class="slant iast">tam akratuḥ paśyati vīta-śoko<br /></span>
+<span class="slant pali">ตมฺ อกฺรตุห์ ปศฺยติ วีต-โศโก<br /></span>
+<span class="slant thai">ตัม อักระตุห์ ปัศยะติ วีตะ-โศโก<br /></span>
+<span class="slant ram">ทัม อัคระทุฮ พัชยะทิ วีทะ-โชโค<br /></span>
+<span class="slant iast">dhātuḥ prasādān mahimānam ātmanaḥ<br /></span>
+<span class="slant pali">ธาตุห์ ปฺรสาทานฺ มหิมานมฺ อาตฺมนห์<br /></span>
+<span class="slant thai">ธาตุห์ ประสาทาน มะหิมานัม อาตมะนะห์<br /></span>
+<span class="slant ram">ดฺาทุฮ พระสาดาน มะฮิมานัม อาทมะนะฮ<br /></span>
+
+  
+</div>
+
+<div class="r r-lang-en r-paragraph">
+  <p>
+  “ทั้งอภิวิญญาณ&nbsp;&nbsp;(<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;)&nbsp;&nbsp;และอนุวิญญาณ&nbsp;&nbsp;(<span class="slant iast">jīvātmā</span><span class="slant pali">ชีวาตฺมา</span><span class="slant thai">ชีวาตมา</span><span class="slant ram"></span>&nbsp;&nbsp;)&nbsp;&nbsp;สถิตอยู่บนต้นไม้แห่ง<wbr>ร่างกายเดียวกัน&nbsp;&nbsp;ภายในหัวใจดวงเดียวกันของสิ่งมีชีวิต&nbsp;&nbsp;ผู้ที่เป็นอิสระจากความต้องการ<wbr>ทางวัตถุและความเศร้าโศกทั้งหมดเท่านั้นจึงจะสามารถเข้าใจถึงความเลิศเลอของ<wbr>ดวงวิญญาณ&nbsp;&nbsp;ด้วยพระกรุณาธิคุณขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;”&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดของอภิวิญญาณด้วยเช่นกัน&nbsp;&nbsp;ดังจะเปิดเผยในบทต่อ&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไป&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นอนุวิญญาณที่<wbr>หลงลืมธรรมชาติอันแท้จริงของตนเอง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงจำเป็นต้องได้รับแสงสว่างจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>หรือจากผู้แทนที่เชื่อถือได้ของพระองค์&nbsp;&nbsp;(พระอาจารย์ทิพย์)
   </p>
 </div>
 

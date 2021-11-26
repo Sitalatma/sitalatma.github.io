@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.41</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วฺยวสายาตฺมิกา พุทฺธิรฺ</i><br /><i>เอเกห กุรุ-นนฺทน</i><br /><i>พหุ-ศาขา หฺยฺ อนนฺตาศฺ จ</i><br /><i>พุทฺธโย ′วฺยวสายินามฺ</i>
+<span class="slant iast">vyavasāyātmikā buddhir<br /></span>
+<span class="slant pali">วฺยวสายาตฺมิกา พุทฺธิรฺ<br /></span>
+<span class="slant thai">วยะวะสายาตมิกา พุทธิร<br /></span>
+<span class="slant ram">วิยะวะสายาทมิคา บุดดิร<br /></span>
+<span class="slant iast">ekeha kuru-nandana<br /></span>
+<span class="slant pali">เอเกห กุรุ-นนฺทน<br /></span>
+<span class="slant thai">เอเกหะ กุรุ-นันทะนะ<br /></span>
+<span class="slant ram">เอเคฮะ คุรุ-นันดะนะ<br /></span>
+<span class="slant iast">bahu-śākhā hy anantāś ca<br /></span>
+<span class="slant pali">พหุ-ศาขา หฺยฺ อนนฺตาศฺ จ<br /></span>
+<span class="slant thai">พะหุ-ศาขา หย อะนันตาศ จะ<br /></span>
+<span class="slant ram">บะฮุ-ชาคฺา ฮิ อนันทาช ชะ<br /></span>
+<span class="slant iast">buddhayo ’vyavasāyinām<br /></span>
+<span class="slant pali">พุทฺธโย ’วฺยวสายินามฺ<br /></span>
+<span class="slant thai">พุทธะโย ’วยะวะสายินาม<br /></span>
+<span class="slant ram">บุดดฺะโย 'วิยะวะสายินาม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>วฺยวสาย-อาตฺมิกา</i> — แน่วแน่ใน <i>กฺฤษฺณ</i> จิตสำนึก, <i>พุทฺธิฮ</i> — ปัญญา, <i>เอกา</i> — คนเดียว เท่านั้น, <i>อิห</i> — ในโลกนี้, <i>กุรุ-นนฺทน</i> — โอ้ โอรสที่รักแห่งราชวงค์ <i>กุรุ</i>, <i>พหุ-ศาขาฮ</i> — มี สาขามากมาย, <i>หิ</i> — แน่นอน, <i>อนนฺตาฮ</i> — ไม่จำกัด, <i>จ</i> — เช่นกัน, <i>พุทฺธยฮ</i> — ปัญญา, <i>อวฺยวสายินามฺ</i> — ของผู้ที่ไม่อยู่ใน <i>กฺฤษฺณ</i> จิตสำนึก
+  <span class="slant iast">vyavasāya-ātmikā</span><span class="slant pali">วฺยวสาย-อาตฺมิกา</span><span class="slant thai">วยะวะสายะ-อาตมิกา</span><span class="slant ram">วิยะวะสายะ-อาทมิคา</span> — แน่วแน่ใน <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> จิตสำนึก, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">ekā</span><span class="slant pali">เอกา</span><span class="slant thai">เอกา</span><span class="slant ram">เอคา</span> — คนเดียว เท่านั้น, <span class="slant iast">iha</span><span class="slant pali">อิห</span><span class="slant thai">อิหะ</span><span class="slant ram">อิฮะ</span> — ในโลกนี้, <span class="slant iast">kuru-nandana</span><span class="slant pali">กุรุ-นนฺทน</span><span class="slant thai">กุรุ-นันทะนะ</span><span class="slant ram">คุรุ-นันดะนะ</span> — โอ้ โอรสที่รักแห่งราชวงค์ <span class="slant iast">kuru</span><span class="slant pali">กุรุ</span><span class="slant thai">กุรุ</span><span class="slant ram">คุรุ</span>, <span class="slant iast">bahu-śākhāḥ</span><span class="slant pali">พหุ-ศาขาห์</span><span class="slant thai">พะหุ-ศาขาห์</span><span class="slant ram">บะฮุ-ชาคฺาฮ</span> — มี สาขามากมาย, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">anantāḥ</span><span class="slant pali">อนนฺตาห์</span><span class="slant thai">อะนันตาห์</span><span class="slant ram">อนันทาฮ</span> — ไม่จำกัด, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">buddhayaḥ</span><span class="slant pali">พุทฺธยห์</span><span class="slant thai">พุทธะยะห์</span><span class="slant ram">บุดดฺะยะฮ</span> — ปัญญา, <span class="slant iast">avyavasāyinām</span><span class="slant pali">อวฺยวสายินามฺ</span><span class="slant thai">อัวยะวะสายินาม</span><span class="slant ram">อัพยะ วะสายินาม</span> — ของผู้ที่ไม่อยู่ใน <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> จิตสำนึก
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;ผู้เป็นที่รักแห่งราชวงศ์&nbsp;&nbsp;<i>กุรุ</i>&nbsp;&nbsp;บุคคลเดินอยู่บนหนทางสายนี้มีเป้าหมายที่แน่วแน่และมีจุดมุ่งหมายเป็นหนึ่ง&nbsp;&nbsp;ปัญญาของผู้ที่ไม่แน่วแน่มั่นคงจะแตกสาขามากมาย
+  โอ้&nbsp;&nbsp;ผู้เป็นที่รักแห่งราชวงศ์&nbsp;&nbsp;<span class="slant iast">kuru</span><span class="slant pali">กุรุ</span><span class="slant thai">กุรุ</span><span class="slant ram">คุรุ</span>&nbsp;&nbsp;บุคคลเดินอยู่บนหนทางสายนี้มีเป้าหมายที่แน่วแน่และมีจุดมุ่งหมายเป็นหนึ่ง&nbsp;&nbsp;ปัญญาของผู้ที่ไม่แน่วแน่มั่นคงจะแตกสาขามากมาย
   </p>
 </div>
 
@@ -73,43 +174,65 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความศรัทธาอันมั่นคงใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จะทำให้เราเจริญไปถึงความสมบูรณ์สูงสุดแห่งชีวิตเรียกว่าปัญญาแห่ง&nbsp;&nbsp;<i>วฺยวสายาตฺมิกา</i>&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ไจตนฺย-จริตามฺฤต</i>&nbsp;&nbsp;(<i>มธฺย</i>&nbsp;&nbsp;22.62)&nbsp;&nbsp;กล่าวไว้ว่า
+  ความศรัทธาอันมั่นคงใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จะทำให้เราเจริญไปถึงความสมบูรณ์สูงสุดแห่งชีวิตเรียกว่าปัญญาแห่ง&nbsp;&nbsp;<span class="slant iast">vyavasāyātmikā</span><span class="slant pali">วฺยวสายาตฺมิกา</span><span class="slant thai">วยะวะสายาตมิกา</span><span class="slant ram"></span>&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">caitanya-caritāmṛta</span><span class="slant pali">ไจตนฺย-จริตามฺฤต</span><span class="slant thai">ไจตันยะ-จะริตามฤตะ</span><span class="slant ram">เชธันญะ-</span>&nbsp;&nbsp;(<span class="slant iast">madhya</span><span class="slant pali">มธฺย</span><span class="slant thai">มัธยะ</span><span class="slant ram">มัดฮยะ</span>&nbsp;&nbsp;22.62)&nbsp;&nbsp;กล่าวไว้ว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรทฺธา′-ศเพฺทวิศฺวาส กเห สุทฺฤฒ นิศฺจย</i><br /><i>กฺเฤษฺณ ภกฺติ ไกเล สรฺว-กรฺม กฺฤต หย</i>
+<span class="slant iast">‘śraddhā’-śabde – viśvāsa kahe sudṛḍha niścaya<br /></span>
+<span class="slant pali">‘ศฺรทฺธา’-ศพฺเท – วิศฺวาส กเห สุทฺฤฒ นิศฺจย<br /></span>
+<span class="slant thai">‘ศรัทธา’-ศัพเท – วิศวาสะ กะเห สุทฤฒะ นิศจะยะ<br /></span>
+<span class="slant ram">“ชรัดดฺา”-ชับเด-วิชวาสะ คะเฮ สุดริดฺะ นิชชะยะ<br /></span>
+<span class="slant iast">kṛṣṇe bhakti kaile sarva-karma kṛta haya<br /></span>
+<span class="slant pali">กฺฤษฺเณ ภกฺติ ไกเล สรฺว-กรฺม กฺฤต หย<br /></span>
+<span class="slant thai">กฤษเณ ภักติ ไกเล สัรวะ-กัรมะ กฤตะ หะยะ<br /></span>
+<span class="slant ram">คริชเณ บัคธิ ไคเล สารวะ-คารมะ คริทะ ฮะยะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความศรัทธาหมายถึงความเชื่ออย่างมั่นคงในสิ่งที่ประเสริฐ&nbsp;&nbsp;เมื่อปฏิบัติหน้าที่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกเราไม่จำเป็นต้องปฏิบัติในความสัมพันธ์กับโลกวัตถุอันเนื่องมาจากพันธกรณี<wbr>ตามประเพณีครอบครัว&nbsp;&nbsp;มนุษยชาติ&nbsp;&nbsp;หรือประเทศชาติ&nbsp;&nbsp;กิจกรรมเพื่อผลประโยชน์<wbr>เป็นการกระทำตามผลกรรมของเราในอดีตไม่ว่าดีหรือชั่ว&nbsp;&nbsp;เมื่อเราได้ตื่นขึ้นมาใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;เราไม่จำเป็นต้องพยายามเพื่อผลดีในกิจกรรมของเรา&nbsp;&nbsp;หากสถิตใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกกิจกรรมทั้งหมดอยู่ในระดับที่สมบูรณ์&nbsp;&nbsp;ไม่ขึ้นอยู่กับสภาวะคู่&nbsp;&nbsp;เช่นความดีหรือ<wbr>ความชั่ว&nbsp;&nbsp;ความสมบูรณ์สูงสุดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกคือการสลัดแนวคิดชีวิตทางวัตถุระดับนี้จะบรรลุถึงโดยปริยายเมื่อเราเจริญขึ้นใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก
+  ความศรัทธาหมายถึงความเชื่ออย่างมั่นคงในสิ่งที่ประเสริฐ&nbsp;&nbsp;เมื่อปฏิบัติหน้าที่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกเราไม่จำเป็นต้องปฏิบัติในความสัมพันธ์กับโลกวัตถุอันเนื่องมาจากพันธกรณี<wbr>ตามประเพณีครอบครัว&nbsp;&nbsp;มนุษยชาติ&nbsp;&nbsp;หรือประเทศชาติ&nbsp;&nbsp;กิจกรรมเพื่อผลประโยชน์<wbr>เป็นการกระทำตามผลกรรมของเราในอดีตไม่ว่าดีหรือชั่ว&nbsp;&nbsp;เมื่อเราได้ตื่นขึ้นมาใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;เราไม่จำเป็นต้องพยายามเพื่อผลดีในกิจกรรมของเรา&nbsp;&nbsp;หากสถิตใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกกิจกรรมทั้งหมดอยู่ในระดับที่สมบูรณ์&nbsp;&nbsp;ไม่ขึ้นอยู่กับสภาวะคู่&nbsp;&nbsp;เช่นความดีหรือ<wbr>ความชั่ว&nbsp;&nbsp;ความสมบูรณ์สูงสุดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกคือการสลัดแนวคิดชีวิตทางวัตถุระดับนี้จะบรรลุถึงโดยปริยายเมื่อเราเจริญขึ้นใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จุดมุ่งหมายอันแน่วแน่ของบุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกมีพื้นฐานอยู่ที่ความรู้&nbsp;&nbsp;<i>วาสุเทวฮ&nbsp;&nbsp;สรฺวมฺ&nbsp;&nbsp;อิติ&nbsp;&nbsp;ส&nbsp;&nbsp;มหาตฺมา&nbsp;&nbsp;สุ-ทุรฺลภฮ</i>&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกคือดวง<wbr>วิญญาณดีที่หาได้ยากและเป็นผู้รู้อย่างสมบูรณ์ว่า&nbsp;&nbsp;<i>วาสุเทว</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็น<wbr>รากฐานแห่งแหล่งกำเนิดของปรากฏการณ์ทั้งมวล&nbsp;&nbsp;ด้วยการรดน้ำที่รากของต้นไม้<wbr>เท่ากับเราได้แจกจ่ายน้ำไปที่ใบและกิ่งก้านสาขาโดยปริยาย&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ด้วยการปฏิบัติ<wbr>ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเท่ากับเป็นการรับใช้อย่างสูงสุดแด่ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;เช่น&nbsp;&nbsp;รับใช้ตัวเราเองครอบครัว&nbsp;&nbsp;สังคม&nbsp;&nbsp;ประเทศชาติ&nbsp;&nbsp;มนุษยชาติ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;หากองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงพอพระทัยในการ<wbr>ปฏิบัติของเรา&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนก็จะพึงพอใจ
+  จุดมุ่งหมายอันแน่วแน่ของบุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกมีพื้นฐานอยู่ที่ความรู้&nbsp;&nbsp;<span class="slant iast">vāsudevaḥ&nbsp;&nbsp;sarvam&nbsp;&nbsp;iti&nbsp;&nbsp;sa&nbsp;&nbsp;mahātmā&nbsp;&nbsp;su-durlabhaḥ</span><span class="slant pali">วาสุเทวห์สรฺวมฺอิติสมหาตฺมาสุ-ทุรฺลภห์</span><span class="slant thai">วาสุเทวะห์สัรวัมอิติสะมะหาตมาสุ-ทุรละภะห์</span><span class="slant ram">วาสุเดวะฮสารวัมอิทิสะ-</span>&nbsp;&nbsp;บุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกคือดวง<wbr>วิญญาณดีที่หาได้ยากและเป็นผู้รู้อย่างสมบูรณ์ว่า&nbsp;&nbsp;<span class="slant iast">vāsudeva</span><span class="slant pali">วาสุเทว</span><span class="slant thai">วาสุเทวะ</span><span class="slant ram">วาสุเดวะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็น<wbr>รากฐานแห่งแหล่งกำเนิดของปรากฏการณ์ทั้งมวล&nbsp;&nbsp;ด้วยการรดน้ำที่รากของต้นไม้<wbr>เท่ากับเราได้แจกจ่ายน้ำไปที่ใบและกิ่งก้านสาขาโดยปริยาย&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ด้วยการปฏิบัติ<wbr>ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเท่ากับเป็นการรับใช้อย่างสูงสุดแด่ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;เช่น&nbsp;&nbsp;รับใช้ตัวเราเองครอบครัว&nbsp;&nbsp;สังคม&nbsp;&nbsp;ประเทศชาติ&nbsp;&nbsp;มนุษยชาติ&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;หากองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงพอพระทัยในการ<wbr>ปฏิบัติของเรา&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนก็จะพึงพอใจ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  อย่างไรก็ดี&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ทำได้ดีที่สุดภายใต้<wbr>คำแนะนำที่ถูกต้องของพระอาจารย์ทิพย์ซึ่งเป็นผู้แทนที่เชื่อถือได้ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ท่านรู้<wbr>ธรรมชาติของศิษย์และสามารถนำศิษย์ให้ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกได้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การจะ<wbr>เป็นผู้มีความชำนาญใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องปฏิบัติตามผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อย่างแน่ว<wbr>แน่&nbsp;&nbsp;และเราควรน้อมรับคำสั่งสอนของพระอาจารย์ทิพย์ผู้ที่เชื่อถือได้เสมือนเป็นภารกิจ<wbr>แห่งชีวิตของเรา&nbsp;&nbsp;<i>ศฺรีล</i>&nbsp;&nbsp;<i>วิศฺวนาตฺห</i>&nbsp;&nbsp;<i>จกฺรวรฺตี</i>&nbsp;&nbsp;<i>ฐากุร</i>&nbsp;&nbsp;สอนเราในบทมนต์ที่มีชื่อเสียง<wbr>เกี่ยวกับพระอาจารย์ทิพย์ดังนี้
+  อย่างไรก็ดี&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ทำได้ดีที่สุดภายใต้<wbr>คำแนะนำที่ถูกต้องของพระอาจารย์ทิพย์ซึ่งเป็นผู้แทนที่เชื่อถือได้ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ท่านรู้<wbr>ธรรมชาติของศิษย์และสามารถนำศิษย์ให้ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกได้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การจะ<wbr>เป็นผู้มีความชำนาญใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องปฏิบัติตามผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อย่างแน่ว<wbr>แน่&nbsp;&nbsp;และเราควรน้อมรับคำสั่งสอนของพระอาจารย์ทิพย์ผู้ที่เชื่อถือได้เสมือนเป็นภารกิจ<wbr>แห่งชีวิตของเรา&nbsp;&nbsp;<span class="slant iast">śrīla</span><span class="slant pali">ศฺรีล</span><span class="slant thai">ศรีละ</span><span class="slant ram">ชรีละ</span>&nbsp;&nbsp;<span class="slant iast">viśvanātha</span><span class="slant pali">วิศฺวนาถ</span><span class="slant thai">วิศวะนาถะ</span><span class="slant ram">วิชวะนาทฺะ</span>&nbsp;&nbsp;<span class="slant iast">cakravartī</span><span class="slant pali">จกฺรวรฺตี</span><span class="slant thai">จักระวัรตี</span><span class="slant ram">ชัคระวารที</span>&nbsp;&nbsp;<span class="slant iast">ṭhākura</span><span class="slant pali">ฐากุร</span><span class="slant thai">ฐากุระ</span><span class="slant ram">ทฺาคุระ</span>&nbsp;&nbsp;สอนเราในบทมนต์ที่มีชื่อเสียง<wbr>เกี่ยวกับพระอาจารย์ทิพย์ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยสฺย ปฺรสาทาทฺ ภควตฺ-ปฺรสาโท</i><br /><i>ยสฺยาปฺรสาทานฺ น คติฮ กุโต ′ปิ</i><br /><i>ธฺยายนฺ สฺตุวํสฺ ตสฺย ยศสฺ ตฺริ-สนฺธฺยํ</i><br /><i>วเนฺท คุโรฮ ศฺรี-จรณารวินฺทมฺ</i>
+<span class="slant iast">yasya prasādād bhagavat-prasādo<br /></span>
+<span class="slant pali">ยสฺย ปฺรสาทาทฺ ภควตฺ-ปฺรสาโท<br /></span>
+<span class="slant thai">ยัสยะ ประสาทาท ภะคะวัต-ประสาโท<br /></span>
+<span class="slant ram">ยัสยะ พระสาดาด บฺะกะวัท-พระสาโด<br /></span>
+<span class="slant iast">yasyāprasādān na gatiḥ kuto ’pi<br /></span>
+<span class="slant pali">ยสฺยาปฺรสาทานฺ น คติห์ กุโต ’ปิ<br /></span>
+<span class="slant thai">ยัสยาประสาทาน นะ คะติห์ กุโต ’ปิ<br /></span>
+<span class="slant ram">ยัสยาพระสาดาน นะ กะทิฮ คุโท ´พิฺ<br /></span>
+<span class="slant iast">dhyāyan stuvaṁs tasya yaśas tri-sandhyaṁ<br /></span>
+<span class="slant pali">ธฺยายนฺ สฺตุวํสฺ ตสฺย ยศสฺ ตฺริ-สนฺธฺยํ<br /></span>
+<span class="slant thai">ธยายัน สตุวังส ตัสยะ ยะศัส ตริ-สันธยัง<br /></span>
+<span class="slant ram">ดฺยายัน สทุวัมส ทัสยะ ยะชัส ทริ-สันดฺยัม<br /></span>
+<span class="slant iast">vande guroḥ śrī-caraṇāravindam<br /></span>
+<span class="slant pali">วนฺเท คุโรห์ ศฺรี-จรณารวินฺทมฺ<br /></span>
+<span class="slant thai">วันเท คุโรห์ ศรี-จะระณาระวินทัม<br /></span>
+<span class="slant ram">วันเด กุโรฮ ชรี-ชะระณาระวินดัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “การทำให้พระอาจารย์ทิพย์พึงพอใจ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก็จะทรงพึงพอพระทัย&nbsp;&nbsp;หากพระ<wbr>อาจารย์ทิพย์ไม่พึงพอใจ&nbsp;&nbsp;เราจะไม่มีโอกาสได้รับการส่งเสริมมาสู่ระดับแห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ข้าพเจ้าควรทำสมาธิและสวดมนต์ภาวนาเพื่อพระเมตตาจากพระ<wbr>อาจารย์ทิพย์วันละสามครั้ง&nbsp;&nbsp;และแสดงความเคารพอย่างสูงแด่ท่าน”
+  “การทำให้พระอาจารย์ทิพย์พึงพอใจ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก็จะทรงพึงพอพระทัย&nbsp;&nbsp;หากพระ<wbr>อาจารย์ทิพย์ไม่พึงพอใจ&nbsp;&nbsp;เราจะไม่มีโอกาสได้รับการส่งเสริมมาสู่ระดับแห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ข้าพเจ้าควรทำสมาธิและสวดมนต์ภาวนาเพื่อพระเมตตาจากพระ<wbr>อาจารย์ทิพย์วันละสามครั้ง&nbsp;&nbsp;และแสดงความเคารพอย่างสูงแด่ท่าน”
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.31</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กฺษิปฺรํ ภวติ ธรฺมาตฺมา</i><br /><i>ศศฺวจฺ-ฉานฺติํ นิคจฺฉติ</i><br /><i>กะเอุนฺตย ปฺรติชานีหิ</i><br /><i>น เม ภกฺตฮ ปฺรณศฺยติ</i>
+<span class="slant iast">kṣipraṁ bhavati dharmātmā<br /></span>
+<span class="slant pali">กฺษิปฺรํ ภวติ ธรฺมาตฺมา<br /></span>
+<span class="slant thai">กษิปรัง ภะวะติ ธัรมาตมา<br /></span>
+<span class="slant ram">คชิพรัม บฺะวะทิ ดฺารมาทมา<br /></span>
+<span class="slant iast">śaśvac-chāntiṁ nigacchati<br /></span>
+<span class="slant pali">ศศฺวจฺ-ฉานฺตึ นิคจฺฉติ<br /></span>
+<span class="slant thai">ศัศวัจ-ฉานติง นิคัจฉะติ<br /></span>
+<span class="slant ram">ชัชวัช-ชฺานทิม นิกัชชฺะทิฺ<br /></span>
+<span class="slant iast">kaunteya pratijānīhi<br /></span>
+<span class="slant pali">เกานฺเตย ปฺรติชานีหิ<br /></span>
+<span class="slant thai">เกานเตยะ ประติชานีหิ<br /></span>
+<span class="slant ram">คะอุนเทยะ พระทิจานีฮิ<br /></span>
+<span class="slant iast">na me bhaktaḥ praṇaśyati<br /></span>
+<span class="slant pali">น เม ภกฺตห์ ปฺรณศฺยติ<br /></span>
+<span class="slant thai">นะ เม ภักตะห์ ประณัศยะติ<br /></span>
+<span class="slant ram">นะ เม บัฺคธะฮ พระณัชยะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กฺษิปฺรมฺ</i> — เร็ว ๆ นี้, <i>ภวติ</i> — กลายมาเป็น, <i>ธรฺม-อาตฺมา</i> — คุณธรรม, <i>ศศฺวตฺ-ศานฺติมฺ</i> — ความสงบยั่งยืน, <i>นิคจฺฉติ</i> — บรรลุ, <i>กะเอุนฺตย</i> — โอ้ โอรสพระนาง <i>กุนฺตี</i>, <i>ปฺรติชานีหิ</i> — ประกาศ, <i>น</i> — ไม่เคย, <i>เม</i> — ของข้า, <i>ภกฺตฮ</i> — สาวก, <i>ปฺรณศฺยติ</i> — ทำลาย
+  <span class="slant iast">kṣipram</span><span class="slant pali">กฺษิปฺรมฺ</span><span class="slant thai">กษิปรัม</span><span class="slant ram">คชิพรัม</span> — เร็ว ๆ นี้, <span class="slant iast">bhavati</span><span class="slant pali">ภวติ</span><span class="slant thai">ภะวะติ</span><span class="slant ram">บฺะวะทิ</span> — กลายมาเป็น, <span class="slant iast">dharma-ātmā</span><span class="slant pali">ธรฺม-อาตฺมา</span><span class="slant thai">ธัรมะ-อาตมา</span><span class="slant ram">ดฺารมะ-อาทมา</span> — คุณธรรม, <span class="slant iast">śaśvat-śāntim</span><span class="slant pali">ศศฺวตฺ-ศานฺติมฺ</span><span class="slant thai">ศัศวัต-ศานติม</span><span class="slant ram">ชัชวัท-ชานทิม</span> — ความสงบยั่งยืน, <span class="slant iast">nigacchati</span><span class="slant pali">นิคจฺฉติ</span><span class="slant thai">นิคัจฉะติ</span><span class="slant ram">นิกัชชะทิ</span> — บรรลุ, <span class="slant iast">kaunteya</span><span class="slant pali">เกานฺเตย</span><span class="slant thai">เกานเตยะ</span><span class="slant ram">คะอุนเทยะ</span> — โอ้ โอรสพระนาง <span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>, <span class="slant iast">pratijānīhi</span><span class="slant pali">ปฺรติชานีหิ</span><span class="slant thai">ประติชานีหิ</span><span class="slant ram">พระทิจานีฮิ</span> — ประกาศ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">bhaktaḥ</span><span class="slant pali">ภกฺตห์</span><span class="slant thai">ภักตะห์</span><span class="slant ram">บัฺคธะฮ</span> — สาวก, <span class="slant iast">praṇaśyati</span><span class="slant pali">ปฺรณศฺยติ</span><span class="slant thai">ประณัศยะติ</span><span class="slant ram">พระณัชยะทิ</span> — ทำลาย
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เขากลายมาเป็นผู้มีคุณธรรม&nbsp;&nbsp;และบรรลุถึงความสงบอย่างถาวรโดยรวดเร็ว&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<i>กุนฺตี</i>&nbsp;&nbsp;จงประกาศอย่างกล้าหาญว่าสาวกของข้าจะไม่มีวันถูกทำลาย
+  เขากลายมาเป็นผู้มีคุณธรรม&nbsp;&nbsp;และบรรลุถึงความสงบอย่างถาวรโดยรวดเร็ว&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสพระนาง&nbsp;&nbsp;<span class="slant iast">kuntī</span><span class="slant pali">กุนฺตี</span><span class="slant thai">กุนตี</span><span class="slant ram">คุนที</span>&nbsp;&nbsp;จงประกาศอย่างกล้าหาญว่าสาวกของข้าจะไม่มีวันถูกทำลาย
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เช่นนี้ไม่ควรเข้าใจผิด&nbsp;&nbsp;ในบทที่เจ็ด&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่าผู้ปฏิบัติในกิจกรรมที่ไม่<wbr>ดีไม่สามารถมาเป็นสาวกได้&nbsp;&nbsp;และผู้ไม่ใช่สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่มีคุณสมบัติดีเลย&nbsp;&nbsp;จาก<wbr>นั้น&nbsp;&nbsp;มีคำถามว่า&nbsp;&nbsp;แล้วทำไมบุคคลที่ปฏิบัติในกิจกรรมอันน่ารังเกียจ&nbsp;&nbsp;ไม่ว่าจะด้วยอุบัติเหตุ<wbr>หรือด้วยความตั้งใจ&nbsp;&nbsp;มาเป็นสาวกผู้บริสุทธิ์ได้?&nbsp;&nbsp;คำถามนี้มีเหตุผล&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน<wbr>บทที่เจ็ดว่า&nbsp;&nbsp;คนสารเลวที่ไม่เคยมาถึงการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่มี<wbr>คุณสมบัติดีเลย&nbsp;&nbsp;ดังที่กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;โดยทั่วไป&nbsp;&nbsp;สาวกปฏิบัติกิจกรรม<wbr>เก้าวิธีในการอุทิศตนเสียสละ&nbsp;&nbsp;เป็นวิธีการชะล้างมลทินทางวัตถุทั้งปวงให้ออกจากหัวใจและให้บุคลิกภาพสูงสุดแห่งพระเจ้าทรงประทับอยู่ภายในหัวใจ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มลทินบาปทั้ง<wbr>ปวงจะถูกชะล้างออกไปโดยธรรมชาติ&nbsp;&nbsp;การระลึกถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อยู่ตลอดเวลาทำให้เขา<wbr>บริสุทธิ์ขึ้นโดยธรรมชาติ&nbsp;&nbsp;ตามคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;มีกฎเกณฑ์บางประการว่า&nbsp;&nbsp;หากตกลงต่ำ<wbr>จากสถานภาพที่สูงส่ง&nbsp;&nbsp;เขาต้องปฏิบัติตามพิธีทางศาสนาเพื่อให้ตนเองบริสุทธิ์ขึ้น&nbsp;&nbsp;แต่ณ&nbsp;&nbsp;ที่นี้ไม่มีเงื่อนไขเช่นนี้&nbsp;&nbsp;เพราะกรรมวิธีเพื่อความบริสุทธิ์อยู่ภายในหัวใจของสาวกแล้วเนื่องจากเขาระลึกถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อยู่ตลอดเวลา&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเรฮะเร&nbsp;&nbsp;ควรดำเนินต่อไปโดยไม่หยุดยั้ง&nbsp;&nbsp;เช่นนี้จะปกป้องสาวกจากอุบัติเหตุตกลงต่ำทั้งหมดดังนั้น&nbsp;&nbsp;เขาจะเป็นอิสระจากมลทินทางวัตถุทั้งปวงชั่วกัลปวสาน
+  เช่นนี้ไม่ควรเข้าใจผิด&nbsp;&nbsp;ในบทที่เจ็ด&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่าผู้ปฏิบัติในกิจกรรมที่ไม่<wbr>ดีไม่สามารถมาเป็นสาวกได้&nbsp;&nbsp;และผู้ไม่ใช่สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่มีคุณสมบัติดีเลย&nbsp;&nbsp;จาก<wbr>นั้น&nbsp;&nbsp;มีคำถามว่า&nbsp;&nbsp;แล้วทำไมบุคคลที่ปฏิบัติในกิจกรรมอันน่ารังเกียจ&nbsp;&nbsp;ไม่ว่าจะด้วยอุบัติเหตุ<wbr>หรือด้วยความตั้งใจ&nbsp;&nbsp;มาเป็นสาวกผู้บริสุทธิ์ได้?&nbsp;&nbsp;คำถามนี้มีเหตุผล&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน<wbr>บทที่เจ็ดว่า&nbsp;&nbsp;คนสารเลวที่ไม่เคยมาถึงการอุทิศตนเสียสละรับใช้ต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่มี<wbr>คุณสมบัติดีเลย&nbsp;&nbsp;ดังที่กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;โดยทั่วไป&nbsp;&nbsp;สาวกปฏิบัติกิจกรรม<wbr>เก้าวิธีในการอุทิศตนเสียสละ&nbsp;&nbsp;เป็นวิธีการชะล้างมลทินทางวัตถุทั้งปวงให้ออกจากหัวใจและให้บุคลิกภาพสูงสุดแห่งพระเจ้าทรงประทับอยู่ภายในหัวใจ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มลทินบาปทั้ง<wbr>ปวงจะถูกชะล้างออกไปโดยธรรมชาติ&nbsp;&nbsp;การระลึกถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อยู่ตลอดเวลาทำให้เขา<wbr>บริสุทธิ์ขึ้นโดยธรรมชาติ&nbsp;&nbsp;ตามคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;มีกฎเกณฑ์บางประการว่า&nbsp;&nbsp;หากตกลงต่ำ<wbr>จากสถานภาพที่สูงส่ง&nbsp;&nbsp;เขาต้องปฏิบัติตามพิธีทางศาสนาเพื่อให้ตนเองบริสุทธิ์ขึ้น&nbsp;&nbsp;แต่ณ&nbsp;&nbsp;ที่นี้ไม่มีเงื่อนไขเช่นนี้&nbsp;&nbsp;เพราะกรรมวิธีเพื่อความบริสุทธิ์อยู่ภายในหัวใจของสาวกแล้วเนื่องจากเขาระลึกถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อยู่ตลอดเวลา&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;การสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเรฮะเร&nbsp;&nbsp;ควรดำเนินต่อไปโดยไม่หยุดยั้ง&nbsp;&nbsp;เช่นนี้จะปกป้องสาวกจากอุบัติเหตุตกลงต่ำทั้งหมดดังนั้น&nbsp;&nbsp;เขาจะเป็นอิสระจากมลทินทางวัตถุทั้งปวงชั่วกัลปวสาน
   </p>
 </div>
 

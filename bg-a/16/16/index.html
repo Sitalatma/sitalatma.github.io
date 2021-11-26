@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 16.16</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อเนก-จิตฺต-วิภฺรานฺตา</i><br /><i>โมห-ชาล-สมาวฺฤตาฮ</i><br /><i>ปฺรสกฺตาฮ กาม-โภเคษุ</i><br /><i>ปตนฺติ นรเก ′ศุจะอุ</i>
+<span class="slant iast">aneka-citta-vibhrāntā<br /></span>
+<span class="slant pali">อเนก-จิตฺต-วิภฺรานฺตา<br /></span>
+<span class="slant thai">อะเนกะ-จิตตะ-วิภรานตา<br /></span>
+<span class="slant ram">อเนคะ-ชิททะวิบฺรานทา<br /></span>
+<span class="slant iast">moha-jāla-samāvṛtāḥ<br /></span>
+<span class="slant pali">โมห-ชาล-สมาวฺฤตาห์<br /></span>
+<span class="slant thai">โมหะ-ชาละ-สะมาวฤตาห์<br /></span>
+<span class="slant ram">โมฮะ-จาละ-สะมาวริททาฮ<br /></span>
+<span class="slant iast">prasaktāḥ kāma-bhogeṣu<br /></span>
+<span class="slant pali">ปฺรสกฺตาห์ กาม-โภเคษุ<br /></span>
+<span class="slant thai">ประสักตาห์ กามะ-โภเคษุ<br /></span>
+<span class="slant ram">พระสัคทาฮ คามะ-โบฺเกชุ<br /></span>
+<span class="slant iast">patanti narake ’śucau<br /></span>
+<span class="slant pali">ปตนฺติ นรเก ’ศุเจา<br /></span>
+<span class="slant thai">ปะตันติ นะระเก ’ศุเจา<br /></span>
+<span class="slant ram">พะทันทิ นะระเค ่ชุโชฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อเนก</i> — มากมาย, <i>จิตฺต</i> — ด้วยความวิตกกังวล, <i>วิภฺรานฺตาฮ</i> — สับสน, <i>โมห</i> — ของความ หลง, <i>ชาล</i> — โดยเครือข่าย, <i>สมาวฺฤตาฮ</i> — รายล้อม, <i>ปฺรสกฺตาฮ</i> — ยึดติด, <i>กาม-โภเคษุ</i> — กับการสนองประสาทสัมผัส, <i>ปตนฺติ</i> — พวกเขาถลำลง, <i>นรเก</i> — สู่นรก, <i>อศุจะอุ</i> — สกปรก
+  <span class="slant iast">aneka</span><span class="slant pali">อเนก</span><span class="slant thai">อะเนกะ</span><span class="slant ram">อเนคะ</span> — มากมาย, <span class="slant iast">citta</span><span class="slant pali">จิตฺต</span><span class="slant thai">จิตตะ</span><span class="slant ram">ชิททะ</span> — ด้วยความวิตกกังวล, <span class="slant iast">vibhrāntāḥ</span><span class="slant pali">วิภฺรานฺตาห์</span><span class="slant thai">วิภรานตาห์</span><span class="slant ram">วิบฺรานทาฮ</span> — สับสน, <span class="slant iast">moha</span><span class="slant pali">โมห</span><span class="slant thai">โมหะ</span><span class="slant ram">โมฮะ</span> — ของความ หลง, <span class="slant iast">jāla</span><span class="slant pali">ชาล</span><span class="slant thai">ชาละ</span><span class="slant ram">จาละ</span> — โดยเครือข่าย, <span class="slant iast">samāvṛtāḥ</span><span class="slant pali">สมาวฺฤตาห์</span><span class="slant thai">สะมาวฤตาห์</span><span class="slant ram">สะมาวริทาฮ</span> — รายล้อม, <span class="slant iast">prasaktāḥ</span><span class="slant pali">ปฺรสกฺตาห์</span><span class="slant thai">ประสักตาห์</span><span class="slant ram">พระสัคทาฮ</span> — ยึดติด, <span class="slant iast">kāma-bhogeṣu</span><span class="slant pali">กาม-โภเคษุ</span><span class="slant thai">กามะ-โภเคษุ</span><span class="slant ram">คามะ-โบฺเกชุ</span> — กับการสนองประสาทสัมผัส, <span class="slant iast">patanti</span><span class="slant pali">ปตนฺติ</span><span class="slant thai">ปะตันติ</span><span class="slant ram">พะทันทิ</span> — พวกเขาถลำลง, <span class="slant iast">narake</span><span class="slant pali">นรเก</span><span class="slant thai">นะระเก</span><span class="slant ram">นะระเค</span> — สู่นรก, <span class="slant iast">aśucau</span><span class="slant pali">อศุเจา</span><span class="slant thai">อะศุเจา</span><span class="slant ram">อชุโช</span> — สกปรก
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คนมารไม่รู้จักพอกับความต้องการที่จะได้เงินมา&nbsp;&nbsp;ไม่มีวันเพียงพอ&nbsp;&nbsp;คิดเพียง<wbr>แต่ว่าปัจจุบันนี้ทรัพย์สินของตนเองมีอยู่เท่าไร&nbsp;&nbsp;และวางแผนที่จะใช้ทรัพย์สินเหล่านี้ให้<wbr>เพิ่มพูนมากยิ่งขึ้น&nbsp;&nbsp;ด้วยเหตุนี้จึงไม่ลังเลที่จะกระทำบาปใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เขาจึงทำธุรกิจใน<wbr>ตลาดมืดที่ผิดกฎหมายเพื่อสนองประสาทสัมผัส&nbsp;&nbsp;ลุ่มหลงอยู่กับทรัพย์สมบัติที่มีอยู่แล้วเช่น&nbsp;&nbsp;ที่ดิน&nbsp;&nbsp;ครอบครัว&nbsp;&nbsp;บ้าน&nbsp;&nbsp;และตัวเลขในธนาคาร&nbsp;&nbsp;และวางแผนที่จะพัฒนามันไปเรื่อย&nbsp;&nbsp;ๆมีความเชื่อในพลังความสามารถของตนเอง&nbsp;&nbsp;โดยไม่รู้ว่าสิ่งที่ได้มานั้นก็เนื่องมาจากบุญ<wbr>เก่าในอดีตจึงได้รับโอกาสสะสมสิ่งของเหล่านี้&nbsp;&nbsp;แต่เขาไม่มีแนวคิดถึงเหตุในอดีต&nbsp;&nbsp;เพียงแต่<wbr>คิดว่าทรัพย์สมบัติที่สะสมได้อย่างมหาศาลทั้งหมดนี้ก็เนื่องมาจากความพยายามของ<wbr>ตนเอง&nbsp;&nbsp;คนมารเชื่อในพลังความสามารถในการทำงานของตนแต่ไม่เชื่อในกฎแห่งกรรมตามกฎแห่งกรรมบอกว่า&nbsp;&nbsp;มนุษย์เกิดในตระกูลสูง&nbsp;&nbsp;ร่ำรวย&nbsp;&nbsp;มีการศึกษาดี&nbsp;&nbsp;หรือมีความ<wbr>สวยงามมาก&nbsp;&nbsp;ก็เนื่องมาจากผลบุญในอดีต&nbsp;&nbsp;พวกมารคิดว่าสิ่งทั้งหลายเหล่านี้เป็นเหตุ<wbr>บังเอิญและเนื่องมาจากพลังความสามารถส่วนตัว&nbsp;&nbsp;พวกเขาไม่สามารถสำเหนียกถึงการ<wbr>จัดการที่อยู่เบื้องหลังผู้คนอันหลากหลายที่มีความสวยงามและการศึกษาทั้งหมดนี้&nbsp;&nbsp;ผู้<wbr>ใดที่มาแข่งขันกับคนมารเช่นกันจะเป็นศัตรูของเขา&nbsp;&nbsp;มีคนมารอยู่มากมาย&nbsp;&nbsp;และมารแต่ละ<wbr>คนจะเป็นศัตรูกับมารคนอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ความเป็นปรปักษ์กันนี้ลุ่มลึกมากยิ่งขึ้นระหว่างบุคคลระหว่างครอบครัว&nbsp;&nbsp;ระหว่างสังคม&nbsp;&nbsp;และในที่สุดระหว่างชาติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมีการต่อสู้กันเสมอทั้งสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;และความเป็นปรปักษ์มีอยู่ทั่วโลก
+  คนมารไม่รู้จักพอกับความต้องการที่จะได้เงินมา&nbsp;&nbsp;ไม่มีวันเพียงพอ&nbsp;&nbsp;คิดเพียง<wbr>แต่ว่าปัจจุบันนี้ทรัพย์สินของตนเองมีอยู่เท่าไร&nbsp;&nbsp;และวางแผนที่จะใช้ทรัพย์สินเหล่านี้ให้<wbr>เพิ่มพูนมากยิ่งขึ้น&nbsp;&nbsp;ด้วยเหตุนี้จึงไม่ลังเลที่จะกระทำบาปใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เขาจึงทำธุรกิจใน<wbr>ตลาดมืดที่ผิดกฎหมายเพื่อสนองประสาทสัมผัส&nbsp;&nbsp;ลุ่มหลงอยู่กับทรัพย์สมบัติที่มีอยู่แล้วเช่น&nbsp;&nbsp;ที่ดิน&nbsp;&nbsp;ครอบครัว&nbsp;&nbsp;บ้าน&nbsp;&nbsp;และตัวเลขในธนาคาร&nbsp;&nbsp;และวางแผนที่จะพัฒนามันไปเรื่อย&nbsp;&nbsp;ๆมีความเชื่อในพลังความสามารถของตนเอง&nbsp;&nbsp;โดยไม่รู้ว่าสิ่งที่ได้มานั้นก็เนื่องมาจากบุญ<wbr>เก่าในอดีตจึงได้รับโอกาสสะสมสิ่งของเหล่านี้&nbsp;&nbsp;แต่เขาไม่มีแนวคิดถึงเหตุในอดีต&nbsp;&nbsp;เพียงแต่<wbr>คิดว่าทรัพย์สมบัติที่สะสมได้อย่างมหาศาลทั้งหมดนี้ก็เนื่องมาจากความพยายามของ<wbr>ตนเอง&nbsp;&nbsp;คนมารเชื่อในพลังความสามารถในการทำงานของตนแต่ไม่เชื่อในกฎแห่งกรรมตามกฎแห่งกรรมบอกว่า&nbsp;&nbsp;มนุษย์เกิดในตระกูลสูง&nbsp;&nbsp;ร่ำรวย&nbsp;&nbsp;มีการศึกษาดี&nbsp;&nbsp;หรือมีความ<wbr>สวยงามมาก&nbsp;&nbsp;ก็เนื่องมาจากผลบุญในอดีต&nbsp;&nbsp;พวกมารคิดว่าสิ่งทั้งหลายเหล่านี้เป็นเหตุ<wbr>บังเอิญและเนื่องมาจากพลังความสามารถส่วนตัว&nbsp;&nbsp;พวกเขาไม่สามารถสำเหนียกถึงการ<wbr>จัดการที่อยู่เบื้องหลังผู้คนอันหลากหลายที่มีความสวยงามและการศึกษาทั้งหมดนี้&nbsp;&nbsp;ผู้<wbr>ใดที่มาแข่งขันกับคนมารเช่นกันจะเป็นศัตรูของเขา&nbsp;&nbsp;มีคนมารอยู่มากมาย&nbsp;&nbsp;และมารแต่ละ<wbr>คนจะเป็นศัตรูกับมารคนอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ความเป็นปรปักษ์กันนี้ลุ่มลึกมากยิ่งขึ้นระหว่างบุคคลระหว่างครอบครัว&nbsp;&nbsp;ระหว่างสังคม&nbsp;&nbsp;และในที่สุดระหว่างชาติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงมีการต่อสู้กันเสมอทั้งสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;และความเป็นปรปักษ์มีอยู่ทั่วโลก
   </p>
 </div>
 
@@ -85,7 +186,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ถึงแม้ว่าคนมารเห็นคนอื่นมีความร่ำรวยและมีอิทธิพลเท่า&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;หรือแม้<wbr>มากกว่าก็ยังคิดว่าไม่มีผู้ใดรวยไปกว่าตน&nbsp;&nbsp;และไม่มีผู้ใดมีอิทธิพลมากไปกว่าตน&nbsp;&nbsp;สำหรับ<wbr>การส่งเสริมไปสู่ระบบดาวเคราะห์ที่สูงกว่า&nbsp;&nbsp;มารไม่เชื่อในการปฏิบัติ&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;หรือการ<wbr>บูชา&nbsp;&nbsp;เหล่ามารคิดจะผลิตวิธี&nbsp;&nbsp;<i>ยชฺญ</i>&nbsp;&nbsp;ของตนเอง&nbsp;&nbsp;และเตรียมเครื่องจักรกลบางอย่างที่<wbr>จะสามารถนำพาพวกตนไปถึงดาวเคราะห์ที่สูงกว่าดวงใดก็ได้&nbsp;&nbsp;ตัวอย่างที่ดีของคนมาร<wbr>เช่นนี้คือ&nbsp;&nbsp;<i>ราวณ</i>&nbsp;&nbsp;(ทศกรรณ์)&nbsp;&nbsp;ผู้เสนอนโยบายแก่ผู้คนว่าจะเตรียมบันไดซึ่งไม่ว่าใครก็<wbr>สามารถไปถึงสรวงสวรรค์ได้โดยไม่ต้องปฏิบัติพิธีบูชาดังที่ได้กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ในยุคปัจจุบันคนมารเหล่านี้พยายามไปยังระบบดาวเคราะห์ที่สูงกว่า<wbr>ด้วยการเตรียมเครื่องจักรกล&nbsp;&nbsp;เหล่านี้คือตัวอย่างแห่งความสับสน&nbsp;&nbsp;ผลก็คือ&nbsp;&nbsp;โดยไม่รู้ตัว<wbr>พวกมารกำลังถลำลงสู่เหวนนรก&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;คำสันสกฤต&nbsp;&nbsp;<i>โมห-ชาล</i>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;<i>ชาล</i>&nbsp;&nbsp;หมายความถึง&nbsp;&nbsp;“<em>แห</em>&nbsp;&nbsp;”&nbsp;&nbsp;เหมือนกับปลาที่อยู่ในร่างแหไม่มีทางที่จะหลุดออกมาได้
+  ถึงแม้ว่าคนมารเห็นคนอื่นมีความร่ำรวยและมีอิทธิพลเท่า&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;หรือแม้<wbr>มากกว่าก็ยังคิดว่าไม่มีผู้ใดรวยไปกว่าตน&nbsp;&nbsp;และไม่มีผู้ใดมีอิทธิพลมากไปกว่าตน&nbsp;&nbsp;สำหรับ<wbr>การส่งเสริมไปสู่ระบบดาวเคราะห์ที่สูงกว่า&nbsp;&nbsp;มารไม่เชื่อในการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;หรือการ<wbr>บูชา&nbsp;&nbsp;เหล่ามารคิดจะผลิตวิธี&nbsp;&nbsp;<span class="slant iast">yajña</span><span class="slant pali">ยชฺญ</span><span class="slant thai">ยัชญะ</span><span class="slant ram">ยะกยะ,ยชฺญ</span>&nbsp;&nbsp;ของตนเอง&nbsp;&nbsp;และเตรียมเครื่องจักรกลบางอย่างที่<wbr>จะสามารถนำพาพวกตนไปถึงดาวเคราะห์ที่สูงกว่าดวงใดก็ได้&nbsp;&nbsp;ตัวอย่างที่ดีของคนมาร<wbr>เช่นนี้คือ&nbsp;&nbsp;<span class="slant iast">rāvaṇa</span><span class="slant pali">ราวณ</span><span class="slant thai">ราวะณะ</span><span class="slant ram">ราวะณะ</span>&nbsp;&nbsp;(ทศกรรณ์)&nbsp;&nbsp;ผู้เสนอนโยบายแก่ผู้คนว่าจะเตรียมบันไดซึ่งไม่ว่าใครก็<wbr>สามารถไปถึงสรวงสวรรค์ได้โดยไม่ต้องปฏิบัติพิธีบูชาดังที่ได้กำหนดไว้ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;ในยุคปัจจุบันคนมารเหล่านี้พยายามไปยังระบบดาวเคราะห์ที่สูงกว่า<wbr>ด้วยการเตรียมเครื่องจักรกล&nbsp;&nbsp;เหล่านี้คือตัวอย่างแห่งความสับสน&nbsp;&nbsp;ผลก็คือ&nbsp;&nbsp;โดยไม่รู้ตัว<wbr>พวกมารกำลังถลำลงสู่เหวนนรก&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;คำสันสกฤต&nbsp;&nbsp;<span class="slant iast">moha-jāla</span><span class="slant pali">โมห-ชาล</span><span class="slant thai">โมหะ-ชาละ</span><span class="slant ram">โมฮะ-จาละ</span>&nbsp;&nbsp;มีความสำคัญมาก&nbsp;&nbsp;<span class="slant iast">jāla</span><span class="slant pali">ชาล</span><span class="slant thai">ชาละ</span><span class="slant ram">จาละ</span>&nbsp;&nbsp;หมายความถึง&nbsp;&nbsp;“<em>แห</em>&nbsp;&nbsp;”&nbsp;&nbsp;เหมือนกับปลาที่อยู่ในร่างแหไม่มีทางที่จะหลุดออกมาได้
   </p>
 </div>
 

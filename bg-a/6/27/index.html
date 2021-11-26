@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.27</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรศานฺต-มนสํ หฺยฺ เอนํ</i><br /><i>โยคินํ สุขมฺ อุตฺตมมฺ</i><br /><i>อุไปติ ศานฺต-รชสํ</i><br /><i>พฺรหฺม-ภูตมฺ อกลฺมษมฺ</i>
+<span class="slant iast">praśānta-manasaṁ hy enaṁ<br /></span>
+<span class="slant pali">ปฺรศานฺต-มนสํ หฺยฺ เอนํ<br /></span>
+<span class="slant thai">ประศานตะ-มะนะสัง หย เอนัง<br /></span>
+<span class="slant ram">พระชานทะ-มะนะสัม ฮิ เอนัม<br /></span>
+<span class="slant iast">yoginaṁ sukham uttamam<br /></span>
+<span class="slant pali">โยคินํ สุขมฺ อุตฺตมมฺ<br /></span>
+<span class="slant thai">โยคินัง สุขัม อุตตะมัม<br /></span>
+<span class="slant ram">โยกินัม สุคัฺม อุททะมัม<br /></span>
+<span class="slant iast">upaiti śānta-rajasaṁ<br /></span>
+<span class="slant pali">อุไปติ ศานฺต-รชสํ<br /></span>
+<span class="slant thai">อุไปติ ศานตะ-ระชะสัง<br /></span>
+<span class="slant ram">อุไพทิ ชานทะ-ระจะสัม<br /></span>
+<span class="slant iast">brahma-bhūtam akalmaṣam<br /></span>
+<span class="slant pali">พฺรหฺม-ภูตมฺ อกลฺมษมฺ<br /></span>
+<span class="slant thai">พรัหมะ-ภูตัม อะกัลมะษัม<br /></span>
+<span class="slant ram">บระฮมะ-บํูทัม อคัลมะชัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรศานฺต</i> — สงบ, ตั้งมั่นอยู่ที่พระบาทรูปดอกบัวของ <i>กฺฤษฺณ</i>, <i>มนสมฺ</i> — จิตใจของ เขา, <i>หิ</i> — แน่นอน, <i>เอนมฺ</i> — นี้, <i>โยคินมฺ</i> — <i>โยคี</i>, <i>สุขมฺ</i> — ความสุข, <i>อุตฺตมมฺ</i> — สูงสุด, <i>อุไปติ</i> — ได้ รับ, <i>ศานฺต-รชสมฺ</i> — ตัณหาสงบลง, <i>พฺรหฺม-ภูตมฺ</i> — หลุดพ้นด้วยการแสดงตัวกับ สัจธรรม, <i>อกลฺมษมฺ</i> — เป็นอิสระจากวิบากกรรมในอดีตทั้งมวล
+  <span class="slant iast">praśānta</span><span class="slant pali">ปฺรศานฺต</span><span class="slant thai">ประศานตะ</span><span class="slant ram">พระชานทะ</span> — สงบ, ตั้งมั่นอยู่ที่พระบาทรูปดอกบัวของ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">manasam</span><span class="slant pali">มนสมฺ</span><span class="slant thai">มะนะสัม</span><span class="slant ram">มะนะสัม</span> — จิตใจของ เขา, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">enam</span><span class="slant pali">เอนมฺ</span><span class="slant thai">เอนัม</span><span class="slant ram">เอนัม</span> — นี้, <span class="slant iast">yoginam</span><span class="slant pali">โยคินมฺ</span><span class="slant thai">โยคินัม</span><span class="slant ram">โยกินัม</span> — <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ความสุข, <span class="slant iast">uttamam</span><span class="slant pali">อุตฺตมมฺ</span><span class="slant thai">อุตตะมัม</span><span class="slant ram">อุททะ มัม</span> — สูงสุด, <span class="slant iast">upaiti</span><span class="slant pali">อุไปติ</span><span class="slant thai">อุไปติ</span><span class="slant ram">อุไพทิ</span> — ได้ รับ, <span class="slant iast">śānta-rajasam</span><span class="slant pali">ศานฺต-รชสมฺ</span><span class="slant thai">ศานตะ-ระชะสัม</span><span class="slant ram">ชานทะ-ระจะสัม</span> — ตัณหาสงบลง, <span class="slant iast">brahma-bhūtam</span><span class="slant pali">พฺรหฺม-ภูตมฺ</span><span class="slant thai">พรัหมะ-ภูตัม</span><span class="slant ram">บระฮมะ-บํูทัม</span> — หลุดพ้นด้วยการแสดงตัวกับ สัจธรรม, <span class="slant iast">akalmaṣam</span><span class="slant pali">อกลฺมษมฺ</span><span class="slant thai">อะกัลมะษัม</span><span class="slant ram">อคัลมะชัม</span> — เป็นอิสระจากวิบากกรรมในอดีตทั้งมวล
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>โยคี</i>&nbsp;&nbsp;ผู้มีจิตใจตั้งมั่นอยู่ที่ข้าบรรลุถึงความสมบูรณ์สูงสุดแห่งความสุขทิพย์อย่างแท้จริง&nbsp;&nbsp;เขาอยู่เหนือระดับตัณหา&nbsp;&nbsp;รู้แจ้งคุณสมบัติอันแท้จริงของตนเองกับองค์ภควาน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นอิสระจากผลกรรมในอดีตทั้งปวง
+  <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ผู้มีจิตใจตั้งมั่นอยู่ที่ข้าบรรลุถึงความสมบูรณ์สูงสุดแห่งความสุขทิพย์อย่างแท้จริง&nbsp;&nbsp;เขาอยู่เหนือระดับตัณหา&nbsp;&nbsp;รู้แจ้งคุณสมบัติอันแท้จริงของตนเองกับองค์ภควาน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเป็นอิสระจากผลกรรมในอดีตทั้งปวง
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>พฺรหฺม-ภูต</i>&nbsp;&nbsp;คือระดับที่เป็นอิสระจากมลทินทางวัตถุและสถิตในการรับใช้<wbr>ทิพย์แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>มทฺ-ภกฺติํ&nbsp;&nbsp;ลภเต&nbsp;&nbsp;ปรามฺ</i>&nbsp;&nbsp;(<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;18.54&nbsp;&nbsp;)&nbsp;&nbsp;เขาไม่สามารถ<wbr>ดำรงรักษาอยู่ในคุณสมบัติของ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;สัจธรรมที่สมบูรณ์ได้&nbsp;&nbsp;จนกว่าจิตใจจะตั้งมั่นอยู่<wbr>ที่พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ส&nbsp;&nbsp;ไว&nbsp;&nbsp;มนฮ&nbsp;&nbsp;กฺฤษฺณ-ปทารวินฺทโยฮ</i>&nbsp;&nbsp;ปฏิบัติ<wbr>อยู่ในการรับใช้ด้วยความรักทิพย์แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือการดำรงรักษาอยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;คือการได้รับเสรีภาพความหลุดพ้นจากระดับตัณหาและมลทินทางวัตถุทั้ง<wbr>ปวงอย่างแท้จริง
+  <span class="slant iast">brahma-bhūta</span><span class="slant pali">พฺรหฺม-ภูต</span><span class="slant thai">พรัหมะ-ภูตะ</span><span class="slant ram">บระฮมะ-บํูทะ</span>&nbsp;&nbsp;คือระดับที่เป็นอิสระจากมลทินทางวัตถุและสถิตในการรับใช้<wbr>ทิพย์แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">mad-bhaktiṁ&nbsp;&nbsp;labhate&nbsp;&nbsp;parām</span><span class="slant pali">มทฺ-ภกฺตึลภเตปรามฺ</span><span class="slant thai">มัท-ภักติงละภะเตปะราม</span><span class="slant ram">มัด-บัฺคธิม ละบฺะเท พะราม</span>&nbsp;&nbsp;(<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;18.54&nbsp;&nbsp;)&nbsp;&nbsp;เขาไม่สามารถ<wbr>ดำรงรักษาอยู่ในคุณสมบัติของ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;สัจธรรมที่สมบูรณ์ได้&nbsp;&nbsp;จนกว่าจิตใจจะตั้งมั่นอยู่<wbr>ที่พระบาทรูปดอกบัวขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">sa&nbsp;&nbsp;vai&nbsp;&nbsp;manaḥ&nbsp;&nbsp;kṛṣṇa-padāravindayoḥ</span><span class="slant pali">สไวมนห์กฺฤษฺณ-ปทารวินฺทโยห์</span><span class="slant thai">สะไวมะนะห์กฤษณะ-ปะทาระวินทะโยห์</span><span class="slant ram">สะมะนะฮคริชณะ-zzz</span>&nbsp;&nbsp;ปฏิบัติ<wbr>อยู่ในการรับใช้ด้วยความรักทิพย์แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือการดำรงรักษาอยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;คือการได้รับเสรีภาพความหลุดพ้นจากระดับตัณหาและมลทินทางวัตถุทั้ง<wbr>ปวงอย่างแท้จริง
   </p>
 </div>
 

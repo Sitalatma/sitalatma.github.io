@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.8</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรกฺฤติํ สฺวามฺ อวษฺฏภฺย</i><br /><i>วิสฺฤชามิ ปุนฮ ปุนฮ</i><br /><i>ภูต-คฺรามมฺ อิมํ กฺฤตฺสฺนมฺ</i><br /><i>อวศํ ปฺรกฺฤเตรฺ วศาตฺ</i>
+<span class="slant iast">prakṛtiṁ svām avaṣṭabhya<br /></span>
+<span class="slant pali">ปฺรกฺฤตึ สฺวามฺ อวษฺฏภฺย<br /></span>
+<span class="slant thai">ปรักฤติง สวาม อะวัษฏัภยะ<br /></span>
+<span class="slant ram">พระคริทิม สวาม อวัชทัฺบยะ<br /></span>
+<span class="slant iast">visṛjāmi punaḥ punaḥ<br /></span>
+<span class="slant pali">วิสฺฤชามิ ปุนห์ ปุนห์<br /></span>
+<span class="slant thai">วิสฤชามิ ปุนะห์ ปุนะห์<br /></span>
+<span class="slant ram">วิสริจามิ พุนะฮ พุนะฮ<br /></span>
+<span class="slant iast">bhūta-grāmam imaṁ kṛtsnam<br /></span>
+<span class="slant pali">ภูต-คฺรามมฺ อิมํ กฺฤตฺสฺนมฺ<br /></span>
+<span class="slant thai">ภูตะ-ครามัม อิมัง กฤตสนัม<br /></span>
+<span class="slant ram">บํูทะ-กรามัม อิมัม คริทสนัม<br /></span>
+<span class="slant iast">avaśaṁ prakṛter vaśāt<br /></span>
+<span class="slant pali">อวศํ ปฺรกฺฤเตรฺ วศาตฺ<br /></span>
+<span class="slant thai">อะวะศัง ปรักฤเตร วะศาต<br /></span>
+<span class="slant ram">อวะชัม พระคริเทร วะชาทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรกฺฤติมฺ</i> — ธรรมชาติวัตถุ, <i>สฺวามฺ</i> — ของตัวข้าเอง, <i>อวษฺฏภฺย</i> — เข้าไปข้างใน, <i>วิสฺฤชามิ</i> — ข้าสร้าง, <i>ปุนฮ ปุนฮ</i> — ครั้งแล้วครั้งเล่า, <i>ภูต-คฺรามมฺ</i> — ปรากฏการณ์ทางจักรวาล ทั้งหมด, <i>อิมมฺ</i> — เหล่านี้, <i>กฺฤตฺสฺนมฺ</i> — ในทั้งหมด, <i>อวศมฺ</i> — โดยปริยาย, <i>ปฺรกฺฤเตฮ</i> — ด้วย พลังของธรรมชาติ, <i>วศาตฺ</i> — ภายใต้หน้าที่
+  <span class="slant iast">prakṛtim</span><span class="slant pali">ปฺรกฺฤติมฺ</span><span class="slant thai">ปรักฤติม</span><span class="slant ram">พระคริทิม</span> — ธรรมชาติวัตถุ, <span class="slant iast">svām</span><span class="slant pali">สฺวามฺ</span><span class="slant thai">สวาม</span><span class="slant ram">สวาม</span> — ของตัวข้าเอง, <span class="slant iast">avaṣṭabhya</span><span class="slant pali">อวษฺฏภฺย</span><span class="slant thai">อะวัษฏัภยะ</span><span class="slant ram">อวัชทับฺยะ</span> — เข้าไปข้างใน, <span class="slant iast">visṛjāmi</span><span class="slant pali">วิสฺฤชามิ</span><span class="slant thai">วิสฤชามิ</span><span class="slant ram">วิสริจามิ</span> — ข้าสร้าง, <span class="slant iast">punaḥ punaḥ</span><span class="slant pali">ปุนห์ปุนห์</span><span class="slant thai">ปุนะห์ปุนะห์</span><span class="slant ram">พุนะฮ พุนะฮ</span> — ครั้งแล้วครั้งเล่า, <span class="slant iast">bhūta-grāmam</span><span class="slant pali">ภูต-คฺรามมฺ</span><span class="slant thai">ภูตะ-ครามัม</span><span class="slant ram">บํูทะ-กรามัม</span> — ปรากฏการณ์ทางจักรวาล ทั้งหมด, <span class="slant iast">imam</span><span class="slant pali">อิมมฺ</span><span class="slant thai">อิมัม</span><span class="slant ram">อิมัม</span> — เหล่านี้, <span class="slant iast">kṛtsnam</span><span class="slant pali">กฺฤตฺสฺนมฺ</span><span class="slant thai">กฤตสนัม</span><span class="slant ram">คริทสนัม</span> — ในทั้งหมด, <span class="slant iast">avaśam</span><span class="slant pali">อวศมฺ</span><span class="slant thai">อะวะศัม</span><span class="slant ram">อวะชัม</span> — โดยปริยาย, <span class="slant iast">prakṛteḥ</span><span class="slant pali">ปฺรกฺฤเตห์</span><span class="slant thai">ปรักฤเตห์</span><span class="slant ram">พระคริเทฮ</span> — ด้วย พลังของธรรมชาติ, <span class="slant iast">vaśāt</span><span class="slant pali">วศาตฺ</span><span class="slant thai">วะศาต</span><span class="slant ram">วะชาท</span> — ภายใต้หน้าที่
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  โลกวัตถุนี้เป็นปรากฏการณ์ของพลังงานเบื้องต่ำขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้อธิบายไว้<wbr>แล้วหลายครั้ง&nbsp;&nbsp;ตอนสร้าง&nbsp;&nbsp;พลังงานวัตถุถูกปล่อยออกมาเป็น&nbsp;&nbsp;<i>มหตฺ-ตตฺตฺว</i>&nbsp;&nbsp;ซึ่งองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในอวตาร&nbsp;&nbsp;<i>ปุรุษ</i>&nbsp;&nbsp;องค์แรกเป็น&nbsp;&nbsp;<i>มหา-วิษฺณุ</i>&nbsp;&nbsp;เสด็จเข้าไป&nbsp;&nbsp;พระองค์ทรงประทับอยู่<wbr>ในมหาสมุทรแหล่งกำเนิด&nbsp;&nbsp;และทรงหายใจออกมาเป็นจักรวาลจำนวนนับไม่ถ้วน&nbsp;&nbsp;ภายใน<wbr>แต่ละจักรวาลองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสด็จเข้าไปเป็น&nbsp;&nbsp;<i>คโรฺภทก-ศายี&nbsp;&nbsp;วิษฺณุ</i>&nbsp;&nbsp;แต่ละจักรวาลถูก<wbr>สร้างขึ้นมาเช่นนี้&nbsp;&nbsp;จากนั้นพระองค์ยังทรงปรากฏในรูปของ&nbsp;&nbsp;<i>กฺษีโรทก-ศายี&nbsp;&nbsp;วิษฺณุ</i>&nbsp;&nbsp;และ<wbr>เสด็จเข้าไปในทุกสิ่งทุกอย่าง&nbsp;&nbsp;แม้ในละอองอณูที่เล็กที่สุด&nbsp;&nbsp;ความจริงนี้ได้อธิบายไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่<wbr>นี้&nbsp;&nbsp;พระองค์ทรงเสด็จเข้าไปในสรรพสิ่ง
+  โลกวัตถุนี้เป็นปรากฏการณ์ของพลังงานเบื้องต่ำขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้อธิบายไว้<wbr>แล้วหลายครั้ง&nbsp;&nbsp;ตอนสร้าง&nbsp;&nbsp;พลังงานวัตถุถูกปล่อยออกมาเป็น&nbsp;&nbsp;<span class="slant iast">mahat-tattva</span><span class="slant pali">มหตฺ-ตตฺตฺว</span><span class="slant thai">มะหัต-ตัตตวะ</span><span class="slant ram">มะฮัท-ทัทท- วะ,ทัททวะ</span>&nbsp;&nbsp;ซึ่งองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในอวตาร&nbsp;&nbsp;<span class="slant iast">puruṣa</span><span class="slant pali">ปุรุษ</span><span class="slant thai">ปุรุษะ</span><span class="slant ram">พุรุชะ</span>&nbsp;&nbsp;องค์แรกเป็น&nbsp;&nbsp;<span class="slant iast">mahā-viṣṇu</span><span class="slant pali">มหา-วิษฺณุ</span><span class="slant thai">มะหา-วิษณุ</span><span class="slant ram">มะฮา-วิชณุ</span>&nbsp;&nbsp;เสด็จเข้าไป&nbsp;&nbsp;พระองค์ทรงประทับอยู่<wbr>ในมหาสมุทรแหล่งกำเนิด&nbsp;&nbsp;และทรงหายใจออกมาเป็นจักรวาลจำนวนนับไม่ถ้วน&nbsp;&nbsp;ภายใน<wbr>แต่ละจักรวาลองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสด็จเข้าไปเป็น&nbsp;&nbsp;<span class="slant iast">garbhodaka-śāyī&nbsp;&nbsp;viṣṇu</span><span class="slant pali">ครฺโภทก-ศายีวิษฺณุ</span><span class="slant thai">คัรโภทะกะ-ศายีวิษณุ</span><span class="slant ram">การโบฺดะค-ชายีวิชณุ</span>&nbsp;&nbsp;แต่ละจักรวาลถูก<wbr>สร้างขึ้นมาเช่นนี้&nbsp;&nbsp;จากนั้นพระองค์ยังทรงปรากฏในรูปของ&nbsp;&nbsp;<span class="slant iast">kṣīrodaka-śāyī&nbsp;&nbsp;viṣṇu</span><span class="slant pali">กฺษีโรทก-ศายีวิษฺณุ</span><span class="slant thai">กษีโรทะกะ-ศายีวิษณุ</span><span class="slant ram">คชีโรดะคะ-ชายีวิชณุ</span>&nbsp;&nbsp;และ<wbr>เสด็จเข้าไปในทุกสิ่งทุกอย่าง&nbsp;&nbsp;แม้ในละอองอณูที่เล็กที่สุด&nbsp;&nbsp;ความจริงนี้ได้อธิบายไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่<wbr>นี้&nbsp;&nbsp;พระองค์ทรงเสด็จเข้าไปในสรรพสิ่ง
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จากนั้น&nbsp;&nbsp;สิ่งมีชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ปฏิสนธิภายในธรรมชาติวัตถุนี้&nbsp;&nbsp;ตามผลกรรมในอดีต<wbr>แต่ละชีวิตจึงมาอยู่ในสภาวะที่ไม่เหมือนกัน&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;กิจกรรมของโลกวัตถุจึงเริ่มขึ้นกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของเผ่าพันธุ์ชีวิตอันหลากหลายเริ่มต้นจากจุดแรกแห่งการสร้าง&nbsp;&nbsp;มิใช่ว่า<wbr>ทั้งหมดเป็นวิวัฒนาการ&nbsp;&nbsp;เผ่าพันธุ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของชีวิตถูกสร้างขึ้นมาทันทีพร้อมกับจักรวาลมนุษย์&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;นก&nbsp;&nbsp;ทุกสิ่งทุกอย่างถูกสร้างขึ้นมาพร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;ทุกสิ่งที่สิ่งมี<wbr>ชีวิตปรารถนาในตอนทำลายล้างครั้งสุดท้าย&nbsp;&nbsp;จะปรากฏออกมาอีกครั้งหนึ่ง&nbsp;&nbsp;ได้แสดงไว้<wbr>อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ด้วยคำว่า&nbsp;&nbsp;<i>อวศมฺ</i>&nbsp;&nbsp;ว่าสิ่งมีชีวิตไม่เกี่ยวข้องกับกรรมวิธีนี้&nbsp;&nbsp;ความเป็น<wbr>อยู่ในชาติก่อนจากการสร้างในครั้งก่อนจะปรากฏออกมาอีกครั้งหนึ่ง&nbsp;&nbsp;และทั้งหมดนี้<wbr>เกิดขึ้นด้วยความปรารถนาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นี่คือพลังงานที่ไม่สามารถมองเห็นได้ของ<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และหลังจากสร้างเผ่าพันธุ์ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;พระองค์ทรงไม่<wbr>เกี่ยวข้องกับพวกเขา&nbsp;&nbsp;การสร้างเกิดขึ้นเพื่ออำนวยความสะดวกต่อแนวโน้มต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่สิ่ง<wbr>มีชีวิตปรารถนา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมิได้มายุ่งเกี่ยวกับสิ่งเหล่านี้
+  จากนั้น&nbsp;&nbsp;สิ่งมีชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ปฏิสนธิภายในธรรมชาติวัตถุนี้&nbsp;&nbsp;ตามผลกรรมในอดีต<wbr>แต่ละชีวิตจึงมาอยู่ในสภาวะที่ไม่เหมือนกัน&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;กิจกรรมของโลกวัตถุจึงเริ่มขึ้นกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของเผ่าพันธุ์ชีวิตอันหลากหลายเริ่มต้นจากจุดแรกแห่งการสร้าง&nbsp;&nbsp;มิใช่ว่า<wbr>ทั้งหมดเป็นวิวัฒนาการ&nbsp;&nbsp;เผ่าพันธุ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของชีวิตถูกสร้างขึ้นมาทันทีพร้อมกับจักรวาลมนุษย์&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;นก&nbsp;&nbsp;ทุกสิ่งทุกอย่างถูกสร้างขึ้นมาพร้อม&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัน&nbsp;&nbsp;ทุกสิ่งที่สิ่งมี<wbr>ชีวิตปรารถนาในตอนทำลายล้างครั้งสุดท้าย&nbsp;&nbsp;จะปรากฏออกมาอีกครั้งหนึ่ง&nbsp;&nbsp;ได้แสดงไว้<wbr>อย่างชัดเจน&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ด้วยคำว่า&nbsp;&nbsp;<span class="slant iast">avaśam</span><span class="slant pali">อวศมฺ</span><span class="slant thai">อะวะศัม</span><span class="slant ram">อวะชัม</span>&nbsp;&nbsp;ว่าสิ่งมีชีวิตไม่เกี่ยวข้องกับกรรมวิธีนี้&nbsp;&nbsp;ความเป็น<wbr>อยู่ในชาติก่อนจากการสร้างในครั้งก่อนจะปรากฏออกมาอีกครั้งหนึ่ง&nbsp;&nbsp;และทั้งหมดนี้<wbr>เกิดขึ้นด้วยความปรารถนาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นี่คือพลังงานที่ไม่สามารถมองเห็นได้ของ<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และหลังจากสร้างเผ่าพันธุ์ชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;พระองค์ทรงไม่<wbr>เกี่ยวข้องกับพวกเขา&nbsp;&nbsp;การสร้างเกิดขึ้นเพื่ออำนวยความสะดวกต่อแนวโน้มต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่สิ่ง<wbr>มีชีวิตปรารถนา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมิได้มายุ่งเกี่ยวกับสิ่งเหล่านี้
   </p>
 </div>
 

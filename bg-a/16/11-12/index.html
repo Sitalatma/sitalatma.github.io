@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 16.11-12</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,20 +128,50 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>จินฺตามฺ อปริเมยาํ จ</i><br /><i>ปฺรลยานฺตามฺ อุปาศฺริตาฮ</i><br /><i>กาโมปโภค-ปรมา</i><br /><i>เอตาวทฺ อิติ นิศฺจิตาฮ</i>
+<span class="slant iast">cintām aparimeyāṁ ca<br /></span>
+<span class="slant pali">จินฺตามฺ อปริเมยำ จ<br /></span>
+<span class="slant thai">จินตาม อะปะริเมยาง จะ<br /></span>
+<span class="slant ram">ชินทาม อพะริเมยาม ชะ<br /></span>
+<span class="slant iast">pralayāntām upāśritāḥ<br /></span>
+<span class="slant pali">ปฺรลยานฺตามฺ อุปาศฺริตาห์<br /></span>
+<span class="slant thai">ประละยานตาม อุปาศริตาห์<br /></span>
+<span class="slant ram">พระละยานทาม อุพาชริทาฮ<br /></span>
+<span class="slant iast">kāmopabhoga-paramā<br /></span>
+<span class="slant pali">กาโมปโภค-ปรมา<br /></span>
+<span class="slant thai">กาโมปะโภคะ-ปะระมา<br /></span>
+<span class="slant ram">คาโมพะโบฺกะ-พะระมา<br /></span>
+<span class="slant iast">etāvad iti niścitāḥ<br /></span>
+<span class="slant pali">เอตาวทฺ อิติ นิศฺจิตาห์<br /></span>
+<span class="slant thai">เอตาวัท อิติ นิศจิตาห์<br /></span>
+<span class="slant ram">เอทาวัด อิทิ นิชชิทาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อาศา-ปาศ-ศไตรฺ พทฺธาฮ</i><br /><i>กาม-โกฺรธ-ปรายณาฮ</i><br /><i>อีเหนฺต กาม-โภคารฺตฺหมฺ</i><br /><i>อนฺยาเยนารฺตฺห-สญฺจยานฺ</i>
+<span class="slant iast">āśā-pāśa-śatair baddhāḥ<br /></span>
+<span class="slant pali">อาศา-ปาศ-ศไตรฺ พทฺธาห์<br /></span>
+<span class="slant thai">อาศา-ปาศะ-ศะไตร พัทธาห์<br /></span>
+<span class="slant ram">อาชา-พาชะ-ชะไทร บัดดฺาฮ<br /></span>
+<span class="slant iast">kāma-krodha-parāyaṇāḥ<br /></span>
+<span class="slant pali">กาม-โกฺรธ-ปรายณาห์<br /></span>
+<span class="slant thai">กามะ-กโรธะ-ปะรายะณาห์<br /></span>
+<span class="slant ram">คามะ-โครดฺะ-พะรายะณาฮ<br /></span>
+<span class="slant iast">īhante kāma-bhogārtham<br /></span>
+<span class="slant pali">อีหนฺเต กาม-โภคารฺถมฺ<br /></span>
+<span class="slant thai">อีหันเต กามะ-โภคารถัม<br /></span>
+<span class="slant ram">อีฮันเท คามะ-โบฺการทัฺม<br /></span>
+<span class="slant iast">anyāyenārtha-sañcayān<br /></span>
+<span class="slant pali">อนฺยาเยนารฺถ-สญฺจยานฺ<br /></span>
+<span class="slant thai">อันยาเยนารถะ-สัญจะยาน<br /></span>
+<span class="slant ram">อันยาเยนารทฺะ-สันชะยาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>จินฺตามฺ</i> — ความกลัวและความวิตกกังวล, <i>อปริเมยามฺ</i> — วัดไม่ได้, <i>จ</i> — และ, <i>ปฺรลย-อนฺตามฺ</i> — อันทาม-ถึงจุดแห่งความตาย, <i>อุปาศฺริตาฮ</i> — เป็นที่พึ่ง, <i>กาม-อุปโภค</i> — การสนอง ประสาทสัมผัส, <i>ปรมาฮ</i> — เป้าหมายสูงสุดแห่งชีวิต, <i>เอตาวตฺ</i> — ดังนั้น, <i>อิติ</i> — เช่นนี้, <i>นิศฺจิตาฮ</i> — มีความแน่ใจ, <i>อาศา-ปาศ</i> — ปฏิบัติในเครือข่ายแห่งความหวัง, <i>ศไตฮ</i> — เป็นร้อยๆ, <i>พทฺธาฮ</i> — ถูกพันธนาการ, <i>กาม</i> — ราคะ, <i>โกฺรธ</i> — และความโกรธ, <i>ปรายณาฮ</i> — สถิต ในความคิดนั้นเสมอ, <i>อีเหนฺต</i> — พวกเขาปรารถนา, <i>กาม</i> — ราคะ, <i>โภค</i> — สนองประสาท สัมผัส, <i>อรฺตฺหมฺ</i> — เพื่อจุดมุ่งหมาย, <i>อนฺยาเยน</i> — ผิดกฎหมาย, <i>อรฺตฺห</i> — แห่งความร่ำรวย, <i>สญฺจยานฺ</i> — สะสม
+  <span class="slant iast">cintām</span><span class="slant pali">จินฺตามฺ</span><span class="slant thai">จินตาม</span><span class="slant ram">ชินทาม</span> — ความกลัวและความวิตกกังวล, <span class="slant iast">aparimeyām</span><span class="slant pali">อปริเมยามฺ</span><span class="slant thai">อะปะริเมยาม</span><span class="slant ram">อพะริเมยาม</span> — วัดไม่ได้, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">pralaya-antām</span><span class="slant pali">ปฺรลย-อนฺตามฺ</span><span class="slant thai">ประละยะ-อันตาม</span><span class="slant ram">พระละยะ</span> — อันทาม-ถึงจุดแห่งความตาย, <span class="slant iast">upāśritāḥ</span><span class="slant pali">อุปาศฺริตาห์</span><span class="slant thai">อุปาศริตาห์</span><span class="slant ram">อุพาชริทาฮ</span> — เป็นที่พึ่ง, <span class="slant iast">kāma-upabhoga</span><span class="slant pali">กาม-อุปโภค</span><span class="slant thai">กามะ-อุปะโภคะ</span><span class="slant ram">คามะ-อุพะโบฺกะ</span> — การสนอง ประสาทสัมผัส, <span class="slant iast">paramāḥ</span><span class="slant pali">ปรมาห์</span><span class="slant thai">ปะระมาห์</span><span class="slant ram">พะระมาฮ</span> — เป้าหมายสูงสุดแห่งชีวิต, <span class="slant iast">etāvat</span><span class="slant pali">เอตาวตฺ</span><span class="slant thai">เอตาวัต</span><span class="slant ram">เอทาวัท</span> — ดังนั้น, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — เช่นนี้, <span class="slant iast">niścitāḥ</span><span class="slant pali">นิศฺจิตาห์</span><span class="slant thai">นิศจิตาห์</span><span class="slant ram">นิชชิ ทาฮ</span> — มีความแน่ใจ, <span class="slant iast">āśā-pāśa</span><span class="slant pali">อาศา-ปาศ</span><span class="slant thai">อาศา-ปาศะ</span><span class="slant ram">อาชา-พาชะ</span> — ปฏิบัติในเครือข่ายแห่งความหวัง, <span class="slant iast">śataiḥ</span><span class="slant pali">ศไตห์</span><span class="slant thai">ศะไตห์</span><span class="slant ram">ชะไทฮ</span> — เป็นร้อยๆ, <span class="slant iast">baddhāḥ</span><span class="slant pali">พทฺธาห์</span><span class="slant thai">พัทธาห์</span><span class="slant ram">บัดดฺาฮ</span> — ถูกพันธนาการ, <span class="slant iast">kāma</span><span class="slant pali">กาม</span><span class="slant thai">กามะ</span><span class="slant ram">คามะ</span> — ราคะ, <span class="slant iast">krodha</span><span class="slant pali">โกฺรธ</span><span class="slant thai">กโรธะ</span><span class="slant ram">โครดฺะ</span> — และความโกรธ, <span class="slant iast">parāyaṇāḥ</span><span class="slant pali">ปรายณาห์</span><span class="slant thai">ปะรายะณาห์</span><span class="slant ram">พะรายะณาฮ</span> — สถิต ในความคิดนั้นเสมอ, <span class="slant iast">īhante</span><span class="slant pali">อีหนฺเต</span><span class="slant thai">อีหันเต</span><span class="slant ram">อีฮันเท</span> — พวกเขาปรารถนา, <span class="slant iast">kāma</span><span class="slant pali">กาม</span><span class="slant thai">กามะ</span><span class="slant ram">คามะ</span> — ราคะ, <span class="slant iast">bhoga</span><span class="slant pali">โภค</span><span class="slant thai">โภคะ</span><span class="slant ram">โบฺกะ</span> — สนองประสาท สัมผัส, <span class="slant iast">artham</span><span class="slant pali">อรฺถมฺ</span><span class="slant thai">อัรถัม</span><span class="slant ram">อารทัฺม</span> — เพื่อจุดมุ่งหมาย, <span class="slant iast">anyāyena</span><span class="slant pali">อนฺยาเยน</span><span class="slant thai">อันยาเยนะ</span><span class="slant ram">อันยาเยนะ</span> — ผิดกฎหมาย, <span class="slant iast">artha</span><span class="slant pali">อรฺถ</span><span class="slant thai">อัรถะ</span><span class="slant ram">อารทฺะ</span> — แห่งความร่ำรวย, <span class="slant iast">sañcayān</span><span class="slant pali">สญฺจยานฺ</span><span class="slant thai">สัญจะยาน</span><span class="slant ram">สันชะยาน</span> — สะสม
   </p>
 </div>
 
@@ -79,13 +195,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พวกมารยอมรับว่าการรื่นรมย์ทางประสาทสัมผัสเป็นจุดมุ่งหมายสูงสุดแห่ง<wbr>ชีวิตและจะรักษาแนวคิดนี้จนกว่าจะตาย&nbsp;&nbsp;โดยไม่เชื่อในชีวิตหลังจากตายไปแล้ว&nbsp;&nbsp;และ<wbr>ไม่เชื่อว่าต้องไปอยู่ในร่างที่แตกต่างกันตามกรรม&nbsp;&nbsp;(&nbsp;&nbsp;<i>กรฺม</i>&nbsp;&nbsp;)&nbsp;&nbsp;หรือตามกิจกรรมที่ตนได้<wbr>กระทำในโลกนี้&nbsp;&nbsp;แผนการสำหรับชีวิตไม่เคยหมด&nbsp;&nbsp;พวกนี้วางแผนแล้วแผนเล่าซึ่งไม่มีวัน<wbr>จบสิ้น&nbsp;&nbsp;เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ีประสบการณ์โดยตรงกับบุคคลที่มีแนวคิดมารเช่นนี้&nbsp;&nbsp;ซึ่งแม้ถึงเวลาตายยัง<wbr>ถามหาแพทย์ให้ช่วยต่อชีวิตอีกสี่ปี&nbsp;&nbsp;เพราะว่าแผนของตนยังไม่เสร็จสมบูรณ์&nbsp;&nbsp;คนโง่เช่นนี้<wbr>ไม่รู้ว่าแพทย์ไม่สามารถต่ออายุให้แม้แต่วินาทีเดียว&nbsp;&nbsp;เมื่อคำสั่งมาถึงจะไม่มีการพิจารณา<wbr>ถึงความต้องการของมนุษย์&nbsp;&nbsp;กฎแห่งธรรมชาติไม่อนุญาตแม้แต่วินาทีเดียวนอกเหนือไป<wbr>จากที่เขาได้ถูกกำหนดไว้ให้รื่นรมย์
+  พวกมารยอมรับว่าการรื่นรมย์ทางประสาทสัมผัสเป็นจุดมุ่งหมายสูงสุดแห่ง<wbr>ชีวิตและจะรักษาแนวคิดนี้จนกว่าจะตาย&nbsp;&nbsp;โดยไม่เชื่อในชีวิตหลังจากตายไปแล้ว&nbsp;&nbsp;และ<wbr>ไม่เชื่อว่าต้องไปอยู่ในร่างที่แตกต่างกันตามกรรม&nbsp;&nbsp;(&nbsp;&nbsp;<span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;หรือตามกิจกรรมที่ตนได้<wbr>กระทำในโลกนี้&nbsp;&nbsp;แผนการสำหรับชีวิตไม่เคยหมด&nbsp;&nbsp;พวกนี้วางแผนแล้วแผนเล่าซึ่งไม่มีวัน<wbr>จบสิ้น&nbsp;&nbsp;เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ีประสบการณ์โดยตรงกับบุคคลที่มีแนวคิดมารเช่นนี้&nbsp;&nbsp;ซึ่งแม้ถึงเวลาตายยัง<wbr>ถามหาแพทย์ให้ช่วยต่อชีวิตอีกสี่ปี&nbsp;&nbsp;เพราะว่าแผนของตนยังไม่เสร็จสมบูรณ์&nbsp;&nbsp;คนโง่เช่นนี้<wbr>ไม่รู้ว่าแพทย์ไม่สามารถต่ออายุให้แม้แต่วินาทีเดียว&nbsp;&nbsp;เมื่อคำสั่งมาถึงจะไม่มีการพิจารณา<wbr>ถึงความต้องการของมนุษย์&nbsp;&nbsp;กฎแห่งธรรมชาติไม่อนุญาตแม้แต่วินาทีเดียวนอกเหนือไป<wbr>จากที่เขาได้ถูกกำหนดไว้ให้รื่นรมย์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คนมารผู้ไม่มีความศรัทธาในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรืออภิวิญญาณภายในใจตนเอง<wbr>ทำบาปทุกอย่างเพื่อสนองประสาทสัมผัสของตน&nbsp;&nbsp;โดยไม่รู้ว่ามีพยานนั่งอยู่ภายในหัวใจอภิวิญญาณทรงดูกิจกรรมของปัจเจกวิญญาณ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;ว่ามีนก<wbr>สองตัวเกาะอยู่บนต้นไม้ต้นเดียวกัน&nbsp;&nbsp;นกตัวหนึ่งปฏิบัติการและได้รับความสุขหรือความ<wbr>ทุกข์จากผลไม้ของต้นและนกอีกตัวหนึ่งทรงเป็นพยาน&nbsp;&nbsp;แต่คนมารไม่มีความรู้ในคัมภีร์<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงรู้สึกเป็นอิสระที่จะทำทุกสิ่งทุกอย่างเพื่อสนอง<wbr>ประสาทสัมผัส&nbsp;&nbsp;ไม่ว่าผลที่ตามมาจะเป็นเช่นไร
+  คนมารผู้ไม่มีความศรัทธาในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรืออภิวิญญาณภายในใจตนเอง<wbr>ทำบาปทุกอย่างเพื่อสนองประสาทสัมผัสของตน&nbsp;&nbsp;โดยไม่รู้ว่ามีพยานนั่งอยู่ภายในหัวใจอภิวิญญาณทรงดูกิจกรรมของปัจเจกวิญญาณ&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;ว่ามีนก<wbr>สองตัวเกาะอยู่บนต้นไม้ต้นเดียวกัน&nbsp;&nbsp;นกตัวหนึ่งปฏิบัติการและได้รับความสุขหรือความ<wbr>ทุกข์จากผลไม้ของต้นและนกอีกตัวหนึ่งทรงเป็นพยาน&nbsp;&nbsp;แต่คนมารไม่มีความรู้ในคัมภีร์<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และไม่มีความศรัทธา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงรู้สึกเป็นอิสระที่จะทำทุกสิ่งทุกอย่างเพื่อสนอง<wbr>ประสาทสัมผัส&nbsp;&nbsp;ไม่ว่าผลที่ตามมาจะเป็นเช่นไร
   </p>
 </div>
 

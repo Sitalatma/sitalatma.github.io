@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 12.11</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อไตฺหตทฺ อปฺยฺ อศโกฺต ′สิ</i><br /><i>กรฺตุํ มทฺ-โยคมฺ อาศฺริตฮ</i><br /><i>สรฺว-กรฺม-ผล-ตฺยาคํ</i><br /><i>ตตฮ กุรุ ยตาตฺมวานฺ</i>
+<span class="slant iast">athaitad apy aśakto ’si<br /></span>
+<span class="slant pali">อไถตทฺ อปฺยฺ อศกฺโต ’สิ<br /></span>
+<span class="slant thai">อะไถตัท อัปย อะศักโต ’สิ<br /></span>
+<span class="slant ram">อไทฺทัด อพิ อชัคโท ่สิ<br /></span>
+<span class="slant iast">kartuṁ mad-yogam āśritaḥ<br /></span>
+<span class="slant pali">กรฺตุํ มทฺ-โยคมฺ อาศฺริตห์<br /></span>
+<span class="slant thai">กัรตุง มัท-โยคัม อาศริตะห์<br /></span>
+<span class="slant ram">คารทุม มัด-โยกัม อาชริทะฮ<br /></span>
+<span class="slant iast">sarva-karma-phala-tyāgaṁ<br /></span>
+<span class="slant pali">สรฺว-กรฺม-ผล-ตฺยาคํ<br /></span>
+<span class="slant thai">สัรวะ-กัรมะ-ผะละ-ตยาคัง<br /></span>
+<span class="slant ram">สารวะ-คารมะ-พฺะละ-ทยากัม<br /></span>
+<span class="slant iast">tataḥ kuru yatātmavān<br /></span>
+<span class="slant pali">ตตห์ กุรุ ยตาตฺมวานฺ<br /></span>
+<span class="slant thai">ตะตะห์ กุรุ ยะตาตมะวาน<br /></span>
+<span class="slant ram">ทะทะฮ คุรุ ยะทาทมะวาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อตฺห</i> — ถึงแม้ว่า, <i>เอตตฺ</i> — นี้, <i>อปิ</i> — เช่นกัน, <i>อศกฺตฮ</i> — ไม่สามารถ, <i>อสิ</i> — เธอเป็น, <i>กรฺตุมฺ</i> — ปฏิบัติ, <i>มตฺ</i> — แด่ข้า, <i>โยคมฺ</i> — ในการอุทิศตนเสียสละรับใช้, <i>อาศฺริตฮ</i> — เป็นที่พึ่ง, <i>สรฺว-กรฺม</i> — กิจกรรมทั้งหลาย, <i>ผล</i> — ของผล, <i>ตฺยาคมฺ</i> — เสียสละ, <i>ตตฮ</i> — จากนั้น, <i>กุรุ</i> — ทำ, <i>ยต-อาตฺม-วานฺ</i> — ตั้งมั่นในตนเอง
+  <span class="slant iast">atha</span><span class="slant pali">อถ</span><span class="slant thai">อะถะ</span><span class="slant ram">อทฺะ</span> — ถึงแม้ว่า, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">aśaktaḥ</span><span class="slant pali">อศกฺตห์</span><span class="slant thai">อะศักตะห์</span><span class="slant ram">อชัคทะฮ</span> — ไม่สามารถ, <span class="slant iast">asi</span><span class="slant pali">อสิ</span><span class="slant thai">อะสิ</span><span class="slant ram">อสิ</span> — เธอเป็น, <span class="slant iast">kartum</span><span class="slant pali">กรฺตุมฺ</span><span class="slant thai">กัรตุม</span><span class="slant ram">คารทุม</span> — ปฏิบัติ, <span class="slant iast">mat</span><span class="slant pali">มตฺ</span><span class="slant thai">มัต</span><span class="slant ram">มัท</span> — แด่ข้า, <span class="slant iast">yogam</span><span class="slant pali">โยคมฺ</span><span class="slant thai">โยคัม</span><span class="slant ram">โยกัม</span> — ในการอุทิศตนเสียสละรับใช้, <span class="slant iast">āśritaḥ</span><span class="slant pali">อาศฺริตห์</span><span class="slant thai">อาศริตะห์</span><span class="slant ram">อาชริทะฮ</span> — เป็นที่พึ่ง, <span class="slant iast">sarva-karma</span><span class="slant pali">สรฺว-กรฺม</span><span class="slant thai">สัรวะ-กัรมะ</span><span class="slant ram">สารวะ- คารมะ</span> — กิจกรรมทั้งหลาย, <span class="slant iast">phala</span><span class="slant pali">ผล</span><span class="slant thai">ผะละ</span><span class="slant ram">พฺะละ</span> — ของผล, <span class="slant iast">tyāgam</span><span class="slant pali">ตฺยาคมฺ</span><span class="slant thai">ตยาคัม</span><span class="slant ram">ทยากัม</span> — เสียสละ, <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — จากนั้น, <span class="slant iast">kuru</span><span class="slant pali">กุรุ</span><span class="slant thai">กุรุ</span><span class="slant ram">คุรุ</span> — ทำ, <span class="slant iast">yata-ātma-vān</span><span class="slant pali">ยต-อาตฺม-วานฺ</span><span class="slant thai">ยะตะ-อาตมะ-วาน</span><span class="slant ram">ยะทะ-อาทมะ-วาน</span> — ตั้งมั่นในตนเอง
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  อาจเป็นไปได้ที่เราไม่สามารถแม้แต่จะเห็นอกเห็นใจกับกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อันเนื่องมาจากข้อพิจารณาทางสังคม&nbsp;&nbsp;ทางครอบครัว&nbsp;&nbsp;หรือทางศาสนาหรือเนื่องมาจากอุปสรรคอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;หากเรายึดมั่นกับกิจกรรมใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกโดยตรง<wbr>อาจมีการคัดค้านจากสมาชิกในครอบครัว&nbsp;&nbsp;หรือมีความยุ่งยากอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมาย&nbsp;&nbsp;สำหรับ<wbr>ผู้ที่มีปัญหาเช่นนี้&nbsp;&nbsp;ได้แนะนำไว้ว่า&nbsp;&nbsp;เขาควรสละผลแห่งกิจกรรมที่สะสมมาเพื่อทำคุณ<wbr>ประโยชน์บางประการ&nbsp;&nbsp;ขั้นตอนเหล่านี้ได้อธิบายไว้ในกฎเกณฑ์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ซึ่งอธิบายไว้<wbr>มากมายเกี่ยวกับการเสียสละ&nbsp;&nbsp;และพิธีกรรมพิเศษเพื่อผลบุญ&nbsp;&nbsp;(<i>ปุณฺย</i>&nbsp;&nbsp;)&nbsp;&nbsp;หรืองานพิเศษซึ่ง<wbr>ผลกรรมในอดีตของเขาอาจใช้ได้&nbsp;&nbsp;เพื่ออาจค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนามาถึงระดับแห่งความรู้&nbsp;&nbsp;ยังพบ<wbr>อีกว่าเมื่อไม่สนใจแม้ในกิจกรรมของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;การให้ทานกับโรงพยาบาลหรือ<wbr>สถาบันเพื่อสังคมบางแห่ง&nbsp;&nbsp;จะทำให้เขาสละผลงานที่ได้มาด้วยความเหนื่อยยาก&nbsp;&nbsp;ซึ่ง<wbr>แนะนำไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;เพราะเมื่อฝึกปฏิบัติการเสียสละผลจากกิจกรรมของตนเอง&nbsp;&nbsp;จิตใจจะ<wbr>ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;บริสุทธิ์ขึ้นอย่างแน่นอน&nbsp;&nbsp;ในระดับจิตที่บริสุทธิ์นั้น&nbsp;&nbsp;เขาจะสามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึก&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไม่ขึ้นอยู่กับประสบการณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งสิ้น&nbsp;&nbsp;เพราะว่า<wbr>ในตัวของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเองสามารถทำให้จิตบริสุทธิ์&nbsp;&nbsp;แต่หากมีอุปสรรคในการรับเอา<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกมาปฏิบัติเขาอาจพยายามเสียสละผลของงาน&nbsp;&nbsp;ในกรณีนี้&nbsp;&nbsp;การบ&nbsp;&nbsp;<i>ฤคฺ</i>&nbsp;&nbsp;าร<wbr>รับใช้สังคม&nbsp;&nbsp;รับใช้ชุมชน&nbsp;&nbsp;รับใช้ประเทศชาติ&nbsp;&nbsp;การเสียสละเพื่อประเทศของตนเอง&nbsp;&nbsp;ฯลฯอาจยอมรับได้&nbsp;&nbsp;เพื่อวันหนึ่งอาจมาถึงระดับแห่งการอุทิศตนเสียสละรับใช้แด่องค์&nbsp;&nbsp;<i>ภควานฺ</i>ด้วยใจบริสุทธิ์&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;(18.46)&nbsp;&nbsp;เราพบข้อความว่า&nbsp;&nbsp;<i>ยตฮ&nbsp;&nbsp;ปฺรวฺฤตฺติรฺ&nbsp;&nbsp;ภูตานามฺ</i>&nbsp;&nbsp;หากตัดสินใจเสียสละเพื่อแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ถึงแม้ไม่รู้ว่าแหล่งกำเนิดสูงสุดคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เขาจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เข้าใจว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ด้วยวิธีการเสียสละ
+  อาจเป็นไปได้ที่เราไม่สามารถแม้แต่จะเห็นอกเห็นใจกับกิจกรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อันเนื่องมาจากข้อพิจารณาทางสังคม&nbsp;&nbsp;ทางครอบครัว&nbsp;&nbsp;หรือทางศาสนาหรือเนื่องมาจากอุปสรรคอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;หากเรายึดมั่นกับกิจกรรมใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกโดยตรง<wbr>อาจมีการคัดค้านจากสมาชิกในครอบครัว&nbsp;&nbsp;หรือมีความยุ่งยากอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมาย&nbsp;&nbsp;สำหรับ<wbr>ผู้ที่มีปัญหาเช่นนี้&nbsp;&nbsp;ได้แนะนำไว้ว่า&nbsp;&nbsp;เขาควรสละผลแห่งกิจกรรมที่สะสมมาเพื่อทำคุณ<wbr>ประโยชน์บางประการ&nbsp;&nbsp;ขั้นตอนเหล่านี้ได้อธิบายไว้ในกฎเกณฑ์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ซึ่งอธิบายไว้<wbr>มากมายเกี่ยวกับการเสียสละ&nbsp;&nbsp;และพิธีกรรมพิเศษเพื่อผลบุญ&nbsp;&nbsp;(<span class="slant iast">puṇya</span><span class="slant pali">ปุณฺย</span><span class="slant thai">ปุณยะ</span><span class="slant ram">พุณยะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;หรืองานพิเศษซึ่ง<wbr>ผลกรรมในอดีตของเขาอาจใช้ได้&nbsp;&nbsp;เพื่ออาจค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัฒนามาถึงระดับแห่งความรู้&nbsp;&nbsp;ยังพบ<wbr>อีกว่าเมื่อไม่สนใจแม้ในกิจกรรมของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;การให้ทานกับโรงพยาบาลหรือ<wbr>สถาบันเพื่อสังคมบางแห่ง&nbsp;&nbsp;จะทำให้เขาสละผลงานที่ได้มาด้วยความเหนื่อยยาก&nbsp;&nbsp;ซึ่ง<wbr>แนะนำไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;เพราะเมื่อฝึกปฏิบัติการเสียสละผลจากกิจกรรมของตนเอง&nbsp;&nbsp;จิตใจจะ<wbr>ค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;บริสุทธิ์ขึ้นอย่างแน่นอน&nbsp;&nbsp;ในระดับจิตที่บริสุทธิ์นั้น&nbsp;&nbsp;เขาจะสามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึก&nbsp;&nbsp;แน่นอนว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไม่ขึ้นอยู่กับประสบการณ์ใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งสิ้น&nbsp;&nbsp;เพราะว่า<wbr>ในตัวของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเองสามารถทำให้จิตบริสุทธิ์&nbsp;&nbsp;แต่หากมีอุปสรรคในการรับเอา<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกมาปฏิบัติเขาอาจพยายามเสียสละผลของงาน&nbsp;&nbsp;ในกรณีนี้&nbsp;&nbsp;การบ&nbsp;&nbsp;<span class="slant iast">ṛg</span><span class="slant pali">ฤคฺ</span><span class="slant thai">ฤค</span><span class="slant ram">ริก</span>&nbsp;&nbsp;าร<wbr>รับใช้สังคม&nbsp;&nbsp;รับใช้ชุมชน&nbsp;&nbsp;รับใช้ประเทศชาติ&nbsp;&nbsp;การเสียสละเพื่อประเทศของตนเอง&nbsp;&nbsp;ฯลฯอาจยอมรับได้&nbsp;&nbsp;เพื่อวันหนึ่งอาจมาถึงระดับแห่งการอุทิศตนเสียสละรับใช้แด่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>ด้วยใจบริสุทธิ์&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;(18.46)&nbsp;&nbsp;เราพบข้อความว่า&nbsp;&nbsp;<span class="slant iast">yataḥ&nbsp;&nbsp;pravṛttir&nbsp;&nbsp;bhūtānām</span><span class="slant pali">ยตห์ปฺรวฺฤตฺติรฺภูตานามฺ</span><span class="slant thai">ยะตะห์ปรัวฤตติรภูตานาม</span><span class="slant ram">ยะทะฮบํูทานาม</span>&nbsp;&nbsp;หากตัดสินใจเสียสละเพื่อแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ถึงแม้ไม่รู้ว่าแหล่งกำเนิดสูงสุดคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เขาจะค่อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;เข้าใจว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือแหล่งกำเนิดสูงสุด&nbsp;&nbsp;ด้วยวิธีการเสียสละ
   </p>
 </div>
 

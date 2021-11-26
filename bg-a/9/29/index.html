@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 9.29</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สโม ′หํ สรฺว-ภูเตษุ</i><br /><i>น เม เทฺวโษฺย ′สฺติ น ปฺริยฮ</i><br /><i>เย ภชนฺติ ตุ มาํ ภกฺตฺยา</i><br /><i>มยิ เต เตษุ จาปฺยฺ อหมฺ</i>
+<span class="slant iast">samo ’haṁ sarva-bhūteṣu<br /></span>
+<span class="slant pali">สโม ’หํ สรฺว-ภูเตษุ<br /></span>
+<span class="slant thai">สะโม ’หัง สัรวะ-ภูเตษุ<br /></span>
+<span class="slant ram">สะโม ฮัม สารวะ-บํูเทชุ<br /></span>
+<span class="slant iast">na me dveṣyo ’sti na priyaḥ<br /></span>
+<span class="slant pali">น เม เทฺวโษฺย ’สฺติ น ปฺริยห์<br /></span>
+<span class="slant thai">นะ เม ทเวษโย ’สติ นะ ปริยะห์<br /></span>
+<span class="slant ram">นะ เม ดเวชโย สทิ นะพริยะฮ<br /></span>
+<span class="slant iast">ye bhajanti tu māṁ bhaktyā<br /></span>
+<span class="slant pali">เย ภชนฺติ ตุ มำ ภกฺตฺยา<br /></span>
+<span class="slant thai">เย ภะชันติ ตุ มาง ภักตยา<br /></span>
+<span class="slant ram">เย บฺะจันทิ ทุ มาม บัฺคธยา<br /></span>
+<span class="slant iast">mayi te teṣu cāpy aham<br /></span>
+<span class="slant pali">มยิ เต เตษุ จาปฺยฺ อหมฺ<br /></span>
+<span class="slant thai">มะยิ เต เตษุ จาปย อะหัม<br /></span>
+<span class="slant ram">มะยิ เท เทชุ ชาพิ อฮัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สมฮ</i> — ปฏิบัติเสมอภาค, <i>อหมฺ</i> — ข้า, <i>สรฺว-ภูเตษุ</i> — ต่อมวลชีวิต, <i>น</i> — ไม่มีผู้ใด, <i>เม</i> — แด่ ข้า, <i>เทฺวษฺยฮ</i> — เกลียด, <i>อสฺติ</i> — เป็น, <i>น</i> — ไม่, <i>ปฺริยฮ</i> — รัก, <i>เย</i> — พวกที่, <i>ภชนฺติ</i> — ถวายการ รับใช้ทิพย์, <i>ตุ</i> — แต่, <i>มามฺ</i> — แด่ข้า, <i>ภกฺตฺยา</i> — ในการอุทิศตนเสียสละ, <i>มยิ</i> — อยู่ในข้า, <i>เต</i> — บุคคลเหล่านี้, <i>เตษุ</i> — ในพวกเขา, <i>จ</i> — เช่นกัน, <i>อปิ</i> — แน่นอน, <i>อหมฺ</i> — ข้า
+  <span class="slant iast">samaḥ</span><span class="slant pali">สมห์</span><span class="slant thai">สะมะห์</span><span class="slant ram">สะมะฮ</span> — ปฏิบัติเสมอภาค, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">sarva-bhūteṣu</span><span class="slant pali">สรฺว-ภูเตษุ</span><span class="slant thai">สัรวะ-ภูเตษุ</span><span class="slant ram">สารวะ-บํูเทชุ</span> — ต่อมวลชีวิต, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่มีผู้ใด, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — แด่ ข้า, <span class="slant iast">dveṣyaḥ</span><span class="slant pali">เทฺวษฺยห์</span><span class="slant thai">ทเวษยะห์</span><span class="slant ram">ดเวชยะฮ</span> — เกลียด, <span class="slant iast">asti</span><span class="slant pali">อสฺติ</span><span class="slant thai">อัสติ</span><span class="slant ram">อัสทิ</span> — เป็น, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">priyaḥ</span><span class="slant pali">ปฺริยห์</span><span class="slant thai">ปริยะห์</span><span class="slant ram">พริยะฮ</span> — รัก, <span class="slant iast">ye</span><span class="slant pali">เย</span><span class="slant thai">เย</span><span class="slant ram">เย</span> — พวกที่, <span class="slant iast">bhajanti</span><span class="slant pali">ภชนฺติ</span><span class="slant thai">ภะชันติ</span><span class="slant ram">บฺะจันทิ</span> — ถวายการ รับใช้ทิพย์, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">bhaktyā</span><span class="slant pali">ภกฺตฺยา</span><span class="slant thai">ภักตยา</span><span class="slant ram">บัฺคธยา</span> — ในการอุทิศตนเสียสละ, <span class="slant iast">mayi</span><span class="slant pali">มยิ</span><span class="slant thai">มะยิ</span><span class="slant ram">มะยิ</span> — อยู่ในข้า, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — บุคคลเหล่านี้, <span class="slant iast">teṣu</span><span class="slant pali">เตษุ</span><span class="slant thai">เตษุ</span><span class="slant ram">เทชุ</span> — ในพวกเขา, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แน่นอน, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เราอาจถาม&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;หาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเสมอภาคกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ไม่มีผู้ใดเป็น<wbr>เพื่อนพิเศษของพระองค์&nbsp;&nbsp;แล้วทำไมทรงมีความสนใจกับสาวกผู้ปฏิบัติการรับใช้ทิพย์ต่อ<wbr>พระองค์อยู่เสมอเป็นพิเศษ?&nbsp;&nbsp;เช่นนี้มิใช่เป็นการเลือกปฏิบัติ&nbsp;&nbsp;แต่เป็นธรรมชาติ&nbsp;&nbsp;บางคนใน<wbr>โลกวัตถุนี้อาจชอบให้ทานมาก&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;เขาก็ยังให้ความสนใจกับบุตรธิดาของตนเอง<wbr>เป็นพิเศษ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอ้างว่าทุกชีวิตไม่ว่าในรูปใดเป็นบุตรของพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ทรง<wbr>ให้สิ่งของที่จำเป็นอย่างเพียงพอสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;พระองค์ทรงเหมือนกับหมู่เมฆที่ส่งฝน<wbr>ลงมาทั่วทุกหนทุกแห่ง&nbsp;&nbsp;ไม่ว่าจะตกลงบนหิน&nbsp;&nbsp;บนดิน&nbsp;&nbsp;หรือในน้ำ&nbsp;&nbsp;แต่สำหรับสาวก&nbsp;&nbsp;พระองค์<wbr>ทรงมีความสนพระทัยโดยเฉพาะ&nbsp;&nbsp;ได้กล่าว&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าสาวกเหล่านี้อยู่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก<wbr>เสมอ&nbsp;&nbsp;จึงสถิตอยู่ในความเป็นทิพย์กับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตลอดเวลา&nbsp;&nbsp;วลี&nbsp;&nbsp;“&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก”&nbsp;&nbsp;แสดง<wbr>ให้เห็นว่าพวกที่อยู่ในจิตสำนึกเช่นนี้เป็นนักทิพย์นิยมที่มีชีวิตสถิตอยู่ในพระองค์&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้อย่างชัดเจนว่า&nbsp;&nbsp;<i>มยิ&nbsp;&nbsp;เต</i>&nbsp;&nbsp;“พวกเขาอยู่ในข้า”&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;พระองค์<wbr>ทรงอยู่ในพวกเขาเช่นกัน&nbsp;&nbsp;นี่คือการสนองตอบซึ่งกันและกันเช่นนี้ได้อธิบายคำว่า&nbsp;&nbsp;<i>เย&nbsp;&nbsp;ยตฺหา&nbsp;&nbsp;มาํ&nbsp;&nbsp;ปฺรปทฺยเนฺต&nbsp;&nbsp;ตาํสฺ&nbsp;&nbsp;ตไตฺหว&nbsp;&nbsp;ภชามฺยฺ&nbsp;&nbsp;อหมฺ</i>&nbsp;&nbsp;“ผู้ใดศิโรราบต่อข้า&nbsp;&nbsp;ข้าจะดูแลเขาตาม<wbr>สัดส่วนนั้น&nbsp;&nbsp;ๆ”&nbsp;&nbsp;การสนองตอบซึ่งกันและกันแบบทิพย์นี้มีอยู่&nbsp;&nbsp;เพราะว่าทั้งองค์&nbsp;&nbsp;<i>ภควานฺ</i>และสาวกเป็นจิตสำนึก&nbsp;&nbsp;เมื่อเพชรฝังอยู่ในแหวนทองคำจะดูสวยงามมาก&nbsp;&nbsp;เพราะทำให้<wbr>ทั้งทองคำและเพชรเปล่งปลั่งเป็นประกายมากยิ่งขึ้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสิ่งมีชีวิตมีรัศมีอยู่<wbr>นิรันดร&nbsp;&nbsp;เมื่อสิ่งมีชีวิตมีแนวโน้มที่จะรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เขาดูเหมือนกับทองคำและองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คือเพชร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การรวมกันเช่นนี้ดีมาก&nbsp;&nbsp;สิ่งมีชีวิตในระดับที่บริสุทธิ์เรียกว่าสาวกองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;กลายมาเป็นสาวกของสาวกของพระองค์&nbsp;&nbsp;หากความสัมพันธ์ในการสนอง<wbr>ตอบซึ่งกันและกันไม่มีระหว่างสาวกและองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก็จะไม่มีปรัชญาของผู้ที่เชื่อในรูป<wbr>ลักษณ์&nbsp;&nbsp;ในปรัชญาของผู้ไม่เชื่อในรูปลักษณ์ไม่มีการสนองตอบซึ่งกันและกันระหว่างองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสิ่งมีชีวิต&nbsp;&nbsp;แต่ในปรัชญาที่เชื่อในรูปลักษณ์มีการสนองตอบ
+  เราอาจถาม&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;หาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเสมอภาคกับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คน&nbsp;&nbsp;ไม่มีผู้ใดเป็น<wbr>เพื่อนพิเศษของพระองค์&nbsp;&nbsp;แล้วทำไมทรงมีความสนใจกับสาวกผู้ปฏิบัติการรับใช้ทิพย์ต่อ<wbr>พระองค์อยู่เสมอเป็นพิเศษ?&nbsp;&nbsp;เช่นนี้มิใช่เป็นการเลือกปฏิบัติ&nbsp;&nbsp;แต่เป็นธรรมชาติ&nbsp;&nbsp;บางคนใน<wbr>โลกวัตถุนี้อาจชอบให้ทานมาก&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;เขาก็ยังให้ความสนใจกับบุตรธิดาของตนเอง<wbr>เป็นพิเศษ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอ้างว่าทุกชีวิตไม่ว่าในรูปใดเป็นบุตรของพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ทรง<wbr>ให้สิ่งของที่จำเป็นอย่างเพียงพอสำหรับทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิต&nbsp;&nbsp;พระองค์ทรงเหมือนกับหมู่เมฆที่ส่งฝน<wbr>ลงมาทั่วทุกหนทุกแห่ง&nbsp;&nbsp;ไม่ว่าจะตกลงบนหิน&nbsp;&nbsp;บนดิน&nbsp;&nbsp;หรือในน้ำ&nbsp;&nbsp;แต่สำหรับสาวก&nbsp;&nbsp;พระองค์<wbr>ทรงมีความสนพระทัยโดยเฉพาะ&nbsp;&nbsp;ได้กล่าว&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าสาวกเหล่านี้อยู่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก<wbr>เสมอ&nbsp;&nbsp;จึงสถิตอยู่ในความเป็นทิพย์กับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตลอดเวลา&nbsp;&nbsp;วลี&nbsp;&nbsp;“&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก”&nbsp;&nbsp;แสดง<wbr>ให้เห็นว่าพวกที่อยู่ในจิตสำนึกเช่นนี้เป็นนักทิพย์นิยมที่มีชีวิตสถิตอยู่ในพระองค์&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้อย่างชัดเจนว่า&nbsp;&nbsp;<span class="slant iast">mayi&nbsp;&nbsp;te</span><span class="slant pali">มยิเต</span><span class="slant thai">มะยิเต</span><span class="slant ram">มะยิเท</span>&nbsp;&nbsp;“พวกเขาอยู่ในข้า”&nbsp;&nbsp;โดยธรรมชาติ&nbsp;&nbsp;พระองค์<wbr>ทรงอยู่ในพวกเขาเช่นกัน&nbsp;&nbsp;นี่คือการสนองตอบซึ่งกันและกันเช่นนี้ได้อธิบายคำว่า&nbsp;&nbsp;<span class="slant iast">ye&nbsp;&nbsp;yathā&nbsp;&nbsp;māṁ&nbsp;&nbsp;prapadyante&nbsp;&nbsp;tāṁs&nbsp;&nbsp;tathaiva&nbsp;&nbsp;bhajāmy&nbsp;&nbsp;aham</span><span class="slant pali">เยยถามำปฺรปทฺยนฺเตตำสฺตไถวภชามฺยฺอหมฺ</span><span class="slant thai">เยยะถามางประปัทยันเตตางสตะไถวะภะชามยอะหัม</span><span class="slant ram">เยยะทฺามามพระ พัดยันเทอฮัม</span>&nbsp;&nbsp;“ผู้ใดศิโรราบต่อข้า&nbsp;&nbsp;ข้าจะดูแลเขาตาม<wbr>สัดส่วนนั้น&nbsp;&nbsp;ๆ”&nbsp;&nbsp;การสนองตอบซึ่งกันและกันแบบทิพย์นี้มีอยู่&nbsp;&nbsp;เพราะว่าทั้งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>และสาวกเป็นจิตสำนึก&nbsp;&nbsp;เมื่อเพชรฝังอยู่ในแหวนทองคำจะดูสวยงามมาก&nbsp;&nbsp;เพราะทำให้<wbr>ทั้งทองคำและเพชรเปล่งปลั่งเป็นประกายมากยิ่งขึ้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสิ่งมีชีวิตมีรัศมีอยู่<wbr>นิรันดร&nbsp;&nbsp;เมื่อสิ่งมีชีวิตมีแนวโน้มที่จะรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เขาดูเหมือนกับทองคำและองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คือเพชร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การรวมกันเช่นนี้ดีมาก&nbsp;&nbsp;สิ่งมีชีวิตในระดับที่บริสุทธิ์เรียกว่าสาวกองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;กลายมาเป็นสาวกของสาวกของพระองค์&nbsp;&nbsp;หากความสัมพันธ์ในการสนอง<wbr>ตอบซึ่งกันและกันไม่มีระหว่างสาวกและองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก็จะไม่มีปรัชญาของผู้ที่เชื่อในรูป<wbr>ลักษณ์&nbsp;&nbsp;ในปรัชญาของผู้ไม่เชื่อในรูปลักษณ์ไม่มีการสนองตอบซึ่งกันและกันระหว่างองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสิ่งมีชีวิต&nbsp;&nbsp;แต่ในปรัชญาที่เชื่อในรูปลักษณ์มีการสนองตอบ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ตัวอย่างได้ให้ไว้เสมอว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเหมือนกับต้นกัลปพฤกษ์&nbsp;&nbsp;อะไรก็แล้ว<wbr>แต่ที่เราปรารถนาจากต้นกัลปพฤกษ์นี้&nbsp;&nbsp;พระองค์จะทรงจัดส่งให้&nbsp;&nbsp;อธิบายอย่างชัดเจน&nbsp;&nbsp;ณที่นี้ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงลำเอียงต่อสาวก&nbsp;&nbsp;ซึ่งเป็นปรากฏการณ์แห่งพระเมตตาพิเศษที่ทรง<wbr>มีต่อสาวก&nbsp;&nbsp;การสนองตอบของพระองค์ไม่ควรพิจารณาว่าอยู่ภายใต้กฎแห่งกรรม&nbsp;&nbsp;แต่<wbr>อยู่ในสถานภาพทิพย์ซึ่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสาวกปฏิบัติกัน&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ต่อ<wbr>พระองค์มิใช่เป็นกิจกรรมของโลกวัตถุ&nbsp;&nbsp;แต่เป็นส่วนหนึ่งของโลกทิพย์ที่มีความเป็นอมตะความปลื้มปีติสุข&nbsp;&nbsp;และความรู้โดดเด่น
+  ตัวอย่างได้ให้ไว้เสมอว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเหมือนกับต้นกัลปพฤกษ์&nbsp;&nbsp;อะไรก็แล้ว<wbr>แต่ที่เราปรารถนาจากต้นกัลปพฤกษ์นี้&nbsp;&nbsp;พระองค์จะทรงจัดส่งให้&nbsp;&nbsp;อธิบายอย่างชัดเจน&nbsp;&nbsp;ณที่นี้ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงลำเอียงต่อสาวก&nbsp;&nbsp;ซึ่งเป็นปรากฏการณ์แห่งพระเมตตาพิเศษที่ทรง<wbr>มีต่อสาวก&nbsp;&nbsp;การสนองตอบของพระองค์ไม่ควรพิจารณาว่าอยู่ภายใต้กฎแห่งกรรม&nbsp;&nbsp;แต่<wbr>อยู่ในสถานภาพทิพย์ซึ่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสาวกปฏิบัติกัน&nbsp;&nbsp;การอุทิศตนเสียสละรับใช้ต่อ<wbr>พระองค์มิใช่เป็นกิจกรรมของโลกวัตถุ&nbsp;&nbsp;แต่เป็นส่วนหนึ่งของโลกทิพย์ที่มีความเป็นอมตะความปลื้มปีติสุข&nbsp;&nbsp;และความรู้โดดเด่น
   </p>
 </div>
 

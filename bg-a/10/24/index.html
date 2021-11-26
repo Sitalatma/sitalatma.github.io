@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.24</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปุโรธสาํ จ มุขฺยํ มาํ</i><br /><i>วิทฺธิ ปารฺตฺห พฺฤหสฺปติมฺ</i><br /><i>เสนานีนามฺ อหํ สฺกนฺทฮ</i><br /><i>สรสามฺ อสฺมิ สาครฮ</i>
+<span class="slant iast">purodhasāṁ ca mukhyaṁ māṁ<br /></span>
+<span class="slant pali">ปุโรธสำ จ มุขฺยํ มำ<br /></span>
+<span class="slant thai">ปุโรธะสาง จะ มุขยัง มาง<br /></span>
+<span class="slant ram">พุโรดฺะสาม ชะ มุคฺยัม มาม<br /></span>
+<span class="slant iast">viddhi pārtha bṛhaspatim<br /></span>
+<span class="slant pali">วิทฺธิ ปารฺถ พฺฤหสฺปติมฺ<br /></span>
+<span class="slant thai">วิทธิ ปารถะ พฤหัสปะติม<br /></span>
+<span class="slant ram">วิดดิฺ พารทฺะ บริฮัสพะทิม<br /></span>
+<span class="slant iast">senānīnām ahaṁ skandaḥ<br /></span>
+<span class="slant pali">เสนานีนามฺ อหํ สฺกนฺทห์<br /></span>
+<span class="slant thai">เสนานีนาม อะหัง สกันทะห์<br /></span>
+<span class="slant ram">เสนานีนาม อฮัม สคันดะฮ<br /></span>
+<span class="slant iast">sarasām asmi sāgaraḥ<br /></span>
+<span class="slant pali">สรสามฺ อสฺมิ สาครห์<br /></span>
+<span class="slant thai">สะระสาม อัสมิ สาคะระห์<br /></span>
+<span class="slant ram">สะระสาม อัสมิ สากะระฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปุโรธสามฺ</i> — ของพระทั้งหมด, <i>จ</i> — เช่นกัน, <i>มุขฺยมฺ</i> — หัวหน้า, <i>มามฺ</i> — ข้า, <i>วิทฺธิ</i> — เข้าใจ, <i>ปารฺตฺห</i> — โอ้ โอรสพระนาง <i>ปฺฤตฺหา</i>, <i>พฺฤหสฺปติมฺ</i> — <i>พฺฤหสฺปติ</i>, <i>เสนานีนามฺ</i> — ของขุนพลทั้ง หลาย, <i>อหมฺ</i> — ข้าเป็น, <i>สฺกนฺทฮ</i> — <i>การฺตฺติเกย</i>, <i>สรสามฺ</i> — ของแหล่งกำเนิดของน้ำทั้ง หลาย, <i>อสฺมิ</i> — ข้าเป็น, <i>สาครฮ</i> — มหาสมุทร
+  <span class="slant iast">purodhasām</span><span class="slant pali">ปุโรธสามฺ</span><span class="slant thai">ปุโรธะสาม</span><span class="slant ram">พุโรดฺะสาม</span> — ของพระทั้งหมด, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">mukhyam</span><span class="slant pali">มุขฺยมฺ</span><span class="slant thai">มุขยัม</span><span class="slant ram">มุคฺยัม</span> — หัวหน้า, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">viddhi</span><span class="slant pali">วิทฺธิ</span><span class="slant thai">วิทธิ</span><span class="slant ram">วิดดิฺ</span> — เข้าใจ, <span class="slant iast">pārtha</span><span class="slant pali">ปารฺถ</span><span class="slant thai">ปารถะ</span><span class="slant ram">พรทฺะ,พารทฺะ</span> — โอ้ โอรสพระนาง <span class="slant iast">pṛthā</span><span class="slant pali">ปฺฤถา</span><span class="slant thai">ปฤถา</span><span class="slant ram">พริทฺา,พริทา,พริทฺา</span>, <span class="slant iast">bṛhaspatim</span><span class="slant pali">พฺฤหสฺปติมฺ</span><span class="slant thai">พฤหัสปะติม</span><span class="slant ram">บริฮัสพะทิม</span> — <span class="slant iast">bṛhaspati</span><span class="slant pali">พฺฤหสฺปติ</span><span class="slant thai">พฤหัสปะติ</span><span class="slant ram">บริฮัสพะทิ</span>, <span class="slant iast">senānīnām</span><span class="slant pali">เสนานีนามฺ</span><span class="slant thai">เสนานีนาม</span><span class="slant ram">เสนานีนาม</span> — ของขุนพลทั้ง หลาย, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้าเป็น, <span class="slant iast">skandaḥ</span><span class="slant pali">สฺกนฺทห์</span><span class="slant thai">สกันทะห์</span><span class="slant ram">สคันดะฮ</span> — <span class="slant iast">kārttikeya</span><span class="slant pali">การฺตฺติเกย</span><span class="slant thai">การตติเกยะ</span><span class="slant ram">คารทิเคยะ</span>, <span class="slant iast">sarasām</span><span class="slant pali">สรสามฺ</span><span class="slant thai">สะระสาม</span><span class="slant ram">สะระสาม</span> — ของแหล่งกำเนิดของน้ำทั้ง หลาย, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">sāgaraḥ</span><span class="slant pali">สาครห์</span><span class="slant thai">สาคะระห์</span><span class="slant ram">สากะระฮ</span> — มหาสมุทร
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในบรรดาพระ&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จงรู้ว่าข้าคือผู้นำ&nbsp;&nbsp;<i>พฺฤหสฺปติ</i>&nbsp;&nbsp;ในบรรดาขุนพลข้าคือ<i>การฺตฺติเกย</i>&nbsp;&nbsp;และในบรรดาแผ่นน้ำข้าคือมหาสมุทร
+  ในบรรดาพระ&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จงรู้ว่าข้าคือผู้นำ&nbsp;&nbsp;<span class="slant iast">bṛhaspati</span><span class="slant pali">พฺฤหสฺปติ</span><span class="slant thai">พฤหัสปะติ</span><span class="slant ram">บริฮัสพะทิ</span>&nbsp;&nbsp;ในบรรดาขุนพลข้าคือ<span class="slant iast">kārttikeya</span><span class="slant pali">การฺตฺติเกย</span><span class="slant thai">การตติเกยะ</span><span class="slant ram">คารทิเคยะ</span>&nbsp;&nbsp;และในบรรดาแผ่นน้ำข้าคือมหาสมุทร
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พระ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;ทรงเป็นเทวดาแห่งสรวงสวรรค์&nbsp;&nbsp;จึงได้ชื่อว่าเป็นเจ้าแห่ง<wbr>สวรรค์&nbsp;&nbsp;ดาวเคราะห์ที่พระองค์ทรงเป็นใหญ่เรียกว่า&nbsp;&nbsp;<i>อินฺทฺรโลก.พฺฤหสฺปติ</i>&nbsp;&nbsp;เป็นพระ<wbr>ของพระ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;เนื่องจากพระ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;ทรงเป็นผู้นำของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;<i>พฺฤหสฺปติ</i>&nbsp;&nbsp;จึงเป็นประธาน<wbr>ของพระทั้งหมด&nbsp;&nbsp;ขณะที่พระ&nbsp;&nbsp;<i>อินฺทฺร</i>&nbsp;&nbsp;ทรงเป็นผู้นำของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;<i>สฺกนฺท</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>การฺตฺติเกย</i>&nbsp;&nbsp;โอรสของ&nbsp;&nbsp;<i>ปารฺวตี</i>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;ก็เป็นหัวหน้าของขุนพลใน<wbr>กองทัพทั้งหมด&nbsp;&nbsp;และในบรรดาแผ่นน้ำมหาสมุทรยิ่งใหญ่ที่สุด&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เหล่านี้เพียงแต่เปรยให้พอเห็นความยิ่งใหญ่ของพระองค์เท่านั้น
+  พระ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;ทรงเป็นเทวดาแห่งสรวงสวรรค์&nbsp;&nbsp;จึงได้ชื่อว่าเป็นเจ้าแห่ง<wbr>สวรรค์&nbsp;&nbsp;ดาวเคราะห์ที่พระองค์ทรงเป็นใหญ่เรียกว่า&nbsp;&nbsp;<span class="slant iast">indraloka.&nbsp;&nbsp;bṛhaspati</span><span class="slant pali">อินฺทฺรโลกพฺฤหสฺปติ</span><span class="slant thai">อินทระโลกะพฤหัสปะติ</span><span class="slant ram">อินดระโลคะบริฮัสพะทิ</span>&nbsp;&nbsp;เป็นพระ<wbr>ของพระ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;เนื่องจากพระ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;ทรงเป็นผู้นำของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;<span class="slant iast">bṛhaspati</span><span class="slant pali">พฺฤหสฺปติ</span><span class="slant thai">พฤหัสปะติ</span><span class="slant ram">บริฮัสพะทิ</span>&nbsp;&nbsp;จึงเป็นประธาน<wbr>ของพระทั้งหมด&nbsp;&nbsp;ขณะที่พระ&nbsp;&nbsp;<span class="slant iast">indra</span><span class="slant pali">อินฺทฺร</span><span class="slant thai">อินทระ</span><span class="slant ram">อินทร์,อินดระ</span>&nbsp;&nbsp;ทรงเป็นผู้นำของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ทั้งหมด&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;<span class="slant iast">skanda</span><span class="slant pali">สฺกนฺท</span><span class="slant thai">สกันทะ</span><span class="slant ram">สคันดะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kārttikeya</span><span class="slant pali">การฺตฺติเกย</span><span class="slant thai">การตติเกยะ</span><span class="slant ram">คารทิเคยะ</span>&nbsp;&nbsp;โอรสของ&nbsp;&nbsp;<span class="slant iast">pārvatī</span><span class="slant pali">ปารฺวตี</span><span class="slant thai">ปารวะตี</span><span class="slant ram">พาระวะที</span>&nbsp;&nbsp;และพระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;ก็เป็นหัวหน้าของขุนพลใน<wbr>กองทัพทั้งหมด&nbsp;&nbsp;และในบรรดาแผ่นน้ำมหาสมุทรยิ่งใหญ่ที่สุด&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เหล่านี้เพียงแต่เปรยให้พอเห็นความยิ่งใหญ่ของพระองค์เท่านั้น
   </p>
 </div>
 

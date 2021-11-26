@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.7</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อิไหก-สฺตฺหํ ชคตฺ กฺฤตฺสฺนํ</i><br /><i>ปศฺยาทฺย ส-จราจรมฺ</i><br /><i>มม เทเห คุฑาเกศ</i><br /><i>ยจฺ จานฺยทฺ ทฺรษฺฏุมฺ อิจฺฉสิ</i>
+<span class="slant iast">ihaika-sthaṁ jagat kṛtsnaṁ<br /></span>
+<span class="slant pali">อิไหก-สฺถํ ชคตฺ กฺฤตฺสฺนํ<br /></span>
+<span class="slant thai">อิไหกะ-สถัง ชะคัต กฤตสนัง<br /></span>
+<span class="slant ram">อิไฮคะ-สทัฺม จะกัท คริทสนัม<br /></span>
+<span class="slant iast">paśyādya sa-carācaram<br /></span>
+<span class="slant pali">ปศฺยาทฺย ส-จราจรมฺ<br /></span>
+<span class="slant thai">ปัศยาทยะ สะ-จะราจะรัม<br /></span>
+<span class="slant ram">พัชยาดยะ สะ-ชะราชะรัม<br /></span>
+<span class="slant iast">mama dehe guḍākeśa<br /></span>
+<span class="slant pali">มม เทเห คุฑาเกศ<br /></span>
+<span class="slant thai">มะมะ เทเห คุฑาเกศะ<br /></span>
+<span class="slant ram">มะมะ เดเฮ กุดาเคชะ<br /></span>
+<span class="slant iast">yac cānyad draṣṭum icchasi<br /></span>
+<span class="slant pali">ยจฺ จานฺยทฺ ทฺรษฺฏุมฺ อิจฺฉสิ<br /></span>
+<span class="slant thai">ยัจ จานยัท ทรัษฏุม อิจฉะสิ<br /></span>
+<span class="slant ram">ยัช ชานยัด ดรัชทุม อิชชฺะสิ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อิห</i> — ในนี้, <i>เอก-สฺตฺหมฺ</i> — ในที่หนึ่ง, <i>ชคตฺ</i> — จักรวาล, <i>กฺฤตฺสฺนมฺ</i> — สมบูรณ์, <i>ปศฺย</i> — เห็น, <i>อทฺย</i> — ทันที, <i>ส</i> — กับ, <i>จร</i> — เคลื่อนที่, <i>อจรมฺ</i> — ไม่เคลื่อนที่, <i>มม</i> — ของข้า, <i>เทเห</i> — ใน ร่างกายนี้, <i>คุฑาเกศ</i> — โอ้ <i>อรฺชุน</i>, <i>ยตฺ</i> — ซึ่ง, <i>จ</i> — เช่นกัน, <i>อนฺยตฺ</i> — ผู้อื่น, <i>ทฺรษฺฏุมฺ</i> — เห็น, <i>อิจฺฉสิ</i> — เธอปรารถนา
+  <span class="slant iast">iha</span><span class="slant pali">อิห</span><span class="slant thai">อิหะ</span><span class="slant ram">อิฮะ</span> — ในนี้, <span class="slant iast">eka-stham</span><span class="slant pali">เอก-สฺถมฺ</span><span class="slant thai">เอกะ-สถัม</span><span class="slant ram">เอคะ-สทัฺม</span> — ในที่หนึ่ง, <span class="slant iast">jagat</span><span class="slant pali">ชคตฺ</span><span class="slant thai">ชะคัต</span><span class="slant ram">จะกัท</span> — จักรวาล, <span class="slant iast">kṛtsnam</span><span class="slant pali">กฺฤตฺสฺนมฺ</span><span class="slant thai">กฤตสนัม</span><span class="slant ram">คริทสนัม</span> — สมบูรณ์, <span class="slant iast">paśya</span><span class="slant pali">ปศฺย</span><span class="slant thai">ปัศยะ</span><span class="slant ram">พัชยะ</span> — เห็น, <span class="slant iast">adya</span><span class="slant pali">อทฺย</span><span class="slant thai">อัทยะ</span><span class="slant ram">อัดยะ</span> — ทันที, <span class="slant iast">sa</span><span class="slant pali">ส</span><span class="slant thai">สะ</span><span class="slant ram">สะ</span> — กับ, <span class="slant iast">cara</span><span class="slant pali">จร</span><span class="slant thai">จะระ</span><span class="slant ram">ชะระ</span> — เคลื่อนที่, <span class="slant iast">acaram</span><span class="slant pali">อจรมฺ</span><span class="slant thai">อะจะรัม</span><span class="slant ram">อชะรัม</span> — ไม่เคลื่อนที่, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า, <span class="slant iast">dehe</span><span class="slant pali">เทเห</span><span class="slant thai">เทเห</span><span class="slant ram">เดเฮ</span> — ใน ร่างกายนี้, <span class="slant iast">guḍākeśa</span><span class="slant pali">คุฑาเกศ</span><span class="slant thai">คุฑาเกศะ</span><span class="slant ram">กุดาเคชะ</span> — โอ้ <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">anyat</span><span class="slant pali">อนฺยตฺ</span><span class="slant thai">อันยัต</span><span class="slant ram">อันยัท</span> — ผู้อื่น, <span class="slant iast">draṣṭum</span><span class="slant pali">ทฺรษฺฏุมฺ</span><span class="slant thai">ทรัษฏุม</span><span class="slant ram">ดรัชทุม</span> — เห็น, <span class="slant iast">icchasi</span><span class="slant pali">อิจฺฉสิ</span><span class="slant thai">อิจฉะสิ</span><span class="slant ram">อิชชฺะสิ</span> — เธอปรารถนา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;สิ่งใดที่เธอปรารถนาจะเห็น&nbsp;&nbsp;จงดูในร่างนี้ของข้าได้ทันที&nbsp;&nbsp;รูปลักษณ์จักรวาลนี้สามารถแสดงทุกสิ่งทุกอย่างที่เธอปรารถนาจะเห็น&nbsp;&nbsp;ณ&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;และทุกสิ่งทุกอย่างที่เธอปรารถนาจะเห็นในอนาคต&nbsp;&nbsp;ทุกสิ่งทุกอย่างทั้งเคลื่อนที่และไม่เคลื่อนที่&nbsp;&nbsp;ได้มาอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;อยู่ในสถานที่เดียวกันโดยสมบูรณ์
+  โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;สิ่งใดที่เธอปรารถนาจะเห็น&nbsp;&nbsp;จงดูในร่างนี้ของข้าได้ทันที&nbsp;&nbsp;รูปลักษณ์จักรวาลนี้สามารถแสดงทุกสิ่งทุกอย่างที่เธอปรารถนาจะเห็น&nbsp;&nbsp;ณ&nbsp;&nbsp;บัดนี้&nbsp;&nbsp;และทุกสิ่งทุกอย่างที่เธอปรารถนาจะเห็นในอนาคต&nbsp;&nbsp;ทุกสิ่งทุกอย่างทั้งเคลื่อนที่และไม่เคลื่อนที่&nbsp;&nbsp;ได้มาอยู่&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;อยู่ในสถานที่เดียวกันโดยสมบูรณ์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ไม่มีผู้ใดสามารถเห็นจักรวาลทั้งหมดขณะที่นั่งอยู่ที่เดียว&nbsp;&nbsp;แม้นักวิทยาศาสตร์<wbr>ผู้ก้าวหน้าที่สุดก็ไม่สามารถเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เกิดขึ้นในส่วนอื่นของจักรวาล&nbsp;&nbsp;แต่สาวก<wbr>เช่น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงสามารถเห็นทุกสิ่งทุกอย่างที่มีอยู่ในส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของจักรวาล&nbsp;&nbsp;<i>กฺฤษฺณ</i>ทรงให้พลังอำนาจในการเห็นทุกสิ่งทุกอย่างที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงปรารถนาจะเห็นทั้งในอดีตปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระเมตตาธิคุณของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จึงทรงสามารถ<wbr>เห็นทุกสิ่งทุกอย่าง
+  ไม่มีผู้ใดสามารถเห็นจักรวาลทั้งหมดขณะที่นั่งอยู่ที่เดียว&nbsp;&nbsp;แม้นักวิทยาศาสตร์<wbr>ผู้ก้าวหน้าที่สุดก็ไม่สามารถเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ที่เกิดขึ้นในส่วนอื่นของจักรวาล&nbsp;&nbsp;แต่สาวก<wbr>เช่น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงสามารถเห็นทุกสิ่งทุกอย่างที่มีอยู่ในส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของจักรวาล&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>ทรงให้พลังอำนาจในการเห็นทุกสิ่งทุกอย่างที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงปรารถนาจะเห็นทั้งในอดีตปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระเมตตาธิคุณของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จึงทรงสามารถ<wbr>เห็นทุกสิ่งทุกอย่าง
   </p>
 </div>
 

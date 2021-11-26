@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.34</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>จญฺจลํ หิ มนฮ กฺฤษฺณ</i><br /><i>ปฺรมาตฺหิ พลวทฺ ทฺฤฒมฺ</i><br /><i>ตสฺยาหํ นิคฺรหํ มเนฺย</i><br /><i>วาโยรฺ อิว สุ-ทุษฺกรมฺ</i>
+<span class="slant iast">cañcalaṁ hi manaḥ kṛṣṇa<br /></span>
+<span class="slant pali">จญฺจลํ หิ มนห์ กฺฤษฺณ<br /></span>
+<span class="slant thai">จัญจะลัง หิ มะนะห์ กฤษณะ<br /></span>
+<span class="slant ram">ชันชะลัม ฮิ มะนะฮ คริชณะ<br /></span>
+<span class="slant iast">pramāthi balavad dṛḍham<br /></span>
+<span class="slant pali">ปฺรมาถิ พลวทฺ ทฺฤฒมฺ<br /></span>
+<span class="slant thai">ประมาถิ พะละวัท ทฤฒัม<br /></span>
+<span class="slant ram">พระมาทิฺ บะละวัด ดริดัฺม<br /></span>
+<span class="slant iast">tasyāhaṁ nigrahaṁ manye<br /></span>
+<span class="slant pali">ตสฺยาหํ นิคฺรหํ มเนฺย<br /></span>
+<span class="slant thai">ตัสยาหัง นิคระหัง มันเย<br /></span>
+<span class="slant ram">ทัสยาฮัม นิกระฮัม มันเย<br /></span>
+<span class="slant iast">vāyor iva su-duṣkaram<br /></span>
+<span class="slant pali">วาโยรฺ อิว สุ-ทุษฺกรมฺ<br /></span>
+<span class="slant thai">วาโยร อิวะ สุ-ทุษกะรัม<br /></span>
+<span class="slant ram">วาโย อิวะ สุ-ดุชคะรัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>จญฺจลมฺ</i> — ไม่สงบนิ่ง, <i>หิ</i> — แน่นอน, <i>มนฮ</i> — จิตใจ, <i>กฺฤษฺณ</i> — โอ้ <i>กฺฤษฺณ</i>, <i>ปฺรมาตฺหิ</i> — ว้าวุ่น, <i>พล-วตฺ</i> — มีพลังมาก, <i>ทฺฤฒมฺ</i> — ดื้อรั้น, <i>ตสฺย</i> — ของมัน, <i>อหมฺ</i> — ข้า, <i>นิคฺรหมฺ</i> — ปราบ, <i>มเนฺย</i> — คิด, <i>วาโยฮ</i> — ของลม, <i>อิว</i> — เหมือน, <i>สุ-ทุษฺกรมฺ</i> — ยาก
+  <span class="slant iast">cañcalam</span><span class="slant pali">จญฺจลมฺ</span><span class="slant thai">จัญจะลัม</span><span class="slant ram">ชันชะลัม</span> — ไม่สงบนิ่ง, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">manaḥ</span><span class="slant pali">มนห์</span><span class="slant thai">มะนะห์</span><span class="slant ram">มะนะฮ</span> — จิตใจ, <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> — โอ้ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">pramāthi</span><span class="slant pali">ปฺรมาถิ</span><span class="slant thai">ประมาถิ</span><span class="slant ram">พระมาทิฺ</span> — ว้าวุ่น, <span class="slant iast">bala-vat</span><span class="slant pali">พล-วตฺ</span><span class="slant thai">พะละ-วัต</span><span class="slant ram">บะละ-วัท</span> — มีพลังมาก, <span class="slant iast">dṛḍham</span><span class="slant pali">ทฺฤฒมฺ</span><span class="slant thai">ทฤฒัม</span><span class="slant ram">ดริดัฺม</span> — ดื้อรั้น, <span class="slant iast">tasya</span><span class="slant pali">ตสฺย</span><span class="slant thai">ตัสยะ</span><span class="slant ram">ทัสยะ</span> — ของมัน, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">nigraham</span><span class="slant pali">นิคฺรหมฺ</span><span class="slant thai">นิคระหัม</span><span class="slant ram">นิกระฮัม</span> — ปราบ, <span class="slant iast">manye</span><span class="slant pali">มเนฺย</span><span class="slant thai">มันเย</span><span class="slant ram">มันเย</span> — คิด, <span class="slant iast">vāyoḥ</span><span class="slant pali">วาโยห์</span><span class="slant thai">วาโยห์</span><span class="slant ram">วาโยฮ</span> — ของลม, <span class="slant iast">iva</span><span class="slant pali">อิว</span><span class="slant thai">อิวะ</span><span class="slant ram">อิวะ</span> — เหมือน, <span class="slant iast">su-duṣkaram</span><span class="slant pali">สุ-ทุษฺกรมฺ</span><span class="slant thai">สุ-ทุษกะรัม</span><span class="slant ram">สุ-ดุชคะรัม</span> — ยาก
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  เพราะว่าจิตใจไม่สงบนิ่ง&nbsp;&nbsp;พล่าน&nbsp;&nbsp;ดื้อรั้น&nbsp;&nbsp;และมีพลังมาก&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และในการปราบมัน&nbsp;&nbsp;ข้าพเจ้าคิดว่ายากยิ่งกว่าการควบคุมลม
+  เพราะว่าจิตใจไม่สงบนิ่ง&nbsp;&nbsp;พล่าน&nbsp;&nbsp;ดื้อรั้น&nbsp;&nbsp;และมีพลังมาก&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และในการปราบมัน&nbsp;&nbsp;ข้าพเจ้าคิดว่ายากยิ่งกว่าการควบคุมลม
   </p>
 </div>
 
@@ -73,25 +174,55 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  จิตใจมีพลังมากและดื้อรั้น&nbsp;&nbsp;บางครั้งก็เอาชนะปัญญา&nbsp;&nbsp;ถึงแม้ว่าจิตใจควรอยู่<wbr>ภายใต้การบังคับบัญชาของปัญญา&nbsp;&nbsp;สำหรับบุคคลผู้อยู่ในโลกแห่งการปฏิบัติที่ต้องต่อสู้<wbr>กับฝ่ายตรงข้ามมากมาย&nbsp;&nbsp;แน่นอนว่าเป็นสิ่งที่ยากมากในการควบคุมจิตใจ&nbsp;&nbsp;เขาอาจทำใจ<wbr>ให้เป็นกลางอย่างผิดธรรมชาติระหว่างเพื่อนกับศัตรู&nbsp;&nbsp;แต่ในที่สุดไม่มีผู้ใดในโลกสามารถ<wbr>ทำได้&nbsp;&nbsp;เพราะว่ายากยิ่งกว่าการควบคุมลมพายุที่พัดมาอย่างแรงฉันใด&nbsp;&nbsp;ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;1.3.3-4&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวไว้ว่า
+  จิตใจมีพลังมากและดื้อรั้น&nbsp;&nbsp;บางครั้งก็เอาชนะปัญญา&nbsp;&nbsp;ถึงแม้ว่าจิตใจควรอยู่<wbr>ภายใต้การบังคับบัญชาของปัญญา&nbsp;&nbsp;สำหรับบุคคลผู้อยู่ในโลกแห่งการปฏิบัติที่ต้องต่อสู้<wbr>กับฝ่ายตรงข้ามมากมาย&nbsp;&nbsp;แน่นอนว่าเป็นสิ่งที่ยากมากในการควบคุมจิตใจ&nbsp;&nbsp;เขาอาจทำใจ<wbr>ให้เป็นกลางอย่างผิดธรรมชาติระหว่างเพื่อนกับศัตรู&nbsp;&nbsp;แต่ในที่สุดไม่มีผู้ใดในโลกสามารถ<wbr>ทำได้&nbsp;&nbsp;เพราะว่ายากยิ่งกว่าการควบคุมลมพายุที่พัดมาอย่างแรงฉันใด&nbsp;&nbsp;ในวรรณกรรม<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;1.3.3-4&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวไว้ว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อาตฺมานํ รตฺหินํ วิทฺธิ</i><br /><i>ศรีรํ รตฺหมฺ เอว จ</i><br /><i>พุทฺธิํ ตุ สารตฺหิํ วิทฺธิ</i><br /><i>มนฮ ปฺรคฺรหมฺ เอว จ</i>
+<span class="slant iast">ātmānaṁ rathinaṁ viddhi<br /></span>
+<span class="slant pali">อาตฺมานํ รถินํ วิทฺธิ<br /></span>
+<span class="slant thai">อาตมานัง ระถินัง วิทธิ<br /></span>
+<span class="slant ram">อาทมานัม ระทิฺนัม วิดดิฺ<br /></span>
+<span class="slant iast">śarīraṁ ratham eva ca<br /></span>
+<span class="slant pali">ศรีรํ รถมฺ เอว จ<br /></span>
+<span class="slant thai">ศะรีรัง ระถัม เอวะ จะ<br /></span>
+<span class="slant ram">ชะรีรัม ระทัฺม เอวะ ชะ<br /></span>
+<span class="slant iast">buddhiṁ tu sārathiṁ viddhi<br /></span>
+<span class="slant pali">พุทฺธึ ตุ สารถึ วิทฺธิ<br /></span>
+<span class="slant thai">พุทธิง ตุ สาระถิง วิทธิ<br /></span>
+<span class="slant ram">บุดดิฺม ทุ สาระทิฺม วิดดิฺ<br /></span>
+<span class="slant iast">manaḥ pragraham eva ca<br /></span>
+<span class="slant pali">มนห์ ปฺรคฺรหมฺ เอว จ<br /></span>
+<span class="slant thai">มะนะห์ ปรัคระหัม เอวะ จะ<br /></span>
+<span class="slant ram">มะนะฮ พระกระฮัม เอวะ ชะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อินฺทฺริยาณิ หยานฺ อาหุรฺ</i><br /><i>วิษยาํสฺ เตษุ โคจรานฺ</i><br /><i>อาเตฺมนฺทฺริย-มโน-ยุกฺตํ</i><br /><i>โภเกฺตตฺยฺ อาหุรฺ มนีษิณฮ</i>
+<span class="slant iast">indriyāṇi hayān āhur<br /></span>
+<span class="slant pali">อินฺทฺริยาณิ หยานฺ อาหุรฺ<br /></span>
+<span class="slant thai">อินทริยาณิ หะยาน อาหุร<br /></span>
+<span class="slant ram">อินดริยาณิ ฮะยาน อาฮุร<br /></span>
+<span class="slant iast">viṣayāṁs teṣu gocarān<br /></span>
+<span class="slant pali">วิษยำสฺ เตษุ โคจรานฺ<br /></span>
+<span class="slant thai">วิษะยางส เตษุ โคจะราน<br /></span>
+<span class="slant ram">วิชะยามส เทชุ โก-ชะราน<br /></span>
+<span class="slant iast">ātmendriya-mano-yuktaṁ<br /></span>
+<span class="slant pali">อาตฺเมนฺทฺริย-มโน-ยุกฺตํ<br /></span>
+<span class="slant thai">อาตเมนทริยะ-มะโน-ยุกตัง<br /></span>
+<span class="slant ram">อาทเมนดริยะ-มะโน-ยุคทัม<br /></span>
+<span class="slant iast">bhoktety āhur manīṣiṇaḥ<br /></span>
+<span class="slant pali">โภกฺเตตฺยฺ อาหุรฺ มนีษิณห์<br /></span>
+<span class="slant thai">โภกเตตย อาหุร มะนีษิณะห์<br /></span>
+<span class="slant ram">โบฺคเททิ อาฮุร มะนีชิณะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ปัจเจกวิญญาณเป็นผู้โดยสารในพาหนะแห่งร่างวัตถุ&nbsp;&nbsp;ปัญญาเป็นผู้ขับ&nbsp;&nbsp;จิตใจเป็นคัน<wbr>บังคับ&nbsp;&nbsp;และประสาทสัมผัสเป็นม้า&nbsp;&nbsp;ตัวเขาจะได้รับความสุขหรือความทุกข์เกิดจากการ<wbr>มาคบหาสมาคมกับจิตใจและประสาทสัมผัส&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;เป็นที่เข้าใจโดยนักคิดผู้ยิ่งใหญ่”ปัญญาควรเป็นผู้สั่งจิตใจ&nbsp;&nbsp;แต่จิตใจมีพลังอำนาจมากและดื้อรั้นจนส่วนใหญ่เอาชนะแม้<wbr>กระทั่งปัญญาของตนเอง&nbsp;&nbsp;เหมือนกับโรคปัจจุบันทันด่วนที่ดื้อยา&nbsp;&nbsp;จิตใจที่มีพลังมากเช่นนี้<wbr>ควรถูกควบคุมด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แต่การฝึกเช่นนี้ปฏิบัติไม่ได้แม้สำหรับบุคคลทาง<wbr>โลกเช่น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;จึงไม่จำเป็นต้องพูดถึงคนในยุคสมัยนี้&nbsp;&nbsp;อุปมาที่ให้ไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้เหมาะสมดีเราไม่สามารถจับกุมลมที่พัดมาแรงได้ฉันใด&nbsp;&nbsp;มันยากยิ่งไปกว่าที่จะจับกุมจิตใจที่พล่าน<wbr>ได้ฉันนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงแนะนำวิธีที่ง่ายที่สุดในการควบคุมจิตใจคือการร้องเพลง<wbr>สวดมนต์&nbsp;&nbsp;ภาวนา&nbsp;&nbsp;“ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;”&nbsp;&nbsp;ซึ่งเป็นบทมนต์อันยิ่งใหญ่เพื่อการจัดส่ง&nbsp;&nbsp;ด้วยความ<wbr>ถ่อมตนอย่างยิ่ง&nbsp;&nbsp;ได้อธิบายวิธีไว้ดังนี้&nbsp;&nbsp;<i>ส&nbsp;&nbsp;ไว&nbsp;&nbsp;มนฮ&nbsp;&nbsp;กฺฤษฺณ-ปทารวินฺทโยฮ</i>&nbsp;&nbsp;เราต้อง<wbr>ใช้จิตใจอย่างเต็มที่ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยวิธีนี้เท่านั้นจึงจะไม่มีกิจกรรมอื่นใดทำให้จิตใจวุ่นวาย
+  “ปัจเจกวิญญาณเป็นผู้โดยสารในพาหนะแห่งร่างวัตถุ&nbsp;&nbsp;ปัญญาเป็นผู้ขับ&nbsp;&nbsp;จิตใจเป็นคัน<wbr>บังคับ&nbsp;&nbsp;และประสาทสัมผัสเป็นม้า&nbsp;&nbsp;ตัวเขาจะได้รับความสุขหรือความทุกข์เกิดจากการ<wbr>มาคบหาสมาคมกับจิตใจและประสาทสัมผัส&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;เป็นที่เข้าใจโดยนักคิดผู้ยิ่งใหญ่”ปัญญาควรเป็นผู้สั่งจิตใจ&nbsp;&nbsp;แต่จิตใจมีพลังอำนาจมากและดื้อรั้นจนส่วนใหญ่เอาชนะแม้<wbr>กระทั่งปัญญาของตนเอง&nbsp;&nbsp;เหมือนกับโรคปัจจุบันทันด่วนที่ดื้อยา&nbsp;&nbsp;จิตใจที่มีพลังมากเช่นนี้<wbr>ควรถูกควบคุมด้วยการฝึกปฏิบัติ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แต่การฝึกเช่นนี้ปฏิบัติไม่ได้แม้สำหรับบุคคลทาง<wbr>โลกเช่น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;จึงไม่จำเป็นต้องพูดถึงคนในยุคสมัยนี้&nbsp;&nbsp;อุปมาที่ให้ไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้เหมาะสมดีเราไม่สามารถจับกุมลมที่พัดมาแรงได้ฉันใด&nbsp;&nbsp;มันยากยิ่งไปกว่าที่จะจับกุมจิตใจที่พล่าน<wbr>ได้ฉันนั้น&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงแนะนำวิธีที่ง่ายที่สุดในการควบคุมจิตใจคือการร้องเพลง<wbr>สวดมนต์&nbsp;&nbsp;ภาวนา&nbsp;&nbsp;“ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;”&nbsp;&nbsp;ซึ่งเป็นบทมนต์อันยิ่งใหญ่เพื่อการจัดส่ง&nbsp;&nbsp;ด้วยความ<wbr>ถ่อมตนอย่างยิ่ง&nbsp;&nbsp;ได้อธิบายวิธีไว้ดังนี้&nbsp;&nbsp;<span class="slant iast">sa&nbsp;&nbsp;vai&nbsp;&nbsp;manaḥ&nbsp;&nbsp;kṛṣṇa-padāravindayoḥ</span><span class="slant pali">สไวมนห์กฺฤษฺณ-ปทารวินฺทโยห์</span><span class="slant thai">สะไวมะนะห์กฤษณะ-ปะทาระวินทะโยห์</span><span class="slant ram">สะมะนะฮคริชณะ-zzz</span>&nbsp;&nbsp;เราต้อง<wbr>ใช้จิตใจอย่างเต็มที่ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยวิธีนี้เท่านั้นจึงจะไม่มีกิจกรรมอื่นใดทำให้จิตใจวุ่นวาย
   </p>
 </div>
 

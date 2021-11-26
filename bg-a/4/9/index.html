@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.9</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ชนฺม กรฺม จ เม ทิวฺยมฺ</i><br /><i>เอวํ โย เวตฺติ ตตฺตฺวตฮ</i><br /><i>ตฺยกฺตฺวา เทหํ ปุนรฺ ชนฺม</i><br /><i>ไนติ มามฺ เอติ โส ′รฺชุน</i>
+<span class="slant iast">janma karma ca me divyam<br /></span>
+<span class="slant pali">ชนฺม กรฺม จ เม ทิวฺยมฺ<br /></span>
+<span class="slant thai">ชันมะ กัรมะ จะ เม ทิวยัม<br /></span>
+<span class="slant ram">จันมะ คารมะ ชะ เม ดิพยัม<br /></span>
+<span class="slant iast">evaṁ yo vetti tattvataḥ<br /></span>
+<span class="slant pali">เอวํ โย เวตฺติ ตตฺตฺวตห์<br /></span>
+<span class="slant thai">เอวัง โย เวตติ ตัตตวะตะห์<br /></span>
+<span class="slant ram">เอวัม โย เวททิ ทัททวะทะฮ<br /></span>
+<span class="slant iast">tyaktvā dehaṁ punar janma<br /></span>
+<span class="slant pali">ตฺยกฺตฺวา เทหํ ปุนรฺ ชนฺม<br /></span>
+<span class="slant thai">ตยักตวา เทหัง ปุนัร ชันมะ<br /></span>
+<span class="slant ram">ทยัคทวา เดฮัม พุนาร จันมะ<br /></span>
+<span class="slant iast">naiti mām eti so ’rjuna<br /></span>
+<span class="slant pali">ไนติ มามฺ เอติ โส ’รฺชุน<br /></span>
+<span class="slant thai">ไนติ มาม เอติ โส ’รชุนะ<br /></span>
+<span class="slant ram">ไนทิ มาม เอทิ โส ่รจุนะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ชนฺม</i> — เกิด, <i>กรฺม</i> — งาน, <i>จ</i> — เช่นกัน, <i>เม</i> — ของข้า, <i>ทิวฺยมฺ</i> — ทิพย์, <i>เอวมฺ</i> — เหมือนนี้, <i>ยฮ</i> — ผู้ใดซึ่ง, <i>เวตฺติ</i> — ทราบ, <i>ตตฺตฺวตฮ</i> — ในความเป็นจริง, <i>ตฺยกฺตฺวา</i> — ปล่อยวาง, <i>เทหมฺ</i> — ร่าง นี้, <i>ปุนฮ</i> — อีกครั้ง, <i>ชนฺม</i> — เกิด, <i>น</i> — ไม่เคย, <i>เอติ</i> — บรรลุ, <i>มามฺ</i> — แด่ข้า, <i>เอติ</i> — บรรลุ, <i>สฮ</i> — เขา, <i>อรฺชุน</i> — โอ้ อารจุนะ
+  <span class="slant iast">janma</span><span class="slant pali">ชนฺม</span><span class="slant thai">ชันมะ</span><span class="slant ram">จันมะ</span> — เกิด, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">divyam</span><span class="slant pali">ทิวฺยมฺ</span><span class="slant thai">ทิวยัม</span><span class="slant ram">ดิพยัม</span> — ทิพย์, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — เหมือนนี้, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ใดซึ่ง, <span class="slant iast">vetti</span><span class="slant pali">เวตฺติ</span><span class="slant thai">เวตติ</span><span class="slant ram">เวททิ</span> — ทราบ, <span class="slant iast">tattvataḥ</span><span class="slant pali">ตตฺตฺวตห์</span><span class="slant thai">ตัตตวะตะห์</span><span class="slant ram">ทัททวะทะฮ</span> — ในความเป็นจริง, <span class="slant iast">tyaktvā</span><span class="slant pali">ตฺยกฺตฺวา</span><span class="slant thai">ตยักตวา</span><span class="slant ram">ทยัคทวา</span> — ปล่อยวาง, <span class="slant iast">deham</span><span class="slant pali">เทหมฺ</span><span class="slant thai">เทหัม</span><span class="slant ram">เดฮัม</span> — ร่าง นี้, <span class="slant iast">punaḥ</span><span class="slant pali">ปุนห์</span><span class="slant thai">ปุนะห์</span><span class="slant ram">พุนะฮ</span> — อีกครั้ง, <span class="slant iast">janma</span><span class="slant pali">ชนฺม</span><span class="slant thai">ชันมะ</span><span class="slant ram">จันมะ</span> — เกิด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">eti</span><span class="slant pali">เอติ</span><span class="slant thai">เอติ</span><span class="slant ram">เอทิ</span> — บรรลุ, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ข้า, <span class="slant iast">eti</span><span class="slant pali">เอติ</span><span class="slant thai">เอติ</span><span class="slant ram">เอทิ</span> — บรรลุ, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> — โอ้ อารจุนะ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ผู้ที่รู้ธรรมชาติทิพย์แห่งการปรากฏและกิจกรรมของข้า&nbsp;&nbsp;เมื่อออกจากร่างไปแล้วจะไม่กลับมาเกิดในโลกวัตถุนี้อีก&nbsp;&nbsp;แต่บรรลุถึงอาณาจักรอมตะของข้า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;
+  ผู้ที่รู้ธรรมชาติทิพย์แห่งการปรากฏและกิจกรรมของข้า&nbsp;&nbsp;เมื่อออกจากร่างไปแล้วจะไม่กลับมาเกิดในโลกวัตถุนี้อีก&nbsp;&nbsp;แต่บรรลุถึงอาณาจักรอมตะของข้า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,31 +174,45 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การเสด็จลงมาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จากอาณาจักรทิพย์ได้อธิบายไว้แล้วใน<wbr>โศลกที่หก&nbsp;&nbsp;ผู้ที่สามารถเข้าใจสัจธรรมแห่งการปรากฏของพระองค์เป็นผู้หลุดพ้นจาก<wbr>พันธนาการทางวัตถุ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เขาจะกลับคืนสู่อาณาจักรแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทันทีหลังจาก<wbr>ออกจากร่างวัตถุปัจจุบันนี้ไป&nbsp;&nbsp;การหลุดพ้นของสิ่งมีชีวิตจากพันธนาการทางวัตถุเช่นนี้<wbr>มิใช่ของง่าย&nbsp;&nbsp;<i>มายาวาที</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>โยคี</i>&nbsp;&nbsp;ได้รับความหลุดพ้นหลังจากความยากลำบากมากมาย<wbr>หลายต่อหลายชาติ&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ความหลุดพ้นที่พวกเขาได้รับคือ&nbsp;&nbsp;การกลืนเข้าไปใน&nbsp;&nbsp;<i>พฺรหฺม-โชฺยติรฺ</i>&nbsp;&nbsp;อันไร้รูปลักษณ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ซึ่งเป็นเพียงส่วนหนึ่งของพระองค์เท่านั้นและยังเสี่ยงที่จะต้องกลับมาในโลกวัตถุนี้อีก&nbsp;&nbsp;แต่สาวกเพียงแต่เข้าใจธรรมชาติทิพย์<wbr>แห่งพระวรกายและกิจกรรมของพระองค์ก็จะบรรลุถึงอาณาจักรแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หลัง<wbr>จากจบสิ้นร่างกายนี้&nbsp;&nbsp;และไม่ต้องเสี่ยงในการกลับมาโลกวัตถุนี้อีก&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;(5.33)&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีรูปลักษณ์และอวตารมากมาย&nbsp;&nbsp;<i>อไทฺวตมฺ&nbsp;&nbsp;อจฺยุตมฺ&nbsp;&nbsp;อนาทิมฺ&nbsp;&nbsp;อนนฺต-รูปมฺ</i>&nbsp;&nbsp;แม้ทรงมีรูปลักษณ์ทิพย์มากมายทั้งหมดยังทรงเป็นหนึ่ง<wbr>เดียวกันคือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;เราต้องเข้าใจความจริงอันนี้ด้วยความมั่นใจแม้ว่าอาจจะเข้าใจยากสำหรับนักวิชาการและนักปราชญ์ช่างสังเกตทางโลก&nbsp;&nbsp;ดังที่ได้<wbr>กล่าวไว้ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>ปุรุษ-โพธินี&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;ว่า
+  การเสด็จลงมาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จากอาณาจักรทิพย์ได้อธิบายไว้แล้วใน<wbr>โศลกที่หก&nbsp;&nbsp;ผู้ที่สามารถเข้าใจสัจธรรมแห่งการปรากฏของพระองค์เป็นผู้หลุดพ้นจาก<wbr>พันธนาการทางวัตถุ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เขาจะกลับคืนสู่อาณาจักรแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทันทีหลังจาก<wbr>ออกจากร่างวัตถุปัจจุบันนี้ไป&nbsp;&nbsp;การหลุดพ้นของสิ่งมีชีวิตจากพันธนาการทางวัตถุเช่นนี้<wbr>มิใช่ของง่าย&nbsp;&nbsp;<span class="slant iast">māyāvādī</span><span class="slant pali">มายาวาที</span><span class="slant thai">มายาวาที</span><span class="slant ram">มายาวาดี</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ได้รับความหลุดพ้นหลังจากความยากลำบากมากมาย<wbr>หลายต่อหลายชาติ&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ความหลุดพ้นที่พวกเขาได้รับคือ&nbsp;&nbsp;การกลืนเข้าไปใน&nbsp;&nbsp;<span class="slant iast">brahma-jyotir</span><span class="slant pali">พฺรหฺม-โชฺยติรฺ</span><span class="slant thai">พรัหมะ-ชโยติร</span><span class="slant ram">บระฮมะจโยทิ</span>&nbsp;&nbsp;อันไร้รูปลักษณ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ซึ่งเป็นเพียงส่วนหนึ่งของพระองค์เท่านั้นและยังเสี่ยงที่จะต้องกลับมาในโลกวัตถุนี้อีก&nbsp;&nbsp;แต่สาวกเพียงแต่เข้าใจธรรมชาติทิพย์<wbr>แห่งพระวรกายและกิจกรรมของพระองค์ก็จะบรรลุถึงอาณาจักรแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หลัง<wbr>จากจบสิ้นร่างกายนี้&nbsp;&nbsp;และไม่ต้องเสี่ยงในการกลับมาโลกวัตถุนี้อีก&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;(5.33)&nbsp;&nbsp;ได้กล่าวไว้ว่า&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีรูปลักษณ์และอวตารมากมาย&nbsp;&nbsp;<span class="slant iast">advaitam&nbsp;&nbsp;acyutam&nbsp;&nbsp;anādim&nbsp;&nbsp;ananta-rūpam</span><span class="slant pali">อไทฺวตมฺอจฺยุตมฺอนาทิมฺอนนฺต-รูปมฺ</span><span class="slant thai">อัทไวตัมอัจยุตัมอะนาทิมอะนันตะ-รูปัม</span><span class="slant ram">อดไวทัม อัชยุทัม อนาดิม อนันทะ-รูพัม</span>&nbsp;&nbsp;แม้ทรงมีรูปลักษณ์ทิพย์มากมายทั้งหมดยังทรงเป็นหนึ่ง<wbr>เดียวกันคือบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;เราต้องเข้าใจความจริงอันนี้ด้วยความมั่นใจแม้ว่าอาจจะเข้าใจยากสำหรับนักวิชาการและนักปราชญ์ช่างสังเกตทางโลก&nbsp;&nbsp;ดังที่ได้<wbr>กล่าวไว้ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">puruṣa-bodhinī&nbsp;&nbsp;upaniṣad</span><span class="slant pali">ปุรุษ-โพธินีอุปนิษทฺ</span><span class="slant thai">ปุรุษะ-โพธินีอุปะนิษัท</span><span class="slant ram">พุรุชะ-zzz</span>&nbsp;&nbsp;)&nbsp;&nbsp;ว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>เอโก เทโว นิตฺย-ลีลานุรโกฺต</i><br /><i>ภกฺต-วฺยาปี หฺฤทฺยฺ อนฺตรฺ-อาตฺมา</i>
+<span class="slant iast">eko devo nitya-līlānurakto<br /></span>
+<span class="slant pali">เอโก เทโว นิตฺย-ลีลานุรกฺโต<br /></span>
+<span class="slant thai">เอโก เทโว นิตยะ-ลีลานุรักโต<br /></span>
+<span class="slant ram">เอโค เดโว นิทยะ-ลีลานุรัคโท<br /></span>
+<span class="slant iast">bhakta-vyāpī hṛdy antar-ātmā<br /></span>
+<span class="slant pali">ภกฺต-วฺยาปี หฺฤทฺยฺ อนฺตรฺ-อาตฺมา<br /></span>
+<span class="slant thai">ภักตะ-วยาปี หฤทย อันตัร-อาตมา<br /></span>
+<span class="slant ram">บฺัคธะ-วิยาพี ฮริดิ อันทาร-อาทมา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “บุคลิกภาพสูงสุดแห่งพระเจ้าองค์เดียวกันนี้ทรงมีกิจกรรมในรูปลักษณ์ทิพย์มากมาย<wbr>ในความสัมพันธ์กับสาวกผู้บริสุทธิ์ของพระองค์”&nbsp;&nbsp;คำแปลของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ได้ยืนยันใน<wbr>โศลกนี้ของ&nbsp;&nbsp;โดยองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เอง&nbsp;&nbsp;ผู้ที่ยอมรับสัจธรรมนี้ภายใต้อำนาจที่เชื่อถือได้<wbr>ของคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;และบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และไม่เสียเวลาไปในการคาดคะเน<wbr>ทางปรัชญา&nbsp;&nbsp;จะบรรลุถึงความสมบูรณ์สูงสุดแห่งอิสรภาพ&nbsp;&nbsp;เพียงแต่ยอมรับสัจธรรมนี้<wbr>ด้วยความศรัทธา&nbsp;&nbsp;เราสามารถบรรลุถึงความหลุดพ้นได้โดยไม่ต้องสงสัย&nbsp;&nbsp;คำแปลของ<wbr>พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>ตตฺ&nbsp;&nbsp;ตฺวมฺ&nbsp;&nbsp;อสิ</i>&nbsp;&nbsp;อันที่จริงใช้ในกรณีนี้ได้&nbsp;&nbsp;ผู้ใดเข้าใจองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ว่าสูงสุดหรือ<wbr>กล่าวต่อพระองค์ว่า&nbsp;&nbsp;“พระองค์ทรงเป็นองค์เดียวกับ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;สูงสุด&nbsp;&nbsp;บุคลิกภาพแห่ง<wbr>พระเจ้า”&nbsp;&nbsp;เป็นผู้หลุดพ้นโดยทันทีอย่างแน่นอน&nbsp;&nbsp;จากนั้น&nbsp;&nbsp;การเข้าสู่การคบหาสมาคมทิพย์<wbr>กับพระองค์เป็นที่รับประกันหรืออีกนัยหนึ่ง&nbsp;&nbsp;สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้มีความศรัทธาเช่นนี้<wbr>จะบรรลุความสมบูรณ์&nbsp;&nbsp;ได้รับการยืนยันโดยคำอ้างอิงของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ดังต่อไปนี้
+  “บุคลิกภาพสูงสุดแห่งพระเจ้าองค์เดียวกันนี้ทรงมีกิจกรรมในรูปลักษณ์ทิพย์มากมาย<wbr>ในความสัมพันธ์กับสาวกผู้บริสุทธิ์ของพระองค์”&nbsp;&nbsp;คำแปลของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ได้ยืนยันใน<wbr>โศลกนี้ของ&nbsp;&nbsp;โดยองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เอง&nbsp;&nbsp;ผู้ที่ยอมรับสัจธรรมนี้ภายใต้อำนาจที่เชื่อถือได้<wbr>ของคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;และบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;และไม่เสียเวลาไปในการคาดคะเน<wbr>ทางปรัชญา&nbsp;&nbsp;จะบรรลุถึงความสมบูรณ์สูงสุดแห่งอิสรภาพ&nbsp;&nbsp;เพียงแต่ยอมรับสัจธรรมนี้<wbr>ด้วยความศรัทธา&nbsp;&nbsp;เราสามารถบรรลุถึงความหลุดพ้นได้โดยไม่ต้องสงสัย&nbsp;&nbsp;คำแปลของ<wbr>พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">tat&nbsp;&nbsp;tvam&nbsp;&nbsp;asi</span><span class="slant pali">ตตฺตฺวมฺอสิ</span><span class="slant thai">ตัตตวัมอะสิ</span><span class="slant ram">ทัททวัมอสิ</span>&nbsp;&nbsp;อันที่จริงใช้ในกรณีนี้ได้&nbsp;&nbsp;ผู้ใดเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ว่าสูงสุดหรือ<wbr>กล่าวต่อพระองค์ว่า&nbsp;&nbsp;“พระองค์ทรงเป็นองค์เดียวกับ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;สูงสุด&nbsp;&nbsp;บุคลิกภาพแห่ง<wbr>พระเจ้า”&nbsp;&nbsp;เป็นผู้หลุดพ้นโดยทันทีอย่างแน่นอน&nbsp;&nbsp;จากนั้น&nbsp;&nbsp;การเข้าสู่การคบหาสมาคมทิพย์<wbr>กับพระองค์เป็นที่รับประกันหรืออีกนัยหนึ่ง&nbsp;&nbsp;สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้มีความศรัทธาเช่นนี้<wbr>จะบรรลุความสมบูรณ์&nbsp;&nbsp;ได้รับการยืนยันโดยคำอ้างอิงของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ดังต่อไปนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตมฺ เอว วิทิตฺวาติ มฺฤตฺยุมฺ เอติ</i><br /><i>นานฺยฮ ปนฺตฺหา วิทฺยเต ′ยนาย</i>
+<span class="slant iast">tam eva viditvāti mṛtyum eti<br /></span>
+<span class="slant pali">ตมฺ เอว วิทิตฺวาติ มฺฤตฺยุมฺ เอติ<br /></span>
+<span class="slant thai">ตัม เอวะ วิทิตวาติ มฤตยุม เอติ<br /></span>
+<span class="slant ram">ทัม เอวะ วิดิทวาทิ มริทยุม เอทิ<br /></span>
+<span class="slant iast">nānyaḥ panthā vidyate ’yanāya<br /></span>
+<span class="slant pali">นานฺยห์ ปนฺถา วิทฺยเต ’ยนาย<br /></span>
+<span class="slant thai">นานยะห์ ปันถา วิทยะเต ’ยะนายะ<br /></span>
+<span class="slant ram">นานยะฮ พันทฺา วิดยะเท ´ยะนายะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “เราสามารถบรรลุถึงระดับสมบูรณ์แห่งอิสรภาพจากการเกิดและการตาย&nbsp;&nbsp;เพียงแต่<wbr>รู้ถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห้งพระเจ้า&nbsp;&nbsp;และไม่มีทางอื่นในการบรรลุถึงความ<wbr>สมบูรณ์นี้”&nbsp;&nbsp;(<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;3.8)&nbsp;&nbsp;ไม่มีทางเลือกอื่นหมายความว่าผู้ใดไม่<wbr>เข้าใจองค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ว่าทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;แน่นอนว่าเขาอยู่ในรระดับ<wbr>แห่งอวิชชาและจะไม่บรรลุถึงความหลุดพ้น&nbsp;&nbsp;จากการพยายามที่จะลิ้มรสภายนอกของ<wbr>ขวดน้ำผึ้งหรือจากการตีความ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ตามหลักวิชาการทางโลก&nbsp;&nbsp;นักปราชญ์ผู้คาด<wbr>คะเนเช่นนี้อาจเล่นบทที่มีความสำคัญมากในโลกวัตถุ&nbsp;&nbsp;แต่ไม่มีสิทธิ์เพื่อความหลุดพ้นนักวิชาการทางโลกผู้ผยองเช่นนี้จะต้องรอพระเมตตาจากสาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ฉะนั้น<wbr>เราควรปลูกฝัง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกด้วยความศรัทธาและความรู้&nbsp;&nbsp;เช่นนี้จะทำให้เราบรรลุถึง<wbr>ความสมบูรณ์
+  “เราสามารถบรรลุถึงระดับสมบูรณ์แห่งอิสรภาพจากการเกิดและการตาย&nbsp;&nbsp;เพียงแต่<wbr>รู้ถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห้งพระเจ้า&nbsp;&nbsp;และไม่มีทางอื่นในการบรรลุถึงความ<wbr>สมบูรณ์นี้”&nbsp;&nbsp;(<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;3.8)&nbsp;&nbsp;ไม่มีทางเลือกอื่นหมายความว่าผู้ใดไม่<wbr>เข้าใจองค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ว่าทรงเป็นบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;แน่นอนว่าเขาอยู่ในรระดับ<wbr>แห่งอวิชชาและจะไม่บรรลุถึงความหลุดพ้น&nbsp;&nbsp;จากการพยายามที่จะลิ้มรสภายนอกของ<wbr>ขวดน้ำผึ้งหรือจากการตีความ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ตามหลักวิชาการทางโลก&nbsp;&nbsp;นักปราชญ์ผู้คาด<wbr>คะเนเช่นนี้อาจเล่นบทที่มีความสำคัญมากในโลกวัตถุ&nbsp;&nbsp;แต่ไม่มีสิทธิ์เพื่อความหลุดพ้นนักวิชาการทางโลกผู้ผยองเช่นนี้จะต้องรอพระเมตตาจากสาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ฉะนั้น<wbr>เราควรปลูกฝัง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกด้วยความศรัทธาและความรู้&nbsp;&nbsp;เช่นนี้จะทำให้เราบรรลุถึง<wbr>ความสมบูรณ์
   </p>
 </div>
 

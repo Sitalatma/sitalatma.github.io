@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 1.45</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -32,7 +118,7 @@
 </div>
 <div class="r r-lang-en r-chapter-title r-title">
   <h2 class="section-title">
-    สำรวจกองทัพที่สมรภูมิ <i>กุรุเกฺษตฺร</i> 
+    สำรวจกองทัพที่สมรภูมิ <i>กุรุกฺเษตฺร</i> 
   <h2>
 </div>
 <div class="bb r-verse">
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทิ มามฺ อปฺรตีการมฺ</i><br /><i>อศสฺตฺรํ ศสฺตฺร-ปาณยฮ</i><br /><i>ธารฺตราษฺฏฺรา รเณ หนฺยุสฺ</i><br /><i>ตนฺ เม เกฺษม-ตรํ ภเวตฺ</i>
+<span class="slant iast">yadi mām apratīkāram<br /></span>
+<span class="slant pali">ยทิ มามฺ อปฺรตีการมฺ<br /></span>
+<span class="slant thai">ยะทิ มาม อัประตีการัม<br /></span>
+<span class="slant ram">ยะดิ มาม อพระทีคารัม<br /></span>
+<span class="slant iast">aśastraṁ śastra-pāṇayaḥ<br /></span>
+<span class="slant pali">อศสฺตฺรํ ศสฺตฺร-ปาณยห์<br /></span>
+<span class="slant thai">อะศัสตรัง ศัสตระ-ปาณะยะห์<br /></span>
+<span class="slant ram">อชัสทรัม ชัสทระ-พาณะยะฮ<br /></span>
+<span class="slant iast">dhārtarāṣṭrā raṇe hanyus<br /></span>
+<span class="slant pali">ธารฺตราษฺฏฺรา รเณ หนฺยุสฺ<br /></span>
+<span class="slant thai">ธารตะราษฏรา ระเณ หันยุส<br /></span>
+<span class="slant ram">ดฺารทะราชทรา ระเณ ฮันยุส<br /></span>
+<span class="slant iast">tan me kṣema-taraṁ bhavet<br /></span>
+<span class="slant pali">ตนฺ เม เกฺษม-ตรํ ภเวตฺ<br /></span>
+<span class="slant thai">ตัน เม กเษมะ-ตะรัง ภะเวต<br /></span>
+<span class="slant ram">ทัน เม คเชมะทะรัม บฺะเวทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยทิ</i> — ถึงแม้ว่า, <i>มามฺ</i> — ข้าพเจ้า, <i>อปฺรตีการมฺ</i> — ปราศจากการต่อต้าน, <i>อศสฺตฺรมฺ</i> — โดยไม่มี อาวุธ, <i>ศสฺตฺร-ปาณยฮ</i> — ผู้ที่มีอาวุธอยู่ในมือ, <i>ธารฺตราษฺฏฺราฮ</i> — เหล่าโอรสของ <i>ธฺฤตราษฺฏฺร</i>, <i>รเณ</i> — ในสมรภูมิ, <i>หนฺยุฮ</i> — อาจสังหาร, <i>ตตฺ</i> — นั้น, <i>เม</i> — สำหรับข้า, <i>เกฺษม-ตรมฺ</i> — ดีกว่า, <i>ภเวตฺ</i> — อาจเป็น
+  <span class="slant iast">yadi</span><span class="slant pali">ยทิ</span><span class="slant thai">ยะทิ</span><span class="slant ram">ยะดิ</span> — ถึงแม้ว่า, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้าพเจ้า, <span class="slant iast">apratīkāram</span><span class="slant pali">อปฺรตีการมฺ</span><span class="slant thai">อัประตีการัม</span><span class="slant ram">อพระทีคารัม</span> — ปราศจากการต่อต้าน, <span class="slant iast">aśastram</span><span class="slant pali">อศสฺตฺรมฺ</span><span class="slant thai">อะศัสตรัม</span><span class="slant ram">อชัสทรัม</span> — โดยไม่มี อาวุธ, <span class="slant iast">śastra-pāṇayaḥ</span><span class="slant pali">ศสฺตฺร-ปาณยห์</span><span class="slant thai">ศัสตระ-ปาณะยะห์</span><span class="slant ram">ชัสทระ-พาณะยะฮ</span> — ผู้ที่มีอาวุธอยู่ในมือ, <span class="slant iast">dhārtarāṣṭrāḥ</span><span class="slant pali">ธารฺตราษฺฏฺราห์</span><span class="slant thai">ธารตะราษฏราห์</span><span class="slant ram">ดฺารทะราชทราฮ</span> — เหล่าโอรสของ <span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>, <span class="slant iast">raṇe</span><span class="slant pali">รเณ</span><span class="slant thai">ระเณ</span><span class="slant ram">ระเณ</span> — ในสมรภูมิ, <span class="slant iast">hanyuḥ</span><span class="slant pali">หนฺยุห์</span><span class="slant thai">หันยุห์</span><span class="slant ram">ฮันยุฮ</span> — อาจสังหาร, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — สำหรับข้า, <span class="slant iast">kṣema-taram</span><span class="slant pali">กฺเษม-ตรมฺ</span><span class="slant thai">กเษมะ-ตะรัม</span><span class="slant ram">คเชมะ- ทะรัม</span> — ดีกว่า, <span class="slant iast">bhavet</span><span class="slant pali">ภเวตฺ</span><span class="slant thai">ภะเวต</span><span class="slant ram">บฺะเวท</span> — อาจเป็น
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  มันอาจเป็นการดีกว่า&nbsp;&nbsp;ถ้าหากว่าเหล่าโอรสของ&nbsp;&nbsp;<i>ธฺฤตราษฺฏฺร</i>&nbsp;&nbsp;ผู้มีอาวุธครบมือมาสังหารข้าขณะไร้อาวุธ&nbsp;&nbsp;และข้าพเจ้าจะไม่ตอบโต้ในสนามรบ
+  มันอาจเป็นการดีกว่า&nbsp;&nbsp;ถ้าหากว่าเหล่าโอรสของ&nbsp;&nbsp;<span class="slant iast">dhṛtarāṣṭra</span><span class="slant pali">ธฺฤตราษฺฏฺร</span><span class="slant thai">ธฤตะราษฏระ</span><span class="slant ram">ดฺริทะรชทระ,ดฺริทะราชทระ,ดฺริทะ ราชทระ,ชั่วร้ยพอพระทัย,ดฺริทะราชทระ,ดฺริทะราช <wbr>ทระ,ดฺริทะราช ทระ</span>&nbsp;&nbsp;ผู้มีอาวุธครบมือมาสังหารข้าขณะไร้อาวุธ&nbsp;&nbsp;และข้าพเจ้าจะไม่ตอบโต้ในสนามรบ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เป็นประเพณีตามหลักการต่อสู้ของ&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;ศัตรูผู้ไม่มีอาวุธและไม่ยินดีต่อสู้<wbr>ไม่ควรถูกทำร้าย&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงตัดสินใจแล้วว่า&nbsp;&nbsp;ถึงแม้ศัตรูจะบุกรุกเข้ามาใน<wbr>สถานการณ์ที่ไม่เหมาะสมเช่นนี้&nbsp;&nbsp;พระองค์จะทรงไม่ยอมต่อสู้&nbsp;&nbsp;โดยมิได้พิจารณาว่า&nbsp;&nbsp;ฝ่ายตรง<wbr>ข้ามมีความปรารถนาจะสู้รบแค่ไหน&nbsp;&nbsp;ลักษณะอาการทั้งหมดนี้ก็เนื่องมาจากหัวใจที่อ่อน<wbr>โยน&nbsp;&nbsp;จากผลที่ทรงเป็นสาวกผู้ยิ่งใหญ่ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  เป็นประเพณีตามหลักการต่อสู้ของ&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;ศัตรูผู้ไม่มีอาวุธและไม่ยินดีต่อสู้<wbr>ไม่ควรถูกทำร้าย&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงตัดสินใจแล้วว่า&nbsp;&nbsp;ถึงแม้ศัตรูจะบุกรุกเข้ามาใน<wbr>สถานการณ์ที่ไม่เหมาะสมเช่นนี้&nbsp;&nbsp;พระองค์จะทรงไม่ยอมต่อสู้&nbsp;&nbsp;โดยมิได้พิจารณาว่า&nbsp;&nbsp;ฝ่ายตรง<wbr>ข้ามมีความปรารถนาจะสู้รบแค่ไหน&nbsp;&nbsp;ลักษณะอาการทั้งหมดนี้ก็เนื่องมาจากหัวใจที่อ่อน<wbr>โยน&nbsp;&nbsp;จากผลที่ทรงเป็นสาวกผู้ยิ่งใหญ่ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

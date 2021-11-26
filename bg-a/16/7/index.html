@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 16.7</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรวฺฤตฺติํ จ นิวฺฤตฺติํ จ</i><br /><i>ชนา น วิทุรฺ อาสุราฮ</i><br /><i>น ศะอุจํ นาปิ จาจาโร</i><br /><i>น สตฺยํ เตษุ วิทฺยเต</i>
+<span class="slant iast">pravṛttiṁ ca nivṛttiṁ ca<br /></span>
+<span class="slant pali">ปฺรวฺฤตฺตึ จ นิวฺฤตฺตึ จ<br /></span>
+<span class="slant thai">ปรัวฤตติง จะ นิวฤตติง จะ<br /></span>
+<span class="slant ram">พระวริททิม ชะ นิวริททิม ชะ<br /></span>
+<span class="slant iast">janā na vidur āsurāḥ<br /></span>
+<span class="slant pali">ชนา น วิทุรฺ อาสุราห์<br /></span>
+<span class="slant thai">ชะนา นะ วิทุร อาสุราห์<br /></span>
+<span class="slant ram">จะนา นะ วิดุร อาสุราฮ<br /></span>
+<span class="slant iast">na śaucaṁ nāpi cācāro<br /></span>
+<span class="slant pali">น เศาจํ นาปิ จาจาโร<br /></span>
+<span class="slant thai">นะ เศาจัง นาปิ จาจาโร<br /></span>
+<span class="slant ram">นะ โชชัม นาพิ ชาชาโร<br /></span>
+<span class="slant iast">na satyaṁ teṣu vidyate<br /></span>
+<span class="slant pali">น สตฺยํ เตษุ วิทฺยเต<br /></span>
+<span class="slant thai">นะ สัตยัง เตษุ วิทยะเต<br /></span>
+<span class="slant ram">นะ สัทยัม เทชุ วิดยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรวฺฤตฺติมฺ</i> — ปฏิบัติถูกต้อง, <i>จ</i> — เช่นกัน, <i>นิวฺฤตฺติมฺ</i> — ปฏิบัติไม่ถูกต้อง, <i>จ</i> — และ, <i>ชนาฮ</i> — บุคคล, <i>น</i> — ไม่, <i>วิทุฮ</i> — รู้, <i>อาสุราฮ</i> — ของคุณสมบัติมาร, <i>น</i> — ไม่เคย, <i>ศะอุจมฺ</i> — ความสะอาด, <i>น</i> — ไม่, <i>อปิ</i> — เช่นกัน, <i>จ</i> — และ, <i>อาจารฮ</i> — พฤติกรรม, <i>น</i> — ไม่เคย, <i>สตฺยมฺ</i> — สัจจะ, <i>เตษุ</i> — ในพวกเขา, <i>วิทฺยเต</i> — มี
+  <span class="slant iast">pravṛttim</span><span class="slant pali">ปฺรวฺฤตฺติมฺ</span><span class="slant thai">ปรัวฤตติม</span><span class="slant ram">พระวริททิม</span> — ปฏิบัติถูกต้อง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">nivṛttim</span><span class="slant pali">นิวฺฤตฺติมฺ</span><span class="slant thai">นิวฤตติม</span><span class="slant ram">นิวริททิม</span> — ปฏิบัติไม่ถูกต้อง, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">janāḥ</span><span class="slant pali">ชนาห์</span><span class="slant thai">ชะนาห์</span><span class="slant ram">จะนาฮ</span> — บุคคล, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">viduḥ</span><span class="slant pali">วิทุห์</span><span class="slant thai">วิทุห์</span><span class="slant ram">วิดุฮ</span> — รู้, <span class="slant iast">āsurāḥ</span><span class="slant pali">อาสุราห์</span><span class="slant thai">อาสุราห์</span><span class="slant ram">อาสุราฮ</span> — ของคุณสมบัติมาร, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">śaucam</span><span class="slant pali">เศาจมฺ</span><span class="slant thai">เศาจัม</span><span class="slant ram">โชชัม</span> — ความสะอาด, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">ācāraḥ</span><span class="slant pali">อาจารห์</span><span class="slant thai">อาจาระห์</span><span class="slant ram">อาชาระฮ</span> — พฤติกรรม, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">satyam</span><span class="slant pali">สตฺยมฺ</span><span class="slant thai">สัตยัม</span><span class="slant ram">สัทยัม</span> — สัจจะ, <span class="slant iast">teṣu</span><span class="slant pali">เตษุ</span><span class="slant thai">เตษุ</span><span class="slant ram">เทชุ</span> — ในพวกเขา, <span class="slant iast">vidyate</span><span class="slant pali">วิทฺยเต</span><span class="slant thai">วิทยะเต</span><span class="slant ram">วิดยะเท</span> — มี
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในทุกสังคมมนุษย์ที่ศิวิไลจะมีกฎเกณฑ์จากพระคัมภีร์เป็นชุดที่ปฏิบัติตาม<wbr>ตั้งแต่ต้น&nbsp;&nbsp;โดยเฉพาะในหมู่ชาว&nbsp;&nbsp;<i>อารฺยนฺ</i>&nbsp;&nbsp;หรือพวกที่รับเอาวัฒนธรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;มาปฏิบัติซึ่งเป็นที่รู้กันว่าเป็นพวกที่มีวัฒนธรรมเจริญสูงสุด&nbsp;&nbsp;พวกที่ไม่ปฏิบัติตามคำสั่งสอนของ<wbr>พระคัมภีร์ถือว่าเป็นมาร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าพวกมารไม่รู้กฎของพระคัมภีร์และ<wbr>ไม่มีใจจะปฏิบัติตาม&nbsp;&nbsp;ส่วนใหญ่ไม่รู้&nbsp;&nbsp;แม้บางคนรู้ก็ไม่มีแนวโน้มจะปฏิบัติตาม&nbsp;&nbsp;พวกมาร<wbr>ไม่มีศรัทธาและไม่ยินดีปฏิบัติตามคำสั่งสอนของพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;เหล่ามารไม่มีความสะอาด<wbr>ทั้งภายนอกหรือภายใน&nbsp;&nbsp;เราควรรักษาร่างกายให้สะอาดด้วยการอาบน้ำ&nbsp;&nbsp;แปรงฟัน&nbsp;&nbsp;โกน<wbr>หนวด&nbsp;&nbsp;เปลี่ยนเสื้อผ้า&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;อยู่เสมอ&nbsp;&nbsp;สำหรับความสะอาดภายใน&nbsp;&nbsp;เราควรระลึกถึงพระนาม<wbr>อันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;และสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;พวกมารไม่ชอบและ<wbr>ไม่ปฏิบัติตามกฎเกณฑ์เพื่อความสะอาดทั้งภายนอกและภายในเหล่านี้
+  ในทุกสังคมมนุษย์ที่ศิวิไลจะมีกฎเกณฑ์จากพระคัมภีร์เป็นชุดที่ปฏิบัติตาม<wbr>ตั้งแต่ต้น&nbsp;&nbsp;โดยเฉพาะในหมู่ชาว&nbsp;&nbsp;<span class="slant iast">āryan</span><span class="slant pali">อารฺยนฺ</span><span class="slant thai">อารยัน</span><span class="slant ram">อารยัน</span>&nbsp;&nbsp;หรือพวกที่รับเอาวัฒนธรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;มาปฏิบัติซึ่งเป็นที่รู้กันว่าเป็นพวกที่มีวัฒนธรรมเจริญสูงสุด&nbsp;&nbsp;พวกที่ไม่ปฏิบัติตามคำสั่งสอนของ<wbr>พระคัมภีร์ถือว่าเป็นมาร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าพวกมารไม่รู้กฎของพระคัมภีร์และ<wbr>ไม่มีใจจะปฏิบัติตาม&nbsp;&nbsp;ส่วนใหญ่ไม่รู้&nbsp;&nbsp;แม้บางคนรู้ก็ไม่มีแนวโน้มจะปฏิบัติตาม&nbsp;&nbsp;พวกมาร<wbr>ไม่มีศรัทธาและไม่ยินดีปฏิบัติตามคำสั่งสอนของพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;เหล่ามารไม่มีความสะอาด<wbr>ทั้งภายนอกหรือภายใน&nbsp;&nbsp;เราควรรักษาร่างกายให้สะอาดด้วยการอาบน้ำ&nbsp;&nbsp;แปรงฟัน&nbsp;&nbsp;โกน<wbr>หนวด&nbsp;&nbsp;เปลี่ยนเสื้อผ้า&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;อยู่เสมอ&nbsp;&nbsp;สำหรับความสะอาดภายใน&nbsp;&nbsp;เราควรระลึกถึงพระนาม<wbr>อันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;และสวดภาวนา&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร/&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;ะ&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;ฮะเร&nbsp;&nbsp;พวกมารไม่ชอบและ<wbr>ไม่ปฏิบัติตามกฎเกณฑ์เพื่อความสะอาดทั้งภายนอกและภายในเหล่านี้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สำหรับความประพฤติ&nbsp;&nbsp;มีกฎเกณฑ์มากมายที่ชี้นำพฤติกรรมมนุษย์&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>มนุ-สํหิตา</i>&nbsp;&nbsp;ซึ่งเป็นกฎหมายของเผ่าพันธุ์มนุษย์&nbsp;&nbsp;แม้จนกระทั่งปัจจุบันชาวฮินดูยัง<wbr>ปฏิบัติตาม&nbsp;&nbsp;<i>มนุ-สํหิตา</i>&nbsp;&nbsp;กฎหมายมรดกและกฎหมายอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็มาจากหนังสือเล่มนี้&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>มนุ-สํหิตา</i>&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจนว่าสตรีไม่ควรได้รับเสรีภาพ&nbsp;&nbsp;เช่นนี้ไม่ได้หมายความ<wbr>ว่าสตรีควรถูกเก็บไว้เป็นทาส&nbsp;&nbsp;แต่พวกเธอเหมือนเด็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เด็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ควรปล่อยเป็นอิสระ<wbr>แต่มิได้หมายความว่าเก็บพวกเด็กไว้เป็นทาส&nbsp;&nbsp;ปัจจุบันพวกมารละเลยคำสั่งสอนเหล่า<wbr>นี้และคิดว่าสตรีควรได้รับเสรีภาพเท่าเทียมกับบุรุษ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;การกระทำเช่นนี้ไม่ได้<wbr>ทำให้สภาวะสังคมโลกดีขึ้น&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;สตรีควรได้รับการปกป้องคุ้มครองในทุกระดับของ<wbr>ชีวิต&nbsp;&nbsp;เช่น&nbsp;&nbsp;ได้รับความคุ้มครองจากบิดาในเยาว์วัย&nbsp;&nbsp;จากสามีตอนเป็นสาว&nbsp;&nbsp;และจากบุตรที่<wbr>โตแล้วเมื่อยามชรา&nbsp;&nbsp;เช่นนี้เป็นพฤติกรรมที่เหมาะสมทางสังคมตาม&nbsp;&nbsp;<i>มนุ-สํหิตา</i>&nbsp;&nbsp;แต่การ<wbr>ศึกษาปัจจุบันได้ออกอุบายแนวคิดทำให้ชีวิตสตรีผยองแบบผิดธรรมชาติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การ<wbr>แต่งงานในปัจจุบันเป็นเพียงจินตนาการในสังคมมนุษย์&nbsp;&nbsp;และสภาวะศีลธรรมของผู้หญิง<wbr>ปัจจุบันจึงไม่ค่อยดี&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เหล่ามารไม่ยอมรับคำสั่งสอนที่เป็นสิ่งดีสำหรับสังคม&nbsp;&nbsp;และ<wbr>เนื่องจากไม่ปฏิบัติตามประสบการณ์ของนักปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;และกฎเกณฑ์ที่เหล่านัก<wbr>ปราชญ์ได้วางไว้&nbsp;&nbsp;สภาวะสังคมของคนมารจึงมีความทุกข์ระทมมาก
+  สำหรับความประพฤติ&nbsp;&nbsp;มีกฎเกณฑ์มากมายที่ชี้นำพฤติกรรมมนุษย์&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">manu-saṁhitā</span><span class="slant pali">มนุ-สํหิตา</span><span class="slant thai">มะนุ-สังหิตา</span><span class="slant ram">มะนุ-</span>&nbsp;&nbsp;ซึ่งเป็นกฎหมายของเผ่าพันธุ์มนุษย์&nbsp;&nbsp;แม้จนกระทั่งปัจจุบันชาวฮินดูยัง<wbr>ปฏิบัติตาม&nbsp;&nbsp;<span class="slant iast">manu-saṁhitā</span><span class="slant pali">มนุ-สํหิตา</span><span class="slant thai">มะนุ-สังหิตา</span><span class="slant ram">มะนุ-</span>&nbsp;&nbsp;กฎหมายมรดกและกฎหมายอื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ก็มาจากหนังสือเล่มนี้&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">manu-saṁhitā</span><span class="slant pali">มนุ-สํหิตา</span><span class="slant thai">มะนุ-สังหิตา</span><span class="slant ram">มะนุ-</span>&nbsp;&nbsp;ได้กล่าวไว้อย่างชัดเจนว่าสตรีไม่ควรได้รับเสรีภาพ&nbsp;&nbsp;เช่นนี้ไม่ได้หมายความ<wbr>ว่าสตรีควรถูกเก็บไว้เป็นทาส&nbsp;&nbsp;แต่พวกเธอเหมือนเด็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เด็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ไม่ควรปล่อยเป็นอิสระ<wbr>แต่มิได้หมายความว่าเก็บพวกเด็กไว้เป็นทาส&nbsp;&nbsp;ปัจจุบันพวกมารละเลยคำสั่งสอนเหล่า<wbr>นี้และคิดว่าสตรีควรได้รับเสรีภาพเท่าเทียมกับบุรุษ&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;การกระทำเช่นนี้ไม่ได้<wbr>ทำให้สภาวะสังคมโลกดีขึ้น&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;สตรีควรได้รับการปกป้องคุ้มครองในทุกระดับของ<wbr>ชีวิต&nbsp;&nbsp;เช่น&nbsp;&nbsp;ได้รับความคุ้มครองจากบิดาในเยาว์วัย&nbsp;&nbsp;จากสามีตอนเป็นสาว&nbsp;&nbsp;และจากบุตรที่<wbr>โตแล้วเมื่อยามชรา&nbsp;&nbsp;เช่นนี้เป็นพฤติกรรมที่เหมาะสมทางสังคมตาม&nbsp;&nbsp;<span class="slant iast">manu-saṁhitā</span><span class="slant pali">มนุ-สํหิตา</span><span class="slant thai">มะนุ-สังหิตา</span><span class="slant ram">มะนุ-</span>&nbsp;&nbsp;แต่การ<wbr>ศึกษาปัจจุบันได้ออกอุบายแนวคิดทำให้ชีวิตสตรีผยองแบบผิดธรรมชาติ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;การ<wbr>แต่งงานในปัจจุบันเป็นเพียงจินตนาการในสังคมมนุษย์&nbsp;&nbsp;และสภาวะศีลธรรมของผู้หญิง<wbr>ปัจจุบันจึงไม่ค่อยดี&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เหล่ามารไม่ยอมรับคำสั่งสอนที่เป็นสิ่งดีสำหรับสังคม&nbsp;&nbsp;และ<wbr>เนื่องจากไม่ปฏิบัติตามประสบการณ์ของนักปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;และกฎเกณฑ์ที่เหล่านัก<wbr>ปราชญ์ได้วางไว้&nbsp;&nbsp;สภาวะสังคมของคนมารจึงมีความทุกข์ระทมมาก
   </p>
 </div>
 

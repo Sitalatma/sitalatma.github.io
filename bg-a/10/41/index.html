@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.41</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทฺ ยทฺ วิภูติมตฺ สตฺตฺวํ</i><br /><i>ศฺรีมทฺ อูรฺชิตมฺ เอว วา</i><br /><i>ตตฺ ตทฺ เอวาวคจฺฉ ตฺวํ</i><br /><i>มม เตโช-′ํศ-สมฺภวมฺ</i>
+<span class="slant iast">yad yad vibhūtimat sattvaṁ<br /></span>
+<span class="slant pali">ยทฺ ยทฺ วิภูติมตฺ สตฺตฺวํ<br /></span>
+<span class="slant thai">ยัท ยัท วิภูติมัต สัตตวัง<br /></span>
+<span class="slant ram">ยัด ยัด วิบํูทิมัท สัททวัม<br /></span>
+<span class="slant iast">śrīmad ūrjitam eva vā<br /></span>
+<span class="slant pali">ศฺรีมทฺ อูรฺชิตมฺ เอว วา<br /></span>
+<span class="slant thai">ศรีมัท อูรชิตัม เอวะ วา<br /></span>
+<span class="slant ram">ชรีมัด อูรจิทัม เอวะ วา<br /></span>
+<span class="slant iast">tat tad evāvagaccha tvaṁ<br /></span>
+<span class="slant pali">ตตฺ ตทฺ เอวาวคจฺฉ ตฺวํ<br /></span>
+<span class="slant thai">ตัต ตัท เอวาวะคัจฉะ ตวัง<br /></span>
+<span class="slant ram">ทัท ทัด เอวาวะกัชชฺะ ทวัม<br /></span>
+<span class="slant iast">mama tejo-’ṁśa-sambhavam<br /></span>
+<span class="slant pali">มม เตโช-’ํศ-สมฺภวมฺ<br /></span>
+<span class="slant thai">มะมะ เตโช-’งศะ-สัมภะวัม<br /></span>
+<span class="slant ram">มะมะ เทโจ-่มชะ-สัมบฺะวัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยตฺ ยตฺ</i> — อะไรก็แล้วแต่, <i>วิภูติ</i> — ความมั่งคั่ง, <i>มตฺ</i> — มี, <i>สตฺตฺวมฺ</i> — มีอยู่, <i>ศฺรี-มตฺ</i> — ความ สวยงาม, <i>อูรฺชิตมฺ</i> — น่าสรรเสริญ, <i>เอว</i> — แน่นอน, <i>วา</i> — หรือ, <i>ตตฺ ตตฺ</i> — ทั้งหมดนั้น, <i>เอว</i> — แน่นอน, <i>อวคจฺฉ</i> — ต้องรู้, <i>ตฺวมฺ</i> — เธอ, <i>มม</i> — ของข้า, <i>เตชฮ</i> — ของความวิเศษงดงาม, <i>อํศ</i> — ส่วนหนึ่ง, <i>สมฺภวมฺ</i> — เกิดจาก
+  <span class="slant iast">yat yat</span><span class="slant pali">ยตฺยตฺ</span><span class="slant thai">ยัตยัต</span><span class="slant ram">ยัทยัท</span> — อะไรก็แล้วแต่, <span class="slant iast">vibhūti</span><span class="slant pali">วิภูติ</span><span class="slant thai">วิภูติ</span><span class="slant ram">วิบํูทิ</span> — ความมั่งคั่ง, <span class="slant iast">mat</span><span class="slant pali">มตฺ</span><span class="slant thai">มัต</span><span class="slant ram">มัท</span> — มี, <span class="slant iast">sattvam</span><span class="slant pali">สตฺตฺวมฺ</span><span class="slant thai">สัตตวัม</span><span class="slant ram">สัททวัม</span> — มีอยู่, <span class="slant iast">śrī-mat</span><span class="slant pali">ศฺรี-มตฺ</span><span class="slant thai">ศรี-มัต</span><span class="slant ram">ชรี-มัท</span> — ความ สวยงาม, <span class="slant iast">ūrjitam</span><span class="slant pali">อูรฺชิตมฺ</span><span class="slant thai">อูรชิตัม</span><span class="slant ram">อูรจิทัม</span> — น่าสรรเสริญ, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">vā</span><span class="slant pali">วา</span><span class="slant thai">วา</span><span class="slant ram">วา</span> — หรือ, <span class="slant iast">tat tat</span><span class="slant pali">ตตฺตตฺ</span><span class="slant thai">ตัตตัต</span><span class="slant ram">ทัท ทัท</span> — ทั้งหมดนั้น, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">avagaccha</span><span class="slant pali">อวคจฺฉ</span><span class="slant thai">อะวะคัจฉะ</span><span class="slant ram">อวะ กัชชฺะ</span> — ต้องรู้, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — เธอ, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า, <span class="slant iast">tejaḥ</span><span class="slant pali">เตชห์</span><span class="slant thai">เตชะห์</span><span class="slant ram">เทจะฮ</span> — ของความวิเศษงดงาม, <span class="slant iast">aṁśa</span><span class="slant pali">อํศ</span><span class="slant thai">อังศะ</span><span class="slant ram">อัมชะ</span> — ส่วนหนึ่ง, <span class="slant iast">sambhavam</span><span class="slant pali">สมฺภวมฺ</span><span class="slant thai">สัมภะวัม</span><span class="slant ram">สัมบฺะวัม</span> — เกิดจาก
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สิ่งใดที่มีอยู่ซึ่งมีความสวยงามหรือน่าสรรเสริญ&nbsp;&nbsp;ควรเข้าใจว่าเป็นเพียง<wbr>ปรากฏการณ์เพียงเล็กน้อยแห่งความมั่งคั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ว่าในโลกทิพย์หรือโลกวัตถุความมั่งคั่งพิเศษใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ควรพิจารณาว่าเป็นผู้แทนแห่งความมั่งคั่งของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  สิ่งใดที่มีอยู่ซึ่งมีความสวยงามหรือน่าสรรเสริญ&nbsp;&nbsp;ควรเข้าใจว่าเป็นเพียง<wbr>ปรากฏการณ์เพียงเล็กน้อยแห่งความมั่งคั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ว่าในโลกทิพย์หรือโลกวัตถุความมั่งคั่งพิเศษใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ควรพิจารณาว่าเป็นผู้แทนแห่งความมั่งคั่งของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

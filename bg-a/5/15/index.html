@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>นาทเตฺต กสฺยจิตฺ ปาปํ</i><br /><i>น ไจว สุกฺฤตํ วิภุฮ</i><br /><i>อชฺญาเนนาวฺฤตํ ชฺญานํ</i><br /><i>เตน มุหฺยนฺติ ชนฺตวฮ</i>
+<span class="slant iast">nādatte kasyacit pāpaṁ<br /></span>
+<span class="slant pali">นาทตฺเต กสฺยจิตฺ ปาปํ<br /></span>
+<span class="slant thai">นาทัตเต กัสยะจิต ปาปัง<br /></span>
+<span class="slant ram">นาดัทเท คัสยะชิท พาพัม<br /></span>
+<span class="slant iast">na caiva sukṛtaṁ vibhuḥ<br /></span>
+<span class="slant pali">น ไจว สุกฺฤตํ วิภุห์<br /></span>
+<span class="slant thai">นะ ไจวะ สุกฤตัง วิภุห์<br /></span>
+<span class="slant ram">นะ ไชวะ สุคริทัม วิบํุฮ<br /></span>
+<span class="slant iast">ajñānenāvṛtaṁ jñānaṁ<br /></span>
+<span class="slant pali">อชฺญาเนนาวฺฤตํ ชฺญานํ<br /></span>
+<span class="slant thai">อัชญาเนนาวฤตัง ชญานัง<br /></span>
+<span class="slant ram">อกยาเนนาวริทัม กยานัม<br /></span>
+<span class="slant iast">tena muhyanti jantavaḥ<br /></span>
+<span class="slant pali">เตน มุหฺยนฺติ ชนฺตวห์<br /></span>
+<span class="slant thai">เตนะ มุหยันติ ชันตะวะห์<br /></span>
+<span class="slant ram">เทนะ มุฮยันทิ จันทะวะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่, <i>อาเทตฺต</i> — รับ, <i>กสฺยจิตฺ</i> — ของผู้ใด, <i>ปาปมฺ</i> — บาป, <i>น</i> — ไม่, <i>จ</i> — เช่นกัน, <i>เอว</i> — แน่นอน, <i>สุ-กฺฤตมฺ</i> — กิจกรรมบุญ, <i>วิภุฮ</i> — องค์ภควาน, <i>อชฺญาเนน</i> — ด้วยอวิชชา, <i>อาวฺฤตมฺ</i> — ปกคลุม, <i>ชฺญานมฺ</i> — ความรู้, <i>เตน</i> — ด้วยสิ่งนั้น, <i>มุหฺยนฺติ</i> — สับสน, <i>ชนฺตวฮ</i> — สิ่งมี ชีวิต
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">ādatte</span><span class="slant pali">อาทตฺเต</span><span class="slant thai">อาทัตเต</span><span class="slant ram">อาดัทเท</span> — รับ, <span class="slant iast">kasyacit</span><span class="slant pali">กสฺยจิตฺ</span><span class="slant thai">กัสยะจิต</span><span class="slant ram">คัสยะชิท</span> — ของผู้ใด, <span class="slant iast">pāpam</span><span class="slant pali">ปาปมฺ</span><span class="slant thai">ปาปัม</span><span class="slant ram">พาพัม</span> — บาป, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">su-kṛtam</span><span class="slant pali">สุ-กฺฤตมฺ</span><span class="slant thai">สุ-กฤตัม</span><span class="slant ram">สุ-คริทัม</span> — กิจกรรมบุญ, <span class="slant iast">vibhuḥ</span><span class="slant pali">วิภุห์</span><span class="slant thai">วิภุห์</span><span class="slant ram">วิบํุฮ</span> — องค์ภควาน, <span class="slant iast">ajñānena</span><span class="slant pali">อชฺญาเนน</span><span class="slant thai">อัชญาเนนะ</span><span class="slant ram">อกยาเนนะ</span> — ด้วยอวิชชา, <span class="slant iast">āvṛtam</span><span class="slant pali">อาวฺฤตมฺ</span><span class="slant thai">อาวฤตัม</span><span class="slant ram">อาว- ริทัม</span> — ปกคลุม, <span class="slant iast">jñānam</span><span class="slant pali">ชฺญานมฺ</span><span class="slant thai">ชญานัม</span><span class="slant ram">กยานัม</span> — ความรู้, <span class="slant iast">tena</span><span class="slant pali">เตน</span><span class="slant thai">เตนะ</span><span class="slant ram">เทนะ</span> — ด้วยสิ่งนั้น, <span class="slant iast">muhyanti</span><span class="slant pali">มุหฺยนฺติ</span><span class="slant thai">มุหยันติ</span><span class="slant ram">มุฮยันทิ</span> — สับสน, <span class="slant iast">jantavaḥ</span><span class="slant pali">ชนฺตวห์</span><span class="slant thai">ชันตะวะห์</span><span class="slant ram">จันทะวะฮ</span> — สิ่งมี ชีวิต
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำสันสกฤษ&nbsp;&nbsp;<i>วิภุ</i>&nbsp;&nbsp;หมายความถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงเปี่ยมไปด้วยความรู้&nbsp;&nbsp;ความ<wbr>ร่ำรวย&nbsp;&nbsp;พลังอำนาจ&nbsp;&nbsp;ชื่อเสียง&nbsp;&nbsp;ความสง่างาม&nbsp;&nbsp;และความเสียสละ&nbsp;&nbsp;พระองค์ทรงพึงพอ<wbr>พระทัยในพระองค์เองอยู่เสมอ&nbsp;&nbsp;ไม่ทรงถูกรบกวนด้วยการทำบาปหรือทำบุญ&nbsp;&nbsp;พระองค์<wbr>ทรงมิได้สร้างสถานการณ์เฉพาะสำหรับสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่สิ่งมีชีวิตสับสนด้วยอวิชชาและต้องการให้ตนเองถูกส่งมาอยู่ในสภาวะชีวิตวัตถุบางแห่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;โซ่ตรวนแห่ง<wbr>กรรมและวิบากกรรมจึงเริ่มขึ้น&nbsp;&nbsp;สิ่งมีชีวิตเป็นธรรมชาติที่สูงกว่าซึ่งเปี่ยมไปด้วยความ<wbr>รู้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เขามีแนวโน้มที่จะถูกอวิชชาครอบงำอันเนื่องมาจากพลังอำนาจที่จำกัด<wbr>ในตนเอง&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีพระเดชทั้งปวงแต่สิ่งมีชีวิตไม่มี&nbsp;&nbsp;พระองค์ทรงเป็น&nbsp;&nbsp;<i>วิภุ</i>&nbsp;&nbsp;หรือ<wbr>สัพพัญญู&nbsp;&nbsp;แต่สิ่งมีชีวิตเป็น&nbsp;&nbsp;<i>อณุ</i>&nbsp;&nbsp;หรือละอองเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เนื่องจากเป็นวิญญาณที่มีชีวิตจึงมี<wbr>ความสามารถที่จะต้องการตามสิทธิของตน&nbsp;&nbsp;ความต้องการเช่นนี้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงมีพระ<wbr>เดชทั้งปวงเท่านั้นที่จะตอบสนองให้ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อสิ่งมีชีวิตสับสนอยู่ในความต้องการ<wbr>ของตนเอง&nbsp;&nbsp;พระองค์ทรงอนุญาตให้เขาตอบสนองความต้องการเหล่านั้น&nbsp;&nbsp;แต่ทรงมิได้รับ<wbr>ผิดชอบต่อกรรมหรือผลกรรมของแต่ละสถานการณ์ที่แต่ละชีวิตอาจปรารถนา&nbsp;&nbsp;ดังนั้นขณะที่อยู่ในสภาวะสับสน&nbsp;&nbsp;ชีวิตในร่างสำคัญตนเองกับสถานการณ์ร่างกายวัตถุและถูก<wbr>จำกัดอยู่ในความทุกข์และความสุขอันไม่ถาวรของชีวิต&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นสหายของสิ่ง<wbr>มีชีวิตอยู่เสมอในฐานะ&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;หรืออภิวิญญาณ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;พระองค์ทรงเข้าใจความ<wbr>ต้องการของปัจเจกวิญญาณ&nbsp;&nbsp;เสมือนเช่นเราสามารถได้กลิ่นของดอกไม้เมื่อเข้าไปใกล้ความต้องการเป็นรูปแบบที่ละเอียดอ่อนของสิ่งมีชีวิตในสภาวะวัตถุ&nbsp;&nbsp;พระองค์ทรงสนอง<wbr>ตอบความต้องการตามที่เขาควรได้รับ&nbsp;&nbsp;มนุษย์เสนอและ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สนอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ปัจเจก<wbr>ชีวิตมิได้มีอำนาจทั้งหมดในการสนองตอบความต้องการของตนเอง&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงสามารถสนองตอบความต้องการทั้งหมด&nbsp;&nbsp;และทรงไม่มีอคติต่อผู้ใด&nbsp;&nbsp;พระองค์จึงทรง<wbr>ไม่รบกวนกับความต้องการของสิ่งมีชีวิตผู้มีเสรีภาพเพียงน้อยนิด&nbsp;&nbsp;เมื่อเขาปรารถนา<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะทรงดูแลเป็นพิเศษและสนับสนุนเขาให้ปรารถนาในหนทางที่สามารถบรรลุ<wbr>ถึงพระองค์และมีความสุขนิรันดร&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บทมนต์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>เอษ&nbsp;&nbsp;อุ&nbsp;&nbsp;หฺยฺ&nbsp;&nbsp;เอว&nbsp;&nbsp;สาธุ&nbsp;&nbsp;กรฺม&nbsp;&nbsp;การยติ&nbsp;&nbsp;ตํ&nbsp;&nbsp;ยมฺ&nbsp;&nbsp;เอโภฺย&nbsp;&nbsp;โลเกภฺย&nbsp;&nbsp;อุนฺนินีษเต.เอษ&nbsp;&nbsp;อุ&nbsp;&nbsp;เอวาสาธุ&nbsp;&nbsp;กรฺม&nbsp;&nbsp;การยติ&nbsp;&nbsp;ยมฺ&nbsp;&nbsp;อโธ&nbsp;&nbsp;นินีษเต</i>&nbsp;&nbsp;“องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงให้สิ่งมีชีวิตทำบุญเพื่ออาจเจริญขึ้น&nbsp;&nbsp;ทรงให้สิ่ง<wbr>มีชีวิตทำบาปเพื่ออาจไปลงนรก”&nbsp;&nbsp;(<i>กะอุษีตกี&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;3.8)
+  คำสันสกฤษ&nbsp;&nbsp;<span class="slant iast">vibhu</span><span class="slant pali">วิภุ</span><span class="slant thai">วิภุ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายความถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงเปี่ยมไปด้วยความรู้&nbsp;&nbsp;ความ<wbr>ร่ำรวย&nbsp;&nbsp;พลังอำนาจ&nbsp;&nbsp;ชื่อเสียง&nbsp;&nbsp;ความสง่างาม&nbsp;&nbsp;และความเสียสละ&nbsp;&nbsp;พระองค์ทรงพึงพอ<wbr>พระทัยในพระองค์เองอยู่เสมอ&nbsp;&nbsp;ไม่ทรงถูกรบกวนด้วยการทำบาปหรือทำบุญ&nbsp;&nbsp;พระองค์<wbr>ทรงมิได้สร้างสถานการณ์เฉพาะสำหรับสิ่งมีชีวิตใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;แต่สิ่งมีชีวิตสับสนด้วยอวิชชาและต้องการให้ตนเองถูกส่งมาอยู่ในสภาวะชีวิตวัตถุบางแห่ง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;โซ่ตรวนแห่ง<wbr>กรรมและวิบากกรรมจึงเริ่มขึ้น&nbsp;&nbsp;สิ่งมีชีวิตเป็นธรรมชาติที่สูงกว่าซึ่งเปี่ยมไปด้วยความ<wbr>รู้&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;เขามีแนวโน้มที่จะถูกอวิชชาครอบงำอันเนื่องมาจากพลังอำนาจที่จำกัด<wbr>ในตนเอง&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีพระเดชทั้งปวงแต่สิ่งมีชีวิตไม่มี&nbsp;&nbsp;พระองค์ทรงเป็น&nbsp;&nbsp;<span class="slant iast">vibhu</span><span class="slant pali">วิภุ</span><span class="slant thai">วิภุ</span><span class="slant ram"></span>&nbsp;&nbsp;หรือ<wbr>สัพพัญญู&nbsp;&nbsp;แต่สิ่งมีชีวิตเป็น&nbsp;&nbsp;<span class="slant iast">aṇu</span><span class="slant pali">อณุ</span><span class="slant thai">อะณุ</span><span class="slant ram"></span>&nbsp;&nbsp;หรือละอองเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;เนื่องจากเป็นวิญญาณที่มีชีวิตจึงมี<wbr>ความสามารถที่จะต้องการตามสิทธิของตน&nbsp;&nbsp;ความต้องการเช่นนี้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงมีพระ<wbr>เดชทั้งปวงเท่านั้นที่จะตอบสนองให้ได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อสิ่งมีชีวิตสับสนอยู่ในความต้องการ<wbr>ของตนเอง&nbsp;&nbsp;พระองค์ทรงอนุญาตให้เขาตอบสนองความต้องการเหล่านั้น&nbsp;&nbsp;แต่ทรงมิได้รับ<wbr>ผิดชอบต่อกรรมหรือผลกรรมของแต่ละสถานการณ์ที่แต่ละชีวิตอาจปรารถนา&nbsp;&nbsp;ดังนั้นขณะที่อยู่ในสภาวะสับสน&nbsp;&nbsp;ชีวิตในร่างสำคัญตนเองกับสถานการณ์ร่างกายวัตถุและถูก<wbr>จำกัดอยู่ในความทุกข์และความสุขอันไม่ถาวรของชีวิต&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นสหายของสิ่ง<wbr>มีชีวิตอยู่เสมอในฐานะ&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;หรืออภิวิญญาณ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;พระองค์ทรงเข้าใจความ<wbr>ต้องการของปัจเจกวิญญาณ&nbsp;&nbsp;เสมือนเช่นเราสามารถได้กลิ่นของดอกไม้เมื่อเข้าไปใกล้ความต้องการเป็นรูปแบบที่ละเอียดอ่อนของสิ่งมีชีวิตในสภาวะวัตถุ&nbsp;&nbsp;พระองค์ทรงสนอง<wbr>ตอบความต้องการตามที่เขาควรได้รับ&nbsp;&nbsp;มนุษย์เสนอและ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สนอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ปัจเจก<wbr>ชีวิตมิได้มีอำนาจทั้งหมดในการสนองตอบความต้องการของตนเอง&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงสามารถสนองตอบความต้องการทั้งหมด&nbsp;&nbsp;และทรงไม่มีอคติต่อผู้ใด&nbsp;&nbsp;พระองค์จึงทรง<wbr>ไม่รบกวนกับความต้องการของสิ่งมีชีวิตผู้มีเสรีภาพเพียงน้อยนิด&nbsp;&nbsp;เมื่อเขาปรารถนา<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะทรงดูแลเป็นพิเศษและสนับสนุนเขาให้ปรารถนาในหนทางที่สามารถบรรลุ<wbr>ถึงพระองค์และมีความสุขนิรันดร&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บทมนต์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">eṣa&nbsp;&nbsp;u&nbsp;&nbsp;hy&nbsp;&nbsp;eva&nbsp;&nbsp;sādhu&nbsp;&nbsp;karma&nbsp;&nbsp;kārayati&nbsp;&nbsp;taṁ&nbsp;&nbsp;yam&nbsp;&nbsp;ebhyo&nbsp;&nbsp;lokebhya&nbsp;&nbsp;unninīṣate.&nbsp;&nbsp;eṣa&nbsp;&nbsp;u&nbsp;&nbsp;evāsādhu&nbsp;&nbsp;karma&nbsp;&nbsp;kārayati&nbsp;&nbsp;yam&nbsp;&nbsp;adho&nbsp;&nbsp;ninīṣate</span><span class="slant pali">เอษอุหฺยฺเอวสาธุกรฺมการยติตํยมฺเอโภฺยโลเกภฺยอุนฺนินีษเตเอษอุเอวาสาธุกรฺมการยติยมฺอโธนินีษเต</span><span class="slant thai">เอษะอุหยเอวะสาธุกัรมะการะยะติตังยัมเอภโยโลเกภยะอุนนินีษะเตเอษะอุเอวาสาธุกัรมะการะยะติยัมอะโธนินีษะเต</span><span class="slant ram">เอวะคารมะยัมzzzzzzzzzzzzคารมะยัมzzz</span>&nbsp;&nbsp;“องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงให้สิ่งมีชีวิตทำบุญเพื่ออาจเจริญขึ้น&nbsp;&nbsp;ทรงให้สิ่ง<wbr>มีชีวิตทำบาปเพื่ออาจไปลงนรก”&nbsp;&nbsp;(<span class="slant iast">kauṣītakī&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เกาษีตกีอุปนิษทฺ</span><span class="slant thai">เกาษีตะกีอุปะนิษัท</span><span class="slant ram">โคชีทะคี อุพะนิชัด</span>&nbsp;&nbsp;3.8)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อโชฺญ ชนฺตุรฺ อนีโศ ′ยมฺ</i><br /><i>อาตฺมนฮ สุข-ทุฮขโยฮ</i><br /><i>อีศฺวร-เปฺรริโต คเจฺฉตฺ</i><br /><i>สฺวรฺคํ วาศฺวฺ อภฺรมฺ เอว จ</i>
+<span class="slant iast">ajño jantur anīśo ’yam<br /></span>
+<span class="slant pali">อชฺโญ ชนฺตุรฺ อนีโศ ’ยมฺ<br /></span>
+<span class="slant thai">อัชโญ ชันตุร อะนีโศ ’ยัม<br /></span>
+<span class="slant ram">อกโย จันทุร อนีโช ยัม<br /></span>
+<span class="slant iast">ātmanaḥ sukha-duḥkhayoḥ<br /></span>
+<span class="slant pali">อาตฺมนห์ สุข-ทุห์ขโยห์<br /></span>
+<span class="slant thai">อาตมะนะห์ สุขะ-ทุห์ขะโยห์<br /></span>
+<span class="slant ram">อาทมะนะฮ สุคฺะ-ดุฮคฺะโยฮ<br /></span>
+<span class="slant iast">īśvara-prerito gacchet<br /></span>
+<span class="slant pali">อีศฺวร-เปฺรริโต คจฺเฉตฺ<br /></span>
+<span class="slant thai">อีศวะระ-ปเรริโต คัจเฉต<br /></span>
+<span class="slant ram">อีชวะระ-พเรริโท กัชเชฺท<br /></span>
+<span class="slant iast">svargaṁ vāśv abhram eva ca<br /></span>
+<span class="slant pali">สฺวรฺคํ วาศฺวฺ อภฺรมฺ เอว จ<br /></span>
+<span class="slant thai">สวัรคัง วาศว อัภรัม เอวะ จะ<br /></span>
+<span class="slant ram">สวารกัม วาชุ อบฺรัม เอวะ ชะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “สิ่งมีชีวิตมีเสรีภาพโดยสมบูรณ์ต่อความทุกข์หรือความสุขของตนเอง&nbsp;&nbsp;ด้วยความ<wbr>ปรารถนาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้เขาสามารถไปสวรรค์หรือลงนรก&nbsp;&nbsp;เสมือนดั่งเมฆที่ลอย<wbr>ไปตามลม”
+  “สิ่งมีชีวิตมีเสรีภาพโดยสมบูรณ์ต่อความทุกข์หรือความสุขของตนเอง&nbsp;&nbsp;ด้วยความ<wbr>ปรารถนาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้เขาสามารถไปสวรรค์หรือลงนรก&nbsp;&nbsp;เสมือนดั่งเมฆที่ลอย<wbr>ไปตามลม”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ฉะนั้น&nbsp;&nbsp;วิญญาณในร่างพร้อมทั้งความต้องการตั้งแต่สมัยดึกดำบรรพ์ปรารถนา<wbr>จะหลีกเลี่ยง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกจึงเป็นสาเหตุแห่งความสับสนของตนเอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ถึงแม้ว่า<wbr>โดยพื้นฐานตัวเขาจะเป็นอมตะ&nbsp;&nbsp;มีความปลื้มปีติสุข&nbsp;&nbsp;และรอบรู้&nbsp;&nbsp;แต่ด้วยความเป็นละออง<wbr>อณูเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;จึงถูกอวิชชาครอบงำจนลืมสถานภาพพื้นฐานว่าเป็นผู้รับใช้ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สิ่งมีชีวิตอ้างว่าพระองค์ทรงเป็นผู้รับผิดชอบต่อความเป็นอยู่ทางสภาวะวัตถุของเขา&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;(2.1.34)&nbsp;&nbsp;ได้ยืนยันเช่นกันว่า&nbsp;&nbsp;<i>ไวษมฺย-ไนรฺฆฺเฤณฺย&nbsp;&nbsp;น&nbsp;&nbsp;สาเปกฺษตฺวาตฺ&nbsp;&nbsp;ตตฺหา&nbsp;&nbsp;หิ&nbsp;&nbsp;ทรฺศยติ</i>&nbsp;&nbsp;“องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงไม่เกลียดและไม่ชอบผู้ใด&nbsp;&nbsp;แม้ว่าพระองค์ทรงดู<wbr>เหมือนว่าจะเป็นเช่นนั้น”
+  ฉะนั้น&nbsp;&nbsp;วิญญาณในร่างพร้อมทั้งความต้องการตั้งแต่สมัยดึกดำบรรพ์ปรารถนา<wbr>จะหลีกเลี่ยง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกจึงเป็นสาเหตุแห่งความสับสนของตนเอง&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ถึงแม้ว่า<wbr>โดยพื้นฐานตัวเขาจะเป็นอมตะ&nbsp;&nbsp;มีความปลื้มปีติสุข&nbsp;&nbsp;และรอบรู้&nbsp;&nbsp;แต่ด้วยความเป็นละออง<wbr>อณูเล็ก&nbsp;&nbsp;ๆ&nbsp;&nbsp;จึงถูกอวิชชาครอบงำจนลืมสถานภาพพื้นฐานว่าเป็นผู้รับใช้ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สิ่งมีชีวิตอ้างว่าพระองค์ทรงเป็นผู้รับผิดชอบต่อความเป็นอยู่ทางสภาวะวัตถุของเขา&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;(2.1.34)&nbsp;&nbsp;ได้ยืนยันเช่นกันว่า&nbsp;&nbsp;<span class="slant iast">vaiṣamya-nairghṛṇye&nbsp;&nbsp;na&nbsp;&nbsp;sāpekṣatvāt&nbsp;&nbsp;tathā&nbsp;&nbsp;hi&nbsp;&nbsp;darśayati</span><span class="slant pali">ไวษมฺย-ไนรฺฆฺฤเณฺยนสาเปกฺษตฺวาตฺตถาหิทรฺศยติ</span><span class="slant thai">ไวษัมยะ-ไนรฆฤณเยนะสาเปกษัตวาตตะถาหิทัรศะยะติ</span><span class="slant ram">-นะทะทฺาฮิzzz</span>&nbsp;&nbsp;“องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงไม่เกลียดและไม่ชอบผู้ใด&nbsp;&nbsp;แม้ว่าพระองค์ทรงดู<wbr>เหมือนว่าจะเป็นเช่นนั้น”
   </p>
 </div>
 

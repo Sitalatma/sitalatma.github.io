@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.18</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อุทาราฮ สรฺว เอไวเต</i><br /><i>ชฺญานี ตฺวฺ อาไตฺมว เม มตมฺ</i><br /><i>อาสฺตฺหิตฮ ส หิ ยุกฺตาตฺมา</i><br /><i>มามฺ เอวานุตฺตมาํ คติมฺ</i>
+<span class="slant iast">udārāḥ sarva evaite<br /></span>
+<span class="slant pali">อุทาราห์ สรฺว เอไวเต<br /></span>
+<span class="slant thai">อุทาราห์ สัรวะ เอไวเต<br /></span>
+<span class="slant ram">อุดารราฮ สารวะ เอไวเท<br /></span>
+<span class="slant iast">jñānī tv ātmaiva me matam<br /></span>
+<span class="slant pali">ชฺญานี ตฺวฺ อาตฺไมว เม มตมฺ<br /></span>
+<span class="slant thai">ชญานี ตว อาตไมวะ เม มะตัม<br /></span>
+<span class="slant ram">กยานี ทุ อาทไมวะ เม มะทัม<br /></span>
+<span class="slant iast">āsthitaḥ sa hi yuktātmā<br /></span>
+<span class="slant pali">อาสฺถิตห์ ส หิ ยุกฺตาตฺมา<br /></span>
+<span class="slant thai">อาสถิตะห์ สะ หิ ยุกตาตมา<br /></span>
+<span class="slant ram">อาสทิฺทะฮ สะ ฮิ ยุคทาทมา<br /></span>
+<span class="slant iast">mām evānuttamāṁ gatim<br /></span>
+<span class="slant pali">มามฺ เอวานุตฺตมำ คติมฺ<br /></span>
+<span class="slant thai">มาม เอวานุตตะมาง คะติม<br /></span>
+<span class="slant ram">มาม เอวานุททะมาม กะทิม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อุทาราฮ</i> — ใจกว้าง, <i>สเรฺว</i> — ทั้งหมด, <i>เอว</i> — แน่นอน, <i>เอเต</i> — เหล่านี้, <i>ชฺญานี</i> — ผู้อยู่ในความรู้, <i>ตุ</i> — แต่,<i>อาตฺมา เอว</i> — เหมือนกับตัวข้า, <i>เม</i> — ของข้า, <i>มตมฺ</i> — ความเห็น, <i>อาสฺตฺหิตฮ</i> — สถิต,<i>สฮ</i> — เขา, <i>หิ</i> — แน่นอน,<i>ยุกฺต-อาตฺมา</i> — อาทมา-ปฏิบัติการอุทิศตนเสียสละรับใช้, <i>มามฺ</i> — ในข้า, <i>เอว</i> — แน่นอน, <i>อนุตฺตมามฺ</i> — สูงสุด, <i>คติมฺ</i> — จุดมุ่งหมาย
+  <span class="slant iast">udārāḥ</span><span class="slant pali">อุทาราห์</span><span class="slant thai">อุทาราห์</span><span class="slant ram">อุดาราฮ</span> — ใจกว้าง, <span class="slant iast">sarve</span><span class="slant pali">สเรฺว</span><span class="slant thai">สัรเว</span><span class="slant ram">สารเว</span> — ทั้งหมด, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ete</span><span class="slant pali">เอเต</span><span class="slant thai">เอเต</span><span class="slant ram">เอเท</span> — เหล่านี้, <span class="slant iast">jñānī</span><span class="slant pali">ชฺญานี</span><span class="slant thai">ชญานี</span><span class="slant ram">กยานี</span> — ผู้อยู่ในความรู้, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่,<span class="slant iast">ātmā eva</span><span class="slant pali">อาตฺมาเอว</span><span class="slant thai">อาตมาเอวะ</span><span class="slant ram">อาทมา เอวะ</span> — เหมือนกับตัวข้า, <span class="slant iast">me</span><span class="slant pali">เม</span><span class="slant thai">เม</span><span class="slant ram">เม</span> — ของข้า, <span class="slant iast">matam</span><span class="slant pali">มตมฺ</span><span class="slant thai">มะตัม</span><span class="slant ram">มะทัม</span> — ความเห็น, <span class="slant iast">āsthitaḥ</span><span class="slant pali">อาสฺถิตห์</span><span class="slant thai">อาสถิตะห์</span><span class="slant ram">อาสทิฺทะฮ</span> — สถิต,<span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน,<span class="slant iast">yukta-ātmā</span><span class="slant pali">ยุกฺต-อาตฺมา</span><span class="slant thai">ยุกตะ-อาตมา</span><span class="slant ram">ยุคทะ-อาทมา</span> — อาทมา-ปฏิบัติการอุทิศตนเสียสละรับใช้, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ในข้า, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">anuttamām</span><span class="slant pali">อนุตฺตมามฺ</span><span class="slant thai">อะนุตตะมาม</span><span class="slant ram">อนุททะมาม</span> — สูงสุด, <span class="slant iast">gatim</span><span class="slant pali">คติมฺ</span><span class="slant thai">คะติม</span><span class="slant ram">กะทิม</span> — จุดมุ่งหมาย
   </p>
 </div>
 
@@ -73,19 +174,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มิใช่ว่าสาวกผู้ที่มีความรู้ไม่สมบูรณ์จะไม่เป็นที่รักขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระองค์<wbr>ตรัสว่าทั้งหมดมีใจกว้าง&nbsp;&nbsp;เพราะว่าผู้ใดที่มาหาพระองค์ไม่ว่าพื่อจุดประสงค์อันใด&nbsp;&nbsp;เรียก<wbr>ว่า&nbsp;&nbsp;<i>มหาตฺมา</i>&nbsp;&nbsp;หรือดวงวิญญาณผู้ยิ่งใหญ่&nbsp;&nbsp;สาวกผู้ปรารถนาผลประโยชน์บางประการ<wbr>จากการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงยอมรับ&nbsp;&nbsp;เพราะว่ามีการแลกเปลี่ยนใน<wbr>ความรัก&nbsp;&nbsp;ด้วยความรักสาวกจึงขอผลประโยชน์ทางวัตถุจากพระองค์&nbsp;&nbsp;เมื่อได้รับแล้วรู้สึก<wbr>พอใจ&nbsp;&nbsp;และเจริญก้าวหน้าในการอุทิศตนเสียสละรับใช้เช่นกัน&nbsp;&nbsp;แต่สาวกที่อยู่ในความรู้<wbr>สมบูรณ์&nbsp;&nbsp;พิจารณาว่าเป็นที่รักยิ่งของพระองค์&nbsp;&nbsp;เพราะว่าเขามีเพียงจุดมุ่งหมายเดียวคือ<wbr>การรับใช้พระองค์ด้วยความรักและอุทิศตนเสียสละ&nbsp;&nbsp;สาวกเช่นนี้&nbsp;&nbsp;จะไม่สามารถมีชีวิตอยู่<wbr>ได้แม้เสี้ยววินาทีเดียวโดยปราศจากการสัมผัส&nbsp;&nbsp;หรือรับใช้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในทำนองเดียวกันองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ก็มีความรักในสาวกเป็นอย่างยิ่ง&nbsp;&nbsp;และไม่สามารถเหินห่างไปจากเขา
+  มิใช่ว่าสาวกผู้ที่มีความรู้ไม่สมบูรณ์จะไม่เป็นที่รักขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระองค์<wbr>ตรัสว่าทั้งหมดมีใจกว้าง&nbsp;&nbsp;เพราะว่าผู้ใดที่มาหาพระองค์ไม่ว่าพื่อจุดประสงค์อันใด&nbsp;&nbsp;เรียก<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">mahātmā</span><span class="slant pali">มหาตฺมา</span><span class="slant thai">มะหาตมา</span><span class="slant ram"></span>&nbsp;&nbsp;หรือดวงวิญญาณผู้ยิ่งใหญ่&nbsp;&nbsp;สาวกผู้ปรารถนาผลประโยชน์บางประการ<wbr>จากการอุทิศตนเสียสละรับใช้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงยอมรับ&nbsp;&nbsp;เพราะว่ามีการแลกเปลี่ยนใน<wbr>ความรัก&nbsp;&nbsp;ด้วยความรักสาวกจึงขอผลประโยชน์ทางวัตถุจากพระองค์&nbsp;&nbsp;เมื่อได้รับแล้วรู้สึก<wbr>พอใจ&nbsp;&nbsp;และเจริญก้าวหน้าในการอุทิศตนเสียสละรับใช้เช่นกัน&nbsp;&nbsp;แต่สาวกที่อยู่ในความรู้<wbr>สมบูรณ์&nbsp;&nbsp;พิจารณาว่าเป็นที่รักยิ่งของพระองค์&nbsp;&nbsp;เพราะว่าเขามีเพียงจุดมุ่งหมายเดียวคือ<wbr>การรับใช้พระองค์ด้วยความรักและอุทิศตนเสียสละ&nbsp;&nbsp;สาวกเช่นนี้&nbsp;&nbsp;จะไม่สามารถมีชีวิตอยู่<wbr>ได้แม้เสี้ยววินาทีเดียวโดยปราศจากการสัมผัส&nbsp;&nbsp;หรือรับใช้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในทำนองเดียวกันองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ก็มีความรักในสาวกเป็นอย่างยิ่ง&nbsp;&nbsp;และไม่สามารถเหินห่างไปจากเขา
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(9.4.68)&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่า
+  ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(9.4.68)&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สาธโว หฺฤทยํ มหฺยํ</i><br /><i>สาธูนาํ หฺฤทยํ ตฺวฺ อหมฺ</i><br /><i>มทฺ-อนฺยตฺ เต น ชานนฺติ</i><br /><i>นาหํ เตโภฺย มนาคฺ อปิ</i>
+<span class="slant iast">sādhavo hṛdayaṁ mahyaṁ<br /></span>
+<span class="slant pali">สาธโว หฺฤทยํ มหฺยํ<br /></span>
+<span class="slant thai">สาธะโว หฤทะยัง มัหยัง<br /></span>
+<span class="slant ram">สาดฺะโว ฮริดะยัม มะฮยัม<br /></span>
+<span class="slant iast">sādhūnāṁ hṛdayaṁ tv aham<br /></span>
+<span class="slant pali">สาธูนำ หฺฤทยํ ตฺวฺ อหมฺ<br /></span>
+<span class="slant thai">สาธูนาง หฤทะยัง ตว อะหัม<br /></span>
+<span class="slant ram">สาดํูนาม ฮริดะยัม ทุ อฮัม<br /></span>
+<span class="slant iast">mad-anyat te na jānanti<br /></span>
+<span class="slant pali">มทฺ-อนฺยตฺ เต น ชานนฺติ<br /></span>
+<span class="slant thai">มัท-อันยัต เต นะ ชานันติ<br /></span>
+<span class="slant ram">มัด-อันยัท เท นะ จานันทิ<br /></span>
+<span class="slant iast">nāhaṁ tebhyo manāg api<br /></span>
+<span class="slant pali">นาหํ เตโภฺย มนาคฺ อปิ<br /></span>
+<span class="slant thai">นาหัง เตภโย มะนาค อะปิ<br /></span>
+<span class="slant ram">นาฮัม เทบฺโย มะนาก อพิฺ<br /></span>
+
   
 </div>
 

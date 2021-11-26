@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อหํ ไวศฺวานโร ภูตฺวา</i><br /><i>ปฺราณินาํ เทหมฺ อาศฺริตฮ</i><br /><i>ปฺราณาปาน-สมายุกฺตฮ</i><br /><i>ปจามฺยฺ อนฺนํ จตุรฺ-วิธมฺ</i>
+<span class="slant iast">ahaṁ vaiśvānaro bhūtvā<br /></span>
+<span class="slant pali">อหํ ไวศฺวานโร ภูตฺวา<br /></span>
+<span class="slant thai">อะหัง ไวศวานะโร ภูตวา<br /></span>
+<span class="slant ram">อฮัม ไวชวานะโร บํูทวา<br /></span>
+<span class="slant iast">prāṇināṁ deham āśritaḥ<br /></span>
+<span class="slant pali">ปฺราณินำ เทหมฺ อาศฺริตห์<br /></span>
+<span class="slant thai">ปราณินาง เทหัม อาศริตะห์<br /></span>
+<span class="slant ram">พราณินาม เดฮัม อาชริทะฮ<br /></span>
+<span class="slant iast">prāṇāpāna-samāyuktaḥ<br /></span>
+<span class="slant pali">ปฺราณาปาน-สมายุกฺตห์<br /></span>
+<span class="slant thai">ปราณาปานะ-สะมายุกตะห์<br /></span>
+<span class="slant ram">พราณาพานะ-สะมายุคทะฮ<br /></span>
+<span class="slant iast">pacāmy annaṁ catur-vidham<br /></span>
+<span class="slant pali">ปจามฺยฺ อนฺนํ จตุรฺ-วิธมฺ<br /></span>
+<span class="slant thai">ปะจามย อันนัง จะตุร-วิธัม<br /></span>
+<span class="slant ram">พะชามิ อันนัม ชะทุร-วิดัฺม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อหมฺ</i> — ข้า, <i>ไวศฺวานรฮ</i> — ส่วนอันสมบูรณ์ของข้าที่เป็นไฟสำหรับย่อยอาหาร, <i>ภูตฺวา</i> — มา เป็น, <i>ปฺราณินามฺ</i> — ของมวลชีวิต, <i>เทหมฺ</i> — ในร่างกาย, <i>อาศฺริตฮ</i> — สถิต, <i>ปฺราณ</i> — ลมหายใจ ออก, <i>อปาน</i> — ลมลงข้างล่าง, <i>สมายุกฺตฮ</i> — รักษาดุลยภาพ, <i>ปจามิ</i> — ข้าย่อย, <i>อนฺนมฺ</i> — อาหาร, <i>จตุฮ-วิธมฺ</i> — สี่ชนิด
+  <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">vaiśvānaraḥ</span><span class="slant pali">ไวศฺวานรห์</span><span class="slant thai">ไวศวานะระห์</span><span class="slant ram">ไวชวานะระฮ</span> — ส่วนอันสมบูรณ์ของข้าที่เป็นไฟสำหรับย่อยอาหาร, <span class="slant iast">bhūtvā</span><span class="slant pali">ภูตฺวา</span><span class="slant thai">ภูตวา</span><span class="slant ram">บํูทวา</span> — มา เป็น, <span class="slant iast">prāṇinām</span><span class="slant pali">ปฺราณินามฺ</span><span class="slant thai">ปราณินาม</span><span class="slant ram">พราณินาม</span> — ของมวลชีวิต, <span class="slant iast">deham</span><span class="slant pali">เทหมฺ</span><span class="slant thai">เทหัม</span><span class="slant ram">เดฮัม</span> — ในร่างกาย, <span class="slant iast">āśritaḥ</span><span class="slant pali">อาศฺริตห์</span><span class="slant thai">อาศริตะห์</span><span class="slant ram">อาชริทะฮ</span> — สถิต, <span class="slant iast">prāṇa</span><span class="slant pali">ปฺราณ</span><span class="slant thai">ปราณะ</span><span class="slant ram">พราณะ</span> — ลมหายใจ ออก, <span class="slant iast">apāna</span><span class="slant pali">อปาน</span><span class="slant thai">อะปานะ</span><span class="slant ram">อพานะ</span> — ลมลงข้างล่าง, <span class="slant iast">samāyuktaḥ</span><span class="slant pali">สมายุกฺตห์</span><span class="slant thai">สะมายุกตะห์</span><span class="slant ram">สะมายุคทะฮ</span> — รักษาดุลยภาพ, <span class="slant iast">pacāmi</span><span class="slant pali">ปจามิ</span><span class="slant thai">ปะจามิ</span><span class="slant ram">พะชามิ</span> — ข้าย่อย, <span class="slant iast">annam</span><span class="slant pali">อนฺนมฺ</span><span class="slant thai">อันนัม</span><span class="slant ram">อันนัม</span> — อาหาร, <span class="slant iast">catuḥ-vidham</span><span class="slant pali">จตุห์-วิธมฺ</span><span class="slant thai">จะตุห์-วิธัม</span><span class="slant ram">ชะทุฮ-วิดัฺม</span> — สี่ชนิด
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ตาม&nbsp;&nbsp;<i>อายุรฺ</i>&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>ศาสฺตฺร</i>&nbsp;&nbsp;เราเข้าใจว่ามีไฟในท้องซึ่งย่อยอาหารทั้งหมดที่ถูกส่ง<wbr>ไป&nbsp;&nbsp;เมื่อไฟไม่ร้อนจะไม่มีความหิว&nbsp;&nbsp;เมื่อไฟทำงานเป็นปกติเราจะรู้สึกหิว&nbsp;&nbsp;บางครั้งไฟไม่<wbr>ทำงานจำเป็นต้องรักษา&nbsp;&nbsp;ในทุกกรณี&nbsp;&nbsp;ไฟนี้คือผู้แทนของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<i>มนฺตฺร</i>&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>พฺฤหทฺ-อารณฺยก&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;5.9.1)&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ทรงสถิตในรูปของไฟภายในท้องและย่อยอาหารทุกชนิด&nbsp;&nbsp;(<i>อยมฺ&nbsp;&nbsp;อคฺนิรฺ&nbsp;&nbsp;ไวศฺวานโร&nbsp;&nbsp;โย&nbsp;&nbsp;′ยมฺ&nbsp;&nbsp;อนฺตฮ&nbsp;&nbsp;ปุรุเษ&nbsp;&nbsp;เยเนทมฺ&nbsp;&nbsp;อนฺนํ&nbsp;&nbsp;ปจฺยเต</i>&nbsp;&nbsp;)&nbsp;&nbsp;เนื่องจากพระองค์ทรงช่วยใน<wbr>การย่อยอาหารทั้งหมด&nbsp;&nbsp;สิ่งมีชีวิตจึงไม่เป็นอิสระในกรรมวิธีของการรับประทานอาหารหากพระองค์ไม่ทรงช่วยเหลือในการย่อย&nbsp;&nbsp;เราจะไม่สามารถรับประทานอาหารได้&nbsp;&nbsp;ดังนั้นพระองค์ทรงเป็นผู้ผลิตและทรงเป็นผู้ย่อยอาหาร&nbsp;&nbsp;และด้วยพระกรุณาของพระองค์&nbsp;&nbsp;พวก<wbr>เราจึงได้รื่นเริงกับชีวิตใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;(1.2.27)&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันดังนี้&nbsp;&nbsp;<i>ศพฺทาทิโภฺย&nbsp;&nbsp;′นฺตฮ&nbsp;&nbsp;ปฺรติษฺฐานาจฺ&nbsp;&nbsp;จ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงสถิตภายในเสียงและภายในร่างกาย&nbsp;&nbsp;ภายใน<wbr>อากาศ&nbsp;&nbsp;และแม้แต่ภายในท้อง&nbsp;&nbsp;ในรูปของพลังแห่งการย่อย&nbsp;&nbsp;มีอาหารสี่ชนิดคือ&nbsp;&nbsp;ชนิดกลืนชนิดเคี้ยว&nbsp;&nbsp;ชนิดเลีย&nbsp;&nbsp;และชนิดดูด&nbsp;&nbsp;พระองค์ทรงเป็นพลังในการย่อยอาหารทั้งหมด
+  ตาม&nbsp;&nbsp;<span class="slant iast">āyur</span><span class="slant pali">อายุรฺ</span><span class="slant thai">อายุร</span><span class="slant ram">อยุร</span>&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">śāstra</span><span class="slant pali">ศาสฺตฺร</span><span class="slant thai">ศาสตระ</span><span class="slant ram">ชาสทระ</span>&nbsp;&nbsp;เราเข้าใจว่ามีไฟในท้องซึ่งย่อยอาหารทั้งหมดที่ถูกส่ง<wbr>ไป&nbsp;&nbsp;เมื่อไฟไม่ร้อนจะไม่มีความหิว&nbsp;&nbsp;เมื่อไฟทำงานเป็นปกติเราจะรู้สึกหิว&nbsp;&nbsp;บางครั้งไฟไม่<wbr>ทำงานจำเป็นต้องรักษา&nbsp;&nbsp;ในทุกกรณี&nbsp;&nbsp;ไฟนี้คือผู้แทนของบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;<span class="slant iast">mantra</span><span class="slant pali">มนฺตฺร</span><span class="slant thai">มันตระ</span><span class="slant ram"></span>&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">bṛhad-āraṇyaka&nbsp;&nbsp;upaniṣad</span><span class="slant pali">พฺฤหทฺ-อารณฺยกอุปนิษทฺ</span><span class="slant thai">พฤหัท-อารัณยะกะอุปะนิษัท</span><span class="slant ram">-zzz</span>&nbsp;&nbsp;5.9.1)&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ทรงสถิตในรูปของไฟภายในท้องและย่อยอาหารทุกชนิด&nbsp;&nbsp;(<span class="slant iast">ayam&nbsp;&nbsp;agnir&nbsp;&nbsp;vaiśvānaro&nbsp;&nbsp;yo&nbsp;&nbsp;’yam&nbsp;&nbsp;antaḥ&nbsp;&nbsp;puruṣe&nbsp;&nbsp;yenedam&nbsp;&nbsp;annaṁ&nbsp;&nbsp;pacyate</span><span class="slant pali">อยมฺอคฺนิรฺไวศฺวานโรโยยมฺอนฺตห์ปุรุเษเยเนทมฺอนฺนํปจฺยเต</span><span class="slant thai">อะยัมอัคนิรไวศวานะโรโยยัมอันตะห์ปุรุเษเยเนทัมอันนังปัจยะเต</span><span class="slant ram">อยัมยัมอันทะฮzzzzzzzzz</span>&nbsp;&nbsp;)&nbsp;&nbsp;เนื่องจากพระองค์ทรงช่วยใน<wbr>การย่อยอาหารทั้งหมด&nbsp;&nbsp;สิ่งมีชีวิตจึงไม่เป็นอิสระในกรรมวิธีของการรับประทานอาหารหากพระองค์ไม่ทรงช่วยเหลือในการย่อย&nbsp;&nbsp;เราจะไม่สามารถรับประทานอาหารได้&nbsp;&nbsp;ดังนั้นพระองค์ทรงเป็นผู้ผลิตและทรงเป็นผู้ย่อยอาหาร&nbsp;&nbsp;และด้วยพระกรุณาของพระองค์&nbsp;&nbsp;พวก<wbr>เราจึงได้รื่นเริงกับชีวิตใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;(1.2.27)&nbsp;&nbsp;ได้ยืนยันไว้เช่นกันดังนี้&nbsp;&nbsp;<span class="slant iast">śabdādibhyo&nbsp;&nbsp;’ntaḥ&nbsp;&nbsp;pratiṣṭhānāc&nbsp;&nbsp;ca</span><span class="slant pali">ศพฺทาทิโภฺยนฺตห์ปฺรติษฺฐานาจฺจ</span><span class="slant thai">ศัพทาทิภโยนตะห์ประติษฐานาจจะ</span><span class="slant ram">zzzzzzชะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงสถิตภายในเสียงและภายในร่างกาย&nbsp;&nbsp;ภายใน<wbr>อากาศ&nbsp;&nbsp;และแม้แต่ภายในท้อง&nbsp;&nbsp;ในรูปของพลังแห่งการย่อย&nbsp;&nbsp;มีอาหารสี่ชนิดคือ&nbsp;&nbsp;ชนิดกลืนชนิดเคี้ยว&nbsp;&nbsp;ชนิดเลีย&nbsp;&nbsp;และชนิดดูด&nbsp;&nbsp;พระองค์ทรงเป็นพลังในการย่อยอาหารทั้งหมด
   </p>
 </div>
 

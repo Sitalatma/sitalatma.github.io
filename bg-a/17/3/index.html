@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 17.3</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สตฺตฺวานุรูปา สรฺวสฺย</i><br /><i>ศฺรทฺธา ภวติ ภารต</i><br /><i>ศฺรทฺธา-มโย ′ยํ ปุรุโษ</i><br /><i>โย ยจฺ-ฉฺรทฺธฮ ส เอว สฮ</i>
+<span class="slant iast">sattvānurūpā sarvasya<br /></span>
+<span class="slant pali">สตฺตฺวานุรูปา สรฺวสฺย<br /></span>
+<span class="slant thai">สัตตวานุรูปา สัรวัสยะ<br /></span>
+<span class="slant ram">สัททวานุรูพา สารวัสยะ<br /></span>
+<span class="slant iast">śraddhā bhavati bhārata<br /></span>
+<span class="slant pali">ศฺรทฺธา ภวติ ภารต<br /></span>
+<span class="slant thai">ศรัทธา ภะวะติ ภาระตะ<br /></span>
+<span class="slant ram">ชรัดดฺา บฺะวะทิ บฺาระทะ<br /></span>
+<span class="slant iast">śraddhā-mayo ’yaṁ puruṣo<br /></span>
+<span class="slant pali">ศฺรทฺธา-มโย ’ยํ ปุรุโษ<br /></span>
+<span class="slant thai">ศรัทธา-มะโย ’ยัง ปุรุโษ<br /></span>
+<span class="slant ram">ชรัดดฺา-มะโย ่ยัม พุรุโช<br /></span>
+<span class="slant iast">yo yac-chraddhaḥ sa eva saḥ<br /></span>
+<span class="slant pali">โย ยจฺ-ฉฺรทฺธห์ ส เอว สห์<br /></span>
+<span class="slant thai">โย ยัจ-ฉรัทธะห์ สะ เอวะ สะห์<br /></span>
+<span class="slant ram">โย ยัช-ชฺรัดดฺะฮ สะ เอวะ สะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สตฺตฺว-อนุรูปา</i> — ตามความเป็นอยู่, <i>สรฺวสฺย</i> — ของทุกคน, <i>ศฺรทฺธา</i> — ความศรัทธา, <i>ภวติ</i> — มาเป็น, <i>ภารต</i> — โอ้ โอรสแห่ง <i>ภรต</i>, <i>ศฺรทฺธา</i> — ความศรัทธา, <i>มยฮ</i> — เต็ม ไปด้วย, <i>อยมฺ</i> — นี้, <i>ปุรุษฮ</i> — สิ่งมีชีวิต, <i>ยฮ</i> — ผู้ซึ่ง, <i>ยตฺ</i> — ซึ่งมี, <i>ศฺรทฺธฮ</i> — ความศรัทธา, <i>สฮ</i> — ดังนั้น, <i>เอว</i> — แน่นอน, <i>สฮ</i> — เขา
+  <span class="slant iast">sattva-anurūpā</span><span class="slant pali">สตฺตฺว-อนุรูปา</span><span class="slant thai">สัตตวะ-อะนุรูปา</span><span class="slant ram">สัททวะ-อนุรูพา</span> — ตามความเป็นอยู่, <span class="slant iast">sarvasya</span><span class="slant pali">สรฺวสฺย</span><span class="slant thai">สัรวัสยะ</span><span class="slant ram">สารวัสยะ</span> — ของทุกคน, <span class="slant iast">śraddhā</span><span class="slant pali">ศฺรทฺธา</span><span class="slant thai">ศรัทธา</span><span class="slant ram">ชรัดดฺา</span> — ความศรัทธา, <span class="slant iast">bhavati</span><span class="slant pali">ภวติ</span><span class="slant thai">ภะวะติ</span><span class="slant ram">บฺะวะทิ</span> — มาเป็น, <span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span> — โอ้ โอรสแห่ง <span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>, <span class="slant iast">śraddhā</span><span class="slant pali">ศฺรทฺธา</span><span class="slant thai">ศรัทธา</span><span class="slant ram">ชรัดดฺา</span> — ความศรัทธา, <span class="slant iast">mayaḥ</span><span class="slant pali">มยห์</span><span class="slant thai">มะยะห์</span><span class="slant ram">ยะฮ</span> — เต็ม ไปด้วย, <span class="slant iast">ayam</span><span class="slant pali">อยมฺ</span><span class="slant thai">อะยัม</span><span class="slant ram">อยัม</span> — นี้, <span class="slant iast">puruṣaḥ</span><span class="slant pali">ปุรุษห์</span><span class="slant thai">ปุรุษะห์</span><span class="slant ram">พุรุชะฮ</span> — สิ่งมีชีวิต, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่งมี, <span class="slant iast">śraddhaḥ</span><span class="slant pali">ศฺรทฺธห์</span><span class="slant thai">ศรัทธะห์</span><span class="slant ram">ชรัดดฺะฮ</span> — ความศรัทธา, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — ดังนั้น, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<i>ภรต</i>&nbsp;&nbsp;ตามความเป็นอยู่ภายใต้ระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติ&nbsp;&nbsp;เขาวนเวียนอยู่กับความศรัทธาบางชนิด&nbsp;&nbsp;กล่าวว่าสิ่งมีชีวิตอยู่ในความศรัทธาบางชนิดตามระดับที่เขาได้รับมา
+  โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>&nbsp;&nbsp;ตามความเป็นอยู่ภายใต้ระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของธรรมชาติ&nbsp;&nbsp;เขาวนเวียนอยู่กับความศรัทธาบางชนิด&nbsp;&nbsp;กล่าวว่าสิ่งมีชีวิตอยู่ในความศรัทธาบางชนิดตามระดับที่เขาได้รับมา
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ทุกคนมีความศรัทธาบางอย่าง&nbsp;&nbsp;ไม่ว่าจะเป็นใคร&nbsp;&nbsp;แต่ความศรัทธาพิจารณาว่า<wbr>อยู่ในความดี&nbsp;&nbsp;ตัณหา&nbsp;&nbsp;หรืออวิชชา&nbsp;&nbsp;ตามธรรมชาติที่ตนได้รับมา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามความศรัทธา<wbr>โดยเฉพาะนี้เราจึงมาคบหากับบุคคลบางประเภท&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในบทที่สิบห้า&nbsp;&nbsp;ความ<wbr>จริงคือ&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเดิมทีเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เดิมทีตัวเราเป็นทิพย์อยู่เหนือระดับแห่งธรรมชาติวัตถุทั้งหลาย&nbsp;&nbsp;แต่เมื่อลืมความสัมพันธ์กับบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้าและมาสัมผัสกับธรรมชาติวัตถุในพันธชีวิต&nbsp;&nbsp;ก่อให้เกิดสถานภาพของตัวเอง<wbr>ด้วยการมาคบหาสมาคมกับธรรมชาติวัตถุระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผลแห่งความศรัทธาและความ<wbr>เป็นอยู่ที่ผิดธรรมชาติเป็นเพียงวัตถุเท่านั้น&nbsp;&nbsp;ถึงแม้อาจปฏิบัติตามความรู้สึกว่าประทับใจ<wbr>บางอย่าง&nbsp;&nbsp;หรือตามแนวคิดชีวิตบางอย่าง&nbsp;&nbsp;เดิมทีตัวเราเป็น&nbsp;&nbsp;<i>นิรฺคุณ</i>&nbsp;&nbsp;หรือเป็นทิพย์&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;ต้องชะล้างมลทินทางวัตถุที่ครอบงำตัวเราเพื่อจะได้รับความสัมพันธ์ที่มีต่อองค์<i>ภควานฺ</i>&nbsp;&nbsp;กลับคืนมา&nbsp;&nbsp;ซึ่งเป็นวิถีทางเดียวที่จะกลับคืนไปโดยไม่มีความกลัว&nbsp;&nbsp;และนั่นคือ<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;หากสถิตใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกวิถีทางนี้รับประกันได้ในการพัฒนาไปสู่<wbr>ระดับแห่งความสมบูรณ์&nbsp;&nbsp;หากไม่ปฏิบัติตามวิธีเพื่อการรู้แจ้งแห่งตนนี้&nbsp;&nbsp;แน่นอนว่าเราจะ<wbr>ต้องประพฤติตนภายใต้อิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ
+  ทุกคนมีความศรัทธาบางอย่าง&nbsp;&nbsp;ไม่ว่าจะเป็นใคร&nbsp;&nbsp;แต่ความศรัทธาพิจารณาว่า<wbr>อยู่ในความดี&nbsp;&nbsp;ตัณหา&nbsp;&nbsp;หรืออวิชชา&nbsp;&nbsp;ตามธรรมชาติที่ตนได้รับมา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามความศรัทธา<wbr>โดยเฉพาะนี้เราจึงมาคบหากับบุคคลบางประเภท&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในบทที่สิบห้า&nbsp;&nbsp;ความ<wbr>จริงคือ&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตเดิมทีเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เดิมทีตัวเราเป็นทิพย์อยู่เหนือระดับแห่งธรรมชาติวัตถุทั้งหลาย&nbsp;&nbsp;แต่เมื่อลืมความสัมพันธ์กับบุคลิกภาพสูงสุด<wbr>แห่งพระเจ้าและมาสัมผัสกับธรรมชาติวัตถุในพันธชีวิต&nbsp;&nbsp;ก่อให้เกิดสถานภาพของตัวเอง<wbr>ด้วยการมาคบหาสมาคมกับธรรมชาติวัตถุระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ผลแห่งความศรัทธาและความ<wbr>เป็นอยู่ที่ผิดธรรมชาติเป็นเพียงวัตถุเท่านั้น&nbsp;&nbsp;ถึงแม้อาจปฏิบัติตามความรู้สึกว่าประทับใจ<wbr>บางอย่าง&nbsp;&nbsp;หรือตามแนวคิดชีวิตบางอย่าง&nbsp;&nbsp;เดิมทีตัวเราเป็น&nbsp;&nbsp;<span class="slant iast">nirguṇa</span><span class="slant pali">นิรฺคุณ</span><span class="slant thai">นิรคุณะ</span><span class="slant ram"></span>&nbsp;&nbsp;หรือเป็นทิพย์&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;ต้องชะล้างมลทินทางวัตถุที่ครอบงำตัวเราเพื่อจะได้รับความสัมพันธ์ที่มีต่อองค์<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;กลับคืนมา&nbsp;&nbsp;ซึ่งเป็นวิถีทางเดียวที่จะกลับคืนไปโดยไม่มีความกลัว&nbsp;&nbsp;และนั่นคือ<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;หากสถิตใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกวิถีทางนี้รับประกันได้ในการพัฒนาไปสู่<wbr>ระดับแห่งความสมบูรณ์&nbsp;&nbsp;หากไม่ปฏิบัติตามวิธีเพื่อการรู้แจ้งแห่งตนนี้&nbsp;&nbsp;แน่นอนว่าเราจะ<wbr>ต้องประพฤติตนภายใต้อิทธิพลของระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;แห่งธรรมชาติ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ศฺรทฺธา</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;“ศรัทธา”&nbsp;&nbsp;มีความสำคัญมากในโศลกนี้&nbsp;&nbsp;<i>ศฺรทฺธา</i>&nbsp;&nbsp;หรือ<wbr>ความศรัทธาเดิมทีออกมาจากระดับความดี&nbsp;&nbsp;ความศรัทธาของเราอาจมีอยู่ในเทวดาในพระเจ้าบางองค์ที่สร้างขึ้นมา&nbsp;&nbsp;หรือในการคาดคะเนทางจิตบางอย่าง&nbsp;&nbsp;ความศรัทธา<wbr>อันแน่วแน่ถือว่าเป็นผลผลิตของระดับความดีทางวัตถุ&nbsp;&nbsp;แต่ในสภาวะชีวิตวัตถุไม่มี<wbr>งานใดที่มีความบริสุทธิ์โดยสมบูรณ์&nbsp;&nbsp;มันจะเป็นการผสมผสานซึ่งไม่ใช่ความดีบริสุทธิ์ความดีบริสุทธิ์เป็นทิพย์&nbsp;&nbsp;ในความดีบริสุทธิ์เราสามารถเข้าใจธรรมชาติอันแท้จริงของ<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ตราบใดที่ความศรัทธาไม่อยู่ในความดีบริสุทธิ์อย่าง<wbr>สมบูรณ์&nbsp;&nbsp;ความศรัทธาอยู่ภายใต้มลทินจากหนึ่งในระดับของธรรมชาติวัตถุ&nbsp;&nbsp;ระดับอันเป็น<wbr>มลทินของธรรมชาติวัตถุแผ่ขยายไปถึงหัวใจ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ตามสถานภาพของหัวใจในการที่มา<wbr>สัมผัสกับระดับแห่งธรรมชาติวัตถุโดยเฉพาะของตน&nbsp;&nbsp;ความศรัทธาจึงมั่นคง&nbsp;&nbsp;ควรเข้าใจว่า<wbr>หากหัวใจอยู่ในระดับความดีความศรัทธาของเราก็อยู่ในระดับความดีเช่นกัน&nbsp;&nbsp;หากหัวใจ<wbr>อยู่ในระดับตัณหาความศรัทธาของเราก็อยู่ในระดับตัณหาเช่นกัน&nbsp;&nbsp;และหากหัวใจอยู่ใน<wbr>ระดับความมืด&nbsp;&nbsp;ความหลง&nbsp;&nbsp;ความศรัทธาของเราก็เป็นมลทินเช่นเดียวกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราพบ<wbr>ความศรัทธาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในโลกนี้&nbsp;&nbsp;และมีศาสนาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เนื่องมาจากความศรัทธาที่แตกต่าง<wbr>กัน&nbsp;&nbsp;หลักธรรมอันแท้จริงของความศรัทธาแห่งศาสนาสถิตในระดับความดีบริสุทธิ์&nbsp;&nbsp;แต่<wbr>เนื่องจากหัวใจที่แปดเปื้อนเราจึงพบหลักธรรมศาสนาที่แตกต่างกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามความ<wbr>ศรัทธาในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จึงมีการบูชาที่แตกต่างกัน
+  คำว่า&nbsp;&nbsp;<span class="slant iast">śraddhā</span><span class="slant pali">ศฺรทฺธา</span><span class="slant thai">ศรัทธา</span><span class="slant ram">ชรัดดฺา</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;“ศรัทธา”&nbsp;&nbsp;มีความสำคัญมากในโศลกนี้&nbsp;&nbsp;<span class="slant iast">śraddhā</span><span class="slant pali">ศฺรทฺธา</span><span class="slant thai">ศรัทธา</span><span class="slant ram">ชรัดดฺา</span>&nbsp;&nbsp;หรือ<wbr>ความศรัทธาเดิมทีออกมาจากระดับความดี&nbsp;&nbsp;ความศรัทธาของเราอาจมีอยู่ในเทวดาในพระเจ้าบางองค์ที่สร้างขึ้นมา&nbsp;&nbsp;หรือในการคาดคะเนทางจิตบางอย่าง&nbsp;&nbsp;ความศรัทธา<wbr>อันแน่วแน่ถือว่าเป็นผลผลิตของระดับความดีทางวัตถุ&nbsp;&nbsp;แต่ในสภาวะชีวิตวัตถุไม่มี<wbr>งานใดที่มีความบริสุทธิ์โดยสมบูรณ์&nbsp;&nbsp;มันจะเป็นการผสมผสานซึ่งไม่ใช่ความดีบริสุทธิ์ความดีบริสุทธิ์เป็นทิพย์&nbsp;&nbsp;ในความดีบริสุทธิ์เราสามารถเข้าใจธรรมชาติอันแท้จริงของ<wbr>บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ตราบใดที่ความศรัทธาไม่อยู่ในความดีบริสุทธิ์อย่าง<wbr>สมบูรณ์&nbsp;&nbsp;ความศรัทธาอยู่ภายใต้มลทินจากหนึ่งในระดับของธรรมชาติวัตถุ&nbsp;&nbsp;ระดับอันเป็น<wbr>มลทินของธรรมชาติวัตถุแผ่ขยายไปถึงหัวใจ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ตามสถานภาพของหัวใจในการที่มา<wbr>สัมผัสกับระดับแห่งธรรมชาติวัตถุโดยเฉพาะของตน&nbsp;&nbsp;ความศรัทธาจึงมั่นคง&nbsp;&nbsp;ควรเข้าใจว่า<wbr>หากหัวใจอยู่ในระดับความดีความศรัทธาของเราก็อยู่ในระดับความดีเช่นกัน&nbsp;&nbsp;หากหัวใจ<wbr>อยู่ในระดับตัณหาความศรัทธาของเราก็อยู่ในระดับตัณหาเช่นกัน&nbsp;&nbsp;และหากหัวใจอยู่ใน<wbr>ระดับความมืด&nbsp;&nbsp;ความหลง&nbsp;&nbsp;ความศรัทธาของเราก็เป็นมลทินเช่นเดียวกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราพบ<wbr>ความศรัทธาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ในโลกนี้&nbsp;&nbsp;และมีศาสนาต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เนื่องมาจากความศรัทธาที่แตกต่าง<wbr>กัน&nbsp;&nbsp;หลักธรรมอันแท้จริงของความศรัทธาแห่งศาสนาสถิตในระดับความดีบริสุทธิ์&nbsp;&nbsp;แต่<wbr>เนื่องจากหัวใจที่แปดเปื้อนเราจึงพบหลักธรรมศาสนาที่แตกต่างกัน&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามความ<wbr>ศรัทธาในระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;จึงมีการบูชาที่แตกต่างกัน
   </p>
 </div>
 

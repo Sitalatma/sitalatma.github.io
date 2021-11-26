@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 15.17</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อุตฺตมฮ ปุรุษสฺ ตฺวฺ อนฺยฮ</i><br /><i>ปรมาเตฺมตฺยฺ อุทาหฺฤตฮ</i><br /><i>โย โลก-ตฺรยมฺ อาวิศฺย</i><br /><i>พิภรฺตฺยฺ อวฺยย อีศฺวรฮ</i>
+<span class="slant iast">uttamaḥ puruṣas tv anyaḥ<br /></span>
+<span class="slant pali">อุตฺตมห์ ปุรุษสฺ ตฺวฺ อนฺยห์<br /></span>
+<span class="slant thai">อุตตะมะห์ ปุรุษัส ตว อันยะห์<br /></span>
+<span class="slant ram">อุททะมะฮ พุรุชัส ทุ อันยะฮ<br /></span>
+<span class="slant iast">paramātmety udāhṛtaḥ<br /></span>
+<span class="slant pali">ปรมาตฺเมตฺยฺ อุทาหฺฤตห์<br /></span>
+<span class="slant thai">ปะระมาตเมตย อุทาหฤตะห์<br /></span>
+<span class="slant ram">พะระมาทเมทิ อุดาฮริทะฮ<br /></span>
+<span class="slant iast">yo loka-trayam āviśya<br /></span>
+<span class="slant pali">โย โลก-ตฺรยมฺ อาวิศฺย<br /></span>
+<span class="slant thai">โย โลกะ-ตระยัม อาวิศยะ<br /></span>
+<span class="slant ram">โย โลคะ-ทระยัม อาวิชยะ<br /></span>
+<span class="slant iast">bibharty avyaya īśvaraḥ<br /></span>
+<span class="slant pali">พิภรฺตฺยฺ อวฺยย อีศฺวรห์<br /></span>
+<span class="slant thai">พิภัรตย อัวยะยะ อีศวะระห์<br /></span>
+<span class="slant ram">บิบฺารทิ อัพยะยะ อีชวะระฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อุตฺตมฮ</i> — ดีที่สุด, <i>ปุรุษฮ</i> — บุคลิกภาพ, <i>ตุ</i> — แต่, <i>อนฺยฮ</i> — อีกผู้หนึ่ง, <i>ปรม-อาตฺมา</i>สูงสุด-ตัวเอง, <i>อิติ</i> — ดังนั้น, <i>อุทาหฺฤตฮ</i> — กล่าวไว้ว่า, <i>ยฮ</i> — ผู้ซึ่ง, <i>โลก</i> — ของจักรวาล, <i>ตฺรยมฺ</i> — สามส่วน, <i>อาวิศฺย</i> — เข้าไป, <i>พิภรฺติ</i> — ค้ำจุน, <i>อวฺยยฮ</i> — ไม่มีที่สิ้นสุด, <i>อีศฺวรฮ</i> — องค์ภควาน
+  <span class="slant iast">uttamaḥ</span><span class="slant pali">อุตฺตมห์</span><span class="slant thai">อุตตะมะห์</span><span class="slant ram">อุททะมะฮ</span> — ดีที่สุด, <span class="slant iast">puruṣaḥ</span><span class="slant pali">ปุรุษห์</span><span class="slant thai">ปุรุษะห์</span><span class="slant ram">พุรุชะฮ</span> — บุคลิกภาพ, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">anyaḥ</span><span class="slant pali">อนฺยห์</span><span class="slant thai">อันยะห์</span><span class="slant ram">อันยะฮ</span> — อีกผู้หนึ่ง, <span class="slant iast">parama-ātmā</span><span class="slant pali">ปรม-อาตฺมา</span><span class="slant thai">ปะระมะ-อาตมา</span><span class="slant ram">พะระมะ-อาทมา</span>สูงสุด-ตัวเอง, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">udāhṛtaḥ</span><span class="slant pali">อุทาหฺฤตห์</span><span class="slant thai">อุทาหฤตะห์</span><span class="slant ram">อุดาฮริทะฮ</span> — กล่าวไว้ว่า, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">loka</span><span class="slant pali">โลก</span><span class="slant thai">โลกะ</span><span class="slant ram">โลคะ</span> — ของจักรวาล, <span class="slant iast">trayam</span><span class="slant pali">ตฺรยมฺ</span><span class="slant thai">ตระยัม</span><span class="slant ram">ทระยัม</span> — สามส่วน, <span class="slant iast">āviśya</span><span class="slant pali">อาวิศฺย</span><span class="slant thai">อาวิศยะ</span><span class="slant ram">อาวิชยะ</span> — เข้าไป, <span class="slant iast">bibharti</span><span class="slant pali">พิภรฺติ</span><span class="slant thai">พิภัรติ</span><span class="slant ram">บิบฺารทิ</span> — ค้ำจุน, <span class="slant iast">avyayaḥ</span><span class="slant pali">อวฺยยห์</span><span class="slant thai">อัวยะยะห์</span><span class="slant ram">อัพยะยะฮ</span> — ไม่มีที่สิ้นสุด, <span class="slant iast">īśvaraḥ</span><span class="slant pali">อีศฺวรห์</span><span class="slant thai">อีศวะระห์</span><span class="slant ram">อีชวะระฮ</span> — องค์ภควาน
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  แนวคิดจักรวาลนี้ได้แสดงไว้อย่างสวยงามมากใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(2.2.13)และ&nbsp;&nbsp;<i>เศฺวตาศฺวตร&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(6.13)&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;เหนือกว่าสิ่งมีชีวิตที่นับ<wbr>จำนวนไม่ถ้วนซึ่งบ้างอยู่ในพันธสภาวะและบ้างก็หลุดพ้น&nbsp;&nbsp;ยังมีบุคลิกภาพสูงสุดผู้ทรง<wbr>เป็น&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;โศลกใน&nbsp;&nbsp;<i>อุปนิษทฺ</i>&nbsp;&nbsp;กล่าวดังนี้&nbsp;&nbsp;<i>นิโตฺย&nbsp;&nbsp;นิตฺยานาํ&nbsp;&nbsp;เจตนศฺ&nbsp;&nbsp;เจตนานามฺ</i>&nbsp;&nbsp;คำอธิบายคือ&nbsp;&nbsp;ในมวลชีวิตทั้งในพันธสภาวะและทั้งหลุดพ้นยังมีอีกหนึ่งบุคลิกภาพ<wbr>สูงสุดองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงค้ำจุนพวกเขา&nbsp;&nbsp;และทรงให้สิ่งอำนวยความสะดวกทั้งหลายเพื่อ<wbr>ความรื่นเริงตามแต่กรรมที่ต่างกันไป&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงสถิตในหัวใจของ<wbr>ทุกคนในรูป&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ผู้มีปัญญาที่สามารถเข้าใจพระองค์มีสิทธิ์ที่จะบรรลุถึงความ<wbr>สงบอย่างสมบูรณ์&nbsp;&nbsp;มิใช่บุคคลอื่น
+  แนวคิดจักรวาลนี้ได้แสดงไว้อย่างสวยงามมากใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(2.2.13)และ&nbsp;&nbsp;<span class="slant iast">śvetāśvatara&nbsp;&nbsp;upaniṣad</span><span class="slant pali">เศฺวตาศฺวตรอุปนิษทฺ</span><span class="slant thai">ศเวตาศวะตะระอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(6.13)&nbsp;&nbsp;กล่าวไว้อย่างชัดเจนว่า&nbsp;&nbsp;เหนือกว่าสิ่งมีชีวิตที่นับ<wbr>จำนวนไม่ถ้วนซึ่งบ้างอยู่ในพันธสภาวะและบ้างก็หลุดพ้น&nbsp;&nbsp;ยังมีบุคลิกภาพสูงสุดผู้ทรง<wbr>เป็น&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;โศลกใน&nbsp;&nbsp;<span class="slant iast">upaniṣad</span><span class="slant pali">อุปนิษทฺ</span><span class="slant thai">อุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;กล่าวดังนี้&nbsp;&nbsp;<span class="slant iast">nityo&nbsp;&nbsp;nityānāṁ&nbsp;&nbsp;cetanaś&nbsp;&nbsp;cetanānām</span><span class="slant pali">นิโตฺยนิตฺยานำเจตนศฺเจตนานามฺ</span><span class="slant thai">นิตโยนิตยานางเจตะนัศเจตะนานาม</span><span class="slant ram">นิทโย นิทยานาม เชทะนัช เชทะนานาม</span>&nbsp;&nbsp;คำอธิบายคือ&nbsp;&nbsp;ในมวลชีวิตทั้งในพันธสภาวะและทั้งหลุดพ้นยังมีอีกหนึ่งบุคลิกภาพ<wbr>สูงสุดองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงค้ำจุนพวกเขา&nbsp;&nbsp;และทรงให้สิ่งอำนวยความสะดวกทั้งหลายเพื่อ<wbr>ความรื่นเริงตามแต่กรรมที่ต่างกันไป&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงสถิตในหัวใจของ<wbr>ทุกคนในรูป&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ผู้มีปัญญาที่สามารถเข้าใจพระองค์มีสิทธิ์ที่จะบรรลุถึงความ<wbr>สงบอย่างสมบูรณ์&nbsp;&nbsp;มิใช่บุคคลอื่น
   </p>
 </div>
 

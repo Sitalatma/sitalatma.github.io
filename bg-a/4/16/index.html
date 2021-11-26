@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.16</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กิํ กรฺม กิมฺ อกเรฺมติ</i><br /><i>กวโย ′ปฺยฺ อตฺร โมหิตาฮ</i><br /><i>ตตฺ เต กรฺม ปฺรวกฺษฺยามิ</i><br /><i>ยชฺ ชฺญาตฺวา โมกฺษฺยเส ′ศุภาตฺ</i>
+<span class="slant iast">kiṁ karma kim akarmeti<br /></span>
+<span class="slant pali">กึ กรฺม กิมฺ อกรฺเมติ<br /></span>
+<span class="slant thai">กิง กัรมะ กิม อะกัรเมติ<br /></span>
+<span class="slant ram">คิม คารมะ คิม อคารเมทิ<br /></span>
+<span class="slant iast">kavayo ’py atra mohitāḥ<br /></span>
+<span class="slant pali">กวโย ’ปฺยฺ อตฺร โมหิตาห์<br /></span>
+<span class="slant thai">กะวะโย ’ปย อัตระ โมหิตาห์<br /></span>
+<span class="slant ram">คะวะโย พิ อัทระ โมฮิทาฮ<br /></span>
+<span class="slant iast">tat te karma pravakṣyāmi<br /></span>
+<span class="slant pali">ตตฺ เต กรฺม ปฺรวกฺษฺยามิ<br /></span>
+<span class="slant thai">ตัต เต กัรมะ ประวักษยามิ<br /></span>
+<span class="slant ram">ทัท เท คารมะ พระวัคชยามิ<br /></span>
+<span class="slant iast">yaj jñātvā mokṣyase ’śubhāt<br /></span>
+<span class="slant pali">ยชฺ ชฺญาตฺวา โมกฺษฺยเส ’ศุภาตฺ<br /></span>
+<span class="slant thai">ยัช ชญาตวา โมกษยะเส ’ศุภาต<br /></span>
+<span class="slant ram">ยัจ กยาทวา โมคชยะเส ชุบฺาทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กิมฺ</i> — คืออะไร, <i>กรฺม</i> — การกระทำ, <i>กิมฺ</i> — คืออะไร, <i>อกรฺม</i> — การไม่ทำอะไร, <i>อิติ</i> — ดังนั้น, <i>กวยฮ</i> — ผู้มีปัญญา, <i>อปิ</i> — เช่นกัน, <i>อตฺร</i> — ในเรื่องนี้, <i>โมหิตาฮ</i> — สับสน, <i>ตตฺ</i> — นั้น, <i>เต</i> — แก่ เธอ, <i>กรฺม</i> — งาน, <i>ปฺรวกฺษฺยามิ</i> — ข้าจะอธิบาย, <i>ยตฺ</i> — ซึ่ง, <i>ชฺญาตฺวา</i> — รู้, <i>โมกฺษฺยเส</i> — เธอจะ หลุดพ้น, <i>อศุภาตฺ</i> — จากโชคร้าย
+  <span class="slant iast">kim</span><span class="slant pali">กิมฺ</span><span class="slant thai">กิม</span><span class="slant ram">คิม</span> — คืออะไร, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — การกระทำ, <span class="slant iast">kim</span><span class="slant pali">กิมฺ</span><span class="slant thai">กิม</span><span class="slant ram">คิม</span> — คืออะไร, <span class="slant iast">akarma</span><span class="slant pali">อกรฺม</span><span class="slant thai">อะกัรมะ</span><span class="slant ram">อคารมะ</span> — การไม่ทำอะไร, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">kavayaḥ</span><span class="slant pali">กวยห์</span><span class="slant thai">กะวะยะห์</span><span class="slant ram">คะวะยะฮ</span> — ผู้มีปัญญา, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">atra</span><span class="slant pali">อตฺร</span><span class="slant thai">อัตระ</span><span class="slant ram">อทระ</span> — ในเรื่องนี้, <span class="slant iast">mohitāḥ</span><span class="slant pali">โมหิตาห์</span><span class="slant thai">โมหิตาห์</span><span class="slant ram">โมฮิทาฮ</span> — สับสน, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — แก่ เธอ, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">pravakṣyāmi</span><span class="slant pali">ปฺรวกฺษฺยามิ</span><span class="slant thai">ประวักษยามิ</span><span class="slant ram">พระวัคชยามิ</span> — ข้าจะอธิบาย, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">jñātvā</span><span class="slant pali">ชฺญาตฺวา</span><span class="slant thai">ชญาตวา</span><span class="slant ram">กยาทวา</span> — รู้, <span class="slant iast">mokṣyase</span><span class="slant pali">โมกฺษฺยเส</span><span class="slant thai">โมกษยะเส</span><span class="slant ram">โมคชยะเส</span> — เธอจะ หลุดพ้น, <span class="slant iast">aśubhāt</span><span class="slant pali">อศุภาตฺ</span><span class="slant thai">อะศุภาต</span><span class="slant ram">อชุบฺาท</span> — จากโชคร้าย
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  งานใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกต้องปฏิบัติตามตัวอย่างจากสาวกที่แท้จริงในอดีต&nbsp;&nbsp;ซึ่ง<wbr>ได้แนะนำไว้แล้วในโศลกที่สิบห้า&nbsp;&nbsp;เหตุใดงานนี้ไม่ควรปล่อยให้เป็นอิสระเสรีจะได้อธิบาย<wbr>ในโศลกต่อไป
+  งานใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกต้องปฏิบัติตามตัวอย่างจากสาวกที่แท้จริงในอดีต&nbsp;&nbsp;ซึ่ง<wbr>ได้แนะนำไว้แล้วในโศลกที่สิบห้า&nbsp;&nbsp;เหตุใดงานนี้ไม่ควรปล่อยให้เป็นอิสระเสรีจะได้อธิบาย<wbr>ในโศลกต่อไป
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องปฏิบัติตามการนำทางของบุคคลผู้เชื่อ<wbr>ถือได้ที่อยู่ในสาย&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;ดังที่ได้อธิบายไว้แล้วในตอนต้นของบทนี้&nbsp;&nbsp;ระบบ&nbsp;&nbsp;<i>กฺฤษฺณ</i>จิตสำนึกครั้งแรกได้บรรยายให้สุริยเทพ&nbsp;&nbsp;และสุริยเทพทรงอธิบายให้พระโอรส&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;ทรงอธิบายให้พระโอรส&nbsp;&nbsp;<i>อิกฺษฺวากุ</i>&nbsp;&nbsp;และจากโบราณกาลระบบนี้ได้อยู่บนโลกมาจนถึง<wbr>ปัจจุบันนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เราต้องปฏิบัติตามรอยพระบาทของบุคคลผู้เชื่อถือได้ในสาย&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;แม้แต่บุคคลผู้มีสติปัญญาสูงสุดจะสับสนเกี่ยวกับมาตรฐานการปฏิบัติ<wbr>ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ด้วยเหตุนี้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงตัดสินพระทัยสอน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกแก่<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;จากการตรัสสอนแก่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;โดยตรงเช่นนี้&nbsp;&nbsp;หากผู้ใดปฏิบัติตามรอย<wbr>พระบาทของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;แน่นอนว่าจะไม่สับสน
+  การปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เราต้องปฏิบัติตามการนำทางของบุคคลผู้เชื่อ<wbr>ถือได้ที่อยู่ในสาย&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;ดังที่ได้อธิบายไว้แล้วในตอนต้นของบทนี้&nbsp;&nbsp;ระบบ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>จิตสำนึกครั้งแรกได้บรรยายให้สุริยเทพ&nbsp;&nbsp;และสุริยเทพทรงอธิบายให้พระโอรส&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;ทรงอธิบายให้พระโอรส&nbsp;&nbsp;<span class="slant iast">ikṣvāku</span><span class="slant pali">อิกฺษฺวากุ</span><span class="slant thai">อิกษวากุ</span><span class="slant ram">อิคชวาคุ</span>&nbsp;&nbsp;และจากโบราณกาลระบบนี้ได้อยู่บนโลกมาจนถึง<wbr>ปัจจุบันนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เราต้องปฏิบัติตามรอยพระบาทของบุคคลผู้เชื่อถือได้ในสาย&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;แม้แต่บุคคลผู้มีสติปัญญาสูงสุดจะสับสนเกี่ยวกับมาตรฐานการปฏิบัติ<wbr>ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ด้วยเหตุนี้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงตัดสินพระทัยสอน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกแก่<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;โดยตรง&nbsp;&nbsp;จากการตรัสสอนแก่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;โดยตรงเช่นนี้&nbsp;&nbsp;หากผู้ใดปฏิบัติตามรอย<wbr>พระบาทของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;แน่นอนว่าจะไม่สับสน
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้ว่า&nbsp;&nbsp;เพียงความรู้จากการทดลองที่ไม่สมบูรณ์เราไม่สามารถค้นคว้า<wbr>หาวิธีทางศาสนาได้&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เท่านั้นที่ทรงสามารถวางหลักแห่งศาสนาได้&nbsp;&nbsp;<i>ธรฺมํ&nbsp;&nbsp;ตุ&nbsp;&nbsp;สากฺษาทฺ&nbsp;&nbsp;ภควตฺ-ปฺรณีตมฺ</i>&nbsp;&nbsp;(<i>ภาควต</i>&nbsp;&nbsp;6.3.19)&nbsp;&nbsp;ไม่มีผู้ใดสามารถสร้าง<wbr>หลักศาสนาจากการคาดคะเนที่ไม่สมบูรณ์ได้&nbsp;&nbsp;เราต้องปฏิบัติตามรอยพระบาทของ<wbr>บุคคลผู้ยิ่งใหญ่ที่เชื่อถือได้&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;,&nbsp;&nbsp;พระ&nbsp;&nbsp;<i>ศิว</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>นารท</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>มนุ</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>กุมาร</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>กปิล</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ปฺรหฺลาท</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ศุกเทว</i>&nbsp;&nbsp;<i>โคสฺวามี</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ยมราช</i>&nbsp;&nbsp;,&nbsp;&nbsp;<i>ชนก</i>&nbsp;&nbsp;,&nbsp;&nbsp;และ&nbsp;&nbsp;<i>พลิ</i>&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;จากการคาดคะเนทางจิตเราไม่สามารถค้นคว้าว่าศาสนาหรือการรู้แจ้งแห่งตนนั้นคือ<wbr>อะไร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระเมตตาแก่สาวก&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบายโดยตรงแก่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ว่า<wbr>อะไรคือการปฏิบัติ&nbsp;&nbsp;และอะไรคือการไม่ปฏิบัติ&nbsp;&nbsp;การปฏิบัติตนใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเท่านั้น<wbr>ที่สามารถนำพาเราให้ออกจากพันธนาการแห่งชีวิตทางวัตถุ
+  ได้กล่าวไว้ว่า&nbsp;&nbsp;เพียงความรู้จากการทดลองที่ไม่สมบูรณ์เราไม่สามารถค้นคว้า<wbr>หาวิธีทางศาสนาได้&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เท่านั้นที่ทรงสามารถวางหลักแห่งศาสนาได้&nbsp;&nbsp;<span class="slant iast">dharmaṁ&nbsp;&nbsp;tu&nbsp;&nbsp;sākṣād&nbsp;&nbsp;bhagavat-praṇītam</span><span class="slant pali">ธรฺมํตุสากฺษาทฺภควตฺ-ปฺรณีตมฺ</span><span class="slant thai">ธัรมังตุสากษาทภะคะวัต-ประณีตัม</span><span class="slant ram">ทุ-zzz</span>&nbsp;&nbsp;(<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;6.3.19)&nbsp;&nbsp;ไม่มีผู้ใดสามารถสร้าง<wbr>หลักศาสนาจากการคาดคะเนที่ไม่สมบูรณ์ได้&nbsp;&nbsp;เราต้องปฏิบัติตามรอยพระบาทของ<wbr>บุคคลผู้ยิ่งใหญ่ที่เชื่อถือได้&nbsp;&nbsp;เช่น&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;,&nbsp;&nbsp;พระ&nbsp;&nbsp;<span class="slant iast">śiva</span><span class="slant pali">ศิว</span><span class="slant thai">ศิวะ</span><span class="slant ram">ศิวะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">nārada</span><span class="slant pali">นารท</span><span class="slant thai">นาระทะ</span><span class="slant ram">นาระดะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">manu</span><span class="slant pali">มนุ</span><span class="slant thai">มะนุ</span><span class="slant ram">มะนุ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">kumāra</span><span class="slant pali">กุมาร</span><span class="slant thai">กุมาระ</span><span class="slant ram">คุมาระ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">kapila</span><span class="slant pali">กปิล</span><span class="slant thai">กะปิละ</span><span class="slant ram">คะพิละ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">prahlāda</span><span class="slant pali">ปฺรหฺลาท</span><span class="slant thai">ปรัหลาทะ</span><span class="slant ram">พระฮลาดะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">śukadeva</span><span class="slant pali">ศุกเทว</span><span class="slant thai">ศุกะเทวะ</span><span class="slant ram">ชุคะเดวะ</span>&nbsp;&nbsp;<span class="slant iast">gosvāmī</span><span class="slant pali">โคสฺวามี</span><span class="slant thai">โคสวามี</span><span class="slant ram">โกสวามี</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">yamarāja</span><span class="slant pali">ยมราช</span><span class="slant thai">ยะมะราชะ</span><span class="slant ram">ยมราช</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span class="slant iast">janaka</span><span class="slant pali">ชนก</span><span class="slant thai">ชะนะกะ</span><span class="slant ram">จะนะคะ</span>&nbsp;&nbsp;,&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bali</span><span class="slant pali">พลิ</span><span class="slant thai">พะลิ</span><span class="slant ram">บะลิ</span>&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;จากการคาดคะเนทางจิตเราไม่สามารถค้นคว้าว่าศาสนาหรือการรู้แจ้งแห่งตนนั้นคือ<wbr>อะไร&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ด้วยพระเมตตาแก่สาวก&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบายโดยตรงแก่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ว่า<wbr>อะไรคือการปฏิบัติ&nbsp;&nbsp;และอะไรคือการไม่ปฏิบัติ&nbsp;&nbsp;การปฏิบัติตนใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเท่านั้น<wbr>ที่สามารถนำพาเราให้ออกจากพันธนาการแห่งชีวิตทางวัตถุ
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 14.3</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มม โยนิรฺ มหทฺ พฺรหฺม</i><br /><i>ตสฺมินฺ ครฺภํ ทธามฺยฺ อหมฺ</i><br /><i>สมฺภวฮ สรฺว-ภูตานาํ</i><br /><i>ตโต ภวติ ภารต</i>
+<span class="slant iast">mama yonir mahad brahma<br /></span>
+<span class="slant pali">มม โยนิรฺ มหทฺ พฺรหฺม<br /></span>
+<span class="slant thai">มะมะ โยนิร มะหัท พรัหมะ<br /></span>
+<span class="slant ram">มะมะ โยนิร มะฮัด บระฮมะ<br /></span>
+<span class="slant iast">tasmin garbhaṁ dadhāmy aham<br /></span>
+<span class="slant pali">ตสฺมินฺ ครฺภํ ทธามฺยฺ อหมฺ<br /></span>
+<span class="slant thai">ตัสมิน คัรภัง ทะธามย อะหัม<br /></span>
+<span class="slant ram">ทัสมิน การบัฺม ดะดฺามิ อฮัม<br /></span>
+<span class="slant iast">sambhavaḥ sarva-bhūtānāṁ<br /></span>
+<span class="slant pali">สมฺภวห์ สรฺว-ภูตานำ<br /></span>
+<span class="slant thai">สัมภะวะห์ สัรวะ-ภูตานาง<br /></span>
+<span class="slant ram">สัมบฺะวะฮ สารวะ-บํูทานาม<br /></span>
+<span class="slant iast">tato bhavati bhārata<br /></span>
+<span class="slant pali">ตโต ภวติ ภารต<br /></span>
+<span class="slant thai">ตะโต ภะวะติ ภาระตะ<br /></span>
+<span class="slant ram">ทะโท บฺะวะทิ บฺาระทะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>มม</i> — ของข้า, <i>โยนิฮ</i> — ต้นเหตุแห่งการเกิด, <i>มหตฺ</i> — ความเป็นอยู่ทางวัตถุทั้งหมด, <i>พฺรหฺม</i> — สูงสุด, <i>ตสฺมินฺ</i> — ในนั้น, <i>ครฺภมฺ</i> — การตั้งครรภ์, <i>ทธามิ</i> — สร้าง, <i>อหมฺ</i> — ข้า, <i>สมฺภวฮ</i> — ความเป็นไปได้, <i>สรฺว-ภูตานามฺ</i> — ของสิ่งมีชีวิตทั้งหลาย, <i>ตตฮ</i> — หลังจากนั้น, <i>ภวติ</i> — มาเป็น, <i>ภารต</i> — โอ้ โอรสแห่ง <i>ภรต</i> 
+  <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า, <span class="slant iast">yoniḥ</span><span class="slant pali">โยนิห์</span><span class="slant thai">โยนิห์</span><span class="slant ram">โยนิฮ</span> — ต้นเหตุแห่งการเกิด, <span class="slant iast">mahat</span><span class="slant pali">มหตฺ</span><span class="slant thai">มะหัต</span><span class="slant ram">มะฮัท</span> — ความเป็นอยู่ทางวัตถุทั้งหมด, <span class="slant iast">brahma</span><span class="slant pali">พฺรหฺม</span><span class="slant thai">พรัหมะ</span><span class="slant ram">บระฮมะ</span> — สูงสุด, <span class="slant iast">tasmin</span><span class="slant pali">ตสฺมินฺ</span><span class="slant thai">ตัสมิน</span><span class="slant ram">ทัสมิน</span> — ในนั้น, <span class="slant iast">garbham</span><span class="slant pali">ครฺภมฺ</span><span class="slant thai">คัรภัม</span><span class="slant ram">การบัฺม</span> — การตั้งครรภ์, <span class="slant iast">dadhāmi</span><span class="slant pali">ทธามิ</span><span class="slant thai">ทะธามิ</span><span class="slant ram">ดะดฺามิ</span> — สร้าง, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้า, <span class="slant iast">sambhavaḥ</span><span class="slant pali">สมฺภวห์</span><span class="slant thai">สัมภะวะห์</span><span class="slant ram">สัมบฺะวะฮ</span> — ความเป็นไปได้, <span class="slant iast">sarva-bhūtānām</span><span class="slant pali">สรฺว-ภูตานามฺ</span><span class="slant thai">สัรวะ-ภูตานาม</span><span class="slant ram">สารวะ-บํูทานาม</span> — ของสิ่งมีชีวิตทั้งหลาย, <span class="slant iast">tataḥ</span><span class="slant pali">ตตห์</span><span class="slant thai">ตะตะห์</span><span class="slant ram">ทะทะฮ</span> — หลังจากนั้น, <span class="slant iast">bhavati</span><span class="slant pali">ภวติ</span><span class="slant thai">ภะวะติ</span><span class="slant ram">บฺะวะทิ</span> — มาเป็น, <span class="slant iast">bhārata</span><span class="slant pali">ภารต</span><span class="slant thai">ภาระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ</span> — โอ้ โอรสแห่ง <span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span> 
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  แก่นสารทางวัตถุทั้งหมดเรียกว่า&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ซึ่งเป็นต้นเหตุแห่งการเกิด&nbsp;&nbsp;และข้าทำให้&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ตั้งครรภ์&nbsp;&nbsp;การเกิดของมวลชีวิตจึงเป็นไปได้&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<i>ภรต</i>&nbsp;&nbsp;
+  แก่นสารทางวัตถุทั้งหมดเรียกว่า&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ซึ่งเป็นต้นเหตุแห่งการเกิด&nbsp;&nbsp;และข้าทำให้&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ตั้งครรภ์&nbsp;&nbsp;การเกิดของมวลชีวิตจึงเป็นไปได้&nbsp;&nbsp;โอ้&nbsp;&nbsp;โอรสแห่ง&nbsp;&nbsp;<span class="slant iast">bharata</span><span class="slant pali">ภรต</span><span class="slant thai">ภะระตะ</span><span class="slant ram">บฺาระทะ,บฺะระทะ,บฺะระทะ,บฺารทะ,ภารต,บฺระทะ,บฺาระทะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,13 +174,13 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  นี่คือคำอธิบายของโลก&nbsp;&nbsp;ทุกสิ่งทุกอย่างที่เกิดขึ้นเนื่องมาจากการผสมผสาน<wbr>ของ&nbsp;&nbsp;<i>เกฺษตฺร</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>เกฺษตฺร-ชฺญ</i>&nbsp;&nbsp;หรือร่างกายและดวงวิญญาณ&nbsp;&nbsp;การผสมผสานกันของ<wbr>ธรรมชาติวัตถุและสิ่งมีชีวิตเป็นไปได้โดยองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>มหตฺ-ตตฺตฺว</i>&nbsp;&nbsp;เป็นแหล่งกำเนิด<wbr>ทั้งหมดของปรากฏการณ์ในจักรวาลทั้งหมด&nbsp;&nbsp;และแก่นสารทั้งหมดของแหล่งกำเนิดทาง<wbr>วัตถุนั้นมีสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;บางครั้งเรียกว่า&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรง<wbr>ทำให้แก่นสารทั้งหมดตั้งครรภ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จักรวาลอันนับไม่ถ้วนจึงเกิดขึ้นมาได้&nbsp;&nbsp;แก่นสาร<wbr>ทางวัตถุทั้งหมดนี้หรือ&nbsp;&nbsp;<i>มหตฺ-ตตฺตฺว</i>&nbsp;&nbsp;อธิบายว่าเป็น&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ในวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>มุณฺฑก&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;1.1.19&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>ตสฺมาทฺ&nbsp;&nbsp;เอตทฺ&nbsp;&nbsp;พฺรหฺม&nbsp;&nbsp;นาม-รูปมฺ&nbsp;&nbsp;อนฺนํ&nbsp;&nbsp;จ&nbsp;&nbsp;ชายเต</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงทำให้&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ตั้งครรภ์ด้วยเมล็ดพันธุ์ของสิ่งมีชีวิต&nbsp;&nbsp;ธาตุทั้ง<wbr>ยี่สิบสี่เริ่มต้นจาก&nbsp;&nbsp;ดิน&nbsp;&nbsp;น้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;และลมทั้งหมดเป็นพลังงานวัตถุ&nbsp;&nbsp;และสิ่งเหล่านี้รวมกันเรียก<wbr>ว่า&nbsp;&nbsp;<i>มหทฺ&nbsp;&nbsp;พฺรหฺม</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ที่ยิ่งใหญ่&nbsp;&nbsp;นั่นคือธรรมชาติวัตถุดังที่ได้อธิบายในบทที่<wbr>เจ็ด&nbsp;&nbsp;ยังมีธรรมชาติที่สูงไปกว่านี้นั่นคือสิ่งมีชีวิต&nbsp;&nbsp;ภายในธรรมชาติวัตถุจะมีธรรมชาติที่สูง<wbr>กว่าเข้าไปผสม&nbsp;&nbsp;ด้วยความปรารถนาขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และหลังจากนั้นมวลชีวิตได้กำเนิด<wbr>มาจากธรรมชาติวัตถุนี้
+  นี่คือคำอธิบายของโลก&nbsp;&nbsp;ทุกสิ่งทุกอย่างที่เกิดขึ้นเนื่องมาจากการผสมผสาน<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṣetra</span><span class="slant pali">กฺเษตฺร</span><span class="slant thai">กเษตระ</span><span class="slant ram">คเชทระ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kṣetra-jña</span><span class="slant pali">กฺเษตฺร-ชฺญ</span><span class="slant thai">กเษตระ-ชญะ</span><span class="slant ram">คเชทระ-กยะ</span>&nbsp;&nbsp;หรือร่างกายและดวงวิญญาณ&nbsp;&nbsp;การผสมผสานกันของ<wbr>ธรรมชาติวัตถุและสิ่งมีชีวิตเป็นไปได้โดยองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">mahat-tattva</span><span class="slant pali">มหตฺ-ตตฺตฺว</span><span class="slant thai">มะหัต-ตัตตวะ</span><span class="slant ram">มะฮัท-ทัทท- วะ,ทัททวะ</span>&nbsp;&nbsp;เป็นแหล่งกำเนิด<wbr>ทั้งหมดของปรากฏการณ์ในจักรวาลทั้งหมด&nbsp;&nbsp;และแก่นสารทั้งหมดของแหล่งกำเนิดทาง<wbr>วัตถุนั้นมีสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;บางครั้งเรียกว่า&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรง<wbr>ทำให้แก่นสารทั้งหมดตั้งครรภ์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จักรวาลอันนับไม่ถ้วนจึงเกิดขึ้นมาได้&nbsp;&nbsp;แก่นสาร<wbr>ทางวัตถุทั้งหมดนี้หรือ&nbsp;&nbsp;<span class="slant iast">mahat-tattva</span><span class="slant pali">มหตฺ-ตตฺตฺว</span><span class="slant thai">มะหัต-ตัตตวะ</span><span class="slant ram">มะฮัท-ทัทท- วะ,ทัททวะ</span>&nbsp;&nbsp;อธิบายว่าเป็น&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ในวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">muṇḍaka&nbsp;&nbsp;upaniṣad</span><span class="slant pali">มุณฺฑกอุปนิษทฺ</span><span class="slant thai">มุณฑะกะอุปะนิษัท</span><span class="slant ram">มุนดะคะ อุพะนิชัด</span>&nbsp;&nbsp;1.1.19&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">tasmād&nbsp;&nbsp;etad&nbsp;&nbsp;brahma&nbsp;&nbsp;nāma-rūpam&nbsp;&nbsp;annaṁ&nbsp;&nbsp;ca&nbsp;&nbsp;jāyate</span><span class="slant pali">ตสฺมาทฺเอตทฺพฺรหฺมนาม-รูปมฺอนฺนํจชายเต</span><span class="slant thai">ตัสมาทเอตัทพรัหมะนามะ-รูปัมอันนังจะชายะเต</span><span class="slant ram">บระฮมะนามะ-รูพัมชะจายะเท</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงทำให้&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ตั้งครรภ์ด้วยเมล็ดพันธุ์ของสิ่งมีชีวิต&nbsp;&nbsp;ธาตุทั้ง<wbr>ยี่สิบสี่เริ่มต้นจาก&nbsp;&nbsp;ดิน&nbsp;&nbsp;น้ำ&nbsp;&nbsp;ไฟ&nbsp;&nbsp;และลมทั้งหมดเป็นพลังงานวัตถุ&nbsp;&nbsp;และสิ่งเหล่านี้รวมกันเรียก<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">mahad&nbsp;&nbsp;brahma</span><span class="slant pali">มหทฺพฺรหฺม</span><span class="slant thai">มะหัทพรัหมะ</span><span class="slant ram">บระฮมะ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ที่ยิ่งใหญ่&nbsp;&nbsp;นั่นคือธรรมชาติวัตถุดังที่ได้อธิบายในบทที่<wbr>เจ็ด&nbsp;&nbsp;ยังมีธรรมชาติที่สูงไปกว่านี้นั่นคือสิ่งมีชีวิต&nbsp;&nbsp;ภายในธรรมชาติวัตถุจะมีธรรมชาติที่สูง<wbr>กว่าเข้าไปผสม&nbsp;&nbsp;ด้วยความปรารถนาขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และหลังจากนั้นมวลชีวิตได้กำเนิด<wbr>มาจากธรรมชาติวัตถุนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  แมลงป่องวางไข่ในกองข้าว&nbsp;&nbsp;บางครั้งกล่าวกันว่าแมลงป่องเกิดจากข้าว&nbsp;&nbsp;แต่<wbr>ข้าวไม่ใช่แหล่งกำเนิดของแมลงป่อง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;แม่ของแมลงป่องเป็นผู้ว่างไข่&nbsp;&nbsp;ในทำนอง<wbr>เดียวกัน&nbsp;&nbsp;ธรรมชาติวัตถุไม่ใช่แหล่งกำเนิดแห่งการเกิดของสิ่งมีชีวิต&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่ง<wbr>พระเจ้าทรงเป็นผู้ให้เมล็ดพันธุ์และดูเหมือนว่าพวกเขาเกิดมาจากผลผลิตของธรรมชาติ<wbr>วัตถุ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามกรรมเก่าของตนเอง&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตจึงมีร่างกายแตกต่างกันซึ่งธรรมชาติ<wbr>วัตถุนี้เป็นผู้สร้าง&nbsp;&nbsp;สิ่งมีชีวิตสามารถได้รับความสุขหรือความทุกข์ตามกรรมในอดีตของ<wbr>ตน&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดแห่งปรากฏการณ์ของสิ่งมีชีวิตทั้งหมดในโลกวัตถุนี้
+  แมลงป่องวางไข่ในกองข้าว&nbsp;&nbsp;บางครั้งกล่าวกันว่าแมลงป่องเกิดจากข้าว&nbsp;&nbsp;แต่<wbr>ข้าวไม่ใช่แหล่งกำเนิดของแมลงป่อง&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;แม่ของแมลงป่องเป็นผู้ว่างไข่&nbsp;&nbsp;ในทำนอง<wbr>เดียวกัน&nbsp;&nbsp;ธรรมชาติวัตถุไม่ใช่แหล่งกำเนิดแห่งการเกิดของสิ่งมีชีวิต&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่ง<wbr>พระเจ้าทรงเป็นผู้ให้เมล็ดพันธุ์และดูเหมือนว่าพวกเขาเกิดมาจากผลผลิตของธรรมชาติ<wbr>วัตถุ&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ตามกรรมเก่าของตนเอง&nbsp;&nbsp;ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชีวิตจึงมีร่างกายแตกต่างกันซึ่งธรรมชาติ<wbr>วัตถุนี้เป็นผู้สร้าง&nbsp;&nbsp;สิ่งมีชีวิตสามารถได้รับความสุขหรือความทุกข์ตามกรรมในอดีตของ<wbr>ตน&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็นแหล่งกำเนิดแห่งปรากฏการณ์ของสิ่งมีชีวิตทั้งหมดในโลกวัตถุนี้
   </p>
 </div>
 

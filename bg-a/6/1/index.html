@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.1</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ศฺรี-ภควานฺ อุวาจ</i><br /><i>อนาศฺริตฮ กรฺม-ผลํ</i><br /><i>การฺยํ กรฺม กโรติ ยฮ</i><br /><i>ส สนฺนฺยาสี จ โยคี จ</i><br /><i>น นิรคฺนิรฺ น จากฺริยฮ</i>
+<span class="slant iast">śrī-bhagavān uvāca<br /></span>
+<span class="slant pali">ศฺรี-ภควานฺ อุวาจ<br /></span>
+<span class="slant thai">ศรี-ภะคะวาน อุวาจะ<br /></span>
+<span class="slant ram">ชรี-บฺะกะวาน อุวาชะ<br /></span>
+<span class="slant iast">anāśritaḥ karma-phalaṁ<br /></span>
+<span class="slant pali">อนาศฺริตห์ กรฺม-ผลํ<br /></span>
+<span class="slant thai">อะนาศริตะห์ กัรมะ-ผะลัง<br /></span>
+<span class="slant ram">อนาชริทะฮ คารมะ-พระลัม<br /></span>
+<span class="slant iast">kāryaṁ karma karoti yaḥ<br /></span>
+<span class="slant pali">การฺยํ กรฺม กโรติ ยห์<br /></span>
+<span class="slant thai">การยัง กัรมะ กะโรติ ยะห์<br /></span>
+<span class="slant ram">คารยัม คารมะ คะโรทิ ยะฮ<br /></span>
+<span class="slant iast">sa sannyāsī ca yogī ca<br /></span>
+<span class="slant pali">ส สนฺนฺยาสี จ โยคี จ<br /></span>
+<span class="slant thai">สะ สันนยาสี จะ โยคี จะ<br /></span>
+<span class="slant ram">สะ สันนยาสี ชะ โยกี ชะ<br /></span>
+<span class="slant iast">na niragnir na cākriyaḥ<br /></span>
+<span class="slant pali">น นิรคฺนิรฺ น จากฺริยห์<br /></span>
+<span class="slant thai">นะ นิรัคนิร นะ จากริยะห์<br /></span>
+<span class="slant ram">นะ นิรักนิร นะ ชาคริยะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ศฺรี-ภควานฺ อุวาจ</i> — องค์ภควานตรัส, <i>อนาศฺริตฮ</i> — ปราศจากที่พึ่ง, <i>กรฺม-ผลมฺ</i> — ของผลแห่งงาน, <i>การฺยมฺ</i> — หน้าที่, <i>กรฺม</i> — งาน, <i>กโรติ</i> — ปฏิบัติ, <i>ยฮ</i> — ผู้ซึ่ง, <i>สฮ</i> — เขา, <i>สนฺนฺยาสี</i> — ในระดับสละโลก, <i>จ</i> — เช่นกัน, <i>โยคี</i> — โยคี, <i>จ</i> — เช่นกัน, <i>น</i> — ไม่, <i>นิฮ</i> — ปราศจาก, <i>อคฺนิฮ</i> — ไฟ, <i>น</i> — ไม่, <i>จ</i> — เช่นกัน, <i>อกฺริยฮ</i> — ปราศจากหน้าที่
+  <span class="slant iast">śrī-bhagavān uvāca</span><span class="slant pali">ศฺรี-ภควานฺอุวาจ</span><span class="slant thai">ศรี-ภะคะวานอุวาจะ</span><span class="slant ram">ชรี-บฺะกะวาน อุวาชะ</span> — องค์ภควานตรัส, <span class="slant iast">anāśritaḥ</span><span class="slant pali">อนาศฺริตห์</span><span class="slant thai">อะนาศริตะห์</span><span class="slant ram">อนาชริทะฮ</span> — ปราศจากที่พึ่ง, <span class="slant iast">karma-phalam</span><span class="slant pali">กรฺม-ผลมฺ</span><span class="slant thai">กัรมะ-ผะลัม</span><span class="slant ram">คารมะ-พฺะลัม</span> — ของผลแห่งงาน, <span class="slant iast">kāryam</span><span class="slant pali">การฺยมฺ</span><span class="slant thai">การยัม</span><span class="slant ram">คารยัม</span> — หน้าที่, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">karoti</span><span class="slant pali">กโรติ</span><span class="slant thai">กะโรติ</span><span class="slant ram">คะโรทิ</span> — ปฏิบัติ, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">saḥ</span><span class="slant pali">สห์</span><span class="slant thai">สะห์</span><span class="slant ram">สะฮ</span> — เขา, <span class="slant iast">sannyāsī</span><span class="slant pali">สนฺนฺยาสี</span><span class="slant thai">สันนยาสี</span><span class="slant ram">สันนยาสี</span> — ในระดับสละโลก, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span> — โยคี, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">niḥ</span><span class="slant pali">นิห์</span><span class="slant thai">นิห์</span><span class="slant ram">นิฮ</span> — ปราศจาก, <span class="slant iast">agniḥ</span><span class="slant pali">อคฺนิห์</span><span class="slant thai">อัคนิห์</span><span class="slant ram">อักนิฮ</span> — ไฟ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">akriyaḥ</span><span class="slant pali">อกฺริยห์</span><span class="slant thai">อักริยะห์</span><span class="slant ram">อคริยะฮ</span> — ปราศจากหน้าที่
   </p>
 </div>
 
@@ -73,25 +178,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ในบทนี้องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงอธิบายว่า&nbsp;&nbsp;วิธีของระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แปดระดับเป็นวิถีทางเพื่อ<wbr>ควบคุมจิตใจและประสาทสัมผัส&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;มันเป็นสิ่งยากมากสำหรับคนทั่วไปที่จะ<wbr>ปฏิบัติได้โดยเฉพาะใน&nbsp;&nbsp;<i>กลิ&nbsp;&nbsp;ยุค</i>&nbsp;&nbsp;ถึงแม้ระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แปดระดับได้แนะนำไว้ในบทนี้&nbsp;&nbsp;พระองค์<wbr>ทรงเน้นว่าวิธีของ&nbsp;&nbsp;<i>กรฺม</i>&nbsp;&nbsp;-<i>โยค</i>&nbsp;&nbsp;หรือการปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกดีกว่า&nbsp;&nbsp;ทุกคนปฏิบัติ<wbr>ตนในโลกนี้เพื่อค้ำจุนครอบครัวและทรัพย์สมบัติของตน&nbsp;&nbsp;ไม่มีผู้ใดทำงานโดยปราศจาก<wbr>ความเห็นแก่ตัวหรือเพื่อสนองตอบส่วนตัวบางประการ&nbsp;&nbsp;ไม่ว่าในวงแคบหรือวงกว้างบรรทัดฐานแห่งความสมบูรณ์คือการปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ไม่ใช่ด้วยแนวคิดที่จะ<wbr>หาความสุขกับผลของงาน&nbsp;&nbsp;การปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเป็นหน้าที่ของทุกชีวิต&nbsp;&nbsp;เพราะ<wbr>ว่าทุกชีวิตโดยพื้นฐานเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของร่างกายปฏิบัติ<wbr>งานเพื่อให้ทั่วทั้งเรือนร่างพึงพอใจ&nbsp;&nbsp;แขนและขามิได้ปฏิบัติเพื่อให้ส่วนของตนเองพึงพอใจแต่เพื่อความพึงพอใจของทั่วทั้งเรือนร่าง&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;สิ่งมีชีวิตผู้ปฏิบัติเพื่อความ<wbr>พึงพอใจของส่วนรวมสูงสุด&nbsp;&nbsp;และไม่ใช่เพื่อความพึงพอใจของตนเองจึงเป็น&nbsp;&nbsp;<i>สนฺนฺยาสี</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่สมบูรณ์
+  ในบทนี้องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงอธิบายว่า&nbsp;&nbsp;วิธีของระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แปดระดับเป็นวิถีทางเพื่อ<wbr>ควบคุมจิตใจและประสาทสัมผัส&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;มันเป็นสิ่งยากมากสำหรับคนทั่วไปที่จะ<wbr>ปฏิบัติได้โดยเฉพาะใน&nbsp;&nbsp;<span class="slant iast">kali&nbsp;&nbsp;yuga</span><span class="slant pali">กลิยุค</span><span class="slant thai">กะลิยุคะ</span><span class="slant ram">กลียุค</span>&nbsp;&nbsp;ถึงแม้ระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แปดระดับได้แนะนำไว้ในบทนี้&nbsp;&nbsp;พระองค์<wbr>ทรงเน้นว่าวิธีของ&nbsp;&nbsp;<span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span>&nbsp;&nbsp;-<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;หรือการปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกดีกว่า&nbsp;&nbsp;ทุกคนปฏิบัติ<wbr>ตนในโลกนี้เพื่อค้ำจุนครอบครัวและทรัพย์สมบัติของตน&nbsp;&nbsp;ไม่มีผู้ใดทำงานโดยปราศจาก<wbr>ความเห็นแก่ตัวหรือเพื่อสนองตอบส่วนตัวบางประการ&nbsp;&nbsp;ไม่ว่าในวงแคบหรือวงกว้างบรรทัดฐานแห่งความสมบูรณ์คือการปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ไม่ใช่ด้วยแนวคิดที่จะ<wbr>หาความสุขกับผลของงาน&nbsp;&nbsp;การปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเป็นหน้าที่ของทุกชีวิต&nbsp;&nbsp;เพราะ<wbr>ว่าทุกชีวิตโดยพื้นฐานเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ส่วนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของร่างกายปฏิบัติ<wbr>งานเพื่อให้ทั่วทั้งเรือนร่างพึงพอใจ&nbsp;&nbsp;แขนและขามิได้ปฏิบัติเพื่อให้ส่วนของตนเองพึงพอใจแต่เพื่อความพึงพอใจของทั่วทั้งเรือนร่าง&nbsp;&nbsp;ในทำนองเดียวกัน&nbsp;&nbsp;สิ่งมีชีวิตผู้ปฏิบัติเพื่อความ<wbr>พึงพอใจของส่วนรวมสูงสุด&nbsp;&nbsp;และไม่ใช่เพื่อความพึงพอใจของตนเองจึงเป็น&nbsp;&nbsp;<span class="slant iast">sannyāsī</span><span class="slant pali">สนฺนฺยาสี</span><span class="slant thai">สันนยาสี</span><span class="slant ram">สันนยาสี</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่สมบูรณ์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พวก&nbsp;&nbsp;<i>สนฺนฺยาสี</i>&nbsp;&nbsp;บางครั้งคิดอย่างผิดธรรมชาติว่าตนเองได้หลุดพ้นแล้วจาก<wbr>หน้าที่ทางวัตถุทั้งมวล&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงหยุดการปฏิบัติ&nbsp;&nbsp;<i>อคฺนิโหตฺร&nbsp;&nbsp;ยชฺญ</i>&nbsp;&nbsp;(บูชาไฟ&nbsp;&nbsp;)&nbsp;&nbsp;แต่อัน<wbr>ที่จริงพวกนี้เห็นแก่ตัวเพราะจุดมุ่งหมายเพื่อต้องการมาเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;อัน<wbr>ไร้รูปลักษณ์&nbsp;&nbsp;ความต้องการเช่นนี้ยิ่งใหญ่กว่าความต้องการใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;แต่มิใช่ว่า<wbr>ปราศจากความเห็นแก่ตัว&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ผู้มีฤทธิ์ฝึกปฏิบัติตามระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ด้วยการ<wbr>ลืมตาครึ่งหนึ่ง&nbsp;&nbsp;หยุดกิจกรรมทางวัตถุทั้งหมด&nbsp;&nbsp;ปรารถนาความพึงพอใจบางประการ<wbr>สำหรับตนเอง&nbsp;&nbsp;แต่บุคคลผู้ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกทำงานเพื่อความพึงพอใจของส่วน<wbr>รวมที่สมบูรณ์โดยไม่เห็นแก่ตัว&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไม่มีความปรารถนาเพื่อ<wbr>ความพึงพอใจของตนเอง&nbsp;&nbsp;บรรทัดฐานแห่งความสำเร็จของท่านอยู่ที่ความพึงพอใจ<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงเป็น&nbsp;&nbsp;<i>สนฺนฺยาสี</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ที่สมบูรณ์&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ผู้ทรงเป็น<wbr>เครื่องหมายของความสมบูรณ์สูงสุดแห่งความเสียสละ&nbsp;&nbsp;ทรงภาวนาดังนี้
+  พวก&nbsp;&nbsp;<span class="slant iast">sannyāsī</span><span class="slant pali">สนฺนฺยาสี</span><span class="slant thai">สันนยาสี</span><span class="slant ram">สันนยาสี</span>&nbsp;&nbsp;บางครั้งคิดอย่างผิดธรรมชาติว่าตนเองได้หลุดพ้นแล้วจาก<wbr>หน้าที่ทางวัตถุทั้งมวล&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จึงหยุดการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">agnihotra&nbsp;&nbsp;yajña</span><span class="slant pali">อคฺนิโหตฺรยชฺญ</span><span class="slant thai">อัคนิโหตระยัชญะ</span><span class="slant ram">zzzยะกยะ,ยชฺญ</span>&nbsp;&nbsp;(บูชาไฟ&nbsp;&nbsp;)&nbsp;&nbsp;แต่อัน<wbr>ที่จริงพวกนี้เห็นแก่ตัวเพราะจุดมุ่งหมายเพื่อต้องการมาเป็นหนึ่งเดียวกับ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;อัน<wbr>ไร้รูปลักษณ์&nbsp;&nbsp;ความต้องการเช่นนี้ยิ่งใหญ่กว่าความต้องการใด&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;แต่มิใช่ว่า<wbr>ปราศจากความเห็นแก่ตัว&nbsp;&nbsp;เช่นเดียวกัน&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ผู้มีฤทธิ์ฝึกปฏิบัติตามระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ด้วยการ<wbr>ลืมตาครึ่งหนึ่ง&nbsp;&nbsp;หยุดกิจกรรมทางวัตถุทั้งหมด&nbsp;&nbsp;ปรารถนาความพึงพอใจบางประการ<wbr>สำหรับตนเอง&nbsp;&nbsp;แต่บุคคลผู้ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกทำงานเพื่อความพึงพอใจของส่วน<wbr>รวมที่สมบูรณ์โดยไม่เห็นแก่ตัว&nbsp;&nbsp;บุคคลผู้มี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไม่มีความปรารถนาเพื่อ<wbr>ความพึงพอใจของตนเอง&nbsp;&nbsp;บรรทัดฐานแห่งความสำเร็จของท่านอยู่ที่ความพึงพอใจ<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ท่านจึงเป็น&nbsp;&nbsp;<span class="slant iast">sannyāsī</span><span class="slant pali">สนฺนฺยาสี</span><span class="slant thai">สันนยาสี</span><span class="slant ram">สันนยาสี</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ที่สมบูรณ์&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ผู้ทรงเป็น<wbr>เครื่องหมายของความสมบูรณ์สูงสุดแห่งความเสียสละ&nbsp;&nbsp;ทรงภาวนาดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น ธนํ น ชนํ น สุนฺทรีํ</i><br /><i>กวิตาํ วา ชคทฺ-อีศ กามเย</i><br /><i>มม ชนฺมนิ ชนฺมนีศฺวเร</i><br /><i>ภวตาทฺ ภกฺติรฺ อไหตุกี ตฺวยิ</i>
+<span class="slant iast">na dhanaṁ na janaṁ na sundarīṁ<br /></span>
+<span class="slant pali">น ธนํ น ชนํ น สุนฺทรีํ<br /></span>
+<span class="slant thai">นะ ธะนัง นะ ชะนัง นะ สุนทะรีง<br /></span>
+<span class="slant ram">นะ ดฺะนัม นะ จะนัม นะ สุนดะรีม<br /></span>
+<span class="slant iast">kavitāṁ vā jagad-īśa kāmaye<br /></span>
+<span class="slant pali">กวิตำ วา ชคทฺ-อีศ กามเย<br /></span>
+<span class="slant thai">กะวิตาง วา ชะคัท-อีศะ กามะเย<br /></span>
+<span class="slant ram">คะวิทาม วา จะกัด-อีชะ คามะเยฺ<br /></span>
+<span class="slant iast">mama janmani janmanīśvare<br /></span>
+<span class="slant pali">มม ชนฺมนิ ชนฺมนีศฺวเร<br /></span>
+<span class="slant thai">มะมะ ชันมะนิ ชันมะนีศวะเร<br /></span>
+<span class="slant ram">มะมะ จันมะนิ จันมะนีชวะเร<br /></span>
+<span class="slant iast">bhavatād bhaktir ahaitukī tvayi<br /></span>
+<span class="slant pali">ภวตาทฺ ภกฺติรฺ อไหตุกี ตฺวยิ<br /></span>
+<span class="slant thai">ภะวะตาท ภักติร อะไหตุกี ตวะยิ<br /></span>
+<span class="slant ram">บฺะวะทาด บัฺคธิร อไฮทุคี ทวะยิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “โอ้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้ทรงเดช&nbsp;&nbsp;ข้าพเจ้าไม่ปรารถนาสะสมทรัพย์&nbsp;&nbsp;ไม่ปรารถนาหาความสุข<wbr>กับหญิงงาม&nbsp;&nbsp;และไม่ปรารถนาสานุศิษย์มากมาย&nbsp;&nbsp;สิ่งเดียวที่ปรารถนาคือพระเมตตาอัน<wbr>หาที่สุดมิได้ที่ให้ข้าพเจ้าได้อุทิศตนเสียสละรับใช้พระองค์ตลอดทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชาติไป”
+  “โอ้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้ทรงเดช&nbsp;&nbsp;ข้าพเจ้าไม่ปรารถนาสะสมทรัพย์&nbsp;&nbsp;ไม่ปรารถนาหาความสุข<wbr>กับหญิงงาม&nbsp;&nbsp;และไม่ปรารถนาสานุศิษย์มากมาย&nbsp;&nbsp;สิ่งเดียวที่ปรารถนาคือพระเมตตาอัน<wbr>หาที่สุดมิได้ที่ให้ข้าพเจ้าได้อุทิศตนเสียสละรับใช้พระองค์ตลอดทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชาติไป”
   </p>
 </div>
 

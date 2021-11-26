@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.21</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อวฺยโกฺต ′กฺษร อิตฺยฺ อุกฺตสฺ</i><br /><i>ตมฺ อาหุฮ ปรมาํ คติมฺ</i><br /><i>ยํ ปฺราปฺย น นิวรฺตเนฺต</i><br /><i>ตทฺ ธาม ปรมํ มม</i>
+<span class="slant iast">avyakto ’kṣara ity uktas<br /></span>
+<span class="slant pali">อวฺยกฺโต ’กฺษร อิตฺยฺ อุกฺตสฺ<br /></span>
+<span class="slant thai">อัวยักโต ’กษะระ อิตย อุกตัส<br /></span>
+<span class="slant ram">อัพยัคโท คชะระ อิทิ อุคทัส<br /></span>
+<span class="slant iast">tam āhuḥ paramāṁ gatim<br /></span>
+<span class="slant pali">ตมฺ อาหุห์ ปรมำ คติมฺ<br /></span>
+<span class="slant thai">ตัม อาหุห์ ปะระมาง คะติม<br /></span>
+<span class="slant ram">ทัม อาฮุฮ พะระมาม กะทิม<br /></span>
+<span class="slant iast">yaṁ prāpya na nivartante<br /></span>
+<span class="slant pali">ยํ ปฺราปฺย น นิวรฺตนฺเต<br /></span>
+<span class="slant thai">ยัง ปราปยะ นะ นิวัรตันเต<br /></span>
+<span class="slant ram">ยัม พราพยะ นะ นิวารทันเท<br /></span>
+<span class="slant iast">tad dhāma paramaṁ mama<br /></span>
+<span class="slant pali">ตทฺ ธาม ปรมํ มม<br /></span>
+<span class="slant thai">ตัท ธามะ ปะระมัง มะมะ<br /></span>
+<span class="slant ram">ทัด ดฺามะ พะระมัม มะมะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อวฺยกฺตฮ</i> — ไม่ปรากฏ, <i>อกฺษรฮ</i> — ไม่มีผิดพลาด, <i>อิติ</i> — ดังนั้น, <i>อุกฺตฮ</i> — กล่าวไว้ว่า, <i>ตมฺ</i> — นั้น, <i>อาหุฮ</i> — รู้, <i>ปรมามฺ</i> — สูงสุด, <i>คติมฺ</i> — จุดมุ่งหมาย, <i>ยมฺ</i> — ซึ่ง, <i>ปฺราปฺย</i> — ได้รับ, <i>น</i> — ไม่ เคย, <i>นิวรฺตเนฺต</i> — กลับมา, <i>ตตฺ</i> — นั้น, <i>ธาม</i> — ตำหนัก, <i>ปรมมฺ</i> — สูงสุด, <i>มม</i> — ของข้า
+  <span class="slant iast">avyaktaḥ</span><span class="slant pali">อวฺยกฺตห์</span><span class="slant thai">อัวยักตะห์</span><span class="slant ram">อัพยัคทะฮ</span> — ไม่ปรากฏ, <span class="slant iast">akṣaraḥ</span><span class="slant pali">อกฺษรห์</span><span class="slant thai">อักษะระห์</span><span class="slant ram">อัคชะระฮ</span> — ไม่มีผิดพลาด, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">uktaḥ</span><span class="slant pali">อุกฺตห์</span><span class="slant thai">อุกตะห์</span><span class="slant ram">อุคทะฮ</span> — กล่าวไว้ว่า, <span class="slant iast">tam</span><span class="slant pali">ตมฺ</span><span class="slant thai">ตัม</span><span class="slant ram">ทัม</span> — นั้น, <span class="slant iast">āhuḥ</span><span class="slant pali">อาหุห์</span><span class="slant thai">อาหุห์</span><span class="slant ram">อาฮุร</span> — รู้, <span class="slant iast">paramām</span><span class="slant pali">ปรมามฺ</span><span class="slant thai">ปะระมาม</span><span class="slant ram">พะระมาม</span> — สูงสุด, <span class="slant iast">gatim</span><span class="slant pali">คติมฺ</span><span class="slant thai">คะติม</span><span class="slant ram">กะทิม</span> — จุดมุ่งหมาย, <span class="slant iast">yam</span><span class="slant pali">ยมฺ</span><span class="slant thai">ยัม</span><span class="slant ram">ยัม</span> — ซึ่ง, <span class="slant iast">prāpya</span><span class="slant pali">ปฺราปฺย</span><span class="slant thai">ปราปยะ</span><span class="slant ram">พราพยะ</span> — ได้รับ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่ เคย, <span class="slant iast">nivartante</span><span class="slant pali">นิวรฺตนฺเต</span><span class="slant thai">นิวัรตันเต</span><span class="slant ram">นิวารทันเท</span> — กลับมา, <span class="slant iast">tat</span><span class="slant pali">ตตฺ</span><span class="slant thai">ตัต</span><span class="slant ram">ทัท</span> — นั้น, <span class="slant iast">dhāma</span><span class="slant pali">ธาม</span><span class="slant thai">ธามะ</span><span class="slant ram">ดฺามะ</span> — ตำหนัก, <span class="slant iast">paramam</span><span class="slant pali">ปรมมฺ</span><span class="slant thai">ปะระมัม</span><span class="slant ram">พะระมัม</span> — สูงสุด, <span class="slant iast">mama</span><span class="slant pali">มม</span><span class="slant thai">มะมะ</span><span class="slant ram">มะมะ</span> — ของข้า
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  สถานที่ซึ่งผู้รู้พระ&nbsp;&nbsp;<i>เวทานฺติสฺตฺ</i>&nbsp;&nbsp;อธิบายว่าไม่ปรากฏ&nbsp;&nbsp;ไม่มีข้อผิดพลาด&nbsp;&nbsp;และเป็นจุดมุ่งหมายสูงสุด&nbsp;&nbsp;สถานที่ซึ่งเมื่อไปถึงแล้ว&nbsp;&nbsp;เขาจะไม่กลับมาอีก&nbsp;&nbsp;นั่นคือพระตำหนักสูงสุดของข้า
+  สถานที่ซึ่งผู้รู้พระ&nbsp;&nbsp;<span class="slant iast">vedāntist</span><span class="slant pali">เวทานฺติสฺตฺ</span><span class="slant thai">เวทานติสต</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;อธิบายว่าไม่ปรากฏ&nbsp;&nbsp;ไม่มีข้อผิดพลาด&nbsp;&nbsp;และเป็นจุดมุ่งหมายสูงสุด&nbsp;&nbsp;สถานที่ซึ่งเมื่อไปถึงแล้ว&nbsp;&nbsp;เขาจะไม่กลับมาอีก&nbsp;&nbsp;นั่นคือพระตำหนักสูงสุดของข้า
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พระตำหนักสูงสุดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ได้อธิบายไว้ใน&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<i>จินฺตามณิ-ธาม</i>&nbsp;&nbsp;สถานที่ที่ความปรารถนาทั้งหมดได้รับการ<wbr>ตอบสนอง&nbsp;&nbsp;พระตำหนักสูงสุดขององค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มีชื่อว่า&nbsp;&nbsp;<i>โคโลก</i>&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;ซึ่งเต็มไป<wbr>ด้วยราชวังที่ทำด้วยมณีทิพย์&nbsp;&nbsp;มีต้นไม้เรียกว่า&nbsp;&nbsp;“ต้นสมใจนึก”&nbsp;&nbsp;ที่ให้ผลทุกชนิดตามอุปสงค์<wbr>ของเรา&nbsp;&nbsp;มีฝูงวัวชื่อ&nbsp;&nbsp;<i>สุรภิ</i>&nbsp;&nbsp;ที่ให้ปริมาณนำ้นมอย่างไม่จำกัด&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่พระตำหนักนี้มีเทพธิดา<wbr>แห่งโชคลาภ&nbsp;&nbsp;(ลัคชมี)&nbsp;&nbsp;เป็นร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์คอยรับใช้&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงพระนามว่า<wbr>&nbsp;&nbsp;<i>โควินฺท</i>&nbsp;&nbsp;พระปฐมองค์เจ้าผู้ทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;ทรงเคยชิน<wbr>อยู่กับการทรงขลุ่ย&nbsp;&nbsp;(<i>เวณุํ&nbsp;&nbsp;กฺวณนฺตมฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;รูปลักษณ์ทิพย์ของพระองค์มีเสน่ห์สูงสุดในทั่ว<wbr>ทุกโลก&nbsp;&nbsp;พระเนตรของพระองค์คล้ายกลีบดอกบัว&nbsp;&nbsp;สีผิวคล้ายสีเมฆ&nbsp;&nbsp;ทรงมีเสน่ห์มาก<wbr>จนความสง่างามของพระองค์นั้นล้ำเลิศเกินกว่ากามเทพเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;พระองค์ทรง<wbr>อาภรณ์สีส้ม&nbsp;&nbsp;มีพวงมาลัยคล้องคอ&nbsp;&nbsp;และมีหางนกยูงประดับบนพระเศียร&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเกริ่นเพียงเล็กน้อยเกี่ยวกับพระตำหนักส่วนพระองค์&nbsp;&nbsp;<i>โคโลก</i>&nbsp;&nbsp;วิรินดา-<wbr>วะนะ&nbsp;&nbsp;ซึ่งเป็นดาวเคราะห์สูงสุดในโลกทิพย์&nbsp;&nbsp;<i>พฺรหฺม-สํหิตา</i>&nbsp;&nbsp;ได้พรรณนาไว้อย่างชัดเจนวรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;(<i>กฐ&nbsp;&nbsp;อุปนิษทฺ&nbsp;&nbsp;1.3.11</i>&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวว่าไม่มีสิ่งอื่นใดเหนือไปกว่าพระ<wbr>ตำหนักขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และพระตำหนักนั้นคือจุดมุ่งหมายสูงสุด&nbsp;&nbsp;(<i>ปุรุษานฺ&nbsp;&nbsp;น&nbsp;&nbsp;ปรํ&nbsp;&nbsp;กิญฺจิตฺ&nbsp;&nbsp;สา&nbsp;&nbsp;กาษฺฐา&nbsp;&nbsp;ปรมา&nbsp;&nbsp;คติฮ</i>&nbsp;&nbsp;)&nbsp;&nbsp;เมื่อผู้ใดบรรลุถึงจะไม่กลับมาในโลกวัตถุนี้อีก&nbsp;&nbsp;พระตำหนัก<wbr>สูงสุดของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;และพระวรกายของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่มีข้อแตกต่าง&nbsp;&nbsp;เพราะมีคุณสมบัติเหมือน<wbr>กัน&nbsp;&nbsp;ในโลกนี้&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;อยู่ห่างจากรุงเดลฮี&nbsp;&nbsp;ไปทางตะวันออกเฉียงใต้เก้าสิบไมล์ซึ่ง<wbr>เป็นรูปจำลองของ&nbsp;&nbsp;<i>โคโลก</i>&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;สูงสุดจากท้องฟ้าทิพย์&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เสด็จมา<wbr>บนโลกนี้&nbsp;&nbsp;พระองค์ทรงเล่นกีฬาบนแผ่นดินที่มีชื่อว่า&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;ซึ่งมีเนื้อที่<wbr>ประมาณแปดสิบสี่ตารางไมล์ในจังหวัด&nbsp;&nbsp;<i>มตฺหุรา</i>&nbsp;&nbsp;ประเทศอินเดีย
+  พระตำหนักสูงสุดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ได้อธิบายไว้ใน&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<span class="slant iast">cintāmaṇi-dhāma</span><span class="slant pali">จินฺตามณิ-ธาม</span><span class="slant thai">จินตามะณิ-ธามะ</span><span class="slant ram">zzz-ดฺามะ</span>&nbsp;&nbsp;สถานที่ที่ความปรารถนาทั้งหมดได้รับการ<wbr>ตอบสนอง&nbsp;&nbsp;พระตำหนักสูงสุดขององค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มีชื่อว่า&nbsp;&nbsp;<span class="slant iast">goloka</span><span class="slant pali">โคโลก</span><span class="slant thai">โคโลกะ</span><span class="slant ram">โกโลคะ</span>&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;ซึ่งเต็มไป<wbr>ด้วยราชวังที่ทำด้วยมณีทิพย์&nbsp;&nbsp;มีต้นไม้เรียกว่า&nbsp;&nbsp;“ต้นสมใจนึก”&nbsp;&nbsp;ที่ให้ผลทุกชนิดตามอุปสงค์<wbr>ของเรา&nbsp;&nbsp;มีฝูงวัวชื่อ&nbsp;&nbsp;<span class="slant iast">surabhi</span><span class="slant pali">สุรภิ</span><span class="slant thai">สุระภิ</span><span class="slant ram">สุระบิฺ</span>&nbsp;&nbsp;ที่ให้ปริมาณนำ้นมอย่างไม่จำกัด&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่พระตำหนักนี้มีเทพธิดา<wbr>แห่งโชคลาภ&nbsp;&nbsp;(ลัคชมี)&nbsp;&nbsp;เป็นร้อย&nbsp;&nbsp;ๆ&nbsp;&nbsp;พัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์คอยรับใช้&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงพระนามว่า<wbr>&nbsp;&nbsp;<span class="slant iast">govinda</span><span class="slant pali">โควินฺท</span><span class="slant thai">โควินทะ</span><span class="slant ram">โกวินดะ</span>&nbsp;&nbsp;พระปฐมองค์เจ้าผู้ทรงเป็นแหล่งกำเนิดของแหล่งกำเนิดทั้งปวง&nbsp;&nbsp;ทรงเคยชิน<wbr>อยู่กับการทรงขลุ่ย&nbsp;&nbsp;(<span class="slant iast">veṇuṁ&nbsp;&nbsp;kvaṇantam</span><span class="slant pali">เวณุํกฺวณนฺตมฺ</span><span class="slant thai">เวณุงกวะณันตัม</span><span class="slant ram">zzzzzz</span>&nbsp;&nbsp;)&nbsp;&nbsp;รูปลักษณ์ทิพย์ของพระองค์มีเสน่ห์สูงสุดในทั่ว<wbr>ทุกโลก&nbsp;&nbsp;พระเนตรของพระองค์คล้ายกลีบดอกบัว&nbsp;&nbsp;สีผิวคล้ายสีเมฆ&nbsp;&nbsp;ทรงมีเสน่ห์มาก<wbr>จนความสง่างามของพระองค์นั้นล้ำเลิศเกินกว่ากามเทพเป็นพัน&nbsp;&nbsp;ๆ&nbsp;&nbsp;องค์&nbsp;&nbsp;พระองค์ทรง<wbr>อาภรณ์สีส้ม&nbsp;&nbsp;มีพวงมาลัยคล้องคอ&nbsp;&nbsp;และมีหางนกยูงประดับบนพระเศียร&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเกริ่นเพียงเล็กน้อยเกี่ยวกับพระตำหนักส่วนพระองค์&nbsp;&nbsp;<span class="slant iast">goloka</span><span class="slant pali">โคโลก</span><span class="slant thai">โคโลกะ</span><span class="slant ram">โกโลคะ</span>&nbsp;&nbsp;วิรินดา-<wbr>วะนะ&nbsp;&nbsp;ซึ่งเป็นดาวเคราะห์สูงสุดในโลกทิพย์&nbsp;&nbsp;<span class="slant iast">brahma-saṁhitā</span><span class="slant pali">พฺรหฺม-สํหิตา</span><span class="slant thai">พรัหมะ-สังหิตา</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;ได้พรรณนาไว้อย่างชัดเจนวรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;(<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad&nbsp;&nbsp;1.3.11</span><span class="slant pali">กฐอุปนิษทฺ๑ฯ๓ฯ๑๑</span><span class="slant thai">กะฐะอุปะนิษัท๑ฯ๓ฯ๑๑</span><span class="slant ram">1.3.11</span>&nbsp;&nbsp;)&nbsp;&nbsp;กล่าวว่าไม่มีสิ่งอื่นใดเหนือไปกว่าพระ<wbr>ตำหนักขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และพระตำหนักนั้นคือจุดมุ่งหมายสูงสุด&nbsp;&nbsp;(<span class="slant iast">puruṣān&nbsp;&nbsp;na&nbsp;&nbsp;paraṁ&nbsp;&nbsp;kiñcit&nbsp;&nbsp;sā&nbsp;&nbsp;kāṣṭhā&nbsp;&nbsp;paramā&nbsp;&nbsp;gatiḥ</span><span class="slant pali">ปุรุษานฺนปรํกิญฺจิตฺสากาษฺฐาปรมาคติห์</span><span class="slant thai">ปุรุษานนะปะรังกิญจิตสากาษฐาปะระมาคะติห์</span><span class="slant ram">zzzนะคินชิทสาzzzกะทิฮ</span>&nbsp;&nbsp;)&nbsp;&nbsp;เมื่อผู้ใดบรรลุถึงจะไม่กลับมาในโลกวัตถุนี้อีก&nbsp;&nbsp;พระตำหนัก<wbr>สูงสุดของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;และพระวรกายของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่มีข้อแตกต่าง&nbsp;&nbsp;เพราะมีคุณสมบัติเหมือน<wbr>กัน&nbsp;&nbsp;ในโลกนี้&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;อยู่ห่างจากรุงเดลฮี&nbsp;&nbsp;ไปทางตะวันออกเฉียงใต้เก้าสิบไมล์ซึ่ง<wbr>เป็นรูปจำลองของ&nbsp;&nbsp;<span class="slant iast">goloka</span><span class="slant pali">โคโลก</span><span class="slant thai">โคโลกะ</span><span class="slant ram">โกโลคะ</span>&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;สูงสุดจากท้องฟ้าทิพย์&nbsp;&nbsp;เมื่อ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เสด็จมา<wbr>บนโลกนี้&nbsp;&nbsp;พระองค์ทรงเล่นกีฬาบนแผ่นดินที่มีชื่อว่า&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;โดยเฉพาะ&nbsp;&nbsp;ซึ่งมีเนื้อที่<wbr>ประมาณแปดสิบสี่ตารางไมล์ในจังหวัด&nbsp;&nbsp;<span class="slant iast">mathurā</span><span class="slant pali">มถุรา</span><span class="slant thai">มะถุรา</span><span class="slant ram">มะทํุรา</span>&nbsp;&nbsp;ประเทศอินเดีย
   </p>
 </div>
 

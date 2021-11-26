@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สรฺวมฺ เอตทฺ ฤตํ มเนฺย</i><br /><i>ยนฺ มาํ วทสิ เกศว</i><br /><i>น หิ เต ภควนฺ วฺยกฺติํ</i><br /><i>วิทุรฺ เทวา น ทานวาฮ</i>
+<span class="slant iast">sarvam etad ṛtaṁ manye<br /></span>
+<span class="slant pali">สรฺวมฺ เอตทฺ ฤตํ มเนฺย<br /></span>
+<span class="slant thai">สัรวัม เอตัท ฤตัง มันเย<br /></span>
+<span class="slant ram">สารวัม เอทัด ริทัม มันเยฺ<br /></span>
+<span class="slant iast">yan māṁ vadasi keśava<br /></span>
+<span class="slant pali">ยนฺ มำ วทสิ เกศว<br /></span>
+<span class="slant thai">ยัน มาง วะทะสิ เกศะวะ<br /></span>
+<span class="slant ram">ยัน มาม วะดะสิ เคชะวะ<br /></span>
+<span class="slant iast">na hi te bhagavan vyaktiṁ<br /></span>
+<span class="slant pali">น หิ เต ภควนฺ วฺยกฺตึ<br /></span>
+<span class="slant thai">นะ หิ เต ภะคะวัน วยักติง<br /></span>
+<span class="slant ram">นะ ฮิ เท บฺะกะวาน วิยัคทิม<br /></span>
+<span class="slant iast">vidur devā na dānavāḥ<br /></span>
+<span class="slant pali">วิทุรฺ เทวา น ทานวาห์<br /></span>
+<span class="slant thai">วิทุร เทวา นะ ทานะวาห์<br /></span>
+<span class="slant ram">วิดุร เดวา นะ ดานะวาฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สรฺวมฺ</i> — ทั้งหมด, <i>เอตตฺ</i> — นี้, <i>ฤตมฺ</i> — ความจริง, <i>มเนฺย</i> — ข้ายอมรับ, <i>ยตฺ</i> — ซึ่ง, <i>มามฺ</i> — แด่ ข้า, <i>วทสิ</i> — พระองค์ตรัส, <i>เกศว</i> — โอ้ <i>กฺฤษฺณ</i>, <i>น</i> — ไม่เคย, <i>หิ</i> — แน่นอน, <i>เต</i> — ของ พระองค์, <i>ภควนฺ</i> — โอ้ องค์ภควาน, <i>วฺยกฺติมฺ</i> — เปิดเผย, <i>วิทุฮ</i> — สามารถรู้, <i>เทวาฮ</i> — เหล่าเทวดา, <i>น</i> — ไม่, <i>ทานวาฮ</i> — เหล่ามาร
+  <span class="slant iast">sarvam</span><span class="slant pali">สรฺวมฺ</span><span class="slant thai">สัรวัม</span><span class="slant ram">สารวัม</span> — ทั้งหมด, <span class="slant iast">etat</span><span class="slant pali">เอตตฺ</span><span class="slant thai">เอตัต</span><span class="slant ram">เอทัท</span> — นี้, <span class="slant iast">ṛtam</span><span class="slant pali">ฤตมฺ</span><span class="slant thai">ฤตัม</span><span class="slant ram">ริทัม</span> — ความจริง, <span class="slant iast">manye</span><span class="slant pali">มเนฺย</span><span class="slant thai">มันเย</span><span class="slant ram">มันเย</span> — ข้ายอมรับ, <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — ซึ่ง, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — แด่ ข้า, <span class="slant iast">vadasi</span><span class="slant pali">วทสิ</span><span class="slant thai">วะทะสิ</span><span class="slant ram">วะดะสิ</span> — พระองค์ตรัส, <span class="slant iast">keśava</span><span class="slant pali">เกศว</span><span class="slant thai">เกศะวะ</span><span class="slant ram">เคชะวะ</span> — โอ้ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของ พระองค์, <span class="slant iast">bhagavan</span><span class="slant pali">ภควนฺ</span><span class="slant thai">ภะคะวัน</span><span class="slant ram">บฺะกะวาน</span> — โอ้ องค์ภควาน, <span class="slant iast">vyaktim</span><span class="slant pali">วฺยกฺติมฺ</span><span class="slant thai">วยักติม</span><span class="slant ram">วิยัคทิม</span> — เปิดเผย, <span class="slant iast">viduḥ</span><span class="slant pali">วิทุห์</span><span class="slant thai">วิทุห์</span><span class="slant ram">วิดุฮ</span> — สามารถรู้, <span class="slant iast">devāḥ</span><span class="slant pali">เทวาห์</span><span class="slant thai">เทวาห์</span><span class="slant ram">เดวาฮ</span> — เหล่าเทวดา, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">dānavāḥ</span><span class="slant pali">ทานวาห์</span><span class="slant thai">ทานะวาห์</span><span class="slant ram">ดานะวาฮ</span> — เหล่ามาร
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  โอ้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ข้าพเจ้ายอมรับโดยดุษฎีว่าทั้งหมดที่พระองค์ตรัสต่อข้าเป็นความจริงโอ้&nbsp;&nbsp;องค์ภควาน&nbsp;&nbsp;ทั้งเหล่าเทวดาหรือมารก็ไม่สามารถเข้าใจบุคลิกภาพแห่งพระองค์
+  โอ้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ข้าพเจ้ายอมรับโดยดุษฎีว่าทั้งหมดที่พระองค์ตรัสต่อข้าเป็นความจริงโอ้&nbsp;&nbsp;องค์ภควาน&nbsp;&nbsp;ทั้งเหล่าเทวดาหรือมารก็ไม่สามารถเข้าใจบุคลิกภาพแห่งพระองค์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงยืนยันว่าบุคคลที่ไม่มีศรัทธาและมีธรรมชาติเป็นมารไม่<wbr>สามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แม้แต่เหล่าเทวดายังไม่รู้จักพระองค์&nbsp;&nbsp;แล้วพวกที่สมมุติว่าเป็น<wbr>นักวิชาการทางโลกสมัยปัจจุบันนี้จะรู้จักพระองค์ได้อย่างไร?&nbsp;&nbsp;ด้วยพระกรุณาธิคุณ<wbr>ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทำให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เข้าใจว่าสัจธรรมสูงสุดคือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ผู้ทรงมีความสมบูรณ์ฉะนั้น&nbsp;&nbsp;เราควรปฏิบัติตามวิถีทางของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ซึ่งได้รับการยอมรับว่าเป็นผู้ที่เชื่อถือได้<wbr>แห่ง&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ดังที่ได้อธิบายไว้ในบทที่สี่ว่าระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;เพื่อให้เข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ได้สูญหายไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงสถาปนาระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;ขึ้นมาใหม่&nbsp;&nbsp;เริ่มต้นจาก<wbr>&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เพราะทรงพิจารณาว่าอารุจนะเป็นทั้งเพื่อนและสาวกผู้ยิ่งใหญ่ของพระองค์ฉะนั้น&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในคำนำ&nbsp;&nbsp;<i>คีโตปนิษทฺ</i>&nbsp;&nbsp;ของเราว่าควรเข้าใจ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ตามสาย<wbr>ระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;เมื่อระบบ&nbsp;&nbsp;<i>ปรมฺปรา</i>&nbsp;&nbsp;สูญหายไป&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ได้รับการคัดเลือกให้เป็น<wbr>ผู้ฟื้นฟูขึ้นมาใหม่&nbsp;&nbsp;การที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงยอมรับทุกสิ่งทุกอย่างที่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ควรรับเอาเป็น<wbr>เยี่ยงอย่าง&nbsp;&nbsp;จากนั้นเราจะสามารถเข้าใจเนื้อหาสาระสำคัญของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ด้วยวิธีนี้<wbr>เท่านั้นที่เราสามารถเข้าใจว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  ณ&nbsp;&nbsp;ที่นี้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงยืนยันว่าบุคคลที่ไม่มีศรัทธาและมีธรรมชาติเป็นมารไม่<wbr>สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แม้แต่เหล่าเทวดายังไม่รู้จักพระองค์&nbsp;&nbsp;แล้วพวกที่สมมุติว่าเป็น<wbr>นักวิชาการทางโลกสมัยปัจจุบันนี้จะรู้จักพระองค์ได้อย่างไร?&nbsp;&nbsp;ด้วยพระกรุณาธิคุณ<wbr>ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทำให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เข้าใจว่าสัจธรรมสูงสุดคือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ผู้ทรงมีความสมบูรณ์ฉะนั้น&nbsp;&nbsp;เราควรปฏิบัติตามวิถีทางของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ซึ่งได้รับการยอมรับว่าเป็นผู้ที่เชื่อถือได้<wbr>แห่ง&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ดังที่ได้อธิบายไว้ในบทที่สี่ว่าระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;เพื่อให้เข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ได้สูญหายไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงสถาปนาระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;ขึ้นมาใหม่&nbsp;&nbsp;เริ่มต้นจาก<wbr>&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เพราะทรงพิจารณาว่าอารุจนะเป็นทั้งเพื่อนและสาวกผู้ยิ่งใหญ่ของพระองค์ฉะนั้น&nbsp;&nbsp;ดังที่ได้กล่าวไว้ในคำนำ&nbsp;&nbsp;<span class="slant iast">gītopaniṣad</span><span class="slant pali">คีโตปนิษทฺ</span><span class="slant thai">คีโตปะนิษัท</span><span class="slant ram">กีโทพะนิชัด</span>&nbsp;&nbsp;ของเราว่าควรเข้าใจ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ตามสาย<wbr>ระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;เมื่อระบบ&nbsp;&nbsp;<span class="slant iast">paramparā</span><span class="slant pali">ปรมฺปรา</span><span class="slant thai">ปะรัมปะรา</span><span class="slant ram">มพะรา</span>&nbsp;&nbsp;สูญหายไป&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ได้รับการคัดเลือกให้เป็น<wbr>ผู้ฟื้นฟูขึ้นมาใหม่&nbsp;&nbsp;การที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงยอมรับทุกสิ่งทุกอย่างที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัส&nbsp;&nbsp;ควรรับเอาเป็น<wbr>เยี่ยงอย่าง&nbsp;&nbsp;จากนั้นเราจะสามารถเข้าใจเนื้อหาสาระสำคัญของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ด้วยวิธีนี้<wbr>เท่านั้นที่เราสามารถเข้าใจว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 

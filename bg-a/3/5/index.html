@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น หิ กศฺจิตฺ กฺษณมฺ อปิ</i><br /><i>ชาตุ ติษฺฐตฺยฺ อกรฺม-กฺฤตฺ</i><br /><i>การฺยเต หฺยฺ อวศฮ กรฺม</i><br /><i>สรฺวฮ ปฺรกฺฤติ-ไชรฺ คุไณฮ</i>
+<span class="slant iast">na hi kaścit kṣaṇam api<br /></span>
+<span class="slant pali">น หิ กศฺจิตฺ กฺษณมฺ อปิ<br /></span>
+<span class="slant thai">นะ หิ กัศจิต กษะณัม อะปิ<br /></span>
+<span class="slant ram">นะ ฮิ คัชชิท คชะณัม อพิ<br /></span>
+<span class="slant iast">jātu tiṣṭhaty akarma-kṛt<br /></span>
+<span class="slant pali">ชาตุ ติษฺฐตฺยฺ อกรฺม-กฺฤตฺ<br /></span>
+<span class="slant thai">ชาตุ ติษฐัตย อะกัรมะ-กฤต<br /></span>
+<span class="slant ram">จาทุ ทิชทฺะทิ อคารมะ-คริทฺ<br /></span>
+<span class="slant iast">kāryate hy avaśaḥ karma<br /></span>
+<span class="slant pali">การฺยเต หฺยฺ อวศห์ กรฺม<br /></span>
+<span class="slant thai">การยะเต หย อะวะศะห์ กัรมะ<br /></span>
+<span class="slant ram">คารยะเท ฮิ อวะชะฮ คารมะ<br /></span>
+<span class="slant iast">sarvaḥ prakṛti-jair guṇaiḥ<br /></span>
+<span class="slant pali">สรฺวห์ ปฺรกฺฤติ-ไชรฺ คุไณห์<br /></span>
+<span class="slant thai">สัรวะห์ ปรักฤติ-ไชร คุไณห์<br /></span>
+<span class="slant ram">สารวะฮ พระคริทิ-ไจร กุไณฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่, <i>หิ</i> — แน่นอน, <i>กศฺจิตฺ</i> — ทุกคน, <i>กฺษณมฺ</i> — ชั่วครู่, <i>อปิ</i> — เช่นกัน, <i>ชาตุ</i> — ไม่ว่าในเวลา ใด, <i>ติษฺฐติ</i> — คงอยู่, <i>อกรฺม-กฺฤตฺ</i> — ไม่ทำอะไร, <i>การฺยเต</i> — ถูกบังคับให้ทำ, <i>หิ</i> — แน่นอน, <i>อวศฮ</i> — อย่างช่วยไม่ได้, <i>กรฺม</i> — งาน, <i>สรฺวฮ</i> — ทั้งหมด, <i>ปฺรกฺฤติ-ไชฮ</i> — เกิดขึ้นจาก ระดับของธรรมชาติวัตถุ, <i>คุไณฮ</i> — โดยคุณสมบัติ
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">kaścit</span><span class="slant pali">กศฺจิตฺ</span><span class="slant thai">กัศจิต</span><span class="slant ram">คัชชิท</span> — ทุกคน, <span class="slant iast">kṣaṇam</span><span class="slant pali">กฺษณมฺ</span><span class="slant thai">กษะณัม</span><span class="slant ram">คชะณัม</span> — ชั่วครู่, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — เช่นกัน, <span class="slant iast">jātu</span><span class="slant pali">ชาตุ</span><span class="slant thai">ชาตุ</span><span class="slant ram">จาทุ</span> — ไม่ว่าในเวลา ใด, <span class="slant iast">tiṣṭhati</span><span class="slant pali">ติษฺฐติ</span><span class="slant thai">ติษฐะติ</span><span class="slant ram">ทิชทฺะทิ</span> — คงอยู่, <span class="slant iast">akarma-kṛt</span><span class="slant pali">อกรฺม-กฺฤตฺ</span><span class="slant thai">อะกัรมะ-กฤต</span><span class="slant ram">อคารมะ-คริท</span> — ไม่ทำอะไร, <span class="slant iast">kāryate</span><span class="slant pali">การฺยเต</span><span class="slant thai">การยะเต</span><span class="slant ram">คารยะเท</span> — ถูกบังคับให้ทำ, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">avaśaḥ</span><span class="slant pali">อวศห์</span><span class="slant thai">อะวะศะห์</span><span class="slant ram">อวะชะฮ</span> — อย่างช่วยไม่ได้, <span class="slant iast">karma</span><span class="slant pali">กรฺม</span><span class="slant thai">กัรมะ</span><span class="slant ram">คารมะ</span> — งาน, <span class="slant iast">sarvaḥ</span><span class="slant pali">สรฺวห์</span><span class="slant thai">สัรวะห์</span><span class="slant ram">สารวะฮ</span> — ทั้งหมด, <span class="slant iast">prakṛti-jaiḥ</span><span class="slant pali">ปฺรกฺฤติ-ไชห์</span><span class="slant thai">ปรักฤติ-ไชห์</span><span class="slant ram">พระคริทิ-ไจฮ</span> — เกิดขึ้นจาก ระดับของธรรมชาติวัตถุ, <span class="slant iast">guṇaiḥ</span><span class="slant pali">คุไณห์</span><span class="slant thai">คุไณห์</span><span class="slant ram">กุไณฮ</span> — โดยคุณสมบัติ
   </p>
 </div>
 
@@ -73,19 +174,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ไม่ใช่ร่างกายแต่เป็นธรรมชาติของดวงวิญญาณที่มีความกระตือรือร้นอยู่เสมอหากดวงวิญญาณไม่อยู่ภายในร่างกาย&nbsp;&nbsp;ร่างกายก็ไม่สามารถขยับเขยื้อนเคลื่อนไหวได้ร่างกายเป็นเพียงพาหนะที่ไร้ชีวิตจำต้องให้ดวงวิญญาณเป็นผู้สั่งงาน&nbsp;&nbsp;ดวงวิญญาณเป็น<wbr>ผู้ที่มีความตื่นตัวอยู่เสมอไม่สามารถหยุดนิ่งได้แม้แต่เสี้ยววินาทีเดียว&nbsp;&nbsp;เมื่อเป็นเช่นนี้ดวง<wbr>วิญญาณควรปฎิบัติงานที่ดีใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;มิฉะนั้นดวงวิญญาณจะไปปฎิบัติใน<wbr>อาชีพการงานที่พลังงานแห่งความหลงเป็นผู้บงการ&nbsp;&nbsp;การไปสัมผัสกับพลังงานวัตถุ&nbsp;&nbsp;ดวง<wbr>วิญญาณจะได้รับระดับแห่งวัตถุเข้ามา&nbsp;&nbsp;และการจะทำให้ดวงวิญญาณบริสุทธิ์ขึ้นจาก<wbr>ความผูกพันเช่นนี้&nbsp;&nbsp;มีความจำเป็นที่จะต้องปฎิบัติหน้าที่ที่ได้กำหนดไว้ใน&nbsp;&nbsp;<i>ศาสฺตฺร</i>&nbsp;&nbsp;หาก<wbr>ดวงวิญญาณปฎิบัติหน้าที่ตามธรรมชาติของตนใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อะไรก็แล้วแต่ที่<wbr>สามารถทำได้จะเป็นสิ่งที่ดีสำหรับตนเอง&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(1.5.17)&nbsp;&nbsp;ยืนยันไว้ดังนี้
+  ไม่ใช่ร่างกายแต่เป็นธรรมชาติของดวงวิญญาณที่มีความกระตือรือร้นอยู่เสมอหากดวงวิญญาณไม่อยู่ภายในร่างกาย&nbsp;&nbsp;ร่างกายก็ไม่สามารถขยับเขยื้อนเคลื่อนไหวได้ร่างกายเป็นเพียงพาหนะที่ไร้ชีวิตจำต้องให้ดวงวิญญาณเป็นผู้สั่งงาน&nbsp;&nbsp;ดวงวิญญาณเป็น<wbr>ผู้ที่มีความตื่นตัวอยู่เสมอไม่สามารถหยุดนิ่งได้แม้แต่เสี้ยววินาทีเดียว&nbsp;&nbsp;เมื่อเป็นเช่นนี้ดวง<wbr>วิญญาณควรปฎิบัติงานที่ดีใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;มิฉะนั้นดวงวิญญาณจะไปปฎิบัติใน<wbr>อาชีพการงานที่พลังงานแห่งความหลงเป็นผู้บงการ&nbsp;&nbsp;การไปสัมผัสกับพลังงานวัตถุ&nbsp;&nbsp;ดวง<wbr>วิญญาณจะได้รับระดับแห่งวัตถุเข้ามา&nbsp;&nbsp;และการจะทำให้ดวงวิญญาณบริสุทธิ์ขึ้นจาก<wbr>ความผูกพันเช่นนี้&nbsp;&nbsp;มีความจำเป็นที่จะต้องปฎิบัติหน้าที่ที่ได้กำหนดไว้ใน&nbsp;&nbsp;<span class="slant iast">śāstra</span><span class="slant pali">ศาสฺตฺร</span><span class="slant thai">ศาสตระ</span><span class="slant ram">ชาสทระ</span>&nbsp;&nbsp;หาก<wbr>ดวงวิญญาณปฎิบัติหน้าที่ตามธรรมชาติของตนใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;อะไรก็แล้วแต่ที่<wbr>สามารถทำได้จะเป็นสิ่งที่ดีสำหรับตนเอง&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(1.5.17)&nbsp;&nbsp;ยืนยันไว้ดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตฺยกฺตฺวา สฺว-ธรฺมํ จรณามฺพุชํ หเรรฺ</i><br /><i>ภชนฺนฺ อปโกฺว ′ตฺห ปเตตฺ ตโต ยทิ</i><br /><i>ยตฺร กฺว วาภทฺรมฺ อภูทฺ อมุษฺย กิํ</i><br /><i>โก วารฺตฺห อาโปฺต ′ภชตาํ สฺว-ธรฺมตฮ</i>
+<span class="slant iast">tyaktvā sva-dharmaṁ caraṇāmbujaṁ harer<br /></span>
+<span class="slant pali">ตฺยกฺตฺวา สฺว-ธรฺมํ จรณามฺพุชํ หเรรฺ<br /></span>
+<span class="slant thai">ตยักตวา สวะ-ธัรมัง จะระณามพุชัง หะเรร<br /></span>
+<span class="slant ram">ทยัคทวา สวะ-ดฺารมัม ชะระณามบุจัม ฮะเรร<br /></span>
+<span class="slant iast">bhajann apakvo ’tha patet tato yadi<br /></span>
+<span class="slant pali">ภชนฺนฺ อปโกฺว ’ถ ปเตตฺ ตโต ยทิ<br /></span>
+<span class="slant thai">ภะชันน อะปักโว ’ถะ ปะเตต ตะโต ยะทิ<br /></span>
+<span class="slant ram">บฺะจันน อพัคโว ่ทฺะ พะเทท ทะโท ยะดิฺ<br /></span>
+<span class="slant iast">yatra kva vābhadram abhūd amuṣya kiṁ<br /></span>
+<span class="slant pali">ยตฺร กฺว วาภทฺรมฺ อภูทฺ อมุษฺย กึ<br /></span>
+<span class="slant thai">ยัตระ กวะ วาภัทรัม อะภูท อะมุษยะ กิง<br /></span>
+<span class="slant ram">ยะทระ ควะ วาบฺะดรัม อบํูด อมุชยะ คิม<br /></span>
+<span class="slant iast">ko vārtha āpto ’bhajatāṁ sva-dharmataḥ<br /></span>
+<span class="slant pali">โก วารฺถ อาปฺโต ’ภชตำ สฺว-ธรฺมตห์<br /></span>
+<span class="slant thai">โก วารถะ อาปโต ’ภะชะตาง สวะ-ธัรมะตะห์<br /></span>
+<span class="slant ram">โค วารทฺะ อาพโท ่บฺะจะทาม สะวะ ดฺารมะทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “หากผู้ใดเริ่มรับเอา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกมาปฎิบัติ&nbsp;&nbsp;ถึงแม้ว่าอาจจะไม่ปฎิบัติตามหน้าที่ที่<wbr>กำหนดไว้ใน<i>ศาสฺตฺร</i>&nbsp;&nbsp;หรือไม่ปฎิบัติการอุทิศตนเสียสละรับใช้อย่างถูกต้อง&nbsp;&nbsp;และแม้ว่า<wbr>เขาอาจจะตกลงต่ำกว่ามาตรฐาน&nbsp;&nbsp;เช่นนี้จะไม่สูญเสียและไม่มีความชั่วร้ายสำหรับเขาแต่ถ้าหากว่าเขาปฎิบัติตามคำสั่งสอนของ&nbsp;&nbsp;<i>ศาสฺตฺร</i>&nbsp;&nbsp;ทั้งหมดเพื่อความบริสุทธิ์&nbsp;&nbsp;แล้วไม่มี<wbr>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ตัวเขาจะได้รับประโยชน์อันใด”&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;วิธีการที่ทำให้บริสุทธิ์จึงมีความ<wbr>จำเป็นเพื่อที่จะมาถึงจุดแห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>สนฺนฺยาส</i>&nbsp;&nbsp;หรือวิธีการที่ทำให้<wbr>บริสุทธิ์อื่นใด&nbsp;&nbsp;ก็เพื่อที่จะช่วยให้เ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;าถึงจุดมุ่งหมายสูงสุดคือมี&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ถ้า<wbr>หากว่ามาไม่ถึงจุดนี้ทุกสิ่งทุกอย่างถือว่าล้มเหลว
+  “หากผู้ใดเริ่มรับเอา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกมาปฎิบัติ&nbsp;&nbsp;ถึงแม้ว่าอาจจะไม่ปฎิบัติตามหน้าที่ที่<wbr>กำหนดไว้ใน<span class="slant iast">śāstra</span><span class="slant pali">ศาสฺตฺร</span><span class="slant thai">ศาสตระ</span><span class="slant ram">ชาสทระ</span>&nbsp;&nbsp;หรือไม่ปฎิบัติการอุทิศตนเสียสละรับใช้อย่างถูกต้อง&nbsp;&nbsp;และแม้ว่า<wbr>เขาอาจจะตกลงต่ำกว่ามาตรฐาน&nbsp;&nbsp;เช่นนี้จะไม่สูญเสียและไม่มีความชั่วร้ายสำหรับเขาแต่ถ้าหากว่าเขาปฎิบัติตามคำสั่งสอนของ&nbsp;&nbsp;<span class="slant iast">śāstra</span><span class="slant pali">ศาสฺตฺร</span><span class="slant thai">ศาสตระ</span><span class="slant ram">ชาสทระ</span>&nbsp;&nbsp;ทั้งหมดเพื่อความบริสุทธิ์&nbsp;&nbsp;แล้วไม่มี<wbr>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ตัวเขาจะได้รับประโยชน์อันใด”&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;วิธีการที่ทำให้บริสุทธิ์จึงมีความ<wbr>จำเป็นเพื่อที่จะมาถึงจุดแห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">sannyāsa</span><span class="slant pali">สนฺนฺยาส</span><span class="slant thai">สันนยาสะ</span><span class="slant ram">สันนยาสะ</span>&nbsp;&nbsp;หรือวิธีการที่ทำให้<wbr>บริสุทธิ์อื่นใด&nbsp;&nbsp;ก็เพื่อที่จะช่วยให้เ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;าถึงจุดมุ่งหมายสูงสุดคือมี&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;ถ้า<wbr>หากว่ามาไม่ถึงจุดนี้ทุกสิ่งทุกอย่างถือว่าล้มเหลว
   </p>
 </div>
 

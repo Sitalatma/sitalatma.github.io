@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.26</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กาม-โกฺรธ-วิมุกฺตานาํ</i><br /><i>ยตีนาํ ยต-เจตสามฺ</i><br /><i>อภิโต พฺรหฺม-นิรฺวาณํ</i><br /><i>วรฺตเต วิทิตาตฺมนามฺ</i>
+<span class="slant iast">kāma-krodha-vimuktānāṁ<br /></span>
+<span class="slant pali">กาม-โกฺรธ-วิมุกฺตานำ<br /></span>
+<span class="slant thai">กามะ-กโรธะ-วิมุกตานาง<br /></span>
+<span class="slant ram">คามะ-โครดฺะ-วิมุคทานาม<br /></span>
+<span class="slant iast">yatīnāṁ yata-cetasām<br /></span>
+<span class="slant pali">ยตีนำ ยต-เจตสามฺ<br /></span>
+<span class="slant thai">ยะตีนาง ยะตะ-เจตะสาม<br /></span>
+<span class="slant ram">ยะทีนาม ยะทะ-เชทะสาม<br /></span>
+<span class="slant iast">abhito brahma-nirvāṇaṁ<br /></span>
+<span class="slant pali">อภิโต พฺรหฺม-นิรฺวาณํ<br /></span>
+<span class="slant thai">อะภิโต พรัหมะ-นิรวาณัง<br /></span>
+<span class="slant ram">ดบิฺโท บระฮมะ-นิรวาณัม<br /></span>
+<span class="slant iast">vartate viditātmanām<br /></span>
+<span class="slant pali">วรฺตเต วิทิตาตฺมนามฺ<br /></span>
+<span class="slant thai">วัรตะเต วิทิตาตมะนาม<br /></span>
+<span class="slant ram">วารทะเท วิดิทาทมะนาม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กาม</i> — จากความต้องการ, <i>โกฺรธ</i> — และความโกรธ, <i>วิมุกฺตานามฺ</i> — ของพวกที่หลุดพ้น, <i>ยตีนามฺ</i> — ของนักบุญ, <i>ยต-เจตสามฺ</i> — ผู้ควบคุมจิตใจได้เป็นอย่างดี, <i>อภิตฮ</i> — ใน อนาคตอันใกล้นี้อย่างแน่นอน, <i>พฺรหฺม-นิรฺวาณมฺ</i> — หลุดพ้นอยู่ในองค์ภควาน, <i>วรฺตเต</i> — มี, <i>วิทิต-อาตฺมนามฺ</i> — ของบุคคลผู้ที่รู้แจ้งแห่งตน
+  <span class="slant iast">kāma</span><span class="slant pali">กาม</span><span class="slant thai">กามะ</span><span class="slant ram">คามะ</span> — จากความต้องการ, <span class="slant iast">krodha</span><span class="slant pali">โกฺรธ</span><span class="slant thai">กโรธะ</span><span class="slant ram">โครดฺะ</span> — และความโกรธ, <span class="slant iast">vimuktānām</span><span class="slant pali">วิมุกฺตานามฺ</span><span class="slant thai">วิมุกตานาม</span><span class="slant ram">วิมุคทานาม</span> — ของพวกที่หลุดพ้น, <span class="slant iast">yatīnām</span><span class="slant pali">ยตีนามฺ</span><span class="slant thai">ยะตีนาม</span><span class="slant ram">ยะทีนาม</span> — ของนักบุญ, <span class="slant iast">yata-cetasām</span><span class="slant pali">ยต-เจตสามฺ</span><span class="slant thai">ยะตะ-เจตะสาม</span><span class="slant ram">ยะทะ-เชทะสาม</span> — ผู้ควบคุมจิตใจได้เป็นอย่างดี, <span class="slant iast">abhitaḥ</span><span class="slant pali">อภิตห์</span><span class="slant thai">อะภิตะห์</span><span class="slant ram">อบิฺทะฮ</span> — ใน อนาคตอันใกล้นี้อย่างแน่นอน, <span class="slant iast">brahma-nirvāṇam</span><span class="slant pali">พฺรหฺม-นิรฺวาณมฺ</span><span class="slant thai">พรัหมะ-นิรวาณัม</span><span class="slant ram">บระฮมะ-นิรวาณัม</span> — หลุดพ้นอยู่ในองค์ภควาน, <span class="slant iast">vartate</span><span class="slant pali">วรฺตเต</span><span class="slant thai">วัรตะเต</span><span class="slant ram">วารทะเท</span> — มี, <span class="slant iast">vidita-ātmanām</span><span class="slant pali">วิทิต-อาตฺมนามฺ</span><span class="slant thai">วิทิตะ-อาตมะนาม</span><span class="slant ram">วิดิทะ-อาทมะนาม</span> — ของบุคคลผู้ที่รู้แจ้งแห่งตน
   </p>
 </div>
 
@@ -73,43 +174,73 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ระหว่างนักบุญทั้งหลายผู้ปฏิบัติเพื่อพยายามบรรลุถึงความหลุดพ้นอยู่เสมอ&nbsp;&nbsp;ผู้อยู่ใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกดีที่สุด&nbsp;&nbsp;<i>ภาควตมฺ</i>&nbsp;&nbsp;(4.22.39)&nbsp;&nbsp;ยืนยันความจริงนี้&nbsp;&nbsp;ดังต่อไปนี้
+  ระหว่างนักบุญทั้งหลายผู้ปฏิบัติเพื่อพยายามบรรลุถึงความหลุดพ้นอยู่เสมอ&nbsp;&nbsp;ผู้อยู่ใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกดีที่สุด&nbsp;&nbsp;<span class="slant iast">bhāgavatam</span><span class="slant pali">ภาควตมฺ</span><span class="slant thai">ภาคะวะตัม</span><span class="slant ram"></span>&nbsp;&nbsp;(4.22.39)&nbsp;&nbsp;ยืนยันความจริงนี้&nbsp;&nbsp;ดังต่อไปนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยตฺ-ปาท-ปงฺกช-ปลาศ-วิลาส-ภกฺตฺยา</i><br /><i>กรฺมาศยํ คฺรตฺหิตมฺ อุทฺคฺรตฺหยนฺติ สนฺตฮ</i><br /><i>ตทฺวนฺ น ริกฺต-มตโย ยตโย ′ปิ รุทฺธ-</i><br /><i>โสฺรโต-คณาสฺ ตมฺ อรณํ ภช วาสุเทวมฺ</i>
+<span class="slant iast">yat-pāda-paṅkaja-palāśa-vilāsa-bhaktyā<br /></span>
+<span class="slant pali">ยตฺ-ปาท-ปงฺกช-ปลาศ-วิลาส-ภกฺตฺยา<br /></span>
+<span class="slant thai">ยัต-ปาทะ-ปังกะชะ-ปะลาศะ-วิลาสะ-ภักตยา<br /></span>
+<span class="slant ram">ยัท-พาดะ-พังคะจะ-พะลาชะ-วิลาสะ-บัฺคทยา<br /></span>
+<span class="slant iast">karmāśayaṁ grathitam udgrathayanti santaḥ<br /></span>
+<span class="slant pali">กรฺมาศยํ คฺรถิตมฺ อุทฺคฺรถยนฺติ สนฺตห์<br /></span>
+<span class="slant thai">กัรมาศะยัง คระถิตัม อุทคระถะยันติ สันตะห์<br /></span>
+<span class="slant ram">คารมาชะยัม กระทิฺทัม อุดกระทฺะยันทิ สันทะฮ<br /></span>
+<span class="slant iast">tadvan na rikta-matayo yatayo ’pi ruddha-<br /></span>
+<span class="slant pali">ตทฺวนฺ น ริกฺต-มตโย ยตโย ’ปิ รุทฺธ-<br /></span>
+<span class="slant thai">ตัทวัน นะ ริกตะ-มะตะโย ยะตะโย ’ปิ รุทธะ-<br /></span>
+<span class="slant ram">ทัดวัน นะ ริคทะ-มะทะโย ยะทะโย ่พิ รุดดฺะ-<br /></span>
+<span class="slant iast">sroto-gaṇās tam araṇaṁ bhaja vāsudevam<br /></span>
+<span class="slant pali">โสฺรโต-คณาสฺ ตมฺ อรณํ ภช วาสุเทวมฺ<br /></span>
+<span class="slant thai">สโรโต-คะณาส ตัม อะระณัง ภะชะ วาสุเทวัม<br /></span>
+<span class="slant ram">สโรโท-กะณาส ทัม อระณัม บฺะจะ วาสุเดวัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “เพียงแต่พยายามบูชา&nbsp;&nbsp;<i>วาสุเทว</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าด้วยการอุทิศตนเสีย<wbr>สละรับใช้&nbsp;&nbsp;แม้แต่นักปราชญ์ผู้ยิ่งใหญ่ยังไม่สามารถควบคุมพลังอำนาจของประสาท<wbr>สัมผัสได้ผลดีเท่ากับบุคคลที่ปฏิบัติตนด้วยความปลื้มปีติสุขทิพย์ในการรับใช้พระบาท<wbr>รูปดอกบัวขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และถอนความต้องการที่ฝังรากลึกในกิจกรรมเพื่อผลทาง<wbr>วัตถุ”
+  “เพียงแต่พยายามบูชา&nbsp;&nbsp;<span class="slant iast">vāsudeva</span><span class="slant pali">วาสุเทว</span><span class="slant thai">วาสุเทวะ</span><span class="slant ram">วาสุเดวะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าด้วยการอุทิศตนเสีย<wbr>สละรับใช้&nbsp;&nbsp;แม้แต่นักปราชญ์ผู้ยิ่งใหญ่ยังไม่สามารถควบคุมพลังอำนาจของประสาท<wbr>สัมผัสได้ผลดีเท่ากับบุคคลที่ปฏิบัติตนด้วยความปลื้มปีติสุขทิพย์ในการรับใช้พระบาท<wbr>รูปดอกบัวขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และถอนความต้องการที่ฝังรากลึกในกิจกรรมเพื่อผลทาง<wbr>วัตถุ”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ความต้องการเพื่อหาความสุขจากงานเพื่อผลทางวัตถุได้ฝังรากลึกมากอยู่ใน<wbr>พันธวิญญาณ&nbsp;&nbsp;ยังเป็นสิ่งที่ยากยิ่งสำหรับนักปราชญ์ผู้ยิ่งใหญ่ที่พยายามเป็นอย่างมาก<wbr>ในการควบคุมความต้องการเหล่านี้&nbsp;&nbsp;สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ปฏิบัติตนรับใช้ด้วยการอุทิศ<wbr>ตนเสียสละอยู่เสมอใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;สมบูรณ์ในการรู้แจ้งตนเองและได้รับความหลุด<wbr>พ้นอย่างรวดเร็วอยู่ในพระองค์&nbsp;&nbsp;เนื่องมาจากความรู้ที่สมบูรณ์ในการรู้แจ้งแห่งตน&nbsp;&nbsp;ท่าน<wbr>จะอยู่ในสมาธิเสมอ&nbsp;&nbsp;ดังจะกล่าวตัวอย่างเปรียบเทียบดังนี้
+  ความต้องการเพื่อหาความสุขจากงานเพื่อผลทางวัตถุได้ฝังรากลึกมากอยู่ใน<wbr>พันธวิญญาณ&nbsp;&nbsp;ยังเป็นสิ่งที่ยากยิ่งสำหรับนักปราชญ์ผู้ยิ่งใหญ่ที่พยายามเป็นอย่างมาก<wbr>ในการควบคุมความต้องการเหล่านี้&nbsp;&nbsp;สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ปฏิบัติตนรับใช้ด้วยการอุทิศ<wbr>ตนเสียสละอยู่เสมอใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;สมบูรณ์ในการรู้แจ้งตนเองและได้รับความหลุด<wbr>พ้นอย่างรวดเร็วอยู่ในพระองค์&nbsp;&nbsp;เนื่องมาจากความรู้ที่สมบูรณ์ในการรู้แจ้งแห่งตน&nbsp;&nbsp;ท่าน<wbr>จะอยู่ในสมาธิเสมอ&nbsp;&nbsp;ดังจะกล่าวตัวอย่างเปรียบเทียบดังนี้
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ทรฺศน-ธฺยาน-สํสฺปไรฺศรฺ</i><br /><i>มตฺสฺย-กูรฺม-วิหงฺคมาฮ</i><br /><i>สฺวานฺยฺ อปตฺยานิ ปุษฺณนฺติ</i><br /><i>ตตฺหาหมฺ อปิ ปทฺม-ช</i>
+<span class="slant iast">darśana-dhyāna-saṁsparśair<br /></span>
+<span class="slant pali">ทรฺศน-ธฺยาน-สํสฺปรฺไศรฺ<br /></span>
+<span class="slant thai">ทัรศะนะ-ธยานะ-สังสปัรไศร<br /></span>
+<span class="slant ram">ดารชะนะ-ดฺยานะ-สัมสพารไชร<br /></span>
+<span class="slant iast">matsya-kūrma-vihaṅgamāḥ<br /></span>
+<span class="slant pali">มตฺสฺย-กูรฺม-วิหงฺคมาห์<br /></span>
+<span class="slant thai">มัตสยะ-กูรมะ-วิหังคะมาห์<br /></span>
+<span class="slant ram">มัทสยะ-คูรมะ-วิฮังกะมาฮ<br /></span>
+<span class="slant iast">svāny apatyāni puṣṇanti<br /></span>
+<span class="slant pali">สฺวานฺยฺ อปตฺยานิ ปุษฺณนฺติ<br /></span>
+<span class="slant thai">สวานย อะปัตยานิ ปุษณันติ<br /></span>
+<span class="slant ram">สวานิ อพัทยานิ พุชณันทิ<br /></span>
+<span class="slant iast">tathāham api padma-ja<br /></span>
+<span class="slant pali">ตถาหมฺ อปิ ปทฺม-ช<br /></span>
+<span class="slant thai">ตะถาหัม อะปิ ปัทมะ-ชะ<br /></span>
+<span class="slant ram">ทะทฺาฮัม อพิ พัดมะ-จะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “ด้วยการมอง&nbsp;&nbsp;การทำสมาธิ&nbsp;&nbsp;และการสัมผัส&nbsp;&nbsp;ที่ปลา&nbsp;&nbsp;เต่า&nbsp;&nbsp;และนก&nbsp;&nbsp;ดูแลลูก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพวก<wbr>มัน&nbsp;&nbsp;ในลักษณะเดียวกัน&nbsp;&nbsp;ข้าพเจ้าก็ทำเช่นนี้เหมือนกัน&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>ปทฺมช</i>&nbsp;&nbsp;!”
+  “ด้วยการมอง&nbsp;&nbsp;การทำสมาธิ&nbsp;&nbsp;และการสัมผัส&nbsp;&nbsp;ที่ปลา&nbsp;&nbsp;เต่า&nbsp;&nbsp;และนก&nbsp;&nbsp;ดูแลลูก&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของพวก<wbr>มัน&nbsp;&nbsp;ในลักษณะเดียวกัน&nbsp;&nbsp;ข้าพเจ้าก็ทำเช่นนี้เหมือนกัน&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">padmaja</span><span class="slant pali">ปทฺมช</span><span class="slant thai">ปัทมะชะ</span><span class="slant ram">พัดมะจะ</span>&nbsp;&nbsp;!”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ปลาเลี้ยงลูกด้วยเพียงแต่มองไปที่ลูกของมันเท่านั้น&nbsp;&nbsp;เต่าเลี้ยงลูกด้วยเพียง<wbr>แต่ทำสมาธิ&nbsp;&nbsp;เต่าวางไข่บนดินและตัวมันลงไปอยู่ในน้ำทำสมาธิที่ไข่&nbsp;&nbsp;ลักษณะเดียวกันสาวกใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกถึงแม้อยู่ห่างไกลจากพระตำหนักขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่สามารถ<wbr>พัฒนาตนเองให้ไปถึงพระตำหนักนั้นได้&nbsp;&nbsp;ด้วยเพียงแต่ระลึกถึงพระองค์อยู่ตลอดเวลาด้วยการปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกตัวท่านจะไม่รู้สึกเจ็บปวดในความทุกข์ทางวัตถุ&nbsp;&nbsp;ใน<wbr>ระดับชีวิตเช่นนี้เรียกว่า&nbsp;&nbsp;<i>พฺรหฺม-นิรฺวาณ</i>&nbsp;&nbsp;หรือปราศจากความทุกข์ทางวัตถุ&nbsp;&nbsp;เนื่อง<wbr>จากซึบซาบอยู่ในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสมอ
+  ปลาเลี้ยงลูกด้วยเพียงแต่มองไปที่ลูกของมันเท่านั้น&nbsp;&nbsp;เต่าเลี้ยงลูกด้วยเพียง<wbr>แต่ทำสมาธิ&nbsp;&nbsp;เต่าวางไข่บนดินและตัวมันลงไปอยู่ในน้ำทำสมาธิที่ไข่&nbsp;&nbsp;ลักษณะเดียวกันสาวกใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกถึงแม้อยู่ห่างไกลจากพระตำหนักขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่สามารถ<wbr>พัฒนาตนเองให้ไปถึงพระตำหนักนั้นได้&nbsp;&nbsp;ด้วยเพียงแต่ระลึกถึงพระองค์อยู่ตลอดเวลาด้วยการปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกตัวท่านจะไม่รู้สึกเจ็บปวดในความทุกข์ทางวัตถุ&nbsp;&nbsp;ใน<wbr>ระดับชีวิตเช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">brahma-nirvāṇa</span><span class="slant pali">พฺรหฺม-นิรฺวาณ</span><span class="slant thai">พรัหมะ-นิรวาณะ</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;หรือปราศจากความทุกข์ทางวัตถุ&nbsp;&nbsp;เนื่อง<wbr>จากซึบซาบอยู่ในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสมอ
   </p>
 </div>
 

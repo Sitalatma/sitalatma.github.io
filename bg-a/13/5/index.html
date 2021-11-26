@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 13.5</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ฤษิภิรฺ พหุธา คีตํ</i><br /><i>ฉโนฺทภิรฺ วิวิไธฮ ปฺฤตฺหกฺ</i><br /><i>พฺรหฺม-สูตฺร-ปไทศฺ ไจว</i><br /><i>เหตุมทฺภิรฺ วินิศฺจิไตฮ</i>
+<span class="slant iast">ṛṣibhir bahudhā gītaṁ<br /></span>
+<span class="slant pali">ฤษิภิรฺ พหุธา คีตํ<br /></span>
+<span class="slant thai">ฤษิภิร พะหุธา คีตัง<br /></span>
+<span class="slant ram">ริชิบิฺร บะฮุดฺา กีทัม<br /></span>
+<span class="slant iast">chandobhir vividhaiḥ pṛthak<br /></span>
+<span class="slant pali">ฉนฺโทภิรฺ วิวิไธห์ ปฺฤถกฺ<br /></span>
+<span class="slant thai">ฉันโทภิร วิวิไธห์ ปฤถัก<br /></span>
+<span class="slant ram">ชฺานโดบิฺร วิวิไดฺฮ พริทัฺคฺ<br /></span>
+<span class="slant iast">brahma-sūtra-padaiś caiva<br /></span>
+<span class="slant pali">พฺรหฺม-สูตฺร-ปไทศฺ ไจว<br /></span>
+<span class="slant thai">พรัหมะ-สูตระ-ปะไทศ ไจวะ<br /></span>
+<span class="slant ram">บระฮมะ-สูทระ-พะไดช ไชวะ<br /></span>
+<span class="slant iast">hetumadbhir viniścitaiḥ<br /></span>
+<span class="slant pali">เหตุมทฺภิรฺ วินิศฺจิไตห์<br /></span>
+<span class="slant thai">เหตุมัทภิร วินิศจิไตห์<br /></span>
+<span class="slant ram">เฮทุมัดบิฺร วินิชชิไทฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ฤษิภิฮ</i> — โดยปราชญ์ผู้มีปัญญา, <i>พหุธา</i> — ในหลายทาง, <i>คีตมฺ</i> — อธิบาย, <i>ฉโนฺทภิฮ</i> — โดย บทมนต์พระ <i>เวท</i>, <i>วิวิไธฮ</i> — ต่าง ๆ, <i>ปฺฤตฺหกฺ</i> — แตกต่างกัน, <i>พฺรหฺม-สูตฺร</i> — ของ <i>เวทานฺต</i>, <i>ปไทฮ</i> — โดยคำพังเพย, <i>จ</i> — เช่นกัน, <i>เอว</i> — แน่นอน, <i>เหตุ-มทฺภิฮ</i> — ด้วยเหตุและผล, <i>วินิศฺจิไตฮ</i> — แน่นอน
+  <span class="slant iast">ṛṣibhiḥ</span><span class="slant pali">ฤษิภิห์</span><span class="slant thai">ฤษิภิห์</span><span class="slant ram">ริชิบิฺฮ</span> — โดยปราชญ์ผู้มีปัญญา, <span class="slant iast">bahudhā</span><span class="slant pali">พหุธา</span><span class="slant thai">พะหุธา</span><span class="slant ram">บะฮุดฺา</span> — ในหลายทาง, <span class="slant iast">gītam</span><span class="slant pali">คีตมฺ</span><span class="slant thai">คีตัม</span><span class="slant ram">กีทัม</span> — อธิบาย, <span class="slant iast">chandobhiḥ</span><span class="slant pali">ฉนฺโทภิห์</span><span class="slant thai">ฉันโทภิห์</span><span class="slant ram">ชัฺนโดบิฺฮ</span> — โดย บทมนต์พระ <span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>, <span class="slant iast">vividhaiḥ</span><span class="slant pali">วิวิไธห์</span><span class="slant thai">วิวิไธห์</span><span class="slant ram">วิวิไดฺฮ</span> — ต่าง ๆ, <span class="slant iast">pṛthak</span><span class="slant pali">ปฺฤถกฺ</span><span class="slant thai">ปฤถัก</span><span class="slant ram">พริทัฺค</span> — แตกต่างกัน, <span class="slant iast">brahma-sūtra</span><span class="slant pali">พฺรหฺม-สูตฺร</span><span class="slant thai">พรัหมะ-สูตระ</span><span class="slant ram">บระฮมะ-สูทระ</span> — ของ <span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>, <span class="slant iast">padaiḥ</span><span class="slant pali">ปไทห์</span><span class="slant thai">ปะไทห์</span><span class="slant ram">พะไดฮ</span> — โดยคำพังเพย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">hetu-madbhiḥ</span><span class="slant pali">เหตุ-มทฺภิห์</span><span class="slant thai">เหตุ-มัทภิห์</span><span class="slant ram">เฮทุ-มัดบิฺฮ</span> — ด้วยเหตุและผล, <span class="slant iast">viniścitaiḥ</span><span class="slant pali">วินิศฺจิไตห์</span><span class="slant thai">วินิศจิไตห์</span><span class="slant ram">วินิช ชิไทฮ</span> — แน่นอน
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ความรู้สนามแห่งกิจกรรมและผู้รู้กิจกรรมนั้น&nbsp;&nbsp;นักปราชญ์หลายท่านได้อธิบายไว้ในบทความพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ได้แสดงไว้โดยเฉพาะใน&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;-&nbsp;&nbsp;<i>สูตฺร</i>&nbsp;&nbsp;ด้วยวิจารณญาณทั้งหมดของเหตุและผล
+  ความรู้สนามแห่งกิจกรรมและผู้รู้กิจกรรมนั้น&nbsp;&nbsp;นักปราชญ์หลายท่านได้อธิบายไว้ในบทความพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ได้แสดงไว้โดยเฉพาะใน&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="slant iast">sūtra</span><span class="slant pali">สูตฺร</span><span class="slant thai">สูตระ</span><span class="slant ram">สูทระ</span>&nbsp;&nbsp;ด้วยวิจารณญาณทั้งหมดของเหตุและผล
   </p>
 </div>
 
@@ -73,25 +174,25 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้เชื่อถือได้สูงสุดในการอธิบายความรู้นี้&nbsp;&nbsp;ถึงกระนั้น<wbr>เพื่อเป็นการศึกษา&nbsp;&nbsp;นักวิชาการผู้คงแก่เรียนและผู้เชื่อถือได้ที่มีมาตรฐานจะอ้างอิงหลัก<wbr>ฐานจากผู้เชื่อถือได้ในอดีตเสมอ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงอธิบายถึงประเด็นที่ขัดแย้งกันมากที่สุด<wbr>นี้&nbsp;&nbsp;ซึ่งเกี่ยวกับปัจเจกวิญญาณและอภิวิญญาณว่าเป็นหนึ่งดวงหรือสองดวง&nbsp;&nbsp;โดยอ้างอิง<wbr>คัมภีร์&nbsp;&nbsp;<i>เวทานฺต</i>&nbsp;&nbsp;ซึ่งเป็นที่ยอมรับกันว่าเชื่อถือได้&nbsp;&nbsp;ก่อนอื่นพระองค์ตรัสว่า&nbsp;&nbsp;“เช่นนี้ตาม<wbr>นักปราชญ์ต่าง&nbsp;&nbsp;ๆ”&nbsp;&nbsp;เกี่ยวกับนักปราชญ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นอกจากตัวพระองค์เอง&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;(ผู้เขียน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;)&nbsp;&nbsp;เป็นนักปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;ความเป็นสองดวงนี้ได้อธิบายไว้<wbr>อย่างสมบูรณ์ใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;<i>ปราศร</i>&nbsp;&nbsp;ผู้เป็นบิดาของ&nbsp;&nbsp;<i>วฺยาสเทว</i>&nbsp;&nbsp;ก็เป็นนัก<wbr>ปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;ได้เขียนในหนังสือศาสนาของท่านว่า&nbsp;&nbsp;<i>อหมฺ&nbsp;&nbsp;ตฺวํ&nbsp;&nbsp;จ&nbsp;&nbsp;ตตฺหาเนฺย</i>&nbsp;&nbsp;...&nbsp;&nbsp;“พวก<wbr>เรา&nbsp;&nbsp;ท่าน&nbsp;&nbsp;ข้าพเจ้า&nbsp;&nbsp;และสิ่งมีชีวิต&nbsp;&nbsp;ทั้งหมดเป็นทิพย์แม้อยู่ในร่างกายวัตถุ&nbsp;&nbsp;บัดนี้เราตกลงมา<wbr>อยู่ในวิถีทางของสามระดับแห่งธรรมชาติวัตถุตามกรรมที่แตกต่างกันไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;บาง<wbr>คนอยู่ในระดับที่สูงกว่า&nbsp;&nbsp;และบางคนอยู่ในธรรมชาติที่ต่ำกว่า&nbsp;&nbsp;ธรรมชาติที่สูงกว่าและต่ำ<wbr>กว่าดำเนินไปก็เนื่องมาจากอวิชชา&nbsp;&nbsp;และจะปรากฏอยู่ในจำนวนสิ่งมีชีวิตที่นับไม่ถ้วน&nbsp;&nbsp;แต่อภิวิญญาณผู้ไม่มีความผิดพลาด&nbsp;&nbsp;ไม่มีมลทินจากสามระดับแห่งธรรมชาติ&nbsp;&nbsp;พระองค์ทรง<wbr>เป็นทิพย์”&nbsp;&nbsp;ทำนองเดียวกัน&nbsp;&nbsp;ในคัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ฉบับเดิม&nbsp;&nbsp;ข้อแตกต่างระหว่างดวงวิญญาณอภิวิญญาณ&nbsp;&nbsp;และร่างกายได้กล่าวไว้โดยเฉพาะใน&nbsp;&nbsp;<i>กฐ&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;มีนักปราชญ์ผู้ยิ่ง<wbr>ใหญ่มากมายได้อธิบายไว้&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ปราศร</i>&nbsp;&nbsp;พิจารณาว่าเป็นบุคคลสำคัญในบรรดานัก<wbr>ปราชญ์เหล่านี้
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้เชื่อถือได้สูงสุดในการอธิบายความรู้นี้&nbsp;&nbsp;ถึงกระนั้น<wbr>เพื่อเป็นการศึกษา&nbsp;&nbsp;นักวิชาการผู้คงแก่เรียนและผู้เชื่อถือได้ที่มีมาตรฐานจะอ้างอิงหลัก<wbr>ฐานจากผู้เชื่อถือได้ในอดีตเสมอ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงอธิบายถึงประเด็นที่ขัดแย้งกันมากที่สุด<wbr>นี้&nbsp;&nbsp;ซึ่งเกี่ยวกับปัจเจกวิญญาณและอภิวิญญาณว่าเป็นหนึ่งดวงหรือสองดวง&nbsp;&nbsp;โดยอ้างอิง<wbr>คัมภีร์&nbsp;&nbsp;<span class="slant iast">vedānta</span><span class="slant pali">เวทานฺต</span><span class="slant thai">เวทานตะ</span><span class="slant ram">เวดานธะ</span>&nbsp;&nbsp;ซึ่งเป็นที่ยอมรับกันว่าเชื่อถือได้&nbsp;&nbsp;ก่อนอื่นพระองค์ตรัสว่า&nbsp;&nbsp;“เช่นนี้ตาม<wbr>นักปราชญ์ต่าง&nbsp;&nbsp;ๆ”&nbsp;&nbsp;เกี่ยวกับนักปราชญ์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นอกจากตัวพระองค์เอง&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;(ผู้เขียน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;)&nbsp;&nbsp;เป็นนักปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;ความเป็นสองดวงนี้ได้อธิบายไว้<wbr>อย่างสมบูรณ์ใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;<span class="slant iast">parāśara</span><span class="slant pali">ปราศร</span><span class="slant thai">ปะราศะระ</span><span class="slant ram">พะราชะระ</span>&nbsp;&nbsp;ผู้เป็นบิดาของ&nbsp;&nbsp;<span class="slant iast">vyāsadeva</span><span class="slant pali">วฺยาสเทว</span><span class="slant thai">วยาสะเทวะ</span><span class="slant ram">วิยาสะเดวะ</span>&nbsp;&nbsp;ก็เป็นนัก<wbr>ปราชญ์ผู้ยิ่งใหญ่&nbsp;&nbsp;ได้เขียนในหนังสือศาสนาของท่านว่า&nbsp;&nbsp;<span class="slant iast">aham&nbsp;&nbsp;tvaṁ&nbsp;&nbsp;ca&nbsp;&nbsp;tathānye…</span><span class="slant pali">อหมฺตฺวํจตถาเนฺย…</span><span class="slant thai">อะหัมตวังจะตะถานเย…</span><span class="slant ram">อฮัมชะzzz…</span>&nbsp;&nbsp;...&nbsp;&nbsp;“พวก<wbr>เรา&nbsp;&nbsp;ท่าน&nbsp;&nbsp;ข้าพเจ้า&nbsp;&nbsp;และสิ่งมีชีวิต&nbsp;&nbsp;ทั้งหมดเป็นทิพย์แม้อยู่ในร่างกายวัตถุ&nbsp;&nbsp;บัดนี้เราตกลงมา<wbr>อยู่ในวิถีทางของสามระดับแห่งธรรมชาติวัตถุตามกรรมที่แตกต่างกันไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;บาง<wbr>คนอยู่ในระดับที่สูงกว่า&nbsp;&nbsp;และบางคนอยู่ในธรรมชาติที่ต่ำกว่า&nbsp;&nbsp;ธรรมชาติที่สูงกว่าและต่ำ<wbr>กว่าดำเนินไปก็เนื่องมาจากอวิชชา&nbsp;&nbsp;และจะปรากฏอยู่ในจำนวนสิ่งมีชีวิตที่นับไม่ถ้วน&nbsp;&nbsp;แต่อภิวิญญาณผู้ไม่มีความผิดพลาด&nbsp;&nbsp;ไม่มีมลทินจากสามระดับแห่งธรรมชาติ&nbsp;&nbsp;พระองค์ทรง<wbr>เป็นทิพย์”&nbsp;&nbsp;ทำนองเดียวกัน&nbsp;&nbsp;ในคัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ฉบับเดิม&nbsp;&nbsp;ข้อแตกต่างระหว่างดวงวิญญาณอภิวิญญาณ&nbsp;&nbsp;และร่างกายได้กล่าวไว้โดยเฉพาะใน&nbsp;&nbsp;<span class="slant iast">kaṭha&nbsp;&nbsp;upaniṣad</span><span class="slant pali">กฐอุปนิษทฺ</span><span class="slant thai">กะฐะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;มีนักปราชญ์ผู้ยิ่ง<wbr>ใหญ่มากมายได้อธิบายไว้&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">parāśara</span><span class="slant pali">ปราศร</span><span class="slant thai">ปะราศะระ</span><span class="slant ram">พะราชะระ</span>&nbsp;&nbsp;พิจารณาว่าเป็นบุคคลสำคัญในบรรดานัก<wbr>ปราชญ์เหล่านี้
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  คำว่า&nbsp;&nbsp;<i>ฉโนฺทภิฮ</i>&nbsp;&nbsp;หมายถึง&nbsp;&nbsp;วรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;<i>ไตตฺติรีย&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;ซึ่งแยกออกมาจาก&nbsp;&nbsp;<i>ยชุรฺ&nbsp;&nbsp;เวท</i>&nbsp;&nbsp;อธิบายถึงธรรมชาติ&nbsp;&nbsp;สิ่งมีชีวิต&nbsp;&nbsp;และองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  คำว่า&nbsp;&nbsp;<span class="slant iast">chandobhiḥ</span><span class="slant pali">ฉนฺโทภิห์</span><span class="slant thai">ฉันโทภิห์</span><span class="slant ram">ชัฺนโดบิฺฮ</span>&nbsp;&nbsp;หมายถึง&nbsp;&nbsp;วรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;<span class="slant iast">taittirīya&nbsp;&nbsp;upaniṣad</span><span class="slant pali">ไตตฺติรียอุปนิษทฺ</span><span class="slant thai">ไตตติรียะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;ซึ่งแยกออกมาจาก&nbsp;&nbsp;<span class="slant iast">yajur&nbsp;&nbsp;veda</span><span class="slant pali">ยชุรฺเวท</span><span class="slant thai">ยะชุรเวทะ</span><span class="slant ram">ยะจุรเวท</span>&nbsp;&nbsp;อธิบายถึงธรรมชาติ&nbsp;&nbsp;สิ่งมีชีวิต&nbsp;&nbsp;และองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังที่กล่าวไว้แล้วว่า&nbsp;&nbsp;<i>เกฺษตฺร</i>&nbsp;&nbsp;คือสนามแห่งกิจกรรม&nbsp;&nbsp;และมีสอง&nbsp;&nbsp;<i>เกฺษตฺร-ชฺญ</i>&nbsp;&nbsp;คือปัจเจกดวงชีวิต&nbsp;&nbsp;และดวงชีวิตสูงสุด&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ไตตฺติรีย&nbsp;&nbsp;อุปนิษทฺ</i>&nbsp;&nbsp;(2.5)&nbsp;&nbsp;<i>พฺรหฺม&nbsp;&nbsp;ปุจฺฉํ&nbsp;&nbsp;ปฺรติษฺฐา</i>&nbsp;&nbsp;มีปรากฎการณ์แห่งพลังงานขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>อนฺน-มย</i>&nbsp;&nbsp;ซึ่งขึ้นอยู่กับอาหารเพื่อดำรงอยู่&nbsp;&nbsp;เช่นนี้เป็นความรู้แจ้งแห่งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;จากนั้น<wbr>ใน&nbsp;&nbsp;<i>ปฺราณ-มย</i>&nbsp;&nbsp;หลังจากรู้แจ้งสัจธรรมสูงสุดในอาหารเราสามารถรู้แจ้งสัจธรรมใน<wbr>อาการชีวิตหรือรูปลักษณ์ชีวิต&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ชฺญาน-มย</i>&nbsp;&nbsp;การรู้แจ้งขยายไปสูงกว่าอาการชีวิตโดยมาถึงจุดแห่งความคิด&nbsp;&nbsp;ความรู้สึก&nbsp;&nbsp;และความเต็มใจ&nbsp;&nbsp;จากนั้นก็มีความรู้แจ้ง&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<i>วิชฺญาน-มย</i>&nbsp;&nbsp;ซึ่งจิตใจและอาการชีวิตของสิ่งมีชีวิตแตกต่างไปจากตัวสิ่ง<wbr>มีชีวิตเอง&nbsp;&nbsp;ถัดไปเป็นระดับสูงสุดคือ&nbsp;&nbsp;<i>อานนฺท-มย</i>&nbsp;&nbsp;-&nbsp;&nbsp;รู้แจ้งแห่งธรรมชาติความปลื้มปีติสุข<wbr>ทั้งหมด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มีความรู้แจ้งแห่ง&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ห้าระดับเรียกว่า&nbsp;&nbsp;<i>พฺรหฺม&nbsp;&nbsp;ปุจฺฉํ</i>&nbsp;&nbsp;ทั้งหมด<wbr>นี้สามระดับแรก&nbsp;&nbsp;<i>อนฺน-มย,ปฺราณ-มย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ชฺญาน-มย&nbsp;&nbsp;</i>&nbsp;&nbsp;เกี่ยวข้องกับสนาม<wbr>แห่งกิจกรรมของสิ่งมีชีวิตผู้ที่เป็นทิพย์เหนือสนามแห่งกิจกรรมทั้งหมดเหล่านี้คือ&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สูงสุดซึ่งเรียกว่า&nbsp;&nbsp;<i>อานนฺท-มย&nbsp;&nbsp;เวทานฺต-สูตฺร</i>&nbsp;&nbsp;ยังอธิบายถึงพระองค์ด้วย<wbr>การกล่าวว่า&nbsp;&nbsp;<i>อนฺน-มย,ปฺราณ-มย</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;โดยธรรมชาติทรงเปี่ยมไปด้วย<wbr>ความรื่นเริงเพื่อเสวยสุขกับความสุขเกษมสำราญทิพย์ของพระองค์&nbsp;&nbsp;พระองค์ทรงแบ่ง<wbr>แยกมาเป็น&nbsp;&nbsp;<i>วิชฺญาน-มย,ปฺราณ-มย,ชฺญาน-มย</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>อนฺน-มย&nbsp;&nbsp;</i>&nbsp;&nbsp;ในสนาม<wbr>แห่งกิจกรรม&nbsp;&nbsp;สิ่งมีชีวิตถือว่าเป็นผู้รื่นเริง&nbsp;&nbsp;ที่แตกต่างไปจากตัวเขาคือ&nbsp;&nbsp;<i>อานนฺท-มย</i>&nbsp;&nbsp;นั่นหมายความว่าหากสิ่งมีชีวิตตัดสินใจจะเสวยสุขด้วยการประสานตนเองกับ&nbsp;&nbsp;<i>อานนฺท-มย</i>&nbsp;&nbsp;จะทำให้เขาสมบูรณ์&nbsp;&nbsp;นี่คือภาพอันแท้จริงขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในฐานะที่เป็นผู้รู้สนาม<wbr>สูงสุด&nbsp;&nbsp;สิ่งมีชีวิตในฐานะที่เป็นผู้รู้ที่รองลงมา&nbsp;&nbsp;และธรรมชาติของสนามแห่งกิจกรรม&nbsp;&nbsp;เรา<wbr>ต้องค้นหาความจริงนี้ใน&nbsp;&nbsp;<i>เวทานฺต-สูตฺร</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>พฺรหฺม-สูตฺร</i>&nbsp;&nbsp;
+  ดังที่กล่าวไว้แล้วว่า&nbsp;&nbsp;<span class="slant iast">kṣetra</span><span class="slant pali">กฺเษตฺร</span><span class="slant thai">กเษตระ</span><span class="slant ram">คเชทระ</span>&nbsp;&nbsp;คือสนามแห่งกิจกรรม&nbsp;&nbsp;และมีสอง&nbsp;&nbsp;<span class="slant iast">kṣetra-jña</span><span class="slant pali">กฺเษตฺร-ชฺญ</span><span class="slant thai">กเษตระ-ชญะ</span><span class="slant ram">คเชทระ-กยะ</span>&nbsp;&nbsp;คือปัจเจกดวงชีวิต&nbsp;&nbsp;และดวงชีวิตสูงสุด&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">taittirīya&nbsp;&nbsp;upaniṣad</span><span class="slant pali">ไตตฺติรียอุปนิษทฺ</span><span class="slant thai">ไตตติรียะอุปะนิษัท</span><span class="slant ram"></span>&nbsp;&nbsp;(2.5)&nbsp;&nbsp;<span class="slant iast">brahma&nbsp;&nbsp;pucchaṁ&nbsp;&nbsp;pratiṣṭhā</span><span class="slant pali">พฺรหฺมปุจฺฉํปฺรติษฺฐา</span><span class="slant thai">พรัหมะปุจฉังประติษฐา</span><span class="slant ram">บระฮมะพระทิชทฺา</span>&nbsp;&nbsp;มีปรากฎการณ์แห่งพลังงานขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">anna-maya</span><span class="slant pali">อนฺน-มย</span><span class="slant thai">อันนะ-มะยะ</span><span class="slant ram">อันนะ-</span>&nbsp;&nbsp;ซึ่งขึ้นอยู่กับอาหารเพื่อดำรงอยู่&nbsp;&nbsp;เช่นนี้เป็นความรู้แจ้งแห่งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทางวัตถุ&nbsp;&nbsp;จากนั้น<wbr>ใน&nbsp;&nbsp;<span class="slant iast">prāṇa-maya</span><span class="slant pali">ปฺราณ-มย</span><span class="slant thai">ปราณะ-มะยะ</span><span class="slant ram">พราณะ-</span>&nbsp;&nbsp;หลังจากรู้แจ้งสัจธรรมสูงสุดในอาหารเราสามารถรู้แจ้งสัจธรรมใน<wbr>อาการชีวิตหรือรูปลักษณ์ชีวิต&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">jñāna-maya</span><span class="slant pali">ชฺญาน-มย</span><span class="slant thai">ชญานะ-มะยะ</span><span class="slant ram">กยานะ-</span>&nbsp;&nbsp;การรู้แจ้งขยายไปสูงกว่าอาการชีวิตโดยมาถึงจุดแห่งความคิด&nbsp;&nbsp;ความรู้สึก&nbsp;&nbsp;และความเต็มใจ&nbsp;&nbsp;จากนั้นก็มีความรู้แจ้ง&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;เรียกว่า&nbsp;&nbsp;<span class="slant iast">vijñāna-maya</span><span class="slant pali">วิชฺญาน-มย</span><span class="slant thai">วิชญานะ-มะยะ</span><span class="slant ram">วิกยานะ-มะยะ</span>&nbsp;&nbsp;ซึ่งจิตใจและอาการชีวิตของสิ่งมีชีวิตแตกต่างไปจากตัวสิ่ง<wbr>มีชีวิตเอง&nbsp;&nbsp;ถัดไปเป็นระดับสูงสุดคือ&nbsp;&nbsp;<span class="slant iast">ānanda-maya</span><span class="slant pali">อานนฺท-มย</span><span class="slant thai">อานันทะ-มะยะ</span><span class="slant ram">-</span>&nbsp;&nbsp;-&nbsp;&nbsp;รู้แจ้งแห่งธรรมชาติความปลื้มปีติสุข<wbr>ทั้งหมด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;มีความรู้แจ้งแห่ง&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ห้าระดับเรียกว่า&nbsp;&nbsp;<span class="slant iast">brahma&nbsp;&nbsp;pucchaṁ</span><span class="slant pali">พฺรหฺมปุจฺฉํ</span><span class="slant thai">พรัหมะปุจฉัง</span><span class="slant ram">บระฮมะ</span>&nbsp;&nbsp;ทั้งหมด<wbr>นี้สามระดับแรก&nbsp;&nbsp;<span class="slant iast">anna-maya,&nbsp;&nbsp;prāṇa-maya</span><span class="slant pali">อนฺน-มยปฺราณ-มย</span><span class="slant thai">อันนะ-มะยะปราณะ-มะยะ</span><span class="slant ram">อันนะ-พราณะ-</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">jñāna-maya&nbsp;&nbsp;</span><span class="slant pali">ชฺญาน-มย</span><span class="slant thai">ชญานะ-มะยะ</span><span class="slant ram">กยานะ-</span>&nbsp;&nbsp;เกี่ยวข้องกับสนาม<wbr>แห่งกิจกรรมของสิ่งมีชีวิตผู้ที่เป็นทิพย์เหนือสนามแห่งกิจกรรมทั้งหมดเหล่านี้คือ&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สูงสุดซึ่งเรียกว่า&nbsp;&nbsp;<span class="slant iast">ānanda-maya&nbsp;&nbsp;vedānta-sūtra</span><span class="slant pali">อานนฺท-มยเวทานฺต-สูตฺร</span><span class="slant thai">อานันทะ-มะยะเวทานตะ-สูตระ</span><span class="slant ram">-เวดานธะ-สูทระ</span>&nbsp;&nbsp;ยังอธิบายถึงพระองค์ด้วย<wbr>การกล่าวว่า&nbsp;&nbsp;<span class="slant iast">anna-maya,&nbsp;&nbsp;prāṇa-maya</span><span class="slant pali">อนฺน-มยปฺราณ-มย</span><span class="slant thai">อันนะ-มะยะปราณะ-มะยะ</span><span class="slant ram">อันนะ-พราณะ-</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;โดยธรรมชาติทรงเปี่ยมไปด้วย<wbr>ความรื่นเริงเพื่อเสวยสุขกับความสุขเกษมสำราญทิพย์ของพระองค์&nbsp;&nbsp;พระองค์ทรงแบ่ง<wbr>แยกมาเป็น&nbsp;&nbsp;<span class="slant iast">vijñāna-maya,&nbsp;&nbsp;prāṇa-maya,&nbsp;&nbsp;jñāna-maya</span><span class="slant pali">วิชฺญาน-มยปฺราณ-มยชฺญาน-มย</span><span class="slant thai">วิชญานะ-มะยะปราณะ-มะยะชญานะ-มะยะ</span><span class="slant ram">วิกยานะ-พราณะ-กยานะ-</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">anna-maya&nbsp;&nbsp;</span><span class="slant pali">อนฺน-มย</span><span class="slant thai">อันนะ-มะยะ</span><span class="slant ram">อันนะ-</span>&nbsp;&nbsp;ในสนาม<wbr>แห่งกิจกรรม&nbsp;&nbsp;สิ่งมีชีวิตถือว่าเป็นผู้รื่นเริง&nbsp;&nbsp;ที่แตกต่างไปจากตัวเขาคือ&nbsp;&nbsp;<span class="slant iast">ānanda-maya</span><span class="slant pali">อานนฺท-มย</span><span class="slant thai">อานันทะ-มะยะ</span><span class="slant ram">-</span>&nbsp;&nbsp;นั่นหมายความว่าหากสิ่งมีชีวิตตัดสินใจจะเสวยสุขด้วยการประสานตนเองกับ&nbsp;&nbsp;<span class="slant iast">ānanda-maya</span><span class="slant pali">อานนฺท-มย</span><span class="slant thai">อานันทะ-มะยะ</span><span class="slant ram">-</span>&nbsp;&nbsp;จะทำให้เขาสมบูรณ์&nbsp;&nbsp;นี่คือภาพอันแท้จริงขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในฐานะที่เป็นผู้รู้สนาม<wbr>สูงสุด&nbsp;&nbsp;สิ่งมีชีวิตในฐานะที่เป็นผู้รู้ที่รองลงมา&nbsp;&nbsp;และธรรมชาติของสนามแห่งกิจกรรม&nbsp;&nbsp;เรา<wbr>ต้องค้นหาความจริงนี้ใน&nbsp;&nbsp;<span class="slant iast">vedānta-sūtra</span><span class="slant pali">เวทานฺต-สูตฺร</span><span class="slant thai">เวทานตะ-สูตระ</span><span class="slant ram">เวดานธะ-สูทระ</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">brahma-sūtra</span><span class="slant pali">พฺรหฺม-สูตฺร</span><span class="slant thai">พรัหมะ-สูตระ</span><span class="slant ram">บระฮมะ-สูทระ</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;การประมวล&nbsp;&nbsp;<i>พฺรหฺม-สูตฺร</i>&nbsp;&nbsp;ได้เรียบเรียงไว้อย่างดีตาม<wbr>เหตุและผล&nbsp;&nbsp;บาง&nbsp;&nbsp;<i>สูตฺร</i>&nbsp;&nbsp;หรือคำพังเพยต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>น&nbsp;&nbsp;วิยทฺ&nbsp;&nbsp;อศฺรุเตฮ</i>&nbsp;&nbsp;(2.3.2)&nbsp;&nbsp;<i>นาตฺมา&nbsp;&nbsp;ศฺรุเตฮ</i>&nbsp;&nbsp;(2.3.18)&nbsp;&nbsp;และ<i>ปราตฺ&nbsp;&nbsp;ตุ&nbsp;&nbsp;ตจฺ-ฉฺรุเตฮ</i>&nbsp;&nbsp;(2.3.40)&nbsp;&nbsp;คำพังเพยแรกแสดงถึงสนามแห่ง<wbr>กิจกรรม&nbsp;&nbsp;คำพังเผยที่สองแสดงถึงสิ่งมีชีวิต&nbsp;&nbsp;และคำพังเผยที่สามแสดงถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผู้<wbr>สูงสุดอย่างสมบูรณ์แบบในปรากฏการณ์ทั้งหลายแห่งชีวิตอันหลากหลาย
+  ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;การประมวล&nbsp;&nbsp;<span class="slant iast">brahma-sūtra</span><span class="slant pali">พฺรหฺม-สูตฺร</span><span class="slant thai">พรัหมะ-สูตระ</span><span class="slant ram">บระฮมะ-สูทระ</span>&nbsp;&nbsp;ได้เรียบเรียงไว้อย่างดีตาม<wbr>เหตุและผล&nbsp;&nbsp;บาง&nbsp;&nbsp;<span class="slant iast">sūtra</span><span class="slant pali">สูตฺร</span><span class="slant thai">สูตระ</span><span class="slant ram">สูทระ</span>&nbsp;&nbsp;หรือคำพังเพยต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">na&nbsp;&nbsp;viyad&nbsp;&nbsp;aśruteḥ</span><span class="slant pali">นวิยทฺอศฺรุเตห์</span><span class="slant thai">นะวิยัทอัศรุเตห์</span><span class="slant ram">นะzzzzzz</span>&nbsp;&nbsp;(2.3.2)&nbsp;&nbsp;<span class="slant iast">nātmā&nbsp;&nbsp;śruteḥ</span><span class="slant pali">นาตฺมาศฺรุเตห์</span><span class="slant thai">นาตมาศรุเตห์</span><span class="slant ram">zzzzzz</span>&nbsp;&nbsp;(2.3.18)&nbsp;&nbsp;และ<span class="slant iast">parāt&nbsp;&nbsp;tu&nbsp;&nbsp;tac-chruteḥ</span><span class="slant pali">ปราตฺตุตจฺ-ฉฺรุเตห์</span><span class="slant thai">ปะราตตุตัจ-ฉรุเตห์</span><span class="slant ram">zzzทุ-zzz</span>&nbsp;&nbsp;(2.3.40)&nbsp;&nbsp;คำพังเพยแรกแสดงถึงสนามแห่ง<wbr>กิจกรรม&nbsp;&nbsp;คำพังเผยที่สองแสดงถึงสิ่งมีชีวิต&nbsp;&nbsp;และคำพังเผยที่สามแสดงถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผู้<wbr>สูงสุดอย่างสมบูรณ์แบบในปรากฏการณ์ทั้งหลายแห่งชีวิตอันหลากหลาย
   </p>
 </div>
 

@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.20</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กาไมสฺ ไตสฺ ไตรฺ หฺฤต-ชฺญานาฮ</i><br /><i>ปฺรปทฺยเนฺต ′นฺย-เทวตาฮ</i><br /><i>ตํ ตํ นิยมมฺ อาสฺตฺหาย</i><br /><i>ปฺรกฺฤตฺยา นิยตาฮ สฺวยา</i>
+<span class="slant iast">kāmais tais tair hṛta-jñānāḥ<br /></span>
+<span class="slant pali">กาไมสฺ ไตสฺ ไตรฺ หฺฤต-ชฺญานาห์<br /></span>
+<span class="slant thai">กาไมส ไตส ไตร หฤตะ-ชญานาห์<br /></span>
+<span class="slant ram">คาไมส ไทส ไทร ฮิรทะ-กยานาฮ<br /></span>
+<span class="slant iast">prapadyante ’nya-devatāḥ<br /></span>
+<span class="slant pali">ปฺรปทฺยนฺเต ’นฺย-เทวตาห์<br /></span>
+<span class="slant thai">ประปัทยันเต ’นยะ-เทวะตาห์<br /></span>
+<span class="slant ram">พระพัดยันเท ´นยะ-เดวะทาฮ<br /></span>
+<span class="slant iast">taṁ taṁ niyamam āsthāya<br /></span>
+<span class="slant pali">ตํ ตํ นิยมมฺ อาสฺถาย<br /></span>
+<span class="slant thai">ตัง ตัง นิยะมัม อาสถายะ<br /></span>
+<span class="slant ram">ทัม ทัม นิยะมัม อาสทฺายะ<br /></span>
+<span class="slant iast">prakṛtyā niyatāḥ svayā<br /></span>
+<span class="slant pali">ปฺรกฺฤตฺยา นิยตาห์ สฺวยา<br /></span>
+<span class="slant thai">ปรักฤตยา นิยะตาห์ สวะยา<br /></span>
+<span class="slant ram">พระคริทยา นิยะทาฮ สวะยา<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กาไมฮ</i> — ด้วยความปรารถนา, <i>ไตฮ ไตฮ</i> — ต่าง ๆ, <i>หฺฤต</i> — แย่งเอาไป, <i>ชฺญานาฮ</i> — ความรู้, <i>ปฺรปทฺยเนฺต</i> — ศิโรราบ, <i>อนฺย</i> — แด่ผู้อื่น, <i>เทวตาฮ</i> — เหล่าเทวดา, <i>ตมฺ ตมฺ</i> — ตรงตาม, <i>นิยมมฺ</i> — กฏเกณฑ์, <i>อาสฺตฺหาย</i> — ปฏิบัติตาม, <i>ปฺรกฺฤตฺยา</i> — โดยธรรมชาติ, <i>นิยตาฮ</i> — ถูกควบคุม, <i>สฺวยา</i> — ด้วยตนเอง
+  <span class="slant iast">kāmaiḥ</span><span class="slant pali">กาไมห์</span><span class="slant thai">กาไมห์</span><span class="slant ram">คาไมฮ</span> — ด้วยความปรารถนา, <span class="slant iast">taiḥ taiḥ</span><span class="slant pali">ไตห์ไตห์</span><span class="slant thai">ไตห์ไตห์</span><span class="slant ram">ไทฮ ไทฮ</span> — ต่าง ๆ, <span class="slant iast">hṛta</span><span class="slant pali">หฺฤต</span><span class="slant thai">หฤตะ</span><span class="slant ram">ฮริทะ</span> — แย่งเอาไป, <span class="slant iast">jñānāḥ</span><span class="slant pali">ชฺญานาห์</span><span class="slant thai">ชญานาห์</span><span class="slant ram">กยานาฮ</span> — ความรู้, <span class="slant iast">prapadyante</span><span class="slant pali">ปฺรปทฺยนฺเต</span><span class="slant thai">ประปัทยันเต</span><span class="slant ram">พระ พัดยันเท</span> — ศิโรราบ, <span class="slant iast">anya</span><span class="slant pali">อนฺย</span><span class="slant thai">อันยะ</span><span class="slant ram">อันยะ</span> — แด่ผู้อื่น, <span class="slant iast">devatāḥ</span><span class="slant pali">เทวตาห์</span><span class="slant thai">เทวะตาห์</span><span class="slant ram">เดวะทาฮ</span> — เหล่าเทวดา, <span class="slant iast">tam tam</span><span class="slant pali">ตมฺตมฺ</span><span class="slant thai">ตัมตัม</span><span class="slant ram">ทัม ทัม</span> — ตรงตาม, <span class="slant iast">niyamam</span><span class="slant pali">นิยมมฺ</span><span class="slant thai">นิยะมัม</span><span class="slant ram">นิยะมัม</span> — กฏเกณฑ์, <span class="slant iast">āsthāya</span><span class="slant pali">อาสฺถาย</span><span class="slant thai">อาสถายะ</span><span class="slant ram">อาสทฺายะ</span> — ปฏิบัติตาม, <span class="slant iast">prakṛtyā</span><span class="slant pali">ปฺรกฺฤตฺยา</span><span class="slant thai">ปรักฤตยา</span><span class="slant ram">พระคริทยา</span> — โดยธรรมชาติ, <span class="slant iast">niyatāḥ</span><span class="slant pali">นิยตาห์</span><span class="slant thai">นิยะตาห์</span><span class="slant ram">นิยะทาฮ</span> — ถูกควบคุม, <span class="slant iast">svayā</span><span class="slant pali">สฺวยา</span><span class="slant thai">สวะยา</span><span class="slant ram">สวะยา</span> — ด้วยตนเอง
   </p>
 </div>
 
@@ -73,19 +174,34 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  บุคคลที่เป็นอิสระจากมลทินทางวัตถุทั้งหมดจะศิโรราบต่อองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และ<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้ต่อพระองค์&nbsp;&nbsp;ตราบใดที่มลทินทางวัตถุยังชะล้างไม่หมดโดยธรรมชาติพวกนี้ไม่ใช่สาวก&nbsp;&nbsp;แม้แต่บุคคลที่มีความปรารถนาทางวัตถุและอยู่บนวิถี<wbr>ทางขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะไม่หลงใหลอยู่กับธรรมชาติภายนอกมากนัก&nbsp;&nbsp;เนื่องจากมาเข้าหา<wbr>จุดมุ่งหมายที่ถูกต้อง&nbsp;&nbsp;และในไม่ช้าก็จะเป็นอิสระจากราคะทางวัตถุทั้งปวง&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ได้แนะนำไว้ว่า&nbsp;&nbsp;ไม่ว่าบุคคลจะเป็นสาวกผู้บริสุทธิ์&nbsp;&nbsp;ปราศจากความต้องการ<wbr>ทางวัตถุทั้งปวง&nbsp;&nbsp;หรือจะเต็มไปด้วยความปรารถนาทางวัตถุ&nbsp;&nbsp;หรือปรารถนาความหลุด<wbr>พ้นจากมลทินทางวัตถุ&nbsp;&nbsp;ในทุกกรณีเราควรศิโรราบต่อ&nbsp;&nbsp;<i>วาสุเทว</i>&nbsp;&nbsp;และบูชาพระองค์&nbsp;&nbsp;ได้<wbr>กล่าวไว้ใน&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;(2.3.10)&nbsp;&nbsp;ว่า
+  บุคคลที่เป็นอิสระจากมลทินทางวัตถุทั้งหมดจะศิโรราบต่อองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และ<wbr>ปฏิบัติการอุทิศตนเสียสละรับใช้ต่อพระองค์&nbsp;&nbsp;ตราบใดที่มลทินทางวัตถุยังชะล้างไม่หมดโดยธรรมชาติพวกนี้ไม่ใช่สาวก&nbsp;&nbsp;แม้แต่บุคคลที่มีความปรารถนาทางวัตถุและอยู่บนวิถี<wbr>ทางขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะไม่หลงใหลอยู่กับธรรมชาติภายนอกมากนัก&nbsp;&nbsp;เนื่องจากมาเข้าหา<wbr>จุดมุ่งหมายที่ถูกต้อง&nbsp;&nbsp;และในไม่ช้าก็จะเป็นอิสระจากราคะทางวัตถุทั้งปวง&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ได้แนะนำไว้ว่า&nbsp;&nbsp;ไม่ว่าบุคคลจะเป็นสาวกผู้บริสุทธิ์&nbsp;&nbsp;ปราศจากความต้องการ<wbr>ทางวัตถุทั้งปวง&nbsp;&nbsp;หรือจะเต็มไปด้วยความปรารถนาทางวัตถุ&nbsp;&nbsp;หรือปรารถนาความหลุด<wbr>พ้นจากมลทินทางวัตถุ&nbsp;&nbsp;ในทุกกรณีเราควรศิโรราบต่อ&nbsp;&nbsp;<span class="slant iast">vāsudeva</span><span class="slant pali">วาสุเทว</span><span class="slant thai">วาสุเทวะ</span><span class="slant ram">วาสุเดวะ</span>&nbsp;&nbsp;และบูชาพระองค์&nbsp;&nbsp;ได้<wbr>กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;(2.3.10)&nbsp;&nbsp;ว่า
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อกามฮ สรฺว-กาโม วา</i><br /><i>โมกฺษ-กาม อุทาร-ธีฮ</i><br /><i>ตีเวฺรณ ภกฺติ-โยเคน</i><br /><i>ยเชต ปุรุษํ ปรมฺ</i>
+<span class="slant iast">akāmaḥ sarva-kāmo vā<br /></span>
+<span class="slant pali">อกามห์ สรฺว-กาโม วา<br /></span>
+<span class="slant thai">อะกามะห์ สัรวะ-กาโม วา<br /></span>
+<span class="slant ram">อคามะฮ สารวะคาโม วา<br /></span>
+<span class="slant iast">mokṣa-kāma udāra-dhīḥ<br /></span>
+<span class="slant pali">โมกฺษ-กาม อุทาร-ธีห์<br /></span>
+<span class="slant thai">โมกษะ-กามะ อุทาระ-ธีห์<br /></span>
+<span class="slant ram">โมคชะ-คามะ อุดาระ-ดีฮ<br /></span>
+<span class="slant iast">tīvreṇa bhakti-yogena<br /></span>
+<span class="slant pali">ตีเวฺรณ ภกฺติ-โยเคน<br /></span>
+<span class="slant thai">ตีวเรณะ ภักติ-โยเคนะ<br /></span>
+<span class="slant ram">ทีวเรณะ บัฺคธิ-โยเกนะ<br /></span>
+<span class="slant iast">yajeta puruṣaṁ param<br /></span>
+<span class="slant pali">ยเชต ปุรุษํ ปรมฺ<br /></span>
+<span class="slant thai">ยะเชตะ ปุรุษัง ปะรัม<br /></span>
+<span class="slant ram">ยะเจทะ พุรุชัม พะรัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  บุคคลผู้ด้อยปัญญาสูญเสียความสัมผัสทิพย์จะไปพึ่งเทวดาเพื่อได้รับการตอบสนอง<wbr>ตามความต้องการทางวัตถุทันที&nbsp;&nbsp;โดยทั่วไปบุคคลเช่นนี้ไม่เข้าหาองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพราะว่า<wbr>อยู่ในระดับแห่งธรรมชาติที่ต่ำ&nbsp;&nbsp;(อวิชชาและตัณหา)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงบูชาเทวดา&nbsp;&nbsp;ปฏิบัติตามกฎ<wbr>เกณฑ์การบูชาและได้รับความพึงพอใจ&nbsp;&nbsp;พวกที่บูชาเทวดาถูกกระตุ้นด้วยความปรารถนา<wbr>เพียงเล็กน้อยและไม่รู้ว่าจะไปถึงจุดมุ่งหมายสูงสุดได้อย่างไร&nbsp;&nbsp;แต่สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่ถูกนำพาไปในทางที่ผิด&nbsp;&nbsp;ถึงแม้วรรณกรรมพระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;จะแนะนำให้บูชาเทพต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้วย<wbr>จุดมุ่งหมายที่แตกต่างกัน&nbsp;&nbsp;(ตัวอย่างเช่น&nbsp;&nbsp;คนเป็นโรคได้รับคำแนะนำให้บูชาพระอาทิตย์)พวกที่ไม่ใช่สาวกขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;คิดว่าเพื่อจุดประสงค์บางอย่างเทวดาอาจจะดีกว่าแต่สาวกผู้บริสุทธิ์ทราบว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของมวลเทวดา&nbsp;&nbsp;ใน&nbsp;&nbsp;<i>ไจตนฺย-จริตามฺฤต&nbsp;&nbsp;(อาทิ</i>&nbsp;&nbsp;5.142)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<i>เอกเล&nbsp;&nbsp;อีศฺวร&nbsp;&nbsp;กฺฤษฺณ,อาร&nbsp;&nbsp;สพ&nbsp;&nbsp;ภฺฤตฺย</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เท่านั้นทรงเป็นปรมาจารย์&nbsp;&nbsp;และองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดทรง<wbr>เป็นผู้รับใช้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;สาวกผู้บริสุทธิ์จะไม่เข้าหาเทวดาเพื่อความพึงพอใจในความต้องการ<wbr>ทางวัตถุของตน&nbsp;&nbsp;แต่จะขึ้นอยู่กับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;สาวกผู้บริสุทธิ์พึงพอใจกับทุกสิ่งทุกอย่างที่<wbr>พระองค์ทรงประทานให้
+  บุคคลผู้ด้อยปัญญาสูญเสียความสัมผัสทิพย์จะไปพึ่งเทวดาเพื่อได้รับการตอบสนอง<wbr>ตามความต้องการทางวัตถุทันที&nbsp;&nbsp;โดยทั่วไปบุคคลเช่นนี้ไม่เข้าหาองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพราะว่า<wbr>อยู่ในระดับแห่งธรรมชาติที่ต่ำ&nbsp;&nbsp;(อวิชชาและตัณหา)&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงบูชาเทวดา&nbsp;&nbsp;ปฏิบัติตามกฎ<wbr>เกณฑ์การบูชาและได้รับความพึงพอใจ&nbsp;&nbsp;พวกที่บูชาเทวดาถูกกระตุ้นด้วยความปรารถนา<wbr>เพียงเล็กน้อยและไม่รู้ว่าจะไปถึงจุดมุ่งหมายสูงสุดได้อย่างไร&nbsp;&nbsp;แต่สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่ถูกนำพาไปในทางที่ผิด&nbsp;&nbsp;ถึงแม้วรรณกรรมพระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;จะแนะนำให้บูชาเทพต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ด้วย<wbr>จุดมุ่งหมายที่แตกต่างกัน&nbsp;&nbsp;(ตัวอย่างเช่น&nbsp;&nbsp;คนเป็นโรคได้รับคำแนะนำให้บูชาพระอาทิตย์)พวกที่ไม่ใช่สาวกขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;คิดว่าเพื่อจุดประสงค์บางอย่างเทวดาอาจจะดีกว่าแต่สาวกผู้บริสุทธิ์ทราบว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นปรมาจารย์ของมวลเทวดา&nbsp;&nbsp;ใน&nbsp;&nbsp;<span class="slant iast">caitanya-caritāmṛta&nbsp;&nbsp;(ādi</span><span class="slant pali">ไจตนฺย-จริตามฺฤตอาทิ</span><span class="slant thai">ไจตันยะ-จะริตามฤตะอาทิ</span><span class="slant ram">เชธันญะ-อาดิ</span>&nbsp;&nbsp;5.142)&nbsp;&nbsp;กล่าวว่า&nbsp;&nbsp;<span class="slant iast">ekale&nbsp;&nbsp;īśvara&nbsp;&nbsp;kṛṣṇa,&nbsp;&nbsp;āra&nbsp;&nbsp;saba&nbsp;&nbsp;bhṛtya</span><span class="slant pali">เอกเลอีศฺวรกฺฤษฺณอารสพภฺฤตฺย</span><span class="slant thai">เอกะเลอีศวะระกฤษณะอาระสะพะภฤตยะ</span><span class="slant ram">zzzอีชวะระคริชณะzzzzzz</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เท่านั้นทรงเป็นปรมาจารย์&nbsp;&nbsp;และองค์อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดทรง<wbr>เป็นผู้รับใช้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;สาวกผู้บริสุทธิ์จะไม่เข้าหาเทวดาเพื่อความพึงพอใจในความต้องการ<wbr>ทางวัตถุของตน&nbsp;&nbsp;แต่จะขึ้นอยู่กับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;สาวกผู้บริสุทธิ์พึงพอใจกับทุกสิ่งทุกอย่างที่<wbr>พระองค์ทรงประทานให้
   </p>
 </div>
 

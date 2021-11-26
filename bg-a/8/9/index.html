@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.9</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>กวิํ ปุราณมฺ อนุศาสิตารมฺ</i><br /><i>อโณรฺ อณียาํสมฺ อนุสฺมเรทฺ ยฮ</i><br /><i>สรฺวสฺย ธาตารมฺ อจินฺตฺย-รูปมฺ</i><br /><i>อาทิตฺย-วรฺณํ ตมสฮ ปรสฺตาตฺ</i>
+<span class="slant iast">kaviṁ purāṇam anuśāsitāram<br /></span>
+<span class="slant pali">กวึ ปุราณมฺ อนุศาสิตารมฺ<br /></span>
+<span class="slant thai">กะวิง ปุราณัม อะนุศาสิตารัม<br /></span>
+<span class="slant ram">คะวิม พุราณัม อนุชาสิทารัม<br /></span>
+<span class="slant iast">aṇor aṇīyāṁsam anusmared yaḥ<br /></span>
+<span class="slant pali">อโณรฺ อณียำสมฺ อนุสฺมเรทฺ ยห์<br /></span>
+<span class="slant thai">อะโณร อะณียางสัม อะนุสมะเรท ยะห์<br /></span>
+<span class="slant ram">อโณร อณียามสัม อนุสมะเรด ยะฮ<br /></span>
+<span class="slant iast">sarvasya dhātāram acintya-rūpam<br /></span>
+<span class="slant pali">สรฺวสฺย ธาตารมฺ อจินฺตฺย-รูปมฺ<br /></span>
+<span class="slant thai">สัรวัสยะ ธาตารัม อะจินตยะ-รูปัม<br /></span>
+<span class="slant ram">สารวัสยะ ดฺาทารัม อชินทยะ-รูพัม<br /></span>
+<span class="slant iast">āditya-varṇaṁ tamasaḥ parastāt<br /></span>
+<span class="slant pali">อาทิตฺย-วรฺณํ ตมสห์ ปรสฺตาตฺ<br /></span>
+<span class="slant thai">อาทิตยะ-วัรณัง ตะมะสะห์ ปะรัสตาต<br /></span>
+<span class="slant ram">อาดิทยะ-วารณัม ทะมะสะฮ พะรัสทาทฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>กวิมฺ</i> — ผู้ที่รู้ทุกสิ่งทุกอย่าง, <i>ปุราณมฺ</i> — อาวุโสที่สุด, <i>อนุศาสิตารมฺ</i> — ผู้ควบคุม, <i>อโณฮ</i> — กว่า ละอองอณู, <i>อณียาํสมฺ</i> — เล็กว่า, <i>อนุสฺมเรตฺ</i> — คิดถึงอยู่เสมอ, <i>ยฮ</i> — ผู้ซึ่ง, <i>สรฺวสฺย</i> — ของทุกสิ่ง, <i>ธาตารมฺ</i> — ผู้ดำรงรักษา, <i>อจินฺตฺย</i> — ไม่สามรถมองเห็น, <i>รูปมฺ</i> — รูปลักษณ์ของ พระองค์, <i>อาทิตฺย-วรฺณมฺ</i> — เจิดจรัสเหมือนดวงอาทิตย์, <i>ตมสฮ</i> — ความมืด, <i>ปรสฺตาตฺ</i> — ทิพย์
+  <span class="slant iast">kavim</span><span class="slant pali">กวิมฺ</span><span class="slant thai">กะวิม</span><span class="slant ram">คะวิม</span> — ผู้ที่รู้ทุกสิ่งทุกอย่าง, <span class="slant iast">purāṇam</span><span class="slant pali">ปุราณมฺ</span><span class="slant thai">ปุราณัม</span><span class="slant ram">พุราณัม</span> — อาวุโสที่สุด, <span class="slant iast">anuśāsitāram</span><span class="slant pali">อนุศาสิตารมฺ</span><span class="slant thai">อะนุศาสิตารัม</span><span class="slant ram">อนุชาสิทารัม</span> — ผู้ควบคุม, <span class="slant iast">aṇoḥ</span><span class="slant pali">อโณห์</span><span class="slant thai">อะโณห์</span><span class="slant ram">อโนฮ</span> — กว่า ละอองอณู, <span class="slant iast">aṇīyāṁsam</span><span class="slant pali">อณียำสมฺ</span><span class="slant thai">อะณียางสัม</span><span class="slant ram">อณียามสัม</span> — เล็กว่า, <span class="slant iast">anusmaret</span><span class="slant pali">อนุสฺมเรตฺ</span><span class="slant thai">อะนุสมะเรต</span><span class="slant ram">อนุสมะเรท</span> — คิดถึงอยู่เสมอ, <span class="slant iast">yaḥ</span><span class="slant pali">ยห์</span><span class="slant thai">ยะห์</span><span class="slant ram">ยะฮ</span> — ผู้ซึ่ง, <span class="slant iast">sarvasya</span><span class="slant pali">สรฺวสฺย</span><span class="slant thai">สัรวัสยะ</span><span class="slant ram">สารวัสยะ</span> — ของทุกสิ่ง, <span class="slant iast">dhātāram</span><span class="slant pali">ธาตารมฺ</span><span class="slant thai">ธาตารัม</span><span class="slant ram">ดฺาทารัม</span> — ผู้ดำรงรักษา, <span class="slant iast">acintya</span><span class="slant pali">อจินฺตฺย</span><span class="slant thai">อะจินตยะ</span><span class="slant ram">อชินทยะ</span> — ไม่สามรถมองเห็น, <span class="slant iast">rūpam</span><span class="slant pali">รูปมฺ</span><span class="slant thai">รูปัม</span><span class="slant ram">รูพัม</span> — รูปลักษณ์ของ พระองค์, <span class="slant iast">āditya-varṇam</span><span class="slant pali">อาทิตฺย-วรฺณมฺ</span><span class="slant thai">อาทิตยะ-วัรณัม</span><span class="slant ram">อาดิทยะ-วารณัม</span> — เจิดจรัสเหมือนดวงอาทิตย์, <span class="slant iast">tamasaḥ</span><span class="slant pali">ตมสห์</span><span class="slant thai">ตะมะสะห์</span><span class="slant ram">ทะมะสะฮ</span> — ความมืด, <span class="slant iast">parastāt</span><span class="slant pali">ปรสฺตาตฺ</span><span class="slant thai">ปะรัสตาต</span><span class="slant ram">พะรัส- ทาท</span> — ทิพย์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  วิธีการคิดถึงองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ได้กล่าวไว้ในโศลกนี้&nbsp;&nbsp;จุดสำคัญที่สุดคือพระองค์ทรง<wbr>มิใช่ไร้รูปลักษณ์หรือว่างเปล่า&nbsp;&nbsp;เราไม่สามารถทำสมาธิอยู่ที่บางสิ่งบางอย่างที่ไม่มีรูป<wbr>ลักษณ์หรือว่างเปล่า&nbsp;&nbsp;เพราะเป็นสิ่งที่ยากมาก&nbsp;&nbsp;อย่างไรก็ดีวิธีการคิดถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;นั้นง่าย<wbr>มาก&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;ก่อนอื่นพระองค์ทรงเป็น&nbsp;&nbsp;<i>ปุรุษ</i>&nbsp;&nbsp;หรือบุคคล&nbsp;&nbsp;เราคิดถึงรูป&nbsp;&nbsp;ลักษณ์<wbr>พระ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;และรูปลักษณ์&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ว่าเราจะคิดถึงพระ&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;พระองค์ทรงเป็น<wbr>เช่นไรนั้นได้อธิบายในโศลกนี้ของ&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเป็น<i>กวิ</i>&nbsp;&nbsp;หมายความ<wbr>ว่าพระองค์รู้อดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระองค์ทรงรู้ทุกสิ่งทุกอย่าง&nbsp;&nbsp;เป็นบุคคล<wbr>ผู้อาวุโสที่สุด&nbsp;&nbsp;เพราะว่าเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทุกสิ่งทุกอย่างกำเนิดมาก<wbr>จากพระองค์&nbsp;&nbsp;พระองค์ยังเป็นผู้ควบคุมจักรวาลสูงสุด&nbsp;&nbsp;ทรงเป็นผู้ดำรงรักษาและผู้<wbr>สอนมนุษยชาติ&nbsp;&nbsp;เล็กว่าสิ่งที่เล็กที่สุด&nbsp;&nbsp;สิ่งมีชิวิตมีขนาดเศษหนึ่งส่วนหมื่นของปลาย<wbr>เส้นผม&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เล็กจนมองไม่เห็น&nbsp;&nbsp;และเสด็จเข้าไปอยู่ในหัวใจของละอองอณู<wbr>นี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระองค์ถูกเรียกว่าเล็กกว่าสิ่งที่เล็กที่สุด&nbsp;&nbsp;ในฐานะที่เป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระองค์<wbr>ทรงสามารถเสด็จเข้าไปในละอองอณูและเข้าไปในหัวใจของสิ่งที่เล็กที่สุดและควบคุม<wbr>เขาในฐานะที่เป็นอภิวิญญาณ&nbsp;&nbsp;แม้จะเล็กขนาดนี้พระองค์ยังแผ่กระจายไปทั่วและดำรง<wbr>รักษาทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทรงเป็นผู้ค้ำจุนระบบดาวเคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดนี้&nbsp;&nbsp;เราประหลาด<wbr>ใจอยู่เสมอว่าดาวเคราะห์มหึมาเหล่านี้ลอยอยู่ในอากาศได้อย่างไร&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าด้วยพลังอำนาจอันมองไม่เห็นขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;พระองค์ทรงค้ำจุนดาวเคราะห์มหึมาทั้ง<wbr>หลายเหล่านี้รวมทั้งระบบต่าง&nbsp;&nbsp;ๆของหมู่ดวงดาว&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>อจินฺตฺย</i>&nbsp;&nbsp;(“ไม่สามารถมองเห็น”)มีความสำคัญเกี่ยวเนื่องกันนี้&nbsp;&nbsp;พลังงานขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อยู่เหนือขอบเขตวิศัยทัศน์ของ<wbr>พวกเรา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเรียกว่าไม่สามารถมองเห็น&nbsp;&nbsp;(<i>อจินฺตฺย</i>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้ใดจะสามารถเถียงประเด็น<wbr>นี้ได้?&nbsp;&nbsp;พระองค์ทรงแผ่กระจายในโลกวัตถุนี้&nbsp;&nbsp;ถึงกระนั้นก็อยู่เหนือโลกวัตถุนี้&nbsp;&nbsp;เราไม่<wbr>สามารถเข้าใจแม้แต่โลกวัตถุซึ่งไม่มีความสำคัญอันใดเลยเมื่อเปรียบเทียบกับโลกทิพย์แล้วเราจะเข้าใจสิ่งที่สูงไปกว่านี้ได้อย่างไร?&nbsp;&nbsp;<i>อจินฺตฺย</i>&nbsp;&nbsp;หมายความว่าโลกวัตถุ&nbsp;&nbsp;ซึ่งข้อถก<wbr>เถียงตามตรรกวิทยาและการคาดคะเนทางปรัชญาของเราไม่สามารถสัมผัสสิ่งที่เราไม่<wbr>สามารถมองเห็นได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บุคคลผู้มีปัญญาจะหลีกเลี่ยงการถกเถียงและการคาดคะเน<wbr>ที่ไร้ประโยชน์&nbsp;&nbsp;และยอมรับสิ่งที่กล่าวไว้ในพระคัมภีร์เช่น&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<i>เวท</i>&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;และปฏิบัติตามหลักการที่วางไว้&nbsp;&nbsp;เช่นนี้จะนำเราไปสู่ความเข้าใจ
+  วิธีการคิดถึงองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ได้กล่าวไว้ในโศลกนี้&nbsp;&nbsp;จุดสำคัญที่สุดคือพระองค์ทรง<wbr>มิใช่ไร้รูปลักษณ์หรือว่างเปล่า&nbsp;&nbsp;เราไม่สามารถทำสมาธิอยู่ที่บางสิ่งบางอย่างที่ไม่มีรูป<wbr>ลักษณ์หรือว่างเปล่า&nbsp;&nbsp;เพราะเป็นสิ่งที่ยากมาก&nbsp;&nbsp;อย่างไรก็ดีวิธีการคิดถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;นั้นง่าย<wbr>มาก&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่า&nbsp;&nbsp;ก่อนอื่นพระองค์ทรงเป็น&nbsp;&nbsp;<span class="slant iast">puruṣa</span><span class="slant pali">ปุรุษ</span><span class="slant thai">ปุรุษะ</span><span class="slant ram">พุรุชะ</span>&nbsp;&nbsp;หรือบุคคล&nbsp;&nbsp;เราคิดถึงรูป&nbsp;&nbsp;ลักษณ์<wbr>พระ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;และรูปลักษณ์&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ว่าเราจะคิดถึงพระ&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;หรือ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;พระองค์ทรงเป็น<wbr>เช่นไรนั้นได้อธิบายในโศลกนี้ของ&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเป็น<span class="slant iast">kavi</span><span class="slant pali">กวิ</span><span class="slant thai">กะวิ</span><span class="slant ram"></span>&nbsp;&nbsp;หมายความ<wbr>ว่าพระองค์รู้อดีต&nbsp;&nbsp;ปัจจุบัน&nbsp;&nbsp;และอนาคต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระองค์ทรงรู้ทุกสิ่งทุกอย่าง&nbsp;&nbsp;เป็นบุคคล<wbr>ผู้อาวุโสที่สุด&nbsp;&nbsp;เพราะว่าเป็นแหล่งกำเนิดของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทุกสิ่งทุกอย่างกำเนิดมาก<wbr>จากพระองค์&nbsp;&nbsp;พระองค์ยังเป็นผู้ควบคุมจักรวาลสูงสุด&nbsp;&nbsp;ทรงเป็นผู้ดำรงรักษาและผู้<wbr>สอนมนุษยชาติ&nbsp;&nbsp;เล็กว่าสิ่งที่เล็กที่สุด&nbsp;&nbsp;สิ่งมีชิวิตมีขนาดเศษหนึ่งส่วนหมื่นของปลาย<wbr>เส้นผม&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เล็กจนมองไม่เห็น&nbsp;&nbsp;และเสด็จเข้าไปอยู่ในหัวใจของละอองอณู<wbr>นี้&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;พระองค์ถูกเรียกว่าเล็กกว่าสิ่งที่เล็กที่สุด&nbsp;&nbsp;ในฐานะที่เป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระองค์<wbr>ทรงสามารถเสด็จเข้าไปในละอองอณูและเข้าไปในหัวใจของสิ่งที่เล็กที่สุดและควบคุม<wbr>เขาในฐานะที่เป็นอภิวิญญาณ&nbsp;&nbsp;แม้จะเล็กขนาดนี้พระองค์ยังแผ่กระจายไปทั่วและดำรง<wbr>รักษาทุกสิ่งทุกอย่าง&nbsp;&nbsp;ทรงเป็นผู้ค้ำจุนระบบดาวเคราะห์ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ทั้งหมดนี้&nbsp;&nbsp;เราประหลาด<wbr>ใจอยู่เสมอว่าดาวเคราะห์มหึมาเหล่านี้ลอยอยู่ในอากาศได้อย่างไร&nbsp;&nbsp;ได้กล่าวไว้&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าด้วยพลังอำนาจอันมองไม่เห็นขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;พระองค์ทรงค้ำจุนดาวเคราะห์มหึมาทั้ง<wbr>หลายเหล่านี้รวมทั้งระบบต่าง&nbsp;&nbsp;ๆของหมู่ดวงดาว&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">acintya</span><span class="slant pali">อจินฺตฺย</span><span class="slant thai">อะจินตยะ</span><span class="slant ram">อชินทยะ</span>&nbsp;&nbsp;(“ไม่สามารถมองเห็น”)มีความสำคัญเกี่ยวเนื่องกันนี้&nbsp;&nbsp;พลังงานขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อยู่เหนือขอบเขตวิศัยทัศน์ของ<wbr>พวกเรา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงเรียกว่าไม่สามารถมองเห็น&nbsp;&nbsp;(<span class="slant iast">acintya</span><span class="slant pali">อจินฺตฺย</span><span class="slant thai">อะจินตยะ</span><span class="slant ram">อชินทยะ</span>&nbsp;&nbsp;)&nbsp;&nbsp;ผู้ใดจะสามารถเถียงประเด็น<wbr>นี้ได้?&nbsp;&nbsp;พระองค์ทรงแผ่กระจายในโลกวัตถุนี้&nbsp;&nbsp;ถึงกระนั้นก็อยู่เหนือโลกวัตถุนี้&nbsp;&nbsp;เราไม่<wbr>สามารถเข้าใจแม้แต่โลกวัตถุซึ่งไม่มีความสำคัญอันใดเลยเมื่อเปรียบเทียบกับโลกทิพย์แล้วเราจะเข้าใจสิ่งที่สูงไปกว่านี้ได้อย่างไร?&nbsp;&nbsp;<span class="slant iast">acintya</span><span class="slant pali">อจินฺตฺย</span><span class="slant thai">อะจินตยะ</span><span class="slant ram">อชินทยะ</span>&nbsp;&nbsp;หมายความว่าโลกวัตถุ&nbsp;&nbsp;ซึ่งข้อถก<wbr>เถียงตามตรรกวิทยาและการคาดคะเนทางปรัชญาของเราไม่สามารถสัมผัสสิ่งที่เราไม่<wbr>สามารถมองเห็นได้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;บุคคลผู้มีปัญญาจะหลีกเลี่ยงการถกเถียงและการคาดคะเน<wbr>ที่ไร้ประโยชน์&nbsp;&nbsp;และยอมรับสิ่งที่กล่าวไว้ในพระคัมภีร์เช่น&nbsp;&nbsp;คัมภีร์พระ&nbsp;&nbsp;<span class="slant iast">veda</span><span class="slant pali">เวท</span><span class="slant thai">เวทะ</span><span class="slant ram">เวท</span>&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;และปฏิบัติตามหลักการที่วางไว้&nbsp;&nbsp;เช่นนี้จะนำเราไปสู่ความเข้าใจ
   </p>
 </div>
 

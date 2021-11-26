@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 2.65</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปฺรสาเท สรฺว-ทุฮขานาํ</i><br /><i>หานิรฺ อโสฺยปชายเต</i><br /><i>ปฺรสนฺน-เจตโส หฺยฺ อาศุ</i><br /><i>พุทฺธิฮ ปรฺยวติษฺฐเต</i>
+<span class="slant iast">prasāde sarva-duḥkhānāṁ<br /></span>
+<span class="slant pali">ปฺรสาเท สรฺว-ทุห์ขานำ<br /></span>
+<span class="slant thai">ประสาเท สัรวะ-ทุห์ขานาง<br /></span>
+<span class="slant ram">พระสาเด สารวะ-ดุฮคฺานาม<br /></span>
+<span class="slant iast">hānir asyopajāyate<br /></span>
+<span class="slant pali">หานิรฺ อโสฺยปชายเต<br /></span>
+<span class="slant thai">หานิร อัสโยปะชายะเต<br /></span>
+<span class="slant ram">ฮานิร อัสโยพะจายะเท<br /></span>
+<span class="slant iast">prasanna-cetaso hy āśu<br /></span>
+<span class="slant pali">ปฺรสนฺน-เจตโส หฺยฺ อาศุ<br /></span>
+<span class="slant thai">ประสันนะ-เจตะโส หย อาศุ<br /></span>
+<span class="slant ram">พระสันนะ-เชทะโส ฮิ อาชุ<br /></span>
+<span class="slant iast">buddhiḥ paryavatiṣṭhate<br /></span>
+<span class="slant pali">พุทฺธิห์ ปรฺยวติษฺฐเต<br /></span>
+<span class="slant thai">พุทธิห์ ปัรยะวะติษฐะเต<br /></span>
+<span class="slant ram">บุดดิฺฮ พารยะวะทิชทฺะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปฺรสาเท</i> — จากการได้รับพระเมตตาธิคุณอันล้นพ้นขององค์ภควาน, <i>สรฺว</i> — ทั้งหมด, <i>ทุฮขานามฺ</i> — ความทุกข์ทางวัตถุ, <i>หานิฮ</i> — การทำลาย, <i>อสฺย</i> — ของเขา, <i>อุปชายเต</i> — เกิด ขึ้น, <i>ปฺรสนฺน-เจตสฮ</i> — ของจิตใจที่มีความสุข, <i>หิ</i> — แน่นอน, <i>อาศุ</i> — เร็ว ๆ นี้, <i>พุทฺธิฮ</i> — ปัญญา, <i>ปริ</i> — เพียงพอ, <i>อวติษฺฐเต</i> — มั่นคง
+  <span class="slant iast">prasāde</span><span class="slant pali">ปฺรสาเท</span><span class="slant thai">ประสาเท</span><span class="slant ram">พระสาเด</span> — จากการได้รับพระเมตตาธิคุณอันล้นพ้นขององค์ภควาน, <span class="slant iast">sarva</span><span class="slant pali">สรฺว</span><span class="slant thai">สัรวะ</span><span class="slant ram">สารวะ</span> — ทั้งหมด, <span class="slant iast">duḥkhānām</span><span class="slant pali">ทุห์ขานามฺ</span><span class="slant thai">ทุห์ขานาม</span><span class="slant ram">ดุฮคฺานาม</span> — ความทุกข์ทางวัตถุ, <span class="slant iast">hāniḥ</span><span class="slant pali">หานิห์</span><span class="slant thai">หานิห์</span><span class="slant ram">ฮานิฮ</span> — การทำลาย, <span class="slant iast">asya</span><span class="slant pali">อสฺย</span><span class="slant thai">อัสยะ</span><span class="slant ram">อัสยะ</span> — ของเขา, <span class="slant iast">upajāyate</span><span class="slant pali">อุปชายเต</span><span class="slant thai">อุปะชายะเต</span><span class="slant ram">อุพะจายะเท</span> — เกิด ขึ้น, <span class="slant iast">prasanna-cetasaḥ</span><span class="slant pali">ปฺรสนฺน-เจตสห์</span><span class="slant thai">ประสันนะ-เจตะสะห์</span><span class="slant ram">พระสันนะ-เชทสะฮ</span> — ของจิตใจที่มีความสุข, <span class="slant iast">hi</span><span class="slant pali">หิ</span><span class="slant thai">หิ</span><span class="slant ram">ฮิ</span> — แน่นอน, <span class="slant iast">āśu</span><span class="slant pali">อาศุ</span><span class="slant thai">อาศุ</span><span class="slant ram">อาชุ</span> — เร็ว ๆ นี้, <span class="slant iast">buddhiḥ</span><span class="slant pali">พุทฺธิห์</span><span class="slant thai">พุทธิห์</span><span class="slant ram">บุดดิฺฮ</span> — ปัญญา, <span class="slant iast">pari</span><span class="slant pali">ปริ</span><span class="slant thai">ปะริ</span><span class="slant ram">พะริ</span> — เพียงพอ, <span class="slant iast">avatiṣṭhate</span><span class="slant pali">อวติษฺฐเต</span><span class="slant thai">อะวะติษฐะเต</span><span class="slant ram">อวะทิชทฺะเท</span> — มั่นคง
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  สำหรับผู้ที่มีความพึงพอใจ&nbsp;&nbsp;(ใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;ความทุกข์สามคำรบแห่งความเป็นอยู่ทางวัตถุจะไม่มีอีกต่อไป&nbsp;&nbsp;ในจิตสำนึกที่มีความพึงพอใจเช่นนี้&nbsp;&nbsp;ในไม่ช้าปัญญาของเขาจะแน่วแน่มั่นคง
+  สำหรับผู้ที่มีความพึงพอใจ&nbsp;&nbsp;(ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก)&nbsp;&nbsp;ความทุกข์สามคำรบแห่งความเป็นอยู่ทางวัตถุจะไม่มีอีกต่อไป&nbsp;&nbsp;ในจิตสำนึกที่มีความพึงพอใจเช่นนี้&nbsp;&nbsp;ในไม่ช้าปัญญาของเขาจะแน่วแน่มั่นคง
   </p>
 </div>
 

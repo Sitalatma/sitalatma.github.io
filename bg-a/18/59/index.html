@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 18.59</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยทฺ อหงฺการมฺ อาศฺริตฺย</i><br /><i>น โยตฺสฺย อิติ มนฺยเส</i><br /><i>มิไตฺหฺยษ วฺยวสายสฺ เต</i><br /><i>ปฺรกฺฤติสฺ ตฺวาํ นิโยกฺษฺยติ</i>
+<span class="slant iast">yad ahaṅkāram āśritya<br /></span>
+<span class="slant pali">ยทฺ อหงฺการมฺ อาศฺริตฺย<br /></span>
+<span class="slant thai">ยัท อะหังการัม อาศริตยะ<br /></span>
+<span class="slant ram">ยัค อฮังคารัม อาชริทยะ<br /></span>
+<span class="slant iast">na yotsya iti manyase<br /></span>
+<span class="slant pali">น โยตฺสฺย อิติ มนฺยเส<br /></span>
+<span class="slant thai">นะ โยตสยะ อิติ มันยะเส<br /></span>
+<span class="slant ram">นะ โยทสยะ อิทิ มันยะเสฺ<br /></span>
+<span class="slant iast">mithyaiṣa vyavasāyas te<br /></span>
+<span class="slant pali">มิไถฺยษ วฺยวสายสฺ เต<br /></span>
+<span class="slant thai">มิถไยษะ วยะวะสายัส เต<br /></span>
+<span class="slant ram">มิทฺไยชะ วิยะวะสายัส เท<br /></span>
+<span class="slant iast">prakṛtis tvāṁ niyokṣyati<br /></span>
+<span class="slant pali">ปฺรกฺฤติสฺ ตฺวำ นิโยกฺษฺยติ<br /></span>
+<span class="slant thai">ปรักฤติส ตวาง นิโยกษยะติ<br /></span>
+<span class="slant ram">พระคริทิส ทวาม นิโยคชยะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยตฺ</i> — หาก, <i>อหงฺการมฺ</i> — ของอหังการ, <i>อาศฺริตฺย</i> — ไปพึ่ง, <i>น โยเตฺสฺย</i> — ข้าจะไม่สู้รบ, <i>อิติ</i> — ดังนั้น, <i>มนฺยเส</i> — เธอคิด, <i>มิตฺหฺยา เอษฮ</i> — เช่นนี้ผิดทั้งหมด, <i>วฺยวสายฮ</i> — ความมุ่งมั่น, <i>เต</i> — ของเธอ, <i>ปฺรกฺฤติฮ</i> — ธรรมชาติวัตถุ, <i>ตฺวามฺ</i> — เธอ, <i>นิโยกฺษฺยติ</i> — จะปฏิบัติ
+  <span class="slant iast">yat</span><span class="slant pali">ยตฺ</span><span class="slant thai">ยัต</span><span class="slant ram">ยัท</span> — หาก, <span class="slant iast">ahaṅkāram</span><span class="slant pali">อหงฺการมฺ</span><span class="slant thai">อะหังการัม</span><span class="slant ram">อฮังคารัม</span> — ของอหังการ, <span class="slant iast">āśritya</span><span class="slant pali">อาศฺริตฺย</span><span class="slant thai">อาศริตยะ</span><span class="slant ram">อาชริทยะ</span> — ไปพึ่ง, <span class="slant iast">na yotsye</span><span class="slant pali">นโยตฺเสฺย</span><span class="slant thai">นะโยตสเย</span><span class="slant ram">นะ โยทสเย</span> — ข้าจะไม่สู้รบ, <span class="slant iast">iti</span><span class="slant pali">อิติ</span><span class="slant thai">อิติ</span><span class="slant ram">อิทิ</span> — ดังนั้น, <span class="slant iast">manyase</span><span class="slant pali">มนฺยเส</span><span class="slant thai">มันยะเส</span><span class="slant ram">มันยะเส</span> — เธอคิด, <span class="slant iast">mithyā eṣaḥ</span><span class="slant pali">มิถฺยาเอษห์</span><span class="slant thai">มิถยาเอษะห์</span><span class="slant ram">มิทฺยา เอชะฮ</span> — เช่นนี้ผิดทั้งหมด, <span class="slant iast">vyavasāyaḥ</span><span class="slant pali">วฺยวสายห์</span><span class="slant thai">วยะวะสายะห์</span><span class="slant ram">วิยะวะสายะฮ</span> — ความมุ่งมั่น, <span class="slant iast">te</span><span class="slant pali">เต</span><span class="slant thai">เต</span><span class="slant ram">เท</span> — ของเธอ, <span class="slant iast">prakṛtiḥ</span><span class="slant pali">ปฺรกฺฤติห์</span><span class="slant thai">ปรักฤติห์</span><span class="slant ram">พระคริทิฮ</span> — ธรรมชาติวัตถุ, <span class="slant iast">tvām</span><span class="slant pali">ตฺวามฺ</span><span class="slant thai">ตวาม</span><span class="slant ram">ทวาม</span> — เธอ, <span class="slant iast">niyokṣyati</span><span class="slant pali">นิโยกฺษฺยติ</span><span class="slant thai">นิโยกษยะติ</span><span class="slant ram">นิโยคชยะทิ</span> — จะปฏิบัติ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ทรงเป็นทหารซึ่งเกิดจากธรรมชาติแห่งความเป็น&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;ดังนั้นหน้าที่โดยธรรมชาติคือการต่อสู้&nbsp;&nbsp;แต่เนื่องจากอหังการจึงกลัวว่าเมื่อสังหารครูบา<wbr>อาจารย์&nbsp;&nbsp;เสด็จปู่&nbsp;&nbsp;และบรรดาสหาย&nbsp;&nbsp;จะได้รับผลบาป&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงพิจารณาว่า<wbr>ตนเองเป็นเจ้านายแห่งการกระทำของตน&nbsp;&nbsp;ประหนึ่งว่าตนเองเป็นผู้กำกับผลดีและผลเสีย<wbr>ของงานนี้&nbsp;&nbsp;โดยลืมไปว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงประทับอยู่เคียงข้างและทรงสอนให้&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ต่อสู้นั่นคือการลืมของพันธวิญญาณ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงให้คำชี้นำว่าอะไรดีและอะไรไม่ดี&nbsp;&nbsp;เรา<wbr>เพียงแต่ต้องปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเพื่อบรรลุถึงความสมบูรณ์แห่งชีวิต&nbsp;&nbsp;ไม่มีผู้ใดมีความ<wbr>มั่นใจในชะตากรรมของตนเองเท่ากับพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;วิธีที่ดีที่สุดคือรับเอาคำสั่งจาก<wbr>พระองค์และปฏิบัติตาม&nbsp;&nbsp;ไม่มีผู้ใดควรปฏิเสธคำสั่งขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือคำสั่งของพระ<wbr>อาจารย์ทิพย์ซึ่งเป็นผู้แทนของพระองค์&nbsp;&nbsp;เราควรกระทำโดยไม่ลังเลในการปฏิบัติตามคำ<wbr>สั่งขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เช่นนี้จะรักษาตัวเราให้ปลอดภัยภายใต้สถานการณ์ทั้งปวง
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเป็นทหารซึ่งเกิดจากธรรมชาติแห่งความเป็น&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;ดังนั้นหน้าที่โดยธรรมชาติคือการต่อสู้&nbsp;&nbsp;แต่เนื่องจากอหังการจึงกลัวว่าเมื่อสังหารครูบา<wbr>อาจารย์&nbsp;&nbsp;เสด็จปู่&nbsp;&nbsp;และบรรดาสหาย&nbsp;&nbsp;จะได้รับผลบาป&nbsp;&nbsp;อันที่จริง&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงพิจารณาว่า<wbr>ตนเองเป็นเจ้านายแห่งการกระทำของตน&nbsp;&nbsp;ประหนึ่งว่าตนเองเป็นผู้กำกับผลดีและผลเสีย<wbr>ของงานนี้&nbsp;&nbsp;โดยลืมไปว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงประทับอยู่เคียงข้างและทรงสอนให้&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ต่อสู้นั่นคือการลืมของพันธวิญญาณ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงให้คำชี้นำว่าอะไรดีและอะไรไม่ดี&nbsp;&nbsp;เรา<wbr>เพียงแต่ต้องปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเพื่อบรรลุถึงความสมบูรณ์แห่งชีวิต&nbsp;&nbsp;ไม่มีผู้ใดมีความ<wbr>มั่นใจในชะตากรรมของตนเองเท่ากับพระองค์&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;วิธีที่ดีที่สุดคือรับเอาคำสั่งจาก<wbr>พระองค์และปฏิบัติตาม&nbsp;&nbsp;ไม่มีผู้ใดควรปฏิเสธคำสั่งขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือคำสั่งของพระ<wbr>อาจารย์ทิพย์ซึ่งเป็นผู้แทนของพระองค์&nbsp;&nbsp;เราควรกระทำโดยไม่ลังเลในการปฏิบัติตามคำ<wbr>สั่งขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เช่นนี้จะรักษาตัวเราให้ปลอดภัยภายใต้สถานการณ์ทั้งปวง
   </p>
 </div>
 

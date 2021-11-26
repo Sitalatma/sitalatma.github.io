@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.37</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>อยติฮ ศฺรทฺธโยเปโต</i><br /><i>โยคาจฺ จลิต-มานสฮ</i><br /><i>อปฺราปฺย โยค-สํสิทฺธิํ</i><br /><i>กาํ คติํ กฺฤษฺณ คจฺฉติ</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">ayatiḥ śraddhayopeto<br /></span>
+<span class="slant pali">อยติห์ ศฺรทฺธโยเปโต<br /></span>
+<span class="slant thai">อะยะติห์ ศรัทธะโยเปโต<br /></span>
+<span class="slant ram">อยะทิฮ ชรัดดฺะโยเพโท<br /></span>
+<span class="slant iast">yogāc calita-mānasaḥ<br /></span>
+<span class="slant pali">โยคาจฺ จลิต-มานสห์<br /></span>
+<span class="slant thai">โยคาจ จะลิตะ-มานะสะห์<br /></span>
+<span class="slant ram">โยกาช ชะลิทะ-มานะสะฮ<br /></span>
+<span class="slant iast">aprāpya yoga-saṁsiddhiṁ<br /></span>
+<span class="slant pali">อปฺราปฺย โยค-สํสิทฺธึ<br /></span>
+<span class="slant thai">อัปราปยะ โยคะ-สังสิทธิง<br /></span>
+<span class="slant ram">อัพราพยะ โยกะ-สัมสิดดิฺม<br /></span>
+<span class="slant iast">kāṁ gatiṁ kṛṣṇa gacchati<br /></span>
+<span class="slant pali">กำ คตึ กฺฤษฺณ คจฺฉติ<br /></span>
+<span class="slant thai">กาง คะติง กฤษณะ คัจฉะติ<br /></span>
+<span class="slant ram">คาม กะทิม คริชณะ กัชชฺะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัส, <i>อยติฮ</i> — นักทิพย์นิยมผู้ไม่ประสบผลสำเร็จ, <i>ศฺรทฺธยา</i> — ด้วยความศรัทธา, <i>อุเปตฮ</i> — ปฏิบัติ, <i>โยคาตฺ</i> — จากการเชื่อมสัมพันธ์ที่เร้นลับ, <i>จลิต</i> — เบี่ยงเบน, <i>มานสฮ</i> — ผู้มีจิตใจเช่นนี้, <i>อปฺราปฺย</i> — ล้มเหลวในการบรรลุ, <i>โยค-สํสิทฺธิมฺ</i> — ความสมบูรณ์สูงสุดในโยคะ, <i>กามฺ</i> — ซึ่ง, <i>คติมฺ</i> — จุดมุ่งหมาย, <i>กฺฤษฺณ</i> — โอ้ <i>กฺฤษฺณ</i>, <i>คจฺฉติ</i> — บรรลุ
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัส, <span class="slant iast">ayatiḥ</span><span class="slant pali">อยติห์</span><span class="slant thai">อะยะติห์</span><span class="slant ram">อยะทิฮ</span> — นักทิพย์นิยมผู้ไม่ประสบผลสำเร็จ, <span class="slant iast">śraddhayā</span><span class="slant pali">ศฺรทฺธยา</span><span class="slant thai">ศรัทธะยา</span><span class="slant ram">ชรัดดฺะยา</span> — ด้วยความศรัทธา, <span class="slant iast">upetaḥ</span><span class="slant pali">อุเปตห์</span><span class="slant thai">อุเปตะห์</span><span class="slant ram">อุเพทะฮ</span> — ปฏิบัติ, <span class="slant iast">yogāt</span><span class="slant pali">โยคาตฺ</span><span class="slant thai">โยคาต</span><span class="slant ram">โยกาท</span> — จากการเชื่อมสัมพันธ์ที่เร้นลับ, <span class="slant iast">calita</span><span class="slant pali">จลิต</span><span class="slant thai">จะลิตะ</span><span class="slant ram">ชะลิทะ</span> — เบี่ยงเบน, <span class="slant iast">mānasaḥ</span><span class="slant pali">มานสห์</span><span class="slant thai">มานะสะห์</span><span class="slant ram">มานะสะฮ</span> — ผู้มีจิตใจเช่นนี้, <span class="slant iast">aprāpya</span><span class="slant pali">อปฺราปฺย</span><span class="slant thai">อัปราปยะ</span><span class="slant ram">อพราพยะ</span> — ล้มเหลวในการบรรลุ, <span class="slant iast">yoga-saṁsiddhim</span><span class="slant pali">โยค-สํสิทฺธิมฺ</span><span class="slant thai">โยคะ-สังสิทธิม</span><span class="slant ram">โยกะ-สัมสิดดิฺม</span> — ความสมบูรณ์สูงสุดในโยคะ, <span class="slant iast">kām</span><span class="slant pali">กามฺ</span><span class="slant thai">กาม</span><span class="slant ram">คาม</span> — ซึ่ง, <span class="slant iast">gatim</span><span class="slant pali">คติมฺ</span><span class="slant thai">คะติม</span><span class="slant ram">กะทิม</span> — จุดมุ่งหมาย, <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span> — โอ้ <span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>, <span class="slant iast">gacchati</span><span class="slant pali">คจฺฉติ</span><span class="slant thai">คัจฉะติ</span><span class="slant ram">กัชชฺะทิ</span> — บรรลุ
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;นักทิพย์นิยมผู้ไม่ประสบผลสำเร็จ&nbsp;&nbsp;ซึ่งในตอนแรกรับเอาวิถีทางเพื่อความรู้แจ้งแห่งตนมาปฏิบัติด้วยความศรัทธา&nbsp;&nbsp;แต่ต่อมาได้ยกเลิกการปฏิบัติอันเนื่องมาจากจิตใจมาฝักใฝ่ทางโลก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่บรรลุความสมบูรณ์ในโยคะ&nbsp;&nbsp;จุดหมายปลายทางของบุคคลเช่นนี้อยู่ที่ใหน?
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;นักทิพย์นิยมผู้ไม่ประสบผลสำเร็จ&nbsp;&nbsp;ซึ่งในตอนแรกรับเอาวิถีทางเพื่อความรู้แจ้งแห่งตนมาปฏิบัติด้วยความศรัทธา&nbsp;&nbsp;แต่ต่อมาได้ยกเลิกการปฏิบัติอันเนื่องมาจากจิตใจมาฝักใฝ่ทางโลก&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงไม่บรรลุความสมบูรณ์ในโยคะ&nbsp;&nbsp;จุดหมายปลายทางของบุคคลเช่นนี้อยู่ที่ใหน?
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  วิถีทางเพื่อความรู้แจ้งแห่งตนหรือระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;ได้อธิบายใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;หลัก<wbr>ธรรมพื้นฐานเพื่อความรู้แจ้งแห่งตนคือความรู้ที่ว่าสิ่งมีชีวิตไม่ใช่ร่างกายวัตถุนี้แต่ว่า<wbr>แตกต่างไปจากร่างวัตถุ&nbsp;&nbsp;และความสุขของเขาอยู่ในชีวิตอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลื้ม<wbr>ปีติสุข&nbsp;&nbsp;และความรู้&nbsp;&nbsp;สิ่งเหล่านี้เป็นทิพย์อยู่เหนือทั้งร่างกายและจิตใจ&nbsp;&nbsp;ความรู้แจ้งแห่ง<wbr>ตนค้นพบได้ด้วยวิถีแห่งความรู้&nbsp;&nbsp;ด้วยการฝึกปฏิบัติแปดระบบหรือด้วย&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;ใน<wbr>แต่ละวิธีนี้จะต้องรู้แจ้งสถานภาพพื้นฐานของสิ่งมีชีวิต&nbsp;&nbsp;ความสัมพันธ์ระหว่างตนเองกับ<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;กิจกรรมซึ่งทำให้เขาสามารถสถาปนาความสัมพันธ์ที่สูญหายไปให้กลับ<wbr>มาอีกครั้ง&nbsp;&nbsp;และบรรลุถึงระดับสมบูรณ์สูงสุดแห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;การปฏิบัติตามทาง<wbr>ใดทางหนึ่งในสามวิธีที่กล่าวไว้ข้างต้น&nbsp;&nbsp;แน่นอนว่าจะต้องบรรลุเป้าหมายสูงสุดในไม่ช้า<wbr>ก็เร็ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงยืนยันไว้เช่นนี้ในบทที่สอง&nbsp;&nbsp;แม้ความพยายามเพียงเล็กน้อยบนวิถี<wbr>ทิพย์จะให้ความหวังอย่างสูงเพื่อการจัดส่ง&nbsp;&nbsp;จากสามวิธีนี้&nbsp;&nbsp;วิธีของ&nbsp;&nbsp;<i>ภกฺติ-โยค</i>&nbsp;&nbsp;เหมาะสม<wbr>โดยเฉพาะสำหรับยุคนี้&nbsp;&nbsp;เพราะเป็นวิธีตรงที่สุดเพื่อความรู้แจ้งองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เพื่อให้มั่นใจ<wbr>ยิ่งขึ้นไปอีก&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงถาม&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เพื่อให้ทรงยืนยันคำดำรัสที่เคยกล่าวไว้&nbsp;&nbsp;บุคคลอาจ<wbr>ยอมรับวิธีเพื่อความรู้แจ้งอย่างจริงใจ&nbsp;&nbsp;แต่วิธีแห่งการเพิ่มพูนความรู้&nbsp;&nbsp;การฝึกปฏิบัติของ<wbr>ระบบ&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;แปดระดับโดยทั่วไปเป็นสิ่งที่ยากมากสำหรับยุคนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;แม้จะพยายามอย่าง<wbr>สม่ำเสมอ&nbsp;&nbsp;แต่อาจประสบความล้มเหลวเนื่องจากเหตุผลมากมาย&nbsp;&nbsp;ประการแรก&nbsp;&nbsp;เขาอาจ<wbr>ไม่มีความจริงจังเพียงพอในการปฏิบัติตามวิธี&nbsp;&nbsp;การก้าวเดินไปบนวิถีทิพย์คล้ายกับการ<wbr>ประกาศสงค&nbsp;&nbsp;<i>ราม</i>&nbsp;&nbsp;กับพลังงานแห่งความหลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อไรที่บุคคลพยายามที่จะหนีไป<wbr>จากเงื้อมมือของพระนาง&nbsp;&nbsp;<i>มายา</i>&nbsp;&nbsp;นางจะพยายามเอาชนะผู้ฝึกปฏิบัติด้วยการหลอกล่อให้<wbr>หลงมากมาย&nbsp;&nbsp;พันธวิญญาณถูกหลอกล่อให้หลงอยู่แล้วด้วยระดับแห่งพลังงานวัตถุ&nbsp;&nbsp;จึง<wbr>เป็นไปได้เสมอที่จะถูกหลอกล่อให้หลงอีกครั้งหนึ่ง&nbsp;&nbsp;แม้ขณะฝึกปฏิบัติตามระเบียบวินัย<wbr>ทิพย์&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<i>โยคาจฺ&nbsp;&nbsp;จลิต-มานสฮ</i>&nbsp;&nbsp;การเบี่ยงเบนจากวิถีทิพย์&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรง<wbr>ตั้งคำถามเพื่อให้ทราบถึงผลแห่งการเบี่ยงเบนจากวิถีเพื่อความรู้แจ้งแห่งตน
+  วิถีทางเพื่อความรู้แจ้งแห่งตนหรือระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;ได้อธิบายใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;หลัก<wbr>ธรรมพื้นฐานเพื่อความรู้แจ้งแห่งตนคือความรู้ที่ว่าสิ่งมีชีวิตไม่ใช่ร่างกายวัตถุนี้แต่ว่า<wbr>แตกต่างไปจากร่างวัตถุ&nbsp;&nbsp;และความสุขของเขาอยู่ในชีวิตอมตะ&nbsp;&nbsp;เปี่ยมไปด้วยความปลื้ม<wbr>ปีติสุข&nbsp;&nbsp;และความรู้&nbsp;&nbsp;สิ่งเหล่านี้เป็นทิพย์อยู่เหนือทั้งร่างกายและจิตใจ&nbsp;&nbsp;ความรู้แจ้งแห่ง<wbr>ตนค้นพบได้ด้วยวิถีแห่งความรู้&nbsp;&nbsp;ด้วยการฝึกปฏิบัติแปดระบบหรือด้วย&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;ใน<wbr>แต่ละวิธีนี้จะต้องรู้แจ้งสถานภาพพื้นฐานของสิ่งมีชีวิต&nbsp;&nbsp;ความสัมพันธ์ระหว่างตนเองกับ<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;กิจกรรมซึ่งทำให้เขาสามารถสถาปนาความสัมพันธ์ที่สูญหายไปให้กลับ<wbr>มาอีกครั้ง&nbsp;&nbsp;และบรรลุถึงระดับสมบูรณ์สูงสุดแห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;การปฏิบัติตามทาง<wbr>ใดทางหนึ่งในสามวิธีที่กล่าวไว้ข้างต้น&nbsp;&nbsp;แน่นอนว่าจะต้องบรรลุเป้าหมายสูงสุดในไม่ช้า<wbr>ก็เร็ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงยืนยันไว้เช่นนี้ในบทที่สอง&nbsp;&nbsp;แม้ความพยายามเพียงเล็กน้อยบนวิถี<wbr>ทิพย์จะให้ความหวังอย่างสูงเพื่อการจัดส่ง&nbsp;&nbsp;จากสามวิธีนี้&nbsp;&nbsp;วิธีของ&nbsp;&nbsp;<span class="slant iast">bhakti-yoga</span><span class="slant pali">ภกฺติ-โยค</span><span class="slant thai">ภักติ-โยคะ</span><span class="slant ram">บัฺคธิ-โยกะ</span>&nbsp;&nbsp;เหมาะสม<wbr>โดยเฉพาะสำหรับยุคนี้&nbsp;&nbsp;เพราะเป็นวิธีตรงที่สุดเพื่อความรู้แจ้งองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เพื่อให้มั่นใจ<wbr>ยิ่งขึ้นไปอีก&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถาม&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เพื่อให้ทรงยืนยันคำดำรัสที่เคยกล่าวไว้&nbsp;&nbsp;บุคคลอาจ<wbr>ยอมรับวิธีเพื่อความรู้แจ้งอย่างจริงใจ&nbsp;&nbsp;แต่วิธีแห่งการเพิ่มพูนความรู้&nbsp;&nbsp;การฝึกปฏิบัติของ<wbr>ระบบ&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;แปดระดับโดยทั่วไปเป็นสิ่งที่ยากมากสำหรับยุคนี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;แม้จะพยายามอย่าง<wbr>สม่ำเสมอ&nbsp;&nbsp;แต่อาจประสบความล้มเหลวเนื่องจากเหตุผลมากมาย&nbsp;&nbsp;ประการแรก&nbsp;&nbsp;เขาอาจ<wbr>ไม่มีความจริงจังเพียงพอในการปฏิบัติตามวิธี&nbsp;&nbsp;การก้าวเดินไปบนวิถีทิพย์คล้ายกับการ<wbr>ประกาศสงค&nbsp;&nbsp;<span class="slant iast">rāma</span><span class="slant pali">ราม</span><span class="slant thai">รามะ</span><span class="slant ram">ราม</span>&nbsp;&nbsp;กับพลังงานแห่งความหลง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;เมื่อไรที่บุคคลพยายามที่จะหนีไป<wbr>จากเงื้อมมือของพระนาง&nbsp;&nbsp;<span class="slant iast">māyā</span><span class="slant pali">มายา</span><span class="slant thai">มายา</span><span class="slant ram">มายา</span>&nbsp;&nbsp;นางจะพยายามเอาชนะผู้ฝึกปฏิบัติด้วยการหลอกล่อให้<wbr>หลงมากมาย&nbsp;&nbsp;พันธวิญญาณถูกหลอกล่อให้หลงอยู่แล้วด้วยระดับแห่งพลังงานวัตถุ&nbsp;&nbsp;จึง<wbr>เป็นไปได้เสมอที่จะถูกหลอกล่อให้หลงอีกครั้งหนึ่ง&nbsp;&nbsp;แม้ขณะฝึกปฏิบัติตามระเบียบวินัย<wbr>ทิพย์&nbsp;&nbsp;เช่นนี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">yogāc&nbsp;&nbsp;calita-mānasaḥ</span><span class="slant pali">โยคาจฺจลิต-มานสห์</span><span class="slant thai">โยคาจจะลิตะ-มานะสะห์</span><span class="slant ram">โยกาช ชะลิทะ-มานะสะฮ</span>&nbsp;&nbsp;การเบี่ยงเบนจากวิถีทิพย์&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรง<wbr>ตั้งคำถามเพื่อให้ทราบถึงผลแห่งการเบี่ยงเบนจากวิถีเพื่อความรู้แจ้งแห่งตน
   </p>
 </div>
 

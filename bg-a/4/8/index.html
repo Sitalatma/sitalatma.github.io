@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 4.8</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปริตฺราณาย สาธูนาํ</i><br /><i>วินาศาย จ ทุษฺกฺฤตามฺ</i><br /><i>ธรฺม-สํสฺตฺหาปนารฺตฺหาย</i><br /><i>สมฺภวามิ ยุเค ยุเค</i>
+<span class="slant iast">paritrāṇāya sādhūnāṁ<br /></span>
+<span class="slant pali">ปริตฺราณาย สาธูนำ<br /></span>
+<span class="slant thai">ปะริตราณายะ สาธูนาง<br /></span>
+<span class="slant ram">พะริทราณายะ สาดํูนาม<br /></span>
+<span class="slant iast">vināśāya ca duṣkṛtām<br /></span>
+<span class="slant pali">วินาศาย จ ทุษฺกฺฤตามฺ<br /></span>
+<span class="slant thai">วินาศายะ จะ ทุษกฤตาม<br /></span>
+<span class="slant ram">วินาชายะ ชะ ดุชคริทาม<br /></span>
+<span class="slant iast">dharma-saṁsthāpanārthāya<br /></span>
+<span class="slant pali">ธรฺม-สํสฺถาปนารฺถาย<br /></span>
+<span class="slant thai">ธัรมะ-สังสถาปะนารถายะ<br /></span>
+<span class="slant ram">ดฺารมะ-สัมสทฺาพะนารทฺายะ<br /></span>
+<span class="slant iast">sambhavāmi yuge yuge<br /></span>
+<span class="slant pali">สมฺภวามิ ยุเค ยุเค<br /></span>
+<span class="slant thai">สัมภะวามิ ยุเค ยุเค<br /></span>
+<span class="slant ram">สัมบฺะวามิ ยุเก ยุเกฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปริตฺราณาย</i> — เพื่อการจัดส่ง, <i>สาธูนามฺ</i> — สาวก, <i>วินาศาย</i> — เพื่อการทำลาย, <i>จ</i> — และ, <i>ทุษฺกฺฤตามฺ</i> — คนสารเลว, <i>ธรฺม</i> — หลักธรรมของศาสนา, <i>สํสฺตฺหาปน-อรฺตฺหาย</i> — สถาปนา ขึ้นใหม่, <i>สมฺภวามิ</i> — ข้าปรากฏตัว, <i>ยุเค</i> — กัปแล้ว, <i>ยุเค</i> — กัปเล่า
+  <span class="slant iast">paritrāṇāya</span><span class="slant pali">ปริตฺราณาย</span><span class="slant thai">ปะริตราณายะ</span><span class="slant ram">พะรีทราณายะ</span> — เพื่อการจัดส่ง, <span class="slant iast">sādhūnām</span><span class="slant pali">สาธูนามฺ</span><span class="slant thai">สาธูนาม</span><span class="slant ram">สาดํูนาม</span> — สาวก, <span class="slant iast">vināśāya</span><span class="slant pali">วินาศาย</span><span class="slant thai">วินาศายะ</span><span class="slant ram">วินาชายะ</span> — เพื่อการทำลาย, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">duṣkṛtām</span><span class="slant pali">ทุษฺกฺฤตามฺ</span><span class="slant thai">ทุษกฤตาม</span><span class="slant ram">ดุชคริทาม</span> — คนสารเลว, <span class="slant iast">dharma</span><span class="slant pali">ธรฺม</span><span class="slant thai">ธัรมะ</span><span class="slant ram">ดฺารมะ</span> — หลักธรรมของศาสนา, <span class="slant iast">saṁsthāpana-arthāya</span><span class="slant pali">สํสฺถาปน-อรฺถาย</span><span class="slant thai">สังสถาปะนะ-อัรถายะ</span><span class="slant ram">สัมสทฺาพะนะ-อาทฺายะ</span> — สถาปนา ขึ้นใหม่, <span class="slant iast">sambhavāmi</span><span class="slant pali">สมฺภวามิ</span><span class="slant thai">สัมภะวามิ</span><span class="slant ram">สัมบฺะวามิ</span> — ข้าปรากฏตัว, <span class="slant iast">yuge</span><span class="slant pali">ยุเค</span><span class="slant thai">ยุเค</span><span class="slant ram">ยุเก</span> — กัปแล้ว, <span class="slant iast">yuge</span><span class="slant pali">ยุเค</span><span class="slant thai">ยุเค</span><span class="slant ram">ยุเก</span> — กัปเล่า
   </p>
 </div>
 
@@ -73,43 +174,57 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ตาม&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<i>สาธุ</i>&nbsp;&nbsp;(ผู้บริสุทธิ์)&nbsp;&nbsp;คือบุคคลใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลที่<wbr>ดูเหมือนว่าทำผิดหลักศาสนาแต่หากว่ามีคุณสมบัติของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์<wbr>บริบูรณ์&nbsp;&nbsp;ผู้นี้คือ<i>สาธุ</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ทุษฺกฺฤตามฺ</i>&nbsp;&nbsp;คือพวกที่ไม่สนใจใยดีกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<i>ทุษฺกฺฤตามฺ</i>&nbsp;&nbsp;หรือคนเลวเหล่านี้อธิบายไว้ว่าเป็นผู้ที่โง่เขลาเบาปัญญา&nbsp;&nbsp;ต่ำสุดในหมู่<wbr>มนุษย์&nbsp;&nbsp;ถึงแม้จะประดับไปด้วยการศึกษาทางโลกที่สูงส่ง&nbsp;&nbsp;แต่บุคคลผู้ปฏิบัติตนใน<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกร้อยเปอร์เซ็นต์เป็นที่ยอมรับกันว่าคือ&nbsp;&nbsp;<i>สาธุ</i>&nbsp;&nbsp;แม้ว่าบุคคลนี้อาจไม่ได้รับ<wbr>การศึกษาหรือมีวัฒนธรรมสูง&nbsp;&nbsp;สำหรับพวกที่ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่จำเป็นที่พระองค์<wbr>ทรงต้องปรากฏพระวรกายมาทำลายพวกเขาดังที่ทรงปรากฏมาเพื่อทำลายมารเช่น<i>ราวณ</i>&nbsp;&nbsp;(ทศกัณฑ์)&nbsp;&nbsp;และ&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงมีผู้แทนมากมายที่มีขีดความสามารถ<wbr>เพียงพอในการทำลายมาร&nbsp;&nbsp;แต่ทรงเสด็จลงมาโดยเฉพาะเพื่อปลอบใจสาวกผู้ไร้มลทินที่<wbr>ถูกมารข่มเหงอยู่เสมอ&nbsp;&nbsp;มารชอบข่มเหงสาวกแม้เป็นญาติเกี่ยวดองกัน&nbsp;&nbsp;แม้&nbsp;&nbsp;<i>ปฺรหฺลาท</i>&nbsp;&nbsp;<i>มหาราช</i>&nbsp;&nbsp;ทรงเป็นโอรสของ&nbsp;&nbsp;<i>หิรณฺยกศิปุ</i>&nbsp;&nbsp;ก็ยังถูกพระบิดาสั่งประหาร&nbsp;&nbsp;และแม้ว่าพระ<wbr>นาง&nbsp;&nbsp;<i>เทวกี</i>&nbsp;&nbsp;พระมารดาของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นพระขนิษฐภคินีของ&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;พระนางและพระ<wbr>สวามี&nbsp;&nbsp;<i>วสุเทว</i>&nbsp;&nbsp;ยังถูกตามประหารเนื่องจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จะทรงมาประสูติ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรง<wbr>ปรากฏเพื่อจัดส่งพระนาง&nbsp;&nbsp;<i>เทวกี</i>&nbsp;&nbsp;มากกว่าที่จะมาสังหาร&nbsp;&nbsp;<i>กํส</i>&nbsp;&nbsp;แต่ทั้งสองสิ่งทรงกระทำ<wbr>ควบคู่กันไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงได้กล่าว&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเพื่อจัดส่งสาวกและทำลายมารชั่ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ภควานฺ</i>จึงทรงปรากฏในอวตารต่าง&nbsp;&nbsp;ๆ
+  ตาม&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;คำว่า&nbsp;&nbsp;<span class="slant iast">sādhu</span><span class="slant pali">สาธุ</span><span class="slant thai">สาธุ</span><span class="slant ram"></span>&nbsp;&nbsp;(ผู้บริสุทธิ์)&nbsp;&nbsp;คือบุคคลใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;บุคคลที่<wbr>ดูเหมือนว่าทำผิดหลักศาสนาแต่หากว่ามีคุณสมบัติของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกอย่างสมบูรณ์<wbr>บริบูรณ์&nbsp;&nbsp;ผู้นี้คือ<span class="slant iast">sādhu</span><span class="slant pali">สาธุ</span><span class="slant thai">สาธุ</span><span class="slant ram"></span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">duṣkṛtām</span><span class="slant pali">ทุษฺกฺฤตามฺ</span><span class="slant thai">ทุษกฤตาม</span><span class="slant ram">ดุชคริทาม</span>&nbsp;&nbsp;คือพวกที่ไม่สนใจใยดีกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;<span class="slant iast">duṣkṛtām</span><span class="slant pali">ทุษฺกฺฤตามฺ</span><span class="slant thai">ทุษกฤตาม</span><span class="slant ram">ดุชคริทาม</span>&nbsp;&nbsp;หรือคนเลวเหล่านี้อธิบายไว้ว่าเป็นผู้ที่โง่เขลาเบาปัญญา&nbsp;&nbsp;ต่ำสุดในหมู่<wbr>มนุษย์&nbsp;&nbsp;ถึงแม้จะประดับไปด้วยการศึกษาทางโลกที่สูงส่ง&nbsp;&nbsp;แต่บุคคลผู้ปฏิบัติตนใน<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกร้อยเปอร์เซ็นต์เป็นที่ยอมรับกันว่าคือ&nbsp;&nbsp;<span class="slant iast">sādhu</span><span class="slant pali">สาธุ</span><span class="slant thai">สาธุ</span><span class="slant ram"></span>&nbsp;&nbsp;แม้ว่าบุคคลนี้อาจไม่ได้รับ<wbr>การศึกษาหรือมีวัฒนธรรมสูง&nbsp;&nbsp;สำหรับพวกที่ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่จำเป็นที่พระองค์<wbr>ทรงต้องปรากฏพระวรกายมาทำลายพวกเขาดังที่ทรงปรากฏมาเพื่อทำลายมารเช่น<span class="slant iast">rāvaṇa</span><span class="slant pali">ราวณ</span><span class="slant thai">ราวะณะ</span><span class="slant ram">ราวะณะ</span>&nbsp;&nbsp;(ทศกัณฑ์)&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงมีผู้แทนมากมายที่มีขีดความสามารถ<wbr>เพียงพอในการทำลายมาร&nbsp;&nbsp;แต่ทรงเสด็จลงมาโดยเฉพาะเพื่อปลอบใจสาวกผู้ไร้มลทินที่<wbr>ถูกมารข่มเหงอยู่เสมอ&nbsp;&nbsp;มารชอบข่มเหงสาวกแม้เป็นญาติเกี่ยวดองกัน&nbsp;&nbsp;แม้&nbsp;&nbsp;<span class="slant iast">prahlāda</span><span class="slant pali">ปฺรหฺลาท</span><span class="slant thai">ปรัหลาทะ</span><span class="slant ram">พระฮลาดะ</span>&nbsp;&nbsp;<span class="slant iast">mahārāja</span><span class="slant pali">มหาราช</span><span class="slant thai">มะหาราชะ</span><span class="slant ram">มะฮาราจะ</span>&nbsp;&nbsp;ทรงเป็นโอรสของ&nbsp;&nbsp;<span class="slant iast">hiraṇyakaśipu</span><span class="slant pali">หิรณฺยกศิปุ</span><span class="slant thai">หิรัณยะกะศิปุ</span><span class="slant ram">ฮิรัณยะคะชิพุ</span>&nbsp;&nbsp;ก็ยังถูกพระบิดาสั่งประหาร&nbsp;&nbsp;และแม้ว่าพระ<wbr>นาง&nbsp;&nbsp;<span class="slant iast">devakī</span><span class="slant pali">เทวกี</span><span class="slant thai">เทวะกี</span><span class="slant ram">เดวะคี</span>&nbsp;&nbsp;พระมารดาของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นพระขนิษฐภคินีของ&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;พระนางและพระ<wbr>สวามี&nbsp;&nbsp;<span class="slant iast">vasudeva</span><span class="slant pali">วสุเทว</span><span class="slant thai">วะสุเทวะ</span><span class="slant ram">วะสุเดวะ</span>&nbsp;&nbsp;ยังถูกตามประหารเนื่องจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จะทรงมาประสูติ&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรง<wbr>ปรากฏเพื่อจัดส่งพระนาง&nbsp;&nbsp;<span class="slant iast">devakī</span><span class="slant pali">เทวกี</span><span class="slant thai">เทวะกี</span><span class="slant ram">เดวะคี</span>&nbsp;&nbsp;มากกว่าที่จะมาสังหาร&nbsp;&nbsp;<span class="slant iast">kaṁsa</span><span class="slant pali">กํส</span><span class="slant thai">กังสะ</span><span class="slant ram">คัมสะ</span>&nbsp;&nbsp;แต่ทั้งสองสิ่งทรงกระทำ<wbr>ควบคู่กันไป&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงได้กล่าว&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ว่าเพื่อจัดส่งสาวกและทำลายมารชั่ว&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>จึงทรงปรากฏในอวตารต่าง&nbsp;&nbsp;ๆ
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ใน&nbsp;&nbsp;<i>ไจตนฺย-จริตามฺฤต</i>&nbsp;&nbsp;ของ&nbsp;&nbsp;<i>กฺฤษฺณทาส</i>&nbsp;&nbsp;ดาวิราจะ&nbsp;&nbsp;โศลกต่อไปนี้&nbsp;&nbsp;(<i>มธฺย</i>&nbsp;&nbsp;20.263-264)&nbsp;&nbsp;จะสรุปหลักธรรมขององค์อวตาร
+  ใน&nbsp;&nbsp;<span class="slant iast">caitanya-caritāmṛta</span><span class="slant pali">ไจตนฺย-จริตามฺฤต</span><span class="slant thai">ไจตันยะ-จะริตามฤตะ</span><span class="slant ram">เชธันญะ-</span>&nbsp;&nbsp;ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇadāsa</span><span class="slant pali">กฺฤษฺณทาส</span><span class="slant thai">กฤษณะทาสะ</span><span class="slant ram">คริชณะดาสะ</span>&nbsp;&nbsp;ดาวิราจะ&nbsp;&nbsp;โศลกต่อไปนี้&nbsp;&nbsp;(<span class="slant iast">madhya</span><span class="slant pali">มธฺย</span><span class="slant thai">มัธยะ</span><span class="slant ram">มัดฮยะ</span>&nbsp;&nbsp;20.263-264)&nbsp;&nbsp;จะสรุปหลักธรรมขององค์อวตาร
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สฺฤษฺฏิ-เหตุ เย มูรฺติ ปฺรปเญฺจ อวตเร</i><br /><i>เส อีศฺวร-มูรฺติอวตาร′นาม ธเร</i>
+<span class="slant iast">sṛṣṭi-hetu yei mūrti prapañce avatare<br /></span>
+<span class="slant pali">สฺฤษฺฏิ-เหตุ เยอิ มูรฺติ ปฺรปญฺเจ อวตเร<br /></span>
+<span class="slant thai">สฤษฏิ-เหตุ เยอิ มูรติ ประปัญเจ อะวะตะเร<br /></span>
+<span class="slant ram">สริชทิ-เฮทุ เย มูรทิ พระพันเช อวะทะเร<br /></span>
+<span class="slant iast">sei īśvara-mūrti ‘avatāra’ nāma dhare<br /></span>
+<span class="slant pali">เสอิ อีศฺวร-มูรฺติ ‘อวตาร’ นาม ธเร<br /></span>
+<span class="slant thai">เสอิ อีศวะระ-มูรติ ‘อะวะตาระ’ นามะ ธะเร<br /></span>
+<span class="slant ram">เส อีชวะระ-มูรทิ อวะทาระ  นามะ ดฺะเรฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>มายาตีต ปรโวฺยเม สพาร อวสฺตฺหาน</i><br /><i>วิเศฺว อวตริ′ธเรอวตาร′นาม</i>
+<span class="slant iast">māyātīta paravyome sabāra avasthāna<br /></span>
+<span class="slant pali">มายาตีต ปรโวฺยเม สพาร อวสฺถาน<br /></span>
+<span class="slant thai">มายาตีตะ ปะรัวโยเม สะพาระ อะวัสถานะ<br /></span>
+<span class="slant ram">มายาทีทะ พะรัพโยเม สะบาระ อวัสทฺานะ<br /></span>
+<span class="slant iast">viśve avatari’ dhare ‘avatāra’ nāma<br /></span>
+<span class="slant pali">วิเศฺว อวตริ’ ธเร ‘อวตาร’ นาม<br /></span>
+<span class="slant thai">วิศเว อะวะตะริ’ ธะเร ‘อะวะตาระ’ นามะ<br /></span>
+<span class="slant ram">วิชเว อวะทะริ  ดฺะเร อวะทาระ  นามะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  “<i>อวตาร</i>&nbsp;&nbsp;หรืออวตารขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เสด็จลงมาจากอาณาจักรของพระองค์เพื่อมา<wbr>ปรากฏที่โลกวัตถุ&nbsp;&nbsp;และรูปลักษณ์โดยเฉพาะของบุคลิกภาพสูงสุดแห่งพระเจ้าผู้เสด็จลง<wbr>มา&nbsp;&nbsp;เรียกว่าอวตารหรือ&nbsp;&nbsp;<i>อวตาร</i>&nbsp;&nbsp;อวตารเหล่านี้ทรงสถิตอยู่ในโลกทิพย์&nbsp;&nbsp;อาณาจักรแห่ง<wbr>องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เมื่อเสด็จลงมาในจักรวาลวัตถุทรงพระนามว่า&nbsp;&nbsp;<i>อวตาร</i>&nbsp;&nbsp;”
+  “<span class="slant iast">avatāra</span><span class="slant pali">อวตาร</span><span class="slant thai">อะวะตาระ</span><span class="slant ram"></span>&nbsp;&nbsp;หรืออวตารขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เสด็จลงมาจากอาณาจักรของพระองค์เพื่อมา<wbr>ปรากฏที่โลกวัตถุ&nbsp;&nbsp;และรูปลักษณ์โดยเฉพาะของบุคลิกภาพสูงสุดแห่งพระเจ้าผู้เสด็จลง<wbr>มา&nbsp;&nbsp;เรียกว่าอวตารหรือ&nbsp;&nbsp;<span class="slant iast">avatāra</span><span class="slant pali">อวตาร</span><span class="slant thai">อะวะตาระ</span><span class="slant ram"></span>&nbsp;&nbsp;อวตารเหล่านี้ทรงสถิตอยู่ในโลกทิพย์&nbsp;&nbsp;อาณาจักรแห่ง<wbr>องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เมื่อเสด็จลงมาในจักรวาลวัตถุทรงพระนามว่า&nbsp;&nbsp;<span class="slant iast">avatāra</span><span class="slant pali">อวตาร</span><span class="slant thai">อะวะตาระ</span><span class="slant ram"></span>&nbsp;&nbsp;”
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีอวตารหลายรูปแบบ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>ปุรุษาวตารสฺ,คุณาวตารสฺ,ลีลาวตารสฺ,ศกฺตฺยฺ-อาเวศ&nbsp;&nbsp;อวตารสฺ,มนฺวนฺตร-อวตาร</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ยุคาวตาร</i>&nbsp;&nbsp;ทั้งหมดทรงปรากฏ<wbr>ตามตารางเวลาในจักรวาลทั้งหลาย&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์แรก&nbsp;&nbsp;ทรง<wbr>เป็นแหล่งกำเนิดของ&nbsp;&nbsp;<i>อวตาร</i>&nbsp;&nbsp;ทั้งมวล&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เสด็จลงมาเพื่อจุดประสงค์โดย<wbr>เฉพาะ&nbsp;&nbsp;คือทรงขจัดความวิตกกังวลของสาวกผู้บริสุทธิ์ที่มีความกระตือรือร้นอยาก<wbr>พบพระองค์ในลีลาเดิมแห่ง&nbsp;&nbsp;<i>วฺฤนฺทาวน</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จุดมุ่งหมายแรกของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;อวตารคือ<wbr>ทรงตอบสนองความปราถนาของสาวกผู้บริสุทธิ์ของพระองค์
+  มีอวตารหลายรูปแบบ&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">puruṣāvatāras,&nbsp;&nbsp;guṇāvatāras,&nbsp;&nbsp;līlāvatāras,&nbsp;&nbsp;śakty-āveśa&nbsp;&nbsp;avatāras,&nbsp;&nbsp;manvantara-avatāra</span><span class="slant pali">ปุรุษาวตารสฺคุณาวตารสฺลีลาวตารสฺศกฺตฺยฺ-อาเวศอวตารสฺมนฺวนฺตร-อวตาร</span><span class="slant thai">ปุรุษาวะตารัสคุณาวะตารัสลีลาวะตารัสศักตย-อาเวศะอะวะตารัสมันวันตะระ-อะวะตาระ</span><span class="slant ram">zzzzzzzzzzzz-zzzzzzzzz-</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">yugāvatāra</span><span class="slant pali">ยุคาวตาร</span><span class="slant thai">ยุคาวะตาระ</span><span class="slant ram">ยุกาวะทาระ</span>&nbsp;&nbsp;ทั้งหมดทรงปรากฏ<wbr>ตามตารางเวลาในจักรวาลทั้งหลาย&nbsp;&nbsp;แต่องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็น&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์แรก&nbsp;&nbsp;ทรง<wbr>เป็นแหล่งกำเนิดของ&nbsp;&nbsp;<span class="slant iast">avatāra</span><span class="slant pali">อวตาร</span><span class="slant thai">อะวะตาระ</span><span class="slant ram"></span>&nbsp;&nbsp;ทั้งมวล&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เสด็จลงมาเพื่อจุดประสงค์โดย<wbr>เฉพาะ&nbsp;&nbsp;คือทรงขจัดความวิตกกังวลของสาวกผู้บริสุทธิ์ที่มีความกระตือรือร้นอยาก<wbr>พบพระองค์ในลีลาเดิมแห่ง&nbsp;&nbsp;<span class="slant iast">vṛndāvana</span><span class="slant pali">วฺฤนฺทาวน</span><span class="slant thai">วฤนทาวะนะ</span><span class="slant ram">วรินดาวะนะ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จุดมุ่งหมายแรกของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;อวตารคือ<wbr>ทรงตอบสนองความปราถนาของสาวกผู้บริสุทธิ์ของพระองค์
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;พระองค์ทรงอวตารลงมาในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัป&nbsp;&nbsp;เช่นนี้แสดงให้เห็นว่า<wbr>ทรงอวตารลงมาใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคเช่นกัน&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;ว่าอวตารใน&nbsp;&nbsp;<i>กลิ</i>&nbsp;&nbsp;ยุคคือ&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;<i>มหาปฺรภุ</i>&nbsp;&nbsp;ผู้ทรงเผยแพร่การบูชา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ด้วยขบวนการ&nbsp;&nbsp;<i>สงฺกีรฺตน</i>&nbsp;&nbsp;(การชุมนุมร่วมกันร้องเพลงสรรเสริญพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;)&nbsp;&nbsp;และ<wbr>เผยแพร่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกไปทั่วประเทศอินเดีย&nbsp;&nbsp;องค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงทำนายไว้ว่าวัฒนธรรม<wbr>แห่ง&nbsp;&nbsp;<i>สงฺกีรฺตน</i>&nbsp;&nbsp;จะขจรขจายไปทั่วโลก&nbsp;&nbsp;จากเมืองสู่เมือง&nbsp;&nbsp;และจากหมู่บ้านสู่หมู่บ้าน&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;ทรงเป็นอวตารของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ได้อธิบายไว้ในส่วน<wbr>ลับเฉพาะของพระคัมภีร์ที่เปิดเผย&nbsp;&nbsp;เช่น&nbsp;&nbsp;<i>อุปนิษทฺสฺ,มหาภารต</i>&nbsp;&nbsp;และ&nbsp;&nbsp;<i>ภาควต</i>&nbsp;&nbsp;ว่า&nbsp;&nbsp;สาวก<wbr>ของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;รักขบวนการ&nbsp;&nbsp;<i>สงฺกีรฺตน</i>&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<i>ไจตนฺย</i>&nbsp;&nbsp;มาก&nbsp;&nbsp;อวตารของ&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;องค์นี้ไม่<wbr>สังหารคนเลว&nbsp;&nbsp;แต่จะจัดส่งพวกคนเลวให้หลุดพ้น&nbsp;&nbsp;ด้วยพระเมตตาธิคุณอันหาที่สุดมิได้
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;พระองค์ทรงอวตารลงมาในทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;กัป&nbsp;&nbsp;เช่นนี้แสดงให้เห็นว่า<wbr>ทรงอวตารลงมาใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคเช่นกัน&nbsp;&nbsp;ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;ว่าอวตารใน&nbsp;&nbsp;<span class="slant iast">kali</span><span class="slant pali">กลิ</span><span class="slant thai">กะลิ</span><span class="slant ram">คะลิ</span>&nbsp;&nbsp;ยุคคือ&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;<span class="slant iast">mahāprabhu</span><span class="slant pali">มหาปฺรภุ</span><span class="slant thai">มะหาประภุ</span><span class="slant ram">มะฮาพระบํุ </span>&nbsp;&nbsp;ผู้ทรงเผยแพร่การบูชา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ด้วยขบวนการ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana</span><span class="slant pali">สงฺกีรฺตน</span><span class="slant thai">สังกีรตะนะ</span><span class="slant ram"></span>&nbsp;&nbsp;(การชุมนุมร่วมกันร้องเพลงสรรเสริญพระนามอันศักดิ์สิทธิ์ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;)&nbsp;&nbsp;และ<wbr>เผยแพร่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกไปทั่วประเทศอินเดีย&nbsp;&nbsp;องค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงทำนายไว้ว่าวัฒนธรรม<wbr>แห่ง&nbsp;&nbsp;<span class="slant iast">saṅkīrtana</span><span class="slant pali">สงฺกีรฺตน</span><span class="slant thai">สังกีรตะนะ</span><span class="slant ram"></span>&nbsp;&nbsp;จะขจรขจายไปทั่วโลก&nbsp;&nbsp;จากเมืองสู่เมือง&nbsp;&nbsp;และจากหมู่บ้านสู่หมู่บ้าน&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;ทรงเป็นอวตารของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;ได้อธิบายไว้ในส่วน<wbr>ลับเฉพาะของพระคัมภีร์ที่เปิดเผย&nbsp;&nbsp;เช่น&nbsp;&nbsp;<span class="slant iast">upaniṣads,&nbsp;&nbsp;mahābhārata</span><span class="slant pali">อุปนิษทฺสฺมหาภารต</span><span class="slant thai">อุปะนิษัทสมะหาภาระตะ</span><span class="slant ram">มหาภารตะ</span>&nbsp;&nbsp;และ&nbsp;&nbsp;<span class="slant iast">bhāgavata</span><span class="slant pali">ภาควต</span><span class="slant thai">ภาคะวะตะ</span><span class="slant ram"></span>&nbsp;&nbsp;ว่า&nbsp;&nbsp;สาวก<wbr>ของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;รักขบวนการ&nbsp;&nbsp;<span class="slant iast">saṅkīrtana</span><span class="slant pali">สงฺกีรฺตน</span><span class="slant thai">สังกีรตะนะ</span><span class="slant ram"></span>&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<span class="slant iast">caitanya</span><span class="slant pali">ไจตนฺย</span><span class="slant thai">ไจตันยะ</span><span class="slant ram">เชธันญะ</span>&nbsp;&nbsp;มาก&nbsp;&nbsp;อวตารของ&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;องค์นี้ไม่<wbr>สังหารคนเลว&nbsp;&nbsp;แต่จะจัดส่งพวกคนเลวให้หลุดพ้น&nbsp;&nbsp;ด้วยพระเมตตาธิคุณอันหาที่สุดมิได้
   </p>
 </div>
 

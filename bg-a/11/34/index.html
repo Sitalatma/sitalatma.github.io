@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 11.34</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>โทฺรณํ จ ภีษฺมํ จ ชยทฺรตฺหํ จ</i><br /><i>กรฺณํ ตตฺหานฺยานฺ อปิ โยธ-วีรานฺ</i><br /><i>มยา หตาํสฺ ตฺวํ ชหิ มา วฺยตฺหิษฺฐา</i><br /><i>ยุธฺยสฺว เชตาสิ รเณ สปตฺนานฺ</i>
+<span class="slant iast">droṇaṁ ca bhīṣmaṁ ca jayadrathaṁ ca<br /></span>
+<span class="slant pali">โทฺรณํ จ ภีษฺมํ จ ชยทฺรถํ จ<br /></span>
+<span class="slant thai">ทโรณัง จะ ภีษมัง จะ ชะยัทระถัง จะ<br /></span>
+<span class="slant ram">โดรณัม ชะ บีฺชมัม ชะ จะยะดระทัฺม ชะ<br /></span>
+<span class="slant iast">karṇaṁ tathānyān api yodha-vīrān<br /></span>
+<span class="slant pali">กรฺณํ ตถานฺยานฺ อปิ โยธ-วีรานฺ<br /></span>
+<span class="slant thai">กัรณัง ตะถานยาน อะปิ โยธะ-วีราน<br /></span>
+<span class="slant ram">คารนัม ทะทฺานยาน อพิ โยดฺะ-วีราน<br /></span>
+<span class="slant iast">mayā hatāṁs tvaṁ jahi mā vyathiṣṭhā<br /></span>
+<span class="slant pali">มยา หตำสฺ ตฺวํ ชหิ มา วฺยถิษฺฐา<br /></span>
+<span class="slant thai">มะยา หะตางส ตวัง ชะหิ มา วยะถิษฐา<br /></span>
+<span class="slant ram">มะยา ฮะทามส ทวัม จะฮิ มา วิยะทิฺชทา<br /></span>
+<span class="slant iast">yudhyasva jetāsi raṇe sapatnān<br /></span>
+<span class="slant pali">ยุธฺยสฺว เชตาสิ รเณ สปตฺนานฺ<br /></span>
+<span class="slant thai">ยุธยัสวะ เชตาสิ ระเณ สะปัตนาน<br /></span>
+<span class="slant ram">ยุดฺยัสวะ เจทาสิ ระเณ สะพัทนาน<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>โทฺรณมฺ จ</i> — <i>โทฺรณ</i> ก็เช่นกัน, <i>ภีษฺมมฺ จ</i> — <i>ภีษฺม</i> ก็เช่นกัน, <i>ชยทฺรตฺหมฺ จ</i> — <i>ชยทฺรตฺห</i> ก็เช่นกัน, <i>กรฺณมฺ</i> — <i>กรฺณ</i>, <i>ตตฺหา</i> — เช่นกัน, <i>อนฺยานฺ</i> — บุคคลอื่น ๆ, <i>อปิ</i> — แน่นอน, <i>โยธ-วีรานฺ</i> — เหล่านักรบผู้ยิ่งใหญ่, <i>มยา</i> — โดยข้า, <i>หตานฺ</i> — ถูกสังหารแล้ว, <i>ตฺวมฺ</i> — เธอ, <i>ชหิ</i> — ทำลาย, <i>มา</i> — ไม่, <i>วฺยตฺหิษฺฐาฮ</i> — กังวลใจ, <i>ยุธฺยสฺว</i> — เพียงแต่สู้, <i>เชตา อสิ</i> — เธอจะได้รับ ชัยชนะ, <i>รเณ</i> — ในการต่อสู้, <i>สปตฺนานฺ</i> — เหล่าศัตรู
+  <span class="slant iast">droṇam ca</span><span class="slant pali">โทฺรณมฺจ</span><span class="slant thai">ทโรณัมจะ</span><span class="slant ram">โดรณัม ชะ</span> — <span class="slant iast">droṇa</span><span class="slant pali">โทฺรณ</span><span class="slant thai">ทโรณะ</span><span class="slant ram">โดรณะ</span> ก็เช่นกัน, <span class="slant iast">bhīṣmam ca</span><span class="slant pali">ภีษฺมมฺจ</span><span class="slant thai">ภีษมัมจะ</span><span class="slant ram">บีฺชมัม ชะ</span> — <span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span> ก็เช่นกัน, <span class="slant iast">jayadratham ca</span><span class="slant pali">ชยทฺรถมฺจ</span><span class="slant thai">ชะยัทระถัมจะ</span><span class="slant ram">จะยะดระทัฺม ชะ</span> — <span class="slant iast">jayadratha</span><span class="slant pali">ชยทฺรถ</span><span class="slant thai">ชะยัทระถะ</span><span class="slant ram">จะยะดระทฺะ</span> ก็เช่นกัน, <span class="slant iast">karṇam</span><span class="slant pali">กรฺณมฺ</span><span class="slant thai">กัรณัม</span><span class="slant ram">คารณัม</span> — <span class="slant iast">karṇa</span><span class="slant pali">กรฺณ</span><span class="slant thai">กัรณะ</span><span class="slant ram">ครณะ,คารณะ</span>, <span class="slant iast">tathā</span><span class="slant pali">ตถา</span><span class="slant thai">ตะถา</span><span class="slant ram">ทะทฺา</span> — เช่นกัน, <span class="slant iast">anyān</span><span class="slant pali">อนฺยานฺ</span><span class="slant thai">อันยาน</span><span class="slant ram">อันยาน</span> — บุคคลอื่น ๆ, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — แน่นอน, <span class="slant iast">yodha-vīrān</span><span class="slant pali">โยธ-วีรานฺ</span><span class="slant thai">โยธะ-วีราน</span><span class="slant ram">โยดฺะ- วีราน</span> — เหล่านักรบผู้ยิ่งใหญ่, <span class="slant iast">mayā</span><span class="slant pali">มยา</span><span class="slant thai">มะยา</span><span class="slant ram">มะยา</span> — โดยข้า, <span class="slant iast">hatān</span><span class="slant pali">หตานฺ</span><span class="slant thai">หะตาน</span><span class="slant ram">ฮะทาน</span> — ถูกสังหารแล้ว, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — เธอ, <span class="slant iast">jahi</span><span class="slant pali">ชหิ</span><span class="slant thai">ชะหิ</span><span class="slant ram">จะฮิ</span> — ทำลาย, <span class="slant iast">mā</span><span class="slant pali">มา</span><span class="slant thai">มา</span><span class="slant ram">มา</span> — ไม่, <span class="slant iast">vyathiṣṭhāḥ</span><span class="slant pali">วฺยถิษฺฐาห์</span><span class="slant thai">วยะถิษฐาห์</span><span class="slant ram">วิยะทิฺชทฺาฮ</span> — กังวลใจ, <span class="slant iast">yudhyasva</span><span class="slant pali">ยุธฺยสฺว</span><span class="slant thai">ยุธยัสวะ</span><span class="slant ram">ยุดฮยัสวะ</span> — เพียงแต่สู้, <span class="slant iast">jetā asi</span><span class="slant pali">เชตาอสิ</span><span class="slant thai">เชตาอะสิ</span><span class="slant ram">เจทา อสิ</span> — เธอจะได้รับ ชัยชนะ, <span class="slant iast">raṇe</span><span class="slant pali">รเณ</span><span class="slant thai">ระเณ</span><span class="slant ram">ระเณ</span> — ในการต่อสู้, <span class="slant iast">sapatnān</span><span class="slant pali">สปตฺนานฺ</span><span class="slant thai">สะปัตนาน</span><span class="slant ram">สะพัทนาน</span> — เหล่าศัตรู
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>โทฺรณ</i>&nbsp;&nbsp;<i>ภีษฺม</i>&nbsp;&nbsp;<i>ชยทฺรตฺห</i>&nbsp;&nbsp;<i>กรฺณ</i>&nbsp;&nbsp;และนักรบผู้ยิ่งใหญ่อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ข้าได้ทำลายไปเรียบร้อยแล้ว&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จงสังหารพวกเขาและไม่ต้องกังวลใจ&nbsp;&nbsp;เพียงแต่สู้&nbsp;&nbsp;แล้วเธอจะกำราบเหล่าศัตรูในสนามรบ
+  <span class="slant iast">droṇa</span><span class="slant pali">โทฺรณ</span><span class="slant thai">ทโรณะ</span><span class="slant ram">โดรณะ</span>&nbsp;&nbsp;<span class="slant iast">bhīṣma</span><span class="slant pali">ภีษฺม</span><span class="slant thai">ภีษมะ</span><span class="slant ram">บีฺชมะ,บีชมะ</span>&nbsp;&nbsp;<span class="slant iast">jayadratha</span><span class="slant pali">ชยทฺรถ</span><span class="slant thai">ชะยัทระถะ</span><span class="slant ram">จะยะดระทฺะ</span>&nbsp;&nbsp;<span class="slant iast">karṇa</span><span class="slant pali">กรฺณ</span><span class="slant thai">กัรณะ</span><span class="slant ram">ครณะ,คารณะ</span>&nbsp;&nbsp;และนักรบผู้ยิ่งใหญ่อื่น&nbsp;&nbsp;ๆ&nbsp;&nbsp;ข้าได้ทำลายไปเรียบร้อยแล้ว&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;จงสังหารพวกเขาและไม่ต้องกังวลใจ&nbsp;&nbsp;เพียงแต่สู้&nbsp;&nbsp;แล้วเธอจะกำราบเหล่าศัตรูในสนามรบ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;แผน&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นผู้กำหนด&nbsp;&nbsp;แต่พระองค์ทรง<wbr>มีพระเมตตากรุณาต่อสาวกของพระองค์มาก&nbsp;&nbsp;จึงทรงอยากให้สาวกผู้ปฏิบัติตามแผนที่<wbr>พระองค์ปรารถนาได้รับชื่อเสียง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชีวิตควรขับเคลื่อนไปในวิถีทางที่ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนควร<wbr>ปฏิบัติใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกและเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ผ่านทางสื่อแห่งพระอาจารย์ทิพย์&nbsp;&nbsp;แผน<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เข้าใจได้ด้วยพระเมตตาธิคุณของพระองค์&nbsp;&nbsp;และแผนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ<wbr>สาวกก็ดีเท่ากับแผนขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราจึงควรปฏิบัติตามแผนเหล่านี้และได้รับ<wbr>ชัยชนะในการดิ้นรนต่อสู้เพื่อความอยู่รอด
+  ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;แผน&nbsp;&nbsp;บุคลิกภาพสูงสุดแห่งพระเจ้าทรงเป็นผู้กำหนด&nbsp;&nbsp;แต่พระองค์ทรง<wbr>มีพระเมตตากรุณาต่อสาวกของพระองค์มาก&nbsp;&nbsp;จึงทรงอยากให้สาวกผู้ปฏิบัติตามแผนที่<wbr>พระองค์ปรารถนาได้รับชื่อเสียง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;ชีวิตควรขับเคลื่อนไปในวิถีทางที่ทุก&nbsp;&nbsp;ๆ&nbsp;&nbsp;คนควร<wbr>ปฏิบัติใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกและเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ผ่านทางสื่อแห่งพระอาจารย์ทิพย์&nbsp;&nbsp;แผน<wbr>ต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เข้าใจได้ด้วยพระเมตตาธิคุณของพระองค์&nbsp;&nbsp;และแผนต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ของ<wbr>สาวกก็ดีเท่ากับแผนขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;เราจึงควรปฏิบัติตามแผนเหล่านี้และได้รับ<wbr>ชัยชนะในการดิ้นรนต่อสู้เพื่อความอยู่รอด
   </p>
 </div>
 

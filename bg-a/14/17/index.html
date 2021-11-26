@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 14.17</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สตฺตฺวาตฺ สญฺชายเต ชฺญานํ</i><br /><i>รชโส โลภ เอว จ</i><br /><i>ปฺรมาท-โมหะอุ ตมโส</i><br /><i>ภวโต ′ชฺญานมฺ เอว จ</i>
+<span class="slant iast">sattvāt sañjāyate jñānaṁ<br /></span>
+<span class="slant pali">สตฺตฺวาตฺ สญฺชายเต ชฺญานํ<br /></span>
+<span class="slant thai">สัตตวาต สัญชายะเต ชญานัง<br /></span>
+<span class="slant ram">สัททวาท สันจายะเท กยานัม<br /></span>
+<span class="slant iast">rajaso lobha eva ca<br /></span>
+<span class="slant pali">รชโส โลภ เอว จ<br /></span>
+<span class="slant thai">ระชะโส โลภะ เอวะ จะ<br /></span>
+<span class="slant ram">ระจะโส โลบฺะ เอวะ ชะ<br /></span>
+<span class="slant iast">pramāda-mohau tamaso<br /></span>
+<span class="slant pali">ปฺรมาท-โมเหา ตมโส<br /></span>
+<span class="slant thai">ประมาทะ-โมเหา ตะมะโส<br /></span>
+<span class="slant ram">พระมาดะ-โมโฮ ทะมะโส<br /></span>
+<span class="slant iast">bhavato ’jñānam eva ca<br /></span>
+<span class="slant pali">ภวโต ’ชฺญานมฺ เอว จ<br /></span>
+<span class="slant thai">ภะวะโต ’ชญานัม เอวะ จะ<br /></span>
+<span class="slant ram">บฺะวะโท ่กยานัม เอวะ ชะ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สตฺตฺวาตฺ</i> — จากระดับความดี, <i>สญฺชายเต</i> — พัฒนา, <i>ชฺญานมฺ</i> — ความรู้, <i>รชสฮ</i> — จาก ระดับตัณหา, <i>โลภฮ</i> — ความโลภ, <i>เอว</i> — แน่นอน, <i>จ</i> — เช่นกัน, <i>ปฺรมาท</i> — ความบ้าคลั่ง, <i>โมหะอุ</i> — และความหลง, <i>ตมสฮ</i> — จากระดับอวิชชา, <i>ภวตฮ</i> — พัฒนา, <i>อชฺญานมฺ</i> — ไร้ สาระ,<i>เอว</i> — แน่นอน, <i>จ</i> — เช่นกัน
+  <span class="slant iast">sattvāt</span><span class="slant pali">สตฺตฺวาตฺ</span><span class="slant thai">สัตตวาต</span><span class="slant ram">สัททวาท</span> — จากระดับความดี, <span class="slant iast">sañjāyate</span><span class="slant pali">สญฺชายเต</span><span class="slant thai">สัญชายะเต</span><span class="slant ram">สันจายะเท</span> — พัฒนา, <span class="slant iast">jñānam</span><span class="slant pali">ชฺญานมฺ</span><span class="slant thai">ชญานัม</span><span class="slant ram">กยานัม</span> — ความรู้, <span class="slant iast">rajasaḥ</span><span class="slant pali">รชสห์</span><span class="slant thai">ระชะสะห์</span><span class="slant ram">ระจะสะฮ</span> — จาก ระดับตัณหา, <span class="slant iast">lobhaḥ</span><span class="slant pali">โลภห์</span><span class="slant thai">โลภะห์</span><span class="slant ram">โลบฺะฮ</span> — ความโลภ, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน, <span class="slant iast">pramāda</span><span class="slant pali">ปฺรมาท</span><span class="slant thai">ประมาทะ</span><span class="slant ram">พระมาดะ</span> — ความบ้าคลั่ง, <span class="slant iast">mohau</span><span class="slant pali">โมเหา</span><span class="slant thai">โมเหา</span><span class="slant ram">โมโฮ</span> — และความหลง, <span class="slant iast">tamasaḥ</span><span class="slant pali">ตมสห์</span><span class="slant thai">ตะมะสะห์</span><span class="slant ram">ทะมะสะฮ</span> — จากระดับอวิชชา, <span class="slant iast">bhavataḥ</span><span class="slant pali">ภวตห์</span><span class="slant thai">ภะวะตะห์</span><span class="slant ram">บฺะวะทะฮ</span> — พัฒนา, <span class="slant iast">ajñānam</span><span class="slant pali">อชฺญานมฺ</span><span class="slant thai">อัชญานัม</span><span class="slant ram">อกยานัม</span> — ไร้ สาระ,<span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — เช่นกัน
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  เนื่องจากความศิวิไลในปัจจุบันไม่เป็นที่พึงพอใจสำหรับสิ่งมีชีวิตเท่าใดนัก&nbsp;&nbsp;เรา<wbr>จึงได้แนะนำ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกสังคมจะพัฒนามาถึงระดับความ<wbr>ดี&nbsp;&nbsp;เมื่อระดับความดีพัฒนาขึ้น&nbsp;&nbsp;ผู้คนจะเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริง&nbsp;&nbsp;ในระดับอวิชชา<wbr>ผู้คนก็เหมือนกับสัตว์เดรัจฉานไม่สามารถเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชัดเจนนัก&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;ในระดับ<wbr>อวิชชาจะไม่เห็นว่าจากการฆ่าสัตว์ตัวหนึ่ง&nbsp;&nbsp;เป็นการเปิดโอกาสให้สัตว์ตัวเดียวกันนั้นมา<wbr>ฆ่าตนในชาติหน้า&nbsp;&nbsp;เนื่องจากไม่ได้รับการศึกษาในความรู้ที่แท้จริง&nbsp;&nbsp;พวกเขาจึงไม่รับผิด<wbr>ชอบ&nbsp;&nbsp;เพื่อหยุดความไม่รับผิดชอบนี้&nbsp;&nbsp;การศึกษาเพื่อพัฒนาระดับความดีสำหรับประชาชน<wbr>โดยทั่วไปจำเป็นต้องมีขึ้น&nbsp;&nbsp;เมื่อได้รับการศึกษาอย่างแท้จริง&nbsp;&nbsp;และมาอยู่ในระดับความดีจะมีความสุขุมรอบคอบและมีความรู้ในสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริงอย่างถูกต้อง&nbsp;&nbsp;จาก<wbr>นั้นประชาชนก็จะมีความสุขและมีความเจริญรุ่งเรือง&nbsp;&nbsp;ถึงแม้ว่าคนส่วนใหญ่ไม่มีความ<wbr>สุขและไม่เจริญรุ่งเรือง&nbsp;&nbsp;หากส่วนหนึ่งของประชากรพัฒนา&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และสถิตใน<wbr>ระดับความดีจะก่อให้เกิดความสงบและความเจริญรุ่งเรืองทั่วโลก&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;หากทั่วทั้ง<wbr>โลกอุทิศตนให้กับระดับตัณหาและอวิชชา&nbsp;&nbsp;ก็จะไม่มีความสงบหรือความเจริญรุ่งเรือง&nbsp;&nbsp;ใน<wbr>ระดับตัณหาผู้คนมีความโลภและทะเยอทะยานเพื่อความสุขทางประสาทสัมผัสโดยไม่รู้<wbr>จักพอ&nbsp;&nbsp;เราจะเห็นว่าแม้ผู้ที่มีเงินพอเพียงและมีการตระเตรียมเพื่อสนองประสาทสัมผัส<wbr>เป็นอย่างดี&nbsp;&nbsp;เขาก็ยังไม่มีความสุขหรือความสงบภายในใจ&nbsp;&nbsp;เพราะว่าสถิตในระดับตัณหาหากเราต้องการความสุข&nbsp;&nbsp;เงินนั้นช่วยไม่ได้&nbsp;&nbsp;เราต้องพัฒนาตนเองให้มาถึงระดับความดี<wbr>ด้วยการปฏิบัติ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เมื่อปฏิบัติอยู่ในระดับตัณหา&nbsp;&nbsp;ไม่เพียงแต่ไม่มีความสุข<wbr>ทางใจเท่านั้น&nbsp;&nbsp;แต่อาชีพและการงานก็จะเป็นปัญหาอย่างมากเช่นกัน&nbsp;&nbsp;เพราะต้องวางแผน<wbr>และออกอุบายมากมายเพื่อให้ได้เงินมามากเพียงพอ&nbsp;&nbsp;เพื่อรักษาสถานภาพของตนใน<wbr>สังคม&nbsp;&nbsp;เช่นนี้เป็นความทุกข์&nbsp;&nbsp;ในระดับอวิชชาผู้คนบ้าคลั่ง&nbsp;&nbsp;และเนื่องจากอยู่ในสภาวะที่มี<wbr>ความทุกข์&nbsp;&nbsp;จึงต้องไปพึ่งยาเสพติด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงจมปรักลงไปในอวิชชามากยิ่งขึ้น&nbsp;&nbsp;อนาคตใน<wbr>ชีวิตของคนพวกนี้มืดมนสิ้นดี
+  เนื่องจากความศิวิไลในปัจจุบันไม่เป็นที่พึงพอใจสำหรับสิ่งมีชีวิตเท่าใดนัก&nbsp;&nbsp;เรา<wbr>จึงได้แนะนำ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;จาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกสังคมจะพัฒนามาถึงระดับความ<wbr>ดี&nbsp;&nbsp;เมื่อระดับความดีพัฒนาขึ้น&nbsp;&nbsp;ผู้คนจะเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริง&nbsp;&nbsp;ในระดับอวิชชา<wbr>ผู้คนก็เหมือนกับสัตว์เดรัจฉานไม่สามารถเห็นสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ชัดเจนนัก&nbsp;&nbsp;ตัวอย่างเช่น&nbsp;&nbsp;ในระดับ<wbr>อวิชชาจะไม่เห็นว่าจากการฆ่าสัตว์ตัวหนึ่ง&nbsp;&nbsp;เป็นการเปิดโอกาสให้สัตว์ตัวเดียวกันนั้นมา<wbr>ฆ่าตนในชาติหน้า&nbsp;&nbsp;เนื่องจากไม่ได้รับการศึกษาในความรู้ที่แท้จริง&nbsp;&nbsp;พวกเขาจึงไม่รับผิด<wbr>ชอบ&nbsp;&nbsp;เพื่อหยุดความไม่รับผิดชอบนี้&nbsp;&nbsp;การศึกษาเพื่อพัฒนาระดับความดีสำหรับประชาชน<wbr>โดยทั่วไปจำเป็นต้องมีขึ้น&nbsp;&nbsp;เมื่อได้รับการศึกษาอย่างแท้จริง&nbsp;&nbsp;และมาอยู่ในระดับความดีจะมีความสุขุมรอบคอบและมีความรู้ในสิ่งต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;ตามความเป็นจริงอย่างถูกต้อง&nbsp;&nbsp;จาก<wbr>นั้นประชาชนก็จะมีความสุขและมีความเจริญรุ่งเรือง&nbsp;&nbsp;ถึงแม้ว่าคนส่วนใหญ่ไม่มีความ<wbr>สุขและไม่เจริญรุ่งเรือง&nbsp;&nbsp;หากส่วนหนึ่งของประชากรพัฒนา&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;และสถิตใน<wbr>ระดับความดีจะก่อให้เกิดความสงบและความเจริญรุ่งเรืองทั่วโลก&nbsp;&nbsp;มิฉะนั้น&nbsp;&nbsp;หากทั่วทั้ง<wbr>โลกอุทิศตนให้กับระดับตัณหาและอวิชชา&nbsp;&nbsp;ก็จะไม่มีความสงบหรือความเจริญรุ่งเรือง&nbsp;&nbsp;ใน<wbr>ระดับตัณหาผู้คนมีความโลภและทะเยอทะยานเพื่อความสุขทางประสาทสัมผัสโดยไม่รู้<wbr>จักพอ&nbsp;&nbsp;เราจะเห็นว่าแม้ผู้ที่มีเงินพอเพียงและมีการตระเตรียมเพื่อสนองประสาทสัมผัส<wbr>เป็นอย่างดี&nbsp;&nbsp;เขาก็ยังไม่มีความสุขหรือความสงบภายในใจ&nbsp;&nbsp;เพราะว่าสถิตในระดับตัณหาหากเราต้องการความสุข&nbsp;&nbsp;เงินนั้นช่วยไม่ได้&nbsp;&nbsp;เราต้องพัฒนาตนเองให้มาถึงระดับความดี<wbr>ด้วยการปฏิบัติ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึก&nbsp;&nbsp;เมื่อปฏิบัติอยู่ในระดับตัณหา&nbsp;&nbsp;ไม่เพียงแต่ไม่มีความสุข<wbr>ทางใจเท่านั้น&nbsp;&nbsp;แต่อาชีพและการงานก็จะเป็นปัญหาอย่างมากเช่นกัน&nbsp;&nbsp;เพราะต้องวางแผน<wbr>และออกอุบายมากมายเพื่อให้ได้เงินมามากเพียงพอ&nbsp;&nbsp;เพื่อรักษาสถานภาพของตนใน<wbr>สังคม&nbsp;&nbsp;เช่นนี้เป็นความทุกข์&nbsp;&nbsp;ในระดับอวิชชาผู้คนบ้าคลั่ง&nbsp;&nbsp;และเนื่องจากอยู่ในสภาวะที่มี<wbr>ความทุกข์&nbsp;&nbsp;จึงต้องไปพึ่งยาเสพติด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จึงจมปรักลงไปในอวิชชามากยิ่งขึ้น&nbsp;&nbsp;อนาคตใน<wbr>ชีวิตของคนพวกนี้มืดมนสิ้นดี
   </p>
 </div>
 

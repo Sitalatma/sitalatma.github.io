@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อายุธานามฺ อหํ วชฺรํ</i><br /><i>เธนูนามฺ อสฺมิ กาม-ธุกฺ</i><br /><i>ปฺรชนศฺ จาสฺมิ กนฺทรฺปฮ</i><br /><i>สรฺปาณามฺ อสฺมิ วาสุกิฮ</i>
+<span class="slant iast">āyudhānām ahaṁ vajraṁ<br /></span>
+<span class="slant pali">อายุธานามฺ อหํ วชฺรํ<br /></span>
+<span class="slant thai">อายุธานาม อะหัง วัชรัง<br /></span>
+<span class="slant ram">อายุดฺานาม อฮัม วัจรัม<br /></span>
+<span class="slant iast">dhenūnām asmi kāma-dhuk<br /></span>
+<span class="slant pali">เธนูนามฺ อสฺมิ กาม-ธุกฺ<br /></span>
+<span class="slant thai">เธนูนาม อัสมิ กามะ-ธุก<br /></span>
+<span class="slant ram">เดฺนูนาม อัสมิ คามะดํุคฺ<br /></span>
+<span class="slant iast">prajanaś cāsmi kandarpaḥ<br /></span>
+<span class="slant pali">ปฺรชนศฺ จาสฺมิ กนฺทรฺปห์<br /></span>
+<span class="slant thai">ประชะนัศ จาสมิ กันทัรปะห์<br /></span>
+<span class="slant ram">พระจะนัช ชาสมิ คันดารพะฮ<br /></span>
+<span class="slant iast">sarpāṇām asmi vāsukiḥ<br /></span>
+<span class="slant pali">สรฺปาณามฺ อสฺมิ วาสุกิห์<br /></span>
+<span class="slant thai">สัรปาณาม อัสมิ วาสุกิห์<br /></span>
+<span class="slant ram">สารพาณาม อัสมิ วาสุคิฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อายุธานามฺ</i> — ของอาวุธทั้งหลาย, <i>อหมฺ</i> — ข้าเป็น, <i>วชฺรมฺ</i> — สายฟ้า, <i>เธนูนามฺ</i> — ของฝูงวัว, <i>อสฺมิ</i> — ข้าเป็น, <i>กาม-ธุกฺ</i> — วัว <i>สุรภิ</i>, <i>ปฺรชนฮ</i> — ต้นเหตุที่ก่อให้เกิดบุตรธิดา, <i>จ</i> — และ, <i>อสฺมิ</i> — ข้าเป็น, <i>กนฺทรฺปฮ</i> — กามเทพ, <i>สรฺปาณามฺ</i> — ของพวกงู, <i>อสฺมิ</i> — ข้าเป็น, <i>วาสุกิฮ</i> — วาสุคิ
+  <span class="slant iast">āyudhānām</span><span class="slant pali">อายุธานามฺ</span><span class="slant thai">อายุธานาม</span><span class="slant ram">อายุดฺานาม</span> — ของอาวุธทั้งหลาย, <span class="slant iast">aham</span><span class="slant pali">อหมฺ</span><span class="slant thai">อะหัม</span><span class="slant ram">อฮัม</span> — ข้าเป็น, <span class="slant iast">vajram</span><span class="slant pali">วชฺรมฺ</span><span class="slant thai">วัชรัม</span><span class="slant ram">วัจรัม</span> — สายฟ้า, <span class="slant iast">dhenūnām</span><span class="slant pali">เธนูนามฺ</span><span class="slant thai">เธนูนาม</span><span class="slant ram">เดฺนูนาม</span> — ของฝูงวัว, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">kāma-dhuk</span><span class="slant pali">กาม-ธุกฺ</span><span class="slant thai">กามะ-ธุก</span><span class="slant ram">คามะ-ดํุค</span> — วัว <span class="slant iast">surabhi</span><span class="slant pali">สุรภิ</span><span class="slant thai">สุระภิ</span><span class="slant ram">สุระบิฺ</span>, <span class="slant iast">prajanaḥ</span><span class="slant pali">ปฺรชนห์</span><span class="slant thai">ประชะนะห์</span><span class="slant ram">พระจะนะฮ</span> — ต้นเหตุที่ก่อให้เกิดบุตรธิดา, <span class="slant iast">ca</span><span class="slant pali">จ</span><span class="slant thai">จะ</span><span class="slant ram">ชะ</span> — และ, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">kandarpaḥ</span><span class="slant pali">กนฺทรฺปห์</span><span class="slant thai">กันทัรปะห์</span><span class="slant ram">คันดารพะฮ</span> — กามเทพ, <span class="slant iast">sarpāṇām</span><span class="slant pali">สรฺปาณามฺ</span><span class="slant thai">สัรปาณาม</span><span class="slant ram">สารพาณาม</span> — ของพวกงู, <span class="slant iast">asmi</span><span class="slant pali">อสฺมิ</span><span class="slant thai">อัสมิ</span><span class="slant ram">อัสมิ</span> — ข้าเป็น, <span class="slant iast">vāsukiḥ</span><span class="slant pali">วาสุกิห์</span><span class="slant thai">วาสุกิห์</span><span class="slant ram">วาสุคิฮ</span> — วาสุคิ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ในบรรดาอาวุธข้าคือสายฟ้า&nbsp;&nbsp;ในหมู่ฝูงโคข้าคือ&nbsp;&nbsp;<i>สุรภิ</i>&nbsp;&nbsp;ในบรรดาต้นเหตุแห่งการสืบพันธุ์ข้าคือ&nbsp;&nbsp;<i>กนฺทรฺป</i>&nbsp;&nbsp;เทพเจ้าแห่งความรัก&nbsp;&nbsp;และในบรรดางูข้าคือ&nbsp;&nbsp;<i>วาสุกิ</i>&nbsp;&nbsp;
+  ในบรรดาอาวุธข้าคือสายฟ้า&nbsp;&nbsp;ในหมู่ฝูงโคข้าคือ&nbsp;&nbsp;<span class="slant iast">surabhi</span><span class="slant pali">สุรภิ</span><span class="slant thai">สุระภิ</span><span class="slant ram">สุระบิฺ</span>&nbsp;&nbsp;ในบรรดาต้นเหตุแห่งการสืบพันธุ์ข้าคือ&nbsp;&nbsp;<span class="slant iast">kandarpa</span><span class="slant pali">กนฺทรฺป</span><span class="slant thai">กันทัรปะ</span><span class="slant ram">คันดารพะ</span>&nbsp;&nbsp;เทพเจ้าแห่งความรัก&nbsp;&nbsp;และในบรรดางูข้าคือ&nbsp;&nbsp;<span class="slant iast">vāsuki</span><span class="slant pali">วาสุกิ</span><span class="slant thai">วาสุกิ</span><span class="slant ram">วาสุคิ</span>&nbsp;&nbsp;
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  แน่นอนว่าสายฟ้าเป็นอาวุธสุดยอดจึงเป็นผู้แทนพลังอำนาจของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ใน<wbr>ท้องฟ้าทิพย์&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;มีฝูงโคซึ่งรีดนมได้ทุกเวลา&nbsp;&nbsp;โคเหล่านี้ให้นมมากมายตามที่เรา<wbr>ปรารถนา&nbsp;&nbsp;แน่นอนว่าไม่มีโคเช่นนี้ในโลกวัตถุ&nbsp;&nbsp;ได้กล่าวถึงโคเหล่านี้ใน&nbsp;&nbsp;<i>กฺฤษฺณโลก</i>&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ทรงเลี้ยงโคเหล่านี้ไว้มากมายชื่อว่า&nbsp;&nbsp;<i>สุรภิ</i>&nbsp;&nbsp;พระองค์ทรงเป็นผู้พาฝูงโค&nbsp;&nbsp;<i>สุรภิ</i>&nbsp;&nbsp;ไป<wbr>เลี้ยง&nbsp;&nbsp;<i>กนฺทรฺป</i>&nbsp;&nbsp;คือความต้องการทางเพศเพื่อให้กำเนิดบุตรธิดาที่ดี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<i>กนฺทรฺป</i>&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;บางครั้งเพศสัมพันธ์กระทำไปเพื่อสนองประสาทสัมผัสเท่านั้นเช่นนี้ไม่ใช่ผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;แต่เพศสัมพันธ์เพื่อให้กำเนิดบุตรธิดาที่ดีเรียกว่า&nbsp;&nbsp;<i>กนฺทรฺป</i>&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  แน่นอนว่าสายฟ้าเป็นอาวุธสุดยอดจึงเป็นผู้แทนพลังอำนาจของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ใน<wbr>ท้องฟ้าทิพย์&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;มีฝูงโคซึ่งรีดนมได้ทุกเวลา&nbsp;&nbsp;โคเหล่านี้ให้นมมากมายตามที่เรา<wbr>ปรารถนา&nbsp;&nbsp;แน่นอนว่าไม่มีโคเช่นนี้ในโลกวัตถุ&nbsp;&nbsp;ได้กล่าวถึงโคเหล่านี้ใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇaloka</span><span class="slant pali">กฺฤษฺณโลก</span><span class="slant thai">กฤษณะโลกะ</span><span class="slant ram">คริชณะโลคะ</span>&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ทรงเลี้ยงโคเหล่านี้ไว้มากมายชื่อว่า&nbsp;&nbsp;<span class="slant iast">surabhi</span><span class="slant pali">สุรภิ</span><span class="slant thai">สุระภิ</span><span class="slant ram">สุระบิฺ</span>&nbsp;&nbsp;พระองค์ทรงเป็นผู้พาฝูงโค&nbsp;&nbsp;<span class="slant iast">surabhi</span><span class="slant pali">สุรภิ</span><span class="slant thai">สุระภิ</span><span class="slant ram">สุระบิฺ</span>&nbsp;&nbsp;ไป<wbr>เลี้ยง&nbsp;&nbsp;<span class="slant iast">kandarpa</span><span class="slant pali">กนฺทรฺป</span><span class="slant thai">กันทัรปะ</span><span class="slant ram">คันดารพะ</span>&nbsp;&nbsp;คือความต้องการทางเพศเพื่อให้กำเนิดบุตรธิดาที่ดี&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;<span class="slant iast">kandarpa</span><span class="slant pali">กนฺทรฺป</span><span class="slant thai">กันทัรปะ</span><span class="slant ram">คันดารพะ</span>&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;บางครั้งเพศสัมพันธ์กระทำไปเพื่อสนองประสาทสัมผัสเท่านั้นเช่นนี้ไม่ใช่ผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;แต่เพศสัมพันธ์เพื่อให้กำเนิดบุตรธิดาที่ดีเรียกว่า&nbsp;&nbsp;<span class="slant iast">kandarpa</span><span class="slant pali">กนฺทรฺป</span><span class="slant thai">กันทัรปะ</span><span class="slant ram">คันดารพะ</span>&nbsp;&nbsp;จึงเป็นผู้แทนของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 

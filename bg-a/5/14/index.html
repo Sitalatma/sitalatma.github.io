@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 5.14</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>น กรฺตฺฤตฺวํ น กรฺมาณิ</i><br /><i>โลกสฺย สฺฤชติ ปฺรภุฮ</i><br /><i>น กรฺม-ผล-สํโยคํ</i><br /><i>สฺวภาวสฺ ตุ ปฺรวรฺตเต</i>
+<span class="slant iast">na kartṛtvaṁ na karmāṇi<br /></span>
+<span class="slant pali">น กรฺตฺฤตฺวํ น กรฺมาณิ<br /></span>
+<span class="slant thai">นะ กัรตฤตวัง นะ กัรมาณิ<br /></span>
+<span class="slant ram">นะ คารทริทวัม นะ คารมาณิ<br /></span>
+<span class="slant iast">lokasya sṛjati prabhuḥ<br /></span>
+<span class="slant pali">โลกสฺย สฺฤชติ ปฺรภุห์<br /></span>
+<span class="slant thai">โลกัสยะ สฤชะติ ประภุห์<br /></span>
+<span class="slant ram">โลคัสยะ สริจะทิ พระบํุฮ<br /></span>
+<span class="slant iast">na karma-phala-saṁyogaṁ<br /></span>
+<span class="slant pali">น กรฺม-ผล-สํโยคํ<br /></span>
+<span class="slant thai">นะ กัรมะ-ผะละ-สังโยคัง<br /></span>
+<span class="slant ram">นะ คารมะ-พฺะละ-สัมโยกัม<br /></span>
+<span class="slant iast">svabhāvas tu pravartate<br /></span>
+<span class="slant pali">สฺวภาวสฺ ตุ ปฺรวรฺตเต<br /></span>
+<span class="slant thai">สวะภาวัส ตุ ประวัรตะเต<br /></span>
+<span class="slant ram">สวะบฺาวัส ทุ พระวารทะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>น</i> — ไม่, <i>กรฺตฺฤตฺวมฺ</i> — ความเป็นเจ้าของ, <i>น</i> — ไม่, <i>กรฺมาณิ</i> — กิจกรรม, <i>โลกสฺย</i> — ของ ประชาชน, <i>สฺฤชติ</i> — สร้าง, <i>ปฺรภุฮ</i> — เจ้านายของนครแห่งร่างกาย, <i>น</i> — ไม่, <i>กรฺม-ผล</i> — ด้วยผลของกิจกรรม, <i>สํโยคมฺ</i> — เชื่อม, <i>สฺวภาวฮ</i> — ระดับของธรรมชาติวัตถุ, <i>ตุ</i> — แต่, <i>ปฺรวรฺตเต</i> — ปฏิบัติ
+  <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">kartṛtvam</span><span class="slant pali">กรฺตฺฤตฺวมฺ</span><span class="slant thai">กัรตฤตวัม</span><span class="slant ram">คารทริทวัม</span> — ความเป็นเจ้าของ, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">karmāṇi</span><span class="slant pali">กรฺมาณิ</span><span class="slant thai">กัรมาณิ</span><span class="slant ram">คารมาณิ</span> — กิจกรรม, <span class="slant iast">lokasya</span><span class="slant pali">โลกสฺย</span><span class="slant thai">โลกัสยะ</span><span class="slant ram">โลคัสยะ</span> — ของ ประชาชน, <span class="slant iast">sṛjati</span><span class="slant pali">สฺฤชติ</span><span class="slant thai">สฤชะติ</span><span class="slant ram">สริจะทิ</span> — สร้าง, <span class="slant iast">prabhuḥ</span><span class="slant pali">ปฺรภุห์</span><span class="slant thai">ประภุห์</span><span class="slant ram">พระบํุฮ</span> — เจ้านายของนครแห่งร่างกาย, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่, <span class="slant iast">karma-phala</span><span class="slant pali">กรฺม-ผล</span><span class="slant thai">กัรมะ-ผะละ</span><span class="slant ram">คารมะ-พฺะละ</span> — ด้วยผลของกิจกรรม, <span class="slant iast">saṁyogam</span><span class="slant pali">สํโยคมฺ</span><span class="slant thai">สังโยคัม</span><span class="slant ram">สัมโยกัม</span> — เชื่อม, <span class="slant iast">svabhāvaḥ</span><span class="slant pali">สฺวภาวห์</span><span class="slant thai">สวะภาวะห์</span><span class="slant ram">สวะบฺาวะฮ</span> — ระดับของธรรมชาติวัตถุ, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">pravartate</span><span class="slant pali">ปฺรวรฺตเต</span><span class="slant thai">ประวัรตะเต</span><span class="slant ram">พระวารทะเท</span> — ปฏิบัติ
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สิ่งมีชีวิตซึ่งจะอธิบายในบทที่เจ็ด&nbsp;&nbsp;เป็นหนึ่งในพลังงานหรือธรรมชาติขององค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;แต่แตกต่างจากวัตถุซึ่งเป็นอีกธรรมชาติหนึ่งที่ต่ำกว่าขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;อย่างไร<wbr>ก็ดี&nbsp;&nbsp;สิ่งมีชีวิตหรือธรรมชาติที่สูงกว่าได้มาสัมผัสกับธรรมชาติวัตถุตั้งแต่โบราณกาลร่างกายอันไม่ถาวรหรือสถานที่พำนักวัตถุที่เขาได้รับเป็นต้นเหตุของกิจกรรมและวิบาก<wbr>กรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;มีชีวิตอยู่ในบรรยากาศวัตถุเช่นนี้เขาได้รับความทุกข์จากผลกรรม<wbr>ของร่างกายเนื่องจากสำคัญตัวเองกับร่างกาย&nbsp;&nbsp;(ในอวิชชา)&nbsp;&nbsp;อวิชชาเป็นต้นเหตุแห่งความ<wbr>ทุกข์และความเศร้าโศกทางร่างกายที่รับเอามาตั้งแต่โบราณกาล&nbsp;&nbsp;ทันทีที่สิ่งมีชีวิตตีตัว<wbr>ออกห่างจากกิจกรรมทางร่างกาย&nbsp;&nbsp;ก็จะมีอิสรเสรีจากวิบากกรรมด้วย&nbsp;&nbsp;ตราบใดที่ยังอยู่<wbr>ในนครแห่งร่างกายอาจดูเหมือนว่าเป็นเจ้านาย&nbsp;&nbsp;แต่แท้ที่จริงไม่ได้เป็นทั้งเจ้าของหรือผู้<wbr>ควบคุมการกระทำและผลกรรมของร่างกาย&nbsp;&nbsp;เขาเพียงแต่อยู่ในใจกลางมหาสมุทรวัตถุ<wbr>ดิ้นรนเพื่อความอยู่รอด&nbsp;&nbsp;คลื่นแห่งมหาสมุทรกำลังซัดพาไป&nbsp;&nbsp;และตัวเขาควบคุมมันไม่ได้ผลสรุปที่ดีที่สุดของเขาคือออกจากมหาสมุทรนี้ด้วย&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกทิพย์&nbsp;&nbsp;ซึ่งเป็นสิ่ง<wbr>เดียวเท่านั้นที่จะช่วยเขาให้พ้นจากความยุ่งยากทั้งปวง
+  สิ่งมีชีวิตซึ่งจะอธิบายในบทที่เจ็ด&nbsp;&nbsp;เป็นหนึ่งในพลังงานหรือธรรมชาติขององค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;แต่แตกต่างจากวัตถุซึ่งเป็นอีกธรรมชาติหนึ่งที่ต่ำกว่าขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;อย่างไร<wbr>ก็ดี&nbsp;&nbsp;สิ่งมีชีวิตหรือธรรมชาติที่สูงกว่าได้มาสัมผัสกับธรรมชาติวัตถุตั้งแต่โบราณกาลร่างกายอันไม่ถาวรหรือสถานที่พำนักวัตถุที่เขาได้รับเป็นต้นเหตุของกิจกรรมและวิบาก<wbr>กรรมต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;นานา&nbsp;&nbsp;มีชีวิตอยู่ในบรรยากาศวัตถุเช่นนี้เขาได้รับความทุกข์จากผลกรรม<wbr>ของร่างกายเนื่องจากสำคัญตัวเองกับร่างกาย&nbsp;&nbsp;(ในอวิชชา)&nbsp;&nbsp;อวิชชาเป็นต้นเหตุแห่งความ<wbr>ทุกข์และความเศร้าโศกทางร่างกายที่รับเอามาตั้งแต่โบราณกาล&nbsp;&nbsp;ทันทีที่สิ่งมีชีวิตตีตัว<wbr>ออกห่างจากกิจกรรมทางร่างกาย&nbsp;&nbsp;ก็จะมีอิสรเสรีจากวิบากกรรมด้วย&nbsp;&nbsp;ตราบใดที่ยังอยู่<wbr>ในนครแห่งร่างกายอาจดูเหมือนว่าเป็นเจ้านาย&nbsp;&nbsp;แต่แท้ที่จริงไม่ได้เป็นทั้งเจ้าของหรือผู้<wbr>ควบคุมการกระทำและผลกรรมของร่างกาย&nbsp;&nbsp;เขาเพียงแต่อยู่ในใจกลางมหาสมุทรวัตถุ<wbr>ดิ้นรนเพื่อความอยู่รอด&nbsp;&nbsp;คลื่นแห่งมหาสมุทรกำลังซัดพาไป&nbsp;&nbsp;และตัวเขาควบคุมมันไม่ได้ผลสรุปที่ดีที่สุดของเขาคือออกจากมหาสมุทรนี้ด้วย&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกทิพย์&nbsp;&nbsp;ซึ่งเป็นสิ่ง<wbr>เดียวเท่านั้นที่จะช่วยเขาให้พ้นจากความยุ่งยากทั้งปวง
   </p>
 </div>
 

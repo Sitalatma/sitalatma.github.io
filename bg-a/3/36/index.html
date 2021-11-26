@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 3.36</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,33 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>อรฺชุน อุวาจ</i><br /><i>อตฺห เกน ปฺรยุโกฺต ′ยํ</i><br /><i>ปาปํ จรติ ปูรุษฮ</i><br /><i>อนิจฺฉนฺนฺ อปิ วาเรฺษฺณย</i><br /><i>พลาทฺ อิว นิโยชิตฮ</i>
+<span class="slant iast">arjuna uvāca<br /></span>
+<span class="slant pali">อรฺชุน อุวาจ<br /></span>
+<span class="slant thai">อัรชุนะ อุวาจะ<br /></span>
+<span class="slant ram">อารจุนะ อุวาชะ<br /></span>
+<span class="slant iast">atha kena prayukto ’yaṁ<br /></span>
+<span class="slant pali">อถ เกน ปฺรยุกฺโต ’ยํ<br /></span>
+<span class="slant thai">อะถะ เกนะ ประยุกโต ’ยัง<br /></span>
+<span class="slant ram">อทฺะ เคนะ พระยุคโท ยัม<br /></span>
+<span class="slant iast">pāpaṁ carati pūruṣaḥ<br /></span>
+<span class="slant pali">ปาปํ จรติ ปูรุษห์<br /></span>
+<span class="slant thai">ปาปัง จะระติ ปูรุษะห์<br /></span>
+<span class="slant ram">พาพัมชะระทิ พูรุชะฮ<br /></span>
+<span class="slant iast">anicchann api vārṣṇeya<br /></span>
+<span class="slant pali">อนิจฺฉนฺนฺ อปิ วารฺษฺเณย<br /></span>
+<span class="slant thai">อะนิจฉันน อะปิ วารษเณยะ<br /></span>
+<span class="slant ram">อนิชชฺันน อพิ วารชเณยะ<br /></span>
+<span class="slant iast">balād iva niyojitaḥ<br /></span>
+<span class="slant pali">พลาทฺ อิว นิโยชิตห์<br /></span>
+<span class="slant thai">พะลาท อิวะ นิโยชิตะห์<br /></span>
+<span class="slant ram">บะลาด อิวะ นิโยจิทะฮ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>อรฺชุนฮ อุวาจ</i> — <i>อรฺชุน</i> ตรัส, <i>อตฺห</i> — จากนั้น, <i>เกน</i> — ด้วยอะไร, <i>ปฺรยุกฺตฮ</i> — กระตุ้น, <i>อยมฺ</i> — บุคคล, <i>ปาปมฺ</i> — ความบาป, <i>จรติ</i> — ทำ,<i>ปูรุษฮ</i> — มนุษย์, <i>อนิจฺฉนฺ</i> — ไม่มีความ ปรารถนา, <i>อปิ</i> — ถึงแม้ว่า, <i>วาเรฺษฺณย</i> — โอ้ ผู้สืบราชวงศ์ <i>วฺฤษฺณิ</i>,<i>พลาตฺ</i> — ด้วยกำลัง, <i>อิว</i> — ประหนึ่งว่า, <i>นิโยชิตฮ</i> — ปฏิบัติ
+  <span class="slant iast">arjunaḥ uvāca</span><span class="slant pali">อรฺชุนห์อุวาจ</span><span class="slant thai">อัรชุนะห์อุวาจะ</span><span class="slant ram">อารจุนะฮ อุวาชะ</span> — <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span> ตรัส, <span class="slant iast">atha</span><span class="slant pali">อถ</span><span class="slant thai">อะถะ</span><span class="slant ram">อทฺะ</span> — จากนั้น, <span class="slant iast">kena</span><span class="slant pali">เกน</span><span class="slant thai">เกนะ</span><span class="slant ram">เคนะ</span> — ด้วยอะไร, <span class="slant iast">prayuktaḥ</span><span class="slant pali">ปฺรยุกฺตห์</span><span class="slant thai">ประยุกตะห์</span><span class="slant ram">พระยุคทะฮ</span> — กระตุ้น, <span class="slant iast">ayam</span><span class="slant pali">อยมฺ</span><span class="slant thai">อะยัม</span><span class="slant ram">อยัม</span> — บุคคล, <span class="slant iast">pāpam</span><span class="slant pali">ปาปมฺ</span><span class="slant thai">ปาปัม</span><span class="slant ram">พาพัม</span> — ความบาป, <span class="slant iast">carati</span><span class="slant pali">จรติ</span><span class="slant thai">จะระติ</span><span class="slant ram">ชะระทิ</span> — ทำ,<span class="slant iast">pūruṣaḥ</span><span class="slant pali">ปูรุษห์</span><span class="slant thai">ปูรุษะห์</span><span class="slant ram"> พูรุชะฮ</span> — มนุษย์, <span class="slant iast">anicchan</span><span class="slant pali">อนิจฺฉนฺ</span><span class="slant thai">อะนิจฉัน</span><span class="slant ram">อนิชชฺัน</span> — ไม่มีความ ปรารถนา, <span class="slant iast">api</span><span class="slant pali">อปิ</span><span class="slant thai">อะปิ</span><span class="slant ram">อพิ</span> — ถึงแม้ว่า, <span class="slant iast">vārṣṇeya</span><span class="slant pali">วารฺษฺเณย</span><span class="slant thai">วารษเณยะ</span><span class="slant ram">วารชเณยะ</span> — โอ้ ผู้สืบราชวงศ์ <span class="slant iast">vṛṣṇi</span><span class="slant pali">วฺฤษฺณิ</span><span class="slant thai">วฤษณิ</span><span class="slant ram">วริชณิ</span>,<span class="slant iast">balāt</span><span class="slant pali">พลาตฺ</span><span class="slant thai">พะลาต</span><span class="slant ram"> บะลาท</span> — ด้วยกำลัง, <span class="slant iast">iva</span><span class="slant pali">อิว</span><span class="slant thai">อิวะ</span><span class="slant ram">อิวะ</span> — ประหนึ่งว่า, <span class="slant iast">niyojitaḥ</span><span class="slant pali">นิโยชิตห์</span><span class="slant thai">นิโยชิตะห์</span><span class="slant ram">นิโยจิทะฮ</span> — ปฏิบัติ
   </p>
 </div>
 
@@ -61,7 +166,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  <i>อรฺชุน</i>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สืบราชวงศ์&nbsp;&nbsp;<i>วฺฤษฺณิ</i>&nbsp;&nbsp;อะไรคือสิ่งกระตุ้นให้คนทำบาปแม้จะไม่เต็มใจ&nbsp;&nbsp;ประหนึ่งทำไปเพราะถูกบังคับ?
+  <span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ตรัสว่า&nbsp;&nbsp;โอ้&nbsp;&nbsp;ผู้สืบราชวงศ์&nbsp;&nbsp;<span class="slant iast">vṛṣṇi</span><span class="slant pali">วฺฤษฺณิ</span><span class="slant thai">วฤษณิ</span><span class="slant ram">วริชณิ</span>&nbsp;&nbsp;อะไรคือสิ่งกระตุ้นให้คนทำบาปแม้จะไม่เต็มใจ&nbsp;&nbsp;ประหนึ่งทำไปเพราะถูกบังคับ?
   </p>
 </div>
 
@@ -73,7 +178,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สิ่งมีชีวิตซึ่งเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;เดิมทีเป็ทิพย์&nbsp;&nbsp;บริสุทธิ์&nbsp;&nbsp;และปราศจาก<wbr>มลทินทางวัตถุทั้งปวง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;โดยธรรมชาติจะไม่อยู่ภายใต้อำนาจแห่งความบาปใน<wbr>โลกวัตถุ&nbsp;&nbsp;แต่เมื่อมาสัมผัสกับธรรมชาติวัตถุเราทำบาปนานัปการโดยไม่ลังเลใจ&nbsp;&nbsp;แม้บาง<wbr>ครั้งตนเองไม่ปรารถนา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงถาม&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เช่นนี้จึงให้ความหวังมากเกี่ยว<wbr>กับธรรมชาติอันวิปริตของสิ่งมีชีวิต&nbsp;&nbsp;แม้สิ่งมีชีวิตบางครั้งไม่ต้องการทำบาปแต่ถูกบังคับ<wbr>ให้ทำ&nbsp;&nbsp;อย่างไรก็ดีอภิวิญญาณผู้ประทับอยู่ภายในหัวใจของเราทรงมิได้เป็นผู้กระตุ้นให้<wbr>ทำบาปแต่เนื่องมาจากสาเหตุอื่น&nbsp;&nbsp;ดังที่องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จะทรงอธิบายในโศลกต่อไป
+  สิ่งมีชีวิตซึ่งเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;เดิมทีเป็ทิพย์&nbsp;&nbsp;บริสุทธิ์&nbsp;&nbsp;และปราศจาก<wbr>มลทินทางวัตถุทั้งปวง&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;โดยธรรมชาติจะไม่อยู่ภายใต้อำนาจแห่งความบาปใน<wbr>โลกวัตถุ&nbsp;&nbsp;แต่เมื่อมาสัมผัสกับธรรมชาติวัตถุเราทำบาปนานัปการโดยไม่ลังเลใจ&nbsp;&nbsp;แม้บาง<wbr>ครั้งตนเองไม่ปรารถนา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงถาม&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เช่นนี้จึงให้ความหวังมากเกี่ยว<wbr>กับธรรมชาติอันวิปริตของสิ่งมีชีวิต&nbsp;&nbsp;แม้สิ่งมีชีวิตบางครั้งไม่ต้องการทำบาปแต่ถูกบังคับ<wbr>ให้ทำ&nbsp;&nbsp;อย่างไรก็ดีอภิวิญญาณผู้ประทับอยู่ภายในหัวใจของเราทรงมิได้เป็นผู้กระตุ้นให้<wbr>ทำบาปแต่เนื่องมาจากสาเหตุอื่น&nbsp;&nbsp;ดังที่องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จะทรงอธิบายในโศลกต่อไป
   </p>
 </div>
 

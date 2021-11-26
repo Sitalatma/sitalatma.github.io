@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 8.20</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ปรสฺ ตสฺมาตฺ ตุ ภาโว ′โนฺย</i><br /><i>′วฺยโกฺต ′วฺยกฺตาตฺ สนาตนฮ</i><br /><i>ยฮ ส สเรฺวษุ ภูเตษุ</i><br /><i>นศฺยตฺสุ น วินศฺยติ</i>
+<span class="slant iast">paras tasmāt tu bhāvo ’nyo<br /></span>
+<span class="slant pali">ปรสฺ ตสฺมาตฺ ตุ ภาโว ’โนฺย<br /></span>
+<span class="slant thai">ปะรัส ตัสมาต ตุ ภาโว ’นโย<br /></span>
+<span class="slant ram">พะรัส ทัสมาท ทุ บฺาโว นโย<br /></span>
+<span class="slant iast">’vyakto ’vyaktāt sanātanaḥ<br /></span>
+<span class="slant pali">’วฺยกฺโต ’วฺยกฺตาตฺ สนาตนห์<br /></span>
+<span class="slant thai">’วยักโต ’วยักตาต สะนาตะนะห์<br /></span>
+<span class="slant ram">วิยัคโท วิยัททาท สะนาทะนะฮ<br /></span>
+<span class="slant iast">yaḥ sa sarveṣu bhūteṣu<br /></span>
+<span class="slant pali">ยห์ ส สเรฺวษุ ภูเตษุ<br /></span>
+<span class="slant thai">ยะห์ สะ สัรเวษุ ภูเตษุ<br /></span>
+<span class="slant ram">ยะฮ สะ สารเวชุ บํูเทชุ<br /></span>
+<span class="slant iast">naśyatsu na vinaśyati<br /></span>
+<span class="slant pali">นศฺยตฺสุ น วินศฺยติ<br /></span>
+<span class="slant thai">นัศยัตสุ นะ วินัศยะติ<br /></span>
+<span class="slant ram">นัชยัทสุ นะ วินัชยะทิฺ<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ปรฮ</i> — ทิพย์, <i>ตสฺมาตฺ</i> — นั้น, <i>ตุ</i> — แต่, <i>ภาวฮ</i> — ธรรมชาติ, <i>อนฺยฮ</i> — อีกอันหนึ่ง, <i>อวฺยกฺตฮ</i> — ไม่ปรากฏ, <i>อวฺยกฺตาตฺ</i> — แด่ที่ไม่ปรากฏ, <i>สนาตนฮ</i> — อมตะ, <i>ยฮ สฮ</i> — ซึ่ง, <i>สเรฺวษุ</i> — ทั้งหมด, <i>ภูเตษุ</i> — ปรากฏการณ์, <i>นศฺยตฺสุ</i> — ถูกทำลาย, <i>น</i> — ไม่เคย, <i>วินศฺยติ</i> — ถูกทำลาย
+  <span class="slant iast">paraḥ</span><span class="slant pali">ปรห์</span><span class="slant thai">ปะระห์</span><span class="slant ram">พะระฮ</span> — ทิพย์, <span class="slant iast">tasmāt</span><span class="slant pali">ตสฺมาตฺ</span><span class="slant thai">ตัสมาต</span><span class="slant ram">ทัสมาท</span> — นั้น, <span class="slant iast">tu</span><span class="slant pali">ตุ</span><span class="slant thai">ตุ</span><span class="slant ram">ทุ</span> — แต่, <span class="slant iast">bhāvaḥ</span><span class="slant pali">ภาวห์</span><span class="slant thai">ภาวะห์</span><span class="slant ram">บฺาวะฮ</span> — ธรรมชาติ, <span class="slant iast">anyaḥ</span><span class="slant pali">อนฺยห์</span><span class="slant thai">อันยะห์</span><span class="slant ram">อันยะฮ</span> — อีกอันหนึ่ง, <span class="slant iast">avyaktaḥ</span><span class="slant pali">อวฺยกฺตห์</span><span class="slant thai">อัวยักตะห์</span><span class="slant ram">อัพยัคทะฮ</span> — ไม่ปรากฏ, <span class="slant iast">avyaktāt</span><span class="slant pali">อวฺยกฺตาตฺ</span><span class="slant thai">อัวยักตาต</span><span class="slant ram">อัพยัคทาท</span> — แด่ที่ไม่ปรากฏ, <span class="slant iast">sanātanaḥ</span><span class="slant pali">สนาตนห์</span><span class="slant thai">สะนาตะนะห์</span><span class="slant ram">สะนาทะนะฮ</span> — อมตะ, <span class="slant iast">yaḥ saḥ</span><span class="slant pali">ยห์สห์</span><span class="slant thai">ยะห์สะห์</span><span class="slant ram">ยะฮ สะฮ</span> — ซึ่ง, <span class="slant iast">sarveṣu</span><span class="slant pali">สเรฺวษุ</span><span class="slant thai">สัรเวษุ</span><span class="slant ram">สารเวชุ</span> — ทั้งหมด, <span class="slant iast">bhūteṣu</span><span class="slant pali">ภูเตษุ</span><span class="slant thai">ภูเตษุ</span><span class="slant ram">บํูเทชุ</span> — ปรากฏการณ์, <span class="slant iast">naśyatsu</span><span class="slant pali">นศฺยตฺสุ</span><span class="slant thai">นัศยัตสุ</span><span class="slant ram">นัชยัทสุ</span> — ถูกทำลาย, <span class="slant iast">na</span><span class="slant pali">น</span><span class="slant thai">นะ</span><span class="slant ram">นะ</span> — ไม่เคย, <span class="slant iast">vinaśyati</span><span class="slant pali">วินศฺยติ</span><span class="slant thai">วินัศยะติ</span><span class="slant ram">วินัชยะทิ</span> — ถูกทำลาย
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  พลังงานทิพย์ที่สูงกว่าของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เป็นทิพย์และเป็นอมตะ&nbsp;&nbsp;อยู่เหนือการ<wbr>เปลี่ยนแปลงทั้งหมดของธรรมชาติวัตถุที่ปรากฏออกมาในเวลากลางวันและจะถูก<wbr>ทำลายในเวลากลางคืนของพระ&nbsp;&nbsp;<i>พฺรหฺมา</i>&nbsp;&nbsp;พลังงานเบื้องสูงของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;มีคุณสมบัติตรงกัน<wbr>ข้ามกับธรรมชาติวัตถุโดยสิ้นเชิง&nbsp;&nbsp;ธรรมชาติที่สูงกว่าและธรรมชาติที่ต่ำกว่านี้ได้อธิบาย<wbr>ไว้ในบทที่เจ็ด
+  พลังงานทิพย์ที่สูงกว่าของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เป็นทิพย์และเป็นอมตะ&nbsp;&nbsp;อยู่เหนือการ<wbr>เปลี่ยนแปลงทั้งหมดของธรรมชาติวัตถุที่ปรากฏออกมาในเวลากลางวันและจะถูก<wbr>ทำลายในเวลากลางคืนของพระ&nbsp;&nbsp;<span class="slant iast">brahmā</span><span class="slant pali">พฺรหฺมา</span><span class="slant thai">พรัหมา</span><span class="slant ram">พรหม</span>&nbsp;&nbsp;พลังงานเบื้องสูงของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;มีคุณสมบัติตรงกัน<wbr>ข้ามกับธรรมชาติวัตถุโดยสิ้นเชิง&nbsp;&nbsp;ธรรมชาติที่สูงกว่าและธรรมชาติที่ต่ำกว่านี้ได้อธิบาย<wbr>ไว้ในบทที่เจ็ด
   </p>
 </div>
 

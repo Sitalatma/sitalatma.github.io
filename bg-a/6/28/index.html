@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 6.28</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ยุญฺชนฺนฺ เอวํ สทาตฺมานํ</i><br /><i>โยคี วิคต-กลฺมษฮ</i><br /><i>สุเขน พฺรหฺม-สํสฺปรฺศมฺ</i><br /><i>อตฺยนฺตํ สุขมฺ อศฺนุเต</i>
+<span class="slant iast">yuñjann evaṁ sadātmānaṁ<br /></span>
+<span class="slant pali">ยุญฺชนฺนฺ เอวํ สทาตฺมานํ<br /></span>
+<span class="slant thai">ยุญชันน เอวัง สะทาตมานัง<br /></span>
+<span class="slant ram">ยุนจันน เอวัม สะดาทมานัม<br /></span>
+<span class="slant iast">yogī vigata-kalmaṣaḥ<br /></span>
+<span class="slant pali">โยคี วิคต-กลฺมษห์<br /></span>
+<span class="slant thai">โยคี วิคะตะ-กัลมะษะห์<br /></span>
+<span class="slant ram">โยกี วิกะทะ-คัลมะชะฮ<br /></span>
+<span class="slant iast">sukhena brahma-saṁsparśam<br /></span>
+<span class="slant pali">สุเขน พฺรหฺม-สํสฺปรฺศมฺ<br /></span>
+<span class="slant thai">สุเขนะ พรัหมะ-สังสปัรศัม<br /></span>
+<span class="slant ram">สุเคฺนะ บระฮมะ-สัมสพารชัม<br /></span>
+<span class="slant iast">atyantaṁ sukham aśnute<br /></span>
+<span class="slant pali">อตฺยนฺตํ สุขมฺ อศฺนุเต<br /></span>
+<span class="slant thai">อัตยันตัง สุขัม อัศนุเต<br /></span>
+<span class="slant ram">อัทยันทัม สุคัฺม อัชนุเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ยุญฺชนฺ</i> — ปฏิบัติฝึกฝน <i>โยค</i>, <i>เอวมฺ</i> — ดังนั้น, <i>สทา</i> — เสมอ, <i>อาตฺมานมฺ</i> — ตัวเขา, <i>โยคี</i> — ผู้ ที่สัมผัสอยู่กับองค์ภควาน, <i>วิคต</i> — เป็นอิสระจาก, <i>กลฺมษฮ</i> — มลทินทางวัตถุทั้ง มวล, <i>สุเขน</i> — ในความสุขทิพย์, <i>พฺรหฺม-สํสฺปรฺศมฺ</i> — สัมผัสกับองค์ภควานอยู่เสมอ, <i>อตฺยนฺตมฺ</i> — สูงสุด, <i>สุขมฺ</i> — ความสุข, <i>อศฺนุเต</i> — ได้รับ
+  <span class="slant iast">yuñjan</span><span class="slant pali">ยุญฺชนฺ</span><span class="slant thai">ยุญชัน</span><span class="slant ram">ยุนจัน</span> — ปฏิบัติฝึกฝน <span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>, <span class="slant iast">evam</span><span class="slant pali">เอวมฺ</span><span class="slant thai">เอวัม</span><span class="slant ram">เอวัม</span> — ดังนั้น, <span class="slant iast">sadā</span><span class="slant pali">สทา</span><span class="slant thai">สะทา</span><span class="slant ram">สะดา</span> — เสมอ, <span class="slant iast">ātmānam</span><span class="slant pali">อาตฺมานมฺ</span><span class="slant thai">อาตมานัม</span><span class="slant ram">อาทมานัม</span> — ตัวเขา, <span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span> — ผู้ ที่สัมผัสอยู่กับองค์ภควาน, <span class="slant iast">vigata</span><span class="slant pali">วิคต</span><span class="slant thai">วิคะตะ</span><span class="slant ram">วิกะทะ</span> — เป็นอิสระจาก, <span class="slant iast">kalmaṣaḥ</span><span class="slant pali">กลฺมษห์</span><span class="slant thai">กัลมะษะห์</span><span class="slant ram">คัลมะชะฮ</span> — มลทินทางวัตถุทั้ง มวล, <span class="slant iast">sukhena</span><span class="slant pali">สุเขน</span><span class="slant thai">สุเขนะ</span><span class="slant ram">สุเคฺนะ</span> — ในความสุขทิพย์, <span class="slant iast">brahma-saṁsparśam</span><span class="slant pali">พฺรหฺม-สํสฺปรฺศมฺ</span><span class="slant thai">พรัหมะ-สังสปัรศัม</span><span class="slant ram">บระฮมะ-สัมสพารชัม</span> — สัมผัสกับองค์ภควานอยู่เสมอ, <span class="slant iast">atyantam</span><span class="slant pali">อตฺยนฺตมฺ</span><span class="slant thai">อัตยันตัม</span><span class="slant ram">อัทยันทัม</span> — สูงสุด, <span class="slant iast">sukham</span><span class="slant pali">สุขมฺ</span><span class="slant thai">สุขัม</span><span class="slant ram">สุคัฺม</span> — ความสุข, <span class="slant iast">aśnute</span><span class="slant pali">อศฺนุเต</span><span class="slant thai">อัศนุเต</span><span class="slant ram">อัชนุเท</span> — ได้รับ
   </p>
 </div>
 
@@ -61,7 +162,7 @@
 
 <div class="r r-lang-en r-translation">
   <p>
-  ดังนั้น&nbsp;&nbsp;<i>โยคี</i>&nbsp;&nbsp;ผู้ควบคุมตนเองได้&nbsp;&nbsp;ปฏิบัติตนฝึกฝนอยู่ใน&nbsp;&nbsp;<i>โยค</i>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;เป็นอิสรเสรีจากมลทินทางวัตถุทั้งปวง&nbsp;&nbsp;และบรรลุระดับสูงสุดแห่งความสุขที่สมบูรณ์&nbsp;&nbsp;ในการรับใช้องค์ภควานด้วยความรักทิพย์
+  ดังนั้น&nbsp;&nbsp;<span class="slant iast">yogī</span><span class="slant pali">โยคี</span><span class="slant thai">โยคี</span><span class="slant ram">โยคี</span>&nbsp;&nbsp;ผู้ควบคุมตนเองได้&nbsp;&nbsp;ปฏิบัติตนฝึกฝนอยู่ใน&nbsp;&nbsp;<span class="slant iast">yoga</span><span class="slant pali">โยค</span><span class="slant thai">โยคะ</span><span class="slant ram">โยกะ,โยคะ,โยค</span>&nbsp;&nbsp;เสมอ&nbsp;&nbsp;เป็นอิสรเสรีจากมลทินทางวัตถุทั้งปวง&nbsp;&nbsp;และบรรลุระดับสูงสุดแห่งความสุขที่สมบูรณ์&nbsp;&nbsp;ในการรับใช้องค์ภควานด้วยความรักทิพย์
   </p>
 </div>
 
@@ -73,7 +174,7 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  การรู้แจ้งตนเองหมายถึงรู้สถานภาพพื้นฐานของตนในความสัมพันธ์กับองค์<wbr>&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ปัจเจกวิญญาณเป็นละอองอณูขององค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;และสถานภาพของตนคือ<wbr>การถวายการรับใช้ทิพย์แด่พระองค์&nbsp;&nbsp;การเชื่อมสัมพันธ์ทิพย์กับองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;นี้เรียกว่า&nbsp;&nbsp;<i>พฺรหฺม-สํสฺปรฺศ</i>&nbsp;&nbsp;
+  การรู้แจ้งตนเองหมายถึงรู้สถานภาพพื้นฐานของตนในความสัมพันธ์กับองค์<wbr>&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ปัจเจกวิญญาณเป็นละอองอณูขององค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;และสถานภาพของตนคือ<wbr>การถวายการรับใช้ทิพย์แด่พระองค์&nbsp;&nbsp;การเชื่อมสัมพันธ์ทิพย์กับองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;นี้เรียกว่า&nbsp;&nbsp;<span class="slant iast">brahma-saṁsparśa</span><span class="slant pali">พฺรหฺม-สํสฺปรฺศ</span><span class="slant thai">พรัหมะ-สังสปัรศะ</span><span class="slant ram">บระฮมะ-</span>&nbsp;&nbsp;
   </p>
 </div>
 

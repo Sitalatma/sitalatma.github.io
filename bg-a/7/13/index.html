@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 7.13</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>ตฺริภิรฺ คุณ-มไยรฺ ภาไวรฺ</i><br /><i>เอภิฮ สรฺวมฺ อิทํ ชคตฺ</i><br /><i>โมหิตํ นาภิชานาติ</i><br /><i>มามฺ เอภฺยฮ ปรมฺ อวฺยยมฺ</i>
+<span class="slant iast">tribhir guṇa-mayair bhāvair<br /></span>
+<span class="slant pali">ตฺริภิรฺ คุณ-มไยรฺ ภาไวรฺ<br /></span>
+<span class="slant thai">ตริภิร คุณะ-มะไยร ภาไวร<br /></span>
+<span class="slant ram">ทริบิฺร กุณะ-มะไยฮ บฺาไวร<br /></span>
+<span class="slant iast">ebhiḥ sarvam idaṁ jagat<br /></span>
+<span class="slant pali">เอภิห์ สรฺวมฺ อิทํ ชคตฺ<br /></span>
+<span class="slant thai">เอภิห์ สัรวัม อิทัง ชะคัต<br /></span>
+<span class="slant ram">เอบิฺฮ สารวัม อิดัม จะกัทฺ<br /></span>
+<span class="slant iast">mohitaṁ nābhijānāti<br /></span>
+<span class="slant pali">โมหิตํ นาภิชานาติ<br /></span>
+<span class="slant thai">โมหิตัง นาภิชานาติ<br /></span>
+<span class="slant ram">โมฮิทัม นาบิฺจานาทิ<br /></span>
+<span class="slant iast">mām ebhyaḥ param avyayam<br /></span>
+<span class="slant pali">มามฺ เอภฺยห์ ปรมฺ อวฺยยมฺ<br /></span>
+<span class="slant thai">มาม เอภยะห์ ปะรัม อัวยะยัม<br /></span>
+<span class="slant ram">มาม เอบฺยะฮ พะรัม อัพยะยัม<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>ตฺริภิฮ</i> — สาม, <i>คุณ-มไยฮ</i> — ประกอบด้วย <i>คุณ</i>, <i>ภาไวฮ</i> — โดยระดับของชีวิต, <i>เอภิฮ</i> — ทั้งหมดนี้, <i>สรฺวมฺ</i> — ทั้งหมด, <i>อิทมฺ</i> — นี้, <i>ชคตฺ</i> — จักรวาล, <i>โมหิตมฺ</i> — ความหลง, <i>น อภิชานาติ</i> — ไม่รู้, <i>มามฺ</i> — ข้า, <i>เอภฺยฮ</i> — เหนือสิ่งเหล่านี้, <i>ปรมฺ</i> — สูงสุด, <i>อวฺยยมฺ</i> — ไม่สิ้นสุด
+  <span class="slant iast">tribhiḥ</span><span class="slant pali">ตฺริภิห์</span><span class="slant thai">ตริภิห์</span><span class="slant ram">ทริบิฺฮ</span> — สาม, <span class="slant iast">guṇa-mayaiḥ</span><span class="slant pali">คุณ-มไยห์</span><span class="slant thai">คุณะ-มะไยห์</span><span class="slant ram">กุณะ-มะไยฮ</span> — ประกอบด้วย <span class="slant iast">guṇa</span><span class="slant pali">คุณ</span><span class="slant thai">คุณะ</span><span class="slant ram">กุณะ</span>, <span class="slant iast">bhāvaiḥ</span><span class="slant pali">ภาไวห์</span><span class="slant thai">ภาไวห์</span><span class="slant ram">บฺาไวฮ</span> — โดยระดับของชีวิต, <span class="slant iast">ebhiḥ</span><span class="slant pali">เอภิห์</span><span class="slant thai">เอภิห์</span><span class="slant ram">เอบิฺฮ</span> — ทั้งหมดนี้, <span class="slant iast">sarvam</span><span class="slant pali">สรฺวมฺ</span><span class="slant thai">สัรวัม</span><span class="slant ram">สารวัม</span> — ทั้งหมด, <span class="slant iast">idam</span><span class="slant pali">อิทมฺ</span><span class="slant thai">อิทัม</span><span class="slant ram">อิดัม</span> — นี้, <span class="slant iast">jagat</span><span class="slant pali">ชคตฺ</span><span class="slant thai">ชะคัต</span><span class="slant ram">จะกัท</span> — จักรวาล, <span class="slant iast">mohitam</span><span class="slant pali">โมหิตมฺ</span><span class="slant thai">โมหิตัม</span><span class="slant ram">โมฮิทัม</span> — ความหลง, <span class="slant iast">na abhijānāti</span><span class="slant pali">นอภิชานาติ</span><span class="slant thai">นะอะภิชานาติ</span><span class="slant ram">นะ อบิฺจา นาทิ</span> — ไม่รู้, <span class="slant iast">mām</span><span class="slant pali">มามฺ</span><span class="slant thai">มาม</span><span class="slant ram">มาม</span> — ข้า, <span class="slant iast">ebhyaḥ</span><span class="slant pali">เอภฺยห์</span><span class="slant thai">เอภยะห์</span><span class="slant ram">เอบฺยะฮ</span> — เหนือสิ่งเหล่านี้, <span class="slant iast">param</span><span class="slant pali">ปรมฺ</span><span class="slant thai">ปะรัม</span><span class="slant ram">พะรัม</span> — สูงสุด, <span class="slant iast">avyayam</span><span class="slant pali">อวฺยยมฺ</span><span class="slant thai">อัวยะยัม</span><span class="slant ram">อัพยะยัม</span> — ไม่สิ้นสุด
   </p>
 </div>
 
@@ -73,19 +174,19 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ทั่วทั้งโลกหลงอยู่ในเสน่ห์ของสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;พวกที่สับสนอยู่ใน<wbr>สามระดับนี้ไม่สามารถเข้าใจว่า&nbsp;&nbsp;เหนือกว่าธรรมชาติวัตถุนี้คือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;
+  ทั่วทั้งโลกหลงอยู่ในเสน่ห์ของสามระดับแห่งธรรมชาติวัตถุ&nbsp;&nbsp;พวกที่สับสนอยู่ใน<wbr>สามระดับนี้ไม่สามารถเข้าใจว่า&nbsp;&nbsp;เหนือกว่าธรรมชาติวัตถุนี้คือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ทุก&nbsp;&nbsp;ๆชีวิตที่อยู่ภายใต้อิทธิพลของธรรมชาติวัตถุ&nbsp;&nbsp;มีกิจกรรมทางร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และชีววิทยา<wbr>โดยเฉพาะของตน&nbsp;&nbsp;มีมนุษย์สี่ประเภทดำเนินอยู่ในธรรมชาติวัตถุสามระดับ&nbsp;&nbsp;พวกที่อยู่<wbr>ในระดับความดีบริสุทธิ์เรียกว่า&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;พวกที่อยู่ในระดับตัณหาบริสุทธิ์เรียกว่า&nbsp;&nbsp;<i>กฺษตฺริย</i>&nbsp;&nbsp;พวกที่อยู่ทั้งในตัณหาและอวิชชาเรียกว่า&nbsp;&nbsp;<i>ไวศฺย</i>&nbsp;&nbsp;พวกที่อยู่ในอวิชชาล้วน&nbsp;&nbsp;ๆเรียกว่า&nbsp;&nbsp;<i>ศูทฺร</i>&nbsp;&nbsp;และพวกที่ต่ำกว่านี้คือสัตว์เดรัจฉาน&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ชื่อระบุเหล่านี้ไม่ถาวรเราอาจเป็น&nbsp;&nbsp;<i>พฺราหฺมณ,กฺษตฺริย,ไวศฺย</i>&nbsp;&nbsp;หรืออะไรก็ได้&nbsp;&nbsp;ไม่ว่าในกรณีใดชีวิตนี้ไม่<wbr>ถาวร&nbsp;&nbsp;แต่ถึงแม้ว่าชีวิตไม่ถาวรและเราไม่รู้ว่าจะไปเป็นอะไรในชาติหน้า&nbsp;&nbsp;ด้วยมนต์สะกด<wbr>ของพลังแห่งความหลงนี้&nbsp;&nbsp;ทำให้เราพิจารณาตัวเราตามแนวคิดแห่งชีวิตทางร่างกาย&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;จึงคิดว่าเราเป็นคนอเม&nbsp;&nbsp;<i>ฤคฺ</i>&nbsp;&nbsp;ัน&nbsp;&nbsp;คนอินเดีย&nbsp;&nbsp;คนรัสเซีย&nbsp;&nbsp;หรือเป็น&nbsp;&nbsp;<i>พฺราหฺมณ</i>&nbsp;&nbsp;เป็นชาวฮินดูเป็นชาวมุสลิม&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และถ้าหากว่าถูกพันธนาการอยู่ในสามระดับของธรรมชาติวัตถุเราก็ลืมบุคลิกภาพสูงสุดแห่งพระเจ้าผู้ทรงอยู่เบื้องหลังระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตรัสว่าสิ่งมีชีวิตที่หลงอยู่ในสามระดับแห่งธรรมชาติจะไม่เข้าใจว่าเบื้องหลัง<wbr>ฉากวัตถุคือบุคลิกภาพสูงสุดแห่งพระเจ้า
+  ทุก&nbsp;&nbsp;ๆชีวิตที่อยู่ภายใต้อิทธิพลของธรรมชาติวัตถุ&nbsp;&nbsp;มีกิจกรรมทางร่างกาย&nbsp;&nbsp;จิตใจ&nbsp;&nbsp;และชีววิทยา<wbr>โดยเฉพาะของตน&nbsp;&nbsp;มีมนุษย์สี่ประเภทดำเนินอยู่ในธรรมชาติวัตถุสามระดับ&nbsp;&nbsp;พวกที่อยู่<wbr>ในระดับความดีบริสุทธิ์เรียกว่า&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;พวกที่อยู่ในระดับตัณหาบริสุทธิ์เรียกว่า&nbsp;&nbsp;<span class="slant iast">kṣatriya</span><span class="slant pali">กฺษตฺริย</span><span class="slant thai">กษัตริยะ</span><span class="slant ram">กษัตริย์</span>&nbsp;&nbsp;พวกที่อยู่ทั้งในตัณหาและอวิชชาเรียกว่า&nbsp;&nbsp;<span class="slant iast">vaiśya</span><span class="slant pali">ไวศฺย</span><span class="slant thai">ไวศยะ</span><span class="slant ram">ไวชยะ</span>&nbsp;&nbsp;พวกที่อยู่ในอวิชชาล้วน&nbsp;&nbsp;ๆเรียกว่า&nbsp;&nbsp;<span class="slant iast">śūdra</span><span class="slant pali">ศูทฺร</span><span class="slant thai">ศูทระ</span><span class="slant ram">ชูดระ</span>&nbsp;&nbsp;และพวกที่ต่ำกว่านี้คือสัตว์เดรัจฉาน&nbsp;&nbsp;อย่างไรก็ดี&nbsp;&nbsp;ชื่อระบุเหล่านี้ไม่ถาวรเราอาจเป็น&nbsp;&nbsp;<span class="slant iast">brāhmaṇa,&nbsp;&nbsp;kṣatriya,&nbsp;&nbsp;vaiśya</span><span class="slant pali">พฺราหฺมณกฺษตฺริยไวศฺย</span><span class="slant thai">พราหมะณะกษัตริยะไวศยะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์กษัตริย์ไวชยะ</span>&nbsp;&nbsp;หรืออะไรก็ได้&nbsp;&nbsp;ไม่ว่าในกรณีใดชีวิตนี้ไม่<wbr>ถาวร&nbsp;&nbsp;แต่ถึงแม้ว่าชีวิตไม่ถาวรและเราไม่รู้ว่าจะไปเป็นอะไรในชาติหน้า&nbsp;&nbsp;ด้วยมนต์สะกด<wbr>ของพลังแห่งความหลงนี้&nbsp;&nbsp;ทำให้เราพิจารณาตัวเราตามแนวคิดแห่งชีวิตทางร่างกาย&nbsp;&nbsp;ดัง<wbr>นั้น&nbsp;&nbsp;จึงคิดว่าเราเป็นคนอเม&nbsp;&nbsp;<span class="slant iast">ṛg</span><span class="slant pali">ฤคฺ</span><span class="slant thai">ฤค</span><span class="slant ram">ริก</span>&nbsp;&nbsp;ัน&nbsp;&nbsp;คนอินเดีย&nbsp;&nbsp;คนรัสเซีย&nbsp;&nbsp;หรือเป็น&nbsp;&nbsp;<span class="slant iast">brāhmaṇa</span><span class="slant pali">พฺราหฺมณ</span><span class="slant thai">พราหมะณะ</span><span class="slant ram">บราฮมะณะ,พราหมณ์</span>&nbsp;&nbsp;เป็นชาวฮินดูเป็นชาวมุสลิม&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;และถ้าหากว่าถูกพันธนาการอยู่ในสามระดับของธรรมชาติวัตถุเราก็ลืมบุคลิกภาพสูงสุดแห่งพระเจ้าผู้ทรงอยู่เบื้องหลังระดับต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;เหล่านี้&nbsp;&nbsp;ฉะนั้น&nbsp;&nbsp;องค์<wbr>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตรัสว่าสิ่งมีชีวิตที่หลงอยู่ในสามระดับแห่งธรรมชาติจะไม่เข้าใจว่าเบื้องหลัง<wbr>ฉากวัตถุคือบุคลิกภาพสูงสุดแห่งพระเจ้า
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  มีสิ่งมีชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมายเช่น&nbsp;&nbsp;มนุษย์&nbsp;&nbsp;เทวดา&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;แต่ละชีวิต<wbr>อยู่ภายใต้อิทธิพลของธรรมชาติวัตถุ&nbsp;&nbsp;และทั้งหมดได้ลืมบุคลิกภาพแห่งพระเจ้าผู้ทรง<wbr>เป็นทิพย์&nbsp;&nbsp;พวกที่อยู่ระดับตัณหาและอวิชชา&nbsp;&nbsp;และแม้แต่พวกที่อยู่ในระดับความดีจะไม่<wbr>สามารถไปสูงกว่าแนวความคิดแห่งสัจธรรม&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;ที่ไร้รูปลักษณ์&nbsp;&nbsp;พวกเขาสับสนเมื่อ<wbr>ทราบว่าองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในบุคลิกลักษณะส่วนพระองค์ประกอบไปด้วย&nbsp;&nbsp;ความสง่างาม&nbsp;&nbsp;ความ<wbr>มั่งคั่ง&nbsp;&nbsp;ความรู้&nbsp;&nbsp;พลังอำนาจ&nbsp;&nbsp;ชื่อเสียง&nbsp;&nbsp;และความเสียสละทั้งหมด&nbsp;&nbsp;ในเมื่อแม้แต่พวกที่อยู่<wbr>ในความดียังไม่สามารถเข้าใจพระองค์&nbsp;&nbsp;แล้วพวกที่อยู่ในตัณหาและอวิชชาจะมีความหวัง<wbr>อะไร&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเป็นทิพย์เหนือสามระดับแห่งธรรมชาติวัตถุเหล่านี้&nbsp;&nbsp;พวกที่สถิตย์<wbr>อย่างแท้จริงใน&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จิตสำนึกเป็นผู้หลุดพ้นแล้วอย่างแท้จริง
+  มีสิ่งมีชีวิตต่าง&nbsp;&nbsp;ๆ&nbsp;&nbsp;มากมายเช่น&nbsp;&nbsp;มนุษย์&nbsp;&nbsp;เทวดา&nbsp;&nbsp;สัตว์เดรัจฉาน&nbsp;&nbsp;ฯลฯ&nbsp;&nbsp;แต่ละชีวิต<wbr>อยู่ภายใต้อิทธิพลของธรรมชาติวัตถุ&nbsp;&nbsp;และทั้งหมดได้ลืมบุคลิกภาพแห่งพระเจ้าผู้ทรง<wbr>เป็นทิพย์&nbsp;&nbsp;พวกที่อยู่ระดับตัณหาและอวิชชา&nbsp;&nbsp;และแม้แต่พวกที่อยู่ในระดับความดีจะไม่<wbr>สามารถไปสูงกว่าแนวความคิดแห่งสัจธรรม&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;ที่ไร้รูปลักษณ์&nbsp;&nbsp;พวกเขาสับสนเมื่อ<wbr>ทราบว่าองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในบุคลิกลักษณะส่วนพระองค์ประกอบไปด้วย&nbsp;&nbsp;ความสง่างาม&nbsp;&nbsp;ความ<wbr>มั่งคั่ง&nbsp;&nbsp;ความรู้&nbsp;&nbsp;พลังอำนาจ&nbsp;&nbsp;ชื่อเสียง&nbsp;&nbsp;และความเสียสละทั้งหมด&nbsp;&nbsp;ในเมื่อแม้แต่พวกที่อยู่<wbr>ในความดียังไม่สามารถเข้าใจพระองค์&nbsp;&nbsp;แล้วพวกที่อยู่ในตัณหาและอวิชชาจะมีความหวัง<wbr>อะไร&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเป็นทิพย์เหนือสามระดับแห่งธรรมชาติวัตถุเหล่านี้&nbsp;&nbsp;พวกที่สถิตย์<wbr>อย่างแท้จริงใน&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จิตสำนึกเป็นผู้หลุดพ้นแล้วอย่างแท้จริง
   </p>
 </div>
 

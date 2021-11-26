@@ -9,15 +9,101 @@
     <title>ภควัต-คีตา ฉบับเดิม โศลก 10.15</title>
     <meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="/vedabase.css">
+    <link rel="stylesheet" type="text/css" href="https://sitalatma.github.io/vedabase.css">
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <style>
      i {font-family: 'Taviraj', serif;font-size:1.1em;}
-    </style>
+      .slant {font-family: 'Taviraj', serif;font-size:1.1em;}
+   </style>
+    <style>
+     .iast {display: none;font-style:italic}
+     .pali {display: inline;color: rgb(102, 0, 0);font-style:italic}
+     .thai {display: none;color: rgb(0, 51, 0);font-style:italic}
+     .ram {display: none;color: rgb(0, 0, 77);font-style:italic}
+</style>
+    <style>
+    #toggler {position: sticky; top: 0px;left: 0px; width: 100%;padding: 0 20%; background-color: #DA9D5B;z-index:100; text-align:center;}
+    .checks {display: inline-block;padding: 0 20px;}
+
+    @media (min-width: 1200px){
+        #toggler {position: fixed; top: 20px;left: 20px; width: 150px;
+        padding: 0;
+        text-align: left;
+        background-color:transparent;}
+        .checks {display: block;padding: 0;}
+
+     }
+     </style>
+
+<script>
+
+let rbs = ['iast','pali','thai','ram'];
+
+function toggleVisibility(cl){
+   //console.log('Got click on '+cl)
+
+   for (let i = 0; i < rbs.length; i++){
+      let els = document.getElementsByClassName(rbs[i]);
+      //console.log('Els for cl:',cl,' are:',els)
+      if ( rbs[i] === cl ){
+         //console.log('Els for cl:',cl,' are:',els)
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'inline';
+         }
+      }else{
+         for (let c = 0; c < els.length; c++){
+            var s = els[c].style;
+            s.display = 'none';
+         }
+      }
+   }
+
+
+   //var els = document.getElementsByClassName(cl);
+
+   //if (document.getElementById(cl+'Box').checked === true){
+   //console.log('Checked property of '+cl + ' is true')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'inline';
+   //   }
+   //   s.display = s.display === 'none' ? 'inline' : 'none';
+   //}else{
+   ////console.log('Checked property of '+cl + ' is false')
+   //for (var i = 0; i < els.length; i++){
+   //   var s = els[i].style;
+   //   s.display = 'none';
+   //   }
+   //}
+}
+</script>  
+
 </head>
 <body class="has-floating-menu template-chapter-advanced use-serif justify-text" font-size="3">
 
-<div class="container first-container">
+
+
+            <div id="toggler">
+
+            <div class="checks">
+            <input type="radio" id="iastBox" name="radioBox" onClick = "JavaScript:toggleVisibility('iast');"> IAST</div>
+            
+            <div class="checks">
+            <input type="radio" id="paliBox" name="radioBox" checked="checked" onClick = "JavaScript:toggleVisibility('pali');"> <span style="color: rgb(102, 0, 0)" >Pali</span></div>
+
+            <div class="checks">
+            <input type="radio" id="thaiBox" name="radioBox" onClick = "JavaScript:toggleVisibility('thai');"> <span style="color: rgb(0, 51, 0)" >Thai</span></div>
+
+            
+            <div class="checks">
+            <input type="radio" id="ramBox" name="radioBox" onClick = "JavaScript:toggleVisibility('ram');"> <span style="color: rgb(0, 0, 77)">Ram</span></div>
+            
+            </div> 
+
+
+<div class="container first-container" style="padding-top: 1.5em">
+
 
 
 
@@ -42,14 +128,29 @@
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>สฺวยมฺ เอวาตฺมนาตฺมานํ</i><br /><i>เวตฺตฺห ตฺวํ ปุรุโษตฺตม</i><br /><i>ภูต-ภาวน ภูเตศ</i><br /><i>เทว-เทว ชคตฺ-ปเต</i>
+<span class="slant iast">svayam evātmanātmānaṁ<br /></span>
+<span class="slant pali">สฺวยมฺ เอวาตฺมนาตฺมานํ<br /></span>
+<span class="slant thai">สวะยัม เอวาตมะนาตมานัง<br /></span>
+<span class="slant ram">สวะยัม เอวาทมะนาทมานัม<br /></span>
+<span class="slant iast">vettha tvaṁ puruṣottama<br /></span>
+<span class="slant pali">เวตฺถ ตฺวํ ปุรุโษตฺตม<br /></span>
+<span class="slant thai">เวตถะ ตวัง ปุรุโษตตะมะ<br /></span>
+<span class="slant ram">เวททฺะ ทวัม พุรุโชททะมะ<br /></span>
+<span class="slant iast">bhūta-bhāvana bhūteśa<br /></span>
+<span class="slant pali">ภูต-ภาวน ภูเตศ<br /></span>
+<span class="slant thai">ภูตะ-ภาวะนะ ภูเตศะ<br /></span>
+<span class="slant ram">บํูทะ-บฺาวะนะ บํูเทชะ<br /></span>
+<span class="slant iast">deva-deva jagat-pate<br /></span>
+<span class="slant pali">เทว-เทว ชคตฺ-ปเต<br /></span>
+<span class="slant thai">เทวะ-เทวะ ชะคัต-ปะเต<br /></span>
+<span class="slant ram">เดวะ-เดวะ จะกัท-พะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-synonyms">
   <p>
-  <i>สฺวยมฺ</i> — โดยพระองค์เอง, <i>เอว</i> — แน่นอน, <i>อาตฺมนา</i> — ด้วยตัวพระองค์เอง, <i>อาตฺมานมฺ</i> — ตัวพระองค์, <i>เวตฺตฺห</i> — ทราบ, <i>ตฺวมฺ</i> — พระองค์, <i>ปุรุษ-อุตฺตม</i> — โอ้ ผู้ยิ่งใหญ่ที่สุดใน บรรดาบุคคลทั้งหลาย, <i>ภูต-ภาวน</i> — โอ้ แหล่งกำเนิดของทุกสิ่งทุกอย่าง,<i>ภูต-อีศ</i> — โอ้ พระเจ้าของสรรพสิ่ง, <i>เทว-เทว</i> — โอ้ พระเจ้าของมวลเทวดา, <i>ชคตฺ-ปเต</i> — โอ้ พระเจ้าแห่งปวงจักรวาล
+  <span class="slant iast">svayam</span><span class="slant pali">สฺวยมฺ</span><span class="slant thai">สวะยัม</span><span class="slant ram">สวะยัม</span> — โดยพระองค์เอง, <span class="slant iast">eva</span><span class="slant pali">เอว</span><span class="slant thai">เอวะ</span><span class="slant ram">เอวะ</span> — แน่นอน, <span class="slant iast">ātmanā</span><span class="slant pali">อาตฺมนา</span><span class="slant thai">อาตมะนา</span><span class="slant ram">อาทมะนา</span> — ด้วยตัวพระองค์เอง, <span class="slant iast">ātmānam</span><span class="slant pali">อาตฺมานมฺ</span><span class="slant thai">อาตมานัม</span><span class="slant ram">อาทมานัม</span> — ตัวพระองค์, <span class="slant iast">vettha</span><span class="slant pali">เวตฺถ</span><span class="slant thai">เวตถะ</span><span class="slant ram">เวททฺะ</span> — ทราบ, <span class="slant iast">tvam</span><span class="slant pali">ตฺวมฺ</span><span class="slant thai">ตวัม</span><span class="slant ram">ทวัม</span> — พระองค์, <span class="slant iast">puruṣa-uttama</span><span class="slant pali">ปุรุษ-อุตฺตม</span><span class="slant thai">ปุรุษะ-อุตตะมะ</span><span class="slant ram">พุรุชะ- อุททะมะ</span> — โอ้ ผู้ยิ่งใหญ่ที่สุดใน บรรดาบุคคลทั้งหลาย, <span class="slant iast">bhūta-bhāvana</span><span class="slant pali">ภูต-ภาวน</span><span class="slant thai">ภูตะ-ภาวะนะ</span><span class="slant ram">บํูทะ-บฺาวะนะ</span> — โอ้ แหล่งกำเนิดของทุกสิ่งทุกอย่าง,<span class="slant iast">bhūta-īśa</span><span class="slant pali">ภูต-อีศ</span><span class="slant thai">ภูตะ-อีศะ</span><span class="slant ram"> บํูทะ-อีชะ</span> — โอ้ พระเจ้าของสรรพสิ่ง, <span class="slant iast">deva-deva</span><span class="slant pali">เทว-เทว</span><span class="slant thai">เทวะ-เทวะ</span><span class="slant ram">เดวะ-เดวะ</span> — โอ้ พระเจ้าของมวลเทวดา, <span class="slant iast">jagat-pate</span><span class="slant pali">ชคตฺ-ปเต</span><span class="slant thai">ชะคัต-ปะเต</span><span class="slant ram">จะกัท-พะเท</span> — โอ้ พระเจ้าแห่งปวงจักรวาล
   </p>
 </div>
 
@@ -73,25 +174,40 @@
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  องค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;<i>ศฺรี</i>&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงรู้ได้โดยบุคคลผู้มีความสัมพันธ์กับพระองค์โดยผ่านทาง<wbr>วิธีปฏิบัติการอุทิศตนเสียสละรับใช้เหมือนกับ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;และเหล่าสาวกของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;บุคคลผู้มี<wbr>ความคิดเยี่ยงมารหรือไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ไม่สามารถรู้ถึง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;การคาดคะเนทางจิตใจซึ่ง<wbr>นำให้ออกห่างจากพระองค์เป็นบาปอันร้ายแรง&nbsp;&nbsp;และผู้ที่ไม่รู้จัก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ไม่ควรพยายามวิจารณ์&nbsp;&nbsp;<i>ภควทฺ-คีตา,ภควทฺ-คีตา</i>&nbsp;&nbsp;เป็นคำดำรัสของ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;เนื่องจากเป็นศาสตร์แห่ง&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;จึงควร<wbr>เข้าใจจาก&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ดังที่&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;เข้าใจ&nbsp;&nbsp;โดยไม่ควรรับมาจากบุคคลผู้ไม่เชื่อในองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;
+  องค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;<span class="slant iast">śrī</span><span class="slant pali">ศฺรี</span><span class="slant thai">ศรี</span><span class="slant ram">ชรี</span>&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงรู้ได้โดยบุคคลผู้มีความสัมพันธ์กับพระองค์โดยผ่านทาง<wbr>วิธีปฏิบัติการอุทิศตนเสียสละรับใช้เหมือนกับ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;และเหล่าสาวกของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;บุคคลผู้มี<wbr>ความคิดเยี่ยงมารหรือไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ไม่สามารถรู้ถึง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;การคาดคะเนทางจิตใจซึ่ง<wbr>นำให้ออกห่างจากพระองค์เป็นบาปอันร้ายแรง&nbsp;&nbsp;และผู้ที่ไม่รู้จัก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ไม่ควรพยายามวิจารณ์&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā,&nbsp;&nbsp;bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตาภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตาภะคะวัท-คีตา</span><span class="slant ram">บฺะกะวัด-คีตาบฺะกะวัด-คีตา</span>&nbsp;&nbsp;เป็นคำดำรัสของ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;เนื่องจากเป็นศาสตร์แห่ง&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;จึงควร<wbr>เข้าใจจาก&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ดังที่&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;เข้าใจ&nbsp;&nbsp;โดยไม่ควรรับมาจากบุคคลผู้ไม่เชื่อในองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;
   </p>
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<i>ศฺรีมทฺ-ภาควตมฺ</i>&nbsp;&nbsp;(1.2.11)
+  ดังที่ได้กล่าวไว้ใน&nbsp;&nbsp;<span class="slant iast">śrīmad-bhāgavatam</span><span class="slant pali">ศฺรีมทฺ-ภาควตมฺ</span><span class="slant thai">ศรีมัท-ภาคะวะตัม</span><span class="slant ram">ชรีมัด-</span>&nbsp;&nbsp;(1.2.11)
   </p>
 </div>
 
 <div class="r r-lang-en r-verse-text">
-  
-  <i>วทนฺติ ตตฺ ตตฺตฺว-วิทสฺ</i><br /><i>ตตฺตฺวํ ยชฺ ชฺญานมฺ อทฺวยมฺ</i><br /><i>พฺรเหฺมติ ปรมาเตฺมติ</i><br /><i>ภควานฺ อิติ ศพฺทฺยเต</i>
+<span class="slant iast">vadanti tat tattva-vidas<br /></span>
+<span class="slant pali">วทนฺติ ตตฺ ตตฺตฺว-วิทสฺ<br /></span>
+<span class="slant thai">วะทันติ ตัต ตัตตวะ-วิทัส<br /></span>
+<span class="slant ram">วะดันทิ ทัท ทัททวะ-วิดัส<br /></span>
+<span class="slant iast">tattvaṁ yaj jñānam advayam<br /></span>
+<span class="slant pali">ตตฺตฺวํ ยชฺ ชฺญานมฺ อทฺวยมฺ<br /></span>
+<span class="slant thai">ตัตตวัง ยัช ชญานัม อัทวะยัม<br /></span>
+<span class="slant ram">ทัททวัม ยัจ กยานัม อัดวะยัม<br /></span>
+<span class="slant iast">brahmeti paramātmeti<br /></span>
+<span class="slant pali">พฺรเหฺมติ ปรมาตฺเมติ<br /></span>
+<span class="slant thai">พรัหเมติ ปะระมาตเมติ<br /></span>
+<span class="slant ram">บระฮเมทิ พะระมาทเมทิ<br /></span>
+<span class="slant iast">bhagavān iti śabdyate<br /></span>
+<span class="slant pali">ภควานฺ อิติ ศพฺทฺยเต<br /></span>
+<span class="slant thai">ภะคะวาน อิติ ศัพทยะเต<br /></span>
+<span class="slant ram">บฺะกะวาน อิทิ ชับดยะเท<br /></span>
+
   
 </div>
 
 <div class="r r-lang-en r-paragraph">
   <p>
-  สัจธรรมสูงสุดรู้แจ้งได้ในสามระดับคือ&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ภายใน<wbr>หัวใจของทุกคน&nbsp;&nbsp;และท้ายสุดคือองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ในระดับท้ายสุดแห่งการเข้าใจสัจธรรม&nbsp;&nbsp;จะ<wbr>มาถึงบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;มนุษย์ธรรมดาหรือแม้แต่ผู้ที่หลุดพ้นแล้ว&nbsp;&nbsp;ซึ่งรู้แจ้ง&nbsp;&nbsp;<i>พฺรหฺมนฺ</i>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;หรือรู้แจ้ง&nbsp;&nbsp;<i>ปรมาตฺมา</i>&nbsp;&nbsp;ผู้ประทับภายในหัวใจของทุกคน&nbsp;&nbsp;อาจ<wbr>ไม่เข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;บุคคลเหล่านี้อาจพยายามเข้าใจองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;จากโศลกต่างๆ<wbr>ใน&nbsp;&nbsp;<i>ภควทฺ-คีตา</i>&nbsp;&nbsp;ที่&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้ตรัส&nbsp;&nbsp;บางครั้งพวกไม่เชื่อในรูปลักษณ์ยอมรับว่า<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นองค์&nbsp;&nbsp;<i>ภควานฺ</i>&nbsp;&nbsp;หรือยอมรับความเชื่อถือได้ของพระองค์&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ยังมี<wbr>บุคคลผู้หลุดพ้นแล้วมากมายที่ไม่สามารถเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<i>ปุรุโษตฺตม</i>&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<i>ปุรุโษตฺตม</i>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;ยังอาจไม่เข้าใจ<wbr>ว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นพระบิดาของมวลชีวิต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<i>ภูต-ภาวน</i>&nbsp;&nbsp;หากทราบว่าพระองค์ทรงเป็นพระบิดาของมวลชีวิต&nbsp;&nbsp;แต่อาจไม่ทราบว่า<wbr>พระองค์ทรงเป็นผู้ควบคุมสูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<i>ภูเตศ</i>&nbsp;&nbsp;ผู้ควบคุม<wbr>สูงสุดของทุกคน&nbsp;&nbsp;แม้หากทราบว่า&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ทรงเป็นผู้ควบคุมสูงสุดของมวลชีวิต&nbsp;&nbsp;แต่อาจ<wbr>ไม่ทราบว่า&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดของเทวดา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ทรงเรียกพระองค์<wbr>ว่า&nbsp;&nbsp;<i>เทว-เทว</i>&nbsp;&nbsp;พระเจ้าผู้ทรงได้รับการบูชาจากมวลเทวดา&nbsp;&nbsp;และแม้หากทราบว่าพระองค์<wbr>ทรงเป็นพระเจ้าที่เคารพบูชาของมวลเทวดา&nbsp;&nbsp;แต่อาจไม่ทราบว่า&nbsp;&nbsp;พระองค์ทรงเป็นเจ้าของ<wbr>สูงสุดของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ดังนั้นทรงเรียกพระองค์ว่า&nbsp;&nbsp;<i>ชคตฺ-ปติ</i>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จากความรู้แจ้ง<wbr>ของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ความจริงเกี่ยวกับ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ได้สถาปนาไว้ในโศลกนี้&nbsp;&nbsp;และพวกเราควรเจริญรอย<wbr>ตามพระบาทของ&nbsp;&nbsp;<i>อรฺชุน</i>&nbsp;&nbsp;ในการเข้าใจ&nbsp;&nbsp;<i>กฺฤษฺณ</i>&nbsp;&nbsp;ตามความเป็นจริง
+  สัจธรรมสูงสุดรู้แจ้งได้ในสามระดับคือ&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ภายใน<wbr>หัวใจของทุกคน&nbsp;&nbsp;และท้ายสุดคือองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ในระดับท้ายสุดแห่งการเข้าใจสัจธรรม&nbsp;&nbsp;จะ<wbr>มาถึงบุคลิกภาพสูงสุดแห่งพระเจ้า&nbsp;&nbsp;มนุษย์ธรรมดาหรือแม้แต่ผู้ที่หลุดพ้นแล้ว&nbsp;&nbsp;ซึ่งรู้แจ้ง&nbsp;&nbsp;<span class="slant iast">brahman</span><span class="slant pali">พฺรหฺมนฺ</span><span class="slant thai">พรัหมัน</span><span class="slant ram">บระฮมัน,พฺรหฺมนฺ</span>&nbsp;&nbsp;อันไร้รูปลักษณ์&nbsp;&nbsp;หรือรู้แจ้ง&nbsp;&nbsp;<span class="slant iast">paramātmā</span><span class="slant pali">ปรมาตฺมา</span><span class="slant thai">ปะระมาตมา</span><span class="slant ram">พะระมาทมา</span>&nbsp;&nbsp;ผู้ประทับภายในหัวใจของทุกคน&nbsp;&nbsp;อาจ<wbr>ไม่เข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;บุคคลเหล่านี้อาจพยายามเข้าใจองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;จากโศลกต่างๆ<wbr>ใน&nbsp;&nbsp;<span class="slant iast">bhagavad-gītā</span><span class="slant pali">ภควทฺ-คีตา</span><span class="slant thai">ภะคะวัท-คีตา</span><span class="slant ram">ดฺยานะ-โยกะ</span>&nbsp;&nbsp;ที่&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้ตรัส&nbsp;&nbsp;บางครั้งพวกไม่เชื่อในรูปลักษณ์ยอมรับว่า<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นองค์&nbsp;&nbsp;<span class="slant iast">bhagavān</span><span class="slant pali">ภควานฺ</span><span class="slant thai">ภะคะวาน</span><span class="slant ram">บฺะกะวาน</span>&nbsp;&nbsp;หรือยอมรับความเชื่อถือได้ของพระองค์&nbsp;&nbsp;ถึงกระนั้น&nbsp;&nbsp;ยังมี<wbr>บุคคลผู้หลุดพ้นแล้วมากมายที่ไม่สามารถเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ว่าเป็น&nbsp;&nbsp;<span class="slant iast">puruṣottama</span><span class="slant pali">ปุรุโษตฺตม</span><span class="slant thai">ปุรุโษตตะมะ</span><span class="slant ram">พุรุโชททะมะ</span>&nbsp;&nbsp;บุคลิกภาพ<wbr>สูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<span class="slant iast">puruṣottama</span><span class="slant pali">ปุรุโษตฺตม</span><span class="slant thai">ปุรุโษตตะมะ</span><span class="slant ram">พุรุโชททะมะ</span>&nbsp;&nbsp;เช่นนี้&nbsp;&nbsp;ยังอาจไม่เข้าใจ<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นพระบิดาของมวลชีวิต&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<span class="slant iast">bhūta-bhāvana</span><span class="slant pali">ภูต-ภาวน</span><span class="slant thai">ภูตะ-ภาวะนะ</span><span class="slant ram">บํูทะ-บฺาวะนะ</span>&nbsp;&nbsp;หากทราบว่าพระองค์ทรงเป็นพระบิดาของมวลชีวิต&nbsp;&nbsp;แต่อาจไม่ทราบว่า<wbr>พระองค์ทรงเป็นผู้ควบคุมสูงสุด&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ทรงเรียกพระองค์ว่า&nbsp;&nbsp;<span class="slant iast">bhūteśa</span><span class="slant pali">ภูเตศ</span><span class="slant thai">ภูเตศะ</span><span class="slant ram">บํูเทชะ</span>&nbsp;&nbsp;ผู้ควบคุม<wbr>สูงสุดของทุกคน&nbsp;&nbsp;แม้หากทราบว่า&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ทรงเป็นผู้ควบคุมสูงสุดของมวลชีวิต&nbsp;&nbsp;แต่อาจ<wbr>ไม่ทราบว่า&nbsp;&nbsp;พระองค์ทรงเป็นแหล่งกำเนิดของเทวดา&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;ณ&nbsp;&nbsp;ที่นี้ทรงเรียกพระองค์<wbr>ว่า&nbsp;&nbsp;<span class="slant iast">deva-deva</span><span class="slant pali">เทว-เทว</span><span class="slant thai">เทวะ-เทวะ</span><span class="slant ram">เดวะ-เดวะ</span>&nbsp;&nbsp;พระเจ้าผู้ทรงได้รับการบูชาจากมวลเทวดา&nbsp;&nbsp;และแม้หากทราบว่าพระองค์<wbr>ทรงเป็นพระเจ้าที่เคารพบูชาของมวลเทวดา&nbsp;&nbsp;แต่อาจไม่ทราบว่า&nbsp;&nbsp;พระองค์ทรงเป็นเจ้าของ<wbr>สูงสุดของทุกสิ่งทุกอย่าง&nbsp;&nbsp;ดังนั้นทรงเรียกพระองค์ว่า&nbsp;&nbsp;<span class="slant iast">jagat-pati</span><span class="slant pali">ชคตฺ-ปติ</span><span class="slant thai">ชะคัต-ปะติ</span><span class="slant ram">จะกัทพะทิ</span>&nbsp;&nbsp;ดังนั้น&nbsp;&nbsp;จากความรู้แจ้ง<wbr>ของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ความจริงเกี่ยวกับ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ได้สถาปนาไว้ในโศลกนี้&nbsp;&nbsp;และพวกเราควรเจริญรอย<wbr>ตามพระบาทของ&nbsp;&nbsp;<span class="slant iast">arjuna</span><span class="slant pali">อรฺชุน</span><span class="slant thai">อัรชุนะ</span><span class="slant ram">อารจุนะ,อรจุนะ</span>&nbsp;&nbsp;ในการเข้าใจ&nbsp;&nbsp;<span class="slant iast">kṛṣṇa</span><span class="slant pali">กฺฤษฺณ</span><span class="slant thai">กฤษณะ</span><span class="slant ram">คริชณะ</span>&nbsp;&nbsp;ตามความเป็นจริง
   </p>
 </div>
 

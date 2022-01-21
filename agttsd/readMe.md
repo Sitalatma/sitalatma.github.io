@@ -1,4 +1,4 @@
-###Files in this project:
+### Files in this project:
 
 *chapterList.txt* is a list of filenames (sans extensions) and respective chapter titles. For each filename there is .txt and .html file, plus there is the full.txt which contains all text in one file.
 

@@ -1,13 +1,13 @@
 ### Files in digital *"All Glories to the Saṅkīrtana Devotees!"* project:
 
-*chapterList.txt* is a list of filenames (sans extensions) and respective chapter titles. For each filename there is *.txt* and *.html* file.
+*_chapterList.txt_* is a list of filenames (sans extensions) and respective chapter titles. For each filename there is *.txt* and *.html* file.
 
 *full.txt* which contains all text in one file.
 
 *\*.html* files try to reproduce style of the printed book, main css file is a copy of css on [vedabase.io](https://vedabase.io/en/) and additional css rules are included in the head of each html file.
 
 
-*localDict.txt* file was used for adding possible wordbreaks to *\*.html* files. It contains mostly Sanskrit terms but also "misspelled" words picked by Aspell dictionary. Entries in this file are in:
+*localDict.txt* file was used for adding possible wordbreaks to *\*.html* files. It contains mostly Sanskrit terms but also misspelled words picked by Aspell dictionary. Entries in this file are in:
 
 *bahūnāṁ : ba-hū-nāṁ*
 

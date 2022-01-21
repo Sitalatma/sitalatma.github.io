@@ -15,7 +15,8 @@ format where hyphens indicate where the word can be broken if it comes at the en
 
 About 90% of the text is plain paragraphs, with one paragraph being one line in *\*.txt* files. Remaining 10% are indicated with the following markup at the begining of each line:
 
-*chapter=* and *title=* &emsp; - these two are self-explanatory.
+*chapter=* &emsp; - chapter/filename
+*title=* &emsp; - chapter title.
 
 *sub=* &emsp; - in each chapter there are several subheadings, preceded by horizontal rule in html files
 

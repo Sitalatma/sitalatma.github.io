@@ -15,7 +15,8 @@ format where hyphens indicate where the word can be broken if it comes at the en
 
 About 90% of the text is plain paragraphs, with one paragraph being one line in *\*.txt* files. Remaining 10% are indicated with the following markup at the begining of each line:
 
-*chapter=* &emsp; - chapter/filename
+*chapter=* &emsp; - filename sans extension
+
 *title=* &emsp; - chapter title.
 
 *sub=* &emsp; - in each chapter there are several subheadings, preceded by horizontal rule in html files
@@ -32,7 +33,7 @@ About 90% of the text is plain paragraphs, with one paragraph being one line in 
 
 Italicized text is marked with &lt;em&gt; html tags except in subheadings and quotes which are italicized via css
 
-Conversations are marked in html only, in txt files these paragraphs begin with &lt;strong&gt; html tags.
+Conversations are marked in html only, in *\*.txt* files these paragraphs begin with &lt;strong&gt; html tags.
 
-There are also &amp;emsp; emspace entities included in the text itself where special indent is intended, like "every second line of a quoted verse" etc. 
+There are also "&amp;emsp;" emspace entities included in the text itself where special indent is intended, like "every second line of a quoted verse" etc. 
 

@@ -1,4 +1,4 @@
-### Files in this project:
+### Files in *All Glories to the Saṅkīrtana Devotees!* project:
 
 *chapterList.txt* is a list of filenames (sans extensions) and respective chapter titles. For each filename there is .txt and .html file, plus there is the full.txt which contains all text in one file.
 
@@ -24,10 +24,10 @@ Italicized text is marked with &lt;em&gt; html tags except in subheadings and qu
 
 Conversations are marked in html only, but in txt files these paragraphs begin with &lt;strong&gt; html tags.
 
-There are also &emsp; emspace entities included in the text itself where special indent is intended, like "every second line of a quoted verse" etc. 
+There are also &amp;emsp; emspace entities included in the text itself where special indent is intended, like "every second line of a quoted verse" etc. 
 
-There is also localDict.txt file which was used for adding possible wordbreaks to html files. It contains mostly Sanskrit terms but also "misspelled" words picked by Aspell dictionary. Entries in this file are in:
+*localDict.txt* file was used for adding possible wordbreaks to html files. It contains mostly Sanskrit terms but also "misspelled" words picked by Aspell dictionary. Entries in this file are in:
 
-bahūnāṁ : ba-hū-nāṁ
+*bahūnāṁ : ba-hū-nāṁ*
 
-format where hyphens indicate where the word can be broken if it comes at the end of a browser line. These suggestions are arbitrary, some of them are dictated by English usage, others follow Sanskrit syllables. In html files these hypens are replaced with html "&shy;" soft hyphens. They are not present in txt files.
+format where hyphens indicate where the word can be broken if it comes at the end of a browser line. These suggestions are arbitrary, some of them are dictated by English usage, others follow Sanskrit syllables. In html files these hypens are replaced with html "&amp;shy;" soft hyphens. They are not present in txt files.

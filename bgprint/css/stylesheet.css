@@ -1,0 +1,283 @@
+@page {
+	size: 148mm 210mm;
+	margin-top: 14mm;
+	margin-bottom: 12mm;
+	@top-left {width: 6em}
+	@top-right {width: 6em}
+	@top-center {
+		font-weight: 400;
+		font-style: italic;
+		padding-top: 2mm;
+	}
+}
+
+@page:left {
+	
+	margin-left: 13mm;
+	margin-right: 17mm;
+	
+	@top-center {content: string(bgtitle)}
+	@top-left{ 
+		content: counter(page);
+		counter-increment: page 2;
+		font-weight: 400;
+		padding-top: 2mm;
+	}
+	@top-right{
+
+		content: string(chnum);
+		font-weight: 400;
+		padding-top: 2mm;
+	}
+}
+
+@page:right {
+		
+	margin-left: 17mm;
+	margin-right: 13mm;
+		
+	@top-center {content: string(chtitle)}
+	@top-right {
+		content: counter(page);
+		counter-increment: page 2;
+		font-weight: 400;
+		padding-top: 2mm;
+	}
+	@top-left{ 
+		content: string(slokanum);
+		font-weight: 400;
+		padding-top: 2mm;
+	}
+}
+@page chapter:first{
+
+	@bottom-center{ content: counter(page);}
+	@top-left {content: none }
+	@top-center {content: none }
+	@top-right {content: none }
+
+}
+@page:blank {
+  @top-left {content: none;}
+  @top-center {content: none;}
+  @top-right {content: none;}
+  }
+
+.forHeaderLeft {
+	display: none;
+	string-set: bgtitle content(text);
+
+}
+.forHeaderRight {
+	display: none;
+	string-set: chtitle content(text);
+	/*page: chapter;*/
+}
+.chapter {
+	page: chapter;
+	break-before: right;
+}
+body {
+	font-family: 'Trirong', serif;
+	font-weight: 300;
+	font-size: 12px;
+}
+h2 {
+	font-weight: 500;
+}
+.chapterMargin {
+	display: none;
+	string-set: chnum content(text);
+}
+.bg-content {
+	 display: block;
+	 margin-bottom: auto;
+	 margin-top: auto;
+	 height: 100%;
+	 }
+.chapter-num {
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.chapter-sub {
+	text-align: center;
+}
+.sans {
+	text-align: center;
+	padding: 0.5em 0em;
+	/*font-weight: bolder;*/
+	font-style: italic;
+	font-family: 'Noto Serif', serif;
+	font-size: 0.9em;
+}
+.pali {
+	text-align: center;
+	padding: 0.5em 0em;
+	font-weight: 500;
+	font-style: italic;
+	font-size: 1em;
+	font-family: 'Trirong', serif;
+}
+.purportQuote {
+	text-align: center;
+	padding: 1em 0em;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1em;
+	font-family: 'Trirong', serif;
+}
+.wbw {
+	padding: 0.5em 0em;
+}
+.synonym{
+	font-weight: 500;
+}
+.p-end {
+	text-indent: 2em;
+}
+.sign-off {
+	text-align: right;
+	font-weight: 500;
+}
+.image_ch {
+	display: block;
+	height: 100px;
+	line-height: 1.2;
+	width: 100px;
+	margin: 0.5em auto
+}
+.chapter-title {
+	display: block;
+	font-size: 1.5em;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+	margin: 0.67em 0
+}
+.devanagari {
+	page-break-inside: avoid;
+	position: relative;
+	text-align: center;
+	padding: 0.5em 0em;
+	font-family: 'Noto Serif Devanagari', serif;
+	font-weight: normal;
+	font-size: 1.1em;
+	line-height: 1.2;
+}
+.devinside {
+	display: inline-block;
+	text-align: left;
+}
+.devanagariAks {
+	text-align: center;
+	padding: 0.5em 0em;
+	font-family: 'Taviraj', serif;
+	line-height: 1.2;
+}
+.devinsideAks {
+	display: inline-block;
+	text-align: left;
+}
+.uvaca {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+blockquote {
+	margin-left: 1em;
+}
+.p-centered {
+	display: block;
+	text-align: center;
+	margin: 20px 0
+}
+.purport {
+	display: block;
+	text-indent: 2em;
+	text-align: justify;
+	margin: 0.5em 0;
+}
+.sans-ref {
+	display: block;
+	text-align: right;
+	transform: translatex(-80%);
+	margin: 20px 0 20px 50%
+}
+.text {
+	display: block;
+	font-size: 1.41667em;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+	margin: 0.83em 0
+}
+.textNo {
+	string-set: slokanum content(text);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 3.5em;
+	display: block;
+	font-size: 1.2em;
+	font-family: 'Trirong', serif;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+	padding: 0.83em 0
+}
+.text-title {
+	page-break-after: avoid;
+	display: block;
+	font-size: 1.125em;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+}
+.trans {
+	display: block;
+	font-weight: 500;
+	text-indent: 2em;
+	margin: 0.5em 0
+}
+figcaption{
+	margin-top: 1em;
+	font-weight: bolder;
+	text-align: center;
+	page-break-after: always;
+}
+.inline {
+	display: block;
+	height: auto;
+	max-width: 600px;
+	width: 90%;
+	margin: 1em auto
+}
+.vholder {
+	position:relative;
+	height: 90%;
+	width: 90%;
+	margin: auto;
+}
+.vcenter {
+	position:absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 300px;
+}
+.parampara {
+	text-align: left;
+	padding-left: 2em;
+	text-indent: 0;
+	columns: 200px 2;
+}
+.glossary {
+    text-indent: -2em;
+}
+.gloss {
+    font-weight: 500;
+}

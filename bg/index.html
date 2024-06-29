@@ -19,6 +19,9 @@
   /*@media {.container{ max-width: 40em;}}*/
   .verseText {display:inline; text-align: justify; text-justify:inter-character;margin-left:6px;}
   .verseText::before{content: "";display:inline-block;width:0.2em;}
+  .dark-mode{background-image:none;background-color: black;color:#a9a9a9;}
+  .dark-btn{background-color:#1b1b1b !important;color:#a9a9a9 !important;}
+  .toggle{position:absolute;top:1em;right:1em;}
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <style>
@@ -66,7 +69,23 @@
 <style>
 p {margin-left:3em;}
 .contentOuter {font-size:1.2rem;line-height:2em;}
+<script>
+  function toggleDay() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     var icon = document.getElementById("day");
+     icon.classList.toggle("fa-sun-o");
+     icon.classList.toggle("fa-moon-o");
+     var left= document.getElementById("left");
+     var right= document.getElementById("right");
+     left.classList.toggle("dark-btn");
+     right.classList.toggle("dark-btn");
+}
+</script>
 </style>
+<div class="toggle">
+<i id="day" class="fa fa-moon-o" onclick="toggleDay()"></i>
+</div>
 </head>
 <body>
 <div id="content" class="container first-container">

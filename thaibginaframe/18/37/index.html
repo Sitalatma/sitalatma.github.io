@@ -19,9 +19,28 @@
   /*@media {.container{ max-width: 40em;}}*/
   .verseText {display:inline; text-align: justify; text-justify:inter-character;margin-left:6px;}
   .verseText::before{content: "";display:inline-block;width:0.2em;}
+  .dark-mode{background-image:none;background-color: black;color:#a9a9a9;}
+  .dark-btn{background-color:#1b1b1b !important;color:#a9a9a9 !important;}
+  .toggle{position:absolute;top:1em;right:1em;}
 </style>
+<script>
+  function toggleDay() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     var icon = document.getElementById("day");
+     icon.classList.toggle("fa-sun-o");
+     icon.classList.toggle("fa-moon-o");
+     var left= document.getElementById("left");
+     var right= document.getElementById("right");
+     left.classList.toggle("dark-btn");
+     right.classList.toggle("dark-btn");
+}
+</script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
+<div class="toggle">
+<i id="day" class="fa fa-moon-o" onclick="toggleDay()"></i>
+</div>
 <body>
 <div id="content" class="container first-container">
 
@@ -119,13 +138,13 @@
 <div class="col-12">
   <ul class="mini-pager mt-2 pb-4">
      <li class="pager-prev">
-         <a class="btn" href="../../18/36">
+         <a id="left" class="btn" href="../../18/36">
              <i class="fa fa-chevron-left"></i>
                Previous
          </a>
       </li>
       <li class="pager-next">
-         <a class="btn" href="../../18/38">
+         <a id="right" class="btn" href="../../18/38"><!-- -->
             Next
             <i class="fa fa-chevron-right"></i>
          </a>
@@ -136,5 +155,15 @@
 
 
 </div>
+    <script>
+        function sendHeightToParent() {
+            var height = document.body.scrollHeight;
+            window.parent.postMessage(height, 'https://your-weebly-site.com');
+        }
+
+        // Call this function when content loads or changes
+        window.onload = sendHeightToParent;
+        window.onresize = sendHeightToParent;
+    </script>
 </body>
 </html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SB 1.9</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+body { font-family: "Libertinus Serif", serif; }
+strong { font-weight: 600; }
+p { line-height: 1.5; font-size: 20px;}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SB 1.9</h1>
+</header>
+<p>(1.9)</p>
+<h2 id="navamodhyāyaḥ">navamo’dhyāyaḥ</h2>
+<h3 id="yudhiṣṭhirādīnāṁ-bhīṣma-samīpe-gamanam-tatra-vividhān-dharmān-upadiśya-śrī-kṛṣṇa-stavana-pūrvakaṁ-bhīṣmasya-mahā-prasthānaṁ-ca">yudhiṣṭhirādīnāṁ bhīṣma-samīpe gamanam, tatra vividhān dharmān upadiśya śrī-kṛṣṇa-stavana-pūrvakaṁ bhīṣmasya mahā-prasthānaṁ ca |</h3>
+<p>|| 1.9.1 ||</p>
+<p><strong>sūta uvāca—</strong></p>
+<p><strong>iti bhītaḥ prajā-drohāt sarva-dharma-vivitsayā |</strong></p>
+<p><strong>tato vinaśanaṁ</strong> <strong>prāgād yatra deva-vrato’patat ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong></p>
+<p>yudhiṣṭhirāya bhīṣmeṇa sarva-dharma-nirūpaṇam |</p>
+<p>kṛṣṇa-stutiś ca muktiś ca navame tasya varṇyate ||</p>
+<p>yad-arthaṁ tasyāvivekaḥ śrī-kṛṣṇena saṁvardhitas tad darśayati—itīti | sarveṣāṁ dharmānāṁ vivitsayā veditum icchayā | <strong>vinaśanaṁ</strong> kuru-kṣetram | <strong>deva-vrato</strong> bhīṣmaḥ ||1||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> śrī-bhīṣma-mahima-darśanārthaṁ bhagavad-icchayaiva tat-tat-prabhāva-varaṇam api jātam ity āha—<strong>iti bhīta</strong> iti caturbhiḥ ||1||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong></p>
+<p>navame svaprabhuṁ bhīṣmo dadarśātha tad-ājñayā |</p>
+<p>dharmān uktvā bahu stutvā tam eva prāpa bhaktitaḥ ||</p>
+<p>yadyapi tavāviveko nāpayāti, tadā sarva-dharma-tattvajñaṁ bhīṣmam api pṛccheti yuktir yadā sarva-sammatā’bhūt, tadā rājā tatraiva yayāv ity āha—<strong>iti</strong> iti | <strong>vivitsayā</strong> vicārecchayā | <strong>vinaśanaṁ</strong> kurukṣetram | <strong>devavrato</strong> bhīṣmaḥ ||1||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong></p>
+<p>dadarśa kṛṣṇaṁ provāca dharmān tuṣṭāva taṁ vibhum |<br />
+bhīṣmas tam eva prāpeti navame parikīrtitam ||</p>
+<p>vyāsādibhir mayā copadiṣṭasyāpi tava ced aviveko nāpayāti, tadā sarva-dharma-svarūpa-vidaṁ tvad-atihitaṁ bhīṣmam api pṛccheti prokto rājā tadā tad-antikaṁ jagāmety āha—<strong>itīti</strong> | <strong>vinaśanaṁ</strong> kurukṣetram ||1-2||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.2 ||</p>
+<p><strong>tadā te</strong> <strong>bhrātaraḥ sarve sad-aśvaiḥ svarṇa-bhūṣitaiḥ |</strong></p>
+<p><strong>anvagacchan rathair viprā vyāsa-dhaumyādayas tathā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : santaḥ</strong> śreṣṭhā <strong>aśvā</strong> yeṣu, tai rathaiḥ ||2||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ), viśvanātha-cakravartī (sārārtha-darśiṇī), baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> <em>na vyākhyātam.</em></p>
+<p><strong>...</strong></p>
+<p>|| 1.9.3 ||</p>
+<p><strong>bhagavān api viprarṣe rathena sa-dhanañjayaḥ |</strong></p>
+<p><strong>sa tair vyarocata nṛpaḥ kuvera iva guhyakaiḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong></p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : bhagavān apy</strong> anvagacchat ||3||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : bhagavān apy agacchat</strong>, <strong>sa nṛpo</strong> yudhiṣṭhiraḥ <strong>tair</strong> bhrātṛbhiḥ ||3-4||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.4 ||</p>
+<p><strong>dṛṣṭvā nipatitaṁ bhūmau divaś cyutam ivāmaram |</strong></p>
+<p><strong>praṇemuḥ pāṇḍavā bhīṣmaṁ sānugāḥ saha cakriṇā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : sānugāḥ</strong> parivāra-sahitāḥ ||4||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ), viśvanātha-cakravartī (sārārtha-darśiṇī), baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> <em>na vyākhyātam.</em></p>
+<p><strong>...</strong></p>
+<p>|| 1.9.5 ||</p>
+<p><strong>tatra brahmarṣayaḥ sarve devarṣayaś ca sattama</strong> <strong>|</strong></p>
+<p><strong>rājarṣayaś ca tatrāsan draṣṭuṁ bharata-puṅgavam ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : tatra</strong> tadā <strong>tatrāsan,</strong> tat-kṣaṇam evāgatā ity arthaḥ | <strong>bharata-puṅgavaṁ</strong> bhīṣmam ||5||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ), viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : bharata-puṅgavaṁ</strong> bhīṣmam ||5||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.6-8 ||</p>
+<p><strong>parvato nārado dhaumyo bhagavān bādarāyaṇaḥ |</strong></p>
+<p><strong>bṛhadaśvo bharadvājaḥ sa-śiṣyo reṇukā-sutaḥ ||</strong></p>
+<p><strong>vasiṣṭha indrapramadas trito gṛtsamado’sitaḥ |</strong></p>
+<p><strong>kakṣīvān gautamo’triś ca kauśiko’tha sudarśanaḥ ||</strong></p>
+<p><strong>anye ca munayo brahman brahmarātādayo’malāḥ |</strong></p>
+<p><strong>śiṣyair upetā ājagmuḥ kaśyapāṅgirasādayaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā), viśvanātha-cakravartī (sārārtha-darśiṇī), baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : reṇukā-sutaḥ</strong> paraśurāmaḥ ||6|| <strong>brahma-rātaḥ</strong> śukaḥ | <strong>āṅgiraso</strong> bṛhaspatiḥ ||8||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<p><strong>...</strong></p>
+<p>|| 1.9.9 ||</p>
+<p><strong>tān sametān mahā-bhāgān upalabhya vasūttamaḥ |</strong></p>
+<p><strong>pūjayāmāsa dharmajño deśa-kāla-vibhāgavit ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : vasūttamo</strong> bhīṣmaḥ | <strong>deśa-kāla-vibhāga-vid</strong> ity utthātum aśakyatvāc chayāna eva manasā vācā ca <strong>pūjayāmāsa</strong> ity abhiprāyaḥ ||9||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : vasūttamo</strong> bhīṣmaḥ ||9||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : vasūttamo</strong> bhīṣmaḥ, tadānīm ucitāṁ pūjāṁ vyadhāt ||9||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.10 ||</p>
+<p><strong>kṛṣṇaṁ ca tat-prabhāva-jña āsīnaṁ jagad-īśvaram |</strong></p>
+<p><strong>hṛdi-sthaṁ pūjayāmāsa māyayopātta-vigraham ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : hṛdi-sthaṁ</strong> santaṁ purataś cāsīnaṁ <strong>pūjayāmāsa</strong> ||10||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : kṛṣṇam</strong> iti | sadā sveṣāṁ <strong>hṛdi-sthaṁ</strong> hṛdayastham api <strong>māyayā</strong> kṛpayā <strong>upa</strong> netra-samīpe’pi <strong>ātta</strong> ānīto <strong>vigraho</strong> yena, tam ||10||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : māyayā</strong> eva <strong>upātto</strong> gṛhīto <strong>vigraho</strong> yudhiṣṭhireṇa sārdhaṁ prabodhāprabodha-hetuko vivādo yena tam | yad vā, <strong>māyayā</strong> kṛpayā <strong>upa</strong> netra-samīpe <strong>ānīto</strong> nija-deho yena, tam ||10||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : tat-prabhāvajñaḥ</strong> kṛṣṇa-pāramaiśvarya-vit, <strong>māyayā</strong> kṛpayā <strong>upa</strong> netra-samīpe <strong>ātta</strong> ānīto <strong>vigrahaḥ</strong> sva-mūrtir yena, tam | yad vā, <strong>māyayā</strong> eva triguṇayā <strong>upātto</strong> gṛhīto <strong>vigraho</strong> yudhiṣṭhireṇa sārdhaṁ bodhābodha-nimittako vivādo yena, tam | vigrahaḥ samare kāye vistāra-pravibhāgayoḥ iti viśvaḥ | yat tu māyika-mūrtikatvam āhuḥ, tad asat | tam ekaṁ govindaṁ sac-cid ānanda-vigraham [go.tā.u. 1.37] iti śruti-vyākopāt | tvayy eva nitya-sukha-bodha-tanāv anante [bhā.pu. 10.14.22] iti smṛteś ca ||10||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.11 ||</p>
+<p><strong>pāṇḍu-putrān upāsīnān praśraya-prema-saṅgatān |</strong></p>
+<p><strong>abhyācaṣṭānurāgāsrair andhībhūtena cakṣuṣā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : upāsīnān</strong> samīpe upaviṣṭān | <strong>praśrayo</strong> vinayaḥ, <strong>prema</strong> snehaḥ, tābhyāṁ <strong>saṅgatān</strong> upasannān | pāṭhāntare tābhyām avanatān | <strong>abhyācaṣṭa</strong> abhyabhāṣata | <strong>anurāgāḥ,</strong> taiḥ snehāśrubhir <strong>andhī-bhūtena</strong> <strong>cakṣuṣā</strong> upalakṣitaḥ ||11||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> yayā bhīṣmādīnāṁ svāparādha-manana-śaṅkayā munīnāṁ svasyāpi śikṣaṇena yudhiṣṭhiro na śāmyati sma, tām eva śaṅkāṁ tasmiṁs tasya snigdhatā-darśanayā tad-dvārā droṇādīnām api tathā-bhāva-vyañjanayā dūrīkartuṁ tat-sannidhāv ānītavān so’yaṁ śrī-bhagavān iti pūrvābhiprāyam eva vyaktīkartum āha—<strong>pāṇḍu-putrān</strong> iti ||11||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : abhyācaṣṭa</strong> abhyabhāṣata ||11||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : abhyacaṣṭa</strong> praikṣata ||11||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.12 ||</p>
+<p><strong>aho kaṣṭam aho’nyāyyaṁ yad yūyaṁ dharma-nandanāḥ |</strong></p>
+<p><strong>jīvituṁ nārhatha kliṣṭaṁ vipra-dharmācyutāśrayāḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> abhibhāṣaṇam āha—<strong>aho</strong> ity ekādaśabhiḥ | he <strong>dharma-nandanāḥ</strong> ! <strong>kliṣṭaṁ</strong> yathā bhavati, evaṁ <strong>jīvituṁ nārhatha</strong> <strong>yūyam</strong> iti <strong>yad</strong> etad <strong>aho kaṣṭaṁ</strong> jugupsitam | <strong>aho anyāyyaṁ</strong> caitat | <strong>yato</strong> <strong>yūyaṁ</strong> <strong>viprā</strong> <strong>dharmo’cyutaś cāśrayo</strong> yeṣāṁ te ||12||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : aho kaṣṭam</strong> iti taiḥ | tatra iti <strong>yad</strong> iti tad etad yad bhavad-vicāritam ity arthaḥ | tato viprādīnāṁ hiṁsā-bhrāntyā mā kleśaṁ manyasveti bhāvaḥ | <strong>vipra-dharmeti</strong> ṣaṣṭhī-tat-puruṣo vā | yad vā, <strong>dharma-nandanā</strong> api yad yūyaṁ jīvituṁ yogyā na bhavāmeti manyadhve, tad aho kaṣṭam anyāyyaṁ ca | tatrāpi <strong>vipra-dharmācyutānām āśrayā</strong> api yūyaṁ yat tathā manyadhve, tataś ca kliṣṭam iti pūrvavad evānyāyyaṁ kaṣṭaṁ cety arthaḥ | yūyam iti śrī-yudhiṣṭhiraṁ praty eva gauravataḥ sambodhanam ||12||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> aho kaṣṭam aho’nyāyyam iti rājany atideśa evānyāya-kaṣṭe khalu na sambhavatas tat kim atrārthe sarva-viśva-sthiti-kartari viṣṇāv evānyāyaḥ samabhūd iti bhāvaḥ | <strong>kliṣṭaṁ</strong> yathā syāt, tathā <strong>yūyaṁ jīvituṁ nārhatha</strong>, anye tathā jīvanti cet jīvantv iti bhāvaḥ ||12||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tān vilokayaṁs teṣāṁ kaṣṭa-hetuṁ tāvad durvibhāvyam āha—<strong>aho kaṣṭam</strong> iti | he <strong>dharma-nandanāḥ kliṣṭaṁ</strong> yathā syād, evaṁ <strong>yūyaṁ jīvituṁ nārhatha</strong>, yato <strong>viprādy-āśrayāḥ</strong> ||12||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.13 ||</p>
+<p><strong>saṁsthite’tirathe pāṇḍau pṛthā bāla-prajā vadhūḥ |</strong></p>
+<p><strong>yuṣmat-kṛte bahūn kleśān prāptā tokavatī muhuḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> kiṁ ca, <strong>saṁsthite</strong> mṛte | <strong>bālāḥ prajāḥ</strong> putrā yasyāḥ sā | <strong>vadhūś</strong> ceti dainyaṁ pradarśitam | <strong>tokāny</strong> apatyāni, <strong>tadvatī</strong> | apatyaiḥ saha <strong>kleśān prāptā</strong> ity arthaḥ ||13||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu kiṁ kliṣṭaṁ ? tatrāha—<strong>saṁsthite</strong> mṛte | <strong>bāla-prajā</strong> iti bāla-prajātva-daśāyām ekākiny eva <strong>kleśān prāptā</strong> | <strong>yuṣmākaṁ</strong> prauḍha-vayastve sati tu <strong>tokavatī</strong> putrair yuṣmābhiḥ sahitāpi kaṣṭān prāptety arthaḥ ||13||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> kaṣṭam āha—<strong>saṁsthite</strong> mṛte sati | <strong>bāla-prajā vadhūr</strong> iti dainyaṁ pradarśitaṁ, tādṛśī <strong>bahūn kleśān prāptā</strong>, <strong>tokavatī</strong> ca prauḍhaiḥ yuṣmābhiḥ putraiḥ sahitāpi tān muhuḥ prāpteti ||13||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.14 ||</p>
+<p><strong>sarvaṁ kāla-kṛtaṁ manye bhavatāṁ ca yad apriyam |</strong></p>
+<p><strong>sa-pālo</strong> <strong>yad-vaśe loko vāyor iva ghanāvaliḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> kāla-kṛtatvena śokaṁ vārayati—<strong>sarvam</strong> iti dvābhyām | <strong>bhavatām</strong> api | <strong>yad-vaśo</strong> yasya vaśa-vartī ||14||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu tarhi katham asmākaṁ kleśaḥ ? tatra tat-kāraṇaṁ prācīnārvācīnaṁ kim api pāpam apaśyan vaktum asamartha eva lokokti-rītyaivāha—<strong>sarvam</strong> iti | nanu, kālo hi prārabdha-sukha-duḥkha-bhogayor evādhikaraṇam eveti sahakāritvād upacāreṇaiva <strong>kāla-kṛtaṁ manye</strong> iti brūṣe | prārabdha-pāpa-kṛtam iti spaṣṭaṁ kathaṁ na vadasi ? ity ata āha—<strong>bhavatāṁ</strong> <strong>ca</strong> iti | yudhiṣṭhiro hi sākṣād-dharmāvatāra iti prasiddha eva | dharmasyāpi prārabdhaṁ pāpam astīti cen mantavyaṁ, tarhi kathaṁ dharmasya dharmatvam ? ato’tiprabalo’tidurnivāro dustarkaḥ kāla eva kāraṇam ity āha—<strong>sa-pāla</strong> iti ||14||</p>
+<p><strong>sarvaṁ kāla-kṛtaṁ manye bhavatāṁ ca yad apriyam |</strong></p>
+<p><strong>sa-pālo</strong> <strong>yad-vaśe loko vāyor iva ghanāvaliḥ ||</strong></p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> nanu sarvajño'pi tvam anirṇītaṁ kim iti brūṣe, tatra kiñcit kāraṇaṁ brūhīti cet, lokoktim āśrītya tāvad āha—sarvam iti | bhavatāṁ ca kṛṣṇaikāntinām api yad apriyaṁ pratikūlyaṁ kālasya prabhāvam āha—seti ||14||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.15 ||</p>
+<p><strong>yatra dharma-suto rājā gadā-pāṇir vṛkodaraḥ |</strong></p>
+<p><strong>kṛṣṇo’strī gāṇḍivaṁ cāpaṁ suhṛt kṛṣṇas tato vipat ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> aho durghaṭa-ghaṭanā-paṭuḥ kāla ity āha—yatreti | kṛṣṇo’rjunaḥ astrī dhanvī | tatas tatrāpi vipat | puṇya-śarīra-balāstra-naipuṇya-śastra-deva-saṁpattāv apīty arthaḥ ||15||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> yady asmākaṁ vipattiṁ kala-kṛtām amatvā sva-kṛtām eva tu matvā duḥkhaṁ labhase, tarhi kathaṁ bhavatāṁ sā jātā ? ity abhipretyāha—<strong>yatra</strong> iti ||15||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu,</p>
+<blockquote>
+<p>na karhicin mat-parāḥ śānta-rūpe</p>
+<p>naṅkṣyanti no me’nimiṣo leḍhi hetiḥ |</p>
+<p>yeṣām ahaṁ priya ātma sutaś ca</p>
+<p>sakhā guruḥ suhṛdo daivam iṣṭam || [bhā.pu. 3.25.37]</p>
+</blockquote>
+<p>iti kapila-devokteḥ kṛṣṇe dāsya-sakhya-vātsalyavataḥ pāṇḍavān kathaṁ kālo’tikrameta ? ity ato’tivismayānvitaḥ kāraṇaṁ vinaiva karmotpatti-rūpaṁ vibhāvanālaṅkāraṁ bhāvayann āha—<strong>yatra</strong> iti | <strong>kṛṣṇo</strong>’rjunaḥ <strong>astrī</strong> dhanvī | <strong>tatas</strong> tatrāpi <strong>vipat</strong> puṇya-bala-śarīra-bala-naipuṇya-bala-śastra-bala-suhṛd-bala-sampattāv apīty arthaḥ ||15||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> durghaṭa-ghaṭakatvaṁ kālasyāha—<strong>yatra</strong> yuṣmat-pakṣe, <strong>kṛṣṇo</strong>'rjunaḥ, <strong>astrī</strong> dhanvī, <strong>tatas</strong> tatrāpi sampat-kāraṇeṣu satsv api saṁpannābhūd iti viśeṣoktir alaṅkāraḥ | viśeṣoktiḥ kāraṇeṣu satsu kāryā vaco matā iti tal-lakṣaṇāt ||15||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.16 ||</p>
+<p><strong>na hy asya karhicid rājan pumān veda vidhitsitam |</strong></p>
+<p><strong>yad-vijijñāsayā yuktā muhyanti kavayo’pi hi ||</strong></p>
+<p><strong>madhvācāryaḥ (bhāgavata-tātparyam) :</strong></p>
+<blockquote>
+<p>asaṅgaś cāvyayo’bhedyo’nigrāhyo’śoṣya eva ca |</p>
+<p>viddho’sṛg-añcito baddha iti viṣṇuḥ pradarśyate ||</p>
+<p>asurān mohayan devaḥ krīḍayaiva sureṣv api |</p>
+<p>mānuṣān madhyayā dṛṣṭyā na mukteṣu kathañcana || iti skānde ||16||</p>
+</blockquote>
+<hr />
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> nanu kṛṣṇaṁ kathaṁ kālo’tikramet ? ity apekṣāyām āha—<strong>na hy asya</strong> śrī-kṛṣṇasyety aṅgulyā nirdiśati | <strong>vidhitsitaṁ</strong> kartum iṣṭaṁ yat | <strong>yasya vidhitsitaṁ tasya jijñāsayā</strong> ||16||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> na hīti | atra teṣām ārti-dvāreṇa svasminn āveśārthaṁ tat-khaṇḍana-janita-harṣa-dvāreṇa ca svasmin prema-vardhanārthaṁ tathā <strong>vidhitsitam</strong> iti gūḍho’bhiprāyaḥ ||16||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> tarhy atra kiṁ nirdhārayāmi ? sāmānyatas tāvad ayaṁ siddhāntaḥ sarva-vādi-sammato yat kṛṣṇasya cikīrṣitam anyathā-kartuṁ na ko’pi samarthaḥ | tac cikīrṣitaṁ kim iti adyāpi ko’pi na vetti ? ity āha—<strong>na hy asya</strong> iti | <strong>karhicid</strong> api kāle “ko’pi <strong>pumān</strong> brahma-bhavādiḥ ko’pi na veda, ahaṁ ko varākaḥ ?” iti bhāvaḥ |</p>
+<p>nanu ko’pi mā jānātu, jijñāsā tu avaśyam eva jāyate | tatrāsmāsu duḥkha-dānam eva kiṁ cikīrṣitam ? sukha-dānam eva vā ? ubhaya-dānam eva vā ? tatrādyaṁ na, bhakta-vātsalya-guṇasya lopānaucityāt | dvitīyam api na, adṛṣṭatvād eva | tṛtīyam api na, tat-sauhārda-lopāpatteḥ | tarhi jijñāsām api naiva kartum uciteti vinirṇayann āha—<strong>yad-vijijñāsayā</strong> iti | <strong>yuktā</strong> vivekino’pi <strong>kavayaḥ</strong> sarva-śāstra-jñā api <strong>moham</strong> eva <strong>prāpnuvanti</strong> siddhāntālābhād iti bhāvaḥ | atra bhīṣmasya mahā-vijñasyoktau <strong>kavaya</strong> iti <strong>muhyanti</strong> iti padābhyāṁ yudhiṣṭhirādayo’pi bhagavad-bhaktāḥ prārabdhaṁ bhuñjate iti mataṁ parāstam ||16||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> atha sva-matam āha—<strong>na hy asya</strong> iti | <strong>asya</strong> kṛṣṇasya <strong>vidhitsitaṁ</strong> cikīrṣitaṁ <strong>karhicid</strong> api kāle <strong>pumān</strong> brahmādir api <strong>na veda</strong>, kim idaṁ vidhitsatīti na jānāti | nanu na vettu ko'pi, jijñāsā tu jāyate? tatrāha—yad iti | <strong>yuktā</strong> yoginaḥ <strong>kavayo</strong> vidvāṁso'pi | etad uktaṁ bhavati—na khalu bhavatāṁ kaṣṭaṁ prārabdha-racitaṁ śakyaṁ vaktuṁ kṛṣṇaikāntiṣu tad-vallabhatvāt, tasya pāpāṁśa-miśratvena tadvati yudhiṣṭhire dharmatva-virodhāt | na ca kāla-racitaṁ tat, kṛṣṇa-nātheṣu bhavatsu tad-vallabhatvāt, jñaḥ kāla-kālo guṇī sarva-vid yaḥ [śve.u. 6.2] iti mantra-varṇāt kāla-kṛtam ity atra kāla-śakti-matā kṛṣṇenety arthāt | sva-kāla-śaktyā [bhā.pu. 10.1.22] iti vakṣyamāṇāt, tasmāt kṛṣṇādhīnaṁ bhavatāṁ kaṣṭaṁ, tvad avagamī na vetti bhavad-uttha-śubhāśubhayor guṇa-viguṇānvayaṁs tarhi deha-bhṛtāṁ ca giraḥ [bhā.pu. 10.87.40] iti śruti-stotre bhavad-utthety upādānāt | <strong>na ca tad-vijijñāsāpi yuktā</strong>, tayā <strong>kavīnām</strong> api <strong>mohāt</strong>, tathā hi—tasya bhavatsu duḥkha-dānaṁ sukha-dānam ubhaya-dānaṁ vā vidhitsitam? nādyaḥ, bhakta-vatsalya-hānāt, na madhyaḥ, adarśanāt, nāntyaḥ, sauhārda-vilopāt ||16||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.17 ||</p>
+<p><strong>tasmād idaṁ daiva-tantraṁ vyavasya bharatarṣabha |</strong></p>
+<p><strong>tasyānuvihito’nāthā nātha pāhi prajāḥ prabho ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : idaṁ</strong> sukha-duḥkhādi <strong>daiva-tantram</strong> īśvarādhīnaṁ <strong>vyavasya</strong> niścitya <strong>tasya</strong> īśvarasya <strong>anuvihito</strong>’nuvartī san | kartari ktaḥ | he <strong>nātha</strong> ! kula-paramparā-gata-svāmin, <strong>prabho</strong> samartha, <strong>anāthāḥ</strong> prajāḥ <strong>pāhi</strong> ||17||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : tasmād</strong> asya ajñānusārāt ||17||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : idaṁ</strong> sukha-duḥkhādikaṁ <strong>daiva-tantram</strong> īśvarādhīnam eva <strong>vyavasya</strong> niścitya, kintu tad-vidhitsitasya durjñeyatokteḥ sva-bhaktāya tat-pradānādikaṁ durjñeya-prayojanakam ity api niścitya, <strong>tasya</strong> kṛṣṇasya <strong>anuvihito</strong>’nugataḥ hi gatau <strong>anāthāḥ</strong> prajāḥ <strong>pāhi</strong> ||17||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tasmād vicārād virantavyaṁ, yatheṣṭaṁ sa karotu, suvṛttiḥ prapattis tu kāryety āha—tasmād iti | <strong>daiva-tantram</strong> īśādhīnaṁ <strong>vyavasya</strong> niścitya tasya daivasya <strong>anuvihito</strong>'nuvartī san <strong>prajāḥ pāhi</strong> | <strong>anāthā</strong> hata-nāthāḥ he <strong>nātha</strong> ! svāmin ! he <strong>prabho</strong> ! tat-pālane samartha ! dharma-rāja ! ||17||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.18 ||</p>
+<p><strong>eṣa vai bhagavān sākṣād ādyo nārāyaṇaḥ pumān |</strong></p>
+<p><strong>mohayan māyayā lokaṁ gūḍhaś carati vṛṣṇiṣu ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> anuvidheyaḥ parameśvarasya śrī-kṛṣṇa evety āha | <strong>eṣa</strong> eva <strong>bhagavān</strong> sarveśvaraḥ | yata <strong>ādyaḥ</strong> <strong>pumān</strong> | tac ca kutaḥ ? yato <strong>nārāyaṇaḥ sakṣāt</strong> ||18||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> na ca nara-līlā-dṛṣṭyā sādhāraṇa-dṛṣṭir atra kartavyety āha—<strong>eṣa</strong> iti | <strong>sākṣād</strong> eva svayaṁ <strong>bhagavān</strong> | yaḥ sva-lavādyaḥ <strong>pumān</strong> mahat-sraṣṭā so’py ayam eva yaś ca <strong>ādyo</strong> <strong>nārāyaṇaḥ</strong> parama-vyomādhipatiḥ, so’pīti ||18||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanv īśvarādhīnam iti tad-vidhitsitaṁ tu na vedety-ādi kathaṁ brūṣe ? īśvaraḥ samprati tava sākṣād-varty eva ity ata imaṁ kṛṣṇam eva pṛṣṭvā kathaṁ sarvaṁ tattvaṁ na vetsi ? ity ata āha—<strong>eṣa</strong> iti | <strong>māyayā mohayann</strong> iti pṛṣṭo hi bhīṣmād api kim aham atitattvajña ity-ādi vācā vañcayan na vakṣyati | kathañcid vadann api mohayiṣyaty eva ity asāv anuvartanīya eva, na tu jijñāsanīya iti bhāvaḥ ||18||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> nanu kṛṣṇaikāntino'smād anyad anuvidheyaṁ, daivaṁ kim ity upadiśasi? tatrāha—<strong>eṣa</strong> iti | <strong>ādyo nārāyaṇaḥ</strong> pañcaviṁśati-tattvāśrayaḥ, tatrāpi <strong>sākṣād bhagavān</strong> svayaṁ-rūpas tasyāpy aṁśīty arthaḥ | nanv evam anye naivāhur iti cet, tatrāha—<strong>mohayann</strong> iti | tad-eka-niṣṭhās tv āhur eveti bhāvaḥ ||18||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.19 ||</p>
+<p><strong>asyānubhāvaṁ bhagavān veda guhyatamaṁ śivaḥ |</strong></p>
+<p><strong>devarṣir nāradaḥ sākṣād bhagavān kapilo nṛpa ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> tad upapādayati—asyeti | <strong>anubhāvaṁ</strong> prabhāvam ||19||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> kiṁ ca, <strong>asyānubhāvaṁ</strong> bhāva-bodhakaṁ ceṣṭā-viśeṣaṁ <strong>śivo veda</strong>, na tu vidhitsitaṁ svarūpaṁ prabhāvaṁ vety arthaḥ | tathā hi rasa-śāstrajñaḥ prathamam anubhāvaṁ stambha-sveda-romāñcādikaṁ veda | tena ca sthāyi-bhāvaṁ ca anubhāvasya vaiśiṣṭya-tāratamyābhyāṁ sthāyi-bhāvasyāpi vaiśiṣṭya-tāratamyaṁ ca | tathaiva yaśodādi-gopīṣu asya dāma-bandhanādi-rūpam arjuna-yudhiṣṭhirograsenādi-sārathya-dāsyādi-rūpaṁ ca pāravaśyam anubhāvaṁ veda | tena ca asya sarveśvarasya sarva-niyantuḥ mahā-svatantrasyāpi vaśīkārakaḥ ko’pi padārtha-viśeṣaḥ, tatra tatra vartamāno’syāpi cittam abhīkṣṇaṁ vidrutī-kurvann adhyāste ity anumimīte ca | sa ca nana-viśeṣavān sva-viṣayāśrayayoś ceto-vidrāvakaḥ paraspara-vaśīkārakaś ca premābhidhāna eva parama-puruṣārtha-cūḍāmaṇiḥ bhakti-snehānurāgādi-śabdair ucyamāno bhavati |</p>
+<p>kiṁ ca, tat-taj-janakeneṣṭena pratisamaya-dṛṣṭena asya vaśīkārādhikyam eva dṛṣṭvā tena ca premādhikyam anumāya siddha-sādhaka-bhakteṣu etat-kartṛkam eva kaṣṭa-pradānaṁ bhakti-vṛddhy-artham eveti siddhāntaṁ niścinoti ca śiva eva nārada eva kapila-deva eveti | ata eva draupady-ādiṣu kaṣṭādhikyāt premādhikyaṁ ca dṛṣṭam | tathā,</p>
+<blockquote>
+<p>yasyāham anugṛhṇāmi hariṣye tad-dhanaṁ śanaiḥ |</p>
+<p>tato’dhanaṁ tyajanty asya svajanā duḥkha-duḥkhitam || [bhā.pu. 10.88.8]</p>
+</blockquote>
+<p>ity-ādi śrī-mukha-vākyena ca bhakta-kaṣṭasya hitaiṣiṇā bhagavataiva dīyamānatvāt na karmārabdhatvam | kiṁ caitad api na sārvatrikaṁ kvacit kvacid akaṣṭenāpi sva-bhakta-bhaktiṁ vardhayatīti vidhitsitaṁ tu na ko’pi vedety uktam | anubhāvaṁ tu śiva-nāradādir eva veda | anye punar mandā dāma-bandhanādikam apy anukaraṇatvena vyācakṣāṇā anubhāvam api na vidur iti ||19||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tān darśayati—asyeti | guhyatamam anubhāvaṁ prabhāvaṁ mahaiśvarya-lakṣaṇaṁ vidhitsitaṁ tu na ko'pīti bhāvaḥ | kvacid-bhaktasya sarvasvam apahṛtya svasmiṁs tat-premāṇaṁ kvacid akaṣṭena bhaktaṁ tat-premāṇaṁ ca vardhayatas tasya prasiddhaḥ | sākṣād-vedeti sambandhaḥ | kapilo bhagavān kārdamiḥ ||19||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.20 ||</p>
+<p><strong>yaṁ manyase mātuleyaṁ priyaṁ mitraṁ suhṛttamam |</strong></p>
+<p><strong>akaroḥ sacivaṁ dūtaṁ sauhṛdād atha sārathim ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> tvam ajñānād <strong>yam</strong> evaṁ <strong>manyase</strong> | <strong>mātuleyaṁ</strong> devakyāḥ sutam | <strong>priyaṁ</strong> prīti-viṣayam | <strong>mitraṁ</strong> prīti-kartāram | <strong>suhṛttamam</strong> upakārānapekṣyopakārakaṁ ca | <strong>sauhṛdād</strong> viśvāsāt | <strong>akaroḥ</strong> kṛtavān asi | <strong>sacivaṁ</strong> mantriṇam ||20||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> asyānubhāva-jñāna-sad-bhāvavatām api bhavatāṁ sambandha-viśeṣa-maya-sarvācchādaka-mādhurya-jñānātmaka-prema-viśeṣeṇa vaśīkāritvaṁ tu tair api durlabham ity āha—yam iti trayeṇa | <strong>sauhṛdāt</strong> tādṛśa-premṇa eva hetoḥ, <strong>yaṁ mātuleyaṁ manyase</strong> | <strong>atha sārathiṁ</strong> sārathim apīty arthaḥ | sa eva sākṣād bhagavān ity-ādi-pūrveṇānvayaḥ | ṭīkāyāṁ mātuleyāḥ ity-ādikaṁ strībhyo ḍhak-siddhārtham itthaṁ vyākhyātam | mātulasyāpatyaṁ mātulāyanir ity eva syāt, vṛddhād apatye phis | evaṁ sambhavāt ||20|| [prīti-sandarbha 95]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> anubhāvam eva darśayati—yam iti | sarveśvarasyāpi yuṣmat-sacivatva-dautyādikaṁ prema-vaśyatvānubhāva ity arthaḥ | atra yam ity asya asyānubhāvam ity anena pūrveṇaivānvayaḥ ||20||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> yat kvacit svaikāntiṣu kaṣṭa-pradānaṁ, tat-tu tad-viṣayaka-aniṣṭhaṁ sauhṛdam anubhāvayitum eveti bhāvenāha—yam iti | sarvasya śaraṇaṁ suhṛt [śve.u. 17] iti mantra-varṇāt | tad vinā sarveśvaraṁ taṁ tathā kaḥ śaknuyān mantum iti bhaktānandārtham eva tat-pradānam iti bhāvaḥ ||20||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.21 ||</p>
+<p><strong>sarvātmanaḥ sama-dṛśo hy advayasyānahaṅkṛteḥ |</strong></p>
+<p><strong>tat-kṛtaṁ mati-vaiṣamyaṁ niravadyasya na kvacit ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> nanv īśvaraś cet kathaṁ nīce sārarthyādau pravṛttas tatrāha—sarveti | asya tat-kṛtaṁ nīcocca-marka-kṛtaṁ mama yogyam ayogyam iti mater vaiṣamyaṁ kvacid api nāsti | kutaḥ ? niravadyasya rāgādi-śūnyasya | tat kutaḥ ? anahaṅkṛteḥ | tac ca kutaḥ ? advayasya | tad api kutaḥ? sama-dṛśaḥ | tatrāpi hetuḥ—sarvasyātmanaḥ | yatheṣṭaṁ vā hetu-hetumad-bhāvaḥ ||21||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> nanu bhavatu prīti-viśeṣeṇāsmākaṁ tasmiṁs tathā matis tasya sarveṣāṁ paramātmanas tasmād eva samadṛśaḥ paramātmatvād eva sarveṣāṁ tac-chakti-vaibhava-rūpāṇām ātmanāṁ tato’nanyatvād advayasya tasmād eva mātuleyo’ham ity ādy-abhimāna-śūnyasya, tathā nirdoṣasya ca katham aham asya mātuleyaḥ | na tv amuṣetvādi-rūpaṁ mātuleyatvādi-kṛtaṁ mati-vaiṣamyaṁ syād ity-ādi-pūrva-pakṣoṭṭaṅkana-pūrvakaṁ siddhāntayati sarvātmana iti | ṭīkāyāṁ sama-dṛśaḥ ity atra samaḥ sarvatrāvyabhicārī ca saḥ | dṛk jñāna-rūpaś ceti bahuvrīhau hetutvaṁ na ghaṭate ||21|| [prīti-sandarbha 95]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu parameśvarasya bhakti-vaśīkṛtatve dautya-sārathyādir apakarṣa eva, tasmiṁś ca sati kathaṁ premā parameśvarasya sukha-prada ity ata āha—sarvātmana iti | niravadyasya nirdoṣa-premavato’sya kṛṣṇasya tat-kṛtaṁ dautyādi-kṛtaṁ mati-vaiṣamyaṁ na | atra hetuḥ sārvakālikaṁ svataḥ siddhaṁ mahaiśvaryam evety āha—sarvātmana iti | arjunasyāpy ātmā sa eveti svayam eva sārathī rathī ceti | ata eva sama-dṛśaḥ samaṁ tulyam ātmānam eva sarvatra paśyataḥ | sarvātmatvād evādvayasya | dvitīyābhāvād eva anahaṅkṛter garva-śūnyasya | kiṁ ca, mahaiśvarya-hīno’py anyaḥ premī premata eva hetor ātmano nīca-karmottham apakarṣaṁ kleśaṁ ca duḥkhatvena na manyate | asya tu mahaiśvaryāder ānanda-mātrasya kutaḥ premato duḥkham ? tasmād yuṣmākam evotkarṣo yata etādṛśo’pi parameśvaro bhavatāṁ dūtyādikaṁ karotīty āho vaśīkārakatvaṁ premṇa iti bhāvaḥ ||21||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> na ca bhakta-sauhārda-hetukena dūty-ādinā tasyāpakarṣa ity āha—sarvātmano nikhila-niyantuḥ samadṛśo nikhilaṁ manniyamyam iti sarvatra tulya-dṛṣṭeḥ | advayasyeti prāgvat | īdṛśānyābhāvād evānahaṅkṛter agarvasya kṛṣṇasya tat-kṛtaṁ dūtyādi-hetuka mati-vaiṣamyaṁ mamedaṁ yogyam ayogyaṁ veti dhī-dvaidhaṁ nāsti | tathā ca bhakta-vātsalya-lakṣaṇo mahotkarṣa eveti bhāvaḥ ||21||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.22 ||</p>
+<p><strong>tathāpy ekānta-bhakteṣu paśya bhūpānukampitam |</strong></p>
+<p><strong>yan me’sūṁs tyajataḥ sākṣāt kṛṣṇo darśanam āgataḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> tathāpi samatve’pi | he bhūpa, anukampitam anukampām ||22||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> yadyapi tādṛśasya tan na sambhavati, tathāpi he bhūpa ! ekānta-bhakteṣu yuṣmāsv anukampāṁ paśya | yeṣāṁ bhakti-viśeṣeṇa para-vaśaḥ sann asāv api tathā tathātmānaṁ bāḍham evābhimanyata ity arthaḥ | yaḥ khalu śarīrasyāpi sambandha-hetuḥ so’bhimāna eva hi sambandha-hetur mukhyaḥ, na śarīram | evaṁ sati, svāvirbhāvādinā śarīra-sambandhe’pi tasya mātuleyatvādikaṁ sutarām eva sidhyatīti tātparyam | tatra hetur—yan me’sūn iti | yad yasmāt yuṣmat-sambandhād eva hetoḥ | tad evaṁ paramopādeyatva-jñānād eva tat-sambandhātmaka eva śrī-bhagavānutkrāntāv api muhur eva nijālambanī-kṛtaḥ vijaya-sakhe ratir astu me’navadyā [bhā.pu. 1.9.33] iti, pārtha-sakhe ratir mamāstu [bhā.pu. 1.9.35] iti, vijaya-ratha-kuṭumbaḥ [bhā.pu. 1.9.39] ity ārabhya bhagavati ratir astu me mumūrṣoḥ iti ca ||22|| [prīti-sandarbha 95]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> athāpīti | yadyapi yuṣmat-tulyo na bhavituṁ śaknomīti bhāvaḥ | anukampitam asya mayy anukampāṁ paśya, yayā’yam ānanda-maya-sākṣād-brahma-svarūpo’py etādṛśaṁ bībhatsitaṁ mat-samīpa-sthānaṁ prasthāpita ity ayam apy eko’nubhāvo’nubhūyatām iti bhāvaḥ | yuṣmākaṁ tv ayam evānukampya iti bhāvaḥ ||22||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> bhakta-bandhutāṁ darśayati—yadyapy ayam īdṛśaḥ paramānandamayo'tiśucis tathāpy ekānta-bhakteṣu anukampitaṁ sauhārdoj-jṛmbhitāṁ kṛpāṁ paśya, yad-yenānukampitena vībhatsite'smin sthāne patitasya śastra-vikṣata-sarvāṅgasyāsūṁstyajato me kāle niryāṇa-samaye darśanaṁ dṛg-gocaratāṁ svayam āgata iti kim asya tad-vaktuṁ śaknuyām iti bhāvaḥ ||22||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.23-24 ||</p>
+<p><strong>bhaktyāveśya mano yasmin vācā yan-nāma kīrtayan |</strong></p>
+<p><strong>tyajan kalevaraṁ yogī mucyate kāma-karmabhiḥ</strong> <strong>||</strong></p>
+<p><strong>sa deva-devo bhagavān pratīkṣatāṁ</strong></p>
+<p><strong>kalevaraṁ yāvad idaṁ hinomy aham |</strong></p>
+<p><strong>prasanna-hāsāruṇa-locanollasan-</strong></p>
+<p><strong>mukhāmbujo dhyāna-pathaś catur bhujaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> idānīṁ sva-deha-tyāga-paryantaṁ śrī-kṛṣṇāvasthānaṁ prārthayate—bhaktyeti dvābhyām ||23||</p>
+<p>yāvad iti vilambaṁ dyotayati | ahaṁ hinomi tyajāmīti svātantryam | idam ity anātmatvena jñātam | prasanna-hāsenāruṇa-locanābhyāṁ collasad ruciraṁ mukhāmbujaṁ yasya | dhyānasya panthā viṣayaḥ | yo’nyaiś cintyate levalaṁ so’grataḥ sthitaḥ san māṁ pratīkṣitām ity arthaḥ ||24||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> bhaktyeti yugmakam | yogī samahitāntaḥ-karaṇaḥ san yasmin bhaktyā mana āveśya vā, vācā nama-mātraṁ kīrtayan vā kalevaraṁ tyajan mucyate ||23||</p>
+<p>prasanna-hāsety ādinā tad-darśana-bahu-kālatārtham eva śarīra-tyage vilambaḥ kṛta iti labhyate | tataś ca śarīrāntara-prāptau satyāṁ kadā vā darśanaṁ syād ity utkaṇṭhā-iṣṭatvād iti gamyate | yāvan na me nara-daśā daśamī kuto’pi [kṛ.ka. 1.38] ity-ādikaṁ hi śrī-līlā-śukasyāpi prārthanaṁ śrūyate ||24||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> pratīkṣatāṁ kṣaṇam atraiva tiṣṭhatu, yāvad ahaṁ kiñcid vilambya cakṣurbhyām eva saundaryāmṛtaṁ piban svasya mano’nulāpaṁ prakāśayan staumīti bhāvaḥ | mama upāsyatvād dhyānasya panthā viṣayībhūto yaḥ sarva-kālam eva bhavet, sa prasanna-hāsetyādi-rūpo’sminn anta-kāle sākṣān-nayana-gocara eva tiṣṭhatv iti bhāvaḥ | catur bhuja iti bhīṣmasyopāsya-mantra-dhyānasya tathātvam avagamayati ||24||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> yogopasṛṣṭa-bhakti-matāṁ tu sa naivam ity āha—bhaktyāveśyeti ||23||<br />
+<br />
+ahaṁ khalu tad eka-prapannaḥ, sa me sarvaṁ kartety āha—sa iti | yo'nyeṣāṁ dhyānapatho dhyānenaiva hṛdi bhāvyaḥ, sa me puraḥ-sthitaḥ san māṁ pratīkṣatām | kiyat-kālam iti cet-tatrāha—yāvad idaṁ kalevaraṁ hinomi tyajāmīti tat-tyāge svātantryam | cakṣurbhyāṁ tanmādhurya-sudhāṁ pivan svamanogataṁ ca stutyā prakāśarāmi, tāvad ity arthaḥ | caturbhujam iti bhīṣmasyopāsya-rūpam uktam ||24||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.25 ||</p>
+<p><strong>sūta uvāca—</strong></p>
+<p><strong>yudhiṣṭhiras tad ākarṇya śayānaṁ śara-pañjare ||</strong></p>
+<p><strong>apṛcchad vividhān dharmān ṛṣīṇāṁ cānuśṛṇvatām</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> tat sānukampaṁ vākyam ākarṇya ||25||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> tat nija-cira-sthiti-prakāśakaṁ śrī-bhīṣmasya vacanam ākarṇya ||25||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> yudhiṣṭhiras tad ākarṇyeti tarhi māṁ kaḥ prabodhayiṣyatīti vyagro’pṛcchat—śayānaṁ śareti | yadyapi tad-daśāyāṁ praśnānaucityaṁ tad api gaty-antarābhāvād iti bhāvaḥ ||25||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tatra yudhiṣṭhiro rājā tat sānukampaṁ tad-vākyamākarṇya śara-pañjare śayānaṁ bhagavad-dattena vareṇa nivṛtta-śastravyathaṁ karāmalaka-nyāyena paridṛṣṭa-parāvaratattvaṁ bhīṣmaṁ dharmān apṛcchat ||25||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.26 ||</p>
+<p><strong>puruṣa-sva-bhāva-vihitān yathā-varṇaṁ yathāśramam |</strong></p>
+<p><strong>vairāgya-rāgopādhibhyām āmnātobhaya-lakṣaṇān ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> puruṣa-svabhāvena vihitān nara-rajātisādhāraṇān varṇayām āseti tṛtīyenānvayaḥ | yathā-varṇaṁ varṇa-dharmān | yathāśramam āśrama-dharmāṁś ca | vairāgya-rāgābhyām upādhibhyāṁ krameṇāmnātam ubhayaṁ nivṛtti-prakṛtti-rūpaṁ lakṣaṇaṁ yeṣāṁ tān ||26||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> puruṣa-svabhāvena vihitān prathamaṁ nara-jāti-sādhāraṇān dharmān varṇayāmāseti tṛtīyenānvayaḥ | tato yathā-varṇaṁ varṇa-yogya-dharmān yogyatāyām avyayībhāvaḥ | tato yathāśramaṁ tato vairāgya-rāgābhyam upādhibhyāṁ krameṇāmnātam ubhayaṁ nivṛtti-pravṛtti-rūpaṁ lakṣaṇaṁ yeṣāṁ tān | ayam arthaḥ—na hi brahmacaryādaya āśrama-dharmāḥ sarvair eva dvijaiḥ sarve krameṇaivānuṣṭheyā iti niyamaḥ | kintu vairāgyaṁ cet sadaiva bhikṣavo bhaveyus tadā rāgaś ced gṛhasthā eva sadeti ||26||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> puruṣāṇāṁ svabhāvena vihitān narajāti-sādhāraṇān dharmān varṇayāsāseti tṛtīyena sambandhaḥ | tato yathāvarṇaṁ yathāśramam iti yogyatāyām avyayībhāvaḥ, varṇa-yogyānāśrama-yogyāṁś ca dharmān ity arthaḥ | tato vairāgya-rāgābhyām upādhibhyāṁ krameṇāmnāta-muktam ubhayaṁ pravṛtti-nivṛtti-rūpaṁ lakṣaṇaṁ yeṣāṁ tān | ayam arthaḥ—na khalu brahma-caryādayaś catvāra āśramāḥ sarvair dvijaiḥ sarve kramād evānuṣṭheyāḥ iti niyamaḥ, kintu vairāgye tīkṣne sati brahma-caryād eva pārivrājyaṁ, viṣaya-rāge tu sati gārhasthye stheyaṁ, rāgamāndye tu kramād iti | yathāha śrutiḥ—brahmacaryaṁ samāpya gṛhībhaved-gṛhībhūtvā vanībhaved-vanībhūtvā pravrajed yadivetarathā brahmacaryād eva pravrajed gṛhād vā vanād vā, yad ahar eva virajet-tad ahar eva pravrajed iti [yājñavalkyopa. 1] tathā ca śrutyanusāreṇa tān varṇayāmāseti ||26||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.27 ||</p>
+<p><strong>dāna-dharmān rāja-dharmān mokṣa-dharmān vibhāgaśaḥ |</strong></p>
+<p><strong>strī-dharmān bhagavad-dharmān samāsa-vyāsa-yogataḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> punas tatraiva viśeṣam āha—dāneti | mokṣa-dharmān śama-damādīn | bhagavad-dharmān hari-toṣaṇān dvādaśy-ādi-niyama-rūpān | samāsa-vyāsau saṅkṣepa-vistārau tāv eva yogāv upāyau tatas tābhyām ||27||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> tataś ca tatraiva viśeṣato dāna-dharmān ity-ādi sarvānte ca bhagavad-dharmān bhakty-aṅgāniti mokṣa-dharmebhyo’py asya pārthakyaṁ śrauṣṭhyaṁ ca vyañjitam | samāsaḥ saṅkṣepo vyāso vistaraś ca tad-dvayor yogena yuktatayā ||27||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> mokṣa-dharmān śama-damādīn śravaṇa-mananādīṁś ca bhagavad-dharmān pañcarātroktān haritoṣakān bhakt-irūpān | samāsaḥ saṅkṣepaḥ, vyāso vistaraḥ, tayor yogataḥ sambandhāt ||27||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.28 ||</p>
+<p><strong>dharmārtha-kāma-mokṣāṁś ca sahopāyān yathā mune |</strong></p>
+<p><strong>nānākhyānetihāseṣu varṇayām āsa tattvavit</strong> <strong>||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> dharmādiṁś ca yathādhikāraṁ pratiniyatopāya-sahitam | yathā yathāvat nānākhyāneṣu ye itihāsās teṣu yathā santi tathā varṇayām āseti ||28||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> evaṁ coktāḥ sarve dharmāś caturṣu vargeṣu eva paryavasyantīty ukta-poṣa-nyāyena tān evāha—dharmeti | upāyā dharmādi-sādhanāni | yathā yathāvad eva | nānākhyānādiṣu ye ye itihāsās teṣu pradarśya pramāṇīkṛtānity arthaḥ ||28||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> dharmādīn yathādhikāraṁ, sahopāyān sādhanān yathā yathāvat nānākhyāneṣu ye itihāsās teṣu ||28||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.29 ||</p>
+<p><strong>dharmaṁ</strong> <strong>pravadatas tasya sa kālaḥ pratyupasthitaḥ</strong> <strong>|</strong></p>
+<p><strong>yo yoginaś chanda-mṛtyor vāñchitas tūttarāyaṇaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> chandenecchayā mṛtyur yasya ||29||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> yo yogina iti | teṣā tathaiva vyavasāya-mātraṁ śrī-bhīṣmasya tu śrī-bhagavad-darśana-dīrghatvāya vyāja-maya eva sa iti jñeyam | vakṣyate ca śrī-svāmibhir api dvitīye, sthiraṁ sukhaṁ cāsanaṁ [bhā.pu. 2.2.15] ity ādau, deśe ca kāle ca mano na sajjayed ity atra deśe puṇya-kṣetre kāle ca uttarāyaṇādau mano na sajjayet na saṅgaṁ prāpayet | na deśa-kālau yoginaḥ siddhi-hetū kintu yoga eveti iti ||29||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> dharmaṁ pravadata ity-ādi | chandena icchayaiva mṛtyur yasya tasya ||29||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> chandenecchayā mṛtyur yasya yogino yaḥ kālo vāñchitaḥ ||29||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.30 ||</strong></p>
+<p><strong>tadopasaṁhṛtya giraḥ sahasraṇīr</strong></p>
+<p><strong>vimukta-saṅgaṁ mana ādi-pūruṣe |</strong></p>
+<p><strong>kṛṣṇe lasat-pīta-paṭe catur bhuje</strong></p>
+<p><strong>puraḥ sthite’mīlita-dṛg vyadhārayat ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : sahasraṇīr</strong> yuddhe samīpa-sthān sahasraṁ rathino nayati pālayatīti <strong>sahasraṇīr</strong> bhīṣmaḥ | "sahasriṇīḥ" iti pāṭhe sahasrārthavatīr giriḥ | <strong>lasantau pītau paṭau</strong> yasya tasmin | <strong>amīlita-dṛg</strong> eva <strong>mano</strong> <strong>vyadhārayat</strong> ||30||</p>
+<hr />
+<p><strong>kaivalya-dīpikā :</strong> evaṁ jīvanmuktaṁ lakṣayitvā stutvā cedānīm avasitādhikārasya tasya śarīra-pātam āha—<strong>tadā</strong> iti | <strong>tadā</strong> tasyāṁ daśāyāṁ <strong>sahasraṇīḥ</strong> sahasreṇa vyāpārāṇāṁ labdha-balāḥ giraḥ <strong>upasaṁhṛtya</strong> etena sarvendriyoparatir upalakṣitā | ata eva <strong>vimukta-saṅgaṁ</strong> <strong>mīlitā dṛg</strong> buddhīndriya-vṛttiḥ yasmin manasi nidhāya <strong>manaḥ</strong> kṛṣṇe <strong>vyadhārayad</strong> ity arthaḥ | anena pratyāhāra-pūrvā dhāraṇoktā ||30|| [mu.pha. 19.44]</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> yuddhe samīpa-sthān sahasraṁ rathino nayati paripālayatīti sahasraṇīr bhīṣmaḥ | sahasriṇīr iti pāṭhe sahasrārthavatīr giraḥ upasaṁhṛtya anyataḥ pratyāhṛtya amīlita-dṛg eva cakṣuṣī spaṣṭam unmīlyaiva vyadhārayat ā-nakha-śikhaṁ praveśayāmāsa ||30||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> sahasrāṇi rathino nayati pālayatīti sahasraṇīr bhīṣmaḥ, "sahasriṇīr" iti pāṭhe sahasrārthavatīrgira upasaṁhṛtyānyataḥ pratyāhṛtya amīlitadṛgeva mano vyadhārayat | yogināṁ manasāpyagamyaṁ cakṣurbhyāṁ vīkṣamāṇaḥ sann ānakha-śikhaṁ tat-praveśayāmāsa ity arthaḥ ||30||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.31 ||</strong></p>
+<p><strong>viśuddhayā dhāraṇayā hatāśubhas</strong></p>
+<p><strong>tad-īkṣayaivāśu gatāyudha-śramaḥ |</strong></p>
+<p><strong>nivṛtta-sarvendriya-vṛtti-vibhramas</strong></p>
+<p><strong>tuṣṭāva janyaṁ visṛjan janārdanam ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> anayaiva <strong>viśuddhayā</strong> <strong>dhāraṇayā</strong> <strong>hatam aśubhaṁ</strong> yasya saḥ | <strong>tasya</strong> śrī-kṛṣṇasyā<strong>pekṣayā</strong> kṛpā-dṛṣṭyaiva <strong>gata āyudha-śramo</strong> yasya saḥ | ata eva <strong>nivṛttaḥ</strong> <strong>sarvendriya-vṛttīnāṁ</strong> <strong>vibhramo</strong> vividhaṁ bhramaṇaṁ yasmāt saḥ | <strong>janyaṁ</strong> dehaṁ <strong>visṛjan</strong> <strong>janārdanam</strong> <strong>astaut</strong> ||31||</p>
+<hr />
+<p><strong>kaivalya-dīpikā :</strong> <strong>viśuddhā</strong> niṣkāmāḥ aśubhaṁ pūrvam aghaṁ <strong>tasya</strong> śrī-kṛṣṇasya <strong>īkṣayā</strong> sākṣātkāreṇa <strong>gatāni</strong> <strong>āyudha</strong>-vyathāni yasya, sa tathā | āyudhavat vyathayanti ity āyudha-vyathāni uttara-pāpāni | tathā coktaṁ—tad-adhigama uttara-pūrvāghayor aśleṣa-vināśau tad-vyapadeśāt [ve.sū. 4.1.13] | śrutiś ca—yatheṣīkā-tūlam agnau protaṁ pradūyetaivaṁ hāsya sarve pāpmānaḥ pradūyante [chā.u. 5.24.3] iti | <strong>vibhramo</strong> vividhaṁ bhramaṇam | tatra tatrāsantoṣāt | tasya <strong>nirvṛtir</strong> apūrva-kṛṣṇākhyaṁ viṣaya-labhyāt <strong>janyaṁ</strong> śarīraṁ <strong>visṛjan</strong> tyajan | <strong>janārdanaṁ</strong> kaivalya-dātāraṁ puruṣam ity ucita-pada-prayogaḥ ||31|| [mu.pha. 19.45]</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : tad-īkṣayā</strong> eveti tat-karmakekṣayā tad-āgamana-samayād eva labdhayeti prathama-vṛttam uktam ||31|| [prīti-sandarbha 203]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : viśuddhayā</strong> ity-ādi | <strong>tad-īkṣayā</strong> śrī-kṛṣṇa-kartṛkeṇa kṛpāvalokena <strong>vibhramo</strong> vividha-bhramaṇam asthairyam ity arthaḥ | <strong>janyaṁ</strong> sthūla-dehaṁ māyika-prapañcaṁ vā ||31||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) : tasya</strong> kṛṣṇasya <strong>īkṣayā</strong> kṛpāvalokena <strong>vibhramo</strong> 'sthairyaṁ, <strong>janyaṁ</strong> dehaṁ prapañcaṁ vā ||31||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.32 ||</strong></p>
+<p><strong>śrī-bhīṣma uvāca—</strong></p>
+<p><strong>iti matir upakalpitā vitṛṣṇā</strong></p>
+<p><strong>bhagavati sātvata-puṅgave vibhūmni |</strong></p>
+<p><strong>sva-sukham upagate kvacid vihartuṁ</strong></p>
+<p><strong>prakṛtim upeyuṣi yad bhava-pravāhaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> parama-phala-rūpāṁ śrī-kṛṣṇe ratiṁ prārthayituṁ prathamaṁ sva-kṛtam arpayati | <strong>iti</strong> nānā-dharmādy-upāyair <strong>matir</strong> mano-dhāraṇa-lakṣaṇā <strong>upakalpitā</strong> samarpitā | kva ? <strong>sātvatānāṁ puṅgave</strong> śreṣṭhe <strong>bhagavati</strong> | <strong>vitṛṣṇā</strong> niṣkāmā | avitṛṣṇeti vā chedaḥ, avitṛptety arthaḥ | <strong>vigato bhūmā</strong> yasmāt tasmin, yam apekṣyānyatra mahattvaṁ nāstīty arthaḥ | tad eva paramaiśvaryam āha | <strong>sva-sukhaṁ</strong> sva-svarūpa-bhūtaṁ paramānandam <strong>upagate</strong> prāptavaty eva | <strong>kvacit</strong> kadācid <strong>vihartuṁ</strong> krīdituṁ prakṛtiṁ yoga-māyām <strong>upeyuṣi</strong> svīkṛtavati, na tu svarūpa-tirodhānena jīvavat pāratantryam ity arthaḥ | vihartum iti yad uktaṁ tat prapañcayati—<strong>yad</strong> yataḥ prakṛter <strong>bhava-pravāhaḥ</strong> sṛṣṭi-paramparā bhavati ||32||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : sātvata-puṅgave</strong> iti dhāraṇā-viṣayasya tasya viśeṣaṇaṁ na tūpalakṣaṇam iti jñeyam | <strong>vibhūmni</strong> viśeṣeṇa bhūmātiśayo yasmin tatra bhūma-vākyavad bhūma-śabdenātra paramātiśayy eva cocyate | vi-śabdas tu tad vyakty artha eva | <strong>kvacid</strong> ity-ādinā puruṣāvatāra-kartṛtvam uktam ||32|| [kṛṣṇa-sandarbha 37]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : iti matir</strong> ity-ādi | iti mamāyuḥ-samāptau <strong>matir bhagavati upakalpitā</strong> mat-prabhau mad-anta-kāle kṛpā-paravaśatayaiva mat-samīpam āgate kiñcid upāyanaṁ datum ucitaṁ | tatra samprati mam āhantāspada-mamatāspadayor madhye samīcīnaṁ kim apy anyan nāstīti hetor eṣā matir evopāyanatvena kalpitā |</p>
+<p>nanu upāyana-dāyino loke kiñcij jighṛkṣavo dṛśyante ? tatrāha—<strong>vitṛṣṇā</strong> niṣkāmā | <strong>bhagavati</strong> ṣaḍ-aiśvarya-pūrṇe | kiṁ nārāyaṇatvena prasiddhe ? na, <strong>sātvata-puṅgave</strong> yadu-kulottaṁsatvena prasiddhe |</p>
+<p>nanu nārāyaṇasyaiva bhagavattvena mahatī prasiddhiś ca sārvakālikī tatrāha—<strong>vibhūmni</strong> iti | vigato bhūmā yasmāt, tasmin yam apekṣyānyatra mahattvaṁ nāstīti nārāyaṇāsyāpy avatāriṇīty arthaḥ | tad api <strong>svair</strong> yādava-pāṇḍavair eva saha <strong>sukhaṁ</strong> paramānandam | <strong>upa</strong> ādhikyena prāpta iti svarūpa-lakṣaṇam uktam | taṭastha-lakṣaṇam āha—<strong>prakṛtiṁ</strong> māyām īkṣaṇena mahat-tattvādy-utpādakatayā <strong>upeyuṣi</strong> | <strong>yataḥ</strong> prakṛter <strong>bhava-pravāhaḥ</strong> sṛṣṭi-paramparā tena puruṣādayo’py asyaivāvatārā iti bhāvaḥ ||32||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> iti mad-āyuḥ-samāptau <strong>sātvata-puṅgave</strong> yādavendre <strong>bhagavati</strong> kṛpā-pāravaśyena mad-antikam āgate śrī-kṛṣṇe mayā tad-eka-niṣṭhā mati-rupakalpitā upāyanatvenārpitā | kīdṛśīty āha—vitṛṣṇā tad anya-phalecchāśūnyā | kīdṛśe ity āha—vibhūmni vibhau nitye ity arthaḥ | svairyādavaiḥ pāṇḍavaiś ca saha sukhaṁ līlā-nandam upagate | kvacit kvacācit svāṁśena prakṛtim upeyuṣi tat-prekṣake, yataḥ prakṛter bhavapravāhaḥ sṛṣṭi-paramparā vartate ||32||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.33 ||</strong></p>
+<p><strong>tri-bhuvana-kamanaṁ tamāla-varṇaṁ</strong></p>
+<p><strong>ravi-kara-gaura-varāmbaraṁ dadhāne |</strong></p>
+<p><strong>vapur alaka-kulāvṛtānanābjaṁ</strong></p>
+<p><strong>vijaya-sakhe ratir astu me’navadyā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> idānīṁ śrī-kṛṣṇa-mūrtiṁ varṇayan ratiṁ prārthayate—<strong>tri-bhuvana-kamanaṁ</strong> tri-lokyām ekam eva kamanīyaṁ yat, tad <strong>vapur dadhāne ratir me’stu</strong> | kathaṁ-bhūtaṁ vapuḥ ? <strong>tamālavan</strong> nīlo <strong>varṇo</strong> yasya tat | prātaḥ-kālīnā <strong>raveḥ karā</strong> iva svato <strong>gaure</strong> pīte <strong>vare</strong> nirmale ca <strong>ambare</strong> yasmiṁs tat | <strong>alaka-kulair</strong> upary <strong>āvṛtam ānanābjaṁ</strong> yasmiṁs tat | <strong>vijaya-sakhe</strong> pārtha-sārathau <strong>anavadyā</strong> ahaitukī phalābhisandhi-rahitā <strong>ratir astu</strong> ||33||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu iti matir upakalpitety uktā yā, sā kim-ākārā matiḥ ? tatrāha—<strong>tribhuvana-</strong> iti | <strong>vijayasya</strong> arjunasya <strong>sakhyau</strong> <strong>mamānavadyā</strong> phalābhisandhāna-rahitā <strong>ratiḥ</strong> prema <strong>astu</strong> | kīdṛśe ? <strong>tribhuvanasya</strong> ūrdhvādho-madhya-loka-stha-jana-samudāyasya <strong>kamanam</strong> abhilāṣo yatra tad <strong>vapur dadhāne</strong> | <strong>raveḥ karair gaura-vare</strong> atigaurī-kṛte <strong>ambare</strong> yatra | tad arjuna-rathopari-sthitasya kṛṣṇasya pītāmbara-dvayaṁ sūrya-kiraṇa-samparkād aticākacikyavattvena tadānīm atipītaṁ mayā dṛṣṭaṁ, tena pārtha-sārathitvenopalabdha-mahā-saundarye kṛṣṇe ratiḥ prārthanā-mayī matir mayā tasminn evopakalpiteti bhāvaḥ | atra cāgrimeṣv api ślokeṣu sākṣād-vartiny api bhagavati prārthanāyāṁ yuṣmat-pada-prayogābhāvaḥ āsvādita-care ca sāṅgrāmika-vīra-rasāveśa-maye tan-mādhurye eva cittasyāsaktiṁ bodhayati ||33||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> bhagavad-rūpāsaktas tatra ratiṁ prārthayate—<strong>vijaya-sakhe</strong> arjuna-mitre <strong>ratir astu</strong> | kīdṛśe? <strong>tamāla-nīlaṁ vapur dadhāne</strong> prakaṭayati,</p>
+<blockquote>
+<p>anādeyam aheyaṁ ca rūpaṁ bhagavato hareḥ |</p>
+<p>āvirbhāva-tirobhāvāvasyokte graha-mocane || iti smṛteḥ |</p>
+</blockquote>
+<p>vapuḥ kīdṛk? <strong>tribhuvanasya kamanaṁ</strong> spṛhā yatra tat | <strong>ravi-karaiḥ</strong> <strong>gaura-vare</strong> atipīte <strong>ambare</strong> yatra tat | ratiḥ kīdṛśī ? <strong>anavadyā</strong> tad-vapur-anya-phala-vāñchā-śūnyā ||33||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.34 ||</strong></p>
+<p><strong>yudhi turaga-rajo-vidhūmra-viṣvak-</strong></p>
+<p><strong>kaca-lulita-śrama-vāry-alaṅkṛtāsye |</strong></p>
+<p><strong>mama niśita-śarair vibhidyamāna-</strong></p>
+<p><strong>tvaci vilasat-kavace’stu kṛṣṇa ātmā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> vijaya-sakhitvam evānuvarṇayan ratiṁ prārthayate | <strong>yudhi</strong> yuddhe turagāṇāṁ khura-rajas <strong>turaga-rajaḥ,</strong> tena <strong>vidhūmrā</strong> dhūsarāḥ, te ca te <strong>viṣvañca</strong> itas tataś calantaḥ <strong>kacāḥ</strong> kuntalāḥ, tair <strong>lulitaṁ</strong> vikīrṇaṁ <strong>śrama-vāri</strong> sveda-bindu-rūpaṁ, tena bhakta-vātsalya-dyotakena <strong>alaṅkṛtam āsyaṁ</strong> yasya, tasmin śrī-kṛṣṇe <strong>mama ātmā</strong> mano’stu <strong>ramatām</strong> ity arthaḥ | punaḥ kiṁ-bhūte ? madīyair <strong>niśitais</strong> tīkṣṇaiḥ <strong>śarair vibhidyamānā</strong> <strong>tvag</strong> yasya, tasmin | śarair eva <strong>vilasat</strong> truṭyat <strong>kavacaṁ</strong> yasya, tasmin ||34||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> atha prāktanaṁ svāparādhaṁ tasmin dainyena vijñāpayann api ratim eva prārthayate—<strong>yudhi</strong> iti | <strong>mama niśita</strong>- ity-ādikaṁ tu māyika-līlā-varṇanam eva | evaṁ vadanti rājarṣe ṛṣayaḥ kecanānvitāḥ [bhā.pu. 10.11.30] ity-ādi-nyāyena vāstavatva-virodhāt | tathā hi skānde,</p>
+<blockquote>
+<p>asaṅgaś cāvyayo’bhedyo’nigrāhyo’śoṣya eva ca |</p>
+<p>viddho’sṛg-ācito baddha iti viṣṇuḥ pradṛśyate ||</p>
+<p>asurān mohayan devaḥ krīḍaty eṣa sureṣv api |</p>
+<p>mānuṣān madhyayā dṛṣṭyā na mukteṣu kathañcana || iti |</p>
+</blockquote>
+<p>śrī-bhīṣmasya yuddha-samaye daityāviṣṭatvaṭ tathā bhānaṁ yuktam eva | kintv adhunā duḥsvapna-duḥkhasyeva tasya nivedanaṁ kṛtam iti jñeyam | kiṁ ca, <strong>turaga</strong>- ity-ādi <strong>mama niśita</strong>- ity-antair viśeṣaṇais tathāpy arjuna-sāhāyyāparityāgāt tasya bhakta-vātsalyaṁ darśitam | svasyāparādhitve’pi sāmprataṁ tad-anugṛhītatvaṁ jñāpitam ||34|| [bhagavat-sandarbha 60]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> alaka-kulair āvṛtam ānanābjaṁ yad uktaṁ, tan mādhuryam eva tyaktum asamarthaḥ punar api viśiṣyāsvādayati—<strong>yudhi</strong> iti | <strong>turaga-raja</strong> iti “sundare kim asundaram ?” iti nyāyena | <strong>viṣvañca</strong> itas tataś calantaḥ kacā iti āvega-sūcakam | <strong>śrama-vāri</strong> iti bhakta-vātsalya-dyotakam | <strong>niśitais</strong> tīkṣṇair <strong>vibhidyamāna</strong>-<strong>tvaci</strong> iti kandarpa-rasāviṣṭasya puṁsaḥ pragalbha-kāntā-dantāghātaiḥ sukham evetivad yuddha-rasāviṣṭasya mahā-vīrasya kṛṣṇasya mad-bala-sūcaka-śarāghātaiḥ sukham eveti | nātra mama yuddha-rasonmattasyāpi prema-śūnyatvaṁ mantavyam | na hi sva-prāṇa-koṭyādhike preyasi surata-samarauddhatya-kṛta-nirbhara-nakhara-daśanāghātā vanitā prema-śūnyā kathyata iti bhāvaḥ | atra tu <strong>vibhidyamāna-tvaci</strong> na tu vibhinna-tvaci yato <strong>vilasad</strong>-virājamānaṁ <strong>kavacaṁ</strong> yasya tasminn iti īṣad-bheda-mātram uktam | <strong>ātmā</strong> manaḥ ||34||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> alaka-kulāvṛtānanābja-mādhurya-nimagna-manāḥ stauti—<strong>yudhi</strong> iti | <strong>turaga-rajobhir dhūmrā</strong> dhūsara <strong>viṣvañca</strong> āvega-vaśād itas tataś calanto ye <strong>kacāḥ</strong> alakāḥ, tair <strong>lulitaṁ</strong> vikīrṇaṁ <strong>śrama-vāriṇā</strong> bindu-rūpeṇa bhakta-vātsalya-sūcakena <strong>alaṅkṛtaṁ</strong> ca <strong>āsyaṁ</strong> yasya, tasmin <strong>kṛṣṇe mamātmā</strong> mano'<strong>stu</strong> |</p>
+<p>nanu prema-viṣaye mayi kathaṁ tava bāṇa-prayoga iti cet? tvat-sukhāyeti bhāvena viśinaṣṭi—<strong>mama niśitais</strong> tīkṣnaiḥ <strong>śarair vibhidyamānā</strong> na tu vibhinna <strong>tvag</strong> yasya, tasminn iti sac-cid ānandatvād abhedye tvayi na śara-kṛtā vikṛtiḥ, api tu mahā-vīre yuddhoddīpanaiva kṛteti na me prema-śūnyatvam | na khalu preyasi taruṇyāḥ pāṇijādi-kṣatāni vaimanasyāya, api tu prasādāyaiveti bhāvaḥ ||34||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.35 ||</strong></p>
+<p><strong>sapadi sakhi-vaco niśamya madhye</strong></p>
+<p><strong>nija-parayor balayo rathaṁ niveśya |</strong></p>
+<p><strong>sthitavati para-sainikāyur akṣṇā</strong></p>
+<p><strong>hṛtavati pārtha-sakhe ratir mamāstu ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> kiṁ ca | sapadīti |</p>
+<blockquote>
+<p>senayor ubhayor madhye rathaṁ sthāpaya me’cyuta |</p>
+<p>yāvad etān nirīkṣye’haṁ yoddhukāmān avasthitān || [gītā.1.21-22]</p>
+</blockquote>
+<p>ity <strong>sakhyur</strong> arjunasya <strong>vaco</strong> <strong>niśamya</strong> <strong>sapadi</strong> tat-kṣaṇam eva <strong>sva-parayor balayoḥ</strong> sainyayor madhye <strong>rathaṁ niveśya</strong> <strong>sthite</strong> <strong>pārtha-sakhe</strong> <strong>mama ratir astu</strong> | tatra sthitvā kṛtaṁ sakhyaṁ darśayati | <strong>parasya</strong> duryodhanasya <strong>sainikānām āyur akṣṇā</strong> kāla-dṛṣṭyā <strong>hṛtavati</strong> | asau bhīṣmo’sau droṇo’sau karṇa ity-ādi-tat-pradarśana-vyājena dṛṣṭyaiva sarveṣām āyur ākṛṣyārjunasya jayaṁ kṛtavati ||35||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> sapadīti | tatra <strong>akṣṇā</strong> <strong>āyur haraṇena</strong> prārabdha-haratvam api darśitam ||35||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> kiṁ ca, sapadīti |</p>
+<blockquote>
+<p>senayor ubhayor madhye rathaṁ sthāpaya me’cyuta |</p>
+<p>yāvad etān nirīkṣye’haṁ yoddhukāmān avasthitān || [gītā.1.21-22]</p>
+</blockquote>
+<p>iti <strong>sakhyur</strong> arjunasya <strong>vacaḥ</strong> | <strong>parasya</strong> duryodhanasya <strong>sainikānām āyur akṣṇā</strong> “asau bhīṣmaḥ, asau droṇaḥ, asau karṇaḥ” iti tat-tat-pradarśana-vyājena dṛṣṭyā eva <strong>hṛtavati,</strong> tena ca prārabdha-haratvam api darśitam | yam iha nirīkṣya gatā gatāḥ sarūpaṁ [bhā.pu. 1.9.40] iti teṣāṁ mokṣokteḥ ||35||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong></p>
+<blockquote>
+<p>senayor ubhayor madhye rathaṁ sthāpaya me'cyuta! |</p>
+<p>yāvad etān-nirīkṣe'haṁ yoddhu-kāmān avasthitān || [gītā 1.21] iti</p>
+</blockquote>
+<p><strong>sakhyur</strong> arjunasya <strong>vaco</strong> <strong>niśamya</strong> <strong>nija parayor balayor</strong> madhye <strong>rathaṁ niveśya sthitavati</strong> <strong>pārtha-sakhe</strong> kṛṣṇe <strong>mama matir astu</strong> | tatra sthitvā kṛtaṁ sakhyam āha—<strong>para-sainikānāṁ</strong> duryodhana-vīrāṇām <strong>āyur</strong> <strong>akṣṇā</strong> kāla-śakti-saṅkrāntena tat-tat-pradarśana-vyājena <strong>hṛtavati</strong> ||35||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.36 ||</strong></p>
+<p><strong>vyavahita-pṛtanā-mukhaṁ nirīkṣya</strong></p>
+<p><strong>sva-jana-vadhād vimukhasya doṣa-buddhyā |</strong></p>
+<p><strong>kumatim aharad ātma-vidyayā yaś</strong></p>
+<p><strong>caraṇa-ratiḥ paramasya tasya me’stu ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> na kevalam arjunasya sapatnāyur haraṇenaiva jayam āhavat, kiṁtv avidyā-haraṇenāpīty āha | <strong>vyavahitā</strong> dūre sthitā yā <strong>pṛtanā,</strong> tasyā <strong>mukham</strong> iva mukham agre sthitān bhīṣmādīn <strong>nirīksya</strong> ity arthaḥ | <strong>sva-jana-vadhād vimukhasya</strong> nivṛttasya | tad uktaṁ gītāsu</p>
+<blockquote>
+<p>evam uktvārjunaḥ saṅkhye rathopastha upāviśat |</p>
+<p>visṛjya sa-śaraṁ cāpaṁ śoka-saṁvigna-mānasaḥ || [gītā. 1.46] iti |</p>
+</blockquote>
+<p><strong>kumatim</strong> ahaṁ hantety-ādi-kubuddhim ||36||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> tataś ca <strong>vyavahitā</strong> dūre sthitā yā <strong>pṛtanā</strong> senā, tasyā <strong>mukham</strong> iva mukham agre sthitān bhīṣmādīn <strong>nirīkṣya</strong> ity arthaḥ, <strong>svajana-vadhād vimukhasya</strong> iti yad uktaṁ</p>
+<blockquote>
+<p>evam uktvārjunaḥ saṅkhye rathopastha upāviśat |</p>
+<p>visṛjya sa-śaraṁ cāpaṁ śoka-saṁvigna-mānasaḥ || [gītā. 1.46] iti |</p>
+</blockquote>
+<p>iti <strong>kumatiṁ</strong> sāmpratikīṁ yudhiṣṭhirasyeva tadānīntanīm arjunasyāpi svayaṁ bhagavataivotthāpitāṁ | tasya nitya-pārṣadatvān narāvatāratvāc ca <strong>kumater</strong> asambhavāt jagad-uddhāraka-sva-tattva-jñāpaka-śrī-gītā-śāstram āvirbhāvayitum iti jñeyam | <strong>ātma-vidyayā</strong> sva-niṣṭha-jñānena ||36||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> viśvoddhāra-hetu-śrī-gītopaniṣat-prakāśake'ti-kṛpālau kṛṣṇe ratiṁ prārthayati—<strong>vyavahitāyā</strong> dūra-sthitāyāḥ <strong>pṛtanāyāḥ</strong> senāyā <strong>mukhaṁ</strong> puraḥ-sthitān bhīṣmādīn <strong>nirīkṣya</strong> doṣa-buddhyā <strong>svajana-vadhāt</strong> yuddhāt sva-dharmād api <strong>nivṛttasya</strong> saśaraṁ cāpaṁ visṛjya śocato'rjunasya <strong>ātma-vidyayā</strong> yaḥ <strong>kumatim aharat,</strong> tasya <strong>caraṇa-ratir</strong> ity anvayaḥ | yathā yudhiṣṭhire kumatim ādhāya idānīṁ mad-upakṛtiḥ kṛtā, tathārjune tām ādhāya viśvopakṛtir iti kṛpālutā mahatīti ||36||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.37 ||</strong></p>
+<p><strong>sva-nigamam apahāya mat-pratijñām</strong></p>
+<p><strong>ṛtam adhikartum avapluto rathasthaḥ |</strong></p>
+<p><strong>dhṛta-ratha-caraṇo’bhyayāc caladgur</strong></p>
+<p><strong>harir iva hantum ibhaṁ gatottarīyaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> mama tu mahāntam anugrahaṁ kṛtavān ity āha dvābhyām | <strong>sva-nigamam</strong> "aśastra evāhaṁ sāhāyya-mātraṁ karisyāmi" ity evaṁ-bhūtāṁ sva-pratijñāṁ hitvā, śrī-kṛṣṇaṁ śastraṁ grāhayiṣyāmīty evaṁ-rūpāṁ <strong>mat-pratijñām ṛtaṁ</strong> satyaṁ yathā bhavati, tathā <strong>adhi</strong> adhikāṁ <strong>kartuṁ</strong> yo <strong>ratha-sthaḥ</strong> san <strong>avaplutaḥ</strong> sahasaivāvatīrṇaḥ san yo’<strong>bhyayād</strong> abhimukham adhāvat | <strong>ibhaṁ hantuṁ hariḥ</strong> simhaḥ <strong>iva</strong> | kiṁ-bhūtaḥ ? <strong>dhṛto ratha-caraṇaś</strong> cakraṁ yena saḥ | tadā saṁrambheṇa mānuṣya-nāṭya-vismṛter udara-stha-sarva-bhūta-bhuvana-bhāreṇa pratipadaṁ <strong>caladguś</strong> calantī gauḥ pṛthvī yasmāt saḥ | tenaiva saṁrambheṇa pathi <strong>gataṁ</strong> patitam <strong>uttarīyaṁ</strong> vastraṁ yasya, sa mukundo me gatir bhavatv ity uttareṇānvayaḥ ||37||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : sva-nigama</strong> iti yugmakam | <strong>ṛtam</strong> iti ṛta-rūpām ity arthaḥ | ṛtaṁ ca sunṛtā vāṇi [bhā.pu. 11.19.38] iti bhagavad-uktāv ajahal-liṅgatva-śravaṇāt | <strong>caladgutvaṁ</strong> saṁrambheṇa kiñcid bhārāviṣkārāt ||37||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> svasmād api sva-bhaktam utkarṣayatīti yat śrutaṁ, tan mayā svasminn eva sākṣād dṛṣṭam ity āha dvābhyām | <strong>sva-nigamam</strong> "aśastra evāhaṁ sāhāyya-mātraṁ kariṣyāmi" iti sva-pratijñāṁ hitvā śrī-kṛṣṇaṁ śastraṁ grāhayiṣyāmīty evaṁ-rūpāṁ mat-pratijñām <strong>ṛtaṁ</strong> satyaṁ yathā bhavati, tathā <strong>adhi</strong> adhikāṁ <strong>kartuṁ</strong> <strong>ratha-sthaḥ</strong> sann eva <strong>avapluta</strong> ity atilāghavenāvaplutim, atas tasya rathād viśleṣaḥ kenāpi na lakṣita iti bhāvaḥ | alakṣita-prakāśenaikena ratha-rakṣārthaṁ sthita eveti vā | ṛtam iti sā līlā eva svābhāviky eva, na tu mad-anurodhenaiva kṛteti bhāvaḥ | <strong>dhṛto ratha-caraṇaś</strong> cakraṁ yena saḥ | <strong>abhyayāt</strong> abhimukham adhavat |</p>
+<p>dhāvanenātisaṁrambheṇāviṣkṛta-nija-mahā-balatvāc <strong>calantī gauḥ</strong> pṛthvī yasmāt saḥ | <strong>gataṁ</strong> patitam <strong>uttarīyaṁ</strong> yasya saḥ | atisaṁrambheṇottarīyaṁ gātrāt patitam asti nāsti vety api nānusandadhāna ity arthaḥ |</p>
+<p>atra kṛṣṇena sva-bhakta-vātsalya-guṇasya dustyajatvāt arjunasya yuddhāsāmarthye sati sva-pratijñām api tyaktvā svayam evārjunasya rakṣārthaṁ śastreṇa yotsyate eva tac cārjunasyāsāmarthya-prāpaṇam anyair duḥśakam ity ataḥ kṣaṇam arjunaṁ parābhūyāsya yuddhaṁ bhakta-vātsalya-dyotakaṁ drakṣyāmīti bhīṣmasya sva-manoratha-siddhy-arthaiva pratijñeti | ataḥ sva-pratijñā-bhaṅgenārjune sva-premāṇaṁ taṁ darśayitvā bhīṣmaṁ pramodya tasyotkarṣaṁ ca loke vikhyāpayāmāseti tattvam ||37||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> bhakta-vātsalyaṁ tavāty adbhutaṁ yat svotkarṣam upekṣya bhaktam utkarṣayasīty āha dvābhyām | <strong>sva-nigamam</strong> apahāya "śastra-śūnyaḥ pārtha-sāhāyaṁ vidhāsyāmi" iti sva-pratijñāṁ tyaktvā <strong>ṛtaṁ</strong> satyaṁ yathā bhavet, tathā kṛṣṇena śastraṁ grāhayiṣyāmīti mat-pratijñām <strong>adhikāṁ kartuṁ</strong> <strong>rathastho'vaplutaḥ</strong> atilāghavād anyālakṣitāvaplutika ity arthaḥ | ratha-rakṣārthaṁ tatra sthita eva rūpāntareṇa tasmād avapluto vā <strong>dhṛta-ratha-caraṇo</strong> gṛhīta-cakraḥ san māṁ hantum <strong>abhyayād</strong> abhimukham adhāvat, <strong>ibhaṁ hantuṁ hariḥ</strong> siṁha iveti duḥsaha-tejas tvaṁ sūcyate | atisaṁrambhāveśād dhāvanāc <strong>calantī</strong> kampamānā <strong>gaur</strong> bhūmir yasmāt saḥ, tasmād eva gataṁ bhuvi <strong>nipatitam uttarīyaṁ</strong> yasya saḥ | tyakta-pratijño'yaṁ prabhuḥ pralaya-velāṁ vināpi māṁ saṁhariṣyatīti bhītyā sakampāṁ bhūmiṁ prasādāmbarārpaṇenāśvāsayann ivotprekṣita ity arthaḥ ||37||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.38 ||</strong></p>
+<p><strong>śita-viśikha-hato viśīrṇa-daṁśaḥ</strong></p>
+<p><strong>kṣataja-paripluta ātatāyino me |</strong></p>
+<p><strong>prasabham abhisasāra mad-vadhārthaṁ</strong></p>
+<p><strong>sa bhavatu me bhagavān gatir mukundaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> evaṁ yadābhyayāt tadā smayamānasyātatāyino dhanvino me <strong>śitais</strong> tīkṣṇair <strong>viśikhair</strong> <strong>hato</strong>’to <strong>viśīrṇa-daṁśo</strong> vidhvasta-kavacaḥ <strong>kṣatajena</strong> rudhireṇa <strong>paripluto</strong> vyāptaḥ san <strong>prasabhaṁ</strong> balād vārayantam arjunam apy atikramya mad-vadhārtham <strong>abhisasāra</strong> abhimukhaṁ jagāma | evaṁ yo loka-pratītyārjuna-pakṣa-pātīva lakṣito vastutas tu mamaivānugrahaṁ kṛtavān yan mad-bhaktenoktaṁ vaco mā mṛṣā’stv iti <strong>sa bhagavān me gatir bhavatv</strong> ity arthaḥ ||38||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> kiṁ ca, yadaiva rathād bhūmāv avaplutaḥ, tadaiva <strong>kṣatajaiḥ</strong> rudhiraiḥ <strong>pariplutaḥ</strong> sāṅgrāmika-rudhira-nadyā bindu-vyāptaḥ | nanu kavacasya vidyamānatvāt kathaṁ tathātvam ? tatrāha—mama <strong>śitair viśikhair hatas</strong> tasya saṁrambha-sukha-vardhanārthaṁ, tad api mayā hanyate smaiveti bhāvaḥ | yato <strong>viśīrṇa</strong>-kavacaḥ plavanāt prāg evābhavad ity arthaḥ | <strong>prasabhaṁ</strong> balāt vārayantam arjunam apy atikramya mad-vadhārtham “adya sva-hastenaiva bhīṣmaṁ vadhiṣyāmi” ity abhiprāyeṇety arthaḥ | <strong>abhisasāra</strong> ity atrābhi-śabdenābhisarantaṁ nāyakam ālokitavatyā nāyikāyā iva tadānīṁ mama sukham apāram evābhūd iti dyotyate | na anyeṣāṁ <strong>mukundo</strong> mukti-prado’pi <strong>mama tu gatis</strong> tathā-bhūtatvenaiva prāpyo <strong>bhavatv</strong> iti | he kṛṣṇa ! tvām aham etad eva prārthaye iti bhāvaḥ ||38||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> yadābhyayāt, tadā sa-smitasya <strong>atatāyinaḥ</strong> śastra-pāṇer me <strong>śitair viśikhair</strong> bāṇair <strong>hataḥ</strong> tāḍitaḥ, tata eva <strong>viśīrṇa-daṁśo</strong> bhinna-kavacaḥ | <strong>kṣatajaiḥ</strong> saṅgrāmika-rudhira-sarid-bindubhiḥ <strong>paripluto</strong> vyāptāṅgaḥ | <strong>prasabhaṁ</strong> haṭhān nivārayantam arjunam atikramya mad-vadhārthaṁ yo'<strong>bhisasāra</strong>, <strong>sa me gatir</strong> ity anvayaḥ | iha kecid āhuḥ—bhīṣmadīnāṁ tad āsuvāveśāt tathā pratītir iti rājan parasya [bhā.pu. 11.31.21] iti padya-ṭippanyāṁ vyākhyāsyate, adhunā tad-āveśa-kṣayāt kṣamāpaṇaṁ kṛtam iti ||38||</p>
+<p><strong>...</strong></p>
+<p><strong>|| 1.9.39 ||</strong></p>
+<p><strong>vijaya-ratha-kuṭumba ātta-totre</strong></p>
+<p><strong>dhṛta-haya-raśmini tac-chriyekṣaṇīye |</strong></p>
+<p><strong>bhagavati ratir astu me mumūrṣor</strong></p>
+<p><strong>yam iha nirīkṣya hatā gatāḥ sa-rūpam</strong> **||**</p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> tad evam anyāyair api bhṛtya-rakṣā-vyagre kṛṣṇe ratim āśāste | <strong>vijayo</strong>’rjunas tasya <strong>ratha</strong> eva <strong>kuṭumbam</strong> akṛtya-śatair api rakṣaṇīyo yaya tasmin | <strong>āttaṁ totraṁ</strong> pratodo yena tasmin | <strong>dhṛtāś</strong> ca te <strong>hayānāṁ raśmayaḥ</strong> pragrahās te santi yasya tasmin | vrīhy-ādibhyaś ca ity anakārāntād pi raśmi-śabdādiniḥ | <strong>tac-chriyā</strong> tayā sārathya-śriyā <strong>īkṣaṇīye</strong> śobhamāne | <strong>mumūrṣor</strong> martum icchoḥ | nanv anyāya-vartini kim iti ratiḥ prārthyate ? ata āha—<strong>bhagavaty</strong> acintyaiśvarye | tad āha—<strong>iha</strong> yuddhe <strong>hatāḥ</strong> sarve <strong>yaṁ nirīkṣya sa-rūpaṁ</strong> tat-samānaṁ rūpaṁ <strong>gatāḥ</strong> prāptā iti divya-dṛṣṭyā paśyann āha ||39||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> vijayeti yugmakam | maryādātikrame’py adoṣāya sāmarthyam āha—bhagavatīti | yathārudro’bdhijaṁ viṣaṁ [bhā.pu. 10.33.30] iti nyāyāt | tad-atikrame ca svābhāvikaṁ kāruṇyam eva kāraṇam iti darśayati—<strong>yam iha</strong> iti | ato’sminn eva <strong>ratir mamāstu</strong> ||39|| [prīti-sandarbha 81]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> tad evam anyāyair api bhakta-rakṣā-vyagre kṛṣṇe ratim āśāste | <strong>vijayasya</strong> arjunasya <strong>ratha</strong> eva <strong>kuṭumbo</strong>’kṛtyair api rakṣaṇīyo yasya tasmin | <strong>totraṁ</strong> pratodaḥ | raśmayaḥ pragrahāḥ, <strong>dhṛtā haya-raśmayo</strong> yasya santīti vrīhy-āditvāt iniḥ | <strong>īkṣaṇīyā</strong> iti vāma-haste aśva-dhāraṇa-rajjuḥ, dakṣiṇa-haste pratodaḥ, mukhāravinde huṁ hum iti tan-nodana-śabda iti śobhayā yan mādhuryam īkṣaṇīyaṁ, tan mayaiva tadā sva-cakṣurbhyām īkṣitaṁ, na tv arjunenāpi iti bhāvaḥ | tasmin <strong>bhagavati mama ratir astu mumūrṣor</strong> iti | ata evāhaṁ samprati martum icchāmi, yan mṛtvā tad eva mādhuryaṁ muhur drakṣyāmi, sañjīvaṁs tu tat kathaṁ draṣṭuṁ prāpsyāmi ? prakaṭa-prakāśe tasyā līlāyā bhagavatā samāptī-kṛtatvād iti bhāvaḥ | atra mriyamāṇasyety anuktvā san-pratyayena icchādhīna-mṛtyor bhīṣmasya bhagavataḥ sakāśād api tal-līlāyām atilobho vyajyate | tena ca sā yuddha-līlāpi nityety anyasyā līlāyā nityatve kaimutyam ānītam |</p>
+<p>nanu satyaṁ tasyām eva me sārathya-līlāyāṁ tvam atyāsakto yat prati-ślokam eva tām āsvadayaṁs tām evodgiraṁs tal-līlā-viśiṣṭe eva mayi ratiṁ prārthayase, kintu samprati mṛtvaiva tal-līlā-prāptau tava kiṁ pramāṇam ? ity atra “maraṇe yā matiḥ sā gatiḥ” iti prasiddhāt pramāṇād api tava darśanam eva paraṁ pramāṇam ity āha—yam iheti | <strong>yaṁ nirīkṣya hatā</strong> yuddhe anyenāpi hatāḥ santaḥ asura-svabhāvā api tādṛśa-jñāninām api <strong>sarūpaṁ</strong> sāyujya-muktiṁ prāptāḥ | “ahaṁ tu bhaktaḥ, tatrāpi maraṇa-kāle tādṛśa-matimāṁs taṁ tvāṁ sākṣād dṛṣṭvā mṛtvā kathaṁ na tāṁ līlāṁ prāpsyāmi ?” iti bhāvaḥ | atra nara-sārathyam anadhikāribhyo’pi sāyujya-dāyitvam iti yugapad evānaiśvarya-mahaiśvarya-svīkāra-lakṣaṇaṁ mahā-mādhuryaṁ sarva-bhagavat-svarūpāsādhāraṇam eva tadānīm uditam iti jñeyam ||39||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> punar api sārathya-veśe kṛṣṇe ratiṁ prārthayate—<strong>vijayasya rathaḥ kuṭumbam</strong> anyāyair api rakṣaṇīyaṁ yasya tasmin | <strong>ātta-totre</strong> gṛhīta-pratode, dhṛtā hayānāṁ raśmayaḥ pragrahāḥ santy asyeti brīhy-āditvād iniḥ, tac-chriyā varṇitayā sārathya-veśa-śobhayekṣaṇīye darśanīye <strong>bhagavati me ratir astu</strong>, <strong>mumūrṣor</strong> iti “ante yā matiḥ sā gatiḥ” iti prasiddheḥ, sa tādṛśo mama prastād ity arthaḥ? kaimutyā-pādakam atra pramāṇam āha—<strong>yam</strong> iti | yaṁ tādṛśaṁ kṛṣṇaṁ <strong>nirīkṣya</strong> tasmin yuddhe yenaiva bhīmārjunādy-antar vartinā <strong>hatāḥ</strong> sarve <strong>svarūpaṁ</strong> gatāḥ, prādurbhāvita-guṇāṣṭakaṁ sva-svarūpam āvirbhūta-sārvajñādy ananta-guṇakaṁ bhagavat-svarūpaṁ ca prāpur ity arthaḥ ||39||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.40 ||</p>
+<p><strong>lalita-gati-vilāsa-valgu-hāsa-</strong></p>
+<p><strong>praṇaya-nirīkṣaṇa-kalpitoru-mānāḥ |</strong></p>
+<p><strong>kṛtam anukṛtavatya unmadāndhāḥ</strong></p>
+<p><strong>prakṛtim agan kila yasya gopa-vadhvaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> kṣatra-dharmeṇa yudhyamānās tat-sarūpaṁ prāpyur ity etan na citram | yato madāndhā api prāpyur ity āha | <strong>lalita-gatiś</strong> ca <strong>vilāsaś</strong> ca <strong>valgu-hāsādiś</strong> ca mañju-gaty-ādibhir ātmīyais tadīyair vā <strong>kalpita urur mānaḥ</strong> pūjā yāsāṁ tāḥ | ata <strong>ut</strong>kaṭena <strong>madenāndhā</strong> vivaśāḥ | ata eva tad-eka-cittatvena tasya <strong>kṛtaṁ</strong> karma govardhanoddhāraṇādikam <strong>anukṛtavatyo</strong> <strong>gopa-vadhvo</strong> <strong>yasya</strong> <strong>prakṛtiṁ</strong> svarūpam <strong>agan</strong> agaman | ma-kāra-lopas tv ārṣaḥ | <strong>kila</strong> prasiddham | “tasmin me ratir astu” [39] iti pūrveṇaivānvayaḥ ||40||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> tat-svabhāva-mahimnaḥ sārūpya-prāpaṇatvaṁ nāma kiyān utkarṣaḥ ? yata etāvato’pi premno janakatvaṁ dṛśyata ity āha—<strong>laliteti</strong> | atra <strong>kṛtānukaraṇaṁ</strong> nāma līlākhyo nāyikānubhāvaḥ | tad uktaṁ kriyānukaraṇaṁ līlā [u.nī. 10.28] iti | <strong>prakṛtiṁ</strong> svabhāvam, tādṛśa-premāveśo jātaḥ | yena tat-svabhāva-nija-svabhāvayor aikyam eva tāsu jātam ity arthaḥ | yathā śrīmad-ujjvala-nīlamaṇau mahā-bhāvodāharaṇam—</p>
+<blockquote>
+<p>rādhāyā bhavataś ca citta-jatunī svedair vilāpya kramāt</p>
+<p>yuñjann adri-nikuñja-kuñjara-pate nirdhūta-bheda-bhramam |</p>
+<p>citrāya svayam anvarañjayad iha brahmāṇḍa-harmyodare</p>
+<p>bhūyobhir nava-rāga-hiṅgula-bharaiḥ śṛṅgāra-kāruḥ kṛtī || [u.nī. 15.155] iti |</p>
+</blockquote>
+<p>||40|| [prīti-sandarbha 81]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu yat sārathya-sambadhinyai līlāyai sarva-tattvajño’pi tvaṁ spṛhayasi, so’rjuna eva tarhi mama sarveṣu premavat-parikara-vṛndeṣv eko mukhya iti nirdhāryate ? maivam | tato’rjunād apy atimukhyatamāḥ sarvato’pi premotkarṣavanto ye tava priya-janā vartante, na teṣāṁ padavīṁ prārthayitum api ko’pi sāhasaṁ dhatte | bhavatu, tad api tad-uddeśenāpy asminn anta-kāle kṛtārthībhavāmīty āha—laliteti |</p>
+<p><strong>lalita-gatiś</strong> ca rāsa-nṛtyādi-vaidagdhī, kāyikī <strong>vilāsaś</strong> ca dhīra-lālity-ādi-vaidagdhī, mānasī <strong>valgu-hāsaś</strong> ca parihāsa-vaidagdhī, vācikī <strong>praṇaya-nirīkṣaṇaṁ</strong> ca prema-maya-sarva-bhāva-vyañjaka-kaṭākṣa-vaidagdhī cākṣuṣī ca tair <strong>upakalpito</strong> dattaḥ <strong>urur māna</strong> ādaraḥ pūjā vā yābhyas tāḥ | tena svasmiṁs tāḥ prasādayituṁ svīyān asādhāraṇān sarvān eva sādguṇya-bhāvāṁs tāsu viniyuktavān | atas tāsāṁ nirupādhikasya premātiśayasya phalaṁ yat sva-sādguṇya-sarvasvārpaṇa-pūrvaka-tvat-kartṛkānurañjana-prāptiḥ sā hy ayantraṇaivobhayataḥ sukha-maya-mahā-vaśīkāra-vyañjikā | arjunasya tu premṇaḥ phalaṁ vaśīkāra-vyañjikā sārathya-dūty-ādi-mātra-prāptir yā, sā tūbhayato yantraṇā-mayīti na tat-sama-kakṣatāṁ prāptum arhaty arjuna iti bhāvaḥ | atraiva tṛtīyānta-padārthe bahuvrīhau, tābhir api svīya-sādguṇya-sarvasvārpaṇena so’nurañjita iti parasparānurañjana-sukha-mayaṁ sakhyaṁ vyañjitam |</p>
+<p>tata evāsādhāraṇa-saubhāgya-pradānam āha—<strong>kṛtaṁ</strong> rāse nṛtyaṁ gītaṁ vā vādanāni ca yathā, tathaiva tā apy <strong>anukṛtavatyaḥ</strong> tat-sāhityenaiva rāse tāsāṁ tathā nṛtyādy-ukteḥ |</p>
+<p>na ca tāsāṁ tat-tac-chikṣaṇābhyāsaḥ ko’py āsīd ity āha—<strong>unmadena</strong> mahā-premotthena <strong>andhāḥ</strong> vyavahāra-mātram adṛṣṭavatyaḥ | ataḥ <strong>kila</strong> ity āścarye, <strong>yasyaprakṛtiṁ</strong> svabhāvam eva <strong>agacchan</strong> bhagavato nṛtya-gītādi-vaidagdhy-ādayaḥ svābhāvikāḥ asādhāraṇā anantā eva ye guṇāḥ, tān sarvān api tena dattān prāpur ity arthaḥ | arjunāya tu svam asādhāraṇaṁ tad-apekṣitaṁ baliṣṭhatvam api bhagavatā na dattam iti |</p>
+<p>yad vā, <strong>kṛtaṁ</strong> govardhana-dhāraṇādikam | <strong>unmada</strong> unmāda iti virahaś ca darśitaḥ | evaṁ cātimandās tāvat sāyujyaṁ prāpuḥ | atyutkṛṣṭāḥ premṇaḥ parāṁ kāṣṭhām | ahaṁ tu tayor madhya-vartī svābhīpsitāṁ tava sārathya-līlāṁ kathaṁ na prāpsyāmi ? iti bhāvaḥ ||40||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> sārathya-veśe ratiḥ prārthitā, atha tad-dattena sārvajñyena sphuritāṁ nanda-rāja-putrasya tasyātipriyāṁ śṛṅgāra-līlāṁ śrāvayati—lalita-gatiś ca rāsa-nṛtya-rūpā, vilāsaś ca dhīra-lālitya-dhīrātvādi guṇa-hetuko vihāra-viśeṣaḥ! valgur manojñas tad-vihāropoyāgī hāsaś ca praṇaya-nirīkṣaṇaṁ ca premārdraḥ kaṭākṣo hārdavyañjī | taiḥ kalpito racita urumāno mahā-satkāro yāsāṁ yābhir veti mitho'nurañjanoktā | kṛtaṁ bhagavatā yad-rāse nṛtyādi tad anukṛtavatyaḥ | tena sārdhame tāsāṁ nṛtyādy abhidhānāt | unmadāndhāḥ prema-mattā gopavadhvaḥ yasya prakṛti-magan prāpuḥ, malopa ārṣaḥ | svabhāvaḥ prakṛtiḥ śīlam iti dhanañjayaḥ | kṛtaṁ govardhanoddharaṇādi veti virahaś ca vyañjitaḥ ||40||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.41 ||</p>
+<p><strong>muni-gaṇa-nṛpa-varya-saṅkule’ntaḥ-</strong></p>
+<p><strong>sadasi yudhiṣṭhira-rājasūya eṣām |</strong></p>
+<p><strong>arhaṇam upapeda īkṣaṇīyo</strong></p>
+<p><strong>mama dṛśi-gocara eṣa āvir ātmā ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> jagat-pūjyatām anusmarann āha | muni-gaṇair nṛpair yaiś ca saṅkule vyāpte’ntaḥ-sadasi sabhā-madhye yudhiṣṭhirasya rāja-sūye eṣāṁ muni-gaṇādīnām īkṣaṇīyaḥ aho rūpam aho mahimety evam āścaryeṇa vilokanīyaḥ sann arhaṇam upapade prāpa | eṣa jatām ātmā mama dṛśi-gocaro dṛṣṭi-viṣayaḥ sann āviḥ prakaṭo vartate | aho me bhāgyam iti bhāvaḥ ||41||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> tad evaṁ sarva-śubha-svabhāvatvam uktvā sarva-pūjyatva-sarva-manoharatva-sarva-durlabha-darśanatvāny āha—muni-gaṇeti | ātmā paramātmā <em>||</em>41||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> kiṁ ca, samprati pratyakṣīkṛtaṁ mad-bhāgyam eva tat-prāpter āvaśyakatvaṁ kathayatīty āha munīti | antaḥ-sadasi sabhā-madhye yudhiṣṭhirasya rājasūye eṣāṁ muni-gaṇādīnām īkṣaṇīyaḥ aho rūpam aho mahimety evam āścaryeṇa vilokanīyaḥ san upapede prāpa yaḥ sa eṣa mamātmā mat-prāṇa-nāthaḥ samprati mama dṛśi gocara eva mat-prārthitaṁ dadāna evāste iti ||41||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> sarvābhyacyatvaṁ smaraṁs tad eva svaprāpyaṁ rūpaṁ prārthayate—ambhaḥ-sadasi sabhāmadhye yudhiṣṭhirasya rājasūye yajñe munigaṇādīnām aho lāvaṇyam aho mahimā ity evam īkṣaṇīyaḥ sann arhaṇam agra-pūjām upapede, sa eṣa ātmā viśvāntaryāmī vibhu-vijñānānandaḥ kṛṣṇo mama dṛg-gocaraḥ san āvirāste, madīyaṁ bhāgyaṁ mahad iti bhāvaḥ ||41||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.42 ||</p>
+<p><strong>tam imam aham ajaṁ śarīra-bhājāṁ</strong></p>
+<p><strong>hṛdi hṛdi dhiṣṭhitam ātma-kalpitānām |</strong></p>
+<p><strong>pratidṛśam iva naikadhārkam ekaṁ</strong></p>
+<p><strong>samadhi-gato’smi vidhūta-bheda-mohaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> so’haṁ kṛtārtho’smīty āha—tam imam ajaṁ samyag adhigataḥ prāpto’smi | samyaktvam āha—vidhūta-bheda-mohaḥ | tad-arthaṁ bhedasyaupādhikatvam āha—ātma-kalpitānāṁ svayaṁ nirmitānāṁ śarīra-bhājāṁ prāṇināṁ hṛdi hṛdi prati-hṛdayaṁ dhiṣṭhitam adhiṣṭhitam | adhiṣṭhāya sthitam iti yāvat | a-kāra-lopas tv ārṣaḥ | naikadhā anekadhā | adhiṣṭhāna-bhedād anekadhā bhātam ity arthaḥ | atra dṛṣṭāntaḥ—sarva-prāṇināṁ dṛśaṁ dṛśaṁ pratyekam evārkam anekadhā pratītam iveti ||42||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> paramātmatva-sthāpanāya tatra vibhūmatvaṁ darśayan svam atyupakalpanam evopasaṁharati—tam iti | tam imam agrata evopaviṣṭaṁ śrī-kṛṣṇaṁ vyaṣṭy-antaryāmi-rūpeṇa nijāṁśena śarīra-bhājāṁ hṛdi hṛdi dhiṣṭhitam |</p>
+<blockquote>
+<p>kecit sva-dehāntar hṛdayāvakāśe</p>
+<p>prādeśa-mātraṁ puruṣaṁ vasantam || [bhā.pu. 2.2.8]</p>
+</blockquote>
+<p>ity-ukta-diśā tat-tad-rūpeṇa bhinna-mūrtimatsu vasantam apy ekam abhinna-mūrtim eva samadhi-gato’smi | ayaṁ paramānanda-vigraha eva vyāpakaḥ svāntar bhūtena nijākāra-viśeṣeṇāntar yāmitayā tatra tatra sphuratīti vijñātavān asmi, yato’haṁ vidhūta-bheda-mohaḥ | asyaiva kṛpayā durīkṛto bheda-mohaḥ | bhagavad-vigrahasya vyāpakatvāsambhāvanā-janita-tan-nānātva-jñāna-lakṣaṇo moho yasya tathā-bhūto’ham |</p>
+<p>teṣu vyāpakatve hetuḥ—ātma-kalpitānām, ātmany eva paramāśraye prāduṣkṛtānām | tatra dṛṣṭāntaḥ—pratidiśaṁ iti | prāṇināṁ nānā-deśa-sthitānām avalokanam avalokanaṁ prati, yathaika evārko vṛkṣa-kuḍyādy-upari-gatatvena tatrāpi kutracid avyavadhānaḥ sampūrṇatvena sa-vyavadhānas tv asampūrṇatvenānekadhā dṛśyate, tathety arthaḥ | dṛṣṭānto’yam ekasyaiva tatra tatrodaya ity etan-mātrāṁśe | vastutas tu śrī-bhagavad-vigraho’cintya-śaktyā tathā bhāsate, sūryas tu dūrastha-vistīrṇātmatā-svabhāveneti viśeṣaḥ |</p>
+<p>athavā taṁ pūrva-varṇita-svarūpam imam agrata evopaviṣṭaṁ śarīra-bhājāṁ hṛdi hṛdi santam api samadhigato’smi | yadyapy antaryāmi-rūpam etasmād rūpād anyākāraṁ, tathāpy etad-rūpam evādhunā tatra tatra tathā paśyāmi | sarvato mahā-prabhāvasya tasya rūpasyāgrato’nyasya rūpasya sphuraṇāśakter iti bhāvaḥ | atra dṛṣṭānto deśa-bhede’py abheda-bodhanāya jñeyaḥ, na tu pūrṇāpūrṇatva-vivakṣāyai |</p>
+<p>amīlita-dṛg vyadhārayat [bhā.pu. 1.9.30] iti, kṛṣṇa evaṁ bhagavati mano-vāk-kāya-vṛttibhiḥ [bhā.pu. 1.9.43] ity upakramopasaṁhārādibhir atra śrī-vigraha eva prastūyate | tato nedaṁ padyaṁ brahma-paraṁ vyākhyeyam iti ||42|| [bhagavat-sandarbha 31]</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu kathaṁ tarhi me ratir astv ity eka-vāram api yuṣmat-prayogeṇa na brūṣe kintu pratiślokam eva | vijaya-sakhe vijaya-ratha-kuṭumbe me ratir astu | caraṇa-ratiḥ paramasya tasya me’stu sa bhavatu me bhagavān gatir iti tac-chabda-prayogeṇeveti tatrāha—tam iti |</p>
+<p>taṁ pārtha-sārathiṁ pragraha-pratodālaṅkṛta-dhāma-dakṣiṇa-karaṁ mama hṛdi sphurantam eva imam adhigato’smi, na tv imam eva tam | tasyaiva hṛdi ayaṁ praveṣṭuṁ na śaknotīti bhāvaḥ | taṁ kīdṛśam ? ajaṁ na jāyate ity ajaḥ, taṁ na kevalaṁ tadānīṁ yuddha-kāle eva tādṛśa-svarūpo mac-cakṣuṣor agre sa jāto’pi tu yuddhāt pūrvam api svābhāvikena mama rathena mama hṛdi tathā bhāta āsīd eveti bhāvaḥ | tenātra na mama doṣaḥ, kintu hṛdi-sthaḥ parameśvaro yaṁ yaṁ yathā sphorayati bhadram abhadraṁ vā, sa tathaivāsās te ity āha—śarīra-bhājāṁ jīvānāṁ hṛdi hṛdi dhiṣṭhitam, a-kāra-lopaś chāndasaḥ | ātmanāṁ svayam eva kalpitānāṁ yathāgneḥ kṣudrā visphuliṅgā vyuccaranti [bṛ.ā. u. 2.1.20] iti śruteḥ |</p>
+<p>na cāhaṁ hṛdi-sthaṁ tat-pada-vācyaṁ pārtha-sārathim anyaṁ tathā purastham idaṁ pada-vācyaṁ caturbhujam anyaṁ jānāmīty āha—pratīti | ākāśa-stham ekam arkam api janānāṁ pratidṛśam avalokanaṁ prati naikadhā anekadhā, “ayaṁ man-mūrdhopari arkaḥ” iti pratimūrdhopari-stham arkaṁ tat-tad-dṛṣṭi-bhedād anekadhā bhātam iveti | vidhūto durīkṛto bheda-rūpo moho yena saḥ |</p>
+<p>ayam arthaḥ—mama hṛdi tathā yudhiṣṭhirādīnāṁ vasudevādīnām uddhavādīnāṁ nandādīnāṁ gopikānāṁ ca hṛdi bhāva-bhedena prema-tāratamyena ca pṛthak-pṛthak-līlatayaiva yadyapi sphurati, tad apy eka eva kṛṣṇa iti jānāmi | tathā teṣāṁ tat-tat-premṇāṁ tat-tad-bhāvānāṁ cotkarṣa-tāratamyaṁ sarvam ahaṁ jānāmy eva | tad api me pārtha-sārathāv eva svābhāvikyāsaktiḥ | tāṁ tyaktuṁ naiva śaknomi | pura-sthite’smiṁś caturbhuja-rūpe dhāraṇāpi kṛtā, sāpy akiñcitkarīvābhūd iti ||42||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> nanu pārtha-sārathim eva mām arthayase, yoginas tu prādeśa-mātraṁ tattvaṁ cintayanti, kecit sva-dehāntar hṛdayāvakāśe prādeśa-mātraṁ puruṣaṁ vasantam [bhā.pu. 2.2.8] iti-smaraṇāt | taṁ kim anayo rūpayor bhedo'sti? tatrāha—tam iti | taṁ pārtha-sārathim evemaṁ hṛd-gataṁ prādeśa-mātraṁ samadhi-gato jānann asmi | sa eva svāṁśena tanmātra ity arthaḥ | kīdṛśo'ham ity āha—vidhūto bheda-rūpo moho yasya saḥ | eko'pi san bahudhā yo'vabhāti [go.tā.u. pūrva. 32] iti śruteḥ | tam imaṁ ca kīdṛśam ity āha—ajaṁ nūtana-deha-lābha-śūnyaṁ nitya-mūrtim ity arthaḥ | ātmanā svenaiva kalpitānāṁ nirmitānāṁ śarīra-bhājāṁ jīvānāṁ hṛdi hṛdi dhiṣṭhitaṁ niyāmakatayā sthitam | alopa ārṣaḥ | śarīra-bhāktvena jīvānāṁ nirmāṇam ihoktaṁ, yathāgneḥ kṣudrā visphuliṅgā vyuccaranti [bṛ.ā.u. 2.1.20] iti, sarva-bhūtāntarātmā [brahma-vidyopa. 105] iti ca śruteḥ | kathaṁ? pratidṛśaṁ pratinetram anekadhā dṛśyamānam ekam arkam iva | na ca mokṣe jīveśayor bhedo niṣiddhaḥ, nirañjanaḥ paramaṁ sāmyam upaiti [mu.u. 3.1.3] iti tatra tasya śrutatvāt ||42||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.43 ||</p>
+<p><strong>sūta uvāca—</strong></p>
+<p><strong>kṛṣṇa evaṁ bhagavati mano-vāg-dṛṣṭi-vṛttibhiḥ |</strong></p>
+<p><strong>ātmany ātmānam āveśya so’ntaḥ-śvāsa upāramat ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> mano-vāg-dṛṣṭīnāṁ vṛttibhiḥ | paramātmani śrī-kṛṣṇe | antar eva vilīnaḥ śvāso yasya saḥ ||43||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : evam ātmani</strong> hṛdi sthite <strong>kṛṣṇe,</strong> pārtha-sārathāv ity arthaḥ | <strong>ātmānaṁ</strong> svam <strong>āveśya</strong> āveśa-yuktaṁ kṛtvā | <strong>antar</strong> eva līnaḥ <strong>śvāso</strong> yasya saḥ | bahir vṛtter <strong>upararāma</strong> ||43||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> ātmani vibhu-vijñānānande kṛṣṇe bhagavaty evaṁ pārtha-sārathitvena vijñāte mana-ādi-vṛttibhir ātmānaṁ svamāveśya nirataṁ kṛtvā pūrakeṇāntaḥ-śvāsaḥ sann upāramat nivṛttim agāt | bhīṣmasya paramārtyaikāntitvāt-tat-prāṇāder ihaiva vigamaḥ, sa tu viśuddhaḥ puraḥsthaṁ kṛṣṇaṁ prāpety ārta-bhāga-yājñavalkya-praśnottarā-dveditavyam, etac ca spaṣṭau hy ekeṣām [ve.sū. 4.2.13] iti sūtra-bhāṣye nirṇītaṁ draṣṭavyam | evam aspandāsuryathā taruḥ [bhā.pu. 12.6.9] ity atra parīkṣito'pi tādṛśasya vyākhyeyam ||43||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.44 ||</p>
+<p><strong>sampadyamānam ājñāya bhīṣmaṁ brahmaṇi niṣkale |</strong></p>
+<p><strong>sarve babhūvus te tūṣṇīṁ vayāṁsīva dinātyaye ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : niṣkale</strong> nirupādhau parātmani | <strong>saṁpadyamānaṁ</strong> militam <strong>ājñāyā</strong> ālakṣya | <strong>vayāṁsi</strong> pakṣiṇa iva ||44||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> sampadyamānam iti | <strong>niṣkala</strong>-<strong>brahma</strong>-śabdena māyātīto narākṛti-para-brahma-bhūtaḥ śrī-kṛṣṇa evocyate | tasmin sampadyamānatā tat-saṅgatir eva | tathoktaṁ saptame—</p>
+<blockquote>
+<p>adhokṣajālambham ihāśubhātmanaḥ</p>
+<p>śarīriṇaḥ saṁsṛti-cakra-śātanam |</p>
+<p>tad brahma-nirvāṇa-sukhaṁ vidur budhās</p>
+<p>tato bhajadhvaṁ hṛdaye hṛd-īśvaram || [bhā.pu. 7.7.37] iti |</p>
+</blockquote>
+<p>atra bhīṣmasya vasutvāt— yāvad-adhikāram avasthitir ādhikārikāṇāṁ [ve.sū. 3.3.33] ity adhikaraṇa-virodhaḥ syād iti cen, na | līlayā svāṁśena tatrāpy avasthiti-sambhavāt | tasya sarveṣu lokeṣu kāmācāro bhavati [chā.u. 7.25.2] iti mukti-viśeṣa-pratipādaka-śruteś ca | evam eva mahābhāratāvirodho’pi syāt ||44||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> evaṁ bhīṣmaḥ svābhilaṣitaṁ pārtha-sārathiṁ prāpa, lokās tu tad-avidvāṁso <strong>bhīṣmo brahmaṇi</strong> līno <strong>babhūva</strong> iti jānanti smety āha—sampadyeti | ajñāne dṛṣṭāntaḥ—<strong>vayāṁsi</strong> pakṣiṇaḥ <strong>dinasyātyaye</strong> avasāne sati dinaṁ na dṛṣṭam iti dinasya svarūpa-dhvaṁsam eva jñātvā yathā <strong>tuṣṇīṁ bhavanti</strong> na śabdāyanta ity arthaḥ | na tu vastuto dinaṁ naśyati, tat-kṣaṇe’pi varṣāntare tasya sthiter avagamāt yāma-catuṣṭayānantaraṁ tatrāpi punar āgamāt | evaṁ bhīṣmasyāpy atyaye bhīṣmo mukta ity ajñā vidanti | vijñās tu tadaiva prakaṭa-prakāśe ratha-caraṇa-pāṇinā kṛṣṇena bhūmau dhāvatā saha bhīṣmo yudhyata eveti punar āgāmi-kṛṣṇāvatāre tena saha bhīṣma āvirbhaviṣyaty eveti jānanti |</p>
+<p>yad vā, niṣkaṁ padakaṁ lāti tasmin brahmaṇi śrī-kṛṣṇa ity arthaḥ | brahma-sāyujya-prāptis tu na vyākhyeyā | nitya-pārṣada-bhīṣmeṇa phalābhisandhi-rahitāyā rater vāñchitatvāt mokṣasyākāmitatvāt bhagavatāpi balād akāmita-phala-dānānaucityāt ||44||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tadā śruta-bhīṣmābhy arthanāḥ sarve muni-prabhṛtayo niṣkale padakābharaṇadhāriṇe kṛṣṇe brahmaṇi bhīṣmaṁ saṁpadya-mānaṁ milantam ājñāya tūṣṇīṁ babhūvuḥ—</p>
+<blockquote>
+<p>niṣkamantrī sāṣṭa-hemaśate dīnāra-karṣayoḥ |</p>
+<p>vakṣgolaṅkaraṇe hema-pātre hema-pale'pi ca || iti medinī |</p>
+</blockquote>
+<p>vayāṁsi pakṣiṇaḥ ||44||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.45 ||</p>
+<p><strong>tatra dundubhayo nedur deva-mānava-vāditāḥ |</strong></p>
+<p><strong>śaśaṁsuḥ sādhavo rājñāṁ khāt petuḥ puṣpa-vṛṣṭayaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) :</strong> devair mānavaiś ca vāditāḥ | rājñāṁ madhye ye sādhavo’nusūyavaḥ ||45||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> tatreti <strong>rājñāṁ</strong> sabhāyām iti śeṣaḥ | <strong>sādhavo</strong> muny-ādayaḥ ||45||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> rājñāṁ madhye sādhavo’nasūyavaḥ ||45||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> rājñāṁ madhye ye sādhavo'nasūyavaste tasya yaśaḥ śaśaṁsur ūcuḥ ||45||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.46 ||</p>
+<p><strong>tasya nirharaṇādīni samparetasya bhārgava |</strong></p>
+<p><strong>yudhiṣṭhiraḥ kārayitvā muhūrtaṁ duḥkhito’bhavat ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : nirharaṇādīni</strong> dāha-saṁskārādīni | <strong>samyak</strong> paretasya, muktasyāpīty arthaḥ ||46||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : nirharaṇādīni</strong> saṁskārān | <strong>samparetasya</strong> iti nitya-pārṣade bhīṣme vasoḥ praveśāt tasyaiva deha-tyāgo bhagavatā darśitaḥ | yāvad adhikāram avasthitir ādhikārikāṇāṁ [ve.sū. 3.3.33] iti nyāyena tasyaivāṁśena vasutve ca sthitir bhagaval-loke prāptiś ca | ataḥ samyak paraṁ parameśvaram itasya prāptasyeti vyākhyeyam | tasya sarveṣu lokeṣu kāma-caṛo bhavati [chā.u. 7.25.2] iti mukti-viśeṣa-pratipādaka-śruteḥ | nitya-pārṣada-bhūtasya bhīṣmasya tv aprakaṭa-līlāyāṁ pārthasārathi-prāptir uktaiva | ata eva tatra so’ntaḥ śvāsaḥ prāṇo yasya tathā-bhūtaḥ sann upāramat prakaṭa-prakāśād uparato’bhūd iti | tatrārthaḥ sammataḥ dehaṁ tatyāja prāṇāṁs tatyājety-ādy anukter iti | <strong>mūhūrtaṁ duḥkhita</strong> iti loka-vyavahāra-rakṣārtham ||46||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tasya bhīṣma-dehasya nirharaṇādīni karmāṇi kārayaitvā, kīdṛśasya? sampare tasya tyakta-prāṇasya, yudhiṣṭhiro lokarītim āśritya duḥkhito'bhavat, idam iha bodhyam—bhīṣmaḥ kṛṣṇaṁ prāpa, samyak paraṁ kṛṣṇam itasyety arthāt | tat-praviṣṭau vasustu svargam agād adhikārānte tasya mokṣo bhāvī, yāvad adhikāram avasthitir ādhikārikāṇām [ve.sū. 3.3.33] iti nyāyād iti ||46||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.47 ||</p>
+<p><strong>tuṣṭuvur munayo hṛṣṭāḥ kṛṣṇaṁ tad-guhya-nāmabhiḥ |</strong></p>
+<p><strong>tatas te kṛṣṇa-hṛdayāḥ svāśramān prayayuḥ punaḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : tasya guhya-nāmabhir</strong> vedoktaiḥ | kṛṣṇa eva hṛdayaṁ yeṣāṁ te <strong>kṛṣṇa-hṛdayāḥ</strong> ||47||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) : guhya-nāmabhir</strong> dustarkya-mahima-vyañjaka-nāmabhiḥ kṛṣṇa-govindety-ādibhiḥ ||47||</p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) : tad-guhya-nāmabhiḥ,</strong> he bhakta-vatsala kṛṣṇa premādhīna namas tvac-cāturyāyaiveti ||47||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> tasya guhyanām abhir bhakta-bandhu-bhaktādhīnety-ādibhiḥ ||47||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.48 ||</p>
+<p><strong>tato yudhiṣṭhiro gatvā saha-kṛṣṇo gajāhvayam |</strong></p>
+<p><strong>pitaraṁ sāntvayām āsa gāndhārīṁ ca tapasvinīm ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : pitaraṁ</strong> dhṛtarāṣṭram | <strong>tapasvinīṁ</strong> santāpavatīm ||48||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> pitaraṁ dhṛtarāṣṭram ||48||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> pitaraṁ dhṛtarāṣṭraṁ, tapasvinīṁ putra-śokākulām ||48||</p>
+<p><strong>...</strong></p>
+<p>|| 1.9.49 ||</p>
+<p><strong>pitrā cānumato rājā vāsudevānumoditaḥ |</strong></p>
+<p><strong>cakāra rājyaṁ dharmeṇa pitṛ-paitāmahaṁ vibhuḥ ||</strong></p>
+<p><strong>śrīdhara-svāmī (bhāvārtha-dīpikā) : rājā</strong> yudhiṣṭhiraḥ | <strong>anumato</strong>’nujñātaḥ ||49||</p>
+<hr />
+<p><strong>jīva-gosvāmī (krama-sandarbhaḥ), viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> <em>na vyākhyātam.</em></p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> pitrā dhṛtarāṣtreṇā ||49||</p>
+<p>iti sārārtha-darśinyāṁ harṣiṇyāṁ bhakta-cetasām |</p>
+<p>navamo’tra prathame saṅgataḥ saṅgataḥ satām ||*||</p>
+<hr />
+<p><strong>baladeva-vidyabhūṣaṇaḥ (vaiṣṇavānandinī) :</strong> pitrā dhṛtarāṣṭreṇa ||49||</p>
+<p>iti śrī-vaiṣṇavānandinyāṁ prathama-skandha-ṭippanyāṁ navamo'dhyāyaḥ ||9||</p>
+<p><strong>...</strong></p>
+<p>iti śrīmad-bhāgavate mahā-purāṇe brahma-sūtra-bhāṣye</p>
+<p>pāramahaṁsyaṁ saṁhitāyāṁ vaiyāsikyāṁ prathama-skandhe</p>
+<p>yudhiṣṭhira-rājya-pralambho nāma</p>
+<p>navamo’dhyāyaḥ</p>
+<p>||9||</p>
+<p><strong>...</strong></p>
+</body>
+</html>

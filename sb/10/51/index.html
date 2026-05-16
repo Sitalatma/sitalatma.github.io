@@ -173,11 +173,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-<style>
-body { font-family: "Libertinus Serif", serif; }
-strong { font-weight: 600; }
-p { line-height: 1.5; font-size: 20px;}
-</style>
+<link rel="stylesheet" href="../../style.css">
+<script>
+(function(){
+  const saved = localStorage.getItem("theme");
+  const theme = saved
+    ? saved
+    : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
 </head>
 <body>
 <header id="title-block-header">
@@ -1616,5 +1621,8 @@ p { line-height: 1.5; font-size: 20px;}
 <hr />
 <p><strong>viśvanātha-cakravartī (sārārtha-darśiṇī) :</strong> nanu, tarhi tvat-saṅgī kadā bhaṣyamīty ata āha—janmanīti | ayam arthaḥ ata paraṁ hedānte tvaṁ mad-dhāma vaikuṇṭhaṁ yāsyasy eva sva-vairibhyo'py asminn avatāre mokṣaṁ vaikuṇṭha-vāsaṁ ca dadāmi kiṁ punas tubhyaṁ parama-bhaktāya kiṁ tv avatārāntare tvāṁ sva-saṅginaṁ līlā-parikaraṁ ca kariṣyāmi yadā tvāṁ svaṁ ca tulya-kāla evābhir bhāvayiṣyāmīti <strong>anantare janmani</strong> mama ca tava cety arthaḥ <strong>sarva-bhūtānām</strong> upakārakatvāt yathāyogaṁ vidyā-pradānāc ca <strong>suhṛttamaḥ</strong> <strong>dvija-varaḥ</strong> paramādaraṇīyo vipro bhūtvā māṁ kevalaṁ vairāgyatvan niṣparigraham upaiṣyasi mat-saṅge eva sthāsyasīty arthaḥ ||64||</p>
 <p><strong>...</strong></p>
+
+<button id="theme-toggle"></button>
+<script src="../../theme.js"></script>
 </body>
 </html>
